@@ -1,0 +1,147 @@
+{
+  "attempts": [
+    {
+      "actual_red_conflicts": 11,
+      "blue_clauses_discovered": 22144,
+      "bound": 11,
+      "cegar_iterations": 24,
+      "elapsed_seconds": 27.91740704199765,
+      "neighborhood": [
+        5,
+        8,
+        19,
+        22,
+        33,
+        36,
+        47,
+        48,
+        50,
+        52,
+        56,
+        58
+      ],
+      "red_conflict_witnesses": [
+        [
+          5,
+          56
+        ],
+        [
+          8,
+          56
+        ],
+        [
+          19,
+          56
+        ],
+        [
+          22,
+          56
+        ],
+        [
+          33,
+          56
+        ],
+        [
+          36,
+          56
+        ],
+        [
+          47,
+          56
+        ],
+        [
+          48,
+          56
+        ],
+        [
+          50,
+          56
+        ],
+        [
+          52,
+          56
+        ],
+        [
+          56,
+          58
+        ]
+      ],
+      "status": "SAT"
+    }
+  ],
+  "base_sha256": "d619f0bfed32af5e2fbc8c724d9c65dbf388a19d5647d20e7835b501bc03227a",
+  "feasible_frozen_base_conflicts": 11,
+  "has_forbidden_clique": true,
+  "has_forbidden_independent_set": false,
+  "minimum_frozen_base_conflicts": null,
+  "minimum_proved": false,
+  "near_miss_sha256": "a144986d21117eff66eda4c37a30acfe25ab274a5587a2542740cf4a82b2f484",
+  "neighborhood": [
+    5,
+    8,
+    19,
+    22,
+    33,
+    36,
+    47,
+    48,
+    50,
+    52,
+    56,
+    58
+  ],
+  "r": 3,
+  "red_conflict_witnesses": [
+    [
+      5,
+      56
+    ],
+    [
+      8,
+      56
+    ],
+    [
+      19,
+      56
+    ],
+    [
+      22,
+      56
+    ],
+    [
+      33,
+      56
+    ],
+    [
+      36,
+      56
+    ],
+    [
+      47,
+      56
+    ],
+    [
+      48,
+      56
+    ],
+    [
+      50,
+      56
+    ],
+    [
+      52,
+      56
+    ],
+    [
+      56,
+      58
+    ]
+  ],
+  "s": 13,
+  "solver": "cadical195",
+  "tested_bound_range": [
+    11,
+    11
+  ],
+  "vertices_in_base": 60
+}

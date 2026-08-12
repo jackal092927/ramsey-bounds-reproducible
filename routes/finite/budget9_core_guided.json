@@ -1,0 +1,462 @@
+{
+  "candidate": null,
+  "claim_boundary": "SAT is a candidate pending independent verification; UNSAT is exact for this deletion basin; UNKNOWN changes no Ramsey bound.",
+  "deletion_budget": 9,
+  "empirical_search_structure": {
+    "caution": "Frequencies and model samples are heuristic observations, not logical necessity claims.",
+    "cegar_sat_models": 0,
+    "first_model_samples": [],
+    "last_model_samples": [],
+    "lazy_I13_clauses_added": 0,
+    "lazy_witness_sequence_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sampled_model_addition_count_range": null,
+    "sampled_model_deletion_edge_frequency": []
+  },
+  "formula": {
+    "cardinality_aux_variables": 5632,
+    "edge_variables": 1830,
+    "exact_eight_nonhub_deletion_clauses": 11264,
+    "forced_hub_unit_clauses": 1,
+    "formula_build_seconds": 0.8586766250082292,
+    "initial_clause_count": 72940,
+    "original_edges": 361,
+    "preseed_hitting_clauses": 25685,
+    "triangle_clauses": 35990
+  },
+  "limits": {
+    "conflicts_per_call": 5000,
+    "global_conflicts": 1000000,
+    "global_wall_seconds": 240.0,
+    "per_call_wall_seconds": 8.0
+  },
+  "preseed": {
+    "all_witnesses_contain_hub_endpoints": true,
+    "clause_length_without_fixed_hub": 77,
+    "post_hub_independent_set_size": 13,
+    "witness_count": 25685,
+    "witness_sha256": "3a7a95b88b5541af42e65931f51fcf2ac17e8a134748f31e6ce8a466b4078c3a"
+  },
+  "progress": {
+    "conflict_budget_exhaustions": 200,
+    "elapsed_seconds": 219.6992661249824,
+    "final_solver_clauses": 72241,
+    "final_solver_variables": 7462,
+    "last_call_summaries": [
+      {
+        "call": 189,
+        "elapsed_seconds": 1.1176644999650307,
+        "outcome": "UNKNOWN",
+        "stats_delta": {
+          "conflicts": 5002,
+          "decisions": 11713,
+          "propagations": 4819638,
+          "restarts": 27
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 190,
+        "elapsed_seconds": 1.0957552500185557,
+        "outcome": "UNKNOWN",
+        "stats_delta": {
+          "conflicts": 5002,
+          "decisions": 13399,
+          "propagations": 4069112,
+          "restarts": 27
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 191,
+        "elapsed_seconds": 0.8947719589923508,
+        "outcome": "UNKNOWN",
+        "stats_delta": {
+          "conflicts": 5002,
+          "decisions": 13610,
+          "propagations": 4178616,
+          "restarts": 27
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 192,
+        "elapsed_seconds": 1.8749479579855688,
+        "outcome": "UNKNOWN",
+        "stats_delta": {
+          "conflicts": 5000,
+          "decisions": 13774,
+          "propagations": 4198899,
+          "restarts": 27
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 193,
+        "elapsed_seconds": 1.0215883339988068,
+        "outcome": "UNKNOWN",
+        "stats_delta": {
+          "conflicts": 5003,
+          "decisions": 12807,
+          "propagations": 4088837,
+          "restarts": 27
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 194,
+        "elapsed_seconds": 1.1457977080135606,
+        "outcome": "UNKNOWN",
+        "stats_delta": {
+          "conflicts": 5000,
+          "decisions": 15972,
+          "propagations": 3902326,
+          "restarts": 27
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 195,
+        "elapsed_seconds": 1.1383846669923514,
+        "outcome": "UNKNOWN",
+        "stats_delta": {
+          "conflicts": 5000,
+          "decisions": 13893,
+          "propagations": 4453198,
+          "restarts": 27
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 196,
+        "elapsed_seconds": 0.9442368329619057,
+        "outcome": "UNKNOWN",
+        "stats_delta": {
+          "conflicts": 5004,
+          "decisions": 14456,
+          "propagations": 3501977,
+          "restarts": 27
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 197,
+        "elapsed_seconds": 1.0099932919838466,
+        "outcome": "UNKNOWN",
+        "stats_delta": {
+          "conflicts": 5002,
+          "decisions": 12821,
+          "propagations": 3938437,
+          "restarts": 27
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 198,
+        "elapsed_seconds": 0.9354904579813592,
+        "outcome": "UNKNOWN",
+        "stats_delta": {
+          "conflicts": 5000,
+          "decisions": 12524,
+          "propagations": 3685880,
+          "restarts": 27
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 199,
+        "elapsed_seconds": 0.8384747080272064,
+        "outcome": "UNKNOWN",
+        "stats_delta": {
+          "conflicts": 5001,
+          "decisions": 12335,
+          "propagations": 3900181,
+          "restarts": 27
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 200,
+        "elapsed_seconds": 1.0211299590300769,
+        "outcome": "UNKNOWN",
+        "stats_delta": {
+          "conflicts": 4816,
+          "decisions": 12365,
+          "propagations": 3830302,
+          "restarts": 25
+        },
+        "timer_interrupted": false
+      }
+    ],
+    "limited_solve_calls": 200,
+    "solver_stats": {
+      "conflicts": 1000000,
+      "decisions": 2818200,
+      "propagations": 829173832,
+      "restarts": 5398
+    },
+    "timer_interruptions": 0
+  },
+  "provenance": {
+    "input": "routes/finite/r3_13_n61_frozen_nearmiss_k11.txt",
+    "input_sha256": "a144986d21117eff66eda4c37a30acfe25ab274a5587a2542740cf4a82b2f484",
+    "prior_d8_record": "routes/finite/r3_13_bounded_delete_8.json",
+    "prior_d8_record_sha256": "c0fd54ee12cc144087e31e6bc6767209db75beb93a66cabfef5c4da73d759ab0",
+    "script_sha256": "6b9b4f83a144ee007672b148c5266ff81647a9944c0c66fd3aad29d37adcd5ee"
+  },
+  "schema": "ramsey-budget9-core-guided-v1",
+  "solver": "minisat22",
+  "status": "UNKNOWN_GLOBAL_CONFLICT_LIMIT",
+  "strict_structure": {
+    "consequence": "Any budget-9 solution deletes hub (56,60) and exactly eight other original edges.",
+    "forced_hub_proof": {
+      "budget": 9,
+      "deletion_lower_bound_if_hub_kept": 11,
+      "hub_deletion_forced": true,
+      "hub_edge": [
+        56,
+        60
+      ],
+      "off_hub_groups_pairwise_edge_disjoint": true,
+      "off_hub_spoke_groups": [
+        [
+          [
+            5,
+            56
+          ],
+          [
+            5,
+            60
+          ]
+        ],
+        [
+          [
+            8,
+            56
+          ],
+          [
+            8,
+            60
+          ]
+        ],
+        [
+          [
+            19,
+            56
+          ],
+          [
+            19,
+            60
+          ]
+        ],
+        [
+          [
+            22,
+            56
+          ],
+          [
+            22,
+            60
+          ]
+        ],
+        [
+          [
+            33,
+            56
+          ],
+          [
+            33,
+            60
+          ]
+        ],
+        [
+          [
+            36,
+            56
+          ],
+          [
+            36,
+            60
+          ]
+        ],
+        [
+          [
+            47,
+            56
+          ],
+          [
+            47,
+            60
+          ]
+        ],
+        [
+          [
+            48,
+            56
+          ],
+          [
+            48,
+            60
+          ]
+        ],
+        [
+          [
+            50,
+            56
+          ],
+          [
+            50,
+            60
+          ]
+        ],
+        [
+          [
+            52,
+            56
+          ],
+          [
+            52,
+            60
+          ]
+        ],
+        [
+          [
+            56,
+            58
+          ],
+          [
+            58,
+            60
+          ]
+        ]
+      ],
+      "proof": "If the hub remains, each triangle through it needs a deleted spoke edge. The displayed spoke groups are pairwise disjoint.",
+      "triangle_count_through_hub": 11,
+      "triangles_through_hub": [
+        [
+          5,
+          56,
+          60
+        ],
+        [
+          8,
+          56,
+          60
+        ],
+        [
+          19,
+          56,
+          60
+        ],
+        [
+          22,
+          56,
+          60
+        ],
+        [
+          33,
+          56,
+          60
+        ],
+        [
+          36,
+          56,
+          60
+        ],
+        [
+          47,
+          56,
+          60
+        ],
+        [
+          48,
+          56,
+          60
+        ],
+        [
+          50,
+          56,
+          60
+        ],
+        [
+          52,
+          56,
+          60
+        ],
+        [
+          56,
+          58,
+          60
+        ]
+      ]
+    },
+    "input_triangle_count": 11,
+    "input_triangles": [
+      [
+        5,
+        56,
+        60
+      ],
+      [
+        8,
+        56,
+        60
+      ],
+      [
+        19,
+        56,
+        60
+      ],
+      [
+        22,
+        56,
+        60
+      ],
+      [
+        33,
+        56,
+        60
+      ],
+      [
+        36,
+        56,
+        60
+      ],
+      [
+        47,
+        56,
+        60
+      ],
+      [
+        48,
+        56,
+        60
+      ],
+      [
+        50,
+        56,
+        60
+      ],
+      [
+        52,
+        56,
+        60
+      ],
+      [
+        56,
+        58,
+        60
+      ]
+    ],
+    "prior_budget_unsat": {
+      "budget": 8,
+      "cegar_iterations": 749,
+      "independent_hitting_clauses": 748,
+      "status": "UNSAT"
+    }
+  },
+  "target": {
+    "n": 61,
+    "r": 3,
+    "s": 13
+  }
+}

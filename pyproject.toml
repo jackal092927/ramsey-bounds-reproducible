@@ -1,0 +1,19 @@
+[project]
+name = "ramsey-bounds-reproducible"
+version = "0.1.0"
+description = "Reproducible computer-assisted Ramsey bound certificates"
+requires-python = "==3.11.15"
+dependencies = [
+  "mpmath==1.4.1",
+  "python-flint==0.9.0",
+  "python-sat==1.9.dev13",
+]
+
+[project.optional-dependencies]
+search = [
+  "numpy==2.4.6",
+  "scipy==1.16.1",
+]
+
+[tool.uv]
+package = false

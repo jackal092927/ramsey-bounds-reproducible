@@ -1,0 +1,65 @@
+{
+  "snapshot_date": "2026-08-12",
+  "certificates": [
+    {
+      "local_name": "alphaevolve_R3_13_ge_61.txt",
+      "repository": "https://github.com/google-research/google-research",
+      "commit": "015539128d9a7dbe14b5f5308a198a15da808949",
+      "snapshot_commit_date": "2026-08-08T08:51:23-07:00",
+      "repository_path": "ramsey_number_bounds/improved_bounds/R(3, 13) >= 61.txt",
+      "sha256": "d619f0bfed32af5e2fbc8c724d9c65dbf388a19d5647d20e7835b501bc03227a",
+      "r": 3,
+      "s": 13,
+      "vertices": 60,
+      "proves_lower_bound": 61
+    },
+    {
+      "local_name": "alphaevolve_R4_15_ge_159.txt",
+      "repository": "https://github.com/google-research/google-research",
+      "commit": "015539128d9a7dbe14b5f5308a198a15da808949",
+      "snapshot_commit_date": "2026-08-08T08:51:23-07:00",
+      "repository_path": "ramsey_number_bounds/improved_bounds/R(4, 15) >= 159.txt",
+      "sha256": "8b566457877ae7f56583db0db10a755c3ccc0a6979ec86f07b87cd12f05c8597",
+      "r": 4,
+      "s": 15,
+      "vertices": 158,
+      "proves_lower_bound": 159
+    },
+    {
+      "local_name": "alphaevolve_R3_18_ge_100.txt",
+      "repository": "https://github.com/google-research/google-research",
+      "commit": "015539128d9a7dbe14b5f5308a198a15da808949",
+      "snapshot_commit_date": "2026-08-08T08:51:23-07:00",
+      "repository_path": "ramsey_number_bounds/improved_bounds/R(3, 18) >= 100.txt",
+      "sha256": "3e9d16e29111f3a2f25ae3b992235804c2612de2f6ada5570901d17ceedfca45",
+      "r": 3,
+      "s": 18,
+      "vertices": 99,
+      "proves_lower_bound": 100
+    },
+    {
+      "local_name": "scale_R3_17_ge_93.txt",
+      "repository": "https://github.com/ypwang61/ScaleAutoResearch-Ramsey",
+      "commit": "6d6d76a44c14321882a8640ed9e86d4f791e31d3",
+      "snapshot_commit_date": "2026-05-13T13:43:07-07:00",
+      "repository_path": "R(3, 17) >= 93.txt",
+      "sha256": "afbc45c0a968251fbde04af9ad2e4e27eebd1108ddd3eccad68b896a9236bd35",
+      "r": 3,
+      "s": 17,
+      "vertices": 92,
+      "proves_lower_bound": 93
+    },
+    {
+      "local_name": "scale_R4_15_ge_160.txt",
+      "repository": "https://github.com/ypwang61/ScaleAutoResearch-Ramsey",
+      "commit": "6d6d76a44c14321882a8640ed9e86d4f791e31d3",
+      "snapshot_commit_date": "2026-05-13T13:43:07-07:00",
+      "repository_path": "R(4, 15) >= 160.txt",
+      "sha256": "05bf670069207edad54951a960c194eee9f67cb033dae1e8be3bf0306f7dde1f",
+      "r": 4,
+      "s": 15,
+      "vertices": 159,
+      "proves_lower_bound": 160
+    }
+  ]
+}

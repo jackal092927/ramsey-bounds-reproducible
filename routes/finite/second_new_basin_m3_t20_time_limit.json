@@ -1,0 +1,191 @@
+{
+  "claim_scope": "fixed 60-vertex base; one new vertex; exact triangle count and maximum triangle-edge multiplicity cap",
+  "elapsed_seconds": 60.060710125020705,
+  "formula": {
+    "degree_cap_clauses": 3446,
+    "induced_edge_indicators": 349,
+    "initial_clauses": 124208,
+    "maximum_triangle_edge_multiplicity": 3,
+    "neighborhood_variables": 60,
+    "preloaded_all_base_I12_clauses": 106246,
+    "preloaded_base_I12_sha256": "8338f2e07306f56909033907986e71cbfd3f4281e1ad22fe225832fb52121604",
+    "triangle_count_bound": 20,
+    "triangle_count_relation": "at_most"
+  },
+  "input": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/certificates/alphaevolve_R3_13_ge_61.txt",
+  "input_sha256": "d619f0bfed32af5e2fbc8c724d9c65dbf388a19d5647d20e7835b501bc03227a",
+  "limits": {
+    "conflicts_per_call": 10000,
+    "global_conflicts": 350000,
+    "global_wall_seconds": 60.0,
+    "per_call_wall_seconds": 10.0
+  },
+  "raw_solver_status": "UNKNOWN_GLOBAL_WALL_LIMIT",
+  "run": {
+    "call_tail": [
+      {
+        "call": 14,
+        "elapsed_seconds": 3.1565585840144195,
+        "outcome": "UNKNOWN",
+        "stats_delta": {
+          "conflicts": 10000,
+          "decisions": 12353,
+          "propagations": 4167753,
+          "restarts": 44
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 15,
+        "elapsed_seconds": 2.191646708000917,
+        "outcome": "UNKNOWN",
+        "stats_delta": {
+          "conflicts": 10002,
+          "decisions": 12326,
+          "propagations": 4157011,
+          "restarts": 44
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 16,
+        "elapsed_seconds": 2.5553757079760544,
+        "outcome": "UNKNOWN",
+        "stats_delta": {
+          "conflicts": 10004,
+          "decisions": 12267,
+          "propagations": 4326754,
+          "restarts": 44
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 17,
+        "elapsed_seconds": 3.14926854200894,
+        "outcome": "UNKNOWN",
+        "stats_delta": {
+          "conflicts": 10001,
+          "decisions": 12244,
+          "propagations": 4265214,
+          "restarts": 44
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 18,
+        "elapsed_seconds": 2.4610339589999057,
+        "outcome": "UNKNOWN",
+        "stats_delta": {
+          "conflicts": 10000,
+          "decisions": 12131,
+          "propagations": 4270739,
+          "restarts": 44
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 19,
+        "elapsed_seconds": 2.2731753750122152,
+        "outcome": "UNKNOWN",
+        "stats_delta": {
+          "conflicts": 10001,
+          "decisions": 12324,
+          "propagations": 4276040,
+          "restarts": 44
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 20,
+        "elapsed_seconds": 2.402974541997537,
+        "outcome": "UNKNOWN",
+        "stats_delta": {
+          "conflicts": 10000,
+          "decisions": 12378,
+          "propagations": 4231532,
+          "restarts": 44
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 21,
+        "elapsed_seconds": 2.2580456670257263,
+        "outcome": "UNKNOWN",
+        "stats_delta": {
+          "conflicts": 10002,
+          "decisions": 12192,
+          "propagations": 4227082,
+          "restarts": 44
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 22,
+        "elapsed_seconds": 2.3223672089516185,
+        "outcome": "UNKNOWN",
+        "stats_delta": {
+          "conflicts": 10001,
+          "decisions": 12336,
+          "propagations": 4054817,
+          "restarts": 44
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 23,
+        "elapsed_seconds": 2.4920110829989426,
+        "outcome": "UNKNOWN",
+        "stats_delta": {
+          "conflicts": 10003,
+          "decisions": 12370,
+          "propagations": 4148026,
+          "restarts": 44
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 24,
+        "elapsed_seconds": 2.278524917026516,
+        "outcome": "UNKNOWN",
+        "stats_delta": {
+          "conflicts": 10001,
+          "decisions": 12120,
+          "propagations": 4170748,
+          "restarts": 44
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 25,
+        "elapsed_seconds": 1.663403415994253,
+        "outcome": "UNKNOWN",
+        "stats_delta": {
+          "conflicts": 6619,
+          "decisions": 8071,
+          "propagations": 2750988,
+          "restarts": 31
+        },
+        "timer_interrupted": true
+      }
+    ],
+    "cegar_models": 0,
+    "elapsed_seconds": 60.01130237500183,
+    "lazy_clauses_added": 0,
+    "limited_solver_calls": 25,
+    "solver_stats": {
+      "conflicts": 246640,
+      "decisions": 305809,
+      "propagations": 107149367,
+      "restarts": 1087
+    },
+    "timer_interrupts": 1
+  },
+  "schema": "ramsey-second-new-basin-fixed-extension-v1",
+  "solver": "minisat22",
+  "status": "TIME_LIMIT",
+  "target": {
+    "n": 61,
+    "r": 3,
+    "s": 13
+  }
+}

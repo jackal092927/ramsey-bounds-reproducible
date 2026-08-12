@@ -1,0 +1,81 @@
+{
+  "schema": "ramsey-second-new-basin-summary-v1",
+  "date": "2026-08-12",
+  "global_ramsey_bound_improved": false,
+  "scope": "single-vertex extensions of one frozen 60-vertex (3,13) graph",
+  "input_sha256": "d619f0bfed32af5e2fbc8c724d9c65dbf388a19d5647d20e7835b501bc03227a",
+  "candidate": {
+    "status": "SAT_NEAR_MISS",
+    "matrix": "r3_13_n61_second_basin_m4_t17.txt",
+    "matrix_sha256": "bb43e22b66e0d93cf02fdbfc81a0cdfc03587a794dea7605e87dbc171c40792f",
+    "vertices": 61,
+    "edges": 369,
+    "triangles": 17,
+    "independent_13_sets": 0,
+    "maximum_edge_triangle_multiplicity": 4,
+    "triangle_edge_hitting_number": 8,
+    "neighborhood": [
+      0, 2, 3, 8, 16, 19, 21, 24, 26, 29,
+      31, 34, 42, 45, 47, 50, 52, 53, 55, 58
+    ],
+    "independent_bitset_verification": "PASS_NO_I13",
+    "independent_sat_verification": "PASS_NO_I13"
+  },
+  "bounded_searches": [
+    {
+      "triangle_relation": "exact",
+      "triangle_bound": 10,
+      "multiplicity_cap": 4,
+      "status": "TIME_LIMIT",
+      "seconds": 120,
+      "conflicts": 473991
+    },
+    {
+      "triangle_relation": "exact",
+      "triangle_bound": 11,
+      "multiplicity_cap": 4,
+      "status": "TIME_LIMIT",
+      "seconds": 90,
+      "conflicts": 390680
+    },
+    {
+      "triangle_relation": "exact",
+      "triangle_bound": 12,
+      "multiplicity_cap": 4,
+      "status": "TIME_LIMIT",
+      "seconds": 75,
+      "conflicts": 457782
+    },
+    {
+      "triangle_relation": "at_most",
+      "triangle_bound": 16,
+      "multiplicity_cap": 4,
+      "status": "UNKNOWN_CONFLICT_LIMIT",
+      "seconds": 88.83,
+      "conflicts": 500000
+    },
+    {
+      "triangle_relation": "at_most",
+      "triangle_bound": 17,
+      "multiplicity_cap": 4,
+      "status": "SAT",
+      "seconds": 22.03,
+      "conflicts": 125471
+    },
+    {
+      "triangle_relation": "at_most",
+      "triangle_bound": 20,
+      "multiplicity_cap": 3,
+      "status": "TIME_LIMIT",
+      "seconds": 60,
+      "conflicts": 246640
+    }
+  ],
+  "claim_boundary": [
+    "No bounded run returned UNSAT.",
+    "The candidate is a near miss, not a (3,13;61) Ramsey graph.",
+    "The exact minimum triangle count under multiplicity cap 4 remains unknown.",
+    "The exact feasibility of multiplicity cap 3 remains unknown."
+  ]
+}
+

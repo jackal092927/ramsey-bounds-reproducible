@@ -1,0 +1,26 @@
+{
+  "attempts": [
+    {
+      "blue_clauses_discovered": 26376,
+      "bound": 9,
+      "cegar_iterations": 27,
+      "elapsed_seconds": 644.0054322500364,
+      "status": "UNSAT"
+    }
+  ],
+  "base_sha256": "d619f0bfed32af5e2fbc8c724d9c65dbf388a19d5647d20e7835b501bc03227a",
+  "feasible_frozen_base_conflicts": null,
+  "minimum_frozen_base_conflicts": null,
+  "minimum_proved": false,
+  "proved_unsat_bounds": [
+    9
+  ],
+  "r": 3,
+  "s": 13,
+  "solver": "cadical195",
+  "tested_bound_range": [
+    9,
+    9
+  ],
+  "vertices_in_base": 60
+}

@@ -1,0 +1,118 @@
+{
+  "schema": "ramsey-r3-18-n100-exact-budget7-first-round-summary-v1",
+  "status": "ALL_THREE_BRANCHES_UNKNOWN_DISCOVERY_WALL_LIMIT",
+  "input": "certificates/r3_18_n100_nearmiss.txt",
+  "input_sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+  "target": {
+    "r": 3,
+    "s": 18,
+    "n": 100
+  },
+  "scope": {
+    "fixed_input": true,
+    "exact_total_input_edge_deletions": 7,
+    "fixed_absent_unique_triangle_edge_per_branch": true,
+    "exact_residual_input_edge_deletions": 6,
+    "arbitrary_original_nonedge_additions_allowed": true,
+    "three_branches_cover_every_exact_seven_repair": true
+  },
+  "proof_dependency": {
+    "budget_at_most_6_status": "ALL_THREE_EXACT_BUDGET6_BRANCHES_UNSAT_PROOF_VERIFIED",
+    "summary": "r3_18_budget6_summary.json",
+    "summary_sha256": "0abd30457c039c1c5fbba5890153c8a0c5d8558e196e7c0561410cefe37afa6a",
+    "complete_referee": "INDEPENDENT_R3_18_BUDGET6_COMPLETE_REFEREE.md",
+    "complete_referee_sha256": "1bb634ed1a6181064ac2ae0277ea6582cd2627a76a92208907cc1532d49bfede",
+    "all_three_branch_proof_identities_cross_checked": true
+  },
+  "universal_cut_bank": {
+    "path": "r3_18_budget6_branch_0_universal_union.cuts.json",
+    "sha256": "91b5709248ff641a315f5a0389b4f3fde3d38514f3b1a8b31b6cad31224f250b",
+    "distinct_I18_masks": 251771,
+    "ordered_masks_sha256": "f10690b826b86eb03567a2ffaffb553801fae32af20cfe4337118bddf4e41afa",
+    "universally_valid_for_all_three_branches": true
+  },
+  "common_formula": {
+    "primary_edge_variables": 4950,
+    "auxiliary_counter_variables": 9840,
+    "maximum_variable": 14790,
+    "triangle_clauses": 161700,
+    "exact_six_counter_literals": 826,
+    "exact_six_counter_clauses": 19680,
+    "fixed_negative_units": 1,
+    "structural_clauses": 181381,
+    "universal_I18_clauses": 251771,
+    "initial_total_clauses": 433152,
+    "original_nonedge_variables_in_deletion_counter": 0
+  },
+  "branches": [
+    {
+      "branch": 0,
+      "fixed_deleted_edge": [97, 98],
+      "solver": "cadical195",
+      "wall_limit_seconds": 300.0,
+      "elapsed_seconds": 300.0296047090087,
+      "status": "UNKNOWN_DISCOVERY_WALL_LIMIT",
+      "last_checkpoint_status": "READY",
+      "iterations": 0,
+      "new_I18_masks": 0,
+      "result": "r3_18_budget7_branch_0.json",
+      "result_sha256": "97e777da32b82a83b8e999c9af1f927c87b67689b8fb72f8b31ded07b39a2f7f",
+      "checkpoint": "r3_18_budget7_branch_0.checkpoint.json",
+      "checkpoint_sha256": "918dc1cc80860d97b3209f6d969a156b9df5fb8b4df7f0fa910e72fdc5778098"
+    },
+    {
+      "branch": 1,
+      "fixed_deleted_edge": [97, 99],
+      "solver": "glucose42",
+      "wall_limit_seconds": 300.0,
+      "elapsed_seconds": 300.01305725000566,
+      "status": "UNKNOWN_DISCOVERY_WALL_LIMIT",
+      "last_checkpoint_status": "READY",
+      "iterations": 0,
+      "new_I18_masks": 0,
+      "result": "r3_18_budget7_branch_1.json",
+      "result_sha256": "81734a23298ea9c3364a047c3b7b10910bcd44faf9ff55c3a251fd709f6ac64f",
+      "checkpoint": "r3_18_budget7_branch_1.checkpoint.json",
+      "checkpoint_sha256": "8491cbd5e073170b6f7a503efb3d6af6c077b6d72defbf9cd6feb6f06e85fc7f"
+    },
+    {
+      "branch": 2,
+      "fixed_deleted_edge": [98, 99],
+      "solver": "maplechrono",
+      "wall_limit_seconds": 300.0,
+      "elapsed_seconds": 300.01518029201543,
+      "status": "UNKNOWN_DISCOVERY_WALL_LIMIT",
+      "last_checkpoint_status": "READY",
+      "iterations": 0,
+      "new_I18_masks": 0,
+      "result": "r3_18_budget7_branch_2.json",
+      "result_sha256": "92e2c948892d6f298e0ca3a5055cf31cf3eea361b6eee8197ba536922e437554",
+      "checkpoint": "r3_18_budget7_branch_2.checkpoint.json",
+      "checkpoint_sha256": "9e8ea23904378ec1bfc6e4c486fd32f10ccc99c1646855c7589c21cc3c9b9f5c"
+    }
+  ],
+  "recoverable_state": {
+    "base_universal_masks": 251771,
+    "additional_discovered_masks": 0,
+    "solver_internal_state_serialized": false,
+    "safe_resume_semantics": "restart a solver from the exact formula and the frozen cut bank"
+  },
+  "verification": {
+    "checker": "check_r3_18_budget7.py",
+    "checker_sha256": "8c1f2629193de8b16e018f036ce462b8e18110b9f4f1c13b3162b25fe415d6f4",
+    "checker_status": "FIRST_ROUND_STATE_VERIFIED",
+    "tests": "test_r3_18_budget7_branch.py",
+    "tests_sha256": "46b0324d67baaf66bae49027bf4ddbfe3aa08684d3cbe364326bc4400914c987",
+    "tests_status": "6_TESTS_PASS",
+    "runner": "r3_18_budget7_branch.py",
+    "runner_sha256": "13a7cfeb564297fcad2ea2c6ca831a6bf4b4755e0223abcf9d1bd1178103d0de"
+  },
+  "conclusion": {
+    "sat_witness_found": false,
+    "unsat_proof_verified": false,
+    "exact_seven_fixed_seed_repair_existence_resolved": false,
+    "global_ramsey_bound_improvement": false,
+    "R_3_18_ge_101_established": false,
+    "claim_boundary": "The first bounded portfolio ended UNKNOWN in all three branches."
+  }
+}

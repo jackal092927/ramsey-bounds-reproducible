@@ -1,0 +1,754 @@
+{
+  "arbitrary_original_nonedge_additions_allowed": true,
+  "branches": [
+    {
+      "branch": 0,
+      "fixed_deleted_edge": [
+        97,
+        98
+      ],
+      "formula": {
+        "auxiliary_variables": 3288,
+        "edge_variables": 4950,
+        "fixed_deleted_edge": [
+          97,
+          98
+        ],
+        "fixed_deleted_edge_cannot_be_readded": true,
+        "fixed_edge_negative_unit_clause": true,
+        "fixed_unit_clauses": 1,
+        "initial_clause_count": 173191,
+        "maximum_variable": 8238,
+        "preload_enumeration_seconds": 0.0876023750170134,
+        "preloaded_bank_complete": false,
+        "preloaded_fixed_base_I18_clauses": 4096,
+        "preloaded_fixed_base_I18_sha256": "a4caf79d234917c7751772327b7ec24d96f72addde2edb683e5fd6c893eb576d",
+        "residual_cardinality_clauses": 7394,
+        "residual_deletion_budget": 4,
+        "triangle_clauses": 161700
+      },
+      "lazy_I18_clauses_added": 46080,
+      "lazy_I18_masks_sha256": "26f9152770d6ba6d408eeb8c2b9658963db86089e5a59e9ccc39cb82b783969b",
+      "run": {
+        "call_tail": [
+          {
+            "call": 79,
+            "elapsed_seconds": 0.7269360839854926,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 1755,
+              "decisions": 8554,
+              "propagations": 1417076,
+              "restarts": 8
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 80,
+            "elapsed_seconds": 0.012780792021658272,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 25,
+              "decisions": 369,
+              "propagations": 27023,
+              "restarts": 2
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 81,
+            "elapsed_seconds": 0.045437583001330495,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 134,
+              "decisions": 1810,
+              "propagations": 124216,
+              "restarts": 1
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 82,
+            "elapsed_seconds": 0.2809326670248993,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 751,
+              "decisions": 3925,
+              "propagations": 698775,
+              "restarts": 2
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 83,
+            "elapsed_seconds": 0.0441885000327602,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 84,
+              "decisions": 668,
+              "propagations": 101931,
+              "restarts": 2
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 84,
+            "elapsed_seconds": 0.005707208008971065,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 6,
+              "decisions": 103,
+              "propagations": 11879,
+              "restarts": 1
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 85,
+            "elapsed_seconds": 0.002296083024702966,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 1,
+              "decisions": 454,
+              "propagations": 8832,
+              "restarts": 1
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 86,
+            "elapsed_seconds": 0.48875299998326227,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 1018,
+              "decisions": 4660,
+              "propagations": 768133,
+              "restarts": 3
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 87,
+            "elapsed_seconds": 0.4400792919914238,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 895,
+              "decisions": 6999,
+              "propagations": 893524,
+              "restarts": 10
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 88,
+            "elapsed_seconds": 1.337869375012815,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 3025,
+              "decisions": 18346,
+              "propagations": 1963603,
+              "restarts": 17
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 89,
+            "elapsed_seconds": 0.10440166702028364,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 232,
+              "decisions": 1808,
+              "propagations": 206013,
+              "restarts": 3
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 90,
+            "elapsed_seconds": 0.10813216696260497,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 264,
+              "decisions": 1525,
+              "propagations": 263679,
+              "restarts": 3
+            },
+            "timer_interrupted": false
+          }
+        ],
+        "cegar_models": 90,
+        "elapsed_seconds": 304.1834646249772,
+        "lazy_clauses_added": 46080,
+        "limited_solver_calls": 90,
+        "solver_stats": {
+          "conflicts": 23481,
+          "decisions": 162340,
+          "propagations": 18596436,
+          "restarts": 222
+        },
+        "timer_interrupts": 0
+      },
+      "status": "UNKNOWN_GLOBAL_WALL_LIMIT"
+    },
+    {
+      "bounded_cadical195_cross_replay": {
+        "elapsed_seconds": 16.926073917013127,
+        "exitcode": 0,
+        "solver_stats": {
+          "conflicts": 68974,
+          "decisions": 256037,
+          "propagations": 73291407,
+          "restarts": 1238
+        },
+        "status": "UNSAT",
+        "wall_limit_seconds": 60.0
+      },
+      "branch": 1,
+      "dimacs_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/r3_18_budget5_branch_1.cnf.gz",
+      "dimacs_gzip_sha256": "d6d321a4ac1aeec5e99c48843a8cda9395271e89555cea328e29bcda4e70ef15",
+      "dimacs_lines": 184968,
+      "dimacs_uncompressed_bytes": 14312648,
+      "dimacs_uncompressed_sha256": "5ba541f58ea42d7fb73ff51a962e98153eece0d4a8bf13c1bea3a86ed0d50429",
+      "drat_check": {
+        "checker": "/private/tmp/ramsey-drat-trim.co58Mj/drat-trim",
+        "checker_sha256": "31d9e8e04bc76a65f0a18ea212ac44af4cf7bc398629495cec093ced772c50f4",
+        "elapsed_seconds": 16.85280866699759,
+        "exitcode": 0,
+        "status": "VERIFIED",
+        "stderr": "",
+        "stdout": "\nc parsing input formula with 8238 variables and 184967 clauses\n\nc finished parsing\n\nc detected empty clause; start verification via backward checking\n\nc 17118 of 184967 clauses in core                            \n\nc 48979 of 110848 lemmas in core using 45586752 resolution steps\n\nc 0 RAT lemmas in core; 558604 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 16.200 seconds\n",
+        "wall_limit_seconds": 300.0
+      },
+      "drat_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/r3_18_budget5_branch_1.drat.gz",
+      "drat_gzip_sha256": "33a9e037e19beeab8dd2af4dca5ce9010d4906b39dc3e5cc8fd62823f518497a",
+      "drat_lines": 189505,
+      "drat_uncompressed_bytes": 139765907,
+      "drat_uncompressed_sha256": "84a2236b7692207f59c3d2dcb3521b2f2f2b947428470384ac643c34a7bfbf69",
+      "fixed_deleted_edge": [
+        97,
+        99
+      ],
+      "formula": {
+        "auxiliary_variables": 3288,
+        "edge_variables": 4950,
+        "fixed_deleted_edge": [
+          97,
+          99
+        ],
+        "fixed_deleted_edge_cannot_be_readded": true,
+        "fixed_edge_negative_unit_clause": true,
+        "fixed_unit_clauses": 1,
+        "initial_clause_count": 173191,
+        "maximum_variable": 8238,
+        "preload_enumeration_seconds": 0.09269329102244228,
+        "preloaded_bank_complete": false,
+        "preloaded_fixed_base_I18_clauses": 4096,
+        "preloaded_fixed_base_I18_sha256": "a6d3cfcf35cccbc8f16d6a05af15b6427d70e87678d73bfacff39a6249644371",
+        "residual_cardinality_clauses": 7394,
+        "residual_deletion_budget": 4,
+        "triangle_clauses": 161700
+      },
+      "lazy_I18_clauses_added": 11776,
+      "lazy_I18_masks_sha256": "61aabc30f9163a62f46e8832bda3bef33ed0c8703021e90e1ac1b07084f11f8b",
+      "run": {
+        "call_tail": [
+          {
+            "call": 15,
+            "elapsed_seconds": 1.5820611249655485,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 4061,
+              "decisions": 19431,
+              "propagations": 2958394,
+              "restarts": 25
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 16,
+            "elapsed_seconds": 0.0015429159975610673,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 0,
+              "decisions": 115,
+              "propagations": 7240,
+              "restarts": 1
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 17,
+            "elapsed_seconds": 0.002289332973305136,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 3,
+              "decisions": 210,
+              "propagations": 12970,
+              "restarts": 1
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 18,
+            "elapsed_seconds": 0.00345258298330009,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 5,
+              "decisions": 129,
+              "propagations": 14334,
+              "restarts": 1
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 19,
+            "elapsed_seconds": 0.02531674999045208,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 75,
+              "decisions": 620,
+              "propagations": 89432,
+              "restarts": 1
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 20,
+            "elapsed_seconds": 2.4924753330415115,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 5605,
+              "decisions": 21497,
+              "propagations": 4276348,
+              "restarts": 37
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 21,
+            "elapsed_seconds": 0.008735041017644107,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 25,
+              "decisions": 261,
+              "propagations": 32139,
+              "restarts": 1
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 22,
+            "elapsed_seconds": 0.0014859579969197512,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 0,
+              "decisions": 164,
+              "propagations": 7164,
+              "restarts": 1
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 23,
+            "elapsed_seconds": 7.244404875033069,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 23414,
+              "decisions": 71611,
+              "propagations": 16859229,
+              "restarts": 90
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 24,
+            "elapsed_seconds": 2.079424708033912,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 7102,
+              "decisions": 21600,
+              "propagations": 5386992,
+              "restarts": 33
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 25,
+            "elapsed_seconds": 0.005290791974402964,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 21,
+              "decisions": 94,
+              "propagations": 31544,
+              "restarts": 1
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 26,
+            "elapsed_seconds": 0.622581584029831,
+            "outcome": "UNSAT",
+            "stats_delta": {
+              "conflicts": 2327,
+              "decisions": 7237,
+              "propagations": 1689270,
+              "restarts": 7
+            },
+            "timer_interrupted": false
+          }
+        ],
+        "cegar_models": 23,
+        "elapsed_seconds": 87.49300004105316,
+        "lazy_clauses_added": 11776,
+        "limited_solver_calls": 26,
+        "solver_stats": {
+          "conflicts": 87835,
+          "decisions": 357849,
+          "propagations": 63508006,
+          "restarts": 481
+        },
+        "timer_interrupts": 0
+      },
+      "status": "UNSAT"
+    },
+    {
+      "bounded_cadical195_cross_replay": {
+        "elapsed_seconds": 11.59803783299867,
+        "exitcode": 0,
+        "solver_stats": {
+          "conflicts": 56704,
+          "decisions": 250195,
+          "propagations": 52723276,
+          "restarts": 1187
+        },
+        "status": "UNSAT",
+        "wall_limit_seconds": 60.0
+      },
+      "branch": 2,
+      "dimacs_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/r3_18_budget5_branch_2.cnf.gz",
+      "dimacs_gzip_sha256": "8d8a543bb3cc17014941fee432673a1dc2b99c8cb4885d4d91bba9005f3b10a7",
+      "dimacs_lines": 177800,
+      "dimacs_uncompressed_bytes": 8876295,
+      "dimacs_uncompressed_sha256": "441b70e023f4a9fa1837f16b1502ef3b54a2f00b6143fd5e7de0131ac95beebf",
+      "drat_check": {
+        "checker": "/private/tmp/ramsey-drat-trim.co58Mj/drat-trim",
+        "checker_sha256": "31d9e8e04bc76a65f0a18ea212ac44af4cf7bc398629495cec093ced772c50f4",
+        "elapsed_seconds": 8.326351042021997,
+        "exitcode": 0,
+        "status": "VERIFIED",
+        "stderr": "",
+        "stdout": "\nc parsing input formula with 8238 variables and 177799 clauses\n\nc finished parsing\n\nc detected empty clause; start verification via backward checking\n\nc 12194 of 177799 clauses in core                            \n\nc 38152 of 84921 lemmas in core using 39493451 resolution steps\n\nc 0 RAT lemmas in core; 244675 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 8.157 seconds\n",
+        "wall_limit_seconds": 300.0
+      },
+      "drat_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/r3_18_budget5_branch_2.drat.gz",
+      "drat_gzip_sha256": "159865da9ad23eea298ebd4e9406f2f37ecc6015a593975e9d63e3b08a859897",
+      "drat_lines": 164979,
+      "drat_uncompressed_bytes": 77662068,
+      "drat_uncompressed_sha256": "4ff3a43bda7774c09695417a9f9684e8a856fb46bf62225a08e746fbf37d1ad6",
+      "fixed_deleted_edge": [
+        98,
+        99
+      ],
+      "formula": {
+        "auxiliary_variables": 3288,
+        "edge_variables": 4950,
+        "fixed_deleted_edge": [
+          98,
+          99
+        ],
+        "fixed_deleted_edge_cannot_be_readded": true,
+        "fixed_edge_negative_unit_clause": true,
+        "fixed_unit_clauses": 1,
+        "initial_clause_count": 173191,
+        "maximum_variable": 8238,
+        "preload_enumeration_seconds": 0.07879595801932737,
+        "preloaded_bank_complete": false,
+        "preloaded_fixed_base_I18_clauses": 4096,
+        "preloaded_fixed_base_I18_sha256": "a6d082213cad2c6a60cfe4a38ea81557648c0377ce9ed95c5e44f63b93954993",
+        "residual_cardinality_clauses": 7394,
+        "residual_deletion_budget": 4,
+        "triangle_clauses": 161700
+      },
+      "lazy_I18_clauses_added": 4608,
+      "lazy_I18_masks_sha256": "6afae44d12a670ddbfd9377d0cd467c812a2ed5d773a99d608bab977520472ef",
+      "run": {
+        "call_tail": [
+          {
+            "call": 1,
+            "elapsed_seconds": 0.30648687499342486,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 1132,
+              "decisions": 8246,
+              "propagations": 731471,
+              "restarts": 7
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 2,
+            "elapsed_seconds": 0.21544170897686854,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 814,
+              "decisions": 4847,
+              "propagations": 779662,
+              "restarts": 5
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 3,
+            "elapsed_seconds": 0.6676650840090588,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 2078,
+              "decisions": 14194,
+              "propagations": 1761108,
+              "restarts": 14
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 4,
+            "elapsed_seconds": 2.55002774996683,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 7801,
+              "decisions": 55332,
+              "propagations": 6328822,
+              "restarts": 72
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 5,
+            "elapsed_seconds": 0.45478920900495723,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 1185,
+              "decisions": 7293,
+              "propagations": 642688,
+              "restarts": 8
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 6,
+            "elapsed_seconds": 2.20734495902434,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 4328,
+              "decisions": 28952,
+              "propagations": 3427091,
+              "restarts": 26
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 7,
+            "elapsed_seconds": 5.308860041026492,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 15744,
+              "decisions": 82750,
+              "propagations": 12110445,
+              "restarts": 94
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 8,
+            "elapsed_seconds": 3.811105290951673,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 10842,
+              "decisions": 42174,
+              "propagations": 9060704,
+              "restarts": 49
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 9,
+            "elapsed_seconds": 0.0012055420083925128,
+            "outcome": "SAT",
+            "stats_delta": {
+              "conflicts": 1,
+              "decisions": 49,
+              "propagations": 7735,
+              "restarts": 1
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 10,
+            "elapsed_seconds": 6.270687707990874,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20068,
+              "decisions": 51038,
+              "propagations": 14903672,
+              "restarts": 46
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 11,
+            "elapsed_seconds": 1.7711575420107692,
+            "outcome": "UNSAT",
+            "stats_delta": {
+              "conflicts": 5555,
+              "decisions": 11821,
+              "propagations": 4005874,
+              "restarts": 21
+            },
+            "timer_interrupted": false
+          }
+        ],
+        "cegar_models": 9,
+        "elapsed_seconds": 27.187595167022664,
+        "lazy_clauses_added": 4608,
+        "limited_solver_calls": 11,
+        "solver_stats": {
+          "conflicts": 69548,
+          "decisions": 306696,
+          "propagations": 53759272,
+          "restarts": 343
+        },
+        "timer_interrupts": 0
+      },
+      "status": "UNSAT"
+    }
+  ],
+  "claim_scope": "Fixed 100-vertex input; arbitrary input-nonedge additions are allowed, and at most five input edges may be deleted.",
+  "conclusion": "At least one exhaustive branch reached a resource limit; no budget-five SAT or UNSAT conclusion is justified.",
+  "deletion_budget": 5,
+  "elapsed_seconds": 498.6637694580131,
+  "environment": {
+    "drat_trim_source_commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+    "expected_drat_trim_source_commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+    "pysat_solvers": [
+      "glucose42",
+      "cadical195"
+    ],
+    "python": "3.11.15 (main, Mar  3 2026, 00:52:57) [Clang 17.0.0 (clang-1700.6.3.2)]"
+  },
+  "global_ramsey_claim": null,
+  "input": "/private/tmp/r3_18_n100_nearmiss.txt",
+  "input_sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+  "limits": {
+    "conflicts_per_limited_call": 20000,
+    "cross_solver_wall_seconds_per_branch": 60.0,
+    "drat_check_wall_seconds_per_branch": 300.0,
+    "lazy_blue_batch_size": 512,
+    "max_conflicts_per_branch": 2000000,
+    "max_wall_seconds_per_branch": 300.0,
+    "per_call_wall_seconds": 10.0,
+    "preloaded_I18_per_branch": 4096
+  },
+  "original_edges": 827,
+  "schema": "ramsey-r3-18-n100-budget5-branch-v1",
+  "seed_bitset_verification": {
+    "alpha_exact": null,
+    "certified_lower_bound": null,
+    "edges": 827,
+    "input": "/private/tmp/r3_18_n100_nearmiss.txt",
+    "omega_exact": null,
+    "r": 3,
+    "s": 18,
+    "searches": {
+      "boundary_clique": {
+        "colorings": 2,
+        "elapsed_seconds": 3.495794953778386e-05,
+        "exists": true,
+        "recursive_nodes": 3,
+        "target": 2,
+        "witness": [
+          96,
+          80
+        ]
+      },
+      "boundary_independent_set": {
+        "colorings": 17,
+        "elapsed_seconds": 0.0001419589971192181,
+        "exists": true,
+        "recursive_nodes": 18,
+        "target": 17,
+        "witness": [
+          99,
+          96,
+          95,
+          91,
+          87,
+          85,
+          93,
+          89,
+          84,
+          88,
+          90,
+          94,
+          92,
+          86,
+          83,
+          82,
+          81
+        ]
+      },
+      "forbidden_clique": {
+        "colorings": 20,
+        "elapsed_seconds": 0.00012145901564508677,
+        "exists": true,
+        "recursive_nodes": 21,
+        "target": 3,
+        "witness": [
+          99,
+          98,
+          97
+        ]
+      },
+      "forbidden_independent_set": {
+        "colorings": 1990791,
+        "elapsed_seconds": 8.570661999983713,
+        "exists": false,
+        "recursive_nodes": 1990791,
+        "target": 18,
+        "witness": null
+      }
+    },
+    "sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+    "valid_ramsey_certificate": false,
+    "vertices": 100
+  },
+  "status": "UNKNOWN_LIMIT",
+  "structural_decomposition": {
+    "branch_count": 3,
+    "case_split_exhaustive": true,
+    "input_triangle_count": 1,
+    "reason": "Every triangle-free final graph must omit at least one edge of the unique input triangle.  Each of the three branches fixes one such edge absent and leaves 4 residual deletions.",
+    "triangle_edges": [
+      [
+        97,
+        98
+      ],
+      [
+        97,
+        99
+      ],
+      [
+        98,
+        99
+      ]
+    ],
+    "unique_input_triangle": [
+      97,
+      98,
+      99
+    ]
+  },
+  "target": {
+    "n": 100,
+    "r": 3,
+    "s": 18
+  }
+}

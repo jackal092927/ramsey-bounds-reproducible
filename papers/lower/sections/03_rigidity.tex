@@ -1,0 +1,51 @@
+\section{Rigidity of exact gradient merge}\label{sec:rigidity}
+
+For a target ordered set \([r]\), consider deterministic triangular weights
+\(W_{ij}\) and the connection-plus-mean potential
+\[
+F_i(b)=\sum_{j>i}\log\Phi(-b_j)
+-\frac1d\sum_{i<j<q}W_{jq}m(b_j)m(b_q).
+\tag{3.1}
+\]
+At the central cutoff,
+\[
+ \partial_jF_i(c\mathbf1)
+ =-m_0-\frac{m_0m'_0}{d}
+ \sum_{\substack{q>i\\q\ne j}}W_{jq}.
+\tag{3.2}
+\]
+
+\begin{proposition}[Unique exact-merge array]\label{prop:rigidity}
+If the linear term in (3.2), multiplied by
+\(b_j-c=\sqrt d\,h_{ij}\), must equal \(-W_{ij}h_{ij}\) at every boundary,
+then the weights are uniquely determined by
+\[
+ W_{ij}=m_0\sqrt d+
+ \frac{m_0m'_0}{\sqrt d}
+ \sum_{\substack{q>i\\q\ne j}}W_{jq}.
+\tag{3.3}
+\]
+Uniform or edge-dependent potential rescaling creates no additional effective
+degree of freedom.
+\end{proposition}
+
+\begin{proof}
+The coefficient comparison gives (3.3).  Process the first endpoint in
+decreasing order.  Every weight on the right side has already been defined,
+so the system is triangular and has a unique solution.  If the potential is
+scaled by \(\kappa\), set \(W=\kappa T\); the same coefficient comparison
+again yields (3.3) for \(W\).  Edge-dependent scalar factors likewise only
+rename the effective coefficients.
+\end{proof}
+
+The feedback operator in (3.3) has row norm at most
+\(\rho=m_0m'_0/D=o(1)\).  Its accumulated increment is
+\[
+ 2A_0\binom r4[1+O(\rho)].
+\tag{3.4}
+\]
+With the source centered coefficient \(m_0^2[1+o(1)]\), the exact-merge
+ledger contributes the previously reviewed term
+\((1+o(1))/(96\log C)\).  Exact feedback evaluation can change only the
+next order.
+

@@ -1,0 +1,182 @@
+{
+  "arbitrary_original_nonedge_additions_allowed": true,
+  "branch": 2,
+  "budget_at_most_6_proof_dependency": {
+    "all_three_branch_identities_cross_checked": true,
+    "complete_referee": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/INDEPENDENT_R3_18_BUDGET6_COMPLETE_REFEREE.md",
+    "complete_referee_sha256": "1bb634ed1a6181064ac2ae0277ea6582cd2627a76a92208907cc1532d49bfede",
+    "path": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/r3_18_budget6_summary.json",
+    "sha256": "0abd30457c039c1c5fbba5890153c8a0c5d8558e196e7c0561410cefe37afa6a",
+    "status": "ALL_THREE_EXACT_BUDGET6_BRANCHES_UNSAT_PROOF_VERIFIED"
+  },
+  "discovery": {
+    "branch": 2,
+    "elapsed_seconds": 300.01518029201543,
+    "last_checkpoint": {
+      "base_universal_bank": {
+        "masks": 251771,
+        "ordered_masks_sha256": "f10690b826b86eb03567a2ffaffb553801fae32af20cfe4337118bddf4e41afa",
+        "path": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/r3_18_budget6_branch_0_universal_union.cuts.json",
+        "sha256": "91b5709248ff641a315f5a0389b4f3fde3d38514f3b1a8b31b6cad31224f250b",
+        "universality_reason": "Each mask is an 18-vertex set; its complete positive edge clause is necessary for every graph with independence number below 18."
+      },
+      "branch": 2,
+      "elapsed_seconds": 5.708278833015356,
+      "fixed_deleted_edge": [
+        98,
+        99
+      ],
+      "formula": {
+        "arbitrary_original_nonedge_additions_allowed": true,
+        "auxiliary_variables": 9840,
+        "base_universal_I18_clauses": 251771,
+        "edge_variables": 4950,
+        "exact_residual_input_edge_deletions": 6,
+        "exact_six_residual_counter_clauses": 19680,
+        "exact_six_residual_counter_literals": 826,
+        "exact_total_input_edge_deletions": 7,
+        "fixed_deleted_edge": [
+          98,
+          99
+        ],
+        "fixed_deleted_edge_cannot_be_readded": true,
+        "fixed_negative_units": 1,
+        "initial_total_clauses": 433152,
+        "installed_clauses_are_only_structural_or_universal_I18": true,
+        "maximum_variable": 14790,
+        "original_nonedge_variables_in_deletion_counter": 0,
+        "resumed_additional_I18_clauses": 0,
+        "structural_clauses": 181381,
+        "triangle_clauses": 161700
+      },
+      "iterations_this_run": 0,
+      "new_masks": [],
+      "new_masks_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "resume_sources": [],
+      "resumed_additional_masks": 0,
+      "schema": "ramsey-r3-18-n100-exact-budget7-branch-v1",
+      "solver_stats": {
+        "conflicts": 0,
+        "decisions": 0,
+        "propagations": 1,
+        "restarts": 0
+      },
+      "status": "READY"
+    },
+    "schema": "ramsey-r3-18-n100-exact-budget7-branch-v1",
+    "status": "UNKNOWN_DISCOVERY_WALL_LIMIT",
+    "wall_limit_seconds": 300.0
+  },
+  "elapsed_seconds": 300.0262007919955,
+  "exact_residual_input_edge_deletions": 6,
+  "exact_total_input_edge_deletions": 7,
+  "fixed_deleted_edge": [
+    98,
+    99
+  ],
+  "global_ramsey_implication": null,
+  "input": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/certificates/r3_18_n100_nearmiss.txt",
+  "input_sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+  "limits": {
+    "batch_size": 256,
+    "discovery_wall_seconds": 300.0,
+    "drat_wall_seconds": 360.0,
+    "proof_wall_seconds": 300.0
+  },
+  "reason": "bounded discovery reached neither a verified SAT witness nor a checked UNSAT proof",
+  "resume_sources": [],
+  "schema": "ramsey-r3-18-n100-exact-budget7-branch-v1",
+  "seed_bitset_check": {
+    "alpha_exact": null,
+    "certified_lower_bound": null,
+    "edges": 827,
+    "input": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/certificates/r3_18_n100_nearmiss.txt",
+    "omega_exact": null,
+    "r": 3,
+    "s": 18,
+    "searches": {
+      "boundary_clique": {
+        "colorings": 2,
+        "elapsed_seconds": 3.3125048503279686e-05,
+        "exists": true,
+        "recursive_nodes": 3,
+        "target": 2,
+        "witness": [
+          96,
+          80
+        ]
+      },
+      "boundary_independent_set": {
+        "colorings": 17,
+        "elapsed_seconds": 0.00013599998783320189,
+        "exists": true,
+        "recursive_nodes": 18,
+        "target": 17,
+        "witness": [
+          99,
+          96,
+          95,
+          91,
+          87,
+          85,
+          93,
+          89,
+          84,
+          88,
+          90,
+          94,
+          92,
+          86,
+          83,
+          82,
+          81
+        ]
+      },
+      "forbidden_clique": {
+        "colorings": 20,
+        "elapsed_seconds": 0.0001259580021724105,
+        "exists": true,
+        "recursive_nodes": 21,
+        "target": 3,
+        "witness": [
+          99,
+          98,
+          97
+        ]
+      },
+      "forbidden_independent_set": {
+        "colorings": 1990791,
+        "elapsed_seconds": 8.93043712497456,
+        "exists": false,
+        "recursive_nodes": 1990791,
+        "target": 18,
+        "witness": null
+      }
+    },
+    "sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+    "valid_ramsey_certificate": false,
+    "vertices": 100
+  },
+  "status": "UNKNOWN",
+  "target": {
+    "n": 100,
+    "r": 3,
+    "s": 18
+  },
+  "tools": {
+    "cadical": "/private/tmp/ramsey-cadical.cIJ6Ge/build/cadical",
+    "cadical_sha256": "62d48c0890fae760c859e65676dc0598d59c36ac8170cbc5f115208d0a549429",
+    "cadical_source_commit": "c60730422e758ef1cebe7aeddf2dda31c996bf04",
+    "discovery_solver": "maplechrono",
+    "drat_trim": "/private/tmp/ramsey-drat-trim-2e3b2dc/drat-trim",
+    "drat_trim_sha256": "31d9e8e04bc76a65f0a18ea212ac44af4cf7bc398629495cec093ced772c50f4",
+    "drat_trim_source_commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985"
+  },
+  "universal_cut_bank": {
+    "masks": 251771,
+    "ordered_masks_sha256": "f10690b826b86eb03567a2ffaffb553801fae32af20cfe4337118bddf4e41afa",
+    "path": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/r3_18_budget6_branch_0_universal_union.cuts.json",
+    "sha256": "91b5709248ff641a315f5a0389b4f3fde3d38514f3b1a8b31b6cad31224f250b",
+    "universality_reason": "Each mask is an 18-vertex set; its complete positive edge clause is necessary for every graph with independence number below 18."
+  }
+}

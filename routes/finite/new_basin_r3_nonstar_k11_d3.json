@@ -1,0 +1,198 @@
+{
+  "arbitrary_old_and_new_nonedge_additions_allowed": true,
+  "deletion_budget": 3,
+  "exact_triangle_edge_deletion_lower_bound": 2,
+  "formula": {
+    "edge_variables": 1830,
+    "initial_clause_count": 38507,
+    "original_edges": 363,
+    "triangle_clauses": 35990
+  },
+  "input": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/r3_13_n61_nonstar_k11.txt",
+  "input_all_triangles_share_one_edge": false,
+  "input_sha256": "2e97d94560a4c3f30a70729ec5985e9a22f431a9d2e78b338994291b6d4c441b",
+  "input_triangle_count": 11,
+  "input_triangles": [
+    [
+      19,
+      28,
+      60
+    ],
+    [
+      22,
+      28,
+      60
+    ],
+    [
+      24,
+      28,
+      60
+    ],
+    [
+      27,
+      28,
+      60
+    ],
+    [
+      28,
+      29,
+      60
+    ],
+    [
+      28,
+      32,
+      60
+    ],
+    [
+      28,
+      34,
+      60
+    ],
+    [
+      28,
+      37,
+      60
+    ],
+    [
+      28,
+      48,
+      60
+    ],
+    [
+      28,
+      58,
+      60
+    ],
+    [
+      37,
+      46,
+      60
+    ]
+  ],
+  "lazy_witness_stream_sha256": "21e8e06a0c4e5df46017e5b26c166b7dc59d50823ac33de7c10d03a018416495",
+  "limits": {
+    "blue_batch_size": 256,
+    "conflicts_per_call": 5000,
+    "global_conflicts": 750000,
+    "global_wall_seconds": 150.0,
+    "per_call_wall_seconds": 8.0
+  },
+  "run": {
+    "call_tail": [
+      {
+        "call": 1,
+        "elapsed_seconds": 0.0005021249526180327,
+        "outcome": "SAT",
+        "stats_delta": {
+          "conflicts": 9,
+          "decisions": 39,
+          "propagations": 8195,
+          "restarts": 1
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 2,
+        "elapsed_seconds": 0.002912792027927935,
+        "outcome": "SAT",
+        "stats_delta": {
+          "conflicts": 64,
+          "decisions": 467,
+          "propagations": 39446,
+          "restarts": 1
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 3,
+        "elapsed_seconds": 0.007381249975878745,
+        "outcome": "SAT",
+        "stats_delta": {
+          "conflicts": 191,
+          "decisions": 1005,
+          "propagations": 149446,
+          "restarts": 2
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 4,
+        "elapsed_seconds": 0.00019245798466727138,
+        "outcome": "SAT",
+        "stats_delta": {
+          "conflicts": 2,
+          "decisions": 19,
+          "propagations": 1903,
+          "restarts": 1
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 5,
+        "elapsed_seconds": 0.00014470901805907488,
+        "outcome": "SAT",
+        "stats_delta": {
+          "conflicts": 0,
+          "decisions": 16,
+          "propagations": 1617,
+          "restarts": 1
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 6,
+        "elapsed_seconds": 0.00013108301209285855,
+        "outcome": "SAT",
+        "stats_delta": {
+          "conflicts": 0,
+          "decisions": 14,
+          "propagations": 1617,
+          "restarts": 1
+        },
+        "timer_interrupted": false
+      },
+      {
+        "call": 7,
+        "elapsed_seconds": 9.708397556096315e-05,
+        "outcome": "UNSAT",
+        "stats_delta": {
+          "conflicts": 7,
+          "decisions": 6,
+          "propagations": 1857,
+          "restarts": 1
+        },
+        "timer_interrupted": false
+      }
+    ],
+    "cegar_models": 6,
+    "elapsed_seconds": 0.04624095797771588,
+    "lazy_clauses_added": 1536,
+    "limited_solver_calls": 7,
+    "solver_stats": {
+      "conflicts": 273,
+      "decisions": 1566,
+      "propagations": 204081,
+      "restarts": 8
+    },
+    "timer_interrupts": 0
+  },
+  "schema": "ramsey-new-basin-r3-edit-v1",
+  "solver": "minisat22",
+  "status": "UNSAT",
+  "target": {
+    "n": 61,
+    "r": 3,
+    "s": 13
+  },
+  "total_elapsed_seconds": 0.05648887500865385,
+  "triangle_edge_hitting_witness": [
+    [
+      28,
+      60
+    ],
+    [
+      37,
+      46
+    ]
+  ]
+}

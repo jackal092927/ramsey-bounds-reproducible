@@ -1,0 +1,119 @@
+\section{CNF encoding and its soundness}\label{sec:encoding}
+
+\subsection{Primary variables and structural clauses}
+
+For every unordered pair \(e=\{u,v\}\in\binom V2\), a primary variable
+\(x_e\) records whether \(e\in E(F)\).  The \(4950\) primary variables are
+numbered in lexicographic pair order.  Crucially, variables exist for all
+original nonedges; those variables are absent from the deletion counter and
+are not fixed false.
+
+Triangle-freeness is encoded without separation: for every \(a<b<c\), the
+formula contains
+\[
+  \neg x_{ab}\lor\neg x_{ac}\lor\neg x_{bc}.
+\]
+There are exactly \(\binom{100}{3}=161700\) such clauses.
+
+For every installed set \(S\in\binom V{18}\), the formula contains the
+positive hitting clause
+\[
+  C_S=\bigvee_{e\in\binom S2}x_e.                 \tag{4.1}
+\]
+It has \(\binom{18}{2}=153\) distinct primary literals.  Every graph with
+independence number below \(18\) satisfies \(C_S\).  We install only a finite
+selected bank \(\cB_i\), not all \(\binom{100}{18}\) clauses.  Consequently,
+\(\Phi_i\) is a relaxation of the exact Ramsey branch.  This is the useful
+direction: unsatisfiability of the relaxation implies unsatisfiability of the
+exact branch.
+
+\subsection{Exact deletion counter}
+
+In branch \(i\), set
+\[
+  L_i=\{\neg x_e:e\in E(H)\setminus\{f_i\}\}.
+\]
+The list has \(826\) literals.  A PySAT sequential-counter equality encoding
+implements
+\[
+  \sum_{\ell\in L_i}[\ell\text{ is true}]=5.      \tag{4.2}
+\]
+We use the standard sequential counter of Sinz~\cite{Sinz2005}.  The concrete
+generator is exposed by PySAT~\cite{Ignatiev2018}.  It introduces
+\(8210\) auxiliary variables and \(16420\) clauses, ending at variable
+\(13160\).  Complete primary assignments with residual deletion counts
+\(0,1,4,5,6,7,825,826\) were offered to an independent SAT backend; the
+auxiliary variables were extendible exactly at count five.
+
+Thus
+\[
+ \Phi_i=\Bigl(\bigwedge_{a<b<c}
+   (\neg x_{ab}\lor\neg x_{ac}\lor\neg x_{bc})\Bigr)
+ \land \operatorname{Card}_{=5}(L_i)
+ \land \neg x_{f_i}
+ \land \bigwedge_{S\in\cB_i} C_S.                \tag{4.3}
+\]
+
+\begin{table}[t]
+\centering
+\caption{Exact-six branch dimensions.  All branches have \(4950\) primary
+variables, \(8210\) counter auxiliaries, \(161700\) triangle clauses, \(16420\)
+counter clauses, and one fixed unit.}\label{tab:budget6-branches}
+\begin{tabular}{@{}crrrr@{}}
+\toprule
+branch & fixed absent edge & hitting clauses & variables & total clauses\\
+\midrule
+0 & \((97,98)\) & 251771 & 13160 & 429892\\
+1 & \((97,99)\) &  63943 & 13160 & 242064\\
+2 & \((98,99)\) &   5422 & 13160 & 183543\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{proposition}[CNF soundness]\label{prop:cnf-sound}
+For each \(i\), every graph \(F\in\cF\) with \(d_H(F)=6\) and
+\(f_i\notin E(F)\) induces a primary assignment that extends to a model of
+\(\Phi_i\).
+\end{proposition}
+
+\begin{proof}
+The triangle block holds by triangle-freeness.  The fixed unit holds by the
+branch premise.  Since \(f_i\) is one of exactly six missing input edges,
+exactly five literals in \(L_i\) are true; completeness of the equality
+encoding supplies an auxiliary assignment.  Each \(S\in\cB_i\) contains a
+present pair because \(\alpha(F)<18\), so every \(C_S\) holds.  No condition
+was imposed on an original nonedge except through triangle and hitting
+clauses, hence arbitrary additions remain represented.
+\end{proof}
+
+\subsection{Sound reuse of the branch-0 cut union}
+
+Branch \(0\) uses \(251771\) distinct \(18\)-sets deduplicated from seven
+checked sources.  The ordered mask digest is
+\[
+\sha{f10690b826b86eb03567a2ffaffb553801fae32af20cfe4337118bddf4e41afa}.
+\]
+Only vertex-set masks were transferred.  No learned clause, branch
+assumption, or solver conclusion was reused.  Since every clause \(C_S\) in
+(4.1) follows solely from \(\alpha(F)<18\), it is valid in every branch.
+The source counts and cumulative deduplication totals appear in
+\cref{tab:union-sources}.
+
+\begin{table}[t]
+\centering
+\caption{Audited construction of the branch-0 universal cut union.}
+\label{tab:union-sources}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+source & source masks & new masks & cumulative\\
+\midrule
+branch-0 discovery checkpoint & 183133 & 183133 & 183133\\
+branch-0 earlier bank          & 141149 &   4096 & 187229\\
+branch-1 bank                  &  63943 &  52515 & 239744\\
+branch-2 bank                  &   5422 &   3931 & 243675\\
+budget-five branch 0           &    287 &    286 & 243961\\
+budget-five branch 1           &  15872 &   4262 & 248223\\
+budget-five branch 2           &   8704 &   3548 & 251771\\
+\bottomrule
+\end{tabular}
+\end{table}

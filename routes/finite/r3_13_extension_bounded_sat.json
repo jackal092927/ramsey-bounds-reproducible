@@ -1,0 +1,53 @@
+{
+  "attempts": [
+    {
+      "blue_clauses_discovered": 6656,
+      "bound": 0,
+      "cegar_iterations": 14,
+      "elapsed_seconds": 0.0607534580049105,
+      "status": "UNSAT"
+    },
+    {
+      "blue_clauses_discovered": 8704,
+      "bound": 1,
+      "cegar_iterations": 18,
+      "elapsed_seconds": 0.1382099170004949,
+      "status": "UNSAT"
+    },
+    {
+      "blue_clauses_discovered": 8704,
+      "bound": 2,
+      "cegar_iterations": 18,
+      "elapsed_seconds": 0.3773614579695277,
+      "status": "UNSAT"
+    },
+    {
+      "blue_clauses_discovered": 12288,
+      "bound": 3,
+      "cegar_iterations": 25,
+      "elapsed_seconds": 1.354404958023224,
+      "status": "UNSAT"
+    },
+    {
+      "blue_clauses_discovered": 12800,
+      "bound": 4,
+      "cegar_iterations": 26,
+      "elapsed_seconds": 5.166331791959237,
+      "status": "UNSAT"
+    },
+    {
+      "blue_clauses_discovered": 15872,
+      "bound": 5,
+      "cegar_iterations": 32,
+      "elapsed_seconds": 16.298728791996837,
+      "status": "UNSAT"
+    }
+  ],
+  "base_sha256": "d619f0bfed32af5e2fbc8c724d9c65dbf388a19d5647d20e7835b501bc03227a",
+  "minimum_frozen_base_conflicts": null,
+  "minimum_proved": false,
+  "r": 3,
+  "s": 13,
+  "solver": "cadical195",
+  "vertices_in_base": 60
+}

@@ -1,0 +1,16 @@
+{
+  "addition_variables": 1470,
+  "cegar_iterations": 3,
+  "deleted_edges": [
+    [
+      56,
+      60
+    ]
+  ],
+  "elapsed_seconds": 0.031057083979249,
+  "independent_hitting_clauses": 2,
+  "input_sha256": "a144986d21117eff66eda4c37a30acfe25ab274a5587a2542740cf4a82b2f484",
+  "solver": "cadical195",
+  "status": "UNSAT",
+  "triangle_free_clauses": 35990
+}

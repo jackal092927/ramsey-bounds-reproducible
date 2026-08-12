@@ -1,0 +1,630 @@
+{
+  "arbitrary_original_nonedge_additions_allowed": true,
+  "branches": [
+    {
+      "bounded_cadical195_cross_replay": {
+        "elapsed_seconds": 12.773755333968438,
+        "exitcode": 0,
+        "solver_stats": {
+          "conflicts": 106492,
+          "decisions": 285940,
+          "propagations": 45423100,
+          "restarts": 2609
+        },
+        "status": "UNSAT",
+        "wall_limit_seconds": 180.0
+      },
+      "branch": 0,
+      "dimacs_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/budget9_nonstar_branch_0.cnf.gz",
+      "dimacs_gzip_sha256": "1ff3f8e90860a10ee7e3bfab072ec5af74ac268e0e6e8efe9b21cb1e3aedf081",
+      "dimacs_lines": 58986,
+      "dimacs_uncompressed_bytes": 6758558,
+      "dimacs_uncompressed_sha256": "af1f8fede0d41d8d99335054f747bc885a9519ae46b06c9745a8d99661442d70",
+      "drat_check": {
+        "checker": "/private/tmp/ramsey-drat-trim-2e3b2dc/drat-trim",
+        "checker_sha256": "31d9e8e04bc76a65f0a18ea212ac44af4cf7bc398629495cec093ced772c50f4",
+        "elapsed_seconds": 4.7751270000007935,
+        "exitcode": 0,
+        "status": "VERIFIED",
+        "stderr": "",
+        "stdout": "\nc parsing input formula with 4308 variables and 58985 clauses\n\nc finished parsing\n\nc detected empty clause; start verification via backward checking\n\nc 8321 of 58985 clauses in core                            \n\nc 36052 of 64425 lemmas in core using 12701516 resolution steps\n\nc 0 RAT lemmas in core; 137635 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 4.193 seconds\n",
+        "wall_limit_seconds": 300.0
+      },
+      "drat_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/budget9_nonstar_branch_0.drat.gz",
+      "drat_gzip_sha256": "2c47caa4cd9e508482711a7bb4f51873cd5dc2ec7c842795af87173b0f03a052",
+      "drat_lines": 115583,
+      "drat_uncompressed_bytes": 31890492,
+      "drat_uncompressed_sha256": "bd9e2c67319e92f96cd55e4077c731b3a2e619b352f3d46d54c8d8c69f79f666",
+      "formula": {
+        "auxiliary_variables": 2478,
+        "edge_variables": 1830,
+        "fixed_deleted_edges": [
+          [
+            28,
+            60
+          ],
+          [
+            37,
+            46
+          ]
+        ],
+        "fixed_unit_clauses": 2,
+        "initial_clause_count": 58985,
+        "maximum_variable": 4308,
+        "preload_enumeration_seconds": 0.3649470829986967,
+        "preloaded_I13_containing_both_hub_vertices": 15985,
+        "preloaded_fixed_base_I13_clauses": 17690,
+        "preloaded_fixed_base_I13_sha256": "0741446d5bab4c2d3da749aa6e65da6c47249be2b208b368bf09f4632533ed2a",
+        "residual_cardinality_clauses": 5303,
+        "residual_deletion_budget": 7,
+        "triangle_clauses": 35990
+      },
+      "lazy_I13_clauses_added": 0,
+      "lazy_I13_masks_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "run": {
+        "call_tail": [
+          {
+            "call": 1,
+            "elapsed_seconds": 2.6521403749939054,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20049,
+              "decisions": 55451,
+              "propagations": 7159671,
+              "restarts": 57
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 2,
+            "elapsed_seconds": 3.4067239580326714,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20111,
+              "decisions": 42450,
+              "propagations": 7242172,
+              "restarts": 57
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 3,
+            "elapsed_seconds": 2.0505228750407696,
+            "outcome": "UNSAT",
+            "stats_delta": {
+              "conflicts": 14408,
+              "decisions": 22554,
+              "propagations": 5177966,
+              "restarts": 24
+            },
+            "timer_interrupted": false
+          }
+        ],
+        "cegar_models": 0,
+        "elapsed_seconds": 8.10992920800345,
+        "lazy_clauses_added": 0,
+        "limited_solver_calls": 3,
+        "solver_stats": {
+          "conflicts": 54568,
+          "decisions": 120455,
+          "propagations": 19579809,
+          "restarts": 138
+        },
+        "timer_interrupts": 0
+      },
+      "second_deleted_edge": [
+        37,
+        46
+      ],
+      "status": "UNSAT"
+    },
+    {
+      "bounded_cadical195_cross_replay": {
+        "elapsed_seconds": 6.592863375029992,
+        "exitcode": 0,
+        "solver_stats": {
+          "conflicts": 63642,
+          "decisions": 142979,
+          "propagations": 26243115,
+          "restarts": 691
+        },
+        "status": "UNSAT",
+        "wall_limit_seconds": 180.0
+      },
+      "branch": 1,
+      "dimacs_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/budget9_nonstar_branch_1.cnf.gz",
+      "dimacs_gzip_sha256": "d67d588ff2abfbfc0c8c69e7a297c09e1871e09f94e2409813cd6f687166cf59",
+      "dimacs_lines": 59413,
+      "dimacs_uncompressed_bytes": 6905824,
+      "dimacs_uncompressed_sha256": "fcace1bce789b6bca23215c8e333dca8dbcd754f7998f9183525a530e7bfb0f3",
+      "drat_check": {
+        "checker": "/private/tmp/ramsey-drat-trim-2e3b2dc/drat-trim",
+        "checker_sha256": "31d9e8e04bc76a65f0a18ea212ac44af4cf7bc398629495cec093ced772c50f4",
+        "elapsed_seconds": 2.7201606250018813,
+        "exitcode": 0,
+        "status": "VERIFIED",
+        "stderr": "",
+        "stdout": "\nc parsing input formula with 4308 variables and 59412 clauses\n\nc finished parsing\n\nc detected empty clause; start verification via backward checking\n\nc 7513 of 59412 clauses in core                            \n\nc 23162 of 43440 lemmas in core using 7479919 resolution steps\n\nc 0 RAT lemmas in core; 98867 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 2.670 seconds\n",
+        "wall_limit_seconds": 300.0
+      },
+      "drat_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/budget9_nonstar_branch_1.drat.gz",
+      "drat_gzip_sha256": "5c884ee6087c207e53dc1f1f25f40f735ad90d7536378d9f45127855b1485f9c",
+      "drat_lines": 71609,
+      "drat_uncompressed_bytes": 22542427,
+      "drat_uncompressed_sha256": "a2e5f4fc7ff7420ff8a5e60d05a3d1bc9d2082d377dd3d9d28a69dd5d4ace4fa",
+      "formula": {
+        "auxiliary_variables": 2478,
+        "edge_variables": 1830,
+        "fixed_deleted_edges": [
+          [
+            28,
+            60
+          ],
+          [
+            37,
+            60
+          ]
+        ],
+        "fixed_unit_clauses": 2,
+        "initial_clause_count": 59412,
+        "maximum_variable": 4308,
+        "preload_enumeration_seconds": 0.3606001659645699,
+        "preloaded_I13_containing_both_hub_vertices": 15985,
+        "preloaded_fixed_base_I13_clauses": 18117,
+        "preloaded_fixed_base_I13_sha256": "3a68a7a7812742962836e90a703d3887e348d86b5a5f51722ab8f2aeebe75e3c",
+        "residual_cardinality_clauses": 5303,
+        "residual_deletion_budget": 7,
+        "triangle_clauses": 35990
+      },
+      "lazy_I13_clauses_added": 0,
+      "lazy_I13_masks_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "run": {
+        "call_tail": [
+          {
+            "call": 1,
+            "elapsed_seconds": 2.9626714999903925,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20430,
+              "decisions": 56209,
+              "propagations": 7143573,
+              "restarts": 59
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 2,
+            "elapsed_seconds": 2.837234083970543,
+            "outcome": "UNSAT",
+            "stats_delta": {
+              "conflicts": 17249,
+              "decisions": 31480,
+              "propagations": 6264197,
+              "restarts": 11
+            },
+            "timer_interrupted": false
+          }
+        ],
+        "cegar_models": 0,
+        "elapsed_seconds": 5.81589129200438,
+        "lazy_clauses_added": 0,
+        "limited_solver_calls": 2,
+        "solver_stats": {
+          "conflicts": 37679,
+          "decisions": 87689,
+          "propagations": 13407770,
+          "restarts": 70
+        },
+        "timer_interrupts": 0
+      },
+      "second_deleted_edge": [
+        37,
+        60
+      ],
+      "status": "UNSAT"
+    },
+    {
+      "bounded_cadical195_cross_replay": {
+        "elapsed_seconds": 13.679753207950853,
+        "exitcode": 0,
+        "solver_stats": {
+          "conflicts": 106843,
+          "decisions": 233792,
+          "propagations": 39094753,
+          "restarts": 1579
+        },
+        "status": "UNSAT",
+        "wall_limit_seconds": 180.0
+      },
+      "branch": 2,
+      "dimacs_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/budget9_nonstar_branch_2.cnf.gz",
+      "dimacs_gzip_sha256": "ce3bbeb80395d370efcc7c20cf3f70e8e0f49b9f3f863cc9e959e5ce62664193",
+      "dimacs_lines": 59209,
+      "dimacs_uncompressed_bytes": 6792950,
+      "dimacs_uncompressed_sha256": "401cc9a922f81362f3ae4a72797f7f6b95b4e9e4824ddca63d9410b09c946efc",
+      "drat_check": {
+        "checker": "/private/tmp/ramsey-drat-trim-2e3b2dc/drat-trim",
+        "checker_sha256": "31d9e8e04bc76a65f0a18ea212ac44af4cf7bc398629495cec093ced772c50f4",
+        "elapsed_seconds": 3.666935375018511,
+        "exitcode": 0,
+        "status": "VERIFIED",
+        "stderr": "",
+        "stdout": "\nc parsing input formula with 4308 variables and 59208 clauses\n\nc finished parsing\n\nc detected empty clause; start verification via backward checking\n\nc 7863 of 59208 clauses in core                            \n\nc 31532 of 63079 lemmas in core using 10415683 resolution steps\n\nc 0 RAT lemmas in core; 133897 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 3.582 seconds\n",
+        "wall_limit_seconds": 300.0
+      },
+      "drat_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/budget9_nonstar_branch_2.drat.gz",
+      "drat_gzip_sha256": "ff48fccd97bdfbb8ae2a73492984e2ae8561d08b8746232ed12f3f92916a1760",
+      "drat_lines": 107569,
+      "drat_uncompressed_bytes": 31895682,
+      "drat_uncompressed_sha256": "b1918836525a0e5772fbaa95eb1f643812ca5d2776173d30d73a2a006c6986f8",
+      "formula": {
+        "auxiliary_variables": 2478,
+        "edge_variables": 1830,
+        "fixed_deleted_edges": [
+          [
+            28,
+            60
+          ],
+          [
+            46,
+            60
+          ]
+        ],
+        "fixed_unit_clauses": 2,
+        "initial_clause_count": 59208,
+        "maximum_variable": 4308,
+        "preload_enumeration_seconds": 0.36727912502828985,
+        "preloaded_I13_containing_both_hub_vertices": 17912,
+        "preloaded_fixed_base_I13_clauses": 17913,
+        "preloaded_fixed_base_I13_sha256": "8df0efefc8fd013a113c2c62d6da22abe1a3a4e64d3eb7372b882be77d552b82",
+        "residual_cardinality_clauses": 5303,
+        "residual_deletion_budget": 7,
+        "triangle_clauses": 35990
+      },
+      "lazy_I13_clauses_added": 0,
+      "lazy_I13_masks_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "run": {
+        "call_tail": [
+          {
+            "call": 1,
+            "elapsed_seconds": 3.487764416029677,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20097,
+              "decisions": 58472,
+              "propagations": 7115876,
+              "restarts": 65
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 2,
+            "elapsed_seconds": 3.255185874993913,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20354,
+              "decisions": 45828,
+              "propagations": 7369196,
+              "restarts": 47
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 3,
+            "elapsed_seconds": 1.9345576670020819,
+            "outcome": "UNSAT",
+            "stats_delta": {
+              "conflicts": 13644,
+              "decisions": 22422,
+              "propagations": 5093136,
+              "restarts": 9
+            },
+            "timer_interrupted": false
+          }
+        ],
+        "cegar_models": 0,
+        "elapsed_seconds": 8.678128167055547,
+        "lazy_clauses_added": 0,
+        "limited_solver_calls": 3,
+        "solver_stats": {
+          "conflicts": 54095,
+          "decisions": 126722,
+          "propagations": 19578208,
+          "restarts": 121
+        },
+        "timer_interrupts": 0
+      },
+      "second_deleted_edge": [
+        46,
+        60
+      ],
+      "status": "UNSAT"
+    }
+  ],
+  "claim_scope": "Fixed input graph; arbitrary additions are allowed, but at most nine edges present in the input may be deleted.",
+  "conclusion": "Every at-most-nine-deletion completion lies in one of the three structural branches, and every branch relaxation has a checked UNSAT proof.  The fixed-seed family therefore needs at least ten input-edge deletions.",
+  "deletion_budget": 9,
+  "elapsed_seconds": 81.39028633298585,
+  "environment": {
+    "drat_trim_source_commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+    "pysat_solvers": [
+      "glucose42",
+      "cadical195"
+    ],
+    "python": "3.11.15 (main, Mar  3 2026, 00:52:57) [Clang 17.0.0 (clang-1700.6.3.2)]"
+  },
+  "global_ramsey_claim": null,
+  "input": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/r3_13_n61_nonstar_k11.txt",
+  "input_sha256": "2e97d94560a4c3f30a70729ec5985e9a22f431a9d2e78b338994291b6d4c441b",
+  "limits": {
+    "conflicts_per_limited_call": 20000,
+    "cross_solver_wall_seconds_per_branch": 180.0,
+    "drat_check_wall_seconds_per_branch": 300.0,
+    "lazy_blue_batch_size": 1024,
+    "max_conflicts_per_branch": 500000,
+    "max_wall_seconds_per_branch": 180.0,
+    "per_call_wall_seconds": 10.0
+  },
+  "original_edges": 363,
+  "schema": "ramsey-r3-13-n61-nonstar-budget9-branch-v1",
+  "solver_dependency": "The structural/formula encoding and the independent DRAT checker implementation remain in the trust boundary.",
+  "status": "UNSAT_PROOF_VERIFIED",
+  "structural_decomposition": {
+    "exhaustive_second_deletion_branches": [
+      [
+        37,
+        46
+      ],
+      [
+        37,
+        60
+      ],
+      [
+        46,
+        60
+      ]
+    ],
+    "hub": [
+      28,
+      60
+    ],
+    "hub_forced_deleted": true,
+    "hub_reason": "If the hub is retained, each of its ten triangles needs a deletion from its own disjoint two-edge spoke pair. Ten deletions exceed budget 9.",
+    "hub_third_vertices": [
+      19,
+      22,
+      24,
+      27,
+      29,
+      32,
+      34,
+      37,
+      48,
+      58
+    ],
+    "hub_triangle_count": 10,
+    "input_triangle_count": 11,
+    "input_triangles": [
+      [
+        19,
+        28,
+        60
+      ],
+      [
+        22,
+        28,
+        60
+      ],
+      [
+        24,
+        28,
+        60
+      ],
+      [
+        27,
+        28,
+        60
+      ],
+      [
+        28,
+        29,
+        60
+      ],
+      [
+        28,
+        32,
+        60
+      ],
+      [
+        28,
+        34,
+        60
+      ],
+      [
+        28,
+        37,
+        60
+      ],
+      [
+        28,
+        48,
+        60
+      ],
+      [
+        28,
+        58,
+        60
+      ],
+      [
+        37,
+        46,
+        60
+      ]
+    ],
+    "only_triangle_after_hub_deletion": [
+      37,
+      46,
+      60
+    ],
+    "pairwise_disjoint_spoke_pairs": [
+      [
+        [
+          19,
+          28
+        ],
+        [
+          19,
+          60
+        ]
+      ],
+      [
+        [
+          22,
+          28
+        ],
+        [
+          22,
+          60
+        ]
+      ],
+      [
+        [
+          24,
+          28
+        ],
+        [
+          24,
+          60
+        ]
+      ],
+      [
+        [
+          27,
+          28
+        ],
+        [
+          27,
+          60
+        ]
+      ],
+      [
+        [
+          28,
+          29
+        ],
+        [
+          29,
+          60
+        ]
+      ],
+      [
+        [
+          28,
+          32
+        ],
+        [
+          32,
+          60
+        ]
+      ],
+      [
+        [
+          28,
+          34
+        ],
+        [
+          34,
+          60
+        ]
+      ],
+      [
+        [
+          28,
+          37
+        ],
+        [
+          37,
+          60
+        ]
+      ],
+      [
+        [
+          28,
+          48
+        ],
+        [
+          48,
+          60
+        ]
+      ],
+      [
+        [
+          28,
+          58
+        ],
+        [
+          58,
+          60
+        ]
+      ]
+    ],
+    "second_deletion_reason": "Deleting edges cannot create triangle-freeness while retaining all three edges of the remaining input triangle; additions cannot destroy it. At least one displayed edge is therefore deleted.",
+    "triangles_through_hub": [
+      [
+        19,
+        28,
+        60
+      ],
+      [
+        22,
+        28,
+        60
+      ],
+      [
+        24,
+        28,
+        60
+      ],
+      [
+        27,
+        28,
+        60
+      ],
+      [
+        28,
+        29,
+        60
+      ],
+      [
+        28,
+        32,
+        60
+      ],
+      [
+        28,
+        34,
+        60
+      ],
+      [
+        28,
+        37,
+        60
+      ],
+      [
+        28,
+        48,
+        60
+      ],
+      [
+        28,
+        58,
+        60
+      ]
+    ]
+  },
+  "target": {
+    "n": 61,
+    "r": 3,
+    "s": 13
+  }
+}

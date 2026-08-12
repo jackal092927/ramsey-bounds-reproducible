@@ -1,0 +1,1049 @@
+{
+  "arbitrary_original_nonedge_additions_allowed": true,
+  "branches": [
+    {
+      "bounded_cadical195_cross_replay": {
+        "elapsed_seconds": 52.750903208041564,
+        "exitcode": 0,
+        "solver_stats": {
+          "conflicts": 428863,
+          "decisions": 1052615,
+          "propagations": 154493123,
+          "restarts": 11730
+        },
+        "status": "UNSAT",
+        "wall_limit_seconds": 300.0
+      },
+      "branch": 0,
+      "case": "hub_deleted",
+      "dimacs_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/budget10_search_branch_0.cnf.gz",
+      "dimacs_gzip_sha256": "6c5d66602bf62e60fd084efc05c59908c33d274571bbf03b93b6b0b63733d6a7",
+      "dimacs_lines": 59676,
+      "dimacs_uncompressed_bytes": 6769088,
+      "dimacs_uncompressed_sha256": "eee128f559d7609781d7fdfa71eb85521d8ca60a12ef2f607c8253aa9955733c",
+      "drat_check": {
+        "checker": "/private/tmp/ramsey-drat-trim-2e3b2dc/drat-trim",
+        "checker_sha256": "31d9e8e04bc76a65f0a18ea212ac44af4cf7bc398629495cec093ced772c50f4",
+        "elapsed_seconds": 20.259166624979116,
+        "exitcode": 0,
+        "status": "VERIFIED",
+        "stderr": "",
+        "stdout": "\nc parsing input formula with 4654 variables and 59675 clauses\n\nc finished parsing\n\nc detected empty clause; start verification via backward checking\n\nc 9663 of 59675 clauses in core                            \n\nc 146804 of 234654 lemmas in core using 53816381 resolution steps\n\nc 0 RAT lemmas in core; 428057 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 20.057 seconds\n",
+        "wall_limit_seconds": 600.0
+      },
+      "drat_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/budget10_search_branch_0.drat.gz",
+      "drat_gzip_sha256": "affcb39fb5c0eb272fbdc6bd26aff5dd10b61f34c5c4e84b6c34c95ef16c1447",
+      "drat_lines": 410743,
+      "drat_uncompressed_bytes": 95320070,
+      "drat_uncompressed_sha256": "a4c741b0f3e1dcc24ddf6aeb664e3060a5c23074af1443af6a459329ecdc1684",
+      "fixed_deleted_edges": [
+        [
+          28,
+          60
+        ],
+        [
+          37,
+          46
+        ]
+      ],
+      "fixed_retained_edges": [],
+      "formula": {
+        "auxiliary_variables": 2824,
+        "edge_variables": 1830,
+        "fixed_deleted_edges": [
+          [
+            28,
+            60
+          ],
+          [
+            37,
+            46
+          ]
+        ],
+        "fixed_positive_unit_clauses": 0,
+        "fixed_retained_edges": [],
+        "fixed_unit_clauses": 2,
+        "initial_clause_count": 59675,
+        "maximum_variable": 4654,
+        "preload_enumeration_seconds": 0.37420758401276544,
+        "preloaded_I13_containing_both_hub_vertices": 15985,
+        "preloaded_fixed_base_I13_clauses": 17690,
+        "preloaded_fixed_base_I13_sha256": "0741446d5bab4c2d3da749aa6e65da6c47249be2b208b368bf09f4632533ed2a",
+        "residual_cardinality_clauses": 5993,
+        "residual_deletion_budget": 8,
+        "triangle_clauses": 35990
+      },
+      "lazy_I13_clauses_added": 0,
+      "lazy_I13_masks_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "run": {
+        "call_tail": [
+          {
+            "call": 1,
+            "elapsed_seconds": 4.016457125020679,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 22769,
+              "decisions": 64203,
+              "propagations": 8645939,
+              "restarts": 44
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 2,
+            "elapsed_seconds": 3.213776750024408,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20030,
+              "decisions": 48214,
+              "propagations": 7415940,
+              "restarts": 68
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 3,
+            "elapsed_seconds": 3.6110888330149464,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20033,
+              "decisions": 41852,
+              "propagations": 7480228,
+              "restarts": 51
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 4,
+            "elapsed_seconds": 3.5453602919587865,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 21414,
+              "decisions": 41100,
+              "propagations": 8886321,
+              "restarts": 46
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 5,
+            "elapsed_seconds": 3.3697150420048274,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20187,
+              "decisions": 35671,
+              "propagations": 7868945,
+              "restarts": 39
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 6,
+            "elapsed_seconds": 3.8419202500372194,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20074,
+              "decisions": 37697,
+              "propagations": 8021019,
+              "restarts": 64
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 7,
+            "elapsed_seconds": 3.219272041984368,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20014,
+              "decisions": 34734,
+              "propagations": 7846221,
+              "restarts": 58
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 8,
+            "elapsed_seconds": 3.08720904099755,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20010,
+              "decisions": 35253,
+              "propagations": 7460073,
+              "restarts": 71
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 9,
+            "elapsed_seconds": 3.3457324999617413,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 22680,
+              "decisions": 36498,
+              "propagations": 8613747,
+              "restarts": 64
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 10,
+            "elapsed_seconds": 3.127009082993027,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20844,
+              "decisions": 35146,
+              "propagations": 7718279,
+              "restarts": 87
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 11,
+            "elapsed_seconds": 0.5188587079755962,
+            "outcome": "UNSAT",
+            "stats_delta": {
+              "conflicts": 2501,
+              "decisions": 3690,
+              "propagations": 1031520,
+              "restarts": 10
+            },
+            "timer_interrupted": false
+          }
+        ],
+        "cegar_models": 0,
+        "elapsed_seconds": 34.89974191697547,
+        "lazy_clauses_added": 0,
+        "limited_solver_calls": 11,
+        "solver_stats": {
+          "conflicts": 210556,
+          "decisions": 414058,
+          "propagations": 80988232,
+          "restarts": 602
+        },
+        "timer_interrupts": 0
+      },
+      "status": "UNSAT"
+    },
+    {
+      "bounded_cadical195_cross_replay": {
+        "elapsed_seconds": 36.91431108297547,
+        "exitcode": 0,
+        "solver_stats": {
+          "conflicts": 291665,
+          "decisions": 636506,
+          "propagations": 98320710,
+          "restarts": 4706
+        },
+        "status": "UNSAT",
+        "wall_limit_seconds": 300.0
+      },
+      "branch": 1,
+      "case": "hub_deleted",
+      "dimacs_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/budget10_search_branch_1.cnf.gz",
+      "dimacs_gzip_sha256": "1a6f6955a3a04001d8bfbe56e69ac19ddf6b8dd5cf7ca2bc119469379820dddf",
+      "dimacs_lines": 60103,
+      "dimacs_uncompressed_bytes": 6916354,
+      "dimacs_uncompressed_sha256": "0a47b503e242cb7eda077b06113eb78fd02acbb807835461ae012b94b40aabd5",
+      "drat_check": {
+        "checker": "/private/tmp/ramsey-drat-trim-2e3b2dc/drat-trim",
+        "checker_sha256": "31d9e8e04bc76a65f0a18ea212ac44af4cf7bc398629495cec093ced772c50f4",
+        "elapsed_seconds": 16.459368915995583,
+        "exitcode": 0,
+        "status": "VERIFIED",
+        "stderr": "",
+        "stdout": "\nc parsing input formula with 4654 variables and 60102 clauses\n\nc finished parsing\n\nc detected empty clause; start verification via backward checking\n\nc 9026 of 60102 clauses in core                            \n\nc 122438 of 181309 lemmas in core using 43359826 resolution steps\n\nc 0 RAT lemmas in core; 343635 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 16.324 seconds\n",
+        "wall_limit_seconds": 600.0
+      },
+      "drat_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/budget10_search_branch_1.drat.gz",
+      "drat_gzip_sha256": "c0eeb889f47115339be9c6f631a4f86bf264408c33a1dc33f646bec7cd425868",
+      "drat_lines": 332352,
+      "drat_uncompressed_bytes": 69870532,
+      "drat_uncompressed_sha256": "f88761c934e8f822719dc35f36e33e4c10f441858d12ee8c7379b18f4aa932b2",
+      "fixed_deleted_edges": [
+        [
+          28,
+          60
+        ],
+        [
+          37,
+          60
+        ]
+      ],
+      "fixed_retained_edges": [],
+      "formula": {
+        "auxiliary_variables": 2824,
+        "edge_variables": 1830,
+        "fixed_deleted_edges": [
+          [
+            28,
+            60
+          ],
+          [
+            37,
+            60
+          ]
+        ],
+        "fixed_positive_unit_clauses": 0,
+        "fixed_retained_edges": [],
+        "fixed_unit_clauses": 2,
+        "initial_clause_count": 60102,
+        "maximum_variable": 4654,
+        "preload_enumeration_seconds": 0.36678466701414436,
+        "preloaded_I13_containing_both_hub_vertices": 15985,
+        "preloaded_fixed_base_I13_clauses": 18117,
+        "preloaded_fixed_base_I13_sha256": "3a68a7a7812742962836e90a703d3887e348d86b5a5f51722ab8f2aeebe75e3c",
+        "residual_cardinality_clauses": 5993,
+        "residual_deletion_budget": 8,
+        "triangle_clauses": 35990
+      },
+      "lazy_I13_clauses_added": 0,
+      "lazy_I13_masks_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "run": {
+        "call_tail": [
+          {
+            "call": 1,
+            "elapsed_seconds": 2.9430639159982093,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20328,
+              "decisions": 58635,
+              "propagations": 7648813,
+              "restarts": 82
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 2,
+            "elapsed_seconds": 2.842871125030797,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20404,
+              "decisions": 38438,
+              "propagations": 8165770,
+              "restarts": 28
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 3,
+            "elapsed_seconds": 3.4219618750503287,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20119,
+              "decisions": 36362,
+              "propagations": 8423299,
+              "restarts": 50
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 4,
+            "elapsed_seconds": 2.8111085839918815,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20136,
+              "decisions": 33669,
+              "propagations": 8176887,
+              "restarts": 38
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 5,
+            "elapsed_seconds": 3.6760205419850536,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 23203,
+              "decisions": 37773,
+              "propagations": 9622697,
+              "restarts": 44
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 6,
+            "elapsed_seconds": 2.9686283330083825,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20650,
+              "decisions": 36853,
+              "propagations": 8048730,
+              "restarts": 77
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 7,
+            "elapsed_seconds": 3.6431862500030547,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20532,
+              "decisions": 34901,
+              "propagations": 8128663,
+              "restarts": 60
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 8,
+            "elapsed_seconds": 3.99066558299819,
+            "outcome": "UNSAT",
+            "stats_delta": {
+              "conflicts": 20203,
+              "decisions": 32304,
+              "propagations": 8516394,
+              "restarts": 39
+            },
+            "timer_interrupted": false
+          }
+        ],
+        "cegar_models": 0,
+        "elapsed_seconds": 26.298970499949064,
+        "lazy_clauses_added": 0,
+        "limited_solver_calls": 8,
+        "solver_stats": {
+          "conflicts": 165575,
+          "decisions": 308935,
+          "propagations": 66731253,
+          "restarts": 418
+        },
+        "timer_interrupts": 0
+      },
+      "status": "UNSAT"
+    },
+    {
+      "bounded_cadical195_cross_replay": {
+        "elapsed_seconds": 53.89828462502919,
+        "exitcode": 0,
+        "solver_stats": {
+          "conflicts": 483216,
+          "decisions": 1179801,
+          "propagations": 138664916,
+          "restarts": 13844
+        },
+        "status": "UNSAT",
+        "wall_limit_seconds": 300.0
+      },
+      "branch": 2,
+      "case": "hub_deleted",
+      "dimacs_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/budget10_search_branch_2.cnf.gz",
+      "dimacs_gzip_sha256": "290322f089f5ec09f4cf0023c91a6745eec2e62da5385874c73520a7bea4cce5",
+      "dimacs_lines": 59899,
+      "dimacs_uncompressed_bytes": 6803480,
+      "dimacs_uncompressed_sha256": "e590bad31a889c8240b520ac823c5d64de906aac21b6964fbe9566a71494533a",
+      "drat_check": {
+        "checker": "/private/tmp/ramsey-drat-trim-2e3b2dc/drat-trim",
+        "checker_sha256": "31d9e8e04bc76a65f0a18ea212ac44af4cf7bc398629495cec093ced772c50f4",
+        "elapsed_seconds": 28.307233583007473,
+        "exitcode": 0,
+        "status": "VERIFIED",
+        "stderr": "",
+        "stdout": "\nc parsing input formula with 4654 variables and 59898 clauses\n\nc finished parsing\n\nc detected empty clause; start verification via backward checking\n\nc 9997 of 59898 clauses in core                            \n\nc 176598 of 275892 lemmas in core using 69074887 resolution steps\n\nc 0 RAT lemmas in core; 546200 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 28.102 seconds\n",
+        "wall_limit_seconds": 600.0
+      },
+      "drat_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/budget10_search_branch_2.drat.gz",
+      "drat_gzip_sha256": "fd5bd7cee9e1d02d50235046f45654220b07dfa3cf45dfdbc770ee13db950fcb",
+      "drat_lines": 489033,
+      "drat_uncompressed_bytes": 110466417,
+      "drat_uncompressed_sha256": "a4ba5575e85f044bc81dba80b2f055994c6a7b1cea89bea5fa641b518be3a40d",
+      "fixed_deleted_edges": [
+        [
+          28,
+          60
+        ],
+        [
+          46,
+          60
+        ]
+      ],
+      "fixed_retained_edges": [],
+      "formula": {
+        "auxiliary_variables": 2824,
+        "edge_variables": 1830,
+        "fixed_deleted_edges": [
+          [
+            28,
+            60
+          ],
+          [
+            46,
+            60
+          ]
+        ],
+        "fixed_positive_unit_clauses": 0,
+        "fixed_retained_edges": [],
+        "fixed_unit_clauses": 2,
+        "initial_clause_count": 59898,
+        "maximum_variable": 4654,
+        "preload_enumeration_seconds": 0.3549032090231776,
+        "preloaded_I13_containing_both_hub_vertices": 17912,
+        "preloaded_fixed_base_I13_clauses": 17913,
+        "preloaded_fixed_base_I13_sha256": "8df0efefc8fd013a113c2c62d6da22abe1a3a4e64d3eb7372b882be77d552b82",
+        "residual_cardinality_clauses": 5993,
+        "residual_deletion_budget": 8,
+        "triangle_clauses": 35990
+      },
+      "lazy_I13_clauses_added": 0,
+      "lazy_I13_masks_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "run": {
+        "call_tail": [
+          {
+            "call": 2,
+            "elapsed_seconds": 4.121729707985651,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 22830,
+              "decisions": 55526,
+              "propagations": 8400698,
+              "restarts": 58
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 3,
+            "elapsed_seconds": 4.267804042028729,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 22503,
+              "decisions": 55228,
+              "propagations": 9150778,
+              "restarts": 96
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 4,
+            "elapsed_seconds": 3.3834432500298135,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 21292,
+              "decisions": 43586,
+              "propagations": 8798891,
+              "restarts": 63
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 5,
+            "elapsed_seconds": 3.2232088330201805,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20365,
+              "decisions": 37954,
+              "propagations": 8798838,
+              "restarts": 54
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 6,
+            "elapsed_seconds": 3.4796085419948213,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20745,
+              "decisions": 35213,
+              "propagations": 9118840,
+              "restarts": 49
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 7,
+            "elapsed_seconds": 3.481825208000373,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20704,
+              "decisions": 33260,
+              "propagations": 8528277,
+              "restarts": 39
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 8,
+            "elapsed_seconds": 3.5895450000534765,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20015,
+              "decisions": 33717,
+              "propagations": 8748052,
+              "restarts": 54
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 9,
+            "elapsed_seconds": 3.540175666974392,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 21262,
+              "decisions": 35245,
+              "propagations": 9147986,
+              "restarts": 52
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 10,
+            "elapsed_seconds": 3.592096457956359,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20182,
+              "decisions": 32490,
+              "propagations": 8894879,
+              "restarts": 45
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 11,
+            "elapsed_seconds": 3.503367208002601,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20349,
+              "decisions": 32498,
+              "propagations": 8119943,
+              "restarts": 59
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 12,
+            "elapsed_seconds": 3.815200917015318,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 20034,
+              "decisions": 34051,
+              "propagations": 8370512,
+              "restarts": 75
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 13,
+            "elapsed_seconds": 1.8275796660454944,
+            "outcome": "UNSAT",
+            "stats_delta": {
+              "conflicts": 10042,
+              "decisions": 15262,
+              "propagations": 4057581,
+              "restarts": 26
+            },
+            "timer_interrupted": false
+          }
+        ],
+        "cegar_models": 0,
+        "elapsed_seconds": 44.911578624974936,
+        "lazy_clauses_added": 0,
+        "limited_solver_calls": 13,
+        "solver_stats": {
+          "conflicts": 260394,
+          "decisions": 509115,
+          "propagations": 107284544,
+          "restarts": 745
+        },
+        "timer_interrupts": 0
+      },
+      "status": "UNSAT"
+    },
+    {
+      "bounded_cadical195_cross_replay": {
+        "elapsed_seconds": 0.03299641702324152,
+        "exitcode": 0,
+        "solver_stats": {
+          "conflicts": 317,
+          "decisions": 1499,
+          "propagations": 296760,
+          "restarts": 1
+        },
+        "status": "UNSAT",
+        "wall_limit_seconds": 300.0
+      },
+      "branch": 3,
+      "case": "hub_retained_merged_512",
+      "dimacs_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/budget10_search_branch_3.cnf.gz",
+      "dimacs_gzip_sha256": "363e02620d93e7f12a5ac12f55b80484d31b31541d8512297126b2911ace60fc",
+      "dimacs_lines": 44823,
+      "dimacs_uncompressed_bytes": 1501380,
+      "dimacs_uncompressed_sha256": "4d688c2e502c2cbef52c19ba23d0626b51745b389468080343b28f1e48830a85",
+      "drat_check": {
+        "checker": "/private/tmp/ramsey-drat-trim-2e3b2dc/drat-trim",
+        "checker_sha256": "31d9e8e04bc76a65f0a18ea212ac44af4cf7bc398629495cec093ced772c50f4",
+        "elapsed_seconds": 0.07108429103391245,
+        "exitcode": 0,
+        "status": "VERIFIED",
+        "stderr": "",
+        "stdout": "\nc parsing input formula with 5007 variables and 44822 clauses\n\nc finished parsing\n\nc detected empty clause; start verification via backward checking\n\nc 1296 of 44822 clauses in core                            \n\nc 85 of 208 lemmas in core using 16277 resolution steps\n\nc 0 RAT lemmas in core; 65 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.059 seconds\n",
+        "wall_limit_seconds": 600.0
+      },
+      "drat_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/budget10_search_branch_3.drat.gz",
+      "drat_gzip_sha256": "c7c9767328ff35bf71765d0578dd9a0e3dbd685ff49e894e7aa0d638b5d016c2",
+      "drat_lines": 276,
+      "drat_uncompressed_bytes": 37136,
+      "drat_uncompressed_sha256": "b1de156d0b5a423a1087d1e1679923e7b29f7090a6c0b66bfc164b7aaf49740a",
+      "encoded_transversal_count": 512,
+      "fixed_deleted_edges": [
+        [
+          37,
+          60
+        ]
+      ],
+      "fixed_retained_edges": [
+        [
+          28,
+          60
+        ]
+      ],
+      "formula": {
+        "auxiliary_variables": 3177,
+        "edge_variables": 1830,
+        "fixed_deleted_edges": [
+          [
+            37,
+            60
+          ]
+        ],
+        "fixed_positive_unit_clauses": 1,
+        "fixed_retained_edges": [
+          [
+            28,
+            60
+          ]
+        ],
+        "fixed_unit_clauses": 1,
+        "initial_clause_count": 44822,
+        "maximum_variable": 5007,
+        "preload_enumeration_seconds": 0.3159767920151353,
+        "preloaded_I13_containing_both_hub_vertices": 0,
+        "preloaded_fixed_base_I13_clauses": 2132,
+        "preloaded_fixed_base_I13_sha256": "846c46b160147aa185b7139168916c5551303cc2d34774636e9aec04e2f1be17",
+        "residual_cardinality_clauses": 6698,
+        "residual_deletion_budget": 9,
+        "triangle_clauses": 35990
+      },
+      "lazy_I13_clauses_added": 0,
+      "lazy_I13_masks_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "run": {
+        "call_tail": [
+          {
+            "call": 1,
+            "elapsed_seconds": 0.012755708012264222,
+            "outcome": "UNSAT",
+            "stats_delta": {
+              "conflicts": 207,
+              "decisions": 1154,
+              "propagations": 130328,
+              "restarts": 2
+            },
+            "timer_interrupted": false
+          }
+        ],
+        "cegar_models": 0,
+        "elapsed_seconds": 0.012999958009459078,
+        "lazy_clauses_added": 0,
+        "limited_solver_calls": 1,
+        "solver_stats": {
+          "conflicts": 207,
+          "decisions": 1154,
+          "propagations": 130328,
+          "restarts": 2
+        },
+        "timer_interrupts": 0
+      },
+      "status": "UNSAT"
+    }
+  ],
+  "claim_scope": "Fixed input graph; arbitrary additions are allowed, but at most ten edges present in the input may be deleted.",
+  "conclusion": "The exhaustive hub-deleted and hub-retained cases all have checked UNSAT proofs.  Every completion in this fixed-seed edit family therefore needs at least eleven input-edge deletions.",
+  "deletion_budget": 10,
+  "elapsed_seconds": 353.84206916601397,
+  "environment": {
+    "drat_trim_source_commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+    "expected_drat_trim_source_commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+    "pysat_solvers": [
+      "glucose42",
+      "cadical195"
+    ],
+    "python": "3.11.15 (main, Mar  3 2026, 00:52:57) [Clang 17.0.0 (clang-1700.6.3.2)]"
+  },
+  "global_ramsey_claim": null,
+  "input": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/r3_13_n61_nonstar_k11.txt",
+  "input_sha256": "2e97d94560a4c3f30a70729ec5985e9a22f431a9d2e78b338994291b6d4c441b",
+  "limits": {
+    "conflicts_per_limited_call": 20000,
+    "cross_solver_wall_seconds_per_branch": 300.0,
+    "drat_check_wall_seconds_per_branch": 600.0,
+    "lazy_blue_batch_size": 1024,
+    "max_conflicts_per_branch": 3000000,
+    "max_wall_seconds_per_branch": 900.0,
+    "per_call_wall_seconds": 10.0
+  },
+  "original_edges": 363,
+  "schema": "ramsey-r3-13-n61-nonstar-budget10-complete-v1",
+  "solver_dependency": "The structural/formula encoding, independent bitset verifier, and DRAT checker implementation remain in the trust boundary.",
+  "status": "UNSAT_PROOF_VERIFIED",
+  "structural_decomposition": {
+    "case_split_exhaustive": true,
+    "hub": [
+      28,
+      60
+    ],
+    "hub_deleted_branch_count": 3,
+    "hub_retained_transversal_count": 512,
+    "hub_third_vertices": [
+      19,
+      22,
+      24,
+      27,
+      29,
+      32,
+      34,
+      37,
+      48,
+      58
+    ],
+    "input_triangle_count": 11,
+    "input_triangles": [
+      [
+        19,
+        28,
+        60
+      ],
+      [
+        22,
+        28,
+        60
+      ],
+      [
+        24,
+        28,
+        60
+      ],
+      [
+        27,
+        28,
+        60
+      ],
+      [
+        28,
+        29,
+        60
+      ],
+      [
+        28,
+        32,
+        60
+      ],
+      [
+        28,
+        34,
+        60
+      ],
+      [
+        28,
+        37,
+        60
+      ],
+      [
+        28,
+        48,
+        60
+      ],
+      [
+        28,
+        58,
+        60
+      ],
+      [
+        37,
+        46,
+        60
+      ]
+    ],
+    "only_triangle_outside_hub": [
+      37,
+      46,
+      60
+    ],
+    "pairwise_disjoint_spoke_pairs": [
+      [
+        [
+          19,
+          28
+        ],
+        [
+          19,
+          60
+        ]
+      ],
+      [
+        [
+          22,
+          28
+        ],
+        [
+          22,
+          60
+        ]
+      ],
+      [
+        [
+          24,
+          28
+        ],
+        [
+          24,
+          60
+        ]
+      ],
+      [
+        [
+          27,
+          28
+        ],
+        [
+          27,
+          60
+        ]
+      ],
+      [
+        [
+          28,
+          29
+        ],
+        [
+          29,
+          60
+        ]
+      ],
+      [
+        [
+          28,
+          32
+        ],
+        [
+          32,
+          60
+        ]
+      ],
+      [
+        [
+          28,
+          34
+        ],
+        [
+          34,
+          60
+        ]
+      ],
+      [
+        [
+          28,
+          37
+        ],
+        [
+          37,
+          60
+        ]
+      ],
+      [
+        [
+          28,
+          48
+        ],
+        [
+          48,
+          60
+        ]
+      ],
+      [
+        [
+          28,
+          58
+        ],
+        [
+          58,
+          60
+        ]
+      ]
+    ],
+    "remainder_triangle_edges": [
+      [
+        37,
+        46
+      ],
+      [
+        37,
+        60
+      ],
+      [
+        46,
+        60
+      ]
+    ],
+    "spoke_remainder_edge_overlap": [
+      [
+        37,
+        60
+      ]
+    ],
+    "total_merged_cnf_branches": 4,
+    "triangles_through_hub": [
+      [
+        19,
+        28,
+        60
+      ],
+      [
+        22,
+        28,
+        60
+      ],
+      [
+        24,
+        28,
+        60
+      ],
+      [
+        27,
+        28,
+        60
+      ],
+      [
+        28,
+        29,
+        60
+      ],
+      [
+        28,
+        32,
+        60
+      ],
+      [
+        28,
+        34,
+        60
+      ],
+      [
+        28,
+        37,
+        60
+      ],
+      [
+        28,
+        48,
+        60
+      ],
+      [
+        28,
+        58,
+        60
+      ]
+    ]
+  },
+  "target": {
+    "n": 61,
+    "r": 3,
+    "s": 13
+  }
+}

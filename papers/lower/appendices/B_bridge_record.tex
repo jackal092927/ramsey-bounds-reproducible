@@ -1,0 +1,88 @@
+\section{Pinned source bridge and quantifier ledger}\label{app:bridge}
+
+This appendix states exactly what is imported from the Gaussian source
+construction and what is proved locally.  It is included to make the claim
+boundary auditable without relying on status labels in the research log.
+
+\subsection{Version-pinned inputs}
+
+The source snapshots are Hunter--Milojevi\'c--Sudakov v2
+\cite{HMS2025} and Lin--Niu v2 \cite{LinNiu2026}.  Their source hashes,
+filenames, and retrieval URLs are recorded in the repository manifest.  The
+imported ingredients are:
+\begin{enumerate}[label=(S\arabic*)]
+ \item the HMS Gaussian construction and Appendix-B reverse induction;
+ \item the red perfect-sequence extraction and the original blue bound;
+ \item the centered square-moment estimate in the range used in (A.16);
+ \item the one-sided truncated-Gaussian cumulant identity used to define
+       $G_*(C)$; and
+ \item the first-moment conversion from red and blue probability exponents to
+       a Ramsey lower bound.
+\end{enumerate}
+The local argument changes none of these statements.  It adds a deterministic
+negative term to the red ledger, checks that extraction retains it, and then
+uses the same red--blue comparison.
+
+\subsection{Literal red-side bridge}
+
+For orientation, the preceding source audit establishes a red deficit of the
+form
+\[
+ \mathcal D_C(r)=\frac{c_R(C)}d\sum_{k=1}^{r-1}k(k-1)^2,
+ \qquad c_R(C)>0, \tag{B.1}
+\]
+inside the original Appendix-B recursion.  Since
+\[
+ \sum_{k=1}^{r-1}k(k-1)^2
+ =\frac{r(r-1)(r-2)(3r-5)}{12}, \tag{B.2}
+\]
+the corresponding rate term is $c_R(C)/(4D^2)$.  This bridge proves that a
+same-history, pre-coarsening deficit can be carried through the public
+induction and extraction.  The optimized exact-CGF term $G_*(C)$ used in
+the present paper is the reviewed refinement of that bridge.
+
+The blue-side construction is not modified here.  For sufficiently large
+fixed $C$, its source exponent remains strictly above the red exponent,
+because every added red term is $O(1/\log C)=o(1)$ whereas the frozen
+red--blue gap is of constant order before the final $C\to\infty$ limit.
+Thus the red side remains the bottleneck.
+
+\subsection{Order of quantifiers}
+
+The source $O(\cdot)$ and $o(\cdot)$ terms do not carry published numerical
+constants.  The formal theorem therefore has the order
+\[
+ \exists C_0\ \forall C\ge C_0\ \exists\ell_0(C)\
+ \forall\ell\ge\ell_0(C), \tag{B.3}
+\]
+followed by the limit $\ell\to\infty$.  Only after this fixed-$C$ theorem
+is established do we take $C\to\infty$ to obtain the coefficient $1/64$.
+No explicit value of $C_0$ or $\ell_0(C)$ is asserted.
+
+The source error constant $K$ is frozen before $C_0$ is selected.  The
+new ledger deletes probability mass relative to the source envelope and adds
+only the explicitly bounded deterministic error $J_{r,d}$ in (A.23).
+Therefore no new, history-dependent source constant is introduced.
+
+\subsection{Claim boundary}
+
+The theorem is source-relative in two senses.  First, it is conditional on
+the version-pinned interfaces (S1)--(S5).  Second, comparison with a printed
+final constant in another normalization requires translating both estimates
+from the same probability inequality.  We have not used such a translation
+to make a priority or best-known claim.  What is proved here is the internal
+strengthening
+\[
+ G_*(C)+H_*(C)\quad\longrightarrow\quad
+ G_*(C)+\widehat H_*(C),\qquad
+ \widehat H_*(C)>H_*(C)
+\tag{B.4}
+\]
+for all sufficiently large fixed $C$, together with
+$\widehat H_*(C)=(1+o(1))/(64\log C)$.
+
+The frozen arithmetic checker independently verifies the triangular
+recursion, the exact $K_r$ identity, the full-Hessian inequalities at
+representative large values of $C$, the strict positivity margins, and the
+asymptotic coefficient.  It does not replace the probabilistic induction;
+that induction is given in \cref{sec:induction,app:one-step}.

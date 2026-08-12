@@ -1,0 +1,27 @@
+{
+  "certified_lower_bound": 160,
+  "input": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/certificates/scale_R4_15_ge_160.txt",
+  "r": 4,
+  "s": 15,
+  "searches": {
+    "forbidden_clique_sat": {
+      "clauses": 9889,
+      "elapsed_seconds": 0.5697782919742167,
+      "exists": false,
+      "solver": "cadical195",
+      "target": 4,
+      "witness": null
+    },
+    "forbidden_independent_set_sat": {
+      "clauses": 7952,
+      "elapsed_seconds": 63.67621204099851,
+      "exists": false,
+      "solver": "cadical195",
+      "target": 15,
+      "witness": null
+    }
+  },
+  "sha256": "05bf670069207edad54951a960c194eee9f67cb033dae1e8be3bf0306f7dde1f",
+  "valid_ramsey_certificate": true,
+  "vertices": 159
+}

@@ -1,0 +1,39 @@
+.DS_Store
+.venv/
+**/.venv/
+.uv-cache/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# LaTeX build products
+build/
+papers/**/main.aux
+papers/**/main.bbl
+papers/**/main.bcf
+papers/**/main.blg
+papers/**/main.fdb_latexmk
+papers/**/main.fls
+papers/**/main.log
+papers/**/main.out
+papers/**/main.run.xml
+papers/**/main.synctex.gz
+papers/**/main.toc
+
+# SAT proof objects are release assets, not ordinary Git objects.
+routes/finite/*.drat
+routes/finite/*.drat.gz
+routes/finite/*.cnf
+routes/finite/*.cnf.gz
+routes/finite/incomplete/
+artifacts/downloads/
+
+# Local logs and temporary packages
+*.tmp
+*.new
+*.partial
+repro-logs/
+dist/
+tmp/

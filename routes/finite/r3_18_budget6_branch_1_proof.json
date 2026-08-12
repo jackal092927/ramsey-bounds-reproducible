@@ -1,0 +1,115 @@
+{
+  "schema": "ramsey-r3-18-n100-exact-budget6-branch1-proof-v1",
+  "status": "UNSAT_PROOF_VERIFIED",
+  "date": "2026-08-12",
+  "target": {
+    "r": 3,
+    "s": 18,
+    "n": 100
+  },
+  "branch": 1,
+  "fixed_deleted_edge": [
+    97,
+    99
+  ],
+  "input": {
+    "path": "certificates/r3_18_n100_nearmiss.txt",
+    "sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+    "vertices": 100,
+    "edges": 827,
+    "unique_triangle": [
+      97,
+      98,
+      99
+    ],
+    "has_independent_18_set": false
+  },
+  "scope": {
+    "total_input_edge_deletions": 6,
+    "fixed_edge_cannot_be_readded": true,
+    "residual_input_edge_deletions": 5,
+    "arbitrary_original_nonedge_additions_allowed": true,
+    "budget_at_most_5_dependency_previously_proof_verified": true
+  },
+  "semantic_audit": {
+    "status": "SEMANTICS_VERIFIED",
+    "method": "independent clause-by-clause reconstruction",
+    "variables": 13160,
+    "clauses": 242064,
+    "triangle_clauses": 161700,
+    "exact_five_sequential_counter_clauses": 16420,
+    "fixed_negative_units": 1,
+    "I18_hitting_clauses": 63943,
+    "I18_ordered_sha256": "99b72cd5500c6140d4aca261a1028b9805b9d8209ffc3216596a0fb8fb50edcf",
+    "checker": "check_r3_18_budget6_branch1.py",
+    "checker_sha256": "47da14a1b13d32379c2396b19992b9edf58ea21a2621d9f6f8d895416347b16b",
+    "audit_json": "r3_18_budget6_branch_1_check.json",
+    "audit_json_sha256": "010885ff86f45db8b7d34ebbe22a9025f3136660a516762c5296ab470486480c"
+  },
+  "finite_formula": {
+    "cnf_gzip": "r3_18_budget6_branch_1.cnf.gz",
+    "cnf_gzip_sha256": "a438c9fef4d99ae516829e4405da8c9f079398501361f9c5f69f46a494ffad14",
+    "cnf_gzip_bytes": 5052085,
+    "cnf_raw_sha256": "ced3fd39370b4c2552cb261638fb7076da173e18d6b871f6fb280668e5a1154a",
+    "cnf_raw_bytes": 47089599,
+    "cnf_raw_lines_including_header": 242065,
+    "cut_bank": "r3_18_budget6_branch_1.cuts.json",
+    "cut_bank_sha256": "f8064f0f226659b4750382f781ba9a862bcc19eb49006eb8cdd2afc002ed227c",
+    "cut_bank_bytes": 2110304
+  },
+  "proof_generation": {
+    "status": "UNSAT_PROOF_WRITTEN",
+    "solver": "CaDiCaL 3.0.1",
+    "source_commit": "c60730422e758ef1cebe7aeddf2dda31c996bf04",
+    "executable_sha256": "62d48c0890fae760c859e65676dc0598d59c36ac8170cbc5f115208d0a549429",
+    "command_options": [
+      "--no-binary",
+      "--checkproof=0"
+    ],
+    "exitcode": 20,
+    "solver_result": "UNSATISFIABLE",
+    "wall_seconds_including_deterministic_compression": 275.7921401660424,
+    "proof": {
+      "path": "r3_18_budget6_branch_1.drat.gz",
+      "gzip_complete": true,
+      "gzip_bytes": 433552903,
+      "gzip_sha256": "cfe694fd728903ee9ac9f08a66ade64faf7e68763246d1d52ca29a85727494ec",
+      "raw_bytes": 2137671968,
+      "raw_lines": 5590150,
+      "raw_sha256": "fbf7292c3bcbf52ec6f978fca0751d319e2e2029380e7a865a17430baf282902"
+    }
+  },
+  "proof_verification": {
+    "status": "VERIFIED",
+    "checker": "drat-trim",
+    "source_commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+    "executable_sha256": "31d9e8e04bc76a65f0a18ea212ac44af4cf7bc398629495cec093ced772c50f4",
+    "exitcode": 0,
+    "wall_limit_seconds": 300.0,
+    "elapsed_seconds_including_decompression": 202.04578166699503,
+    "checker_verification_seconds": 198.812,
+    "stdout_terminal": "s VERIFIED",
+    "input_clauses": 242064,
+    "lemmas": 2789684,
+    "core_clauses": 34973,
+    "core_lemmas": 511535,
+    "resolution_steps": 209897525,
+    "RAT_lemmas_in_core": 0
+  },
+  "quarantined_non_evidence": {
+    "path": "incomplete/r3_18_budget6_branch_1.partial.drat.gz",
+    "sha256": "dcdb695a11c21e473b9a715ba8048f68066f6a49c5a960809e05ad973820f38b",
+    "bytes": 342727224,
+    "gzip_complete": false,
+    "used_in_conclusion": false
+  },
+  "conclusion": {
+    "exact_budget6_branch1_excluded": true,
+    "exact_budget6_branch2_previously_excluded": true,
+    "exact_budget6_branch0_status": "UNKNOWN",
+    "full_fixed_seed_budget_at_most_6_excluded": false,
+    "candidate_found": false,
+    "R_3_18_ge_101_established": false,
+    "global_ramsey_bound_improvement": false
+  }
+}

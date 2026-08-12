@@ -1,0 +1,182 @@
+\section{Detailed one-step ledger estimates}\label{app:one-step}
+
+This appendix records the estimates used in \cref{sec:residual,sec:ledger} in
+a form independent of the exploratory calculation log.  Throughout, $C$ is
+fixed and sufficiently large, $w>\omega_0$, and the target set exposed after
+column $i$ is $V_i=\{i+1,\ldots,r\}$, of size $k=r-i$.
+
+\subsection{The Hessian on the entire cutoff box}
+
+Recall
+\[
+ F_i(b)=\sum_{j\in V_i}\log\Phi(-b_j)
+ -\frac1d\sum_{\{j,q\}\subset V_i}T_{jq}m(b_j)m(b_q).
+\]
+Since $(\log\Phi(-x))'=-m(x)$, the entries of the Hessian are
+\begin{align}
+ \partial_{jj}^2F_i(b)
+ &=-m'(b_j)-\frac{m''(b_j)}d
+   \sum_{q\in V_i\setminus\{j\}}T_{jq}m(b_q), \tag{A.1}\\
+ \partial_{jq}^2F_i(b)
+ &=-\frac{T_{jq}}d m'(b_j)m'(b_q),\qquad j\ne q. \tag{A.2}
+\end{align}
+The inverse Mills ratio satisfies $m''\ge0$.  Hence the interaction term in
+(A.1) can only strengthen the diagonal of $-\nabla^2F_i$.  On
+$[c-w,c+w]^{V_i}$, monotonicity gives
+\[
+ m'(b_j)\ge j_-(w),\qquad |m'(b_j)m'(b_q)|\le j_+(w)^2.
+\tag{A.3}
+\]
+
+The residual recursion and $r/\sqrt d\le1/D$ imply
+\begin{align}
+ T_{\max}&\le \frac{t_0+\theta r}{1-\rho}, \tag{A.4}\\
+ \frac1d\max_j\sum_{q\ne j}T_{jq}
+ &\le \frac{m_0+\theta/D}{D(1-\rho)}. \tag{A.5}
+\end{align}
+Combining (A.1)--(A.5) with Gershgorin's theorem proves
+\[
+ -\nabla^2F_i(b)\succeq
+ \left[j_-(w)-j_+(w)^2
+ \frac{m_0+\theta/D}{D(1-\rho)}\right]I
+ =\mu_w I. \tag{A.6}
+\]
+This is a full-box statement, not an expansion valid only at the central
+cutoff.
+
+\subsection{Boundary merge with a controlled residual}
+
+The gradient at $c\mathbf1$ is
+\[
+ \partial_jF_i(c\mathbf1)
+ =-m_0-\frac{m_0m'_0}{d}
+   \sum_{q\in V_i\setminus\{j\}}T_{jq}.
+\tag{A.7}
+\]
+The defining recursion
+\[
+ T_{ij}=m_0\sqrt d+\frac{m_0m'_0}{\sqrt d}
+ \sum_{q\in V_i\setminus\{j\}}T_{jq}+e_{ij}
+\tag{A.8}
+\]
+therefore gives
+\[
+ \partial_jF_i(c\mathbf1)=-\frac{T_{ij}-e_{ij}}{\sqrt d}.
+\tag{A.9}
+\]
+For $\delta_j=b_j-c=\sqrt d\,h_{ij}+\varepsilon_{ij}$, with
+$|\varepsilon_{ij}|\le d^{-1/5}$, the tangent inequality from (A.6) gives
+\begin{align}
+ F_i(b)
+ &\le F_i(c\mathbf1)
+ -\sum_{j\in V_i}T_{ij}h_{ij}
+ +\sum_{j\in V_i}\left(
+   \frac{e_{ij}\delta_j}{\sqrt d}-\frac{\mu_w\delta_j^2}{2}\right)
+ +\frac{d^{-1/5}}{\sqrt d}\sum_{j\in V_i}T_{ij} \notag\\
+ &\le F_i(c\mathbf1)-\sum_{j\in V_i}T_{ij}h_{ij}
+ +\sum_{j\in V_i}\frac{e_{ij}^2}{2\mu_wd}
+ +\frac{d^{-1/5}}{\sqrt d}\sum_{j\in V_i}T_{ij}. \tag{A.10}
+\end{align}
+The second line is the scalar square completion
+$xy-\mu_wy^2/2\le x^2/(2\mu_w)$.  Thus every boundary edge merges with
+its full coefficient $T_{ij}$; only the explicit residual is paid.
+
+\subsection{Mass identities}
+
+Let $\Delta_{ij}=T_{ij}-t_0$.  Backward induction in the first endpoint
+gives, for every $j<q$,
+\[
+ A_0(r-j-1)+\theta(j-1)
+ \le \Delta_{jq}
+ \le \frac{A_0+\rho\theta}{1-\rho}(r-j-1)+\theta(j-1).
+\tag{A.11}
+\]
+For $S_i$ and $R_i$ as in \cref{sec:ledger}, this implies
+\[
+ S_i\ge a_-(r-2)\binom{k}{2},\qquad
+ R_i\le a_+(r-2)(k-1),\qquad
+ \frac{R_i}{S_i}\le\frac{2a_+}{a_-k}. \tag{A.12}
+\]
+
+The exact accumulated sums are obtained by exchanging the order of
+summation.  The future-degree part of (A.11) counts each ordered quadruple
+twice, while the residual part contributes
+\[
+ K_r:=\sum_{i=1}^{r-1}(r-i)(i-1)^2
+ =\binom r3+2\binom r4. \tag{A.13}
+\]
+Consequently
+\[
+ \sum_{i=1}^{r-1}S_i\ge2A_0\binom r4+\theta K_r,
+ \qquad
+ \sum_{1\le i<j\le r}e_{ij}^2=\theta^2K_r. \tag{A.14}
+\]
+No asymptotic replacement is used in (A.13)--(A.14).
+
+\subsection{Three-factor H\"older comparison}
+
+Decompose the centered exponent into the source uniform part, the weighted
+increment, and the remaining factor.  Use conjugate exponents
+\[
+ Q_0=\frac d{4t_0k},\qquad Q_1=\frac d{4R_i},\qquad
+ P^{-1}=1-Q_0^{-1}-Q_1^{-1}. \tag{A.15}
+\]
+The source square-moment estimate is applicable because
+\[
+ \frac{4m_0}{D}+\frac{4a_+}{D^2}<\frac12. \tag{A.16}
+\]
+The weighted quadratic factor is bounded by
+\[
+ \frac{16}{3}\frac{S_i}{d}. \tag{A.17}
+\]
+The three changes in the linear cumulant comparison are, respectively,
+bounded by
+\begin{align}
+ &\frac{4m_0M_w^2}{D}\frac{S_i}{d}, \tag{A.18}\\
+ &\frac{2M_w^2a_+}{D^2}\frac{S_i}{d}, \tag{A.19}\\
+ &\frac{32m_0^2M_w^2a_+}{a_-D^2}\frac{S_i}{d}. \tag{A.20}
+\end{align}
+For (A.20), one first uses the row-sum bound $R_i$, then
+$\sum_j(u_j^0)^2\le2m_0^2M_w^2S_i/a_-$; this is precisely where the
+ratio $R_i/S_i$ in (A.12) enters.  Adding (A.18)--(A.20) gives
+$\widehat L_w(C)S_i/d$.  The central deterministic gain is
+$m_0^2S_i/d$, and hence the net increment is
+\[
+ -\left(m_0^2-\frac{16}{3}-\widehat L_w(C)\right)\frac{S_i}{d}
+ =-\widehat B_w(C)\frac{S_i}{d}. \tag{A.21}
+\]
+
+The pre-existing exact-CGF term $G_*(C)$ compares the uniform $t_0$
+centered component with the source allocation.  Equations
+(A.17)--(A.21) concern only $\Delta=T-t_0$ and the change in H\"older
+exponent.  Therefore $G_*(C)$ and the new term are disjoint ledger entries.
+
+\subsection{One-step conclusion and extraction}
+
+Combining (A.10), (A.14), and (A.21) gives the empty-state bound
+\[
+ P^*_{R,r}\le\mathcal H_C(r)
+ \exp\!\left[-\mathcal D_{C,w,d}(r)
+ -\frac1d\left\{2\widehat B_wA_0\binom r4+E_wK_r\right\}
+ +J_{r,d}\right], \tag{A.22}
+\]
+where
+\[
+ 0\le J_{r,d}\le
+ \frac{m_0+\theta/D}{1-\rho}d^{-1/5}\binom r2=o_C(r^2).
+\tag{A.23}
+\]
+If extraction deletes $u$ vertices from a retained set of size $\ell$,
+then the loss in the new deterministic exponent is at most
+\[
+ \frac1d\left[
+ 2\widehat B_wA_0u\binom\ell3
+ +E_w\left(u\binom\ell2+2u\binom\ell3\right)
+ \right]
+ \le\left[\frac{\widehat B_wA_0+E_w}{3D^2}+o_C(1)\right]\ell u.
+\tag{A.24}
+\]
+The bracket is $O(1/\log C)<1$.  The unchanged source failure charge is
+exponential in $-\ell u$ with a larger absolute constant, so the sum over
+deleted subsets is $o(1)$.  This proves that (A.22) survives the same
+perfect-sequence extraction as the pinned source theorem.

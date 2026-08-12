@@ -1,0 +1,62 @@
+{
+  "alpha_exact": 12,
+  "certified_lower_bound": 61,
+  "edges": 349,
+  "input": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/certificates/alphaevolve_R3_13_ge_61.txt",
+  "omega_exact": 2,
+  "r": 3,
+  "s": 13,
+  "searches": {
+    "boundary_clique": {
+      "colorings": 2,
+      "elapsed_seconds": 1.850002445280552e-05,
+      "exists": true,
+      "recursive_nodes": 3,
+      "target": 2,
+      "witness": [
+        59,
+        55
+      ]
+    },
+    "boundary_independent_set": {
+      "colorings": 12,
+      "elapsed_seconds": 5.8542005717754364e-05,
+      "exists": true,
+      "recursive_nodes": 13,
+      "target": 12,
+      "witness": [
+        59,
+        57,
+        56,
+        54,
+        51,
+        43,
+        46,
+        35,
+        38,
+        28,
+        21,
+        14
+      ]
+    },
+    "forbidden_clique": {
+      "colorings": 37,
+      "elapsed_seconds": 0.00011595897376537323,
+      "exists": false,
+      "recursive_nodes": 37,
+      "target": 3,
+      "witness": null
+    },
+    "forbidden_independent_set": {
+      "colorings": 87986,
+      "elapsed_seconds": 0.21740808297181502,
+      "exists": false,
+      "recursive_nodes": 87986,
+      "target": 13,
+      "witness": null
+    }
+  },
+  "sha256": "d619f0bfed32af5e2fbc8c724d9c65dbf388a19d5647d20e7835b501bc03227a",
+  "valid_ramsey_certificate": true,
+  "vertices": 60
+}

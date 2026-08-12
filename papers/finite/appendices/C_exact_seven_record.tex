@@ -1,0 +1,57 @@
+\section{Frozen exact-seven first-round record}\label{app:seven-record}
+
+All three endpoints are \textsc{unknown}.  The branch records are
+content-addressed as follows.
+
+\begin{longtable}{@{}cp{0.40\textwidth}p{0.40\textwidth}@{}}
+\caption{Exact-seven bounded-search records.}\\
+\toprule
+branch & result JSON SHA-256 & checkpoint SHA-256\\
+\midrule
+\endfirsthead
+\toprule
+branch & result JSON SHA-256 & checkpoint SHA-256\\
+\midrule
+\endhead
+0 &
+\sha{97e777da32b82a83b8e999c9af1f927c87b67689b8fb72f8b31ded07b39a2f7f} &
+\sha{918dc1cc80860d97b3209f6d969a156b9df5fb8b4df7f0fa910e72fdc5778098}\\[4pt]
+1 &
+\sha{81734a23298ea9c3364a047c3b7b10910bcd44faf9ff55c3a251fd709f6ac64f} &
+\sha{8491cbd5e073170b6f7a503efb3d6af6c077b6d72defbf9cd6feb6f06e85fc7f}\\[4pt]
+2 &
+\sha{92e2c948892d6f298e0ca3a5055cf31cf3eea361b6eee8197ba536922e437554} &
+\sha{9e8ea23904378ec1bfc6e4c486fd32f10ccc99c1646855c7589c21cc3c9b9f5c}\\
+\bottomrule
+\end{longtable}
+
+The frozen-state checker, its unit tests, and the branch generator have
+respective SHA-256 identities
+\begin{description}
+\item[checker]
+\sha{8c1f2629193de8b16e018f036ce462b8e18110b9f4f1c13b3162b25fe415d6f4}
+\item[tests]
+\sha{46b0324d67baaf66bae49027bf4ddbfe3aa08684d3cbe364326bc4400914c987}
+\item[generator]
+\sha{13a7cfeb564297fcad2ea2c6ca831a6bf4b4755e0223abcf9d1bd1178103d0de}
+\end{description}
+
+Each branch loaded the common universal bank in under six seconds and then
+spent approximately \(300\) seconds in its first solver call.  The registered
+endpoints were
+\begin{center}
+\begin{tabular}{@{}clll@{}}
+\toprule
+branch & fixed absent & solver & endpoint\\
+\midrule
+0 & \((97,98)\) & CaDiCaL & \textsc{unknown}\\
+1 & \((97,99)\) & Glucose~4.2 & \textsc{unknown}\\
+2 & \((98,99)\) & MapleChrono & \textsc{unknown}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The state checker verifies formula dimensions, the universal bank digest,
+the exact counter truth table, exclusion of original nonedges from the
+counter, and the three timeout records.  It does not transform those timeout
+records into a satisfiability or unsatisfiability claim.

@@ -1,0 +1,22 @@
+name: fast-verification
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  integrity-and-light-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install pinned dependencies
+        run: python -m pip install -r requirements-repro.txt
+      - name: Reproduce headline upper and lower certificates and finite light checks
+        run: python reproduce.py quick
+      - name: Compile Python sources
+        run: python -m compileall -q reproduce.py routes scripts

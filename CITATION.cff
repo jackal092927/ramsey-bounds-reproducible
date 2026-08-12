@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: >-
+  If you use this proof package, cite the relevant manuscript and archive
+  release. Replace the placeholder authorship before a public submission.
+title: Reproducible Ramsey Bounds and Proof Certificates
+type: software
+version: 0.1.0
+date-released: 2026-08-12
+authors:
+  - name: Ramsey Bounds Project contributors
+abstract: >-
+  Computer-assisted asymptotic Ramsey bounds, source-relative Gaussian lower
+  bounds, and proof-carrying finite SAT reports with independent replays.
+keywords:
+  - Ramsey numbers
+  - computer-assisted proof
+  - interval arithmetic
+  - SAT
+  - DRAT

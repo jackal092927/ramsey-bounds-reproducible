@@ -1,0 +1,176 @@
+{
+  "arbitrary_input_nonedge_additions_allowed": true,
+  "branch": 2,
+  "budget5_checked_proof_required_for_at_most6_conclusion": true,
+  "discovery": {
+    "note": "No solver conclusion is imported from the checkpoint; the reconstructed finite CNF must independently produce and pass DRAT.",
+    "proof_mode": "DIRECT_EXTERNAL_PROOF_OF_RESUMED_FINITE_CNF",
+    "status": "UNSAT_FINITE_CUT_BANK"
+  },
+  "drat_check": {
+    "checker": "/private/tmp/ramsey-drat-trim-2e3b2dc/drat-trim",
+    "checker_sha256": "31d9e8e04bc76a65f0a18ea212ac44af4cf7bc398629495cec093ced772c50f4",
+    "elapsed_seconds": 90.39893462503096,
+    "exitcode": 0,
+    "status": "VERIFIED",
+    "stderr": "",
+    "stdout": "\nc parsing input formula with 13160 variables and 183543 clauses\n\nc finished parsing\n\nc detected empty clause; start verification via backward checking\n\nc 22811 of 183543 clauses in core                            \n\nc 518481 of 1354503 lemmas in core using 182817377 resolution steps\n\nc 0 RAT lemmas in core; 1343105 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 89.306 seconds\n",
+    "wall_limit_seconds": 900.0
+  },
+  "elapsed_seconds": 278.86728870804654,
+  "exact_residual_input_edge_deletions": 5,
+  "exact_total_input_edge_deletions": 6,
+  "external_proof_run": {
+    "elapsed_seconds": 129.94388016697485,
+    "exitcode": 20,
+    "proof": {
+      "gzip_sha256": "c9648a4e38c17dcdfe97d873095eda002abc689b3b3bd93f02fc8a369198c4b9",
+      "lines": 2837771,
+      "uncompressed_bytes": 759008359,
+      "uncompressed_sha256": "66d0aa3d5cd2536bae7d59ed884324057561db1baa70dfcd683cda4827915a43"
+    },
+    "proof_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/r3_18_budget6_branch_2.drat.gz",
+    "status": "UNSAT_PROOF_WRITTEN",
+    "stderr_tail": "",
+    "stdout_tail": "51  1 595150 46661 2.2 84 37 1 2 67% 55709 4184 32%\nc - 109.05  0 49 62 14853  1 598651 16103 2.2 83 37 1 2 67% 55083 4184 32%\nc p 109.06  0 49 62 14853  1 598651 19923 2.2 83 37 1 2 67% 55083 4184 32%\nc u 109.10  0 49 62 14853  1 598651 19830 2.2 83 37 1 2 67% 55083 4183 32%\nc v 109.12  0 49 62 14853  1 598651 19794 2.2 83 37 1 2 67% 55083 4183 32%\nc w 109.12  0 49 62 14853  1 598651 19794 2.2 83 37 1 2 67% 55083 4183 32%\nc x 109.14  0 49 62 14853  1 598651 19793 2.2 83 37 1 2 67% 55083 4183 32%\nc t 109.15  0 49 62 14853  1 598651 19786 2.2 83 37 1 2 67% 55083 4183 32%\nc i 110.51  0 46 62 14859  1 609018 27432 2.2 79 35 1 2 66% 55083 4182 32%\nc - 111.74  0 46 63 14864  1 617995 17348 2.2 79 35 1 2 66% 54973 4182 32%\nc p 111.77  0 46 63 14864  1 617995 35047 2.2 79 35 1 2 66% 54973 4181 32%\nc u 111.81  0 46 63 14864  1 617995 34961 2.2 79 35 1 2 66% 54973 4180 32%\nc v 111.82  0 46 63 14864  1 617995 34935 2.2 79 35 1 2 66% 54973 4180 32%\nc w 111.83  0 46 63 14864  1 617995 34934 2.2 79 35 1 2 66% 54973 4180 32%\nc x 111.85  0 46 63 14864  1 617995 34930 2.2 79 35 1 2 66% 54966 4180 32%\nc t 111.85  0 46 63 14864  1 617995 34925 2.2 79 35 1 2 66% 54966 4180 32%\nc W 114.21  0 46 63 14866  1 630165 43709 2.2 78 35 1 2 65% 54874 4180 32%\nc i 115.28  0 46 63 14866  1 636604 48720 2.2 76 35 1 2 64% 54874 4179 32%\nc \nc  seconds   reductions    conflicts         size   tier2      variables\nc          MB      restarts       redundant     glue   trail        remaining\nc           level        rate          size/glue  tier1  irredundant\nc \nc - 115.54  0 46 64 14866  1 637649 19467 2.2 76 35 1 2 64% 54809 4179 32%\nc p 115.55  0 46 64 14866  1 637649 23676 2.2 76 35 1 2 64% 54809 4177 32%\nc = 115.91  0 46 64 14866  1 637649 22976 2.2 76 35 1 2 64% 54765 4175 32%\nc u 115.96  0 46 64 14866  1 637649 22861 2.2 76 35 1 2 64% 54765 4175 32%\nc v 115.97  0 46 64 14866  1 637649 22830 2.2 76 35 1 2 64% 54765 4175 32%\nc w 115.98  0 46 64 14866  1 637649 22830 2.2 76 35 1 2 64% 54765 4175 32%\nc x 116.00  0 46 64 14866  1 637649 22828 2.2 76 35 1 2 64% 54763 4174 32%\nc t 116.01  0 46 64 14866  1 637649 22802 2.2 76 35 1 2 64% 54763 4174 32%\nc - 119.07  0 44 65 14874  1 657617 20301 2.2 74 34 1 2 64% 54740 4174 32%\nc p 119.10  0 44 65 14874  1 657617 43209 2.2 74 34 1 2 64% 54740 4169 32%\nc u 119.14  0 44 65 14874  1 657617 43119 2.2 74 34 1 2 64% 54740 4169 32%\nc v 119.16  0 44 65 14874  1 657617 43093 2.2 74 34 1 2 64% 54740 4169 32%\nc w 119.17  0 44 65 14874  1 657617 43093 2.2 74 34 1 2 64% 54740 4169 32%\nc x 119.20  0 44 65 14874  1 657617 43086 2.2 74 34 1 2 64% 54737 4169 32%\nc t 119.20  0 44 65 14874  1 657617 43069 2.2 74 34 1 2 64% 54737 4169 32%\nc O 120.35  0 43 65 14880  1 666168 49483 2.2 73 33 1 2 64% 54737 4169 32%\nc i 120.41  0 43 65 14880  1 666568 49698 2.2 72 33 1 2 64% 54737 4166 32%\nc s 120.76  0 42 65 14880  1 668379 50180 2.2 72 33 1 2 63% 54653 4166 32%\nc t 120.76  0 42 65 14880  1 668379 50179 2.2 72 33 1 2 63% 54653 4166 32%\nc e 120.79  0 42 65 14880  1 668379 49864 2.2 72 33 1 2 63% 54297 4154 32%\nc \nc  seconds   reductions    conflicts         size   tier2      variables\nc          MB      restarts       redundant     glue   trail        remaining\nc           level        rate          size/glue  tier1  irredundant\nc \nc s 120.83  0 42 65 14880  1 668379 49844 2.2 72 33 1 2 63% 54297 4154 32%\nc i 121.09  0 42 65 14880  1 669818 50827 2.2 72 33 1 2 63% 54297 4153 32%\nc - 122.49  0 41 66 14881  1 677894 19504 2.2 70 32 1 2 63% 54248 4153 32%\nc p 122.50  0 41 66 14881  1 677894 24206 2.2 70 32 1 2 63% 54248 4056 31%\nc k 122.50  0 41 66 14881  1 677894 24206 2.2 70 32 1 2 63% 54248 4053 31%\nc u 122.55  0 41 66 14881  1 677894 24084 2.2 70 32 1 2 63% 54248 4035 31%\nc v 122.57  0 41 66 14881  1 677894 24003 2.2 70 32 1 2 63% 54248 4034 31%\nc w 122.58  0 41 66 14881  1 677894 23976 2.2 70 32 1 2 63% 54248 4034 31%\nc x 122.60  0 41 66 14881  1 677894 23976 2.2 70 32 1 2 63% 54244 4023 31%\nc t 122.60  0 41 66 14881  1 677894 23958 2.2 70 32 1 2 63% 54244 4023 31%\nc i 122.70  0 41 66 14881  1 678501 24330 2.2 70 32 1 2 63% 54244 3987 30%\nc i 122.81  0 41 66 14882  1 679356 24970 2.2 70 32 1 2 63% 54244 3655 28%\nc i 122.83  0 41 66 14882  1 679369 10698 2.2 70 32 1 2 47% 42566 3400 26%\nc ] 122.83  0 41 66 14882  1 679371 10698 2.2 70 32 1 2 45% 42566 3097 24%\nc 0 122.83  0 41 66 14882  1 679371 10698 2.2 70 32 1 2 45% 42566 3097 24%\nc \nc --- [ closing proof ] ------------------------------------------------------\nc \nc DRAT proof file '/var/folders/pb/wqsj3_6x3sb1k1xhpfyk924w0000gn/T/ramsey-r3-18-cadical-sk1hlu_o/branch0.drat' closed\nc DRAT 1354502 added clauses 47.73%\nc DRAT 1483269 deleted clauses 52.27%\nc DRAT 759008359 bytes (723.85 MB)\nc \nc --- [ result ] -------------------------------------------------------------\nc \ns UNSATISFIABLE\nc \nc --- [ run-time profiling ] -------------------------------------------------\nc \nc process time taken by individual solving procedures\nc (percentage relative to process time for solving)\nc \nc       114.35   93.16% search\nc        52.71   42.94% unstable\nc        51.26   41.76% stable\nc        10.22    8.32% walk\nc         8.40    6.84% simplify\nc         3.17    2.59% vivify\nc         3.05    2.48% sweep\nc         0.78    0.63% subsume\nc         0.48    0.39% probe\nc         0.42    0.34% elim\nc         0.16    0.13% lucky\nc         0.14    0.12% ternary\nc         0.10    0.08% congruence\nc         0.09    0.07% parse\nc         0.06    0.05% backbone\nc   =================================\nc       122.75   99.93% solve\nc \nc last line shows process time for solving\nc (percentage relative to total process time)\nc \nc --- [ statistics ] ---------------------------------------------------------\nc \nc chronological:            175082        25.77 %  of conflicts\nc conflicts:                679371      5534.66    per second\nc backbone:                1543009     11724.99 %  of vars\nc decisions:               1738072     14159.63    per second\nc eliminated:                 8552        64.98 %  of all variables\nc fixed:                      1511        11.48 %  of all variables\nc learned:                  646273        95.13 %  per conflict\nc learned_lits:           95450814       100.00 %  learned literals\nc minimized:                     0         0.00 %  learned literals\nc shrunken:               32152825        33.69 %  learned literals\nc minishrunken:           15456397        16.19 %  learned literals\nc otfs:                       1253         0.18 %  of conflict\nc propagations:          606776462         4.94 M  per second\nc reduced:                  369433        54.38 %  per conflict\nc rephased:                     36     18871.42    interval\nc restarts:                  14882        45.65    interval\nc stabilizing:                   9        47.17 %  of conflicts\nc subsumed:                 158172        12.95 %  of all clauses\nc strengthened:              14444         1.18 %  of all clauses\nc ticks:                6597731841        11.84    propagation\nc vivified:                  10442         0.86 %  of all clauses\nc walked:                       11     61761.00    interval\nc weakened:                 152016         3.73    average size\nc \nc seconds are measured in process time for solving\nc \nc --- [ glue usage ] ---------------------------------------------------------\nc \nc focused glue 1 used 2911432 clauses 74.55% accumulated 74.55% tier1\nc focused glue 2 used 422888 clauses 10.82% accumulated 85.38% tier2\nc \nc stable glue 1 used 3224946 clauses 71.34% accumulated 71.34% tier1\nc stable glue 2 used 459247 clauses 10.16% accumulated 81.50% tier2\nc \nc \nc --- [ resources ] ----------------------------------------------------------\nc \nc total process time since initialization:       122.83    seconds\nc total real time since initialization:          129.93    seconds\nc maximum resident set size of process:          191.47    MB\nc \nc --- [ shutting down ] ------------------------------------------------------\nc \nc exit 20\n",
+    "wall_limit_seconds": 900.0
+  },
+  "finite_formula": {
+    "auxiliary_variables": 8210,
+    "budget5_proof_dependency": "The frozen checked budget-five theorem covers all solutions with at most four residual deletions in every triangle-edge branch.",
+    "cardinality_semantics": "exactly five residual deletions",
+    "cut_bank": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/r3_18_budget6_branch_2.cuts.json",
+    "cut_bank_sha256": "aaa79a2f25d4c0d61c4467f1d0a721fd670a624e0391d96b2122723f97ba4598",
+    "dimacs_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/r3_18_budget6_branch_2.cnf.gz",
+    "dimacs_gzip_sha256": "c51fed43eeca3becf64bcdfbe747a4fdf3e516ce0e6a02d7d867941b87a99c06",
+    "dimacs_lines": 183544,
+    "dimacs_uncompressed_bytes": 6919594,
+    "dimacs_uncompressed_sha256": "65c5ff9a402bdaeb3352f90eb6fb64b86141de5b1750977cc66b8c5ae7efb4a3",
+    "edge_variables": 4950,
+    "exact_residual_cardinality_clauses": 16420,
+    "final_clause_count": 183543,
+    "fixed_deleted_edge": [
+      98,
+      99
+    ],
+    "fixed_deleted_edge_cannot_be_readded": true,
+    "fixed_unit_clauses": 1,
+    "formula_build_seconds": 0.2769183329655789,
+    "initial_clause_count": 183543,
+    "installed_I18_sha256": "9d86582d574d3c788452018a9caca8e26e0ed1737a96e9f8112e315d4a0d2ac3",
+    "installed_unique_I18_clauses": 5422,
+    "maximum_variable": 13160,
+    "preloaded_fixed_base_I18_clauses": 4096,
+    "residual_input_edge_deletions": 5,
+    "resumed_I18_clauses": 1434,
+    "total_input_edge_deletions": 6,
+    "triangle_clauses": 161700
+  },
+  "fixed_deleted_edge": [
+    98,
+    99
+  ],
+  "fixed_edge_cannot_be_readded": true,
+  "global_ramsey_implication": null,
+  "input": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/certificates/r3_18_n100_nearmiss.txt",
+  "input_sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+  "limits": {
+    "blue_batch_size": 1,
+    "discovery_wall_seconds": 1.0,
+    "drat_check_wall_seconds": 900.0,
+    "preloaded_fixed_base_I18": 4096,
+    "proof_wall_seconds": 900.0
+  },
+  "resume_sources": [
+    "/private/tmp/r318-b6-port.ReJPIi/g2/r3_18_budget6_branch_2.checkpoint.json",
+    "/private/tmp/r318-b6-port.ReJPIi/m2/r3_18_budget6_branch_2.checkpoint.json"
+  ],
+  "resumed_I18_cuts": 1434,
+  "schema": "ramsey-r3-18-n100-exact-budget6-branch-v1",
+  "seed_bitset_verification": {
+    "alpha_exact": null,
+    "certified_lower_bound": null,
+    "edges": 827,
+    "input": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/certificates/r3_18_n100_nearmiss.txt",
+    "omega_exact": null,
+    "r": 3,
+    "s": 18,
+    "searches": {
+      "boundary_clique": {
+        "colorings": 2,
+        "elapsed_seconds": 3.633397864177823e-05,
+        "exists": true,
+        "recursive_nodes": 3,
+        "target": 2,
+        "witness": [
+          96,
+          80
+        ]
+      },
+      "boundary_independent_set": {
+        "colorings": 17,
+        "elapsed_seconds": 0.00014549994375556707,
+        "exists": true,
+        "recursive_nodes": 18,
+        "target": 17,
+        "witness": [
+          99,
+          96,
+          95,
+          91,
+          87,
+          85,
+          93,
+          89,
+          84,
+          88,
+          90,
+          94,
+          92,
+          86,
+          83,
+          82,
+          81
+        ]
+      },
+      "forbidden_clique": {
+        "colorings": 20,
+        "elapsed_seconds": 0.00012499996228143573,
+        "exists": true,
+        "recursive_nodes": 21,
+        "target": 3,
+        "witness": [
+          99,
+          98,
+          97
+        ]
+      },
+      "forbidden_independent_set": {
+        "colorings": 1990791,
+        "elapsed_seconds": 8.98889879102353,
+        "exists": false,
+        "recursive_nodes": 1990791,
+        "target": 18,
+        "witness": null
+      }
+    },
+    "sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+    "valid_ramsey_certificate": false,
+    "vertices": 100
+  },
+  "status": "UNSAT_PROOF_VERIFIED",
+  "target": {
+    "n": 100,
+    "r": 3,
+    "s": 18
+  },
+  "tools": {
+    "drat_trim": "/private/tmp/ramsey-drat-trim-2e3b2dc/drat-trim",
+    "drat_trim_sha256": "31d9e8e04bc76a65f0a18ea212ac44af4cf7bc398629495cec093ced772c50f4",
+    "drat_trim_source_commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+    "external_cadical": "/private/tmp/ramsey-cadical.cIJ6Ge/build/cadical",
+    "external_cadical_sha256": "62d48c0890fae760c859e65676dc0598d59c36ac8170cbc5f115208d0a549429",
+    "external_cadical_source_commit": "c60730422e758ef1cebe7aeddf2dda31c996bf04",
+    "pysat_discovery_solver": "cadical195"
+  }
+}

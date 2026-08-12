@@ -1,0 +1,22 @@
+*.txt text eol=lf
+*.md text eol=lf
+*.tex text eol=lf
+*.bib text eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.pdf binary
+*.gz binary
+
+# Frozen Markdown records use two trailing spaces for hard line breaks, and
+# several source snapshots intentionally retain one blank line at EOF.  Treat
+# those byte-preserved conventions as non-errors in `git diff --check`.
+*.md whitespace=-trailing-space
+*.tex whitespace=-blank-at-eof
+*.bib whitespace=-blank-at-eof
+*.json whitespace=-blank-at-eof
+*.py whitespace=-blank-at-eof
+*.sh whitespace=-blank-at-eof
+*.txt whitespace=-blank-at-eof

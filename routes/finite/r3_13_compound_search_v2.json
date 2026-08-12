@@ -1,0 +1,1393 @@
+{
+  "accepted_moves": 193,
+  "anchored_restarts": 0,
+  "best_independent_sets": 0,
+  "best_score": 11,
+  "best_triangles": 11,
+  "compound_launches": [
+    {
+      "detail": {
+        "created_independent_sets": 1,
+        "destroyed_triangles": 1,
+        "operation": "remove"
+      },
+      "from_score": 25,
+      "iteration": 7,
+      "move": [
+        11,
+        34
+      ],
+      "to_score": 25
+    },
+    {
+      "detail": {
+        "created_independent_sets": 10,
+        "destroyed_triangles": 1,
+        "operation": "remove"
+      },
+      "from_score": 24,
+      "iteration": 9,
+      "move": [
+        7,
+        28
+      ],
+      "to_score": 33
+    },
+    {
+      "detail": {
+        "created_independent_sets": 1,
+        "destroyed_triangles": 1,
+        "operation": "remove"
+      },
+      "from_score": 17,
+      "iteration": 14,
+      "move": [
+        5,
+        46
+      ],
+      "to_score": 17
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 16,
+      "iteration": 16,
+      "move": [
+        16,
+        55
+      ],
+      "to_score": 17
+    },
+    {
+      "detail": {
+        "created_triangles": 2,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 17,
+      "iteration": 17,
+      "move": [
+        17,
+        56
+      ],
+      "to_score": 19
+    },
+    {
+      "detail": {
+        "created_independent_sets": 7,
+        "destroyed_triangles": 1,
+        "operation": "remove"
+      },
+      "from_score": 19,
+      "iteration": 18,
+      "move": [
+        20,
+        51
+      ],
+      "to_score": 25
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 19,
+      "iteration": 20,
+      "move": [
+        41,
+        58
+      ],
+      "to_score": 20
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 20,
+      "iteration": 21,
+      "move": [
+        33,
+        54
+      ],
+      "to_score": 21
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 21,
+      "iteration": 22,
+      "move": [
+        14,
+        36
+      ],
+      "to_score": 22
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 22,
+      "iteration": 23,
+      "move": [
+        6,
+        18
+      ],
+      "to_score": 23
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 20,
+      "iteration": 26,
+      "move": [
+        2,
+        10
+      ],
+      "to_score": 21
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 16,
+      "iteration": 32,
+      "move": [
+        1,
+        40
+      ],
+      "to_score": 17
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 17,
+      "iteration": 33,
+      "move": [
+        23,
+        35
+      ],
+      "to_score": 18
+    },
+    {
+      "detail": {
+        "created_independent_sets": 10,
+        "destroyed_triangles": 1,
+        "operation": "remove"
+      },
+      "from_score": 18,
+      "iteration": 34,
+      "move": [
+        2,
+        10
+      ],
+      "to_score": 27
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 18,
+      "iteration": 36,
+      "move": [
+        10,
+        28
+      ],
+      "to_score": 19
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 19,
+      "iteration": 37,
+      "move": [
+        12,
+        24
+      ],
+      "to_score": 20
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 20,
+      "iteration": 38,
+      "move": [
+        0,
+        49
+      ],
+      "to_score": 21
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 21,
+      "iteration": 39,
+      "move": [
+        46,
+        59
+      ],
+      "to_score": 22
+    },
+    {
+      "detail": {
+        "created_independent_sets": 0,
+        "destroyed_triangles": 0,
+        "operation": "remove"
+      },
+      "from_score": 20,
+      "iteration": 42,
+      "move": [
+        8,
+        31
+      ],
+      "to_score": 20
+    },
+    {
+      "detail": {
+        "created_independent_sets": 6,
+        "destroyed_triangles": 1,
+        "operation": "remove"
+      },
+      "from_score": 19,
+      "iteration": 44,
+      "move": [
+        10,
+        28
+      ],
+      "to_score": 24
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 16,
+      "iteration": 49,
+      "move": [
+        8,
+        37
+      ],
+      "to_score": 17
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 16,
+      "iteration": 51,
+      "move": [
+        26,
+        38
+      ],
+      "to_score": 17
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 17,
+      "iteration": 52,
+      "move": [
+        23,
+        41
+      ],
+      "to_score": 18
+    },
+    {
+      "detail": {
+        "created_independent_sets": 8,
+        "destroyed_triangles": 1,
+        "operation": "remove"
+      },
+      "from_score": 18,
+      "iteration": 53,
+      "move": [
+        2,
+        10
+      ],
+      "to_score": 25
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 18,
+      "iteration": 55,
+      "move": [
+        22,
+        34
+      ],
+      "to_score": 19
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 19,
+      "iteration": 56,
+      "move": [
+        17,
+        51
+      ],
+      "to_score": 20
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 20,
+      "iteration": 57,
+      "move": [
+        2,
+        32
+      ],
+      "to_score": 21
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 21,
+      "iteration": 58,
+      "move": [
+        10,
+        49
+      ],
+      "to_score": 22
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 20,
+      "iteration": 61,
+      "move": [
+        1,
+        19
+      ],
+      "to_score": 21
+    },
+    {
+      "detail": {
+        "created_independent_sets": 10,
+        "destroyed_triangles": 1,
+        "operation": "remove"
+      },
+      "from_score": 17,
+      "iteration": 66,
+      "move": [
+        10,
+        49
+      ],
+      "to_score": 26
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 17,
+      "iteration": 68,
+      "move": [
+        23,
+        53
+      ],
+      "to_score": 18
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 17,
+      "iteration": 70,
+      "move": [
+        49,
+        56
+      ],
+      "to_score": 18
+    },
+    {
+      "detail": {
+        "created_independent_sets": 0,
+        "destroyed_triangles": 0,
+        "operation": "remove"
+      },
+      "from_score": 18,
+      "iteration": 71,
+      "move": [
+        8,
+        37
+      ],
+      "to_score": 18
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 18,
+      "iteration": 72,
+      "move": [
+        9,
+        27
+      ],
+      "to_score": 19
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 19,
+      "iteration": 73,
+      "move": [
+        13,
+        58
+      ],
+      "to_score": 20
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 20,
+      "iteration": 74,
+      "move": [
+        38,
+        60
+      ],
+      "to_score": 21
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 19,
+      "iteration": 77,
+      "move": [
+        35,
+        51
+      ],
+      "to_score": 20
+    },
+    {
+      "detail": {
+        "created_independent_sets": 4,
+        "destroyed_triangles": 1,
+        "operation": "remove"
+      },
+      "from_score": 20,
+      "iteration": 78,
+      "move": [
+        49,
+        56
+      ],
+      "to_score": 23
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 17,
+      "iteration": 83,
+      "move": [
+        13,
+        25
+      ],
+      "to_score": 18
+    },
+    {
+      "detail": {
+        "created_independent_sets": 0,
+        "destroyed_triangles": 0,
+        "operation": "remove"
+      },
+      "from_score": 18,
+      "iteration": 84,
+      "move": [
+        27,
+        47
+      ],
+      "to_score": 18
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 17,
+      "iteration": 86,
+      "move": [
+        25,
+        43
+      ],
+      "to_score": 18
+    },
+    {
+      "detail": {
+        "created_independent_sets": 10,
+        "destroyed_triangles": 1,
+        "operation": "remove"
+      },
+      "from_score": 18,
+      "iteration": 87,
+      "move": [
+        2,
+        38
+      ],
+      "to_score": 27
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 18,
+      "iteration": 89,
+      "move": [
+        22,
+        53
+      ],
+      "to_score": 19
+    },
+    {
+      "detail": {
+        "created_triangles": 2,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 19,
+      "iteration": 90,
+      "move": [
+        2,
+        49
+      ],
+      "to_score": 21
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 20,
+      "iteration": 92,
+      "move": [
+        3,
+        57
+      ],
+      "to_score": 21
+    },
+    {
+      "detail": {
+        "created_triangles": 0,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 21,
+      "iteration": 93,
+      "move": [
+        8,
+        37
+      ],
+      "to_score": 21
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 20,
+      "iteration": 95,
+      "move": [
+        17,
+        53
+      ],
+      "to_score": 21
+    },
+    {
+      "detail": {
+        "created_independent_sets": 10,
+        "destroyed_triangles": 2,
+        "operation": "remove"
+      },
+      "from_score": 19,
+      "iteration": 98,
+      "move": [
+        2,
+        49
+      ],
+      "to_score": 27
+    },
+    {
+      "detail": {
+        "created_triangles": 0,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 17,
+      "iteration": 101,
+      "move": [
+        7,
+        28
+      ],
+      "to_score": 17
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 17,
+      "iteration": 102,
+      "move": [
+        21,
+        60
+      ],
+      "to_score": 18
+    },
+    {
+      "detail": {
+        "created_independent_sets": 53,
+        "destroyed_triangles": 1,
+        "operation": "remove"
+      },
+      "from_score": 17,
+      "iteration": 104,
+      "move": [
+        52,
+        60
+      ],
+      "to_score": 69
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 18,
+      "iteration": 108,
+      "move": [
+        14,
+        40
+      ],
+      "to_score": 19
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 19,
+      "iteration": 109,
+      "move": [
+        15,
+        37
+      ],
+      "to_score": 20
+    },
+    {
+      "detail": {
+        "created_triangles": 0,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 19,
+      "iteration": 111,
+      "move": [
+        31,
+        47
+      ],
+      "to_score": 19
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 19,
+      "iteration": 112,
+      "move": [
+        29,
+        41
+      ],
+      "to_score": 20
+    },
+    {
+      "detail": {
+        "created_triangles": 0,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 18,
+      "iteration": 114,
+      "move": [
+        48,
+        55
+      ],
+      "to_score": 18
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 18,
+      "iteration": 115,
+      "move": [
+        17,
+        47
+      ],
+      "to_score": 19
+    },
+    {
+      "detail": {
+        "created_triangles": 2,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 17,
+      "iteration": 118,
+      "move": [
+        9,
+        42
+      ],
+      "to_score": 19
+    },
+    {
+      "detail": {
+        "created_independent_sets": 20,
+        "destroyed_triangles": 1,
+        "operation": "remove"
+      },
+      "from_score": 19,
+      "iteration": 119,
+      "move": [
+        24,
+        42
+      ],
+      "to_score": 38
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 18,
+      "iteration": 122,
+      "move": [
+        4,
+        39
+      ],
+      "to_score": 19
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 18,
+      "iteration": 124,
+      "move": [
+        25,
+        53
+      ],
+      "to_score": 19
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 18,
+      "iteration": 126,
+      "move": [
+        20,
+        32
+      ],
+      "to_score": 19
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 19,
+      "iteration": 127,
+      "move": [
+        6,
+        22
+      ],
+      "to_score": 20
+    },
+    {
+      "detail": {
+        "created_independent_sets": 20,
+        "destroyed_triangles": 1,
+        "operation": "remove"
+      },
+      "from_score": 20,
+      "iteration": 128,
+      "move": [
+        3,
+        52
+      ],
+      "to_score": 39
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 20,
+      "iteration": 131,
+      "move": [
+        12,
+        24
+      ],
+      "to_score": 21
+    },
+    {
+      "detail": {
+        "created_independent_sets": 0,
+        "destroyed_triangles": 0,
+        "operation": "remove"
+      },
+      "from_score": 21,
+      "iteration": 132,
+      "move": [
+        31,
+        47
+      ],
+      "to_score": 21
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 21,
+      "iteration": 133,
+      "move": [
+        21,
+        56
+      ],
+      "to_score": 22
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 20,
+      "iteration": 136,
+      "move": [
+        2,
+        41
+      ],
+      "to_score": 21
+    },
+    {
+      "detail": {
+        "created_independent_sets": 20,
+        "destroyed_triangles": 2,
+        "operation": "remove"
+      },
+      "from_score": 21,
+      "iteration": 137,
+      "move": [
+        3,
+        34
+      ],
+      "to_score": 39
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 16,
+      "iteration": 142,
+      "move": [
+        29,
+        41
+      ],
+      "to_score": 17
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 17,
+      "iteration": 143,
+      "move": [
+        21,
+        39
+      ],
+      "to_score": 18
+    },
+    {
+      "detail": {
+        "created_triangles": 0,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 17,
+      "iteration": 145,
+      "move": [
+        0,
+        4
+      ],
+      "to_score": 17
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 17,
+      "iteration": 146,
+      "move": [
+        27,
+        51
+      ],
+      "to_score": 18
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 18,
+      "iteration": 147,
+      "move": [
+        17,
+        52
+      ],
+      "to_score": 19
+    },
+    {
+      "detail": {
+        "created_independent_sets": 0,
+        "destroyed_triangles": 0,
+        "operation": "remove"
+      },
+      "from_score": 19,
+      "iteration": 148,
+      "move": [
+        8,
+        37
+      ],
+      "to_score": 19
+    },
+    {
+      "detail": {
+        "created_triangles": 0,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 19,
+      "iteration": 149,
+      "move": [
+        31,
+        47
+      ],
+      "to_score": 19
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 17,
+      "iteration": 152,
+      "move": [
+        3,
+        60
+      ],
+      "to_score": 18
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 18,
+      "iteration": 153,
+      "move": [
+        10,
+        22
+      ],
+      "to_score": 19
+    },
+    {
+      "detail": {
+        "created_triangles": 0,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 17,
+      "iteration": 156,
+      "move": [
+        1,
+        54
+      ],
+      "to_score": 17
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 17,
+      "iteration": 157,
+      "move": [
+        3,
+        21
+      ],
+      "to_score": 18
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 18,
+      "iteration": 158,
+      "move": [
+        11,
+        33
+      ],
+      "to_score": 19
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 19,
+      "iteration": 159,
+      "move": [
+        48,
+        57
+      ],
+      "to_score": 20
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 18,
+      "iteration": 162,
+      "move": [
+        26,
+        47
+      ],
+      "to_score": 19
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 19,
+      "iteration": 163,
+      "move": [
+        31,
+        49
+      ],
+      "to_score": 20
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 20,
+      "iteration": 164,
+      "move": [
+        14,
+        46
+      ],
+      "to_score": 21
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 18,
+      "iteration": 168,
+      "move": [
+        0,
+        36
+      ],
+      "to_score": 19
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 19,
+      "iteration": 169,
+      "move": [
+        23,
+        53
+      ],
+      "to_score": 20
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 17,
+      "iteration": 173,
+      "move": [
+        26,
+        38
+      ],
+      "to_score": 18
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 18,
+      "iteration": 174,
+      "move": [
+        3,
+        47
+      ],
+      "to_score": 19
+    },
+    {
+      "detail": {
+        "created_independent_sets": 0,
+        "destroyed_triangles": 0,
+        "operation": "remove"
+      },
+      "from_score": 19,
+      "iteration": 175,
+      "move": [
+        31,
+        47
+      ],
+      "to_score": 19
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 17,
+      "iteration": 178,
+      "move": [
+        6,
+        56
+      ],
+      "to_score": 18
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 18,
+      "iteration": 179,
+      "move": [
+        29,
+        47
+      ],
+      "to_score": 19
+    },
+    {
+      "detail": {
+        "created_triangles": 2,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 19,
+      "iteration": 180,
+      "move": [
+        34,
+        60
+      ],
+      "to_score": 21
+    },
+    {
+      "detail": {
+        "created_independent_sets": 41,
+        "destroyed_triangles": 1,
+        "operation": "remove"
+      },
+      "from_score": 18,
+      "iteration": 184,
+      "move": [
+        24,
+        42
+      ],
+      "to_score": 58
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 18,
+      "iteration": 189,
+      "move": [
+        2,
+        9
+      ],
+      "to_score": 19
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 19,
+      "iteration": 190,
+      "move": [
+        7,
+        25
+      ],
+      "to_score": 20
+    },
+    {
+      "detail": {
+        "created_triangles": 1,
+        "destroyed_independent_sets": 0,
+        "operation": "add"
+      },
+      "from_score": 19,
+      "iteration": 192,
+      "move": [
+        17,
+        57
+      ],
+      "to_score": 20
+    },
+    {
+      "detail": {
+        "created_independent_sets": 0,
+        "destroyed_triangles": 0,
+        "operation": "remove"
+      },
+      "from_score": 20,
+      "iteration": 193,
+      "move": [
+        48,
+        55
+      ],
+      "to_score": 20
+    }
+  ],
+  "elapsed_seconds": 90.46064866596134,
+  "improvements": [],
+  "input_sha256": "a144986d21117eff66eda4c37a30acfe25ab274a5587a2542740cf4a82b2f484",
+  "iterations": 193,
+  "max_uphill": 64,
+  "output_sha256": "a144986d21117eff66eda4c37a30acfe25ab274a5587a2542740cf4a82b2f484",
+  "plateau_patience": 6,
+  "random_candidates": 16,
+  "seconds_requested": 90.0,
+  "seed": 20260813,
+  "start_score": 11,
+  "tabu_length": 8
+}

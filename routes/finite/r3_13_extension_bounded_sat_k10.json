@@ -1,0 +1,141 @@
+{
+  "attempts": [
+    {
+      "actual_red_conflicts": 10,
+      "blue_clauses_discovered": 27643,
+      "bound": 10,
+      "cegar_iterations": 28,
+      "elapsed_seconds": 81.10513487498974,
+      "neighborhood": [
+        0,
+        5,
+        8,
+        25,
+        28,
+        30,
+        33,
+        34,
+        35,
+        38,
+        40,
+        43,
+        54
+      ],
+      "red_conflict_witnesses": [
+        [
+          0,
+          34
+        ],
+        [
+          25,
+          34
+        ],
+        [
+          28,
+          34
+        ],
+        [
+          30,
+          34
+        ],
+        [
+          33,
+          34
+        ],
+        [
+          34,
+          35
+        ],
+        [
+          34,
+          38
+        ],
+        [
+          34,
+          40
+        ],
+        [
+          34,
+          43
+        ],
+        [
+          34,
+          54
+        ]
+      ],
+      "status": "SAT"
+    }
+  ],
+  "base_sha256": "d619f0bfed32af5e2fbc8c724d9c65dbf388a19d5647d20e7835b501bc03227a",
+  "feasible_frozen_base_conflicts": 10,
+  "has_forbidden_clique": true,
+  "has_forbidden_independent_set": false,
+  "minimum_frozen_base_conflicts": null,
+  "minimum_proved": false,
+  "near_miss_sha256": "3a6ee374d58375526bc5b60b961a82b9126b06120de906dfa93d94d613d25b1a",
+  "neighborhood": [
+    0,
+    5,
+    8,
+    25,
+    28,
+    30,
+    33,
+    34,
+    35,
+    38,
+    40,
+    43,
+    54
+  ],
+  "r": 3,
+  "red_conflict_witnesses": [
+    [
+      0,
+      34
+    ],
+    [
+      25,
+      34
+    ],
+    [
+      28,
+      34
+    ],
+    [
+      30,
+      34
+    ],
+    [
+      33,
+      34
+    ],
+    [
+      34,
+      35
+    ],
+    [
+      34,
+      38
+    ],
+    [
+      34,
+      40
+    ],
+    [
+      34,
+      43
+    ],
+    [
+      34,
+      54
+    ]
+  ],
+  "s": 13,
+  "solver": "cadical195",
+  "tested_bound_range": [
+    10,
+    10
+  ],
+  "vertices_in_base": 60
+}

@@ -1,0 +1,163 @@
+{
+  "arbitrary_input_nonedge_additions_allowed": true,
+  "branch": 0,
+  "budget5_checked_proof_required_for_at_most6_conclusion": true,
+  "discovery": {
+    "note": "No solver conclusion is imported from the checkpoint; the reconstructed finite CNF must independently produce and pass DRAT.",
+    "proof_mode": "DIRECT_EXTERNAL_PROOF_OF_RESUMED_FINITE_CNF",
+    "status": "UNSAT_FINITE_CUT_BANK"
+  },
+  "elapsed_seconds": 20.34645112499129,
+  "exact_residual_input_edge_deletions": 5,
+  "exact_total_input_edge_deletions": 6,
+  "external_proof_run": {
+    "elapsed_seconds": 9.051876792043913,
+    "exitcode": 10,
+    "status": "SAT",
+    "stderr_tail": "",
+    "stdout_tail": "407 12408 12409 -12410 12411\nv 12412 12413 12414 -12415 12416 12417 12418 12419 -12420 12421 12422 12423\nv 12424 -12425 12426 12427 12428 12429 -12430 12431 12432 12433 12434 -12435\nv 12436 12437 12438 12439 -12440 12441 12442 12443 12444 -12445 12446 12447\nv 12448 12449 -12450 12451 12452 12453 12454 -12455 12456 12457 12458 12459\nv -12460 12461 12462 12463 12464 -12465 12466 12467 12468 12469 -12470 12471\nv 12472 12473 12474 -12475 12476 12477 12478 12479 -12480 12481 12482 12483\nv 12484 -12485 12486 12487 12488 12489 -12490 12491 12492 12493 12494 -12495\nv 12496 12497 12498 12499 -12500 12501 12502 12503 12504 -12505 12506 12507\nv 12508 12509 -12510 12511 12512 12513 12514 -12515 12516 12517 12518 12519\nv -12520 12521 12522 12523 12524 -12525 12526 12527 12528 12529 -12530 12531\nv 12532 12533 12534 -12535 12536 12537 12538 12539 -12540 12541 12542 12543\nv 12544 -12545 12546 12547 12548 12549 -12550 12551 12552 12553 12554 -12555\nv 12556 12557 12558 12559 -12560 12561 12562 12563 12564 -12565 12566 12567\nv 12568 12569 -12570 12571 12572 12573 12574 -12575 12576 12577 12578 12579\nv -12580 12581 12582 12583 12584 -12585 12586 12587 12588 12589 -12590 12591\nv 12592 12593 12594 -12595 12596 12597 12598 12599 -12600 12601 12602 12603\nv 12604 -12605 12606 12607 12608 12609 -12610 12611 12612 12613 12614 -12615\nv 12616 12617 12618 12619 -12620 12621 12622 12623 12624 -12625 12626 12627\nv 12628 12629 -12630 12631 12632 12633 12634 -12635 12636 12637 12638 12639\nv -12640 12641 12642 12643 12644 -12645 12646 12647 12648 12649 -12650 12651\nv 12652 12653 12654 -12655 12656 12657 12658 12659 -12660 12661 12662 12663\nv 12664 -12665 12666 12667 12668 12669 -12670 12671 12672 12673 12674 -12675\nv 12676 12677 12678 12679 -12680 12681 12682 12683 12684 -12685 12686 12687\nv 12688 12689 -12690 12691 12692 12693 12694 -12695 12696 12697 12698 12699\nv -12700 12701 12702 12703 12704 -12705 12706 12707 12708 12709 -12710 12711\nv 12712 12713 12714 -12715 12716 12717 12718 12719 -12720 12721 12722 12723\nv 12724 -12725 12726 12727 12728 12729 -12730 12731 12732 12733 12734 -12735\nv 12736 12737 12738 12739 -12740 12741 12742 12743 12744 -12745 12746 12747\nv 12748 12749 -12750 12751 12752 12753 12754 -12755 12756 12757 12758 12759\nv -12760 12761 12762 12763 12764 -12765 12766 12767 12768 12769 -12770 12771\nv 12772 12773 12774 -12775 12776 12777 12778 12779 -12780 12781 12782 12783\nv 12784 -12785 12786 12787 12788 12789 -12790 12791 12792 12793 12794 -12795\nv 12796 12797 12798 12799 -12800 12801 12802 12803 12804 -12805 12806 12807\nv 12808 12809 -12810 12811 12812 12813 12814 -12815 12816 12817 12818 12819\nv -12820 12821 12822 12823 12824 -12825 12826 12827 12828 12829 -12830 12831\nv 12832 12833 12834 -12835 12836 12837 12838 12839 -12840 12841 12842 12843\nv 12844 -12845 12846 12847 12848 12849 -12850 12851 12852 12853 12854 12855\nv 12856 12857 12858 12859 12860 12861 12862 12863 12864 12865 12866 12867\nv 12868 12869 12870 12871 12872 12873 12874 12875 12876 12877 12878 12879\nv 12880 12881 12882 12883 12884 12885 12886 12887 12888 12889 12890 12891\nv 12892 12893 12894 12895 12896 12897 12898 12899 12900 12901 12902 12903\nv 12904 12905 12906 12907 12908 12909 12910 12911 12912 12913 12914 12915\nv 12916 12917 12918 12919 12920 12921 12922 12923 12924 12925 12926 12927\nv 12928 12929 12930 12931 12932 12933 12934 12935 12936 12937 12938 12939\nv 12940 12941 12942 12943 12944 12945 12946 12947 12948 12949 12950 12951\nv 12952 12953 12954 12955 12956 12957 12958 12959 12960 12961 12962 12963\nv 12964 12965 12966 12967 12968 12969 12970 12971 12972 12973 12974 12975\nv 12976 12977 12978 12979 12980 12981 12982 12983 12984 12985 12986 12987\nv 12988 12989 12990 12991 12992 12993 12994 12995 12996 12997 12998 12999\nv 13000 13001 13002 13003 13004 13005 13006 13007 13008 13009 13010 13011\nv 13012 13013 13014 13015 13016 13017 13018 13019 13020 13021 13022 13023\nv 13024 13025 13026 13027 13028 13029 13030 13031 13032 13033 13034 13035\nv 13036 13037 13038 13039 13040 13041 13042 13043 13044 13045 13046 13047\nv 13048 13049 13050 13051 13052 13053 13054 13055 13056 13057 13058 13059\nv 13060 13061 13062 13063 13064 13065 13066 13067 13068 13069 13070 13071\nv 13072 13073 13074 13075 13076 13077 13078 13079 13080 13081 13082 13083\nv 13084 13085 13086 13087 13088 13089 13090 13091 13092 13093 13094 13095\nv 13096 13097 13098 13099 13100 13101 13102 13103 13104 13105 13106 13107\nv 13108 13109 13110 13111 13112 13113 13114 13115 13116 13117 13118 13119\nv 13120 13121 13122 13123 13124 13125 13126 13127 13128 13129 13130 13131\nv 13132 13133 13134 13135 13136 13137 13138 13139 13140 13141 13142 13143\nv 13144 13145 13146 13147 13148 13149 13150 13151 13152 13153 13154 13155\nv 13156 13157 13158 13159 13160 0\nc \nc --- [ run-time profiling ] -------------------------------------------------\nc \nc process time taken by individual solving procedures\nc (percentage relative to process time for solving)\nc \nc         6.90   85.49% search\nc         3.43   42.45% unstable\nc         2.82   34.99% stable\nc         1.17   14.51% simplify\nc         0.73    9.05% parse\nc         0.65    8.05% lucky\nc         0.48    5.94% sweep\nc         0.23    2.79% vivify\nc         0.23    2.79% elim\nc         0.08    1.05% congruence\nc         0.05    0.60% subsume\nc         0.03    0.43% probe\nc         0.02    0.20% ternary\nc         0.00    0.05% backbone\nc   =================================\nc         8.07   91.68% solve\nc \nc last line shows process time for solving\nc (percentage relative to total process time)\nc \nc --- [ statistics ] ---------------------------------------------------------\nc \nc chronological:              3926        34.52 %  of conflicts\nc conflicts:                 11373      1409.06    per second\nc backbone:                 159402      1211.26 %  of vars\nc decisions:                 39395      4880.84    per second\nc eliminated:                 4867        36.98 %  of all variables\nc fixed:                        92         0.70 %  of all variables\nc learned:                   10080        88.63 %  per conflict\nc learned_lits:            2213881       100.00 %  learned literals\nc minimized:                     0         0.00 %  learned literals\nc shrunken:                 449902        20.32 %  learned literals\nc minishrunken:             303212        13.70 %  learned literals\nc otfs:                         87         0.76 %  of conflict\nc propagations:           17605110         2.18 M  per second\nc reduced:                    3100        27.26 %  per conflict\nc rephased:                      4      2843.25    interval\nc restarts:                     73       155.79    interval\nc stabilizing:                   2        42.66 %  of conflicts\nc subsumed:                   1359         0.38 %  of all clauses\nc strengthened:                270         0.08 %  of all clauses\nc ticks:                 319428763        21.32    propagation\nc vivified:                    135         0.04 %  of all clauses\nc weakened:                  20612         6.27    average size\nc \nc seconds are measured in process time for solving\nc \nc --- [ glue usage ] ---------------------------------------------------------\nc \nc focused glue 2 used 4866 clauses 26.01% accumulated 51.83% tier1\nc focused glue 3 used 1699 clauses 9.084% accumulated 60.91%\nc focused glue 4 used 633 clauses 3.384% accumulated 64.30% tier2\nc \nc stable glue 2 used 6245 clauses 24.30% accumulated 59.28% tier1\nc stable glue 3 used 1072 clauses 4.172% accumulated 63.45%\nc stable glue 4 used 590 clauses 2.296% accumulated 65.75%\nc stable glue 5 used 154 clauses 0.599% accumulated 66.35% tier2\nc \nc \nc --- [ resources ] ----------------------------------------------------------\nc \nc total process time since initialization:         8.80    seconds\nc total real time since initialization:            8.90    seconds\nc maximum resident set size of process:         1148.03    MB\nc \nc --- [ shutting down ] ------------------------------------------------------\nc \nc exit 10\n",
+    "wall_limit_seconds": 800.0
+  },
+  "finite_formula": {
+    "auxiliary_variables": 8210,
+    "budget5_proof_dependency": "The frozen checked budget-five theorem covers all solutions with at most four residual deletions in every triangle-edge branch.",
+    "cardinality_semantics": "exactly five residual deletions",
+    "cut_bank": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/r3_18_budget6_branch_0.cuts.json",
+    "cut_bank_sha256": "1018283cf44a79625a70bb1c1441d7a22e8b98b0c08125af4df57bdf90120617",
+    "dimacs_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/r3_18_budget6_branch_0.cnf.gz",
+    "dimacs_gzip_sha256": "85c9932866f4e719a1b8d2d526d675e8089d4db84b4c7ca5a863b43c4613c686",
+    "dimacs_lines": 319271,
+    "dimacs_uncompressed_bytes": 98713435,
+    "dimacs_uncompressed_sha256": "f63a6288e0011122ddcf4a100e8b15b9b01f85b100111cacc4f1af8cd16fd18e",
+    "edge_variables": 4950,
+    "exact_residual_cardinality_clauses": 16420,
+    "final_clause_count": 319270,
+    "fixed_deleted_edge": [
+      97,
+      98
+    ],
+    "fixed_deleted_edge_cannot_be_readded": true,
+    "fixed_unit_clauses": 1,
+    "formula_build_seconds": 3.0168434159713797,
+    "initial_clause_count": 319270,
+    "installed_I18_sha256": "3739752c9b12028c46a8aadd5bc9e9d7fd5ffd6d7dfe3e53c2d2780fbe8411f0",
+    "installed_unique_I18_clauses": 141149,
+    "maximum_variable": 13160,
+    "preloaded_fixed_base_I18_clauses": 4096,
+    "residual_input_edge_deletions": 5,
+    "resumed_I18_clauses": 137053,
+    "total_input_edge_deletions": 6,
+    "triangle_clauses": 161700
+  },
+  "fixed_deleted_edge": [
+    97,
+    98
+  ],
+  "fixed_edge_cannot_be_readded": true,
+  "global_ramsey_implication": null,
+  "input": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/certificates/r3_18_n100_nearmiss.txt",
+  "input_sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+  "limits": {
+    "blue_batch_size": 1,
+    "discovery_wall_seconds": 1.0,
+    "drat_check_wall_seconds": 330.0,
+    "preloaded_fixed_base_I18": 4096,
+    "proof_wall_seconds": 800.0
+  },
+  "reason": "finite CNF discovery was UNSAT but proof emission did not finish",
+  "resume_sources": [
+    "/private/tmp/r318-b6-pilot.vkrHoS/r3_18_budget6_branch_0.checkpoint.json",
+    "/private/tmp/r318-b6-grid.xDHkZ3/b0_pre4096/r3_18_budget6_branch_0.checkpoint.json",
+    "/private/tmp/r318-b6-grid.xDHkZ3/b0_batch16/r3_18_budget6_branch_0.checkpoint.json",
+    "/private/tmp/r318-b6-port.ReJPIi/g0/r3_18_budget6_branch_0.checkpoint.json",
+    "/private/tmp/r318-b6-port.ReJPIi/m0/r3_18_budget6_branch_0.checkpoint.json"
+  ],
+  "resumed_I18_cuts": 137053,
+  "schema": "ramsey-r3-18-n100-exact-budget6-branch-v1",
+  "seed_bitset_verification": {
+    "alpha_exact": null,
+    "certified_lower_bound": null,
+    "edges": 827,
+    "input": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/certificates/r3_18_n100_nearmiss.txt",
+    "omega_exact": null,
+    "r": 3,
+    "s": 18,
+    "searches": {
+      "boundary_clique": {
+        "colorings": 2,
+        "elapsed_seconds": 3.112497506663203e-05,
+        "exists": true,
+        "recursive_nodes": 3,
+        "target": 2,
+        "witness": [
+          96,
+          80
+        ]
+      },
+      "boundary_independent_set": {
+        "colorings": 17,
+        "elapsed_seconds": 0.00014012499013915658,
+        "exists": true,
+        "recursive_nodes": 18,
+        "target": 17,
+        "witness": [
+          99,
+          96,
+          95,
+          91,
+          87,
+          85,
+          93,
+          89,
+          84,
+          88,
+          90,
+          94,
+          92,
+          86,
+          83,
+          82,
+          81
+        ]
+      },
+      "forbidden_clique": {
+        "colorings": 20,
+        "elapsed_seconds": 0.00012320803944021463,
+        "exists": true,
+        "recursive_nodes": 21,
+        "target": 3,
+        "witness": [
+          99,
+          98,
+          97
+        ]
+      },
+      "forbidden_independent_set": {
+        "colorings": 1990791,
+        "elapsed_seconds": 8.671630707976874,
+        "exists": false,
+        "recursive_nodes": 1990791,
+        "target": 18,
+        "witness": null
+      }
+    },
+    "sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+    "valid_ramsey_certificate": false,
+    "vertices": 100
+  },
+  "status": "UNKNOWN",
+  "target": {
+    "n": 100,
+    "r": 3,
+    "s": 18
+  },
+  "tools": {
+    "drat_trim": "/private/tmp/ramsey-drat-trim-2e3b2dc/drat-trim",
+    "drat_trim_sha256": "31d9e8e04bc76a65f0a18ea212ac44af4cf7bc398629495cec093ced772c50f4",
+    "drat_trim_source_commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+    "external_cadical": "/private/tmp/ramsey-cadical.cIJ6Ge/build/cadical",
+    "external_cadical_sha256": "62d48c0890fae760c859e65676dc0598d59c36ac8170cbc5f115208d0a549429",
+    "external_cadical_source_commit": "c60730422e758ef1cebe7aeddf2dda31c996bf04",
+    "pysat_discovery_solver": "cadical195"
+  }
+}

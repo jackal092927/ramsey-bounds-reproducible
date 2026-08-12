@@ -1,0 +1,62 @@
+{
+  "schema": "ramsey-r3-18-extension-repair-summary-v1",
+  "status": "FIXED_SEED_BUDGET5_UNSAT_PROOF_VERIFIED",
+  "global_ramsey_bound_improvement": false,
+  "established_lower_bound": "R(3,18) >= 100",
+  "base": {
+    "path": "routes/finite/certificates/alphaevolve_R3_18_ge_100.txt",
+    "sha256": "3e9d16e29111f3a2f25ae3b992235804c2612de2f6ada5570901d17ceedfca45",
+    "vertices": 99,
+    "edges": 809,
+    "triangle_free": true,
+    "independence_number": 17
+  },
+  "near_miss": {
+    "path": "routes/finite/certificates/r3_18_n100_nearmiss.txt",
+    "sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+    "vertices": 100,
+    "edges": 827,
+    "unique_triangle": [97, 98, 99],
+    "has_I18": false,
+    "new_vertex_neighborhood": [33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 97, 98],
+    "extension_conflict_edges": [[97, 98]]
+  },
+  "repair_scope": {
+    "maximum_input_edge_deletions": 5,
+    "arbitrary_input_nonedge_additions": true,
+    "fixed_seed_only": true,
+    "result": "UNSAT"
+  },
+  "branches": [
+    {
+      "fixed_deleted_edge": [97, 98],
+      "cnf_gzip_sha256": "d64f009f840597e266ccfb3b31c88f7e87eb760d1fc551b7ee08a0854749ba66",
+      "drat_gzip_sha256": "60687241833df8ae957b3b4fcb02e6e9f7595c6e3dcbee8b77f02dad5443f913",
+      "proof_status": "VERIFIED"
+    },
+    {
+      "fixed_deleted_edge": [97, 99],
+      "cnf_gzip_sha256": "d6d321a4ac1aeec5e99c48843a8cda9395271e89555cea328e29bcda4e70ef15",
+      "drat_gzip_sha256": "33a9e037e19beeab8dd2af4dca5ce9010d4906b39dc3e5cc8fd62823f518497a",
+      "proof_status": "VERIFIED"
+    },
+    {
+      "fixed_deleted_edge": [98, 99],
+      "cnf_gzip_sha256": "8d8a543bb3cc17014941fee432673a1dc2b99c8cb4885d4d91bba9005f3b10a7",
+      "drat_gzip_sha256": "159865da9ad23eea298ebd4e9406f2f37ecc6015a593975e9d63e3b08a859897",
+      "proof_status": "VERIFIED"
+    }
+  ],
+  "checker": {
+    "path": "routes/finite/check_r3_18_extension_repair.py",
+    "result": "routes/finite/r3_18_extension_repair_check.json",
+    "result_sha256": "cfde13c5957229168aaf12f23afc43018552a0707936a262836fbd9e573c8e9d",
+    "drat_trim_source_commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+    "drat_trim_sha256": "31d9e8e04bc76a65f0a18ea212ac44af4cf7bc398629495cec093ced772c50f4"
+  },
+  "open": [
+    "budget 6 and higher",
+    "other modified bases or neighborhoods",
+    "global existence or nonexistence of a 100-vertex (3,18) Ramsey graph"
+  ]
+}

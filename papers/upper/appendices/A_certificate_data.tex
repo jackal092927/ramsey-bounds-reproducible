@@ -1,0 +1,26 @@
+\section{Exact certificate data}\label{app:upper-certificate}
+
+The proof specification is the immutable file
+\texttt{routes/upper/EXACT\_DIAGONAL\_NEXT\_CANDIDATE.md}.  Its SHA-256 is
+\begin{center}
+\texttt{e4ea58def640593690a7545e111c3b38f1bfcf8a5735fe7985600481e0bf36d4}.
+\end{center}
+The exact constants are
+\[
+ u_0=1235783/500000,\quad
+ \sigma_0=10^{-8},\quad D_0=88053/10^9,
+\]
+\[
+ \beta=330867/500000,\quad
+ \varepsilon=6893/10^7,\quad
+ C=12366348252219/1250000000000.
+\]
+The compact ratio proof uses 65,536 cells on \([u_0,2.9]\); the exact
+diagonal uses 131,072 cells on \([0,20]\).  Both tails are proved by explicit
+monotone envelopes.  The outer checker verifies the full ordered wedge and
+the final decimal rounding.
+
+The repository integrity checker validates all six frozen proof files before
+running any expensive enclosure.  In particular, a successful numerical run
+against a modified proof specification is not accepted as a reproduction of
+this theorem.

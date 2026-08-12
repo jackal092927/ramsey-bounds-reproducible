@@ -1,0 +1,609 @@
+{
+  "arbitrary_original_nonedge_additions_allowed": true,
+  "branches": [
+    {
+      "bounded_cadical195_cross_replay": {
+        "elapsed_seconds": 3.7662034580134787,
+        "exitcode": 0,
+        "solver_stats": {
+          "conflicts": 35608,
+          "decisions": 103395,
+          "propagations": 17246168,
+          "restarts": 1042
+        },
+        "status": "UNSAT",
+        "wall_limit_seconds": 30.0
+      },
+      "branch": 0,
+      "dimacs_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/budget8_next_branch_0.cnf.gz",
+      "dimacs_gzip_sha256": "071f590e826105df2779c0f86e0de357b76485922ac2b34434d55862ad6d8cc5",
+      "dimacs_lines": 58292,
+      "dimacs_uncompressed_bytes": 6747968,
+      "dimacs_uncompressed_sha256": "f8ad339461e499fb1321dc4fa4ee2d2544cf28f973e524ab26fb88e7178b447b",
+      "drat_check": {
+        "checker": "/private/var/folders/pb/wqsj3_6x3sb1k1xhpfyk924w0000gn/T/tmp.4BP96MD5VR/drat-trim/drat-trim",
+        "checker_sha256": "31d9e8e04bc76a65f0a18ea212ac44af4cf7bc398629495cec093ced772c50f4",
+        "elapsed_seconds": 0.9598610419780016,
+        "exitcode": 0,
+        "status": "VERIFIED",
+        "stderr": "",
+        "stdout": "\nc parsing input formula with 3960 variables and 58291 clauses\n\nc finished parsing\n\nc detected empty clause; start verification via backward checking\n\nc 6687 of 58291 clauses in core                            \n\nc 10556 of 22171 lemmas in core using 2835698 resolution steps\n\nc 0 RAT lemmas in core; 39865 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.931 seconds\n",
+        "wall_limit_seconds": 30.0
+      },
+      "drat_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/budget8_next_branch_0.drat.gz",
+      "drat_gzip_sha256": "bf44a9e09013a31b95ebe5b17c2b7b3af256d7c49a737216d7f311d3591ea4f4",
+      "drat_lines": 37840,
+      "drat_uncompressed_bytes": 10190090,
+      "drat_uncompressed_sha256": "ef9fde226a5828abfdb8edbdb935c3e1bed7adb5a7dc54f7d3790427d556deb6",
+      "formula": {
+        "auxiliary_variables": 2130,
+        "edge_variables": 1830,
+        "fixed_deleted_edges": [
+          [
+            28,
+            60
+          ],
+          [
+            37,
+            46
+          ]
+        ],
+        "fixed_unit_clauses": 2,
+        "initial_clause_count": 58291,
+        "maximum_variable": 3960,
+        "preload_enumeration_seconds": 0.37272470898460597,
+        "preloaded_I13_containing_both_hub_vertices": 15985,
+        "preloaded_fixed_base_I13_clauses": 17690,
+        "preloaded_fixed_base_I13_sha256": "0741446d5bab4c2d3da749aa6e65da6c47249be2b208b368bf09f4632533ed2a",
+        "residual_cardinality_clauses": 4609,
+        "residual_deletion_budget": 6,
+        "triangle_clauses": 35990
+      },
+      "lazy_I13_clauses_added": 0,
+      "lazy_I13_masks_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proof_dependency": "UNSAT is a Glucose 4.2 solver result. The frozen DRAT trace was emitted by PySAT but is not self-authenticating; use a trusted DRAT checker on the paired DIMACS artifact.",
+      "run": {
+        "call_tail": [
+          {
+            "call": 1,
+            "elapsed_seconds": 1.2571637920336798,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 10080,
+              "decisions": 29693,
+              "propagations": 3285696,
+              "restarts": 31
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 2,
+            "elapsed_seconds": 1.1935972499777563,
+            "outcome": "UNSAT",
+            "stats_delta": {
+              "conflicts": 8436,
+              "decisions": 17720,
+              "propagations": 2845072,
+              "restarts": 34
+            },
+            "timer_interrupted": false
+          }
+        ],
+        "cegar_models": 0,
+        "elapsed_seconds": 2.451258459012024,
+        "lazy_clauses_added": 0,
+        "limited_solver_calls": 2,
+        "solver_stats": {
+          "conflicts": 18516,
+          "decisions": 47413,
+          "propagations": 6130768,
+          "restarts": 65
+        },
+        "timer_interrupts": 0
+      },
+      "second_deleted_edge": [
+        37,
+        46
+      ],
+      "status": "UNSAT"
+    },
+    {
+      "bounded_cadical195_cross_replay": {
+        "elapsed_seconds": 3.626187000016216,
+        "exitcode": 0,
+        "solver_stats": {
+          "conflicts": 32165,
+          "decisions": 86214,
+          "propagations": 14774758,
+          "restarts": 865
+        },
+        "status": "UNSAT",
+        "wall_limit_seconds": 30.0
+      },
+      "branch": 1,
+      "dimacs_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/budget8_next_branch_1.cnf.gz",
+      "dimacs_gzip_sha256": "009547e3e491820096cfa01f8c11ee9fa1a9436c7f65572aece10fdc6879d4f3",
+      "dimacs_lines": 58719,
+      "dimacs_uncompressed_bytes": 6895234,
+      "dimacs_uncompressed_sha256": "8e5dabc64131ed445a1c051bb00e2703e2d7cd64e3685f1a2ed02a901bd4260e",
+      "drat_check": {
+        "checker": "/private/var/folders/pb/wqsj3_6x3sb1k1xhpfyk924w0000gn/T/tmp.4BP96MD5VR/drat-trim/drat-trim",
+        "checker_sha256": "31d9e8e04bc76a65f0a18ea212ac44af4cf7bc398629495cec093ced772c50f4",
+        "elapsed_seconds": 0.9338520420133136,
+        "exitcode": 0,
+        "status": "VERIFIED",
+        "stderr": "",
+        "stdout": "\nc parsing input formula with 3960 variables and 58718 clauses\n\nc finished parsing\n\nc detected empty clause; start verification via backward checking\n\nc 6266 of 58718 clauses in core                            \n\nc 10100 of 18443 lemmas in core using 3030945 resolution steps\n\nc 0 RAT lemmas in core; 52906 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.909 seconds\n",
+        "wall_limit_seconds": 30.0
+      },
+      "drat_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/budget8_next_branch_1.drat.gz",
+      "drat_gzip_sha256": "7c3885b82e8b3a9ac57794a933cfff6d4513217776602a58f434952c5ce3bc6b",
+      "drat_lines": 29951,
+      "drat_uncompressed_bytes": 8298457,
+      "drat_uncompressed_sha256": "52b15a0e3b0f1a061495681b9ec748a0802023327e25e0e56d69c50fc0bf36d9",
+      "formula": {
+        "auxiliary_variables": 2130,
+        "edge_variables": 1830,
+        "fixed_deleted_edges": [
+          [
+            28,
+            60
+          ],
+          [
+            37,
+            60
+          ]
+        ],
+        "fixed_unit_clauses": 2,
+        "initial_clause_count": 58718,
+        "maximum_variable": 3960,
+        "preload_enumeration_seconds": 0.36878654203610495,
+        "preloaded_I13_containing_both_hub_vertices": 15985,
+        "preloaded_fixed_base_I13_clauses": 18117,
+        "preloaded_fixed_base_I13_sha256": "3a68a7a7812742962836e90a703d3887e348d86b5a5f51722ab8f2aeebe75e3c",
+        "residual_cardinality_clauses": 4609,
+        "residual_deletion_budget": 6,
+        "triangle_clauses": 35990
+      },
+      "lazy_I13_clauses_added": 0,
+      "lazy_I13_masks_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proof_dependency": "UNSAT is a Glucose 4.2 solver result. The frozen DRAT trace was emitted by PySAT but is not self-authenticating; use a trusted DRAT checker on the paired DIMACS artifact.",
+      "run": {
+        "call_tail": [
+          {
+            "call": 1,
+            "elapsed_seconds": 1.5964152500382625,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 11469,
+              "decisions": 27938,
+              "propagations": 4201269,
+              "restarts": 20
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 2,
+            "elapsed_seconds": 0.4439127089572139,
+            "outcome": "UNSAT",
+            "stats_delta": {
+              "conflicts": 2912,
+              "decisions": 5222,
+              "propagations": 1079560,
+              "restarts": 4
+            },
+            "timer_interrupted": false
+          }
+        ],
+        "cegar_models": 0,
+        "elapsed_seconds": 2.0407549170195125,
+        "lazy_clauses_added": 0,
+        "limited_solver_calls": 2,
+        "solver_stats": {
+          "conflicts": 14381,
+          "decisions": 33160,
+          "propagations": 5280829,
+          "restarts": 24
+        },
+        "timer_interrupts": 0
+      },
+      "second_deleted_edge": [
+        37,
+        60
+      ],
+      "status": "UNSAT"
+    },
+    {
+      "bounded_cadical195_cross_replay": {
+        "elapsed_seconds": 5.4363100419868715,
+        "exitcode": 0,
+        "solver_stats": {
+          "conflicts": 46540,
+          "decisions": 121283,
+          "propagations": 17953999,
+          "restarts": 999
+        },
+        "status": "UNSAT",
+        "wall_limit_seconds": 30.0
+      },
+      "branch": 2,
+      "dimacs_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/budget8_next_branch_2.cnf.gz",
+      "dimacs_gzip_sha256": "88e40bfb81560d1cdd6651d429bfdf7c2969c8977ae6073cc84221c2f52e5143",
+      "dimacs_lines": 58515,
+      "dimacs_uncompressed_bytes": 6782360,
+      "dimacs_uncompressed_sha256": "3da578bf8dc984449639137581a8105d23be5f542e6d76e9851250dd025bd198",
+      "drat_check": {
+        "checker": "/private/var/folders/pb/wqsj3_6x3sb1k1xhpfyk924w0000gn/T/tmp.4BP96MD5VR/drat-trim/drat-trim",
+        "checker_sha256": "31d9e8e04bc76a65f0a18ea212ac44af4cf7bc398629495cec093ced772c50f4",
+        "elapsed_seconds": 1.1005142499925569,
+        "exitcode": 0,
+        "status": "VERIFIED",
+        "stderr": "",
+        "stdout": "\nc parsing input formula with 3960 variables and 58514 clauses\n\nc finished parsing\n\nc detected empty clause; start verification via backward checking\n\nc 6586 of 58514 clauses in core                            \n\nc 10821 of 22174 lemmas in core using 3413641 resolution steps\n\nc 0 RAT lemmas in core; 47845 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 1.072 seconds\n",
+        "wall_limit_seconds": 30.0
+      },
+      "drat_gzip": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/budget8_next_branch_2.drat.gz",
+      "drat_gzip_sha256": "678986f3eb30bee7595be68ce21af2a5448e708472acbfc15ae762fa9f6df4ee",
+      "drat_lines": 35954,
+      "drat_uncompressed_bytes": 10388769,
+      "drat_uncompressed_sha256": "bb2a837260285bd827501d6ce2808d52bac2a9f051aa6d90f4b4e6c01a47dc7e",
+      "formula": {
+        "auxiliary_variables": 2130,
+        "edge_variables": 1830,
+        "fixed_deleted_edges": [
+          [
+            28,
+            60
+          ],
+          [
+            46,
+            60
+          ]
+        ],
+        "fixed_unit_clauses": 2,
+        "initial_clause_count": 58514,
+        "maximum_variable": 3960,
+        "preload_enumeration_seconds": 0.35525237495312467,
+        "preloaded_I13_containing_both_hub_vertices": 17912,
+        "preloaded_fixed_base_I13_clauses": 17913,
+        "preloaded_fixed_base_I13_sha256": "8df0efefc8fd013a113c2c62d6da22abe1a3a4e64d3eb7372b882be77d552b82",
+        "residual_cardinality_clauses": 4609,
+        "residual_deletion_budget": 6,
+        "triangle_clauses": 35990
+      },
+      "lazy_I13_clauses_added": 0,
+      "lazy_I13_masks_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proof_dependency": "UNSAT is a Glucose 4.2 solver result. The frozen DRAT trace was emitted by PySAT but is not self-authenticating; use a trusted DRAT checker on the paired DIMACS artifact.",
+      "run": {
+        "call_tail": [
+          {
+            "call": 1,
+            "elapsed_seconds": 1.653293624985963,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 10033,
+              "decisions": 31329,
+              "propagations": 3663706,
+              "restarts": 42
+            },
+            "timer_interrupted": false
+          },
+          {
+            "call": 2,
+            "elapsed_seconds": 1.4029710839968175,
+            "outcome": "UNSAT",
+            "stats_delta": {
+              "conflicts": 8148,
+              "decisions": 15830,
+              "propagations": 2963292,
+              "restarts": 4
+            },
+            "timer_interrupted": false
+          }
+        ],
+        "cegar_models": 0,
+        "elapsed_seconds": 3.05670120799914,
+        "lazy_clauses_added": 0,
+        "limited_solver_calls": 2,
+        "solver_stats": {
+          "conflicts": 18181,
+          "decisions": 47159,
+          "propagations": 6626998,
+          "restarts": 46
+        },
+        "timer_interrupts": 0
+      },
+      "second_deleted_edge": [
+        46,
+        60
+      ],
+      "status": "UNSAT"
+    }
+  ],
+  "claim_scope": "Fixed input graph; arbitrary additions are allowed, but at most eight edges present in the input may be deleted.",
+  "conclusion": "Every at-most-eight-deletion completion lies in one of the three structural branches, and every branch relaxation is UNSAT. Hence the fixed-seed edit family has no solution with at most eight original-edge deletions.",
+  "deletion_budget": 8,
+  "elapsed_seconds": 30.82154191698646,
+  "environment": {
+    "drat_trim_source_commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+    "pysat_solvers": [
+      "glucose42",
+      "cadical195"
+    ],
+    "python": "3.11.15 (main, Mar  3 2026, 00:52:57) [Clang 17.0.0 (clang-1700.6.3.2)]"
+  },
+  "global_ramsey_claim": null,
+  "input": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/r3_13_n61_nonstar_k11.txt",
+  "input_sha256": "2e97d94560a4c3f30a70729ec5985e9a22f431a9d2e78b338994291b6d4c441b",
+  "limits": {
+    "conflicts_per_limited_call": 10000,
+    "cross_solver_wall_seconds_per_branch": 30.0,
+    "drat_check_wall_seconds_per_branch": 30.0,
+    "lazy_blue_batch_size": 1024,
+    "max_conflicts_per_branch": 200000,
+    "max_wall_seconds_per_branch": 30.0,
+    "per_call_wall_seconds": 5.0
+  },
+  "original_edges": 363,
+  "schema": "ramsey-r3-13-n61-nonstar-budget8-branch-v1",
+  "solver_dependency": "All three frozen DRAT traces passed the separately invoked checker; remaining trust is in the structural/formula encoding and the DRAT checker implementation.",
+  "status": "UNSAT",
+  "structural_decomposition": {
+    "exhaustive_second_deletion_branches": [
+      [
+        37,
+        46
+      ],
+      [
+        37,
+        60
+      ],
+      [
+        46,
+        60
+      ]
+    ],
+    "hub": [
+      28,
+      60
+    ],
+    "hub_forced_deleted": true,
+    "hub_reason": "If the hub is retained, each of its ten triangles needs a deletion from its own disjoint two-edge spoke pair. Ten deletions exceed budget 8.",
+    "hub_third_vertices": [
+      19,
+      22,
+      24,
+      27,
+      29,
+      32,
+      34,
+      37,
+      48,
+      58
+    ],
+    "hub_triangle_count": 10,
+    "input_triangle_count": 11,
+    "input_triangles": [
+      [
+        19,
+        28,
+        60
+      ],
+      [
+        22,
+        28,
+        60
+      ],
+      [
+        24,
+        28,
+        60
+      ],
+      [
+        27,
+        28,
+        60
+      ],
+      [
+        28,
+        29,
+        60
+      ],
+      [
+        28,
+        32,
+        60
+      ],
+      [
+        28,
+        34,
+        60
+      ],
+      [
+        28,
+        37,
+        60
+      ],
+      [
+        28,
+        48,
+        60
+      ],
+      [
+        28,
+        58,
+        60
+      ],
+      [
+        37,
+        46,
+        60
+      ]
+    ],
+    "only_triangle_after_hub_deletion": [
+      37,
+      46,
+      60
+    ],
+    "pairwise_disjoint_spoke_pairs": [
+      [
+        [
+          19,
+          28
+        ],
+        [
+          19,
+          60
+        ]
+      ],
+      [
+        [
+          22,
+          28
+        ],
+        [
+          22,
+          60
+        ]
+      ],
+      [
+        [
+          24,
+          28
+        ],
+        [
+          24,
+          60
+        ]
+      ],
+      [
+        [
+          27,
+          28
+        ],
+        [
+          27,
+          60
+        ]
+      ],
+      [
+        [
+          28,
+          29
+        ],
+        [
+          29,
+          60
+        ]
+      ],
+      [
+        [
+          28,
+          32
+        ],
+        [
+          32,
+          60
+        ]
+      ],
+      [
+        [
+          28,
+          34
+        ],
+        [
+          34,
+          60
+        ]
+      ],
+      [
+        [
+          28,
+          37
+        ],
+        [
+          37,
+          60
+        ]
+      ],
+      [
+        [
+          28,
+          48
+        ],
+        [
+          48,
+          60
+        ]
+      ],
+      [
+        [
+          28,
+          58
+        ],
+        [
+          58,
+          60
+        ]
+      ]
+    ],
+    "second_deletion_reason": "Deleting edges cannot create triangle-freeness while retaining all three edges of the remaining input triangle; additions cannot destroy it. At least one displayed edge is therefore deleted.",
+    "triangles_through_hub": [
+      [
+        19,
+        28,
+        60
+      ],
+      [
+        22,
+        28,
+        60
+      ],
+      [
+        24,
+        28,
+        60
+      ],
+      [
+        27,
+        28,
+        60
+      ],
+      [
+        28,
+        29,
+        60
+      ],
+      [
+        28,
+        32,
+        60
+      ],
+      [
+        28,
+        34,
+        60
+      ],
+      [
+        28,
+        37,
+        60
+      ],
+      [
+        28,
+        48,
+        60
+      ],
+      [
+        28,
+        58,
+        60
+      ]
+    ]
+  },
+  "target": {
+    "n": 61,
+    "r": 3,
+    "s": 13
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "certified_lower_bound": null,
+  "input": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/r3_13_n61_nonstar_k11.txt",
+  "r": 3,
+  "s": 13,
+  "searches": {
+    "forbidden_clique_sat": {
+      "clauses": 2163,
+      "elapsed_seconds": 0.0031283340067602694,
+      "exists": true,
+      "solver": "cadical195",
+      "target": 3,
+      "witness": [
+        28,
+        58,
+        60
+      ]
+    },
+    "forbidden_independent_set_sat": {
+      "clauses": 2859,
+      "elapsed_seconds": 0.8634971249848604,
+      "exists": false,
+      "solver": "cadical195",
+      "target": 13,
+      "witness": null
+    }
+  },
+  "sha256": "2e97d94560a4c3f30a70729ec5985e9a22f431a9d2e78b338994291b6d4c441b",
+  "valid_ramsey_certificate": false,
+  "vertices": 61
+}

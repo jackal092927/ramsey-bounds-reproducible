@@ -1,0 +1,18 @@
+{
+  "accepted_moves": 129,
+  "anchored_restarts": 0,
+  "best_independent_sets": 0,
+  "best_score": 11,
+  "best_triangles": 11,
+  "elapsed_seconds": 60.31886595900869,
+  "improvements": [],
+  "input_sha256": "a144986d21117eff66eda4c37a30acfe25ab274a5587a2542740cf4a82b2f484",
+  "iterations": 129,
+  "max_uphill": 64,
+  "output_sha256": "a144986d21117eff66eda4c37a30acfe25ab274a5587a2542740cf4a82b2f484",
+  "random_candidates": 24,
+  "seconds_requested": 60.0,
+  "seed": 20260812,
+  "start_score": 11,
+  "tabu_length": 8
+}

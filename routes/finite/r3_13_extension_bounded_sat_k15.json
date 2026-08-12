@@ -1,0 +1,185 @@
+{
+  "attempts": [
+    {
+      "actual_red_conflicts": 15,
+      "blue_clauses_discovered": 20480,
+      "bound": 15,
+      "cegar_iterations": 21,
+      "elapsed_seconds": 5.054708916984964,
+      "neighborhood": [
+        10,
+        13,
+        24,
+        27,
+        29,
+        32,
+        33,
+        34,
+        37,
+        39,
+        42,
+        48,
+        51,
+        56,
+        57
+      ],
+      "red_conflict_witnesses": [
+        [
+          10,
+          33
+        ],
+        [
+          13,
+          33
+        ],
+        [
+          24,
+          33
+        ],
+        [
+          27,
+          33
+        ],
+        [
+          29,
+          33
+        ],
+        [
+          32,
+          33
+        ],
+        [
+          33,
+          34
+        ],
+        [
+          33,
+          37
+        ],
+        [
+          33,
+          39
+        ],
+        [
+          33,
+          42
+        ],
+        [
+          33,
+          56
+        ],
+        [
+          33,
+          57
+        ],
+        [
+          42,
+          48
+        ],
+        [
+          42,
+          51
+        ],
+        [
+          48,
+          56
+        ]
+      ],
+      "status": "SAT"
+    }
+  ],
+  "base_sha256": "d619f0bfed32af5e2fbc8c724d9c65dbf388a19d5647d20e7835b501bc03227a",
+  "feasible_frozen_base_conflicts": 15,
+  "has_forbidden_clique": true,
+  "has_forbidden_independent_set": false,
+  "minimum_frozen_base_conflicts": null,
+  "minimum_proved": false,
+  "near_miss_sha256": "6ce1bcaad6654db84e69cfc15d432565cb8c0489738ed78c76a6dc21615e671e",
+  "neighborhood": [
+    10,
+    13,
+    24,
+    27,
+    29,
+    32,
+    33,
+    34,
+    37,
+    39,
+    42,
+    48,
+    51,
+    56,
+    57
+  ],
+  "r": 3,
+  "red_conflict_witnesses": [
+    [
+      10,
+      33
+    ],
+    [
+      13,
+      33
+    ],
+    [
+      24,
+      33
+    ],
+    [
+      27,
+      33
+    ],
+    [
+      29,
+      33
+    ],
+    [
+      32,
+      33
+    ],
+    [
+      33,
+      34
+    ],
+    [
+      33,
+      37
+    ],
+    [
+      33,
+      39
+    ],
+    [
+      33,
+      42
+    ],
+    [
+      33,
+      56
+    ],
+    [
+      33,
+      57
+    ],
+    [
+      42,
+      48
+    ],
+    [
+      42,
+      51
+    ],
+    [
+      48,
+      56
+    ]
+  ],
+  "s": 13,
+  "solver": "cadical195",
+  "tested_bound_range": [
+    15,
+    15
+  ],
+  "vertices_in_base": 60
+}

@@ -1,0 +1,254 @@
+{
+  "base_bitset_verification": {
+    "alpha_exact": 17,
+    "certified_lower_bound": 100,
+    "edges": 809,
+    "input": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/certificates/alphaevolve_R3_18_ge_100.txt",
+    "omega_exact": 2,
+    "r": 3,
+    "s": 18,
+    "searches": {
+      "boundary_clique": {
+        "colorings": 2,
+        "elapsed_seconds": 4.1000021155923605e-05,
+        "exists": true,
+        "recursive_nodes": 3,
+        "target": 2,
+        "witness": [
+          96,
+          80
+        ]
+      },
+      "boundary_independent_set": {
+        "colorings": 17,
+        "elapsed_seconds": 0.00013316702097654343,
+        "exists": true,
+        "recursive_nodes": 18,
+        "target": 17,
+        "witness": [
+          98,
+          96,
+          95,
+          88,
+          90,
+          92,
+          91,
+          93,
+          94,
+          89,
+          87,
+          86,
+          85,
+          84,
+          83,
+          82,
+          81
+        ]
+      },
+      "forbidden_clique": {
+        "colorings": 66,
+        "elapsed_seconds": 0.0002352919545955956,
+        "exists": false,
+        "recursive_nodes": 66,
+        "target": 3,
+        "witness": null
+      },
+      "forbidden_independent_set": {
+        "colorings": 1521239,
+        "elapsed_seconds": 6.504833917017095,
+        "exists": false,
+        "recursive_nodes": 1521239,
+        "target": 18,
+        "witness": null
+      }
+    },
+    "sha256": "3e9d16e29111f3a2f25ae3b992235804c2612de2f6ada5570901d17ceedfca45",
+    "valid_ramsey_certificate": true,
+    "vertices": 99
+  },
+  "base_sha256": "3e9d16e29111f3a2f25ae3b992235804c2612de2f6ada5570901d17ceedfca45",
+  "branches": [
+    {
+      "branch": 0,
+      "proof": {
+        "checker": "/private/tmp/ramsey-drat-trim.co58Mj/drat-trim",
+        "checker_sha256": "31d9e8e04bc76a65f0a18ea212ac44af4cf7bc398629495cec093ced772c50f4",
+        "elapsed_seconds": 5.843332958000246,
+        "exitcode": 0,
+        "status": "VERIFIED",
+        "stderr": "",
+        "stdout": "\nc parsing input formula with 8238 variables and 169382 clauses\n\nc finished parsing\n\nc detected empty clause; start verification via backward checking\n\nc 12267 of 169382 clauses in core                            \n\nc 56245 of 126192 lemmas in core using 23718305 resolution steps\n\nc 0 RAT lemmas in core; 118360 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 5.746 seconds\n",
+        "wall_limit_seconds": 120.0
+      },
+      "semantics": {
+        "I18_hitting_clauses": 287,
+        "arbitrary_original_nonedges_unconstrained_by_deletion_counter": true,
+        "clauses": 169382,
+        "fixed_deleted_edge": [
+          97,
+          98
+        ],
+        "fixed_negative_units": 1,
+        "maximum_variable": 8238,
+        "residual_deletion_counter_clauses": 7394,
+        "status": "SEMANTICS_VERIFIED",
+        "triangle_clauses": 161700
+      }
+    },
+    {
+      "branch": 1,
+      "proof": {
+        "checker": "/private/tmp/ramsey-drat-trim.co58Mj/drat-trim",
+        "checker_sha256": "31d9e8e04bc76a65f0a18ea212ac44af4cf7bc398629495cec093ced772c50f4",
+        "elapsed_seconds": 13.386658832954708,
+        "exitcode": 0,
+        "status": "VERIFIED",
+        "stderr": "",
+        "stdout": "\nc parsing input formula with 8238 variables and 184967 clauses\n\nc finished parsing\n\nc detected empty clause; start verification via backward checking\n\nc 17118 of 184967 clauses in core                            \n\nc 48979 of 110848 lemmas in core using 45586752 resolution steps\n\nc 0 RAT lemmas in core; 558604 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 13.133 seconds\n",
+        "wall_limit_seconds": 120.0
+      },
+      "semantics": {
+        "I18_hitting_clauses": 15872,
+        "arbitrary_original_nonedges_unconstrained_by_deletion_counter": true,
+        "clauses": 184967,
+        "fixed_deleted_edge": [
+          97,
+          99
+        ],
+        "fixed_negative_units": 1,
+        "maximum_variable": 8238,
+        "residual_deletion_counter_clauses": 7394,
+        "status": "SEMANTICS_VERIFIED",
+        "triangle_clauses": 161700
+      }
+    },
+    {
+      "branch": 2,
+      "proof": {
+        "checker": "/private/tmp/ramsey-drat-trim.co58Mj/drat-trim",
+        "checker_sha256": "31d9e8e04bc76a65f0a18ea212ac44af4cf7bc398629495cec093ced772c50f4",
+        "elapsed_seconds": 7.667181166005321,
+        "exitcode": 0,
+        "status": "VERIFIED",
+        "stderr": "",
+        "stdout": "\nc parsing input formula with 8238 variables and 177799 clauses\n\nc finished parsing\n\nc detected empty clause; start verification via backward checking\n\nc 12194 of 177799 clauses in core                            \n\nc 38152 of 84921 lemmas in core using 39493451 resolution steps\n\nc 0 RAT lemmas in core; 244675 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 7.523 seconds\n",
+        "wall_limit_seconds": 120.0
+      },
+      "semantics": {
+        "I18_hitting_clauses": 8704,
+        "arbitrary_original_nonedges_unconstrained_by_deletion_counter": true,
+        "clauses": 177799,
+        "fixed_deleted_edge": [
+          98,
+          99
+        ],
+        "fixed_negative_units": 1,
+        "maximum_variable": 8238,
+        "residual_deletion_counter_clauses": 7394,
+        "status": "SEMANTICS_VERIFIED",
+        "triangle_clauses": 161700
+      }
+    }
+  ],
+  "fixed_seed_budget5_repair_ball_unsat": true,
+  "global_ramsey_bound_improvement": false,
+  "near_miss_bitset_verification": {
+    "alpha_exact": null,
+    "certified_lower_bound": null,
+    "edges": 827,
+    "input": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/certificates/r3_18_n100_nearmiss.txt",
+    "omega_exact": null,
+    "r": 3,
+    "s": 18,
+    "searches": {
+      "boundary_clique": {
+        "colorings": 2,
+        "elapsed_seconds": 3.0750001315027475e-05,
+        "exists": true,
+        "recursive_nodes": 3,
+        "target": 2,
+        "witness": [
+          96,
+          80
+        ]
+      },
+      "boundary_independent_set": {
+        "colorings": 17,
+        "elapsed_seconds": 0.00013504200614988804,
+        "exists": true,
+        "recursive_nodes": 18,
+        "target": 17,
+        "witness": [
+          99,
+          96,
+          95,
+          91,
+          87,
+          85,
+          93,
+          89,
+          84,
+          88,
+          90,
+          94,
+          92,
+          86,
+          83,
+          82,
+          81
+        ]
+      },
+      "forbidden_clique": {
+        "colorings": 20,
+        "elapsed_seconds": 9.154196595773101e-05,
+        "exists": true,
+        "recursive_nodes": 21,
+        "target": 3,
+        "witness": [
+          99,
+          98,
+          97
+        ]
+      },
+      "forbidden_independent_set": {
+        "colorings": 1990791,
+        "elapsed_seconds": 8.465063625015318,
+        "exists": false,
+        "recursive_nodes": 1990791,
+        "target": 18,
+        "witness": null
+      }
+    },
+    "sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+    "valid_ramsey_certificate": false,
+    "vertices": 100
+  },
+  "near_miss_extension_conflict_edges": [
+    [
+      97,
+      98
+    ]
+  ],
+  "near_miss_new_vertex_neighborhood": [
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    97,
+    98
+  ],
+  "near_miss_sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+  "status": "ALL_THREE_BRANCHES_VERIFIED"
+}

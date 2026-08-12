@@ -1,0 +1,23 @@
+{
+  "budget5_dependency_checked": true,
+  "fixed_deleted_edge": [
+    98,
+    99
+  ],
+  "global_ramsey_bound_improvement": false,
+  "overall_budget6_three_branch_status": "UNKNOWN_BRANCHES_0_AND_1",
+  "proof": {
+    "status": "NOT_RERUN"
+  },
+  "semantics": {
+    "I18_hitting_clauses": 5422,
+    "arbitrary_original_nonedges_absent_from_deletion_counter": true,
+    "clauses": 183543,
+    "exact_five_residual_deletion_clauses": 16420,
+    "fixed_negative_units": 1,
+    "maximum_variable": 13160,
+    "status": "SEMANTICS_VERIFIED",
+    "triangle_clauses": 161700
+  },
+  "status": "BRANCH2_EXACT_BUDGET6_PROOF_VERIFIED"
+}

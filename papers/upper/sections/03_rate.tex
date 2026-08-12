@@ -1,0 +1,72 @@
+\section{The certified off-diagonal rate}\label{sec:rate}
+
+Set
+\[
+ h(\lambda)=(1+\lambda)\log(1+\lambda)-\lambda\log\lambda
+\]
+and
+\[
+\begin{aligned}
+P_6(\lambda)={}&-0.250000000000000\lambda
++0.019891840059418\lambda^2
+-0.012275954247190\lambda^3\\
+&+0.144110816398083\lambda^4
++0.006277913420654\lambda^5
+-0.066101623491668\lambda^6\\
+&-0.002287675993602\lambda^7
+-0.058238059505066\lambda^8
++0.030675864198693\lambda^9\\
+&+0.052472201910597\lambda^{10}
++0.043300454861853\lambda^{11}
+-0.042529975074653\lambda^{12}\\
+&-0.055263639426635\lambda^{13}
++0.036695886931268\lambda^{14}.
+\end{aligned}
+\tag{3.1}
+\]
+All displayed decimals in (3.1) are exact.  Define
+\[
+ U(\lambda)=F_6(\lambda)=h(\lambda)+P_6(\lambda)e^{-\lambda}.
+ \tag{3.2}
+\]
+
+\begin{theorem}[Certified rate]\label{thm:p6-rate}
+For \(1\le\ell\le k\), uniformly in the ratio \(\lambda=\ell/k\),
+\[
+ \log R(k,\ell)\le kU(\lambda)+o(k),
+ \tag{3.3}
+\]
+and the same statement holds after exchanging \(k\) and \(\ell\).  Moreover
+\[
+ e^{U(1)}=3.7806984277961236987518816497522162\ldots.
+ \tag{3.4}
+\]
+\end{theorem}
+
+The proof is an exact-linked six-stage descent built on the repaired
+book-induction lemma.  At each stage an interval certificate verifies the
+prior concavity, both Ramsey-region orientations, the main exponent
+inequality and the complete small-ratio interval.  The first three stages use
+65,536 cells; the last three use 131,072 cells.  The sixth-stage minimum
+main slack is \(4.81847\cdot10^{-5}\), while an independently implemented
+direct exponent check gives a minimum standard-orientation margin
+\(1.06281\cdot10^{-6}\).
+
+For the reader who wishes to separate mathematics from computation, the
+logical content is as follows.
+
+\begin{enumerate}[label=(\roman*)]
+\item The combinatorial book induction converts a strict interior point of
+      the asymptotic Ramsey region into a one-step rate improvement.
+\item The analytic descent lemma is degree-independent: it requires only a
+      concave prior rate and strict inequalities on the continuum.
+\item Every prior polynomial equals the preceding target polynomial as an
+      exact decimal tuple; no refitting occurs between stages.
+\item Arb intervals enclose the continuum, not a sampled mesh.  Search meshes
+      are used only to propose a target.
+\end{enumerate}
+
+The complete standalone book proof and the stage-six record appear in
+Appendices B and C.  The six JSON certificates and their hashes are part of
+the machine-readable evidence package.
+

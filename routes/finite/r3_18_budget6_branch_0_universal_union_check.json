@@ -1,0 +1,52 @@
+{
+  "R_3_18_ge_101_established": false,
+  "all_three_exact_budget6_branches_proof_verified": true,
+  "fixed_seed_budget_at_most_6_excluded": true,
+  "fixed_seed_deletion_repair_radius_at_least_7": true,
+  "proof": {
+    "bytes": 3493847713,
+    "gzip_sha256": "4d948ab34f1d2475af6efe943e0a4899827c78b96c2bc3835b5161f189c26bb5",
+    "lines": 6649939,
+    "sha256": "43dde468b13a1f45667b0a8dc54c2c7d14b0b33f6dc01d85383b0a37f5ffca91",
+    "status": "ARTIFACT_VERIFIED_NOT_REPLAYED"
+  },
+  "semantics": {
+    "I18_hitting_clauses": 251771,
+    "I18_ordered_sha256": "f10690b826b86eb03567a2ffaffb553801fae32af20cfe4337118bddf4e41afa",
+    "arbitrary_original_nonedges_free": true,
+    "budget5_dependency_checked": true,
+    "clauses": 429892,
+    "cnf_gzip_sha256": "47052de808b98598f2f144251a6ad73c1415dd00fef9e04b99ffe2f176229fbf",
+    "cnf_raw_sha256": "0dec49bdbee74644db5fc181e25f7df02a72dfd1b23a3ab4f859501de8a0d3cd",
+    "cut_bank_sha256": "91b5709248ff641a315f5a0389b4f3fde3d38514f3b1a8b31b6cad31224f250b",
+    "exact_five_clauses": 16420,
+    "fixed_deleted_edge": [
+      97,
+      98
+    ],
+    "fixed_negative_units": 1,
+    "other_two_branches_proof_verified": true,
+    "residual_input_edge_deletions": 5,
+    "status": "SEMANTICS_VERIFIED",
+    "three_branch_cover": [
+      [
+        97,
+        98
+      ],
+      [
+        97,
+        99
+      ],
+      [
+        98,
+        99
+      ]
+    ],
+    "total_input_edge_deletions": 6,
+    "triangle_clauses": 161700,
+    "variables": 13160
+  },
+  "seven_deletion_repair_exists": false,
+  "seven_deletion_repair_exists_is_established": false,
+  "status": "BRANCH0_ARTIFACT_AUDITED_NOT_REPLAYED"
+}

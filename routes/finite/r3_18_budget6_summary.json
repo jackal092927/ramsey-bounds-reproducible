@@ -1,0 +1,155 @@
+{
+  "schema": "ramsey-r3-18-n100-budget6-summary-v1",
+  "status": "ALL_THREE_EXACT_BUDGET6_BRANCHES_UNSAT_PROOF_VERIFIED",
+  "input_sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+  "target": {
+    "r": 3,
+    "s": 18,
+    "n": 100
+  },
+  "scope": {
+    "fixed_input": true,
+    "arbitrary_original_nonedge_additions_allowed": true,
+    "maximum_input_edge_deletions_under_investigation": 6,
+    "budget_at_most_5_unsat_proof_previously_verified": true,
+    "new_branch_formulas_use_exactly_6_total_deletions": true
+  },
+  "branches": [
+    {
+      "branch": 0,
+      "fixed_deleted_edge": [97, 98],
+      "status": "UNSAT_PROOF_VERIFIED",
+      "prior_bounded_runs": [
+        {
+          "solver": "glucose42",
+          "wall_limit_seconds": 600.0,
+          "elapsed_seconds": 600.0439330830122,
+          "resumed_I18_cuts": 2385,
+          "iterations": 240,
+          "final_I18_cut_count": 125265,
+          "conflicts": 91595
+        },
+        {
+          "solver": "maplechrono",
+          "wall_limit_seconds": 600.0,
+          "elapsed_seconds": 600.0169724170119,
+          "resumed_I18_cuts": 2385,
+          "iterations": 260,
+          "final_I18_cut_count": 19025,
+          "conflicts": 69457
+        }
+      ],
+      "universal_cut_union": {
+        "distinct_I18_masks": 251771,
+        "source_union_ordered_sha256": "0d06aff04331bce69945917e1b9aef7a7984608d4ef00015abcd218db4eb9ef8",
+        "installed_ordered_sha256": "f10690b826b86eb03567a2ffaffb553801fae32af20cfe4337118bddf4e41afa"
+      },
+      "formula": {
+        "variables": 13160,
+        "clauses": 429892,
+        "I18_hitting_clauses": 251771,
+        "dimacs_gzip_sha256": "47052de808b98598f2f144251a6ad73c1415dd00fef9e04b99ffe2f176229fbf",
+        "dimacs_uncompressed_sha256": "0dec49bdbee74644db5fc181e25f7df02a72dfd1b23a3ab4f859501de8a0d3cd",
+        "cut_bank_sha256": "91b5709248ff641a315f5a0389b4f3fde3d38514f3b1a8b31b6cad31224f250b"
+      },
+      "proof": {
+        "drat_gzip_sha256": "4d948ab34f1d2475af6efe943e0a4899827c78b96c2bc3835b5161f189c26bb5",
+        "drat_uncompressed_sha256": "43dde468b13a1f45667b0a8dc54c2c7d14b0b33f6dc01d85383b0a37f5ffca91",
+        "drat_uncompressed_bytes": 3493847713,
+        "drat_lines": 6649939,
+        "checker_status": "VERIFIED",
+        "checker_sha256": "31d9e8e04bc76a65f0a18ea212ac44af4cf7bc398629495cec093ced772c50f4"
+      },
+      "semantic_checker": {
+        "status": "SEMANTICS_VERIFIED",
+        "sha256": "1e70628276c8279876af8089dea0b12164014a06a5733588570347399802fe45"
+      }
+    },
+    {
+      "branch": 1,
+      "fixed_deleted_edge": [97, 99],
+      "status": "UNSAT_PROOF_VERIFIED",
+      "prior_discovery_runs": [
+        {
+          "solver": "glucose42",
+          "wall_limit_seconds": 600.0,
+          "elapsed_seconds": 600.0272934579989,
+          "resumed_I18_cuts": 7790,
+          "iterations": 90,
+          "final_I18_cut_count": 53870,
+          "conflicts": 475396
+        },
+        {
+          "solver": "maplechrono",
+          "wall_limit_seconds": 600.0,
+          "elapsed_seconds": 600.0163516250323,
+          "resumed_I18_cuts": 7790,
+          "iterations": 120,
+          "final_I18_cut_count": 15470,
+          "conflicts": 541379
+        }
+      ],
+      "finite_bank_discovery": {
+        "status": "UNSAT_FINITE_CUT_BANK",
+        "new_I18_cuts": 512,
+        "resumed_plus_new_I18_cuts": 59847,
+        "installed_unique_I18_clauses_including_fixed_preload": 63943
+      },
+      "formula": {
+        "variables": 13160,
+        "clauses": 242064,
+        "I18_hitting_clauses": 63943,
+        "dimacs_gzip_sha256": "a438c9fef4d99ae516829e4405da8c9f079398501361f9c5f69f46a494ffad14",
+        "dimacs_uncompressed_sha256": "ced3fd39370b4c2552cb261638fb7076da173e18d6b871f6fb280668e5a1154a",
+        "cut_bank_sha256": "f8064f0f226659b4750382f781ba9a862bcc19eb49006eb8cdd2afc002ed227c"
+      },
+      "proof": {
+        "drat_gzip_sha256": "cfe694fd728903ee9ac9f08a66ade64faf7e68763246d1d52ca29a85727494ec",
+        "drat_uncompressed_sha256": "fbf7292c3bcbf52ec6f978fca0751d319e2e2029380e7a865a17430baf282902",
+        "drat_uncompressed_bytes": 2137671968,
+        "drat_lines": 5590150,
+        "checker_status": "VERIFIED",
+        "checker_sha256": "31d9e8e04bc76a65f0a18ea212ac44af4cf7bc398629495cec093ced772c50f4"
+      },
+      "semantic_checker": {
+        "status": "SEMANTICS_VERIFIED",
+        "sha256": "47da14a1b13d32379c2396b19992b9edf58ea21a2621d9f6f8d895416347b16b"
+      }
+    },
+    {
+      "branch": 2,
+      "fixed_deleted_edge": [98, 99],
+      "status": "UNSAT_PROOF_VERIFIED",
+      "formula": {
+        "variables": 13160,
+        "clauses": 183543,
+        "I18_hitting_clauses": 5422,
+        "dimacs_gzip_sha256": "c51fed43eeca3becf64bcdfbe747a4fdf3e516ce0e6a02d7d867941b87a99c06"
+      },
+      "proof": {
+        "drat_gzip_sha256": "c9648a4e38c17dcdfe97d873095eda002abc689b3b3bd93f02fc8a369198c4b9",
+        "drat_uncompressed_sha256": "66d0aa3d5cd2536bae7d59ed884324057561db1baa70dfcd683cda4827915a43",
+        "drat_uncompressed_bytes": 759008359,
+        "drat_lines": 2837771,
+        "checker_status": "VERIFIED",
+        "checker_sha256": "31d9e8e04bc76a65f0a18ea212ac44af4cf7bc398629495cec093ced772c50f4"
+      }
+    }
+  ],
+  "conclusion": {
+    "fixed_seed_budget_at_most_6_excluded": true,
+    "fixed_seed_deletion_repair_radius_at_least_7": true,
+    "seven_deletion_repair_exists_is_established": false,
+    "candidate_found": false,
+    "global_ramsey_bound_improvement": false,
+    "R_3_18_ge_101_established": false
+  },
+  "code_sha256": {
+    "search": "fcb9f27bff2fe9c1cc1d563d52bf1e57aba027548473ad0bb40757908522736c",
+    "checker": "3b4d9c3ed620b2a4c893d06e95a42bbef157ec88b59ab54605693f1ef9e5e78b",
+    "branch1_checker": "47da14a1b13d32379c2396b19992b9edf58ea21a2621d9f6f8d895416347b16b",
+    "branch0_union_builder": "fd465a8b3b10e59a5a3c9fbc48a8902077b9c1c2787974409239fbd2b1f5a830",
+    "branch0_union_checker": "1e70628276c8279876af8089dea0b12164014a06a5733588570347399802fe45",
+    "tests": "90696db01178e8cb8392879f181af7f7a0a1b1f1de1ae3ce49b4e3f87ffc9304"
+  }
+}

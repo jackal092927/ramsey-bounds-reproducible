@@ -1,0 +1,75 @@
+\section{Gaussian source ledger and notation}\label{sec:setup}
+
+We use the frozen notation of the HMS/Lin--Niu bridge.  Let \(c=c(C)\) be the
+central cutoff, let \(d=d(\ell,C)\) be the Gaussian dimension, and write
+\[
+ m(x)=\frac{\varphi(x)}{\Phi(-x)},\qquad
+ m_0=m(c),\qquad m'_0=m'(c).
+\tag{2.1}
+\]
+The scale parameter \(D=D(C)\) is chosen so that
+\(d\sim D^2\ell^2\), and we put
+\[
+ \rho=\frac{m_0m'_0}{D},\qquad
+ \omega_0=\frac{100\log(10/p_C)}D.
+\tag{2.2}
+\]
+For fixed \(w>\omega_0\), define
+\[
+ M_w=m(c+w),\qquad j_-(w)=m'(c-w),\qquad j_+(w)=m'(c+w),
+\tag{2.3}
+\]
+and
+\[
+ \theta=m_0^2,qquad A_0=m_0^2m'_0.
+\tag{2.4}
+\]
+Set
+\[
+ a_- =\min\{A_0,\theta\},\qquad
+ a_+=\max\left\{\theta,
+ \frac{A_0+\rho\theta}{1-\rho}\right\},
+\tag{2.5}
+\]
+\[
+ \mu_w=j_-(w)-j_+(w)^2
+ \frac{m_0+\theta/D}{D(1-\rho)},
+\tag{2.6}
+\]
+and
+\[
+\widehat L_w(C)=
+\frac{4m_0M_w^2}{D}
++\frac{2M_w^2a_+}{D^2}
++\frac{32m_0^2M_w^2a_+}{a_-D^2}.
+\tag{2.7}
+\]
+Finally,
+\[
+ \widehat B_w(C)=m_0^2-\frac{16}{3}-\widehat L_w(C),
+ \qquad
+ E_w(C)=\widehat B_w(C)\theta-\frac{\theta^2}{2\mu_w},
+\tag{2.8}
+\]
+\[
+ \widehat H(C,w)=
+ \frac{\widehat B_w(C)A_0+E_w(C)}{12D^2},
+ \qquad
+ \widehat H_*(C)=\lim_{w\downarrow\omega_0}\widehat H(C,w).
+\tag{2.9}
+\]
+
+\begin{assumption}[Pinned source interface]\label{ass:hms}
+We use the HMS v2 Gaussian construction, its Appendix-B reverse induction,
+the red perfect-sequence extraction, and the blue comparison at the exact
+locations identified in the reproducibility manifest.  We also use the
+reviewed exact one-sided truncated-Gaussian CGF deficit \(G_*(C)\), inserted
+before the HMS coarsening.  These inputs supply a frozen envelope
+\(\mathcal H_C(r)\), a source error constant \(K\), and the unchanged
+first-moment conversion from red/blue probability bounds to (1.1).
+\end{assumption}
+
+No source \(O(\cdot)\) term is assigned a numerical constant in this paper.
+The construction below only deletes additional mass from the source envelope
+and therefore uses the same existential \(K\).
+

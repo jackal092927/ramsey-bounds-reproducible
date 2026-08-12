@@ -1,0 +1,131 @@
+\section{Ramsey rates and imported interfaces}\label{sec:framework}
+
+\subsection{Symmetric homogeneous rate}
+
+Let \(U:[0,1]\to\R\) be continuous with \(U(0)=0\).  Define its symmetric
+homogeneous extension by
+\[
+ \wideU(x,y)=
+ \begin{cases}
+ \max\{x,y\}\,U\!\left(\dfrac{\min\{x,y\}}{\max\{x,y\}}\right),
+     &\max\{x,y\}>0,\\[2mm]
+ 0,&x=y=0.
+ \end{cases}
+ \tag{2.1}
+\]
+
+\begin{lemma}[Uniform homogeneous extension]\label{lem:homogeneous}
+Suppose (1.1) holds uniformly for \(1\le\ell\le k\), and the same bound is
+available after exchanging the two colours.  Then, uniformly for
+\(x,y\in[0,1]\),
+\[
+ \log R(\lfloor xk\rfloor,\lfloor yk\rfloor)
+ \le k\wideU(x,y)+o(k).
+ \tag{2.2}
+\]
+\end{lemma}
+
+\begin{proof}
+For \(x\ge y>0\), apply (1.1) with first parameter \(\lfloor xk\rfloor\)
+and ratio \(y/x\).  The case \(y\ge x\) follows by Ramsey symmetry.  If one
+coordinate is zero, the sublinear parameter range follows from the classical
+recursion; continuity and compact subdivision make the error uniform.
+\end{proof}
+
+\subsection{Yang--Mao interfaces}
+
+The following package is extracted from the v1 source of
+Yang--Mao \cite{YangMao2026}.  We state exactly the conclusions used later.
+
+\begin{assumption}[Retained-spine source interface]\label{ass:yang-mao}
+For every fixed admissible choice of \(\eta,p,\delta,\lambda_0,\tau\), the
+following hold for all sufficiently large \(k\).
+\begin{enumerate}[label=(\alph*)]
+\item Every red--blue colouring admits red and blue preliminary spines
+      \(S_R,S_B\) and a common reservoir \(W\) such that, writing
+      \(s_i=|S_i|\),
+      \[
+      |W|\ge \left(\frac{1+\eta}{2}\right)^{s_R+s_B}N\,e^{o(k)}.
+      \tag{2.3}
+      \]
+\item A positive tensor-moment and tail argument supplies a parameterized
+      monochromatic book whenever the correlation property
+      \(\cG_2^{(3)}(\beta,C)\) and the stated scalar parameter gates hold.
+\item The final book is compatible with the preliminary spine of its colour:
+      a clique of the required residual order in the page set extends to a
+      monochromatic \(K_k\).
+\end{enumerate}
+For the proof below the exact correlation input is
+\[
+ \beta=\frac{330867}{500000},\qquad
+ C=\frac{12366348252219}{1250000000000}.
+ \tag{2.4}
+\]
+\end{assumption}
+
+The point of stating \cref{ass:yang-mao} is auditability.  The correlation
+property in (2.4) is proved in this paper; the regularization and book
+compatibility are imported.  The source line mapping and pinned archive hash
+are included in the reproducibility record.
+
+\subsection{A general retained-spine transfer}
+
+Put
+\[
+ c_\eta=\log\frac{2}{1+\eta}.
+\]
+For a normalized spine vector \(\sigma=(\sigma_R,\sigma_B)\in[0,1]^2\),
+define
+\[
+ D(\sigma)=c_\eta(\sigma_R+\sigma_B)
+ +\wideU(1-\sigma_R,1-\sigma_B).
+ \tag{2.5}
+\]
+Let \(q\) be the certified page cost and \(\Xi\) the certified reservoir
+cost supplied by the book interface.  Define
+\begin{align}
+ M_\tau(\sigma)=\max\{&
+ \wideU((1-\sigma_R-\tau)_+,1-\sigma_B),\nonumber\\
+ &\wideU(1-\sigma_R,(1-\sigma_B-\tau)_+)\},\tag{2.6}\\
+ P(\sigma)&=c_\eta(\sigma_R+\sigma_B)+\tau q+M_\tau(\sigma),\tag{2.7}\\
+ Q(\sigma)&=c_\eta(\sigma_R+\sigma_B)+2\tau\Xi,\tag{2.8}\\
+ B(\sigma)&=\max\{P(\sigma),Q(\sigma)\}.\tag{2.9}
+\end{align}
+Finally set
+\[
+ C_*=\max_{\sigma\in[0,1]^2}\min\{D(\sigma),B(\sigma)\}.
+ \tag{2.10}
+\]
+
+\begin{theorem}[Retained-spine transfer]\label{thm:transfer-general}
+Under \cref{ass:yang-mao} and the uniform rate (2.2),
+\[
+ R(k,k)\le \exp(C_*k+o(k)).
+\]
+\end{theorem}
+
+\begin{proof}
+Let \(N=\lceil e^{(C_*+\varepsilon)k}\rceil\) and apply regularization.
+If either preliminary spine already has order at least \(k\), there is
+nothing to prove.  Otherwise write \(s_i=\sigma_i k+O(1)\).  From (2.3),
+\[
+ \log|W|\ge(C_*+\varepsilon)k
+ -c_\eta(s_R+s_B)+o(k).
+ \tag{2.11}
+\]
+At this \(\sigma\), choose the smaller of the direct and book branches.
+
+If \(D(\sigma)\le B(\sigma)\), then \(D(\sigma)\le C_*\).  Equations
+(2.2), (2.5) and (2.11) imply
+\(|W|\ge R(k-s_R,k-s_B)\).  The resulting red or blue clique extends with
+the corresponding preliminary spine.
+
+If \(B(\sigma)<D(\sigma)\), then both \(P(\sigma)\le C_*\) and
+\(Q(\sigma)\le C_*\).  The former supplies the page size needed for either
+possible book colour, using (2.2) and (2.6); the latter supplies the common
+reservoir threshold.  The parameterized-book interface produces a
+\(\tau k+O(1)\) spine in one colour, and compatibility extends the page
+clique with both retained spines to a monochromatic \(K_k\).  The fixed
+\(\varepsilon\)-slack absorbs every uniform \(o(k)\) term.
+\end{proof}
+

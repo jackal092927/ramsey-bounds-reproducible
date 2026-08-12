@@ -1,0 +1,51 @@
+\section{Certified computation and independent replay}\label{sec:computation}
+
+The computational proof follows three rules.
+
+\paragraph{Exact data.}
+All polynomial coefficients and parameters are parsed from decimal or
+rational strings, never from binary floating-point literals.  Equality of
+the inner and outer correlation constants is checked in exact rational
+arithmetic.
+
+\paragraph{Continuum coverage.}
+Every compact domain is a union of closed rational intervals.  Arb evaluates
+an inclusion extension on each cell.  Analytic monotonicity or derivative
+signs treat the unbounded tails.  A dense floating scan is not proof and is
+used only during search.
+
+\paragraph{Independent implementations.}
+The evidence package contains two author checkers, a non-importing replay, and
+an adaptive referee replay.  The latter two reconstruct the functions and
+constants instead of importing author code.  They use different subdivisions
+and endpoint reductions.  All four use 512-bit precision and
+\texttt{python-flint==0.9.0}.
+
+The current theorem files have the following SHA-256 identifiers.
+
+\begin{center}\small
+\begin{tabular}{ll}
+\toprule
+Role & SHA-256 prefix\\
+\midrule
+proof specification & \texttt{e4ea58def6405936}\\
+inner checker & \texttt{17db00d9374ce3ba}\\
+outer checker & \texttt{e2035cbffefcb147}\\
+non-importing replay & \texttt{fc379e3b861b6905}\\
+adaptive replay & \texttt{3c30f72ddc24848f}\\
+independent proof review & \texttt{a21402a5dad40490}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+From the repository root, the complete local replay is
+\begin{verbatim}
+bash scripts/bootstrap.sh
+bash scripts/reproduce_upper.sh
+bash scripts/compile_papers.sh
+\end{verbatim}
+The first command creates a Python 3.11 environment with exact dependency
+versions.  The second runs all four theorem checkers.  The third compiles all
+manuscripts.  A manual GitHub Actions workflow performs the same theorem
+replay on a fresh Linux runner.
+

@@ -1,0 +1,31 @@
+{
+  "certified_lower_bound": null,
+  "input": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/r3_13_n61_second_basin_m4_t17.txt",
+  "r": 3,
+  "s": 13,
+  "searches": {
+    "forbidden_clique_sat": {
+      "clauses": 2157,
+      "elapsed_seconds": 0.0019128330168314278,
+      "exists": true,
+      "solver": "cadical195",
+      "target": 3,
+      "witness": [
+        3,
+        26,
+        60
+      ]
+    },
+    "forbidden_independent_set_sat": {
+      "clauses": 2865,
+      "elapsed_seconds": 0.8489451250061393,
+      "exists": false,
+      "solver": "cadical195",
+      "target": 13,
+      "witness": null
+    }
+  },
+  "sha256": "bb43e22b66e0d93cf02fdbfc81a0cdfc03587a794dea7605e87dbc171c40792f",
+  "valid_ramsey_certificate": false,
+  "vertices": 61
+}

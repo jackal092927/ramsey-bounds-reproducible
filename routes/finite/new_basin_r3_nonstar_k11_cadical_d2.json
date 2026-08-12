@@ -1,0 +1,12 @@
+{
+  "cegar_iterations": 2,
+  "deletion_budget": 2,
+  "edge_variables": 1830,
+  "elapsed_seconds": 0.021666000015102327,
+  "independent_hitting_clauses": 1,
+  "input_sha256": "2e97d94560a4c3f30a70729ec5985e9a22f431a9d2e78b338994291b6d4c441b",
+  "original_edges": 363,
+  "solver": "cadical195",
+  "status": "UNSAT",
+  "triangle_free_clauses": 35990
+}

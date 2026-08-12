@@ -1,0 +1,51 @@
+{
+  "base_universal_bank": {
+    "masks": 251771,
+    "ordered_masks_sha256": "f10690b826b86eb03567a2ffaffb553801fae32af20cfe4337118bddf4e41afa",
+    "path": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/r3_18_budget6_branch_0_universal_union.cuts.json",
+    "sha256": "91b5709248ff641a315f5a0389b4f3fde3d38514f3b1a8b31b6cad31224f250b",
+    "universality_reason": "Each mask is an 18-vertex set; its complete positive edge clause is necessary for every graph with independence number below 18."
+  },
+  "branch": 1,
+  "elapsed_seconds": 5.785780958016403,
+  "fixed_deleted_edge": [
+    97,
+    99
+  ],
+  "formula": {
+    "arbitrary_original_nonedge_additions_allowed": true,
+    "auxiliary_variables": 9840,
+    "base_universal_I18_clauses": 251771,
+    "edge_variables": 4950,
+    "exact_residual_input_edge_deletions": 6,
+    "exact_six_residual_counter_clauses": 19680,
+    "exact_six_residual_counter_literals": 826,
+    "exact_total_input_edge_deletions": 7,
+    "fixed_deleted_edge": [
+      97,
+      99
+    ],
+    "fixed_deleted_edge_cannot_be_readded": true,
+    "fixed_negative_units": 1,
+    "initial_total_clauses": 433152,
+    "installed_clauses_are_only_structural_or_universal_I18": true,
+    "maximum_variable": 14790,
+    "original_nonedge_variables_in_deletion_counter": 0,
+    "resumed_additional_I18_clauses": 0,
+    "structural_clauses": 181381,
+    "triangle_clauses": 161700
+  },
+  "iterations_this_run": 0,
+  "new_masks": [],
+  "new_masks_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "resume_sources": [],
+  "resumed_additional_masks": 0,
+  "schema": "ramsey-r3-18-n100-exact-budget7-branch-v1",
+  "solver_stats": {
+    "conflicts": 0,
+    "decisions": 0,
+    "propagations": 1,
+    "restarts": 0
+  },
+  "status": "READY"
+}

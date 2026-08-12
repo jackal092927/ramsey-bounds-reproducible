@@ -1,0 +1,3 @@
+# Historical search environment. Search proposes candidates; it is not proof.
+numpy==2.4.6
+scipy==1.16.1

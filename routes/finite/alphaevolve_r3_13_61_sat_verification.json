@@ -1,0 +1,27 @@
+{
+  "certified_lower_bound": 61,
+  "input": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/certificates/alphaevolve_R3_13_ge_61.txt",
+  "r": 3,
+  "s": 13,
+  "searches": {
+    "forbidden_clique_sat": {
+      "clauses": 1709,
+      "elapsed_seconds": 0.007514333003200591,
+      "exists": false,
+      "solver": "cadical195",
+      "target": 3,
+      "witness": null
+    },
+    "forbidden_independent_set_sat": {
+      "clauses": 1537,
+      "elapsed_seconds": 0.6431602920056321,
+      "exists": false,
+      "solver": "cadical195",
+      "target": 13,
+      "witness": null
+    }
+  },
+  "sha256": "d619f0bfed32af5e2fbc8c724d9c65dbf388a19d5647d20e7835b501bc03227a",
+  "valid_ramsey_certificate": true,
+  "vertices": 60
+}

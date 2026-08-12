@@ -1,0 +1,71 @@
+{
+  "alpha_exact": null,
+  "certified_lower_bound": null,
+  "edges": 827,
+  "input": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/certificates/r3_18_n100_nearmiss.txt",
+  "omega_exact": null,
+  "r": 3,
+  "s": 18,
+  "searches": {
+    "boundary_clique": {
+      "colorings": 2,
+      "elapsed_seconds": 3.233394818380475e-05,
+      "exists": true,
+      "recursive_nodes": 3,
+      "target": 2,
+      "witness": [
+        96,
+        80
+      ]
+    },
+    "boundary_independent_set": {
+      "colorings": 17,
+      "elapsed_seconds": 0.00013320898870006204,
+      "exists": true,
+      "recursive_nodes": 18,
+      "target": 17,
+      "witness": [
+        99,
+        96,
+        95,
+        91,
+        87,
+        85,
+        93,
+        89,
+        84,
+        88,
+        90,
+        94,
+        92,
+        86,
+        83,
+        82,
+        81
+      ]
+    },
+    "forbidden_clique": {
+      "colorings": 20,
+      "elapsed_seconds": 0.0001135410275310278,
+      "exists": true,
+      "recursive_nodes": 21,
+      "target": 3,
+      "witness": [
+        99,
+        98,
+        97
+      ]
+    },
+    "forbidden_independent_set": {
+      "colorings": 1990791,
+      "elapsed_seconds": 8.578737166011706,
+      "exists": false,
+      "recursive_nodes": 1990791,
+      "target": 18,
+      "witness": null
+    }
+  },
+  "sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+  "valid_ramsey_certificate": false,
+  "vertices": 100
+}

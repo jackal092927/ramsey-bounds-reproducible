@@ -1,0 +1,116 @@
+{
+  "arbitrary_original_nonedge_additions_allowed": true,
+  "branch": 0,
+  "branch1_and_branch2_proof_artifact_identities_checked": true,
+  "budget5_dependency_checked": true,
+  "exact_residual_input_edge_deletions": 5,
+  "exact_total_input_edge_deletions": 6,
+  "fixed_deleted_edge": [
+    97,
+    98
+  ],
+  "formula": {
+    "auxiliary_variables": 8210,
+    "budget5_proof_dependency": "The frozen checked budget-five theorem covers all solutions with at most four residual deletions in every triangle-edge branch.",
+    "cardinality_semantics": "exactly five residual deletions",
+    "cnf": {
+      "gzip_bytes": 17600735,
+      "gzip_sha256": "47052de808b98598f2f144251a6ad73c1415dd00fef9e04b99ffe2f176229fbf",
+      "lines_including_header": 429893,
+      "path": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/r3_18_budget6_branch_0_universal_union.cnf.gz",
+      "raw_bytes": 174796028,
+      "raw_sha256": "0dec49bdbee74644db5fc181e25f7df02a72dfd1b23a3ab4f859501de8a0d3cd"
+    },
+    "edge_variables": 4950,
+    "exact_residual_cardinality_clauses": 16420,
+    "final_clause_count": 429892,
+    "fixed_deleted_edge": [
+      97,
+      98
+    ],
+    "fixed_deleted_edge_cannot_be_readded": true,
+    "fixed_unit_clauses": 1,
+    "formula_build_seconds": 5.323849333974067,
+    "initial_clause_count": 429892,
+    "installed_I18_sha256": "f10690b826b86eb03567a2ffaffb553801fae32af20cfe4337118bddf4e41afa",
+    "installed_unique_I18_clauses": 251771,
+    "maximum_variable": 13160,
+    "preloaded_fixed_base_I18_clauses": 4096,
+    "residual_input_edge_deletions": 5,
+    "resumed_I18_clauses": 251771,
+    "total_input_edge_deletions": 6,
+    "triangle_clauses": 161700
+  },
+  "global_ramsey_implication": null,
+  "input_sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+  "schema": "ramsey-r3-18-n100-exact-budget6-branch0-universal-union-v1",
+  "source_ledger": [
+    {
+      "distinct_within_source": 183133,
+      "new_union_masks": 183133,
+      "source": "r3_18_budget6_branch_0.checkpoint.json",
+      "source_masks": 183133,
+      "source_sha256": "f65b9cedfe9781a9b6cd15bf83e24ffe474e3ac9c1462ba3755e609617dd267a",
+      "union_after_source": 183133
+    },
+    {
+      "distinct_within_source": 141149,
+      "new_union_masks": 4096,
+      "source": "r3_18_budget6_branch_0.cuts.json",
+      "source_masks": 141149,
+      "source_sha256": "1018283cf44a79625a70bb1c1441d7a22e8b98b0c08125af4df57bdf90120617",
+      "union_after_source": 187229
+    },
+    {
+      "distinct_within_source": 63943,
+      "new_union_masks": 52515,
+      "source": "r3_18_budget6_branch_1.cuts.json",
+      "source_masks": 63943,
+      "source_sha256": "f8064f0f226659b4750382f781ba9a862bcc19eb49006eb8cdd2afc002ed227c",
+      "union_after_source": 239744
+    },
+    {
+      "distinct_within_source": 5422,
+      "new_union_masks": 3931,
+      "source": "r3_18_budget6_branch_2.cuts.json",
+      "source_masks": 5422,
+      "source_sha256": "aaa79a2f25d4c0d61c4467f1d0a721fd670a624e0391d96b2122723f97ba4598",
+      "union_after_source": 243675
+    },
+    {
+      "distinct_within_source": 287,
+      "new_union_masks": 286,
+      "source": "r3_18_budget5_branch_0_twostage.cuts.json",
+      "source_masks": 287,
+      "source_sha256": "c3153ff73f3ca1bfb21ab33d7edd263409ce2da7acc2ac368dc2936ec892b301",
+      "union_after_source": 243961
+    },
+    {
+      "distinct_within_source": 15872,
+      "new_union_masks": 4262,
+      "source": "r3_18_budget5_branch_1.cnf.gz:I18-tail",
+      "source_masks": 15872,
+      "source_sha256": "d6d321a4ac1aeec5e99c48843a8cda9395271e89555cea328e29bcda4e70ef15",
+      "union_after_source": 248223
+    },
+    {
+      "distinct_within_source": 8704,
+      "new_union_masks": 3548,
+      "source": "r3_18_budget5_branch_2.cnf.gz:I18-tail",
+      "source_masks": 8704,
+      "source_sha256": "8d8a543bb3cc17014941fee432673a1dc2b99c8cb4885d4d91bba9005f3b10a7",
+      "union_after_source": 251771
+    }
+  ],
+  "status": "AUDITED_FINITE_RELAXATION_BUILT_SUPERSEDED_BY_VERIFIED_PROOF",
+  "superseded_by": "r3_18_budget6_branch_0_universal_union_proof.json",
+  "superseding_status": "UNSAT_PROOF_VERIFIED",
+  "union": {
+    "checkpoint": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/r3_18_budget6_branch_0_universal_union.checkpoint.json",
+    "checkpoint_sha256": "4763cca0f5e3cae22d176e31e88b440596f0c5ef791ee433d92e88c702376aea",
+    "cut_bank": "/Users/Jackal/iWorld/ireserch/Ramsey/routes/finite/r3_18_budget6_branch_0_universal_union.cuts.json",
+    "cut_bank_sha256": "91b5709248ff641a315f5a0389b4f3fde3d38514f3b1a8b31b6cad31224f250b",
+    "distinct_I18_masks": 251771,
+    "ordered_masks_sha256": "0d06aff04331bce69945917e1b9aef7a7984608d4ef00015abcd218db4eb9ef8"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "derived-ramsey-graph-v1",
+  "base": {
+    "path": "alphaevolve_R3_18_ge_100.txt",
+    "sha256": "3e9d16e29111f3a2f25ae3b992235804c2612de2f6ada5570901d17ceedfca45",
+    "vertices": 99
+  },
+  "derived": {
+    "path": "r3_18_n100_nearmiss.txt",
+    "sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+    "vertices": 100
+  },
+  "operation": {
+    "type": "append_vertex",
+    "new_vertex": 99,
+    "zero_based_neighborhood": [
+      33, 34, 35, 36, 37, 38, 39, 40,
+      41, 42, 43, 44, 45, 46, 47, 48,
+      97, 98
+    ]
+  },
+  "verification": "python routes/finite/check_r3_18_extension_repair.py"
+}

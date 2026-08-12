@@ -1,0 +1,200 @@
+\section{The exact-diagonal correlation certificate}\label{sec:exact}
+
+We now prove the new analytic input.  Recall
+\[
+ u_0=\frac{1235783}{500000},\quad L=u_0^3,\quad a=e^{-u_0},
+\]
+and
+\[
+ E(z)=\sum_{n\ge0}\frac{z^n}{(3n)!},\quad
+ H(z)=1+aE(z)^2,\quad G(z)=\frac{H(z)-H(-z)}2,
+\]
+\[
+ F(x,y)=G(x)H(y)+G(y)H(x).
+\]
+
+\subsection{The bad-event separator}
+
+For \(u\ge0\), define the cubic filters
+\begin{align}
+ P(u)&=\frac{e^u+2e^{-u/2}\cos(\sqrt3u/2)}3,\tag{4.1}\\
+ N(u)&=\frac{e^{-u}+2e^{u/2}\cos(\sqrt3u/2)}3.\tag{4.2}
+\end{align}
+Then \(E(u^3)=P(u)\) and \(E(-u^3)=N(u)\).  Put
+\[
+ \sigma_0=10^{-8},\qquad T=2+2\sigma_0,qquad
+ \sigma_*=\frac{1+2\sigma_0}{2}=\frac{50000001}{100000000}.
+ \tag{4.3}
+\]
+
+\begin{lemma}[Half-line ratio]\label{lem:ratio}
+For every \(u\ge u_0\),
+\[
+ \frac{1+aP(u)^2}{1+aN(u)^2}>T.
+ \tag{4.4}
+\]
+\end{lemma}
+
+\begin{proof}
+Let \(R(u)=(1+aP(u)^2)/(1+aN(u)^2)\).  Its derivative has the sign of
+\[
+ W(u)=PP'(1+aN^2)-NN'(1+aP^2).
+ \tag{4.5}
+\]
+An outward-rounded enclosure proves
+\(R(u_0)-T>2.6595\cdot10^{-7}\) and \(W>0\) on 65,536 rational cells
+covering \([u_0,2.9]\).
+
+For \(u\ge2.9\), use
+\[
+ P(u)\ge\frac{e^u-2e^{-u/2}}3,qquad
+ |N(u)|\le\frac{2e^{u/2}+e^{-u}}3.
+\]
+After clearing the positive denominator, it suffices to prove positivity of
+\[
+ B_T(u)=e^{2u}-4Te^u-4e^{u/2}-4Te^{-u/2}+4e^{-u}-Te^{-2u}.
+\]
+At \(u=2.9\), interval arithmetic proves
+\(aB_T-9(T-1)>0\).  Moreover
+\[
+ B_T'(u)\ge D(u):=2e^u(e^u-2T)-2e^{u/2}-4e^{-u},
+\]
+and
+\[
+ D'(u)=4e^{2u}-4Te^u-e^{u/2}+4e^{-u}>0
+\]
+throughout the half-line by exponential dominance, with a strict endpoint
+check.  Hence \(B_T\), and therefore \(R-T\), remain positive.
+\end{proof}
+
+\begin{lemma}[Separator]\label{lem:separator}
+If one of \(A_1,A_2\) is less than \(-1\), then
+\[
+ F(LA_1,LA_2)<-\sigma_*.
+ \tag{4.6}
+\]
+\end{lemma}
+
+\begin{proof}
+Let \(x=-t\) with \(t\ge L\), put \(A=H(-t)\), and set
+\(R=H(t)/H(-t)\).  The exact identity
+\[
+ F(-t,y)=\frac A2\bigl((2-R)H(y)-H(-y)\bigr)
+ \tag{4.7}
+\]
+holds for every real \(y\).  By \cref{lem:ratio}, \(R>2+2\sigma_0\),
+whereas \(A,H(y),H(-y)\ge1\).  Thus the right side of (4.7) is less than
+\(-(1+2\sigma_0)/2=-\sigma_*\).  Exchange the coordinates if necessary.
+\end{proof}
+
+\subsection{Complete two-dimensional reduction}
+
+\begin{lemma}[Diagonal reduction]\label{lem:diagonal-reduction}
+If \(x,y\ge-L\) and \(m=\max\{x,y,0\}\), then
+\[
+ F(x,y)\le F(m,m).
+ \tag{4.8}
+\]
+\end{lemma}
+
+\begin{proof}
+The series for \(H\) has nonnegative coefficients, so \(H\), and therefore
+its odd part \(G\), are nondecreasing on the positive half-line.  If
+\(x=-v^3\in[-L,0]\), the root-filter formula gives
+\[
+ |E(-v^3)|\le e^{v/2},\qquad
+ H(x)\le1+e^{-u_0}e^v\le2.
+ \tag{4.9}
+\]
+Assume \(x\le y\).  If \(y<0\), both odd parts are negative and hence
+\(F(x,y)<0=F(0,0)\).  If \(x<0\le y\), discard the nonpositive summand and
+use (4.9):
+\[
+ F(x,y)\le G(y)H(x)\le2G(y)\le2G(y)H(y)=F(y,y).
+\]
+If \(0\le x\le y\), monotonicity bounds both summands by \(G(y)H(y)\).
+This exhausts all sign patterns and their boundaries.
+\end{proof}
+
+On the diagonal we retain the exact identity
+\[
+ F(z,z)=2G(z)H(z)=H(z)^2-H(z)H(-z),\qquad z\ge0.
+ \tag{4.10}
+\]
+
+\subsection{Compact interval and analytic tail}
+
+Let \(z=u^3\) and \(w=(u^3+u_0^3)^{1/3}\).  Define
+\[
+ D_0=\frac{88053}{10^9}.
+\]
+
+\begin{lemma}[Exact diagonal envelope]\label{lem:envelope}
+For every \(u\ge0\),
+\[
+ \frac{H(u^3)^2-H(u^3)H(-u^3)}{e^{4w}}<D_0.
+ \tag{4.11}
+\]
+\end{lemma}
+
+\begin{proof}
+The compact interval \([0,20]\) is covered by 131,072 exact rational cells.
+On each cell a 512-bit Arb evaluation encloses the left side of (4.11); the
+minimum slack is greater than \(4.2687\cdot10^{-6}\).
+
+For \(u\ge20\), use \(H(-u^3)\ge1\) and write
+\(H(u^3)=1+aP(u)^2\).  Then
+\[
+ H(u^3)^2-H(u^3)H(-u^3)
+ \le aP(u)^2+a^2P(u)^4.
+\]
+Since
+\[
+ |P(u)|\le\frac{e^u}{3}(1+2e^{-3u/2})
+\]
+and \(w\ge u\), the normalized expression is at most
+\[
+ \frac a9e^{-2u}(1+2e^{-3u/2})^2
+ +\frac{a^2}{81}(1+2e^{-3u/2})^4.
+ \tag{4.12}
+\]
+Both terms decrease.  At \(u=20\), (4.12) is below
+\(8.805216326983\cdot10^{-5}\), leaving strict slack greater than
+\(8.3673\cdot10^{-10}\); its limiting value \(a^2/81\) has the same strict
+ordering.  This proves the entire half-line.
+\end{proof}
+
+Combining \cref{lem:diagonal-reduction,lem:envelope}, if
+\(A_1,A_2\ge-1\) and \(M=\max(A_1,A_2)\), then
+\[
+ F(LA_1,LA_2)<D_0\exp\!\left(4u_0(M+1)^{1/3}\right).
+ \tag{4.13}
+\]
+
+\subsection{Exact moment/tail budget}
+
+Take
+\[
+ \beta=\frac{330867}{500000},\qquad
+ \varepsilon=\frac{6893}{10^7}.
+\]
+Exact rational arithmetic gives
+\[
+ \sigma_*(1-\beta)-D_0\beta(1+2/\varepsilon)
+ =\frac{39437634699447}{3446500000000000000}>10^{-5}.
+ \tag{4.14}
+\]
+The positive moment/tail interface applied to
+\cref{lem:separator} and (4.13) therefore yields
+\[
+ \cG_2^{(3)}\!\left(
+ \frac{330867}{500000},
+ 4u_0(1+\varepsilon)\right).
+\]
+Finally,
+\[
+ 4u_0(1+\varepsilon)
+ =\frac{12366348252219}{1250000000000}
+ =9.8930786017752,
+\]
+which is the exact handoff asserted in (2.4).

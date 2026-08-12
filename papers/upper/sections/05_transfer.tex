@@ -1,0 +1,71 @@
+\section{The retained-spine certificate}\label{sec:transfer}
+
+The exact outer tuple is
+\[
+ \eta=0.02868896,qquad p=0.47130887,qquad
+ \delta=0.000053863,
+\]
+\[
+ \lambda_0=13233,qquad \tau=0.00069386,qquad
+ \Delta=0.0000034754.
+ \tag{5.1}
+\]
+Every terminating decimal in (5.1) is interpreted as a rational number.
+
+The functions \(D,B\) and \(C_*\) are those of
+\cref{thm:transfer-general}.  Direct interval evaluation of the full square
+would introduce unacceptable variable dependence.  The certificate instead
+uses the geometry of the ordered wedge.  Concavity of \(U\) fixes the
+monotonicity of each page branch; the red and blue page expressions reduce to
+one-dimensional boundary intervals, and the diagonal reservoir reduces to
+an endpoint inequality.  Every reduction is analytic before numerical
+evaluation.
+
+\begin{proposition}[Outer certificate]\label{prop:outer}
+For the exact tuple (5.1) and the correlation input proved in
+\cref{sec:exact},
+\[
+ C_*\le U(1)-\Delta.
+ \tag{5.2}
+\]
+The certified lower margins are as follows.
+\begin{center}
+\begin{tabular}{lc}
+\toprule
+Inequality & lower margin\\
+\midrule
+degree gate & \(1.5056\cdot10^{-9}\)\\
+red page & \(5.1006\cdot10^{-9}\)\\
+blue page & \(3.4825\cdot10^{-6}\)\\
+diagonal reservoir & \(6.0468\cdot10^{-6}\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{proposition}
+
+\begin{proof}
+Partition \([0,1]^2\) into the ordered triangles
+\(\sigma_R\le\sigma_B\) and \(\sigma_B\le\sigma_R\), then subdivide at
+the page truncation lines.  On each analytic piece, the signs of the partial
+derivatives follow from strict concavity of \(U\), reducing the maximum of
+each page term to the relevant axis or diagonal boundary.  The certificate
+checks both orientations and all boundary intersections with outward-rounded
+balls.  It separately verifies the scalar Yang--Mao degree and reservoir
+gates and the exact equality of the inner correlation constant.  The quoted
+margins are the minimum lower endpoints over the complete partition.  The
+machine-verifiable partition and endpoint formulas are listed in Appendix A.
+\end{proof}
+
+\begin{proof}[Proof of \cref{thm:main-upper}]
+By \cref{thm:transfer-general,prop:outer},
+\[
+ R(k,k)\le \exp((U(1)-\Delta)k+o(k)).
+\]
+A 512-bit Arb evaluation gives
+\[
+ e^{U(1)-\Delta}<3.780685288380<3.780685290,
+\]
+with rounding margin greater than \(1.6203\cdot10^{-9}\).  This proves the
+claimed safe decimal and the stronger unrounded statement.
+\end{proof}
+

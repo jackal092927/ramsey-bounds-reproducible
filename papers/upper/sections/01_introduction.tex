@@ -1,0 +1,92 @@
+\section{Introduction}
+
+For positive integers \(k,\ell\), let \(R(k,\ell)\) be the least \(n\) such
+that every red--blue colouring of \(K_n\) contains either a red \(K_k\) or a
+blue \(K_\ell\).  The classical argument of Erd\H{o}s and Szekeres gives
+\(R(k,k)\le 4^{k+o(k)}\) \cite{ErdosSzekeres1935}.  Campos, Griffiths,
+Morris and Sahasrabudhe obtained the first exponential improvement of this
+base \cite{CGMS2023}.  Gupta, Ndiaye, Norin and Wei subsequently reorganized
+the book method and stated the concrete bound \(R(k,k)\le3.8^{k+o(k)}\)
+\cite{GNNW2024}.  Yang and Mao introduced a retained-spine refinement in a
+multicolour setting \cite{YangMao2026}.
+
+This paper combines two ingredients.  The first is a certified, symmetric
+off-diagonal rate
+\[
+ \log R(k,\ell)\le kU(\ell/k)+o(k),\qquad 1\le \ell\le k,
+ \tag{1.1}
+\]
+where \(U=F_6\) is given explicitly in \cref{sec:rate}.  The second is a new
+correlation certificate designed for the retained-spine transfer.  The
+certificate is analytic except on compact intervals, where every inequality
+is proved by outward-rounded Arb balls \cite{Johansson2017}.
+
+\subsection{Main result}
+
+We state the result with its imported interfaces visible.  The exact
+interfaces are recorded in \cref{sec:framework}; they are theorem statements
+from Yang--Mao together with the reviewed rate theorem (1.1), rather than
+unstructured assumptions about an implementation.
+
+\begin{theorem}[Main theorem]\label{thm:main-upper}
+Assume the regularization, positive tensor-moment, tail and parameterized-book
+interfaces stated in \cref{ass:yang-mao}, and the certified rate theorem
+\cref{thm:p6-rate}.  Then
+\[
+ R(k,k)\le \exp\!\left((U(1)-3.4754\cdot10^{-6})k+o(k)\right)
+ \le (3.780685290)^{k+o(k)}.
+\]
+The certified unrounded upper base is less than
+\(3.780685288379640114\).
+\end{theorem}
+
+The paper is a source-relative proof package: every imported statement is
+named, every new inequality is proved here, and every numerical step is
+independently replayable.  No finite value of the asymptotic threshold is
+claimed.
+
+\subsection{The exact-diagonal mechanism}
+
+Fix
+\[
+ u_0=\frac{1235783}{500000},\qquad L=u_0^3,
+ \qquad a=e^{-u_0},
+\]
+and define
+\[
+ E(z)=\sum_{n\ge0}\frac{z^n}{(3n)!},\qquad
+ H(z)=1+aE(z)^2,\qquad
+ G(z)=\frac{H(z)-H(-z)}2.
+\]
+The correlation form is
+\[
+ F(x,y)=G(x)H(y)+G(y)H(x).
+\]
+Our central observation is that the complete two-dimensional problem reduces
+to the exact identity
+\[
+ F(z,z)=H(z)^2-H(z)H(-z),\qquad z\ge0,
+\]
+not merely to the larger square difference
+\(H(z)^2-H(-z)^2\).  This improves the compact envelope while preserving a
+simple analytic tail.
+
+\subsection{Proof architecture}
+
+The proof has four logically separate layers.
+
+\begin{enumerate}[label=(\roman*)]
+\item \Cref{sec:rate} states the off-diagonal rate and records its exact
+      polynomial and verification boundary.
+\item \Cref{sec:exact} proves the ratio/separator, the two-dimensional
+      reduction, the exact diagonal envelope and the moment/tail budget.
+\item \Cref{sec:transfer} proves the retained-spine max--min transfer and
+      inserts the certified parameters.
+\item \Cref{sec:computation} describes continuum coverage, independent
+      implementations and the immutable evidence manifest.
+\end{enumerate}
+
+The complete repaired book induction and the frozen rate record are included
+in the appendices.  Search scripts are not part of the proof; they only chose
+the exact rational data subsequently verified from scratch.
+

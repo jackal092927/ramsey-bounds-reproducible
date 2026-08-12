@@ -1,0 +1,13 @@
+{
+  "base_sha256": "d619f0bfed32af5e2fbc8c724d9c65dbf388a19d5647d20e7835b501bc03227a",
+  "blue_clauses_discovered": 70,
+  "cegar_iterations": 71,
+  "elapsed_seconds": 0.007136458007153124,
+  "one_vertex_extendable": false,
+  "r": 3,
+  "red_extension_clauses": 349,
+  "s": 13,
+  "solver": "cadical195",
+  "solver_status": "UNSAT",
+  "vertices_in_base": 60
+}

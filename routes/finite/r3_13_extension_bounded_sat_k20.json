@@ -1,0 +1,223 @@
+{
+  "attempts": [
+    {
+      "actual_red_conflicts": 20,
+      "blue_clauses_discovered": 14247,
+      "bound": 20,
+      "cegar_iterations": 15,
+      "elapsed_seconds": 0.3962167499703355,
+      "neighborhood": [
+        10,
+        24,
+        25,
+        26,
+        29,
+        30,
+        31,
+        34,
+        35,
+        36,
+        50,
+        53,
+        57,
+        59
+      ],
+      "red_conflict_witnesses": [
+        [
+          10,
+          30
+        ],
+        [
+          24,
+          25
+        ],
+        [
+          24,
+          30
+        ],
+        [
+          25,
+          26
+        ],
+        [
+          25,
+          29
+        ],
+        [
+          25,
+          31
+        ],
+        [
+          25,
+          34
+        ],
+        [
+          26,
+          30
+        ],
+        [
+          26,
+          35
+        ],
+        [
+          29,
+          30
+        ],
+        [
+          29,
+          35
+        ],
+        [
+          30,
+          31
+        ],
+        [
+          30,
+          34
+        ],
+        [
+          30,
+          36
+        ],
+        [
+          30,
+          50
+        ],
+        [
+          30,
+          57
+        ],
+        [
+          30,
+          59
+        ],
+        [
+          31,
+          35
+        ],
+        [
+          34,
+          35
+        ],
+        [
+          35,
+          36
+        ]
+      ],
+      "status": "SAT"
+    }
+  ],
+  "base_sha256": "d619f0bfed32af5e2fbc8c724d9c65dbf388a19d5647d20e7835b501bc03227a",
+  "feasible_frozen_base_conflicts": 20,
+  "has_forbidden_clique": true,
+  "has_forbidden_independent_set": false,
+  "minimum_frozen_base_conflicts": null,
+  "minimum_proved": false,
+  "near_miss_sha256": "a14e7cb8c9ab85f626c380b3a980a3c0b77eb1c488be2000990c1bf1273773ee",
+  "neighborhood": [
+    10,
+    24,
+    25,
+    26,
+    29,
+    30,
+    31,
+    34,
+    35,
+    36,
+    50,
+    53,
+    57,
+    59
+  ],
+  "r": 3,
+  "red_conflict_witnesses": [
+    [
+      10,
+      30
+    ],
+    [
+      24,
+      25
+    ],
+    [
+      24,
+      30
+    ],
+    [
+      25,
+      26
+    ],
+    [
+      25,
+      29
+    ],
+    [
+      25,
+      31
+    ],
+    [
+      25,
+      34
+    ],
+    [
+      26,
+      30
+    ],
+    [
+      26,
+      35
+    ],
+    [
+      29,
+      30
+    ],
+    [
+      29,
+      35
+    ],
+    [
+      30,
+      31
+    ],
+    [
+      30,
+      34
+    ],
+    [
+      30,
+      36
+    ],
+    [
+      30,
+      50
+    ],
+    [
+      30,
+      57
+    ],
+    [
+      30,
+      59
+    ],
+    [
+      31,
+      35
+    ],
+    [
+      34,
+      35
+    ],
+    [
+      35,
+      36
+    ]
+  ],
+  "s": 13,
+  "solver": "cadical195",
+  "tested_bound_range": [
+    20,
+    20
+  ],
+  "vertices_in_base": 60
+}

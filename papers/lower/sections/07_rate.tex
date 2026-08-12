@@ -1,0 +1,62 @@
+\section{Rate conversion and asymptotics}\label{sec:rate-lower}
+
+Let \(C\to\infty\) after the fixed-\(C\) theorem and then let
+\(w\downarrow\omega_0\).  The source asymptotics give
+\[
+ \rho=o(1),\quad m'_0\to1,\quad M_w/m_0\to1,\quad
+ j_\pm(w)\to1,\quad\mu_w\to1,
+\tag{7.1}
+\]
+\[
+ \widehat L_w=o(m_0^2),\qquad
+ \widehat B_w=m_0^2[1+o(1)].
+\tag{7.2}
+\]
+Hence all feasibility and positivity conditions used above hold for
+sufficiently large fixed \(C\).  Since \(K_\ell/\ell^4\to1/12\), the new
+contribution to the first-moment rate is exactly (2.9).
+
+Moreover,
+\[
+ m_0^2=(2+o(1))\log C,qquad
+ D^2=(32+o(1))(\log C)^3,
+\tag{7.3}
+\]
+and therefore
+\[
+ \widehat B_wA_0=(4+o(1))(\log C)^2,qquad
+ E_w=(2+o(1))(\log C)^2.
+\tag{7.4}
+\]
+Substitution into (2.9) gives
+\[
+ \widehat H_*(C)=
+ \frac{(6+o(1))(\log C)^2}
+ {12(32+o(1))(\log C)^3}
+ =\frac{1+o(1)}{64\log C}.
+\tag{7.5}
+\]
+The exact-merge predecessor is
+\(H_*(C)=(1+o(1))/(96\log C)\), so the new term is eventually strictly
+larger.  Because \(G_*+\widehat H_*=O(1/\log C)=o(1)\), the frozen red--blue
+crossing is unchanged.  This proves \cref{thm:main-lower}.
+
+\subsection{A narrow scalar method cap}
+
+Consider residual arrays that satisfy all of the following: they use the same
+deterministic triangular weighted-pair recursion; their increments are
+nonnegative and fixed before the relevant column is sampled; they are paid by
+the same scalar full-box strong-concavity inequality; and they use the same
+three-factor H\"older/CGF comparison.  For such a residual, the direct leading
+contribution at edge \(ij\) is
+\[
+ \widehat B_w(i-1)e_{ij}-\frac{e_{ij}^2}{2\mu_w}.
+\tag{7.6}
+\]
+Pointwise optimization gives
+\(e_{ij}=\mu_w\widehat B_w(i-1)=m_0^2(i-1)[1+o(1)]\).  Feedback has norm
+\(\rho=o(1)\), so it changes only lower-order terms.  Thus \(1/64\) is the
+leading cap for this explicitly admissible scalar class.
+
+This is not a cap on adaptive, matrix-valued or higher-order states, on a
+different source quadratic MGF, or on a different extraction invariant.

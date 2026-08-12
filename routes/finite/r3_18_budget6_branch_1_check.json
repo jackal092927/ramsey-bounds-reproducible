@@ -1,0 +1,41 @@
+{
+  "global_ramsey_bound_improvement": false,
+  "overall_budget6_three_branch_status": "UNKNOWN_BRANCH_0_ONLY",
+  "proof": {
+    "drat_gzip_sha256": "cfe694fd728903ee9ac9f08a66ade64faf7e68763246d1d52ca29a85727494ec",
+    "drat_raw_bytes": 2137671968,
+    "drat_raw_lines": 5590150,
+    "drat_raw_sha256": "fbf7292c3bcbf52ec6f978fca0751d319e2e2029380e7a865a17430baf282902",
+    "status": "ARTIFACT_VERIFIED_NOT_REPLAYED"
+  },
+  "semantics": {
+    "I18_hitting_clauses": 63943,
+    "I18_ordered_sha256": "99b72cd5500c6140d4aca261a1028b9805b9d8209ffc3216596a0fb8fb50edcf",
+    "arbitrary_original_nonedges_absent_from_deletion_counter": true,
+    "budget5_dependency_checked": true,
+    "clauses": 242064,
+    "cnf_gzip_sha256": "a438c9fef4d99ae516829e4405da8c9f079398501361f9c5f69f46a494ffad14",
+    "cnf_raw_sha256": "ced3fd39370b4c2552cb261638fb7076da173e18d6b871f6fb280668e5a1154a",
+    "cut_bank_sha256": "f8064f0f226659b4750382f781ba9a862bcc19eb49006eb8cdd2afc002ed227c",
+    "exact_five_clauses": 16420,
+    "fixed_deleted_edge": [
+      97,
+      99
+    ],
+    "fixed_negative_units": 1,
+    "residual_input_edge_deletions": 5,
+    "seed_edges": 827,
+    "seed_has_independent_18_set": false,
+    "seed_sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+    "status": "SEMANTICS_VERIFIED",
+    "total_input_edge_deletions": 6,
+    "triangle_clauses": 161700,
+    "unique_seed_triangle": [
+      97,
+      98,
+      99
+    ],
+    "variables": 13160
+  },
+  "status": "BRANCH1_EXACT_BUDGET6_ARTIFACT_AUDITED_NOT_REPLAYED"
+}
