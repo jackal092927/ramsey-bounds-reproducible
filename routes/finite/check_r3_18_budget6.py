@@ -150,13 +150,28 @@ def main() -> None:
     if seed["searches"]["forbidden_independent_set"]["exists"]:
         raise AssertionError("near miss unexpectedly has I18")
     semantics = audit_cnf(cnf, rows)
-    proof = {"status": "NOT_RERUN"}
+    proof = {"status": "NOT_REQUESTED"}
     if args.drat_trim is not None:
         proof = verify_drat_trace(args.drat_trim, cnf, drat, args.drat_seconds)
         if proof["status"] != "VERIFIED":
             raise AssertionError("DRAT replay failed")
+    proof_replayed = proof["status"] == "VERIFIED"
+    current_status = (
+        "BRANCH2_EXACT_BUDGET6_SEMANTICS_AND_PROOF_VERIFIED"
+        if proof_replayed
+        else "BRANCH2_EXACT_BUDGET6_SEMANTICS_VERIFIED_PROOF_NOT_REQUESTED"
+    )
     result = {
-        "status": "BRANCH2_EXACT_BUDGET6_PROOF_VERIFIED",
+        "status": current_status,
+        "recorded_provenance": {
+            "stored_result_status": run["status"],
+            "proof_status": "VERIFIED_IN_PINNED_RECORD",
+        },
+        "current_run": {
+            "status": current_status,
+            "semantics_status": "VERIFIED",
+            "proof_status": "VERIFIED" if proof_replayed else "NOT_REQUESTED",
+        },
         "fixed_deleted_edge": list(EXPECTED_FIXED_EDGE),
         "semantics": semantics,
         "proof": proof,

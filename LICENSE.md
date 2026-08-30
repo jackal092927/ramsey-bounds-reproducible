@@ -1,10 +1,14 @@
 # License status
 
-No public reuse license has yet been selected for this pre-submission research
-bundle.  Copyright is retained by the contributors.
+No public reuse license has yet been selected for this local pre-publication
+research package. Copyright is retained by Cheng Xin.
 
-Before making the repository public, the authors should choose an explicit
-license, for example an OSI-approved license for the software and a Creative
-Commons license for the manuscripts.  This placeholder avoids silently
-granting rights that the author has not approved.
+The absence of a license must not be interpreted as permission to copy,
+modify, or redistribute the software, manuscripts, third-party graph data, or
+large proof artifacts. Before public release, the author should approve an
+explicit software license and an explicit manuscript license and separately
+verify the redistribution terms of all third-party inputs.
 
+This status file is intentionally not a substitute for a license. It records
+the current boundary without granting rights or claiming that a public
+repository or release already exists.

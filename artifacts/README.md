@@ -20,9 +20,10 @@ After downloading release assets into `artifacts/downloads/`, run:
 bash scripts/download_release_artifacts.sh
 ```
 
-The default release tag is `evidence-2026-08-12` in the private publication
-repository.  Override `RAMSEY_GITHUB_REPO` or `RAMSEY_ARTIFACT_TAG` when
-replaying a mirror.
+The planned default release tag is `evidence-2026-08-30` in the intended
+public repository. Until that release is actually published, the command is a
+release contract rather than evidence of public availability. Override
+`RAMSEY_GITHUB_REPO` or `RAMSEY_ARTIFACT_TAG` when replaying a mirror.
 
 The proof status is determined by the theorem reports and verified manifests,
 not merely by the presence of a file with a `.drat.gz` suffix.

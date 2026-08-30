@@ -38,14 +38,19 @@ independent proof review & \texttt{a21402a5dad40490}\\
 \end{tabular}
 \end{center}
 
-From the repository root, the complete local replay is
+From the repository root, a lightweight replay of the exact-diagonal and
+outer-transfer certificates is
 \begin{verbatim}
 bash scripts/bootstrap.sh
 bash scripts/reproduce_upper.sh
-bash scripts/compile_papers.sh
 \end{verbatim}
 The first command creates a Python 3.11 environment with exact dependency
-versions.  The second runs all four theorem checkers.  The third compiles all
-manuscripts.  A manual GitHub Actions workflow performs the same theorem
-replay on a fresh Linux runner.
-
+versions.  The second runs the four final transfer checkers; it deliberately
+does not replay the six-stage rate chain.  The complete upper-bound replay,
+including all six rate certificates, both Ramsey-region orientations, the
+combinatorial audit, and all four final transfer checkers, is
+\begin{verbatim}
+.venv/bin/python reproduce.py full
+\end{verbatim}
+The unified manuscript is compiled separately with
+\texttt{make paper}.

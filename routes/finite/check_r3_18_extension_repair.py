@@ -196,7 +196,7 @@ def main() -> None:
         semantic = audit_cnf(record["cnf"], near_rows, record["edge"], record["cnf_sha"])
         if record["recorded_proof_status"] != "VERIFIED":
             raise AssertionError("stored branch lacks a verified proof record")
-        proof = {"status": "NOT_RERUN"}
+        proof = {"status": "NOT_REQUESTED"}
         if args.drat_trim is not None:
             proof = verify_drat_trace(
                 args.drat_trim,
@@ -206,7 +206,16 @@ def main() -> None:
             )
             if proof["status"] != "VERIFIED":
                 raise AssertionError(f"branch {index} DRAT verification failed")
-        audited.append({"branch": index, "semantics": semantic, "proof": proof})
+        audited.append(
+            {
+                "branch": index,
+                "semantics": semantic,
+                "recorded_provenance": {
+                    "proof_status": "VERIFIED_IN_PINNED_RECORD"
+                },
+                "current_run": {"proof": proof},
+            }
+        )
 
     base_check = verify(base, 3, 18)
     near_check = verify(near, 3, 18)
@@ -215,9 +224,28 @@ def main() -> None:
     if near_check["searches"]["forbidden_independent_set"]["exists"]:
         raise AssertionError("near miss contains an I18")
 
+    all_replayed = all(
+        branch["current_run"]["proof"]["status"] == "VERIFIED"
+        for branch in audited
+    )
+    current_status = (
+        "ALL_THREE_BRANCHES_SEMANTICS_AND_PROOFS_VERIFIED"
+        if all_replayed
+        else "ALL_THREE_BRANCHES_SEMANTICS_VERIFIED_PROOFS_NOT_REQUESTED"
+    )
     result = {
-        "status": "ALL_THREE_BRANCHES_VERIFIED",
-        "fixed_seed_budget5_repair_ball_unsat": True,
+        "status": current_status,
+        "recorded_provenance": {
+            "proof_status": "ALL_THREE_VERIFIED_IN_PINNED_RECORDS",
+            "fixed_seed_budget5_repair_ball_unsat": True,
+        },
+        "current_run": {
+            "status": current_status,
+            "semantics_status": "ALL_THREE_VERIFIED",
+            "proof_status": "ALL_THREE_VERIFIED" if all_replayed else "NOT_REQUESTED",
+            "fixed_seed_budget5_repair_ball_unsat": all_replayed,
+        },
+        "fixed_seed_budget5_repair_ball_unsat": all_replayed,
         "global_ramsey_bound_improvement": False,
         "base_sha256": BASE_SHA,
         "near_miss_sha256": NEAR_SHA,

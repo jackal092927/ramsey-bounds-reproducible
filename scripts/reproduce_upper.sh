@@ -10,5 +10,4 @@ cd "${repo_root}/routes/upper"
 "${python_bin}" independent_check_exact_diagonal_next.py
 "${python_bin}" referee_check_exact_diagonal_next.py
 
-echo UPPER_THEOREM_REPRODUCED
-
+echo UPPER_TRANSFER_CERTIFICATE_REPRODUCED

@@ -2,22 +2,19 @@
 
 \subsection{Two verification tiers}
 
-The public repository~\cite{Repository2026} separates lightweight semantic
-checks from large proof replay.
+The repository package~\cite{Repository2026} separates lightweight tracked
+checks from large proof replay.  At the date of this draft, public GitHub and
+archival release publication remain pending; the following is the release
+contract, not a claim that an anonymous download already exists.
 
 \paragraph{Tier 1: source and semantics.}
 Python \(3.11.15\) and the locked environment reproduce graph verification,
-unit tests, exact-seven frozen-state checks, and all exact-six formula
-reconstructions.  From the repository root, the intended entry points are
+unit tests, and exact-seven frozen-state checks.  From the repository root,
+the lightweight entry point is
 \begingroup\scriptsize
 \begin{verbatim}
 bash scripts/bootstrap.sh
-.venv/bin/python -m unittest discover \
-  -s routes/finite -t . -p 'test_*.py' -v
-.venv/bin/python routes/finite/check_r3_18_budget6.py
-.venv/bin/python routes/finite/check_r3_18_budget6_branch1.py
-.venv/bin/python routes/finite/check_r3_18_budget6_branch0_union.py
-.venv/bin/python routes/finite/check_r3_18_budget7.py
+.venv/bin/python reproduce.py quick
 \end{verbatim}
 \endgroup
 The proof-critical Python packages are pinned to
@@ -31,13 +28,23 @@ is checked before decompression:
 \begingroup\small
 \begin{verbatim}
 .venv/bin/python scripts/verify_artifacts.py \
-  --directory /path/to/release-assets
+  --directory /path/to/release-assets --exact
 \end{verbatim}
 \endgroup
-Each matching DIMACS/DRAT pair can then be decompressed into a fresh temporary
-directory and replayed with the pinned \texttt{drat-trim}.  The semantic
-checkers accept a \texttt{--drat-trim} path and replay timeout; representative
-commands are listed in \cref{app:protocol}.  A proof is accepted only when the
+The exact mode also rejects unmanifested files, so a stale or mixed download
+directory cannot masquerade as the immutable release payload.
+Build \texttt{drat-trim} from the pinned source commit with
+\path{scripts/build_drat_trim.sh}; a platform-specific executable hash is
+recorded but not used as a cross-platform acceptance condition.  The one
+integrated command
+\begin{verbatim}
+.venv/bin/python reproduce.py finite-heavy \
+  --artifact-dir /path/to/release-assets \
+  --drat-trim /absolute/path/to/drat-trim
+\end{verbatim}
+materializes a temporary overlay containing tracked semantic metadata and the
+twelve release payloads.  It reconstructs all six formulas, replays all six
+proofs, and audits the exact-seven state.  A proof is accepted only when the
 checker exits zero and prints \texttt{s VERIFIED}.
 
 \subsection{Why large proofs are release assets}
@@ -47,8 +54,8 @@ raw DRAT traces occupy about \(6.39\) GB.  Adding the smaller budget-five
 proofs to ordinary Git history would still make cloning needlessly expensive.
 The repository therefore tracks code, matrices, cut banks, semantic records,
 tests, the paper, and a content-addressed manifest.  CNF and DRAT payloads are
-published as immutable release or archival assets (for example, a GitHub
-Release mirrored to Zenodo), keyed by SHA-256 and byte count.  This design
+to be published as immutable release or archival assets (for example, a
+GitHub Release mirrored to Zenodo), keyed by SHA-256 and byte count.  This design
 keeps ordinary clones reviewable while preserving bit-for-bit replay.
 
 The release is complete only if it includes both the three budget-five proof

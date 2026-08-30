@@ -173,6 +173,39 @@ Combining \cref{lem:diagonal-reduction,lem:envelope}, if
 
 \subsection{Exact moment/tail budget}
 
+The final passage from the separator to a correlation tail is short but
+proof-critical, so we give it in full rather than treating it as an unnamed
+interface.
+
+\begin{lemma}[Positive-moment expectation]\label{lem:positive-expectation}
+For any finite set \(\mathcal X\), independent identically distributed
+\(U,U'\in\mathcal X\), real Hilbert spaces \(\mathcal H_1,\mathcal H_2\),
+and maps \(\sigma_i:\mathcal X\to\mathcal H_i\), put
+\(Z_i=\langle\sigma_i(U),\sigma_i(U')\rangle\).  Then
+\[
+ \mathbb E F(LZ_1,LZ_2)\ge0.
+ \tag{4.14}\label{eq:positive-expectation}
+\]
+\end{lemma}
+
+\begin{proof}
+The Taylor coefficients of \(E\) and \(H\) are nonnegative, and taking the
+odd part of \(H\) merely retains its odd-degree coefficients.  Hence every
+bivariate Taylor coefficient of
+\(F(x,y)=G(x)H(y)+G(y)H(x)\) is nonnegative.  For nonnegative integers
+\(r,s\), tensorization gives
+\[
+ \mathbb E(Z_1^rZ_2^s)
+ =\left\|\mathbb E\bigl(
+   \sigma_1(U)^{\otimes r}\otimes
+   \sigma_2(U)^{\otimes s}\bigr)\right\|^2\ge0.
+\]
+Because \(\mathcal X\) is finite, \((Z_1,Z_2)\) has bounded support; the
+entire Taylor series is therefore absolutely integrable and may be averaged
+term by term.  Summing the nonnegative terms proves
+\eqref{eq:positive-expectation}.
+\end{proof}
+
 Take
 \[
  \beta=\frac{330867}{500000},\qquad
@@ -182,19 +215,58 @@ Exact rational arithmetic gives
 \[
  \sigma_*(1-\beta)-D_0\beta(1+2/\varepsilon)
  =\frac{39437634699447}{3446500000000000000}>10^{-5}.
- \tag{4.14}
+ \tag{4.15}\label{eq:tail-budget}
 \]
-The positive moment/tail interface applied to
-\cref{lem:separator} and (4.13) therefore yields
+
+\begin{proposition}[Certified correlation tail]\label{prop:correlation-tail}
+The exact separator, envelope, and budget above imply
 \[
  \cG_2^{(3)}\!\left(
  \frac{330867}{500000},
  4u_0(1+\varepsilon)\right).
 \]
+\end{proposition}
+
+\begin{proof}
+Fix data from the definition \eqref{eq:correlation-definition}, put
+\(\mathcal E=\{Z_1\ge-1,Z_2\ge-1\}\),
+\(M=\max\{Z_1,Z_2\}\), \(Y=((M+1)_+)^{1/3}\), and
+\(c=4u_0\).  By \cref{lem:positive-expectation,lem:separator} and
+\eqref{eq:positive-expectation}, while (4.13) controls the good event,
+\[
+ 0\le\mathbb EF(LZ_1,LZ_2)
+ <D_0\mathbb E(e^{cY}\mathbf1_{\mathcal E})
+   -\sigma_*\mathbb P(\mathcal E^{\mathrm c}).
+ \tag{4.16}\label{eq:master-tail}
+\]
+If \(\mathbb P(\mathcal E)\ge\beta\), choose \(\lambda=-1\) and either
+coordinate in \eqref{eq:correlation-definition}.  Otherwise suppose, for a
+contradiction, that the claimed correlation conclusion fails for both
+coordinates at every \(\lambda\ge-1\).  For \(v\ge0\), taking
+\(\lambda=v^3-1\) and using the union bound gives
+\[
+ \mathbb P(\mathcal E\cap\{Y\ge v\})
+ <2\beta e^{-c(1+\varepsilon)v}.
+ \tag{4.17}\label{eq:Y-tail}
+\]
+The layer-cake identity and Tonelli's theorem now give
+\begin{align*}
+ \mathbb E(e^{cY}\mathbf1_{\mathcal E})
+ &=\mathbb P(\mathcal E)
+   +c\int_0^\infty e^{cv}
+       \mathbb P(\mathcal E\cap\{Y>v\})\,dv\\
+ &<\beta+2\beta c\int_0^\infty e^{-c\varepsilon v}\,dv
+ =\beta(1+2/\varepsilon).
+\end{align*}
+Substitution into \eqref{eq:master-tail} makes its right-hand side at most
+\(D_0\beta(1+2/\varepsilon)-\sigma_*(1-\beta)<0\), by
+\eqref{eq:tail-budget}.  This contradiction proves the proposition.
+\end{proof}
+
 Finally,
 \[
  4u_0(1+\varepsilon)
  =\frac{12366348252219}{1250000000000}
  =9.8930786017752,
 \]
-which is the exact handoff asserted in (2.4).
+which is the exact handoff asserted in \eqref{eq:correlation-input}.

@@ -4,13 +4,19 @@ set -euo pipefail
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 venv_dir="${repo_root}/.venv"
 
-if command -v uv >/dev/null 2>&1; then
-  UV_CACHE_DIR="${repo_root}/.uv-cache" uv sync --frozen --no-dev
-else
-  python3 -m venv "${venv_dir}"
-  "${venv_dir}/bin/python" -m pip install --upgrade pip
-  "${venv_dir}/bin/python" -m pip install -r "${repo_root}/requirements-repro.txt"
+if ! command -v uv >/dev/null 2>&1; then
+  echo "The canonical environment requires uv 0.10.2; no unhashed pip fallback is used." >&2
+  echo "Install uv 0.10.2, then rerun scripts/bootstrap.sh." >&2
+  exit 2
 fi
+
+uv_version="$(uv --version | awk '{print $2}')"
+if [[ "${uv_version}" != "0.10.2" ]]; then
+  echo "Expected uv 0.10.2; found $(uv --version)." >&2
+  exit 2
+fi
+
+UV_CACHE_DIR="${repo_root}/.uv-cache" uv sync --frozen --no-dev
 "${venv_dir}/bin/python" - <<'PY'
 import flint
 import mpmath

@@ -13,9 +13,14 @@ homogeneous extension by
  \end{cases}
  \tag{2.1}
 \]
+For residual problems only, we extend the notation by
+\(R(a,b)=1\) when \(\min\{a,b\}\le0\); this means that no further page
+vertices are needed in at least one colour.  It is not a new convention for
+positive Ramsey numbers.
 
 \begin{lemma}[Uniform homogeneous extension]\label{lem:homogeneous}
-Suppose (1.1) holds uniformly for \(1\le\ell\le k\), and the same bound is
+Assume in addition that \(U\ge0\).  Suppose (1.1) holds uniformly for
+\(1\le\ell\le k\), and the same bound is
 available after exchanging the two colours.  Then, uniformly for
 \(x,y\in[0,1]\),
 \[
@@ -26,45 +31,115 @@ available after exchanging the two colours.  Then, uniformly for
 \end{lemma}
 
 \begin{proof}
-For \(x\ge y>0\), apply (1.1) with first parameter \(\lfloor xk\rfloor\)
-and ratio \(y/x\).  The case \(y\ge x\) follows by Ramsey symmetry.  If one
-coordinate is zero, the sublinear parameter range follows from the classical
-recursion; continuity and compact subdivision make the error uniform.
+The extension \(\wideU\) is continuous on the square (continuity at the
+origin uses \(U(0)=0\)), hence uniformly continuous.  Fix
+\(\epsilon>0\), and choose \(K_0\) from the uniform epsilon formulation of
+(1.1).  For \(x\ge y\), put \(k'=\lfloor xk\rfloor\) and
+\(\ell'=\lfloor yk\rfloor\).  If \(k'\ge K_0\) and \(\ell'\ge1\), then
+\[
+ \log R(k',\ell')\le
+ k' U(\ell'/k')+\epsilon k'
+ =k\wideU(k'/k,\ell'/k)+\epsilon k.
+\]
+Uniform continuity and the \(O(k^{-1})\) perturbation of the normalized
+coordinates replace the last \(\wideU\) by \(\wideU(x,y)+o(1)\), uniformly.
+If \(k'<K_0\), only finitely many positive Ramsey numbers occur, so their
+logarithms are \(O_{K_0}(1)=o(k)\); nonnegativity of \(\wideU\) permits the
+same upper bound.  If one floored coordinate is zero, the residual convention
+gives logarithmic cost zero.  The case \(y\ge x\) follows by symmetry.  Since
+\(\epsilon\) is arbitrary, these cases give one uniform \(o(k)\).
 \end{proof}
 
 \subsection{Yang--Mao interfaces}
 
 The following package is extracted from the v1 source of
-Yang--Mao \cite{YangMao2026}.  We state exactly the conclusions used later.
+Yang--Mao \cite{YangMao2026}.  Its source member and line map are frozen in
+\cref{app:upper-certificate}.  We state the complete specialization used
+later, so that the conditional theorem is falsifiable without guessing what
+the words ``book interface'' mean.
+
+For completeness, we fix the precise meaning of the correlation input.  We
+write \(\cG_2^{(3)}(\beta,C)\) when the following assertion holds: for every
+finite set \(\mathcal X\), independent identically distributed
+\(U,U'\in\mathcal X\), real Hilbert spaces \(\mathcal H_1,\mathcal H_2\),
+and maps \(\sigma_i:\mathcal X\to\mathcal H_i\), if
+\(Z_i=\langle\sigma_i(U),\sigma_i(U')\rangle\), then there are
+\(i\in\{1,2\}\) and \(\lambda\ge-1\) such that
+\[
+ \mathbb P\bigl(Z_i\ge\lambda,\ Z_{3-i}\ge-1\bigr)
+ \ge \beta\exp\!\left(-C(\lambda+1)^{1/3}\right).
+ \tag{2.2a}\label{eq:correlation-definition}
+\]
+
+For \(0<\beta\le1\), \(C>0\), and parameters
+\(p,\delta,\lambda_0>0\), put
+\[
+ L_\delta=\log(1/\delta),\qquad L_p=\log(1/p),\qquad
+ \rho_\beta=\log(2/\beta),
+\]
+\[
+ \Pi=\frac{3\delta}{p}+\frac{6L_\delta L_p}{\lambda_0},\qquad
+ q=L_p+\Pi,
+ \tag{2.3}\label{eq:book-costs}
+\]
+and
+\[
+ \Xi=2\rho_\beta+4C\lambda_0^{1/3}
+       +\frac{12CL_\delta}{\lambda_0^{2/3}}.
+ \tag{2.4}\label{eq:reservoir-cost}
+\]
 
 \begin{assumption}[Retained-spine source interface]\label{ass:yang-mao}
-For every fixed admissible choice of \(\eta,p,\delta,\lambda_0,\tau\), the
-following hold for all sufficiently large \(k\).
+Fix \(0<\eta\), \(0<p<1/2-\eta\),
+\(0<\delta\le\min\{p/4,1/4\}\),
+\(\lambda_0\ge\max\{2,6\log(1/\delta)\}\), and \(\tau>0\).
+Suppose the correlation property \(\cG_2^{(3)}(\beta,C)\) holds.  The
+version-pinned Yang--Mao specialization supplies the following conclusions
+for all sufficiently large \(k\).
 \begin{enumerate}[label=(\alph*)]
-\item Every red--blue colouring admits red and blue preliminary spines
-      \(S_R,S_B\) and a common reservoir \(W\) such that, writing
-      \(s_i=|S_i|\),
+\item For every positive integer \(N\), every red--blue colouring of
+      \(K_N\) admits pairwise disjoint sets \(S_R,S_B,W\) such that
+      \(S_R\) is a red clique, \(S_B\) is a blue clique, every edge from
+      \(S_R\) to \(W\) is red, and every edge from \(S_B\) to \(W\) is
+      blue.  Writing \(s_i=|S_i|\), one has
       \[
-      |W|\ge \left(\frac{1+\eta}{2}\right)^{s_R+s_B}N\,e^{o(k)}.
-      \tag{2.3}
+      |W|\ge \left(\frac{1+\eta}{2}\right)^{s_R+s_B}N
+      \tag{2.5}
       \]
-\item A positive tensor-moment and tail argument supplies a parameterized
-      monochromatic book whenever the correlation property
-      \(\cG_2^{(3)}(\beta,C)\) and the stated scalar parameter gates hold.
-\item The final book is compatible with the preliminary spine of its colour:
-      a clique of the required residual order in the page set extends to a
-      monochromatic \(K_k\).
+      and every \(w\in W\) has at least
+      \((1/2-\eta)|W|-1\) red neighbours and at least that many blue
+      neighbours inside \(W\).
+\item Let \(t,m\) be positive integers with
+      \(t\ge\lambda_0\delta^{-1/2}\).  If every \(w\in W\) has at least
+      \(p|W|\) neighbours of each colour inside \(W\), and
+      \[
+       |W|\ge p^{-t}e^{\Pi t}m,
+       \qquad |W|\ge4t\,e^{2t\Xi},
+       \tag{2.6}
+      \]
+      then the parameterized-book theorem, applied with
+      \(X=Y_R=Y_B=W\), returns a colour \(i\in\{R,B\}\), a monochromatic
+      \(t\)-clique \(T\subseteq W\) of colour \(i\), and
+      \(P_0\subseteq W\setminus T\), \(|P_0|\ge m\), such that every edge
+      from \(T\) to \(P_0\) has colour \(i\).
+\item The compatibility conclusion is the following exact residual
+      statement.  If \(i=R\), then a red
+      \(K_{k-s_R-t}\) in \(P_0\) (when this order is positive) extends with
+      \(S_R\cup T\), while a blue \(K_{k-s_B}\) extends with \(S_B\).
+      If \(i=B\), interchange the colours, so the two residual orders are
+      \(k-s_R\) and \(k-s_B-t\).  A nonpositive residual order means that
+      the retained spines already contain the required \(K_k\).
 \end{enumerate}
 For the proof below the exact correlation input is
 \[
  \beta=\frac{330867}{500000},\qquad
  C=\frac{12366348252219}{1250000000000}.
- \tag{2.4}
+ \tag{2.7}\label{eq:correlation-input}
 \]
 \end{assumption}
 
 The point of stating \cref{ass:yang-mao} is auditability.  The correlation
-property in (2.4) is proved in this paper; the regularization and book
+property in (2.7) is proved in this paper; the regularization and book
 compatibility are imported.  The source line mapping and pinned archive hash
 are included in the reproducibility record.
 
@@ -79,22 +154,21 @@ define
 \[
  D(\sigma)=c_\eta(\sigma_R+\sigma_B)
  +\wideU(1-\sigma_R,1-\sigma_B).
- \tag{2.5}
+ \tag{2.8}
 \]
-Let \(q\) be the certified page cost and \(\Xi\) the certified reservoir
-cost supplied by the book interface.  Define
+Here \(q\) and \(\Xi\) are the explicit quantities in (2.3)--(2.4).  Define
 \begin{align}
  M_\tau(\sigma)=\max\{&
  \wideU((1-\sigma_R-\tau)_+,1-\sigma_B),\nonumber\\
- &\wideU(1-\sigma_R,(1-\sigma_B-\tau)_+)\},\tag{2.6}\\
- P(\sigma)&=c_\eta(\sigma_R+\sigma_B)+\tau q+M_\tau(\sigma),\tag{2.7}\\
- Q(\sigma)&=c_\eta(\sigma_R+\sigma_B)+2\tau\Xi,\tag{2.8}\\
- B(\sigma)&=\max\{P(\sigma),Q(\sigma)\}.\tag{2.9}
+ &\wideU(1-\sigma_R,(1-\sigma_B-\tau)_+)\},\tag{2.9}\\
+ P(\sigma)&=c_\eta(\sigma_R+\sigma_B)+\tau q+M_\tau(\sigma),\tag{2.10}\\
+ Q(\sigma)&=c_\eta(\sigma_R+\sigma_B)+2\tau\Xi,\tag{2.11}\\
+ B(\sigma)&=\max\{P(\sigma),Q(\sigma)\}.\tag{2.12}
 \end{align}
 Finally set
 \[
  C_*=\max_{\sigma\in[0,1]^2}\min\{D(\sigma),B(\sigma)\}.
- \tag{2.10}
+ \tag{2.13}
 \]
 
 \begin{theorem}[Retained-spine transfer]\label{thm:transfer-general}
@@ -107,25 +181,30 @@ Under \cref{ass:yang-mao} and the uniform rate (2.2),
 \begin{proof}
 Let \(N=\lceil e^{(C_*+\varepsilon)k}\rceil\) and apply regularization.
 If either preliminary spine already has order at least \(k\), there is
-nothing to prove.  Otherwise write \(s_i=\sigma_i k+O(1)\).  From (2.3),
+nothing to prove.  Otherwise write \(s_i=\sigma_i k+O(1)\).  From (2.5),
 \[
  \log|W|\ge(C_*+\varepsilon)k
  -c_\eta(s_R+s_B)+o(k).
- \tag{2.11}
+ \tag{2.14}
 \]
 At this \(\sigma\), choose the smaller of the direct and book branches.
 
 If \(D(\sigma)\le B(\sigma)\), then \(D(\sigma)\le C_*\).  Equations
-(2.2), (2.5) and (2.11) imply
+(2.2), (2.8) and (2.14) imply
 \(|W|\ge R(k-s_R,k-s_B)\).  The resulting red or blue clique extends with
 the corresponding preliminary spine.
 
 If \(B(\sigma)<D(\sigma)\), then both \(P(\sigma)\le C_*\) and
 \(Q(\sigma)\le C_*\).  The former supplies the page size needed for either
-possible book colour, using (2.2) and (2.6); the latter supplies the common
-reservoir threshold.  The parameterized-book interface produces a
-\(\tau k+O(1)\) spine in one colour, and compatibility extends the page
-clique with both retained spines to a monochromatic \(K_k\).  The fixed
-\(\varepsilon\)-slack absorbs every uniform \(o(k)\) term.
+possible book colour, using (2.2) and (2.9); the latter supplies the common
+reservoir threshold.  More explicitly, with \(t=\lfloor\tau k\rfloor\)
+and \(m\) the larger of the two residual Ramsey thresholds, the two strict
+exponent inequalities give exactly (2.6).  Since \(p<1/2-\eta\) and the
+reservoir is exponential, the additive \(-1\) in the degree conclusion is
+absorbed; fixed \(\tau>0\) also gives
+\(t\ge\lambda_0\delta^{-1/2}\).  The parameterized-book interface produces
+the \(t\)-spine and a page set of size at least \(m\), and compatibility
+extends the appropriate page clique with the retained spines to a
+monochromatic \(K_k\).  The fixed \(\varepsilon\)-slack absorbs every
+uniform \(o(k)\) term.
 \end{proof}
-

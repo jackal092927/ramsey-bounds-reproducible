@@ -1,0 +1,77 @@
+\section{Source interfaces and evidence taxonomy}\label{sec:evidence-taxonomy}
+
+The three results have different logical dependencies.  We therefore attach
+an evidence type to every principal statement instead of using
+``computer-assisted'' as a single undifferentiated label.
+
+\begin{definition}[Evidence types]
+The manuscript uses the following five categories.
+\begin{enumerate}[label=(\roman*)]
+\item A \emph{source interface} is a version-pinned theorem statement imported
+  from an external or frozen local source.  Its proof is outside the current
+  logical kernel unless reproduced in an appendix.
+\item An \emph{analytic theorem} follows from written mathematical arguments
+  once its named source interfaces are granted.
+\item An \emph{interval-certified theorem} additionally depends on
+  outward-rounded enclosures covering a stated continuum.
+\item A \emph{proof-carrying SAT theorem} depends on a proved encoding,
+  exhaustive case coverage, and independently replayed proof traces.
+\item A \emph{bounded observation} records a terminated computation without
+  promoting \textsc{sat}, \textsc{unsat}, or \textsc{unknown} beyond what its
+  certificate establishes.
+\end{enumerate}
+\end{definition}
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.07\textwidth}
+                  >{\raggedright\arraybackslash}p{0.27\textwidth}
+                  >{\raggedright\arraybackslash}p{0.25\textwidth}
+                  >{\raggedright\arraybackslash}p{0.30\textwidth}@{}}
+\caption{Claims, evidence, and non-implications.}\label{tab:claims-evidence}\\
+\toprule
+ID & Claim & Evidence and dependency & Required boundary \\
+\midrule
+\endfirsthead
+\toprule
+ID & Claim & Evidence and dependency & Required boundary \\
+\midrule
+\endhead
+U0 & Six-stage off-diagonal rate $U=F_6$, with
+$e^{U(1)}=3.780698427796\ldots$. & Repaired book induction and
+continuum interval certificates. & A locally replayed
+computer-assisted rate theorem, not a proof-assistant formalization. \\
+U1 & Exact-diagonal correlation certificate at the stated rational
+parameters. & Analytic ratio, separator and tail arguments plus 512-bit
+compact enclosures. & Search selected the point; the frozen checker, not the
+search grid, proves it. \\
+U2 & Conditional diagonal base $3.780685290$. & U0, U1, and the pinned
+retained-spine interfaces. & Asymptotic and source-relative; no effective
+threshold, global optimum, or world-best claim. \\
+L0--L3 & Exact-merge rigidity and the controlled-residual addition
+$\widehat H_*(C)=(1+o(1))/(64\log C)$. & Written argument conditional on
+pinned items (S1), (S2), (S4), (S5), plus the additional weighted-extension
+hypothesis (S3); arithmetic replay is a witness, not the induction. & Item
+(S3) is not attributed as an HMS/Lin--Niu theorem.  Fix sufficiently large
+$C$, then take $\ell\to\infty$;
+$1/64$ is a cap only in the specified scalar residual class. \\
+F0--F1 & The fixed seed has the stated graph properties and deletion repair
+radius at least seven. & Direct bitset checks, branch completeness, CNF
+semantics, and six replayed DRAT proofs. & Local seed and one-sided metric;
+no implication $R(3,18)\ge101$. \\
+F2 & Three exact-seven runs ended \textsc{unknown}. & Bounded solver logs. &
+Neither existence nor nonexistence evidence. \\
+\bottomrule
+\end{longtable}
+
+\paragraph{Shared trust is not independence.}
+The upper-bound replays use separately structured implementations but share
+Arb or python-flint containment semantics and the same mathematical
+specification.  The finite proof traces are checked independently of the SAT
+solver, but their theorem still depends on the encoding and case-cover
+proofs.  The lower arithmetic checker replays identities and asymptotic
+margins; it does not replace the reverse-induction and extraction proof.
+
+\paragraph{Version and hash discipline.}
+All imported source snapshots, frozen parameter files, graph matrices, CNF
+instances, proof traces, and checkers used as evidence are identified by
+version or SHA-256 digest.  A digest authenticates bytes, not mathematics;
+the relevant semantic implication is stated separately in each Part.

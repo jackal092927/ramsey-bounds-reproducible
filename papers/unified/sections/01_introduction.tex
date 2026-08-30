@@ -1,0 +1,82 @@
+\section{Introduction and main results}\label{sec:unified-introduction}
+
+For positive integers $k,\ell$, the Ramsey number $R(k,\ell)$ is the
+least $n$ such that every red--blue colouring of $K_n$ contains a red
+$K_k$ or a blue $K_\ell$.  The classical upper and lower exponential
+scales originate in the work of Erd\H{o}s--Szekeres and Erd\H{o}s
+\cite{ErdosSzekeres1935,Erdos1947}.  Modern improvements combine delicate
+analytic inequalities, asymptotic reductions, and computer-assisted
+certificates.  In the finite regime, SAT solvers can explore highly
+constrained graph spaces, but a solver outcome becomes a theorem only after
+the graph-to-CNF reduction and a proof trace have both been checked.
+
+This article places three results developed here in one manuscript.  They concern
+different regimes and use different mathematics; their unity is a common
+claim-to-evidence discipline rather than a claimed common proof mechanism.
+The first two give conditional, source-relative refinements of asymptotic
+ledgers, whereas the
+third establishes a local finite obstruction without improving a tabulated
+Ramsey number.
+
+\subsection{Diagonal upper bound}
+
+Part~I combines a certified six-stage off-diagonal rate, an exact-diagonal
+correlation inequality, and the version-pinned regularization,
+parameterized-book, and spine-compatibility interfaces of Yang and Mao
+\cite{YangMao2026}.  The positive-moment and tail transfer is proved locally.
+Under the source interfaces stated in
+\cref{up:ass:yang-mao} and the certified rate theorem
+\cref{up:thm:p6-rate}, it proves
+\[
+ R(k,k)\le (3.780685290)^{k+o(k)},
+\]
+with certified unrounded base less than
+$3.780685288379640114$.  This is an asymptotic, source-relative,
+computer-assisted theorem.  It supplies neither an effective finite-$k$
+threshold nor a global optimum or priority claim.
+
+\subsection{Fixed-ratio lower bound}
+
+Part~II assumes the version-pinned items (S1), (S2), (S4), and (S5) derived
+from the Gaussian construction of Hunter, Milojevi\'c and Sudakov and the
+exact cumulant input of Lin and Niu \cite{HMS2025,LinNiu2026}, together with
+the separately stated weighted-extension hypothesis (S3).  Item (S3) is not
+attributed as a theorem stated in either source.  Under those five explicit
+items, there exists $C_0>1$ such that, for each fixed $C\ge C_0$,
+\[
+ \liminf_{\ell\to\infty}\frac1\ell
+ \log R(\ell,\lfloor C\ell\rfloor)
+ \ge -\frac12\log p_C+\frac{B_R(C)}2+G_*(C)+\widehat H_*(C),
+\]
+where
+\[
+ \widehat H_*(C)=\frac{1+o_{C\to\infty}(1)}{64\log C}>0.
+\]
+The order of limits is part of the statement: $C$ is fixed before
+$\ell\to\infty$, and only afterwards is the leading behaviour studied as
+$C\to\infty$.  The threshold $C_0$ is non-effective, and the theorem does
+not assert a strict comparison with every published final constant under a
+different normalization.
+
+\subsection{Finite proof-carrying barrier}
+
+Part~III fixes a labelled, content-addressed graph $H$ on $100$ vertices
+with $827$ edges, no independent set of order $18$, and one triangle.  If
+additions outside $E(H)$ are free and only deletions from $E(H)$ are
+charged, semantic reconstruction and six DRAT refutations prove that every
+graph $F$ on the same labelled vertex set that is triangle-free and satisfies
+$\alpha(F)<18$ obeys $|E(H)\setminus E(F)|\ge7$.  Exact seven remains
+\textsc{unknown}.  The theorem is
+local to this seed and metric: it neither constructs a $100$-vertex
+$(3,18)$-Ramsey graph nor implies $R(3,18)\ge101$.
+
+\subsection{Organization}
+
+\Cref{sec:evidence-taxonomy} states the evidence taxonomy and trust
+boundaries used throughout.  Parts~I--III give the complete arguments and
+their result-specific verification records.  The unified reproduction
+contract appears in \cref{sec:unified-reproducibility}; full technical
+records, proof ledgers, and artifact tables are retained in the appendices.
+Symbols introduced inside a Part are local to that Part unless explicitly
+declared otherwise.  This convention prevents unrelated analytic functions,
+Gaussian potentials, and finite graphs from being conflated.

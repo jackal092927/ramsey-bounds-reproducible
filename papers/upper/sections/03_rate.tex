@@ -8,16 +8,16 @@ and
 \[
 \begin{aligned}
 P_6(\lambda)={}&-0.250000000000000\lambda
-+0.019891840059418\lambda^2
--0.012275954247190\lambda^3\\
-&+0.144110816398083\lambda^4
-+0.006277913420654\lambda^5
++0.019891840059418\lambda^2\\
+&-0.012275954247190\lambda^3
++0.144110816398083\lambda^4\\
+&+0.006277913420654\lambda^5
 -0.066101623491668\lambda^6\\
 &-0.002287675993602\lambda^7
--0.058238059505066\lambda^8
-+0.030675864198693\lambda^9\\
-&+0.052472201910597\lambda^{10}
-+0.043300454861853\lambda^{11}
+-0.058238059505066\lambda^8\\
+&+0.030675864198693\lambda^9
++0.052472201910597\lambda^{10}\\
+&+0.043300454861853\lambda^{11}
 -0.042529975074653\lambda^{12}\\
 &-0.055263639426635\lambda^{13}
 +0.036695886931268\lambda^{14}.
@@ -30,18 +30,30 @@ All displayed decimals in (3.1) are exact.  Define
  \tag{3.2}
 \]
 
-\begin{theorem}[Certified rate]\label{thm:p6-rate}
+\begin{theorem}[Certified rate, conditional on the stated trust boundary]\label{thm:p6-rate}
 For \(1\le\ell\le k\), uniformly in the ratio \(\lambda=\ell/k\),
 \[
  \log R(k,\ell)\le kU(\lambda)+o(k),
- \tag{3.3}
+ \tag{3.3}\label{eq:rate-bound}
 \]
 and the same statement holds after exchanging \(k\) and \(\ell\).  Moreover
 \[
  e^{U(1)}=3.7806984277961236987518816497522162\ldots.
- \tag{3.4}
+ \tag{3.4}\label{eq:rate-diagonal}
 \]
 \end{theorem}
+
+\begin{proof}
+The certificate schema, all continuum obligations, and the theorem-to-rate
+implication are stated and proved in
+\cref{prop:rate-correctness}.  The exact-linked replay accepts all six
+certificate files, proves the elementary first prior, and verifies exact
+target-to-prior equality at the other five handoffs.  Its sixth report gives
+\(F_6(1)=1.3299087618219930723187812632\ldots\); outward-rounded
+exponentiation gives \eqref{eq:rate-diagonal}.  The only nonlocal trust assumptions in this
+argument are the repaired BookCor induction reproduced in Appendix B and
+Arb's containment semantics.
+\end{proof}
 
 The proof is an exact-linked six-stage descent built on the repaired
 book-induction lemma.  At each stage an interval certificate verifies the
@@ -66,7 +78,6 @@ logical content is as follows.
       are used only to propose a target.
 \end{enumerate}
 
-The complete standalone book proof and the stage-six record appear in
-Appendices B and C.  The six JSON certificates and their hashes are part of
-the machine-readable evidence package.
-
+The complete standalone book proof, certificate-correctness theorem, and
+stage-six record appear in Appendices B and C.  The six JSON certificates and
+their hashes are part of the machine-readable evidence package.

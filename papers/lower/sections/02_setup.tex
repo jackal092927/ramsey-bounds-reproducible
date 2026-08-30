@@ -1,75 +1,445 @@
 \section{Gaussian source ledger and notation}\label{sec:setup}
 
-We use the frozen notation of the HMS/Lin--Niu bridge.  Let \(c=c(C)\) be the
-central cutoff, let \(d=d(\ell,C)\) be the Gaussian dimension, and write
+Fix \(C>1\).  Let \(p_C\in(0,1/2)\) be the solution of
 \[
- m(x)=\frac{\varphi(x)}{\Phi(-x)},\qquad
- m_0=m(c),\qquad m'_0=m'(c).
+ \log p_C=C\log(1-p_C),
+\]
+and, in the range of \(C\) used below, set
+\[
+ p=p_C+\frac1C<\frac12,\qquad
+ \Phi(-c)=p,\qquad a=\varphi(c),\qquad
+ D=\frac{4aC}{1-p}.
 \tag{2.1}
 \]
-The scale parameter \(D=D(C)\) is chosen so that
-\(d\sim D^2\ell^2\), and we put
+For the fixed-\(C\) limit \(\ell\to\infty\), take
 \[
- \rho=\frac{m_0m'_0}{D},\qquad
- \omega_0=\frac{100\log(10/p_C)}D.
+ d=\left\lceil D^2\ell^2\right\rceil,\qquad
+ D_\ell=\frac{\sqrt d}{\ell}=D+O_C(\ell^{-2}).
 \tag{2.2}
 \]
-For fixed \(w>\omega_0\), define
+The harmless replacement of \(D\) by \(D_\ell\ge D\) in finite-\(\ell\)
+feasibility inequalities will always be left implicit.
+
+For a standard normal variable conditioned on \(Z\le-b\), define
 \[
- M_w=m(c+w),\qquad j_-(w)=m'(c-w),\qquad j_+(w)=m'(c+w),
+ m(b)=\frac{\varphi(b)}{\Phi(-b)},\qquad
+ v(b)=1+b\,m(b)-m(b)^2,\qquad Y_b=Z+m(b),
 \tag{2.3}
+\]
+so that \(Y_b\) is centered and has variance \(v(b)\).  Its
+positive-direction cumulant generating function is
+\[
+ K_b(u)=\log\mathbb E e^{uY_b}
+ =\frac{u^2}{2}+u\,m(b)+\log\Phi(-b-u)-\log\Phi(-b),
+ \qquad u\ge0,
+\tag{2.4}
+\]
+and we write
+\[
+ \psi_b(u)=
+ \begin{cases}K_b(u)/u^2,&u>0,\\[1mm]v(b)/2,&u=0.
+ \end{cases}
+\tag{2.5}
+\]
+We shall repeatedly use
+\[
+ K_b''(u)=v(b+u),\qquad
+ K_b(u)=\int_0^u(u-s)v(b+s)\,ds.
+\tag{2.6}
+\]
+
+\begin{lemma}[One-sided Gaussian calculus]\label{lem:mills}
+For every \(b\in\mathbb R\), \(m'(b)=m(b)(m(b)-b)>0\),
+\(m''(b)\ge0\), and \(v(b)=1-m'(b)\) is nonincreasing.  Consequently,
+\(0<v(b)\le1\), \(K_b''(u)\in[0,1]\) for \(u\ge0\), and
+\(\psi_b(u)\) is nonincreasing in both \(b\) and \(u\).
+\end{lemma}
+
+\begin{proof}
+Differentiating \(m=\varphi/\Phi(-\cdot)\) gives
+\(m'=m(m-b)\).  The classical inverse-Mills inequality \(m(b)>b\) for
+\(b>0\) (and positivity of \(m\) for \(b\le0\)) gives \(m'>0\).
+Moreover \(v=1-m'\).  Monotonicity of the variance of an upper-truncated
+normal in its upper cutoff, applied at the cutoff \(-b\), says that \(v\) is
+nonincreasing in \(b\); equivalently \(m''=-v'\ge0\).  The variance bounds
+give \(0<v\le1\).  Formula (2.6) then implies the assertions concerning
+\(K_b\) and \(\psi_b\); for example
+\(\psi_b(u)=\int_0^1(1-t)v(b+ut)\,dt\).
+\end{proof}
+
+Put
+\[
+\begin{aligned}
+ m_0&=m(c)=\frac ap,&m'_0&=m'(c),\\
+ \alpha_R&=10\sqrt{\log(10/p)},&
+ \omega_0&=\frac{\alpha_R^2}{D}
+ =\frac{100\log(10/p)}D .
+\end{aligned}
+\tag{2.7}
 \]
 and
 \[
- \theta=m_0^2,qquad A_0=m_0^2m'_0.
-\tag{2.4}
+ \rho=\frac{m_0m'_0}{D},\qquad
+ \theta=m_0^2,\qquad A_0=m_0^2m'_0.
+\tag{2.8}
 \]
+For fixed \(w>\omega_0\), define the lower and upper cutoff extrema
+\[
+\begin{aligned}
+ m_w&=m(c-w),&M_w&=m(c+w),\\
+ j_-(w)&=m'(c-w),&j_+(w)&=m'(c+w).
+\end{aligned}
+\tag{2.9}
+\]
+The distinction between \(m_w\) and \(M_w\) is essential: the former gives
+the history-uniform exact-CGF deficit, whereas the latter bounds the new
+linear tilts.
+
+\subsection{The frozen red and blue source ledgers}
+
+Fix one absolute source constant \(K\) that dominates the red
+\(O(\sqrt{\log(1/p)}/D)\) errors in the pinned HMS induction, and put
+\[
+ \vartheta_C=1-K\frac{\sqrt{\log(1/p)}}D>0,
+\tag{2.10}
+\]
+\[
+ B_R(C)=-\log\frac p{p_C}
+ +\vartheta_C\frac{a^3}{3p^3D},\qquad
+ B_B(C)=\log\frac{1-p_C}{1-p}
+ -\frac{4a^3C}{3(1-p)^3D}.
+\tag{2.11}
+\]
+The literal red target envelope is
+\[
+ \mathcal H_C(r)=p^{\binom r2}
+ \exp\!\left[-\vartheta_C\frac{a^3}{p^3\sqrt d}\binom r3
+ +\frac apd^{-1/5}\binom r2+r\right].
+\tag{2.12}
+\]
+Thus \(B_R/2\) and \(CB_B/2\), respectively, are the exact limiting red
+and blue source bonuses relative to \(-\tfrac12\log p_C\).  In particular,
+these symbols do not denote the conclusion of the present paper.
+
+\subsection{The pre-existing exact-CGF deficit}
+
+For \(1\le k\le\ell\), set
+\[
+ P^0_{k,d}=\frac{\sqrt d}{\sqrt d-4m_0k},
+\tag{2.13}
+\]
+and, whenever the denominator is positive, define
+\[
+ \mathsf d_{k,w,d}=
+ \frac{m_0^2m_w^2}{d}k(k-1)^2
+ \left[1-P^0_{k,d}\psi_{c-w}\!\left(
+ \frac{P^0_{k,d}m_0m_w(k-1)}{\sqrt d}\right)\right],
+\tag{2.14}
+\]
+\[
+ \mathcal D_{C,w,d}(r)=\sum_{k=1}^{r-1}\mathsf d_{k,w,d}.
+\tag{2.15}
+\]
+For \(0\le x\le1\), let
+\[
+ P_*(x)=\frac D{D-4m_0x},\qquad
+ u_*(x)=\frac{P_*(x)m_0m(c-\omega_0)x}{D}.
+\tag{2.16}
+\]
+For all sufficiently large \(C\), \(D>8m_0\) and
+\(P_*(1)v(c-\omega_0)<2\); hence (2.13)--(2.17) have positive
+denominators and nonnegative integrands throughout the range used below.
+The exact source-relative CGF term used in the theorem is
+\[
+ G_*(C)=\frac{m_0^2m(c-\omega_0)^2}{D^2}
+ \int_0^1x^3\left[1-P_*(x)
+ \psi_{c-\omega_0}\bigl(u_*(x)\bigr)\right]dx.
+\tag{2.17}
+\]
+Equivalently, if \(G(C,w)\) is obtained from (2.17) by replacing
+\(\omega_0\) with \(w\), then
+\[
+ \lim_{\ell\to\infty}\ell^{-2}\mathcal D_{C,w,d}(\ell)=G(C,w),
+ \qquad G_*(C)=\lim_{w\downarrow\omega_0}G(C,w).
+\tag{2.18}
+\]
+
+\subsection{The controlled-residual constants}
+
 Set
 \[
  a_- =\min\{A_0,\theta\},\qquad
  a_+=\max\left\{\theta,
  \frac{A_0+\rho\theta}{1-\rho}\right\},
-\tag{2.5}
+\tag{2.19}
 \]
 \[
  \mu_w=j_-(w)-j_+(w)^2
  \frac{m_0+\theta/D}{D(1-\rho)},
-\tag{2.6}
+\tag{2.20}\label{eq:mu-w}
 \]
 and
 \[
-\widehat L_w(C)=
-\frac{4m_0M_w^2}{D}
-+\frac{2M_w^2a_+}{D^2}
-+\frac{32m_0^2M_w^2a_+}{a_-D^2}.
-\tag{2.7}
+ \widehat L_w(C)=
+ \frac{4m_0M_w^2}{D}
+ +\frac{2M_w^2a_+}{D^2}
+ +\frac{32m_0^2M_w^2a_+}{a_-D^2}.
+\tag{2.21}
 \]
-Finally,
+Finally put
 \[
  \widehat B_w(C)=m_0^2-\frac{16}{3}-\widehat L_w(C),
  \qquad
  E_w(C)=\widehat B_w(C)\theta-\frac{\theta^2}{2\mu_w},
-\tag{2.8}
+\tag{2.22}
 \]
 \[
  \widehat H(C,w)=
  \frac{\widehat B_w(C)A_0+E_w(C)}{12D^2},
  \qquad
  \widehat H_*(C)=\lim_{w\downarrow\omega_0}\widehat H(C,w).
-\tag{2.9}
+\tag{2.23}
 \]
 
-\begin{assumption}[Pinned source interface]\label{ass:hms}
-We use the HMS v2 Gaussian construction, its Appendix-B reverse induction,
-the red perfect-sequence extraction, and the blue comparison at the exact
-locations identified in the reproducibility manifest.  We also use the
-reviewed exact one-sided truncated-Gaussian CGF deficit \(G_*(C)\), inserted
-before the HMS coarsening.  These inputs supply a frozen envelope
-\(\mathcal H_C(r)\), a source error constant \(K\), and the unchanged
-first-moment conversion from red/blue probability bounds to (1.1).
+\subsection{Probability space, exposure histories, and source events}
+
+For each \(0\le r\le\ell\), let
+\(\boldsymbol x_1,\ldots,\boldsymbol x_r\) be independent
+\(N(0,d^{-1}I_d)\) vectors.  An edge is blue when
+\(\langle\boldsymbol x_i,\boldsymbol x_j\rangle\ge-c/\sqrt d\) and red
+otherwise.  We use the Bartlett representation
+\(\boldsymbol y_1,\ldots,\boldsymbol y_r\): the entries
+\(y_j(i)\), \(i<j\), are independent \(N(0,d^{-1})\), the diagonal
+entries are independent with
+\(y_i(i)\sim\sqrt{\chi^2_{d-i+1}/d}\), and \(y_j(i)=0\) for \(i>j\).
+This representation has the same joint Gram matrix as the original Gaussian
+vectors.
+
+Let \(M_i=(y_j(i))_{j=i+1}^r\) be the strict part of column \(i\), and put
+\[
+ \mathcal D_r=\sigma\bigl(y_1(1),\ldots,y_r(r)\bigr).
+\]
+Define the exposure filtration
+\[
+ \mathcal F_s=\mathcal D_r\vee\sigma(M_1,\ldots,M_s),
+ \qquad 0\le s\le r.
+\tag{2.24}
+\]
+All conditional assertions below are statements about regular conditional
+probabilities and hold almost surely.  Write \(\pi_s\) for projection onto
+the first \(s\) Bartlett coordinates and put
+\[
+ h_{ij}=\langle\pi_{i-1}(\boldsymbol y_i),
+                   \pi_{i-1}(\boldsymbol y_j)\rangle,
+ \qquad 1\le i<j\le r.
+\tag{2.25}
+\]
+Thus \(h_{ij}\) is \(\mathcal F_{i-1}\)-measurable.  Let \(E_{ij}\) be the
+blue-edge event and set
+\[
+ I_s=\bigcap_{s<i<j\le r}\overline E_{ij},\qquad
+ C_s=\bigcap_{s<i<j\le r}E_{ij}.
+\tag{2.26}
+\]
+
+For the source perfectness events put
+\(\alpha_B=10\sqrt{C\log(10/p)}\) and
+\(\delta=\alpha_Bd^{-1/4}\).  The event \(B^R_r\) says that, for every
+\(i\le r\),
+\[
+ \|\boldsymbol y_i\|\in(1-\delta,1+\delta),\qquad
+ \|\pi_{i-1}(\boldsymbol y_i)\|
+ \le \frac{\alpha_R\sqrt\ell}{\sqrt d};
+\tag{2.27}
+\]
+\(B^B_r\) is defined by replacing \(\alpha_R\) with \(\alpha_B\).  We use
+the probability notation
+\[
+ P^*_{R,r}=\mathbb P(I_0\cap B^R_r),\quad
+ P_{R,r}=\mathbb P(I_0),\quad
+ P^*_{B,r}=\mathbb P(C_0\cap B^B_r),\quad
+ P_{B,r}=\mathbb P(C_0).
+\tag{2.28}
+\]
+Empty intersections have probability one.
+
+For \(0\le s\le r\), let
+\[
+ \kappa^R_{r,s}=\mathbb P(B^R_r\mid\mathcal F_s),\qquad
+ \mathfrak H^R_{r,s}=\{\kappa^R_{r,s}>0\}.
+\tag{2.29}
+\]
+We call an \(\mathcal F_s\)-history \emph{red-admissible} when it belongs to
+\(\mathfrak H^R_{r,s}\).  This definition is independent of a choice of
+coordinates for the conditional kernel.  On the complementary histories,
+\(\mathbb P(I_s\cap B^R_r\mid\mathcal F_s)=0\) almost surely.  Thus every
+conditional estimate below only needs to be checked on
+\(\mathfrak H^R_{r,s}\).
+
+At exposure \(i\), let
+\(A_i^R=\bigcap_{j>i}\overline E_{ij}\).  Conditional on
+\(A_i^R\) and \(\mathcal F_{i-1}\), set \(X_j=y_j(i)\), \(j>i\).  Its exact
+upper cutoff is
+\[
+ X_j\le-\frac{b_{ij}}{\sqrt d},\qquad
+ b_{ij}=\frac{c+\sqrt d\,h_{ij}}{y_i(i)}.
+\tag{2.30}
+\]
+
+The red-perfect extraction map \(\Gamma_R\) scans
+\(\boldsymbol x_1,\ldots,\boldsymbol x_\ell\) in order and retains an index
+when adjoining its vector preserves the two inequalities in (2.27).  For a
+specified \(I\subseteq[\ell]\), define
+\[
+ p_I=\mathbb P\bigl(I_0\cap\{\Gamma_R=I\}\bigr).
+\tag{2.31}
+\]
+This fixes both the event and the retained-order relabeling used later.
+
+For a deterministic nonnegative triangular array
+\(T=(T_{jq})_{1\le j<q\le r}\), define the weighted projection potential
+\[
+ \mathcal P_s^T=
+ \sum_{s<j<q\le r}T_{jq}
+ \langle\pi_s(\boldsymbol y_j),\pi_s(\boldsymbol y_q)\rangle.
+\tag{2.32}
+\]
+For \(i\ge1\), its normalized one-step kernel is
+\[
+\begin{aligned}
+ \mathcal K_i^T={}&
+ \exp\!\left(\sum_{j>i}T_{ij}h_{ij}\right)
+ \mathbb P(A_i^R\mid\mathcal F_{i-1})\\
+ &\times\mathbb E\!\left[
+ \exp\!\left\{-\sum_{i<j<q\le r}T_{jq}X_jX_q\right\}
+ \middle|A_i^R,\mathcal F_{i-1}\right].
+\end{aligned}
+\tag{2.33}
+\]
+
+\begin{assumption}[Version-pinned source and weighted-extension interface]
+\label{ass:hms}
+Items (S1), (S2), (S4), and (S5) are imported from the content-addressed
+HMS v2 and Lin--Niu v2 sources identified in Appendix~\ref{app:bridge}.
+Item (S3) is the exact weighted-extension hypothesis required by this paper;
+it is not represented as a theorem stated verbatim in either source.
+\begin{enumerate}[label=(S\arabic*)]
+\item For every \(r\le\ell\) and \(1\le i<r\), on every red-admissible
+\(\mathcal F_{i-1}\)-history, the next-column coordinates in (2.30),
+conditionally on \(A_i^R\), are independent \(N(0,d^{-1})\) variables
+truncated by the displayed upper cutoffs, and
+\[
+ |b_{ij}-c-\sqrt d\,h_{ij}|\le d^{-1/5},\qquad
+ |\sqrt d\,h_{ij}|\le\omega_0.
+\tag{2.34}
+\]
+Thus, for every fixed \(w>\omega_0\), all cutoffs lie in
+\([c-w,c+w]\) once \(\ell\ge\ell_0(C,w)\).
+\item Under the conditioning and history quantifiers in (S1), with
+\(\zeta_j=\sqrt d(X_j-\mathbb E[X_j\mid
+A_i^R,\mathcal F_{i-1}])\), the variables \((\zeta_j)_{j>i}\) are
+conditionally independent, centered, and \(1\)-subgaussian, and
+\[
+ \log\mathbb E[e^{x\zeta_j^2}\mid A_i^R,\mathcal F_{i-1}]
+ \le\frac{16}{3}x,\qquad 0\le x\le\frac18.
+\tag{2.35}
+\]
+For \(k=r-i\), \(Q_0=d/(4t_0k)\), and centered \(\zeta_j\), the frozen
+uniform-quadratic factor obeys
+\[
+ \frac1{Q_0}\log\mathbb E\exp\!\left\{
+ -\frac{Q_0t_0}{d}\sum_{i<j<q\le r}\zeta_j\zeta_q\right\}
+ \le\frac{4t_0k}{d}.
+\tag{2.36}
+\]
+The positive-direction CGF is exactly (2.4).  In the source pre-Cauchy
+allocation, its centered-linear proxy is precisely
+\(\sum_{j>i}(u_j^0)^2\), with \(u_j^0\) as in (5.9); replacing that proxy
+by the exact CGF produces the same-history deficit (5.16).
+\item For every target \(r\le\ell\), every deterministic nonnegative
+triangular \(T\) fixed before exposure, and every deterministic real sequence
+\(\lambda_1,\ldots,\lambda_{r-1}\), the following weighted reverse-induction
+rule holds.  If, on every history in \(\mathfrak H^R_{r,i-1}\), with
+\(k=r-i\),
+\[
+ \mathcal K_i^T\le
+ \frac{\mathcal H_C(k+1)}{\mathcal H_C(k)}e^{-\lambda_i},
+ \qquad 1\le i<r,
+\tag{2.37}
+\]
+then, for every \(0\le s\le r\),
+\[
+ \mathbb P(I_s\cap B^R_r\mid\mathcal F_s)
+ \le\mathcal H_C(r-s)
+ \exp\!\left[-\mathcal P_s^T-
+ \sum_{i=s+1}^{r-1}\lambda_i\right].
+\tag{2.38}
+\]
+On \((\mathfrak H^R_{r,s})^c\), the left side of (2.38) is zero, so the same
+inequality holds almost surely on the entire conditional state space.
+The source law of total probability is
+\[
+ \mathbb P(I_{i-1}\cap B^R_r\mid\mathcal F_{i-1})
+ =\mathbb P(A_i^R\mid\mathcal F_{i-1})
+ \mathbb E[\mathbb P(I_i\cap B^R_r\mid\mathcal F_i)
+ \mid A_i^R,\mathcal F_{i-1}],
+\tag{2.39}
+\]
+and the exact projection identities are
+\[
+\begin{aligned}
+ \mathcal P_i^T
+ &=\sum_{i<j<q\le r}T_{jq}
+ \langle\pi_{i-1}\boldsymbol y_j,\pi_{i-1}\boldsymbol y_q\rangle
+   +\sum_{i<j<q\le r}T_{jq}X_jX_q,\\
+ \mathcal P_{i-1}^T
+ &=\sum_{i<j<q\le r}T_{jq}
+ \langle\pi_{i-1}\boldsymbol y_j,\pi_{i-1}\boldsymbol y_q\rangle
+   +\sum_{j>i}T_{ij}h_{ij}.
+\end{aligned}
+\tag{2.40}
+\]
+Equations (2.33), (2.39), and (2.40) prove (2.38) by reverse induction
+from \(s=r\).  For the uniform array \(T^0_{jq}=t_0\), the version-pinned
+source scalar allocation, together with the exact-CGF replacement in (S2),
+is the explicit baseline statement on every history in
+\(\mathfrak H^R_{r,i-1}\):
+\[
+ \mathcal K_i^{T^0}\le
+ \frac{\mathcal H_C(k+1)}{\mathcal H_C(k)}
+ e^{-\mathsf d_{k,w,d}}
+ \qquad(k=r-i).
+\tag{2.41}
+\]
+Equation (2.41), rather than a final Ramsey bound, is the scalar source input.
+No nonuniform one-step estimate is imported.  Sections
+\ref{sec:residual}--\ref{sec:induction} compare the nonuniform kernel with
+(2.41) and prove (2.37) for the array used here.
+\item If red-perfect extraction deletes \(u\) vertices from a target of size
+\(\ell\), then, for each specified retained set \(I\) of size \(\ell-u\),
+\[
+ p_I\le P^*_{R,\ell-u}\left(\frac p{10}\right)^{10\ell u},
+\tag{2.42}
+\]
+for every \(0\le u\le\ell\), with
+\(P^*_{R,0}=\mathcal H_C(0)=1\).  The probability \(P^*_{R,\ell-u}\)
+uses the retained-order relabeling defined after (2.31).
+\item For each fixed \(C\), there is a real sequence
+\(\epsilon_{C,\ell}\to0\) such that, with
+\(q_\ell=\lfloor C\ell\rfloor\), the unchanged blue induction and its
+perfect-sequence extraction give
+\[
+ P_{B,q_\ell}\le(1-p)^{\binom{q_\ell}{2}}
+ \exp\left[
+ \frac{4a^3}{(1-p)^3\sqrt d}\binom{q_\ell}{3}
+ +\epsilon_{C,\ell}\ell^2\right].
+\tag{2.43}
+\]
+\end{enumerate}
+No Ramsey-rate conclusion, no red--blue comparison, and no new residual term
+is included in (S1), (S2), (S4), or (S5).  The only additional source-side
+hypothesis is the precisely delimited weighted rule (S3).
 \end{assumption}
 
-No source \(O(\cdot)\) term is assigned a numerical constant in this paper.
-The construction below only deletes additional mass from the source envelope
-and therefore uses the same existential \(K\).
-
+The constant \(K\) in (2.10) is not effective in the pinned source.
+Consequently all sufficiently-large-\(C\) statements below are existential.

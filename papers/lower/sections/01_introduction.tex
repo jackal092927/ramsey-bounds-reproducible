@@ -26,12 +26,17 @@ For \(C>1\), let \(p_C\in(0,1/2)\) be the unique solution of
 \[
  C=\frac{\log p_C}{\log(1-p_C)}.
 \]
-The source quantities \(B_R(C)\) and \(G_*(C)\) are defined precisely in
-\cref{sec:setup}.  The first is the red-side source ledger term; the second is
-the previously reviewed exact-CGF improvement.
+The parameters \(p,c,D,\omega_0\), the source quantities \(B_R(C)\) and
+\(B_B(C)\), and the exact-CGF term \(G_*(C)\) are defined explicitly in
+\cref{sec:setup}.  The theorem imports the four version-pinned conditional
+probability, extraction, and blue-ledger items (S1), (S2), (S4), and (S5),
+together with the separately identified weighted-extension rule (S3), all
+stated in \cref{ass:hms}.  The one-step nonuniform estimate, first-moment
+conversion, and red--blue comparison are proved locally.
 
 \begin{theorem}[Source-relative fixed-ratio bound]\label{thm:main-lower}
-There exists \(C_0>1\) such that, for each fixed \(C\ge C_0\),
+Under \cref{ass:hms}, there exists \(C_0>1\) such that, for each fixed
+\(C\ge C_0\),
 \[
 \liminf_{\ell\to\infty}\frac1\ell
 \log R(\ell,\lfloor C\ell\rfloor)

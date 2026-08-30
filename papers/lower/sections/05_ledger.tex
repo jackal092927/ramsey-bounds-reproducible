@@ -12,7 +12,7 @@ Consequently
  a_-(r-2)\le\Delta_{jq}\le a_+(r-2).
 \tag{5.2}
 \]
-For a future set \(V_i\) of size \(k\), put
+For \(V_i=\{i+1,\ldots,r\}\), of size \(k=r-i\), put
 \[
  S_i=\sum_{\{j,q\}\subset V_i}\Delta_{jq},\qquad
  R_i=\max_{j\in V_i}\sum_{q\ne j}\Delta_{jq}.
@@ -48,33 +48,174 @@ giving \(2\binom r4\); the residual term is exactly the sum in (5.4).
 The second identity follows directly from \(e_{ij}=\theta(i-1)\).
 \end{proof}
 
-For the centered comparison retain the predecessor decomposition
-\(T=t_0+\Delta\) and choose conjugate exponents
+\subsection{Exact conditional factorization}
+
+Fix a history in \(B^R_r\) at exposure step \(i\), conditionally on
+\(A_i^R\) and \(\mathcal F_{i-1}\).  For \(j\in V_i\), let
+\(X_j\) be the coordinate in (2.30), write \(b_j=b_{ij}\), put
+\(m_j=m(b_j)\), and standardize its centered
+part by
+\[
+ \zeta_j=\sqrt d\,(X_j-\mathbb EX_j)=\sqrt d\,X_j+m_j.
+\tag{5.6}
+\]
+By (S2), the \(\zeta_j\) are conditionally independent, centered and
+\(1\)-subgaussian.  Expanding the weighted quadratic form gives the exact
+identity
+\begin{align}
+&\log\mathbb E\exp\left\{
+-\sum_{\{j,q\}\subset V_i}T_{jq}X_jX_q\right\}\notag\\
+&\qquad=-\frac1d\sum_{\{j,q\}\subset V_i}T_{jq}m_jm_q
++\Lambda_i,\tag{5.7}\\
+\Lambda_i={}&\log\mathbb E\exp\left\{
+\begin{aligned}
+&\sum_{j\in V_i}(u_j^0+\delta u_j)\zeta_j\\
+&-\frac{t_0}{d}\sum_{j<q}\zeta_j\zeta_q
+-\frac1d\sum_{j<q}\Delta_{jq}\zeta_j\zeta_q
+\end{aligned}\right\}.\tag{5.8}
+\end{align}
+where
+\[
+ u_j^0=\frac{t_0}{d}\sum_{q\ne j}m_q
+ =\frac{m_0}{\sqrt d}\sum_{q\ne j}m_q,\qquad
+ \delta u_j=\frac1d\sum_{q\ne j}\Delta_{jq}m_q.
+\tag{5.9}
+\]
+All tilts in (5.9) are nonnegative.
+
+\subsection{Three-factor H\"older and the square-MGF cost}
+
+For \(k\ge2\), choose
 \[
  Q_0=\frac d{4t_0k},\qquad Q_1=\frac d{4R_i},\qquad
  P^{-1}=1-Q_0^{-1}-Q_1^{-1}.
-\tag{5.6}
+\tag{5.10}
 \]
-They are legal for all sufficiently large \(C\) because
+If \(R_i=0\), the increment factor is absent and we set \(Q_1=\infty\).
+For all sufficiently large \(C\),
 \[
- \frac{4m_0}{D}+\frac{4a_+}{D^2}<\frac12.
-\tag{5.7}
+ Q_0^{-1}+Q_1^{-1}
+ \le\frac{4m_0}{D}+\frac{4a_+}{D^2}<\frac12,
+\tag{5.11}
 \]
-The weighted quadratic factor costs at most
+so \(Q_0,Q_1>1\) and \(1<P\le2\).  H\"older's inequality applied to
+the three random factors in (5.8) yields
+\begin{align}
+\Lambda_i\le{}&
+\frac1P\sum_jK_{b_j}\bigl(P(u_j^0+\delta u_j)\bigr)\notag\\
+&+\frac1{Q_0}\log\mathbb E
+\exp\left\{-\frac{Q_0t_0}{d}\sum_{j<q}\zeta_j\zeta_q\right\}\notag\\
+&+\frac1{Q_1}\log\mathbb E
+\exp\left\{-\frac{Q_1}{d}\sum_{j<q}\Delta_{jq}\zeta_j\zeta_q\right\}.
+\tag{5.12}
+\end{align}
+The middle line is the unchanged HMS uniform-quadratic factor and costs at
+most \(4t_0k/d\).
+
+For the last line, write
+\(R_j=\sum_{q\ne j}\Delta_{jq}\).  Nonnegativity of \(\Delta\) gives
 \[
- \frac{16}{3}\frac{S_i}{d}.
-\tag{5.8}
+ -\sum_{j<q}\Delta_{jq}\zeta_j\zeta_q
+ \le\frac12\sum_jR_j\zeta_j^2.
+\tag{5.13}
 \]
-The three linear-CGF comparison errors sum to at most
-\(\widehat L_w(C)S_i/d\).  Subtracting these costs from the deterministic
-central gain \(m_0^2S_i/d\) leaves
+Because \(Q_1R_j/(2d)\le1/8\), the pinned square-MGF estimate
+\[
+ \log\mathbb E e^{x\zeta_j^2}\le\frac{16}{3}x,
+ \qquad 0\le x\le\frac18,
+\tag{5.14}
+\]
+and conditional independence imply
+\[
+\begin{aligned}
+\frac1{Q_1}\log\mathbb E
+\exp\left\{-\frac{Q_1}{d}\sum_{j<q}\Delta_{jq}\zeta_j\zeta_q\right\}
+&\le\frac1{Q_1}\sum_j\frac{16}{3}
+\frac{Q_1R_j}{2d}\\
+&=\frac{16}{3}\frac{S_i}{d},
+\end{aligned}
+\tag{5.15}
+\]
+where \(\sum_jR_j=2S_i\).  This derives the constant \(16/3\).
+
+\subsection{The same-history CGF bridge}
+
+Let \(P^0=P^0_{k,d}\), so that
+\((P^0)^{-1}=1-Q_0^{-1}\).  The old optimized uniform ledger on this
+same conditional history has deficit
+\[
+ \mathfrak d_i(b)=\sum_{j\in V_i}\left[
+ (u_j^0)^2-\frac1{P^0}K_{b_j}(P^0u_j^0)\right].
+\tag{5.16}
+\]
+Equations (2.6), the cutoff window, and
+\(\sum_{q\ne j}m_q\ge(k-1)m_w\) give the deterministic lower bound
+\[
+ \mathfrak d_i(b)\ge\mathsf d_{k,w,d}.
+\tag{5.17}
+\]
+Indeed, after writing
+\(K_b(P^0u)/P^0=P^0u^2\psi_b(P^0u)\), this is exactly the
+monotonicity comparison used in (2.14).  Thus the term whose accumulated
+limit is \(G_*(C)\) is identified before any new factor is introduced.
+
+It remains to compare the new linear factor with the second term in
+(5.16).  Since \(K_b''\in[0,1]\), for \(u,\delta\ge0\) and \(1<P\le2\),
+\[
+ \frac{K_b(P(u+\delta))-K_b(Pu)}P\le2u\delta+\delta^2.
+\tag{5.18}
+\]
+Moreover, differentiating \(K_b(Pu)/P\) and using (2.6) gives
+\[
+ 0\le\frac{\partial}{\partial P}\frac{K_b(Pu)}P\le u^2.
+\tag{5.19}
+\]
+As
+\[
+ P-P^0=PP^0\left(\frac1{P^0}-\frac1P\right)
+ =\frac{PP^0}{Q_1}\le\frac{16R_i}{d},
+\tag{5.20}
+\]
+we obtain
+\begin{align}
+&\frac1P\sum_jK_{b_j}\bigl(P(u_j^0+\delta u_j)\bigr)
+-\frac1{P^0}\sum_jK_{b_j}(P^0u_j^0)\notag\\
+&\hspace{18mm}\le
+2\sum_ju_j^0\delta u_j+\sum_j(\delta u_j)^2
++\frac{16R_i}{d}\sum_j(u_j^0)^2.
+\tag{5.21}
+\end{align}
+Each term is now bounded without probabilistic input.  From (5.3), (5.9),
+\(m_j\le M_w\), and \(k/\sqrt d\le1/D\),
+\begin{align}
+2\sum_ju_j^0\delta u_j
+&\le\frac{4m_0M_w^2}{D}\frac{S_i}{d},\tag{5.22}\\
+\sum_j(\delta u_j)^2
+&\le\frac{2M_w^2a_+}{D^2}\frac{S_i}{d},\tag{5.23}\\
+\frac{16R_i}{d}\sum_j(u_j^0)^2
+&\le\frac{32m_0^2M_w^2a_+}{a_-D^2}\frac{S_i}{d}.
+\tag{5.24}
+\end{align}
+For completeness, (5.22) uses
+\(\sum_j\delta u_j\le2M_wS_i/d\); (5.23) uses
+\(\max_j\delta u_j\le M_wR_i/d\); and (5.24) uses
+\[
+ \sum_j(u_j^0)^2\le
+ \frac{2m_0^2M_w^2}{a_-}\frac{S_i}{d},
+\tag{5.25}
+\]
+which follows from the first inequality in (5.3) and \(r-2\ge k-1\).
+The sum of (5.22)--(5.24) is precisely
+\(\widehat L_w(C)S_i/d\).
+
+Finally, at the central cutoff the deterministic \(\Delta\)-part of
+(5.7) is \(-m_0^2S_i/d\).  Combining it with (5.15) and
+(5.21)--(5.24) leaves
 \[
  -\widehat B_w(C)\frac{S_i}{d}.
-\tag{5.9}
+\tag{5.26}
 \]
-
-The old deficit \(G_*(C)\) is used exactly once.  It compares the uniform
-\(t_0\) centered-linear term with the pre-Cauchy source allocation.  Equation
-(5.9) pays only the new \(\Delta\) factor and the change to the three-factor
-H\"older exponent, while (4.6) pays the residual.  These ledgers are
-disjoint.
+Equations (5.16)--(5.17) charge the old exact-CGF deficit once;
+(5.26) charges only the new increment factor and the change
+\(P^0\to P\); and (4.6) pays the boundary residual.  Hence the three
+ledger entries are disjoint on the same conditional history.

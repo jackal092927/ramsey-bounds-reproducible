@@ -1,51 +1,117 @@
-# Narrative and claim audit
+# Unified narrative and claim audit
+
+Date: 2026-08-30
 
 ## One-sentence narrative
 
-The project develops two complementary proof ledgers for Ramsey bounds---an
-exact-diagonal retained-spine transfer for the asymptotic diagonal upper bound
-and a controlled-residual Gaussian ledger for fixed-ratio lower bounds---and
-keeps finite SAT searches in a separate proof-carrying report.
+The paper studies Ramsey bounds in three regimes—an asymptotic diagonal upper
+bound, a source-relative fixed-ratio lower bound, and a local finite SAT
+barrier—under one explicit claim-to-evidence discipline.
 
-## Why the upper paper is coherent
+## Why the results belong in one paper
 
-The upper argument has one continuous chain:
+The Parts do not share a single proof technique. Their coherent contribution
+is a reproducibility architecture:
 
-1. a reviewed off-diagonal rate \(U\);
-2. a new exact correlation certificate;
-3. a retained-spine max/min transfer; and
-4. a final outward-rounded decimal bound.
+1. every imported theorem is exposed as a source interface;
+2. every written implication is separated from its numerical certificate;
+3. interval computations state their coverage and arithmetic trust boundary;
+4. finite SAT claims require both semantic reconstruction and proof-trace
+   replay; and
+5. unresolved searches remain `UNKNOWN` rather than being promoted to
+   mathematical evidence.
 
-The exact-diagonal identity is the conceptual center.  It removes a previous
-square-difference relaxation and allows the correlation parameters to be
-handed to the outer variational problem with exact rational arithmetic.
+This framework makes it useful to present the results together while retaining
+strict logical boundaries between them.
 
-## Why the lower paper is coherent
+## Part I: retained spines and an exact diagonal
 
-The lower argument is not an optimization of the upper method.  It modifies a
-Gaussian first-moment construction by replacing exact boundary merge with a
-controlled residual paid by strong concavity.  The resulting gain is tracked
-through the same reverse induction and extraction ledger.  Its natural unit is
-therefore a separate theorem relative to the pinned HMS/Lin--Niu framework.
+The upper route combines a certified six-stage off-diagonal rate, a new
+exact-diagonal correlation certificate, and a retained-spine transfer. The
+numerical conclusion is
 
-## Why the finite work is separate
+\[
+R(k,k)\le (3.780685290)^{k+o(k)},
+\]
 
-The finite route establishes independently checked public witness bounds and
-strong local edit obstructions, but its exact-seven continuation is unknown.
-Combining this with the asymptotic theorems would blur both the mathematical
-story and the evidence hierarchy.  The computational report instead records
-the exact SAT encoding, completeness argument, DRAT verification, and the
-unknown endpoint.
+with an outward-rounded upper base below
+`3.780685288379640114`.
+
+The exact-diagonal identity is the conceptual center: it replaces a
+square-difference relaxation by a sharper envelope and hands exact rational
+parameters to the outer variational calculation. The result remains
+conditional on the stated, version-pinned source interfaces and on the
+certificate-correctness implication. It is asymptotic and has no effective
+finite-\(k\) threshold.
+
+## Part II: controlled Gaussian residuals
+
+The lower route does not optimize the upper argument. It modifies a Gaussian
+first-moment and reverse-induction ledger by allowing a deterministic
+nonexchangeable triangular residual and paying for the gradient mismatch with
+full-box strong concavity. In the pinned source normalization, it yields
+
+\[
+\widehat H_*(C)=\frac{1+o_{C\to\infty}(1)}{64\log C}>0.
+\]
+
+This is a fixed-sufficiently-large-\(C\), source-relative addition conditional
+on (S1)--(S5). The weighted-extension rule (S3) is an explicit additional
+hypothesis, not a theorem attributed as stated by HMS or Lin--Niu. The logical
+order is fixed \(C\), then \(\ell\to\infty\), then \(C\to\infty\). The
+threshold is non-effective, and the result is not advertised as a comparison
+with every published terminal normalization.
+
+## Part III: a proof-carrying local barrier
+
+The finite route fixes one labelled 100-vertex near miss and one asymmetric
+edit metric: additions of seed nonedges are free and deletions of seed edges
+are charged. A complete branch cover, semantic CNF reconstruction, and six
+DRAT refutations establish deletion repair radius at least seven.
+
+The exact-seven layer remains `UNKNOWN`. This is a local obstruction, not a
+new finite Ramsey number. In particular, it does not imply
+\(R(3,18)\ge101\).
+
+## Adversarial audit interpretation
+
+The first-round mathematical and reproducibility audits were intentionally
+hostile: they rejected several asymptotic interfaces and the original public
+reproduction story. Those reports remain in the repository as historical
+evidence rather than being overwritten.
+
+Fresh post-repair audits now classify the upper theorem as `PROVABLE AS
+STATED` under its explicit conditional trust boundary. The lower headline is
+`PROVABLE AFTER WEAKENING / EXTRA ASSUMPTION`; conditional on the fully stated
+(S1)--(S5), the local ledger, extraction, and crossing are `PROVABLE AS
+STATED`. The finite radius theorem remains `PROVABLE AS STATED` under its
+encoding, case-cover, and DRAT-checker boundary. The global claim audit's five
+wording findings and all four major reproducibility implementation findings
+are closed.
+
+The consolidated record is
+[`reviews/REVIEW_DISPOSITION.md`](reviews/REVIEW_DISPOSITION.md). External
+ChatGPT Pro review and a credential-free clean-clone replay remain publication
+gates; local passes must not be confused with either one.
 
 ## Claims intentionally not made
 
-The publication bundle does not claim:
+The unified paper does not claim:
 
-- a finite-\(k\) threshold for the asymptotic upper theorem;
+- an effective finite-\(k\) threshold for the upper result;
+- an effective sufficiently-large-\(C\) threshold for the lower result;
 - global optimality of any numerical parameter;
-- a global improvement of a finite Ramsey number from the near-miss searches;
-- that an `UNKNOWN` SAT run is evidence for nonexistence;
-- priority, novelty against all unpublished work, publication, or world-best
-  status; or
-- formal proof-assistant verification.
+- a cross-normalization lower-bound priority claim;
+- a global finite Ramsey improvement from the fixed-seed computation;
+- that an `UNKNOWN` exact-seven run supports existence or nonexistence;
+- formal proof-assistant verification;
+- completed external ChatGPT Pro review;
+- an already existing public GitHub repository or release; or
+- publication, priority, or world-best status.
 
+## Canonical output
+
+The sole publication manuscript is
+[`papers/unified/main.tex`](papers/unified/main.tex). The three historical
+part directories are source components and provenance records. Their
+continued presence must not be interpreted as a plan to submit three papers.

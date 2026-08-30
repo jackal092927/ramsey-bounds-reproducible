@@ -43,8 +43,10 @@ def sha256(path: Path) -> str:
 
 def main() -> None:
     failures: list[str] = []
-    if sys.version_info[:2] != (3, 11):
-        failures.append(f"reference Python is 3.11; found {sys.version.split()[0]}")
+    if sys.version_info[:3] != (3, 11, 15):
+        failures.append(
+            f"reference Python is exactly 3.11.15; found {sys.version.split()[0]}"
+        )
 
     for package, expected in VERSIONS.items():
         try:

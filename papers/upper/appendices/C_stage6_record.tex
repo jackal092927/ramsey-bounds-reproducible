@@ -1,5 +1,208 @@
 \section{Sixth chained upper-bound descent: bounded search log}
 
+\subsection{Certificate semantics and correctness}
+
+We first state the theorem-to-JSON implication used by all six links.  For a
+finite exact-decimal coefficient tuple \(c=(c_1,\ldots,c_d)\), write
+\[
+ F_c(\lambda)=(1+\lambda)\log(1+\lambda)-\lambda\log\lambda
+ +e^{-\lambda}\sum_{j=1}^d c_j\lambda^j.
+ \tag{C.1}
+\]
+A file with schema \texttt{corrected-two-sided-ramsey-v1} contains exact
+tuples \(c^{\rm prior},c^{\rm target}\), an exact splice
+\(\lambda_*\), and a finite ordered list of records
+\((\lambda_i^-,\lambda_i^+,M_i,Y_i)\).  Acceptance means that outward-rounded
+interval evaluation establishes all of the following obligations.
+
+\begin{enumerate}[label=(\roman*)]
+\item The records form an exact partition of \([\lambda_*,1]\), with
+      \(0<M_i,Y_i<1\), and the prior rate is strictly concave on
+      \((0,1]\).
+\item On every record and every \(\lambda\) in its closed interval, put
+      \[
+       X=(1-M_i)
+       \bigl(1-e^{-F'_{c^{\rm target}}(\lambda)}\bigr)^{1/(1-M_i)},
+       \quad a=-\log X,\quad b=-\log Y_i.
+      \]
+      The verifier proves \(F_{c^{\rm target}}>0\),
+      \(F'_{c^{\rm target}}>0\), and both prior-region inequalities
+      \[
+       a+\mu b>F_{c^{\rm prior}}(\mu),\qquad
+       b+\mu a>F_{c^{\rm prior}}(\mu)
+       \quad(0<\mu\le1).                       \tag{C.2}
+      \]
+      Strict concavity reduces the two suprema in \(\mu\) to their endpoint
+      and unique stationary-point candidates; every candidate is enclosed.
+\item On the same complete record interval the main descent slack satisfies
+      \[
+       F_{c^{\rm target}}(\lambda)
+       +\frac12\{\log X+\lambda\log M_i+\lambda\log Y_i\}>0. \tag{C.3}
+      \]
+\item On the open interval \((0,\lambda_*]\), the verifier takes
+      \(M=\lambda e^{-\lambda}\), defines \(X\) by the same formula and
+      \(Y=1-X\), and proves positivity of \(F,F'\) and a strictly positive
+      lower bound for the left side of (C.3) divided by \(\lambda\).  Bounds
+      \(q_-\lambda\le e^{-F'}\le q_+\lambda\) cancel the two
+      \(\lambda\log\lambda\) singularities, so this is an analytic tail
+      proof rather than extrapolation from \(\lambda_*\).
+\item At the first link, the same elementary witness proves the prior rate.
+      At every later link, \(c^{\rm prior}\) agrees entry by entry, as exact
+      decimal data, with the preceding accepted target tuple.
+\end{enumerate}
+
+We next close the theorem-to-certificate bridge, including the two steps that
+are easiest to lose in a numerical presentation: the density dichotomy and
+the induction in the smaller clique order.
+
+\begin{lemma}[Finite-net rate descent]\label{lem:finite-net-descent}
+Let \(G:[0,1]\to\mathbb R\) be continuous, twice continuously differentiable
+on \((0,1]\), and satisfy \(G(0)=0\), \(G,G'>0\).  Suppose
+\(G(\lambda)=H(\lambda)+O(\lambda)\) at zero, where
+\(H(\lambda)=(1+\lambda)\log(1+\lambda)-\lambda\log\lambda\).
+For every \(\lambda\in(0,1]\), suppose there are \(M,X,Y\in(0,1)\) with
+\[
+ X=(1-M)\bigl(1-e^{-G'(\lambda)}\bigr)^{1/(1-M)}
+ \tag{C.4}\label{eq:descent-X}
+\]
+and
+\[
+ G(\lambda)+\frac12\{\log X+\lambda\log M+
+ \lambda\log Y\}>0.                         \tag{C.5}\label{eq:descent-main}
+\]
+Assume that on every compact \(I\subset(0,1]\),
+\(\inf_I G'>0\), \(\sup_I M<1\), and, for every sufficiently small
+\(\delta>0\), the point
+\[
+ p_{\lambda,\delta}=1-e^{-G'(\lambda)+2\delta},\qquad
+ x_{\lambda,\delta}=e^{-\delta}(1-M)
+ p_{\lambda,\delta}^{1/(1-M)},              \tag{C.6}
+\]
+paired with \(Y\), lies in \(\mathcal R_*\).  Then, uniformly for
+\(1\le\ell\le k\),
+\[
+ \log R(k,\ell)\le kG(\ell/k)+o(k).          \tag{C.7}
+\]
+\end{lemma}
+
+\begin{proof}
+Fix \(\epsilon>0\).  The Erd\H{o}s--Szekeres recursion and Stirling's
+formula give \(\log R(k,\ell)\le kH(\ell/k)+o(k)\), uniformly as
+\(\ell/k\to0\).  Since \(H-G=O(\lambda)\), choose \(\rho>0\) so that
+the desired bound with error \(\epsilon k\) already holds when
+\(\ell\le\rho k\).  It remains to consider \(I=[\rho,1]\).
+
+The hypotheses in the lemma make the logarithm of
+\(x_{\lambda,\delta}/X(\lambda)\) converge uniformly to zero as
+\(\delta\downarrow0\).  Choose one \(\delta>0\) such that, throughout
+\(I\),
+\[
+ e^{-\epsilon}X(\lambda)\le x_{\lambda,\delta}<X(\lambda).
+ \tag{C.8}
+\]
+Uniform continuity of \(G,G'\) supplies a finite descending grid
+\(\{\lambda_j\}\) such that every \(r\in I\) has a
+\(\lambda_j\in[r,r+h]\) with
+\[
+ |G(\lambda_j)-G(r)|\le\epsilon/2,qquad
+ |G'(\lambda_j)-G'(r)|\le\delta.             \tag{C.9}
+\]
+Apply the balanced-book corollary of Appendix B at each grid point with
+\(p=p_{\lambda_j,\delta}\), \(\mu=M(\lambda_j)\),
+\(x=x_{\lambda_j,\delta}\), and \(y=Y(\lambda_j)\).  The strict book
+hypothesis follows from (C.6), and the assumed interior condition supplies
+the other hypothesis.  Since the grid is finite, the largest of the
+resulting thresholds is finite.
+
+Now let \(N\ge e^{k(G(r)+\epsilon)}\), where \(r=\ell/k\in I\).  If the
+red-edge density is at least \(1-e^{-G'(r)+\delta}\), it is at least
+\(p_{\lambda_j,\delta}\) by (C.9).  Equations
+\eqref{eq:descent-main}, (C.8), (C.9),
+\(\lambda_jk\ge\ell\), and \(\log(MY)<0\) give
+\begin{align*}
+ N&\ge e^{k(G(\lambda_j)+\epsilon/2)}\\
+  &\ge (e^{-\epsilon}X(\lambda_j))^{-k/2}
+       (M(\lambda_j)Y(\lambda_j))^{-\ell/2}\\
+  &\ge x_{\lambda_j,\delta}^{-k/2}
+       (M(\lambda_j)Y(\lambda_j))^{-\ell/2}.
+\end{align*}
+The balanced-book corollary therefore gives a red \(K_k\) or a blue
+\(K_\ell\).
+
+Otherwise the average blue degree is greater than
+\(e^{-G'(r)+\delta}(N-1)\), so some vertex has, for all sufficiently large
+\(k\), at least
+\[
+ \exp\{kG(r)+\epsilon k-G'(r)+\delta/2\}       \tag{C.10}
+\]
+blue neighbours.  Induct on \(\ell\), starting with the already settled
+range \(\ell\le\rho k\).  For \(r-1/k\ge\rho/2\), the mean-value theorem
+gives
+\[
+ k\{G(r)-G(r-1/k)\}=G'(\xi),\qquad
+ G'(r)-G'(\xi)\le k^{-1}
+  \sup_{[\rho/2,1]}|G''|\le\delta/2
+\]
+once \(k\) is large.  Thus (C.10) is at least the induction threshold
+\(e^{k(G((\ell-1)/k)+\epsilon)}\).  Its blue neighbourhood contains a red
+\(K_k\), or a blue \(K_{\ell-1}\) which extends with the chosen vertex.
+This completes the induction and the uniform \(\epsilon\)-form of (C.7).
+\end{proof}
+
+\begin{proposition}[Rate-certificate correctness]\label{prop:rate-correctness}
+Assume the repaired book induction in Appendix B and Arb's containment
+semantics.  If the first certificate satisfies (i)--(v), its target obeys the
+uniform Ramsey-rate bound \eqref{eq:rate-bound}.  If a finite chain is accepted with the exact
+handoffs in (v), every target in the chain obeys that bound; in particular the
+sixth target is \(F_6\).
+\end{proposition}
+
+\begin{proof}
+On a closed record interval, (C.2) has strict positive margin in both colour
+orientations.  Together with the already proved uniform prior rate, this
+allows \(X,Y_i\) to be enlarged slightly while retaining both exponent
+bounds; hence \((X,Y_i)\in\mathcal R_*\).  Decreasing the first coordinate to
+\(x_{\lambda,\delta}\) preserves interior membership.  The finitely many
+records also give \(\sup M_i<1\), and the verifier proves \(F,F'>0\) and
+(C.3), which are exactly \eqref{eq:descent-X}--\eqref{eq:descent-main}.
+
+On \((0,\lambda_*]\), the elementary witness has \(Y=1-X\).  Since
+\(x_{\lambda,\delta}<X\), choose \(z\) strictly between them.  The elementary
+recursion places \((z,1-z)\) in \(\mathcal R\), while
+\(x_{\lambda,\delta}<z\) and \(Y<1-z\); therefore the perturbed point lies
+in \(\mathcal R_*\).  Obligation (iv) proves the remaining analytic
+hypotheses on the whole open interval, including a positive normalized main
+slack rather than a sampled extrapolation.  Because every target has the form
+\(H(\lambda)+e^{-\lambda}P(\lambda)\) with \(P(0)=0\), its difference from
+\(H\) is \(O(\lambda)\).  Thus \cref{lem:finite-net-descent} proves one
+accepted link.
+
+For the first link the same elementary argument proves the prior.  Exact
+entrywise target-to-prior equality then permits ordinary induction through
+the six links, without a rounded or refitted intermediate rate.
+\end{proof}
+
+The six accepted certificate identities, in order, are
+\begin{enumerate}[label=\arabic*.]
+\item \path{certificate-higher-order-quintic-v1.json},
+\sha{2664bc421cd0cb7489289caa283a3a3f22830580f7c21bf0e6cbe092910bc277};
+\item \path{certificate-higher-order-quintic-chain-v2.json},
+\sha{b5b595b4dcc9d1bdc2b5714f68fef99ec1c566bbd612d35ca19100d173d41c4d};
+\item \path{certificate-higher-order-sextic-chain-v3.json},
+\sha{2052952c3af98074d5442fb736c7a2952146e92051a43fab84e75f099d9e00d7};
+\item \path{certificate-higher-order-octic-chain-v4.json},
+\sha{09253d757516dc258396f82c09a442aaaf9d499640c1cc99b5767e6d51d35942};
+\item \path{certificate-higher-order-decic-chain-v5.json},
+\sha{4ec4dbbe190a08134efe68c3a76ce4b4fb3aabdad230af703c19a28a03ecf9a9};
+\item \path{certificate-higher-order-tetradecic-chain-v6.json},
+\sha{8689e3f80f363ac4b2dada31d6d71d682288eac24ca5e128e22aecfffcd4bde8}.
+\end{enumerate}
+The canonical replay invokes \path{verify_chain_arb.py} with
+\path{--require-paper-chain}.  Before doing any interval work, that mode
+requires these six filenames in this order, recomputes and compares all six
+SHA-256 values, and requires the final target tuple to equal the fourteen
+terminating decimals displayed below, entry by entry.
+
 \subsection{Claim}
 
 Let
@@ -13,16 +216,16 @@ and interpret every displayed terminating decimal exactly. Define
 \[
 \begin{aligned}
 P_6(\lambda)={}&-0.250000000000000\lambda
-+0.019891840059418\lambda^2
--0.012275954247190\lambda^3\\
-&+0.144110816398083\lambda^4
-+0.006277913420654\lambda^5
++0.019891840059418\lambda^2\\
+&-0.012275954247190\lambda^3
++0.144110816398083\lambda^4\\
+&+0.006277913420654\lambda^5
 -0.066101623491668\lambda^6\\
 &-0.002287675993602\lambda^7
--0.058238059505066\lambda^8
-+0.030675864198693\lambda^9\\
-&+0.052472201910597\lambda^{10}
-+0.043300454861853\lambda^{11}
+-0.058238059505066\lambda^8\\
+&+0.030675864198693\lambda^9
++0.052472201910597\lambda^{10}\\
+&+0.043300454861853\lambda^{11}
 -0.042529975074653\lambda^{12}\\
 &-0.055263639426635\lambda^{13}
 +0.036695886931268\lambda^{14}.
@@ -51,8 +254,8 @@ This is a bounded attempt to add \textbf{one} descent after the frozen
 fifth-stage certificate. It will not continue to a seventh stage.
 
 The only admissible prior is the exact ten-entry target tuple in
-\texttt{certificate-higher-order-decic-chain-v5.json}, whose SHA-256 is
-\texttt{4ec4dbbe190a08134efe68c3a76ce4b4fb3aabdad230af703c19a28a03ecf9a9}.
+\path{certificate-higher-order-decic-chain-v5.json}, whose SHA-256 is
+\sha{4ec4dbbe190a08134efe68c3a76ce4b4fb3aabdad230af703c19a28a03ecf9a9}.
 No rounded, refitted, or independently retyped prior is admissible.
 Before search, both existing 256-bit Arb implementations must prove this
 exact prior strictly concave on all of \texttt{(0,1{]}}.
@@ -239,7 +442,7 @@ regime and the 131,072 exact cells cover all \(0<\lambda\leq1\).
 
 \subsubsection{Separately written direct region replay}
 
-\texttt{verify\_region\_direct\_arb.py} does not import the primary
+\path{verify_region_direct_arb.py} does not import the primary
 verifier and directly minimizes both continuous exponent slacks over the
 complete prior-ratio interval. It returned
 
@@ -265,7 +468,7 @@ Run from \texttt{routes/upper} with the repository environment that
 supplies \texttt{python-flint}:
 
 \begin{verbatim}
-../../.venv/bin/python verify_chain_arb.py \
+../../.venv/bin/python verify_chain_arb.py --require-paper-chain \
   certificate-higher-order-quintic-v1.json \
   certificate-higher-order-quintic-chain-v2.json \
   certificate-higher-order-sextic-chain-v3.json \

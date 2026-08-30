@@ -28,10 +28,12 @@ interfaces are recorded in \cref{sec:framework}; they are theorem statements
 from Yang--Mao together with the reviewed rate theorem (1.1), rather than
 unstructured assumptions about an implementation.
 
-\begin{theorem}[Main theorem]\label{thm:main-upper}
-Assume the regularization, positive tensor-moment, tail and parameterized-book
-interfaces stated in \cref{ass:yang-mao}, and the certified rate theorem
-\cref{thm:p6-rate}.  Then
+\begin{theorem}[Conditional main theorem]\label{thm:main-upper}
+Assume the version-pinned regularization, parameterized-book, and
+spine-compatibility interfaces stated in \cref{ass:yang-mao}, and the
+certified rate theorem \cref{thm:p6-rate}.  The positive-moment and tail
+implication used to establish the correlation input are proved locally in
+\cref{sec:exact}.  Then
 \[
  R(k,k)\le \exp\!\left((U(1)-3.4754\cdot10^{-6})k+o(k)\right)
  \le (3.780685290)^{k+o(k)}.
@@ -42,8 +44,9 @@ The certified unrounded upper base is less than
 
 The paper is a source-relative proof package: every imported statement is
 named, every new inequality is proved here, and every numerical step is
-independently replayable.  No finite value of the asymptotic threshold is
-claimed.
+replayable by separately structured implementations.  Those implementations
+share Arb's interval-containment semantics as a trust dependency.  No finite
+value of the asymptotic threshold is claimed.
 
 \subsection{The exact-diagonal mechanism}
 
@@ -89,4 +92,3 @@ The proof has four logically separate layers.
 The complete repaired book induction and the frozen rate record are included
 in the appendices.  Search scripts are not part of the proof; they only chose
 the exact rational data subsequently verified from scratch.
-

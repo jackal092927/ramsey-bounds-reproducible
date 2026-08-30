@@ -37,13 +37,31 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--directory", type=Path, required=True)
     parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
+    parser.add_argument(
+        "--exact",
+        action="store_true",
+        help="also reject extra files or subdirectories not named by the manifest",
+    )
     args = parser.parse_args()
 
+    rows = load_manifest(args.manifest)
     failures: list[str] = []
-    for expected_hash, expected_size, name in load_manifest(args.manifest):
+    expected_names = {name for _, _, name in rows}
+    if args.exact:
+        if not args.directory.is_dir():
+            failures.append(f"NOT_A_DIRECTORY {args.directory}")
+        else:
+            actual_names = {entry.name for entry in args.directory.iterdir()}
+            for name in sorted(actual_names - expected_names):
+                failures.append(f"UNEXPECTED {name}")
+            for name in sorted(expected_names - actual_names):
+                failures.append(f"MISSING {name}")
+
+    for expected_hash, expected_size, name in rows:
         path = args.directory / name
         if not path.is_file():
-            failures.append(f"MISSING {name}")
+            if f"MISSING {name}" not in failures:
+                failures.append(f"MISSING {name}")
             continue
         actual_size = path.stat().st_size
         actual_hash = sha256(path)
@@ -56,9 +74,11 @@ def main() -> None:
 
     if failures:
         raise SystemExit("\n".join(failures))
-    print("ARTIFACT_MANIFEST_VERIFIED")
+    if args.exact:
+        print("EXACT_ARTIFACT_MANIFEST_VERIFIED")
+    else:
+        print("ARTIFACT_MANIFEST_VERIFIED")
 
 
 if __name__ == "__main__":
     main()
-

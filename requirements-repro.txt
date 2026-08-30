@@ -1,5 +1,6 @@
 # Reproduction environment for the reviewed theorem packages.
-# Python 3.11 is the reference interpreter.
+# Python 3.11.15 is the exact reference interpreter.  The uv lockfile is the
+# only installation contract; this file is a human-readable pin summary.
 mpmath==1.4.1
 python-flint==0.9.0
 python-sat==1.9.dev13

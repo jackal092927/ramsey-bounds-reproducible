@@ -1,99 +1,169 @@
-# Publication plan
+# Unified manuscript and publication plan
 
-Date: 2026-08-12
+Date: 2026-08-30
 
 ## Editorial decision
 
-The workspace contains three mathematically different contributions and should
-not be forced into one manuscript.  The publication bundle consists of:
+All current results belong in one paper. The canonical source is
+[`papers/unified/main.tex`](papers/unified/main.tex), and the corresponding
+local build is [`papers/unified/main.pdf`](papers/unified/main.pdf).
 
-1. a formal upper-bound paper;
-2. a formal source-relative lower-bound paper; and
-3. a proof-carrying computational report for the finite searches.
+The directories `papers/upper`, `papers/lower`, and `papers/finite` remain
+archival source components. They preserve derivation history and permit
+deterministic materialization of the unified manuscript, but they must not be
+described as three independent publication outputs.
 
-The first two are written as research papers.  The third is deliberately a
-technical report because the current finite search does not improve a global
-Ramsey bound.
+Working title:
 
-## Paper U: diagonal upper bound
+> *Reproducible Ramsey Analysis Across Asymptotic and Finite Regimes:
+> Retained Spines, Gaussian Residuals, and Proof-Carrying Barriers*
 
-Working title: *A Computer-Assisted Retained-Spine Bound for Diagonal Ramsey
-Numbers*.
+The paper's unity is methodological: each Part states an exact claim, identifies
+its imported interfaces, supplies human-readable implications, and attaches
+machine-checkable evidence at the appropriate level. The three mathematical
+techniques are not presented as instances of one theorem.
 
-Main scoped theorem:
+## Claim hierarchy
+
+### U — conditional asymptotic upper result
+
+Subject to the version-pinned retained-spine and parameterized-book interfaces
+and the certified six-stage off-diagonal rate,
 
 \[
 R(k,k)\le (3.780685290)^{k+o(k)},
 \]
 
-with certified unrounded base below
-`3.780685288379640114`.  The theorem imports the explicitly stated
-Yang--Mao v1 interfaces and the reviewed off-diagonal rate theorem.  It does
-not give an effective finite-\(k\) threshold or a global optimization claim.
+with certified unrounded base below `3.780685288379640114`.
 
-Core mathematical contribution:
+The statement must remain explicitly source-relative and asymptotic. It does
+not provide an effective finite-\(k\) threshold, a proof of global parameter
+optimality, or a priority/world-best claim.
 
-- an exact ratio/separator argument for a cubic root filter;
-- a complete two-dimensional reduction to an exact diagonal expression;
-- a compact interval proof and analytic half-line tail;
-- an exact rational moment/tail budget proving
-  \(\mathcal G_2^{(3)}(330867/500000,
-  12366348252219/1250000000000)\); and
-- a certified retained-spine variational transfer.
+### L — source-relative fixed-ratio lower result
 
-## Paper L: fixed-ratio lower bound
-
-Working title: *Controlled Residuals in Gaussian Ramsey Constructions*.
-
-Main scoped theorem: for every sufficiently large fixed \(C\),
+For every sufficiently large fixed \(C\), inside the pinned Gaussian
+reverse-induction and cumulant interfaces, the controlled-residual ledger
+contributes
 
 \[
-\liminf_{\ell\to\infty}\frac1\ell
-\log R(\ell,\lfloor C\ell\rfloor)
-\ge -\frac12\log p_C+\frac{B_R(C)}2+G_*(C)+\widehat H_*(C),
+\widehat H_*(C)=\frac{1+o_{C\to\infty}(1)}{64\log C}>0.
 \]
 
-where
+The order of limits is part of the theorem: fix \(C\), let
+\(\ell\to\infty\), and only afterwards examine \(C\to\infty\).
+The statement is conditional on (S1)--(S5). Items (S1), (S2), (S4), and (S5)
+are version-pinned source hypotheses; (S3) is the paper's additional
+weighted-extension hypothesis and is not attributed as a theorem stated by
+HMS or Lin--Niu. The threshold in \(C\) is existential and non-effective. No
+comparison is made across incompatible terminal normalizations.
 
-\[
-\widehat H_*(C)=\frac{1+o(1)}{64\log C}>0.
-\]
+### F — local finite proof-carrying result
 
-The theorem is source-relative to pinned HMS v2 and Lin--Niu v2 inputs and has
-an existential, non-effective threshold in \(C\).  It is not presented as an
-all-\(C\), finite-Ramsey, or unconditional theorem.
+For the content-addressed 100-vertex seed and the stated one-sided edit metric,
+free additions together with at most six seed-edge deletions cannot produce a
+triangle-free graph with independence number below 18. Equivalently, the
+local deletion repair radius is at least seven.
 
-Core mathematical contribution:
+Exact seven remains `UNKNOWN`. This result neither constructs a
+100-vertex \((3,18)\)-Ramsey graph nor proves \(R(3,18)\ge101\).
 
-- rigidity of exact triangular gradient merge;
-- a deterministic boundary residual;
-- full-box strong concavity and square completion;
-- exact weighted multiplicities and a three-factor Hölder/CGF ledger;
-- nonexchangeable reverse induction and perfect-sequence extraction; and
-- a narrowly scoped \(1/64\) method cap.
+## Manuscript architecture
 
-## Computational report
+1. **Introduction and main results.** State all three results and the
+   non-implications in one place.
+2. **Evidence taxonomy.** Distinguish source interfaces, written analytic
+   arguments, interval certificates, proof-carrying SAT theorems, and bounded
+   observations.
+3. **Part I: retained-spine diagonal upper bound.** Give the six-stage rate,
+   exact-diagonal correlation certificate, and outer transfer with its exact
+   trust boundary.
+4. **Part II: controlled Gaussian residuals.** Define the source quantities,
+   prove the residual and concavity ledger, propagate it through reverse
+   induction, and preserve the fixed-\(C\) order of limits.
+5. **Part III: proof-carrying finite barrier.** Define the seed and metric,
+   prove the branch cover and CNF semantics, replay the six DRAT proofs, and
+   record exact seven as `UNKNOWN`.
+6. **Unified reproducibility section.** Give one tiered interface for fast,
+   full asymptotic, finite-heavy, and paper-build checks.
+7. **Appendices.** Include the proof-critical source interfaces, certificate
+   correctness statements, exact parameters, hashes, and verification
+   records needed by the three Parts.
 
-Working title: *Proof-Carrying SAT Barriers Around a 100-Vertex
-\(R(3,18)\) Near Miss*.
+Labels and symbols are namespaced by Part. Material shared only at the level
+of evidence policy belongs in the global sections, not in a fabricated common
+mathematical framework.
 
-The report proves only a fixed-seed edit statement.  For the pinned
-100-vertex near miss, arbitrary additions of input nonedges together with at
-most six deletions of input edges cannot produce a triangle-free graph of
-independence number below 18.  Exact-seven remains `UNKNOWN`; therefore the
-report does not prove \(R(3,18)\ge101\).
+## Adversarial review gates
 
-## Evidence policy
+The retained first-round reviews are:
 
-Every theorem is paired with:
+- [`reviews/ADVERSARIAL_MATH_REVIEW.md`](reviews/ADVERSARIAL_MATH_REVIEW.md);
+- [`reviews/REPRODUCIBILITY_ADVERSARIAL_REVIEW.md`](reviews/REPRODUCIBILITY_ADVERSARIAL_REVIEW.md).
 
-- a human-readable proof;
-- a machine-readable parameter set;
-- at least one independent implementation where available;
-- a SHA-256 manifest;
-- an explicit dependency and trust boundary; and
-- exact separation of `PASS`, `UNSAT`, `SAT`, `UNKNOWN`, and untested states.
+The mathematical review applies the statuses `PROVABLE AS STATED`,
+`PROVABLE AFTER WEAKENING / EXTRA ASSUMPTION`, and
+`NOT CURRENTLY JUSTIFIED` claim by claim. The reproducibility review treats a
+clean-clone replay as the publication criterion. A passing local numerical
+program does not by itself close a missing theorem-to-code or
+source-to-local-proof implication.
 
-The superceded exploratory results remain in `routes/` for provenance but are
-not treated as current paper claims.
+The post-repair reviews and their consolidated disposition are:
 
+- [`reviews/UPPER_POST_REPAIR_REVIEW.md`](reviews/UPPER_POST_REPAIR_REVIEW.md);
+- [`reviews/LOWER_POST_REPAIR_REVIEW.md`](reviews/LOWER_POST_REPAIR_REVIEW.md);
+- [`reviews/GLOBAL_CLAIM_AUDIT.md`](reviews/GLOBAL_CLAIM_AUDIT.md);
+- [`reviews/REPRODUCIBILITY_POST_REPAIR_REVIEW.md`](reviews/REPRODUCIBILITY_POST_REPAIR_REVIEW.md); and
+- [`reviews/REVIEW_DISPOSITION.md`](reviews/REVIEW_DISPOSITION.md).
+
+Every major local finding has now been handled in one of two ways:
+
+1. repair the proof or artifact path and obtain a fresh adversarial recheck; or
+2. weaken the corresponding statement so that the displayed assumptions
+   genuinely imply it.
+
+A separate ChatGPT Pro adversarial review remains planned as a second opinion. It
+must be recorded as pending until the manuscript is actually transmitted and
+a response is received; requesting a review is not evidence that it occurred.
+
+The unified manuscript currently compiles to 79 pages with SHA-256
+`8ed2aec0a38278dd81bc669eda36dd15c8f86324a65c6ebf3af271d33e1c7d1a`.
+The local quick, full, sources, finite-heavy, deterministic-materialization,
+log, and representative-page visual gates have passed.
+
+## Reproducibility deliverables
+
+The final package should contain:
+
+- the single canonical TeX source and PDF;
+- a frozen Git commit;
+- exact Python and TeX build specifications;
+- machine-readable upper and lower parameters;
+- all finite semantic metadata;
+- an immutable manifest of the large CNF/DRAT pairs;
+- the exact `drat-trim` source revision and a portable build procedure;
+- logs that distinguish `PASS`, `SAT`, `UNSAT`, `UNKNOWN`, and `NOT_RERUN`;
+- the adversarial reviews and their resolution record; and
+- citation and licensing metadata approved for public release.
+
+The heavy assets should be GitHub Release assets rather than ordinary Git
+objects. Their public availability must be verified before the paper or
+README calls the package public.
+
+## Release sequence
+
+1. Resolve the mathematical and reproducibility review blockers.
+2. Regenerate and compile the unified manuscript.
+3. Run fast and full checks, then the finite-heavy semantic/DRAT replay.
+4. Inspect the final PDF and archive the build and verification logs.
+5. Obtain the independent ChatGPT Pro review and incorporate or disposition
+   its concrete objections.
+6. Create the GitHub repository, push the frozen snapshot, and create an
+   immutable release containing exactly the manifest entries.
+7. Verify the advertised process from a new clone without author-machine
+   state.
+8. Only then update the paper, README, status, and citation metadata with the
+   real commit, release URL, version, date, and—if obtained—archival DOI.
+
+Until those steps are complete, the correct label is **local pre-publication
+research package**, not published paper or public archival release.

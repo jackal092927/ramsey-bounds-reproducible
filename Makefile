@@ -1,4 +1,4 @@
-.PHONY: bootstrap verify-fast verify-full verify-upper verify-lower verify-finite papers clean
+.PHONY: bootstrap verify-fast verify-full verify-upper verify-lower verify-finite paper papers clean
 
 bootstrap:
 	bash scripts/bootstrap.sh
@@ -18,10 +18,10 @@ verify-lower:
 verify-finite:
 	bash scripts/reproduce_finite_light.sh
 
-papers:
+paper:
 	bash scripts/compile_papers.sh
 
+papers: paper
+
 clean:
-	latexmk -C -cd papers/upper/main.tex
-	latexmk -C -cd papers/lower/main.tex
-	latexmk -C -cd papers/finite/main.tex
+	latexmk -C -cd papers/unified/main.tex

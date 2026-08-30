@@ -38,7 +38,9 @@ For branch \(0\), a fresh replay in a temporary directory took \(273.448\)
 seconds inside the checker and reported \(135152646\) resolution steps in
 the retained core.  Branch \(1\) reported \(209897525\) resolution steps in
 its independently checked run.  These timings are descriptive, not logical
-premises; hashes and successful replay are the portable evidence.
+premises.  The source commit and successful replay are the portable evidence;
+the executable hash records the historical build and is not required to match
+a fresh binary compiled on another platform.
 
 \subsection{Semantic reconstruction}
 

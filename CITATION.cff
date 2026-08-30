@@ -1,19 +1,24 @@
 cff-version: 1.2.0
 message: >-
-  If you use this proof package, cite the relevant manuscript and archive
-  release. Replace the placeholder authorship before a public submission.
-title: Reproducible Ramsey Bounds and Proof Certificates
+  If you use this pre-release proof package, cite the software package and the
+  canonical unified manuscript. No DOI, public release, or archival version
+  has yet been assigned.
+title: >-
+  Reproducible Ramsey Analysis Across Asymptotic and Finite Regimes:
+  Research Software and Proof Certificates
 type: software
-version: 0.1.0
-date-released: 2026-08-12
 authors:
-  - name: Ramsey Bounds Project contributors
+  - family-names: Xin
+    given-names: Cheng
 abstract: >-
-  Computer-assisted asymptotic Ramsey bounds, source-relative Gaussian lower
-  bounds, and proof-carrying finite SAT reports with independent replays.
+  Reproducible materials for a unified Ramsey manuscript containing a
+  source-relative asymptotic diagonal upper bound, a source-relative
+  fixed-ratio Gaussian lower-bound addition, and a proof-carrying local finite
+  SAT barrier.
 keywords:
   - Ramsey numbers
   - computer-assisted proof
   - interval arithmetic
+  - Gaussian random graph
   - SAT
   - DRAT

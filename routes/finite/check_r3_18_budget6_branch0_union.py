@@ -190,7 +190,7 @@ def audit_semantics(directory: Path) -> dict:
         "arbitrary_original_nonedges_free": True,
         "budget5_dependency_checked": True,
         "three_branch_cover": [[97, 98], [97, 99], [98, 99]],
-        "other_two_branches_proof_verified": True,
+        "other_two_branches_recorded_proofs_verified": True,
         "cnf_gzip_sha256": EXPECTED["cnf_gzip"],
         "cnf_raw_sha256": EXPECTED["cnf_raw"],
         "cut_bank_sha256": EXPECTED["cuts"],
@@ -208,8 +208,9 @@ def audit_proof(directory: Path, checker: Path | None, seconds: float) -> dict:
     result = {"status": "ARTIFACT_VERIFIED_NOT_REPLAYED", **raw, "gzip_sha256": EXPECTED["drat_gzip"]}
     if checker is None:
         return result
-    if not checker.is_file() or not os.access(checker, os.X_OK) or sha256(checker) != EXPECTED["drat_trim"]:
-        raise AssertionError("checker identity or executable bit mismatch")
+    if not checker.is_file() or not os.access(checker, os.X_OK):
+        raise AssertionError("checker is not executable")
+    checker_hash = sha256(checker)
     started = time.perf_counter()
     with tempfile.TemporaryDirectory(prefix="ramsey-r3-18-b0-union-check-") as name:
         temporary = Path(name)
@@ -230,7 +231,8 @@ def audit_proof(directory: Path, checker: Path | None, seconds: float) -> dict:
         raise AssertionError("DRAT replay failed")
     result.update({
         "status": "VERIFIED",
-        "checker_sha256": EXPECTED["drat_trim"],
+        "checker_sha256": checker_hash,
+        "matches_historical_binary_sha256": checker_hash == EXPECTED["drat_trim"],
         "exitcode": completed.returncode,
         "elapsed_seconds": time.perf_counter() - started,
         "stdout": completed.stdout,
@@ -254,14 +256,31 @@ def main() -> None:
     args = parser.parse_args()
     semantics = audit_semantics(args.artifact_dir)
     proof = audit_proof(args.artifact_dir, args.drat_trim, args.drat_seconds)
+    proof_replayed = proof["status"] == "VERIFIED"
+    current_status = (
+        "BRANCH0_SEMANTICS_AND_PROOF_VERIFIED"
+        if proof_replayed
+        else "BRANCH0_SEMANTICS_VERIFIED_PROOF_NOT_REQUESTED"
+    )
     result = {
-        "status": "BRANCH0_PROOF_VERIFIED" if proof["status"] == "VERIFIED" else "BRANCH0_ARTIFACT_AUDITED_NOT_REPLAYED",
+        "status": current_status,
+        "recorded_provenance": {
+            "all_three_exact_budget6_branches_proof_verified": True,
+            "fixed_seed_deletion_repair_radius_at_least_7": True,
+        },
+        "current_run": {
+            "status": current_status,
+            "semantics_status": "VERIFIED",
+            "proof_status": "VERIFIED" if proof_replayed else "NOT_REQUESTED",
+            "all_three_exact_budget6_branches_proof_verified": False,
+            "fixed_seed_deletion_repair_radius_at_least_7": False,
+        },
         "semantics": semantics,
         "proof": proof,
-        "all_three_exact_budget6_branches_proof_verified": True,
-        "fixed_seed_budget_at_most_6_excluded": True,
-        "fixed_seed_deletion_repair_radius_at_least_7": True,
-        "seven_deletion_repair_exists": False,
+        "all_three_exact_budget6_branches_proof_verified": False,
+        "fixed_seed_budget_at_most_6_excluded": False,
+        "fixed_seed_deletion_repair_radius_at_least_7": False,
+        "seven_deletion_repair_exists": None,
         "seven_deletion_repair_exists_is_established": False,
         "R_3_18_ge_101_established": False,
     }

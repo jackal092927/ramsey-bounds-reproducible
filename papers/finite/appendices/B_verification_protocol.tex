@@ -42,7 +42,13 @@ and \(8704\).
 
 Build \texttt{drat-trim} from source commit
 \sha{2e3b2dc0ecf938addbd779d42877b6ed69d9a985}.  Verify that the source tree is
-clean.  For each of the twelve compressed assets in
+clean.  The repository helper
+\begin{verbatim}
+bash scripts/build_drat_trim.sh /absolute/new/checker-directory
+\end{verbatim}
+performs this source checkout and records the resulting binary hash.  A fresh
+platform build need not reproduce the historical executable hash.  For each
+of the twelve compressed assets in
 \cref{tab:budget5-artifacts,tab:budget6-artifacts}, check compressed byte count
 and SHA-256, test gzip integrity, and decompress into a new temporary
 directory.  Then invoke
@@ -54,15 +60,13 @@ directory.  Then invoke
 and require both exit status zero and the terminal line \texttt{s VERIFIED}.
 Delete the temporary raw files only after recording the uncompressed hashes.
 
-For the exact-six package, the repository checkers offer integrated replay:
+For the complete package, the repository offers integrated semantic and proof
+replay:
 \begingroup\scriptsize
 \begin{verbatim}
-.venv/bin/python routes/finite/check_r3_18_budget6.py \
-  --drat-trim /path/to/drat-trim --drat-seconds 300
-.venv/bin/python routes/finite/check_r3_18_budget6_branch1.py \
-  --drat-trim /path/to/drat-trim --drat-seconds 300
-.venv/bin/python routes/finite/check_r3_18_budget6_branch0_union.py \
-  --drat-trim /path/to/drat-trim --drat-seconds 360
+.venv/bin/python reproduce.py finite-heavy \
+  --artifact-dir /path/to/release-assets \
+  --drat-trim /path/to/drat-trim
 \end{verbatim}
 \endgroup
 Time limits may need to be increased on slower hardware.  A timeout is

@@ -4,9 +4,10 @@
 \usepackage{lmodern}
 \usepackage{microtype}
 \usepackage{amsmath,amssymb,mathtools}
-\usepackage{array,booktabs}
+\usepackage{array,booktabs,seqsplit}
 \usepackage{longtable}
 \usepackage{enumitem}
+\usepackage{xurl}
 \usepackage{xcolor}
 \usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!65!black]{hyperref}
 \usepackage[capitalise,noabbrev]{cleveref}
@@ -26,18 +27,21 @@
 \newcommand{\cR}{\mathcal R}
 \newcommand{\cG}{\mathcal G}
 \newcommand{\wideU}{\widehat U}
+\newcommand{\sha}[1]{{\ttfamily\footnotesize\seqsplit{#1}}}
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \providecommand{\real}[1]{#1}
 
 \title[A retained-spine Ramsey bound]{A Computer-Assisted Retained-Spine Bound for Diagonal Ramsey Numbers}
-\author{Anonymous Author(s)}
+\author{Cheng Xin}
 \date{Draft of 12 August 2026}
 
 \begin{document}
 
 \begin{abstract}
-We give a source-relative computer-assisted proof of
+Conditional on the version-pinned Yang--Mao retained-spine and book
+interfaces stated explicitly below, we give a source-relative
+computer-assisted proof of
 \[
   R(k,k)\le (3.780685290)^{k+o(k)}.
 \]
@@ -54,8 +58,9 @@ arithmetic then yields
 \).
 A retained-spine max--min transfer and a second interval certificate give an
 exponent gain of \(3.4754\cdot10^{-6}\).  The certified unrounded base is below
-\(3.780685288379640114\).  Four independent numerical replays cover the
-continuous domains.  The result is asymptotic and does not provide an
+\(3.780685288379640114\).  Four separately structured numerical replays,
+with a common Arb containment dependency, cover the continuous domains.
+The result is asymptotic and does not provide an
 effective finite-\(k\) threshold or a global parameter optimum.
 \end{abstract}
 

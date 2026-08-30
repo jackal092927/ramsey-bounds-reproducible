@@ -2,11 +2,11 @@
 
 The exact outer tuple is
 \[
- \eta=0.02868896,qquad p=0.47130887,qquad
+ \eta=0.02868896,\qquad p=0.47130887,\qquad
  \delta=0.000053863,
 \]
 \[
- \lambda_0=13233,qquad \tau=0.00069386,qquad
+ \lambda_0=13233,\qquad \tau=0.00069386,\qquad
  \Delta=0.0000034754.
  \tag{5.1}
 \]
@@ -44,16 +44,90 @@ diagonal reservoir & \(6.0468\cdot10^{-6}\)\\
 \end{proposition}
 
 \begin{proof}
-Partition \([0,1]^2\) into the ordered triangles
-\(\sigma_R\le\sigma_B\) and \(\sigma_B\le\sigma_R\), then subdivide at
-the page truncation lines.  On each analytic piece, the signs of the partial
-derivatives follow from strict concavity of \(U\), reducing the maximum of
-each page term to the relevant axis or diagonal boundary.  The certificate
-checks both orientations and all boundary intersections with outward-rounded
-balls.  It separately verifies the scalar Yang--Mao degree and reservoir
-gates and the exact equality of the inner correlation constant.  The quoted
-margins are the minimum lower endpoints over the complete partition.  The
-machine-verifiable partition and endpoint formulas are listed in Appendix A.
+Write \(x=\sigma_R\), \(y=\sigma_B\), and by symmetry first assume
+\(0\le x\le y\le1\).  Put
+\[
+ A=U(1)-2c_\eta,\qquad E=U'(1)-c_\eta.
+\]
+The certificate proves \(0<A<E\).  At \(x=y=1\), one has
+\(U(1)-D(1,1)=A>\Delta\) because \(r_d=\Delta/A<1\), so the direct branch
+already applies.  At every other point of the ordered triangle,
+\(a=1-x\ge b=1-y\) has \(a>0\), and concavity at one gives
+\[
+ aU(b/a)\le aU(1)-(a-b)U'(1),
+\]
+and hence
+\[
+ U(1)-D(x,y)\ge xA+(y-x)E.                 \tag{5.3}
+\]
+Thus the direct branch applies outside the closed triangle
+\[
+ \mathcal W=\{0\le x\le y:xA+(y-x)E\le\Delta\}.
+\]
+Set
+\[
+ r_a=\Delta/E,\qquad r_d=\Delta/A,\qquad s=1-A/E.
+\]
+    The certified order
+    \(0<r_a<\tau<r_d<1\), \(r_d+\tau<1\), and \(0<s<1\) shows that
+\(\mathcal W\) has vertices
+\((0,0),(0,r_a),(r_d,r_d)\), with sloping side \(y=r_a+sx\).
+
+It remains to bound both possible page colours and the reservoir on
+\(\mathcal W\).  For the first page orientation put
+\[
+ z=\frac{1-\tau-x}{1-y},\qquad
+ P_R=c_\eta(x+y)+\tau q+(1-y)U(z).
+\]
+On the relevant piece its coordinate derivatives are
+\[
+ \partial_xP_R=c_\eta-U'(z)<0,qquad
+ \partial_yP_R=c_\eta-U(z)+zU'(z)>0.
+\]
+It therefore suffices to follow the sloping side.  Its derivative is
+\[
+ \mathcal B(z)=c_\eta-U'(z)
+ +s\{c_\eta-U(z)+zU'(z)\},
+\]
+where
+\(\mathcal B'(z)=(sz-1)U''(z)>0\).  Along the side, \(z\) decreases from
+\(z_a=(1-\tau)/(1-r_a)\); the 512-bit enclosure gives
+\(\mathcal B(z_a)<-3.6952685\cdot10^{-4}\).  Hence \(P_R\) is maximized
+at \((0,r_a)\), where
+\[
+ P_R(0,r_a)=c_\eta r_a+\tau q
+ +(1-r_a)U\!\left(\frac{1-\tau}{1-r_a}\right).
+ \tag{5.4}
+\]
+
+For the other page orientation, the negative \(y\)-derivative reduces the
+maximum to \(y=x\).  There it equals
+\[
+ P_B(x,x)=2c_\eta x+\tau q
+ +(1-x)U\!\left(1-\frac{\tau}{1-x}\right).
+\]
+With \(v=\tau/(1-x)\), its derivative is
+\[
+ \Gamma(v)=2c_\eta-U(1-v)-vU'(1-v),
+ \qquad \Gamma'(v)=vU''(1-v)<0.
+\]
+Thus the maximum occurs at \(x=0\); the enclosure gives
+\(\Gamma(\tau)<-1.8476200\cdot10^{-4}\) and
+\[
+ P_B(0,0)=\tau q+U(1-\tau).                 \tag{5.5}
+\]
+Finally, \(Q(x,y)=c_\eta(x+y)+2\tau\Xi\) is coordinatewise increasing, so
+its maximum on \(\mathcal W\) is
+\[
+ Q(r_d,r_d)=2c_\eta r_d+2\tau\Xi.          \tag{5.6}
+\]
+Subtracting (5.4)--(5.6) from \(U(1)-\Delta\) gives, respectively, the
+red-page, blue-page, and reservoir margins in the table.  The symmetric
+triangle \(y\le x\) exchanges the two colours and adds no new inequality.
+The same run verifies the scalar source gates, including
+\(\tau(1/2-\eta-p)>1.5056\cdot10^{-9}\), and the exact equality of the
+inner and outer correlation constants.  Exact parameters, interval outputs,
+and checker identities are recorded in \cref{app:upper-certificate}.
 \end{proof}
 
 \begin{proof}[Proof of \cref{thm:main-upper}]
@@ -63,9 +137,13 @@ By \cref{thm:transfer-general,prop:outer},
 \]
 A 512-bit Arb evaluation gives
 \[
- e^{U(1)-\Delta}<3.780685288380<3.780685290,
+\begin{aligned}
+ e^{U(1)-\Delta}
+ &<3.7806852883796401133524\\
+ &<3.780685288379640114<3.780685290,
+\end{aligned}
 \]
-with rounding margin greater than \(1.6203\cdot10^{-9}\).  This proves the
-claimed safe decimal and the stronger unrounded statement.
+where the first decimal is an outward-rounded upper endpoint.  Its distance
+to the safe nine-decimal value is greater than
+\(1.6203\cdot10^{-9}\).  This proves both printed claims.
 \end{proof}
-

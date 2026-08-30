@@ -1,0 +1,124 @@
+\documentclass[11pt,reqno]{amsart}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{array,booktabs,longtable,tabularx}
+\usepackage{enumitem}
+\usepackage{seqsplit}
+\usepackage{xurl}
+\usepackage{fvextra}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!65!black]{hyperref}
+\usepackage[capitalise,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Reproducible Ramsey Analysis Across Asymptotic and Finite Regimes},
+  pdfauthor={Cheng Xin},
+  pdfsubject={Conditional asymptotic Ramsey bounds and a proof-carrying finite barrier},
+  pdfkeywords={Ramsey numbers, interval arithmetic, Gaussian random graph, SAT, DRAT}}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Source interface}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{observation}[theorem]{Computational observation}
+
+\crefname{assumption}{source interface}{source interfaces}
+\Crefname{assumption}{Source interface}{Source interfaces}
+\crefname{observation}{computational observation}{computational observations}
+\Crefname{observation}{Computational observation}{Computational observations}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\wideU}{\widehat U}
+\newcommand{\whH}{\widehat H}
+\newcommand{\whHs}{\widehat H_*}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\sha}[1]{%
+  \ifmmode
+    \text{\ttfamily\footnotesize #1}%
+  \else
+    {\ttfamily\footnotesize\seqsplit{#1}}%
+  \fi}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\real}[1]{#1}
+\RecustomVerbatimEnvironment{verbatim}{Verbatim}{%
+  breaklines=true,breakanywhere=true,fontsize=\small}
+\setlength{\emergencystretch}{2em}
+
+\title[Three reproducible Ramsey results]{Reproducible Ramsey Analysis Across Asymptotic and Finite Regimes:\\
+Retained Spines, Gaussian Residuals, and Proof-Carrying Barriers}
+\author{Cheng Xin}
+\date{Draft of 30 August 2026}
+
+\begin{document}
+
+\begin{abstract}
+\input{sections/00_abstract}
+\end{abstract}
+
+\maketitle
+\subjclass[2020]{05D10, 05C35, 68V20}
+\keywords{Ramsey numbers, computer-assisted proof, interval arithmetic,
+Gaussian random graph, SAT, DRAT, reproducibility}
+\tableofcontents
+
+\input{sections/01_introduction}
+\input{sections/02_evidence_taxonomy}
+
+\part{A retained-spine diagonal upper bound}
+\input{sections/upper/01_introduction}
+\input{sections/upper/02_framework}
+\input{sections/upper/03_rate}
+\input{sections/upper/04_exact_diagonal}
+\input{sections/upper/05_transfer}
+\input{sections/upper/06_computation}
+\input{sections/upper/07_limitations}
+
+\part{Controlled Gaussian residuals for fixed-ratio lower bounds}
+\input{sections/lower/01_introduction}
+\input{sections/lower/02_setup}
+\input{sections/lower/03_rigidity}
+\input{sections/lower/04_residual}
+\input{sections/lower/05_ledger}
+\input{sections/lower/06_induction}
+\input{sections/lower/07_rate}
+\input{sections/lower/08_scope}
+
+\part{A proof-carrying finite Ramsey barrier}
+\input{sections/finite/01_introduction}
+\input{sections/finite/02_seed_and_statement}
+\input{sections/finite/03_reduction}
+\input{sections/finite/04_encoding}
+\input{sections/finite/05_certification}
+\input{sections/finite/06_exact_seven}
+\input{sections/finite/07_reproducibility}
+\input{sections/finite/08_scope}
+
+\input{sections/90_unified_reproducibility}
+\input{sections/91_conclusion}
+
+\appendix
+\input{appendices/upper/A_certificate_data}
+\input{appendices/upper/B_book_induction}
+\input{appendices/upper/C_stage6_record}
+\input{appendices/lower/A_full_source_proof}
+\input{appendices/lower/B_bridge_record}
+\input{appendices/finite/A_artifact_ledger}
+\input{appendices/finite/B_verification_protocol}
+\input{appendices/finite/C_exact_seven_record}
+
+\bibliographystyle{alpha}
+\bibliography{references}
+
+\end{document}
