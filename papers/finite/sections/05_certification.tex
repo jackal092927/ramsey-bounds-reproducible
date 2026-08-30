@@ -53,8 +53,9 @@ relaxations.  For every branch they independently:
 \item parse the frozen seed and regenerate the lexicographic pair-variable
   map;
 \item compare all \(161700\) triangle clauses in order;
-\item regenerate the PySAT equality counter and compare its variables and
-  clauses in order;
+\item regenerate the production PySAT counter and, in a separate checker that
+  does not import \texttt{CardEnc}, independently generate the
+  sequential-counter schema and compare its variables and clauses in order;
 \item check the branch unit and the exact clause partition;
 \item reconstruct every hitting clause as all \(153\) pair variables of one
   \(18\)-vertex mask;
@@ -74,17 +75,22 @@ The claim is proof-carrying, not formally verified in a proof assistant.  Its
 earliest machine dependencies are:
 
 \begin{itemize}
-\item the bitset independent-set verifier used for the seed facts;
-\item the PySAT implementation of the standard sequential counter;
+\item the bitset independent-set verifier used for the descriptive seed fact
+  \(\alpha(H)<18\), which is not a premise of the deletion-barrier implication;
 \item the \texttt{drat-trim} proof kernel, together with its compiler and
   execution hardware; and
-\item the scripts that map matrices and masks to DIMACS.
+\item the independently inspectable scripts that map matrices, sequential
+  schemas, and masks to DIMACS.
 \end{itemize}
 
 The audit narrows this boundary through independent matrix parsing, exhaustive
 triangle enumeration, small-instance cross-checks of the clique routine,
-counter truth-table tests, complete clause reconstruction, content hashes,
-gzip integrity tests, and proof replay with a freshly compiled checker.  A
-future LRAT conversion and formally verified LRAT checker could reduce the
-trusted kernel further, but is not required for the conventional
+exhaustive small-instance projection tests for the independent counter schema,
+constructive auxiliary assignments, complete clause reconstruction, content
+hashes, gzip integrity tests, and proof replay with a freshly compiled checker.
+PySAT remains production provenance, but
+\cref{lem:seqcounter-projection} and the \texttt{CardEnc}-free comparison mean
+that its counter semantics is no longer assumed merely because PySAT emitted
+the bytes.  A future LRAT conversion and formally verified LRAT checker could
+reduce the trusted kernel further, but is not required for the conventional
 proof-carrying SAT standard used here.

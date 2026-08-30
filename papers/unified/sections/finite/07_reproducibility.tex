@@ -14,7 +14,8 @@ separately; they are not premises of the graph theorem.
 
 \paragraph{Tier 1: source and semantics.}
 Python \(3.11.15\) and the locked environment reproduce graph verification,
-unit tests, and exact-seven frozen-state checks.  From the repository root,
+unit tests, the PySAT-independent sequential-counter schemas and their frozen
+block digests, and exact-seven frozen-state checks.  From the repository root,
 the lightweight entry point is
 \begingroup\scriptsize
 \begin{verbatim}
@@ -52,7 +53,8 @@ integrated command
   --drat-trim /absolute/path/to/drat-trim
 \end{verbatim}
 materializes a temporary overlay containing tracked semantic metadata and the
-twelve release payloads.  It reconstructs all six formulas, replays all six
+twelve release payloads.  It compares the independent sequential schemas with
+all six actual counter blocks, reconstructs all six formulas, replays all six
 proofs, and audits the exact-seven state.  A proof is accepted only when the
 checker exits zero and prints an exact \texttt{s VERIFIED} status line.
 

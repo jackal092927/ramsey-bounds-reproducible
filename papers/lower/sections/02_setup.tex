@@ -73,7 +73,7 @@ Put
  m_0&=m(c)=\frac ap,&m'_0&=m'(c),\\
  \alpha_R&=10\sqrt{\log(10/p)},&
  \omega_0&=\frac{\alpha_R^2}{D}
- =\frac{100\log(10/p)}D .
+ =\frac{100\log(10/p)}D,
 \end{aligned}
 \tag{2.7}
 \]
@@ -101,7 +101,7 @@ Fix one absolute source constant \(K\) that dominates the red
 \(O(\sqrt{\log(1/p)}/D)\) errors in the pinned HMS induction, and put
 \[
  \vartheta_C=1-K\frac{\sqrt{\log(1/p)}}D>0,
-\tag{2.10}
+\tag{2.10}\label{eq:source-K}
 \]
 \[
  B_R(C)=-\log\frac p{p_C}
@@ -110,6 +110,9 @@ Fix one absolute source constant \(K\) that dominates the red
  -\frac{4a^3C}{3(1-p)^3D}.
 \tag{2.11}
 \]
+The dependence of \(\vartheta_C\), \(B_R(C)\), and the eventual threshold
+\(C_0\) on this once-fixed \(K\) is suppressed in the notation; equivalently
+one may write \(\vartheta_{C,K}\), \(B_{R,K}(C)\), and \(C_0(K)\).
 The literal red target envelope is
 \[
  \mathcal H_C(r)=p^{\binom r2}
@@ -123,7 +126,7 @@ these symbols do not denote the conclusion of the present paper.
 
 \subsection{The pre-existing exact-CGF deficit}
 
-For \(1\le k\le\ell\), set
+Set \(t_0=m_0\sqrt d\).  For \(1\le k\le\ell\), set
 \[
  P^0_{k,d}=\frac{\sqrt d}{\sqrt d-4m_0k},
 \tag{2.13}
@@ -238,7 +241,7 @@ Thus \(h_{ij}\) is \(\mathcal F_{i-1}\)-measurable.  Let \(E_{ij}\) be the
 blue-edge event and set
 \[
  I_s=\bigcap_{s<i<j\le r}\overline E_{ij},\qquad
- C_s=\bigcap_{s<i<j\le r}E_{ij}.
+ \mathcal C_s=\bigcap_{s<i<j\le r}E_{ij}.
 \tag{2.26}
 \]
 
@@ -257,8 +260,8 @@ the probability notation
 \[
  P^*_{R,r}=\mathbb P(I_0\cap B^R_r),\quad
  P_{R,r}=\mathbb P(I_0),\quad
- P^*_{B,r}=\mathbb P(C_0\cap B^B_r),\quad
- P_{B,r}=\mathbb P(C_0).
+ P^*_{B,r}=\mathbb P(\mathcal C_0\cap B^B_r),\quad
+ P_{B,r}=\mathbb P(\mathcal C_0).
 \tag{2.28}
 \]
 Empty intersections have probability one.
@@ -352,10 +355,27 @@ uniform-quadratic factor obeys
  \le\frac{4t_0k}{d}.
 \tag{2.36}
 \]
-The positive-direction CGF is exactly (2.4).  In the source pre-Cauchy
-allocation, its centered-linear proxy is precisely
-\(\sum_{j>i}(u_j^0)^2\), with \(u_j^0\) as in (5.9); replacing that proxy
-by the exact CGF produces the same-history deficit (5.16).
+The positive-direction CGF is exactly (2.4).  On this history define the
+source baseline tilt
+\[
+ u_j^0=\frac{t_0}{d}\sum_{\substack{q>i\\q\ne j}}m(b_{iq}),
+ \qquad j>i.
+\]
+This is the quantity recalled in (5.9).  In the source pre-Cauchy allocation,
+the centered-linear proxy is precisely \(\sum_{j>i}(u_j^0)^2\); replacing
+that proxy by the exact CGF produces the same-history deficit (5.16).
+For the uniform array \(T^0_{jq}=t_0\), the version-pinned source scalar
+allocation and this exact-CGF replacement give, on every history in
+\(\mathfrak H^R_{r,i-1}\),
+\[
+ \mathcal K_i^{T^0}\le
+ \frac{\mathcal H_C(k+1)}{\mathcal H_C(k)}
+ e^{-\mathsf d_{k,w,d}}
+ \qquad(k=r-i).
+\tag{2.36a}\label{eq:scalar-baseline}
+\]
+This scalar inequality, rather than a final Ramsey bound, is the imported
+baseline.  No nonuniform one-step estimate is imported.
 \item For every target \(r\le\ell\), every deterministic nonnegative
 triangular \(T\) fixed before exposure, and every deterministic real sequence
 \(\lambda_1,\ldots,\lambda_{r-1}\), the following weighted reverse-induction
@@ -377,6 +397,10 @@ then, for every \(0\le s\le r\),
 \]
 On \((\mathfrak H^R_{r,s})^c\), the left side of (2.38) is zero, so the same
 inequality holds almost surely on the entire conditional state space.
+Only the implication (2.37)\(\Rightarrow\)(2.38) is the additional hypothesis
+in (S3).  The following source identity and deterministic projection algebra
+record what that implication must preserve; they neither add a second
+hypothesis nor prove (S3).
 The source law of total probability is
 \[
  \mathbb P(I_{i-1}\cap B^R_r\mid\mathcal F_{i-1})
@@ -400,28 +424,16 @@ and the exact projection identities are
 \tag{2.40}
 \]
 Equations (2.33), (2.39), and (2.40) record the algebra that the weighted
-extension in (S3) is required to preserve; they do not independently discharge
-that extra hypothesis.  The rule in (S3) propagates (2.38) by reverse induction
-from \(s=r\).  For the uniform array \(T^0_{jq}=t_0\), the version-pinned
-source scalar allocation, together with the exact-CGF replacement in (S2),
-is the explicit baseline statement on every history in
-\(\mathfrak H^R_{r,i-1}\):
-\[
- \mathcal K_i^{T^0}\le
- \frac{\mathcal H_C(k+1)}{\mathcal H_C(k)}
- e^{-\mathsf d_{k,w,d}}
- \qquad(k=r-i).
-\tag{2.41}
-\]
-Equation (2.41), rather than a final Ramsey bound, is the scalar source input.
-No nonuniform one-step estimate is imported.  Sections
-\ref{sec:residual}--\ref{sec:induction} compare the nonuniform kernel with
-(2.41) and prove (2.37) for the array used here.
+extension in (S3) is required to preserve.  The rule propagates (2.38) by
+reverse induction from \(s=r\).
+Sections~\ref{sec:residual}--\ref{sec:induction} compare the nonuniform kernel with
+the scalar baseline \eqref{eq:scalar-baseline} and prove (2.37) for the array
+used here.
 \item If red-perfect extraction deletes \(u\) vertices from a target of size
 \(\ell\), then, for each specified retained set \(I\) of size \(\ell-u\),
 \[
  p_I\le P^*_{R,\ell-u}\left(\frac p{10}\right)^{10\ell u},
-\tag{2.42}
+\tag{2.41}
 \]
 for every \(0\le u\le\ell\), with
 \(P^*_{R,0}=\mathcal H_C(0)=1\).  The probability \(P^*_{R,\ell-u}\)
@@ -435,13 +447,14 @@ perfect-sequence extraction give
  \exp\left[
  \frac{4a^3}{(1-p)^3\sqrt d}\binom{q_\ell}{3}
  +\epsilon_{C,\ell}\ell^2\right].
-\tag{2.43}
+\tag{2.42}
 \]
 \end{enumerate}
 No Ramsey-rate conclusion, no red--blue comparison, and no new residual term
-is included in (S1), (S2), (S4), or (S5).  The only additional source-side
-hypothesis is the precisely delimited weighted rule (S3).
+is included in (S1), (S2), (S4), or (S5).  The scalar source baseline is
+\eqref{eq:scalar-baseline}; the only additional source-side hypothesis is the
+precisely delimited weighted rule (S3).
 \end{assumption}
 
-The constant \(K\) in (2.10) is not effective in the pinned source.
+The constant \(K\) in \eqref{eq:source-K} is not effective in the pinned source.
 Consequently all sufficiently-large-\(C\) statements below are existential.

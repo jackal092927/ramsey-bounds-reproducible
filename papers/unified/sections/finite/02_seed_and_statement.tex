@@ -50,6 +50,17 @@ all decisions and returned witnesses agreed.  Reproduction commands are
 given in \cref{fin:sec:repro} and \cref{fin:app:protocol}.
 \end{proof}
 
+\paragraph{Evidence grade and logical role.}
+The assertion \(\alpha(H)<18\) is an exact deterministic trusted-code result:
+the frozen matrix and inspectable bitset search reproduce it, and exhaustive
+small-instance comparisons test the pruning invariant.  It is not backed by a
+DRAT/LRAT trace or a proof-assistant certificate.  This assertion describes
+why \(H\) is a near miss, but it is not a logical premise of
+\cref{fin:thm:main}.  The deletion-barrier proof uses the fixed edge set and seed
+triangle of \(H\), while the independence-number hypothesis is imposed on the
+putative final graph \(F\).  Thus the implication proved below does not infer
+anything from \(\alpha(H)<18\).
+
 The graph \(G_0\) reproduces the already tabulated lower bound
 \(R(3,18)\ge100\).  The graph \(H\), by contrast, contains a triangle and
 therefore does not certify \(R(3,18)\ge101\).

@@ -37,12 +37,13 @@ threshold nor a global optimum or priority claim.
 
 \subsection{Fixed-ratio lower bound}
 
-Part~II assumes the version-pinned items (S1), (S2), (S4), and (S5) derived
+Part~II assumes the version-pinned items (S1), (S2), (S4), and (S5) imported
 from the Gaussian construction of Hunter, Milojevi\'c and Sudakov and the
 exact cumulant input of Lin and Niu \cite{HMS2025,LinNiu2026}, together with
 the separately stated weighted-extension hypothesis (S3).  Item (S3) is not
-attributed as a theorem stated in either source.  Under those five explicit
-items, there exists $C_0>1$ such that, for each fixed $C\ge C_0$,
+attributed as a theorem stated in either source.  After fixing the absolute
+source constant $K$, those five explicit items give an existential threshold
+$C_0=C_0(K)>1$ such that, for each fixed $C\ge C_0$,
 \[
  \liminf_{\ell\to\infty}\frac1\ell
  \log R(\ell,\lfloor C\ell\rfloor)
@@ -52,9 +53,10 @@ where
 \[
  \widehat H_*(C)=\frac{1+o_{C\to\infty}(1)}{64\log C}>0.
 \]
-The order of limits is part of the statement: $C$ is fixed before
-$\ell\to\infty$, and only afterwards is the leading behaviour studied as
-$C\to\infty$.  The threshold $C_0$ is non-effective, and the theorem does
+The order of limits is part of the statement and proof: after fixing $K$ and
+$C$, one takes $\ell\to\infty$, then sends the auxiliary cutoff
+$w\downarrow\omega_0$, and only afterwards studies the leading behaviour as
+$C\to\infty$.  The threshold $C_0(K)$ is non-effective, and the theorem does
 not assert a strict comparison with every published final constant under a
 different normalization.
 

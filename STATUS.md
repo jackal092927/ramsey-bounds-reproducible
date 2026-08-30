@@ -12,7 +12,7 @@ created; historical labels in those files do not override this status.
 PUBLIC SOURCE REPOSITORY CREATED
 ONE CANONICAL UNIFIED MANUSCRIPT
 RELEASE CANDIDATE NOT YET TAGGED OR PUBLISHED
-CHATGPT PRO REVIEW TRANSMITTED; FINAL RESPONSE AND DISPOSITION PENDING
+CHATGPT PRO REVIEW COMPLETED; RECOVERABLE OBJECTIONS DISPOSITIONED
 FINAL-TAG CLEAN-CLONE AND RELEASE-ASSET VERIFICATION PENDING
 ```
 
@@ -48,7 +48,8 @@ Current scoped statement:
 SOURCE-RELATIVE FIXED-LARGE-C RESULT
 CONDITIONAL ON (S1)--(S5), INCLUDING THE ADDITIONAL HYPOTHESIS (S3)
 Hhat_*(C) = (1+o_{C->infinity}(1))/(64 log C) > 0
-fixed C first, then ell -> infinity; threshold in C is non-effective
+fix K; fixed C,w first; ell -> infinity; w down to omega_0; then C -> infinity
+C_0(K) is non-effective
 ```
 
 The arithmetic checks reproduce the residual identities and asymptotic
@@ -100,8 +101,9 @@ local to the pinned 100-vertex seed and edit metric. It does not construct a
   the scoped theorem statements are unchanged.
 - Final release-implementation audit: **0 blocker, 0 major, 0 minor after
   repair**; live publication and post-release replay remain pending.
-- ChatGPT Pro second-opinion review: **transmitted on 2026-08-30 and still in
-  progress**; no final response has yet been archived or dispositioned.
+- ChatGPT Pro second-opinion review: **completed and dispositioned on
+  2026-08-30**; the uploaded artifact was a pre-final candidate, and the
+  report is an AI-assisted author-side check rather than human peer review.
 
 Review files:
 
@@ -115,12 +117,14 @@ Review files:
 - [`reviews/FRESH_INDEPENDENT_MATH_REVIEW_2026-08-30.md`](reviews/FRESH_INDEPENDENT_MATH_REVIEW_2026-08-30.md)
 - [`reviews/FINAL_TARGETED_ADVERSARIAL_REVIEW_2026-08-30.md`](reviews/FINAL_TARGETED_ADVERSARIAL_REVIEW_2026-08-30.md)
 - [`reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md`](reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md)
+- [`reviews/CHATGPT_PRO_REVIEW.md`](reviews/CHATGPT_PRO_REVIEW.md)
 - [`reviews/REVIEW_DISPOSITION.md`](reviews/REVIEW_DISPOSITION.md)
 
-The current release-candidate PDF has 79 pages and SHA-256
-`bad787b9a37430d39d17d789c9dddc39db212db2db0954fa668dd43c96993804`.
-This is a candidate hash until the external review is dispositioned and the
-final two clean builds agree.
+The current release-candidate PDF has 83 pages and SHA-256
+`6ff124cc1ae5f1504510c7a557cff1fe964c4ec24889e9e050294b56c9553885`.
+This is the recorded local post-review hash: two clean builds under the pinned
+toolchain produced byte-identical PDFs. It is not a published-Release digest
+until the separate immutable-release procedure succeeds.
 Its final log has no overfull box, undefined or multiply defined reference,
 LaTeX warning, error, or fatal diagnostic; representative pages were also
 inspected visually.
@@ -147,11 +151,10 @@ peer-reviewed publication.
 
 ## Gate to change this status
 
-The local mathematical, implementation, replay, compilation, and visual gates
-are complete. The package can move to public-release status only after:
+The local mathematical, implementation, review, replay, compilation, and
+visual gates are complete. The package can move to public-release status only
+after:
 
-1. the external ChatGPT Pro second-opinion review is completed and every
-   concrete objection is repaired or dispositioned;
-2. the final tag and exact twelve-asset immutable Release are published; and
-3. the advertised workflow is verified from a credential-free fresh clone
+1. the final tag and exact twelve-asset immutable Release are published; and
+2. the advertised workflow is verified from a credential-free fresh clone
    and public asset download.

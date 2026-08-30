@@ -96,7 +96,7 @@
     "budget_6_branch_0_universal_I18_cuts": 251771,
     "budget_6_branch_0_drat_verified": true,
     "budget_6_branch_1_drat_verified": true,
-    "budget_6_fixed_seed_radius_7_established": true,
+    "budget_6_fixed_seed_radius_lower_bound_7_established": true,
     "budget_7_repair_exists_established": false,
     "global_ramsey_bound_improvement": false
   },

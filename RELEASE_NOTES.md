@@ -1,4 +1,4 @@
-# Evidence release `evidence-2026-08-30`
+# Draft evidence release notes for `evidence-2026-08-30`
 
 **Publication condition.** This file is the source for the GitHub Release
 body. Statements below about “the release” become current-state assertions
@@ -6,17 +6,20 @@ only after GitHub reports this tag as published, non-prerelease, and immutable
 with the exact manifest asset set. A source checkout containing this file is
 not by itself evidence that publication occurred.
 
-This immutable evidence release accompanies one unified Ramsey-theory
-manuscript. It does not represent three separate papers.
+When published and verified, this immutable evidence Release will accompany
+one unified Ramsey-theory manuscript. It will not represent three separate
+papers.
 
 ## Scoped claims
 
 - **Diagonal upper bound:** the conditional, source-relative asymptotic
   statement `R(k,k) <= (3.780685290)^(k+o(k))`, with the longer certified upper
   endpoint documented in the paper.
-- **Fixed-ratio lower addition:** the source-relative fixed-large-`C`
-  statement conditional on (S1)--(S5), with (S3) explicitly an additional
-  weighted-extension assumption and the order of limits fixed.
+- **Fixed-ratio lower addition:** after fixing the source constant `K`, the
+  source-relative fixed-large-`C` statement conditional on (S1)--(S5), with
+  (S3) explicitly an additional weighted-extension assumption. The order is:
+  fixed `C` and fixed `w > omega_0`, then `ell -> infinity`, then
+  `w -> omega_0` from above, and only afterward `C -> infinity`.
 - **Finite barrier:** a proof-carrying one-sided deletion repair radius at
   least seven for one labelled 100-vertex seed. Exact seven remains `UNKNOWN`,
   and no implication `R(3,18) >= 101` is made.
@@ -26,7 +29,7 @@ paper, and `reviews/REVIEW_DISPOSITION.md`.
 
 ## Release assets
 
-The release contains exactly the twelve compressed CNF/DRAT files listed in
+The published Release must contain exactly the twelve compressed CNF/DRAT files listed in
 `artifacts/MANIFEST.tsv`, totalling 1,342,246,254 bytes. The manifest fixes each
 asset's name, compressed byte count, and SHA-256 digest. Ordinary source clones
 remain small because these proof traces are Release assets rather than Git
@@ -39,7 +42,7 @@ instances, and replays all six DRAT refutations.
 
 ## Reproduction
 
-From a clean checkout of this tag:
+From a clean checkout of the eventual tag:
 
 ```bash
 bash scripts/bootstrap.sh
@@ -59,7 +62,7 @@ bash scripts/build_drat_trim.sh /absolute/path/to/new-checker-directory
   --drat-trim /absolute/path/to/new-checker-directory/drat-trim
 ```
 
-The download path uses only public GitHub endpoints and requires no GitHub
+The planned download path uses only public GitHub endpoints and requires no GitHub
 account or token. A checker executable hash is current-run provenance; the
 portable acceptance condition is the pinned checker source revision plus a
 successful replay, not a cross-platform binary hash.

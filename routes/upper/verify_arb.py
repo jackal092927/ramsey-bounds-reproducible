@@ -17,6 +17,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+from decimal import Decimal, InvalidOperation
 from pathlib import Path
 from typing import Iterable
 
@@ -29,6 +30,109 @@ ZERO = arb(0)
 ONE = arb(1)
 HALF = arb("0.5")
 MU_TAIL = arb("1e-20")
+
+CERTIFICATE_FIELDS = frozenset(
+    {
+        "schema",
+        "prior_coefficients",
+        "target_coefficients",
+        "lambda_split",
+        "small_witness",
+        "region_buffer",
+        "predicted_worst_slack",
+        "predicted_worst_lambda",
+        "construction_note",
+        "segments",
+    }
+)
+SEGMENT_FIELDS = frozenset({"lo", "hi", "M", "Y"})
+
+
+def _unique_object(pairs: list[tuple[str, object]]) -> dict[str, object]:
+    """Decode one JSON object while rejecting duplicate keys."""
+    result: dict[str, object] = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError(f"duplicate JSON key {key!r}")
+        result[key] = value
+    return result
+
+
+def _reject_json_constant(value: str) -> object:
+    """Reject the non-standard NaN/Infinity tokens accepted by json."""
+    raise ValueError(f"non-finite JSON constant {value!r}")
+
+
+def _require_decimal_string(value: object, where: str) -> Decimal:
+    if type(value) is not str:
+        raise AssertionError(f"{where}: numeric data must be an exact string")
+    if value != value.strip():
+        raise AssertionError(f"{where}: surrounding whitespace is not allowed")
+    try:
+        parsed = Decimal(value)
+    except InvalidOperation as exc:
+        raise AssertionError(f"{where}: invalid decimal string {value!r}") from exc
+    if not parsed.is_finite():
+        raise AssertionError(f"{where}: decimal must be finite")
+    return parsed
+
+
+def load_certificate(path: Path) -> dict:
+    """Load the v1 certificate schema without permissive JSON coercions."""
+    try:
+        payload = json.loads(
+            path.read_text(encoding="utf-8"),
+            object_pairs_hook=_unique_object,
+            parse_constant=_reject_json_constant,
+        )
+    except (json.JSONDecodeError, ValueError) as exc:
+        raise AssertionError(f"{path}: invalid certificate JSON: {exc}") from exc
+
+    if type(payload) is not dict:
+        raise AssertionError(f"{path}: certificate root must be an object")
+    if set(payload) != CERTIFICATE_FIELDS:
+        missing = sorted(CERTIFICATE_FIELDS - set(payload))
+        unknown = sorted(set(payload) - CERTIFICATE_FIELDS)
+        raise AssertionError(
+            f"{path}: certificate fields mismatch; missing={missing}, unknown={unknown}"
+        )
+    if payload["schema"] != "corrected-two-sided-ramsey-v1":
+        raise AssertionError(f"{path}: unexpected certificate schema")
+    if type(payload["small_witness"]) is not str:
+        raise AssertionError(f"{path}: small_witness must be a string")
+    if type(payload["construction_note"]) is not str:
+        raise AssertionError(f"{path}: construction_note must be a string")
+
+    for field in (
+        "lambda_split",
+        "region_buffer",
+        "predicted_worst_slack",
+        "predicted_worst_lambda",
+    ):
+        _require_decimal_string(payload[field], f"{path}:{field}")
+
+    for field in ("prior_coefficients", "target_coefficients"):
+        values = payload[field]
+        if type(values) is not list or not values:
+            raise AssertionError(f"{path}:{field} must be a nonempty list")
+        for index, value in enumerate(values):
+            _require_decimal_string(value, f"{path}:{field}[{index}]")
+
+    segments = payload["segments"]
+    if type(segments) is not list or not segments:
+        raise AssertionError(f"{path}: segments must be a nonempty list")
+    for index, segment in enumerate(segments):
+        if type(segment) is not dict or set(segment) != SEGMENT_FIELDS:
+            keys = sorted(segment) if type(segment) is dict else type(segment).__name__
+            raise AssertionError(
+                f"{path}:segments[{index}] fields must be "
+                f"{sorted(SEGMENT_FIELDS)}; found {keys}"
+            )
+        for field in SEGMENT_FIELDS:
+            _require_decimal_string(
+                segment[field], f"{path}:segments[{index}].{field}"
+            )
+    return payload
 
 
 def ball_interval(lo: arb, hi: arb) -> arb:
@@ -479,9 +583,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("certificate", type=Path)
     args = parser.parse_args()
-    payload = json.loads(args.certificate.read_text(encoding="utf-8"))
-    if payload.get("schema") != "corrected-two-sided-ramsey-v1":
-        raise AssertionError("unexpected certificate schema")
+    payload = load_certificate(args.certificate)
 
     prior = [parse(item) for item in payload["prior_coefficients"]]
     target = [parse(item) for item in payload["target_coefficients"]]

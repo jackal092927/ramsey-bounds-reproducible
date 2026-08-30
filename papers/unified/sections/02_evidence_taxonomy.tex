@@ -7,9 +7,10 @@ an evidence type to every principal statement instead of using
 \begin{definition}[Evidence types]
 The manuscript uses the following five categories.
 \begin{enumerate}[label=(\roman*)]
-\item A \emph{source interface} is a version-pinned theorem statement imported
-  from an external or frozen local source.  Its proof is outside the current
-  logical kernel unless reproduced in an appendix.
+\item A \emph{source interface} is either a version-pinned statement imported
+  from an external or frozen local source or a separately identified extra
+  hypothesis.  Its justification is outside the current logical kernel unless
+  reproduced in an appendix.
 \item An \emph{analytic theorem} follows from written mathematical arguments
   once its named source interfaces are granted.
 \item An \emph{interval-certified theorem} additionally depends on
@@ -49,9 +50,10 @@ threshold, global optimum, or world-best claim. \\
 L0--L3 & Exact-merge rigidity and the controlled-residual addition
 $\widehat H_*(C)=(1+o(1))/(64\log C)$. & Written argument conditional on
 pinned items (S1), (S2), (S4), (S5), plus the additional weighted-extension
-hypothesis (S3); arithmetic replay is a witness, not the induction. & Item
-(S3) is not attributed as an HMS/Lin--Niu theorem.  Fix sufficiently large
-$C$, then take $\ell\to\infty$;
+hypothesis (S3); arithmetic replay checks formulas only and is not the
+induction. & Item (S3) is not attributed as an HMS/Lin--Niu theorem.  Fix the
+source constant $K$ and sufficiently large $C$, then take
+$\ell\to\infty$, $w\downarrow\omega_0$, and only afterwards $C\to\infty$;
 $1/64$ is a cap only in the specified scalar residual class. \\
 F0--F1 & The fixed seed has the stated graph properties and deletion repair
 radius at least seven. & Direct bitset checks, branch completeness, CNF

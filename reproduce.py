@@ -42,6 +42,7 @@ def run(command: list[str], *, cwd: Path = ROOT, timeout: float | None = None) -
 
 def quick() -> None:
     run([sys.executable, "scripts/verify_repository.py"])
+    run([sys.executable, "scripts/test_materialize_unified_paper.py"])
     run(["bash", "scripts/reproduce_upper.sh"])
     run([sys.executable, "routes/lower/history_weight_optimization_next_check.py"])
     run(["bash", "scripts/reproduce_finite_light.sh"])
@@ -146,7 +147,7 @@ def finite_heavy(directory: Path, drat_trim: Path | None) -> None:
     checker_hash = sha256(drat_trim)
     print(f"DRAT_TRIM_EXECUTABLE_SHA256 {checker_hash}")
 
-    auditors = [
+    drat_auditors = [
         "check_r3_18_extension_repair.py",
         "check_r3_18_budget6_branch0_union.py",
         "check_r3_18_budget6_branch1.py",
@@ -155,7 +156,18 @@ def finite_heavy(directory: Path, drat_trim: Path | None) -> None:
     with tempfile.TemporaryDirectory(prefix="ramsey-finite-heavy-") as tmp:
         overlay = Path(tmp)
         build_finite_overlay(assets, overlay)
-        for auditor in auditors:
+        # The independent counter-schema audit reads the authenticated CNFs
+        # but deliberately has no dependency on the DRAT checker.  Keep its
+        # command-line contract separate from the proof-replay auditors.
+        run(
+            [
+                sys.executable,
+                str(FINITE / "check_r3_18_seqcounter.py"),
+                "--artifact-dir",
+                str(overlay),
+            ]
+        )
+        for auditor in drat_auditors:
             run(
                 [
                     sys.executable,
@@ -189,6 +201,10 @@ def finite_heavy(directory: Path, drat_trim: Path | None) -> None:
 
 
 def main() -> None:
+    if not __debug__:
+        raise SystemExit(
+            "refusing optimized Python: proof-critical assertions must remain enabled"
+        )
     parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers(dest="tier", required=True)
     subparsers.add_parser("quick")

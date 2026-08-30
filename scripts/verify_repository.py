@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import hashlib
 import importlib.metadata
+import re
 import sys
 from pathlib import Path
 
@@ -65,6 +66,33 @@ def main() -> None:
         actual = sha256(path)
         if actual != expected:
             failures.append(f"hash mismatch {relative}: {actual} != {expected}")
+
+    release_texts = [
+        ROOT / name
+        for name in (
+            "README.md",
+            "STATUS.md",
+            "PAPER_PLAN.md",
+            "NARRATIVE_REPORT.md",
+            "RELEASE_NOTES.md",
+            "CITATION.cff",
+            "reviews/CHATGPT_PRO_REVIEW.md",
+            "reviews/REVIEW_DISPOSITION.md",
+        )
+    ]
+    release_texts.extend(sorted((ROOT / "papers").rglob("*.tex")))
+    for path in release_texts:
+        text = path.read_text(encoding="utf-8")
+        controls = sorted(
+            {ord(char) for char in text if ord(char) < 32 and char not in "\t\n"}
+        )
+        if controls:
+            relative = path.relative_to(ROOT)
+            failures.append(f"ASCII control bytes in {relative}: {controls}")
+        for match in re.finditer(r"(?<!\\)\bqquad\b", text):
+            line = text.count("\n", 0, match.start()) + 1
+            relative = path.relative_to(ROOT)
+            failures.append(f"bare qquad token in {relative}:{line}")
 
     if failures:
         raise SystemExit("\n".join(failures))

@@ -22,7 +22,7 @@ For \(u\ge0\), define the cubic filters
 \end{align}
 Then \(E(u^3)=P(u)\) and \(E(-u^3)=N(u)\).  Put
 \[
- \sigma_0=10^{-8},\qquad T=2+2\sigma_0,qquad
+ \sigma_0=10^{-8},\qquad T=2+2\sigma_0,\qquad
  \sigma_*=\frac{1+2\sigma_0}{2}=\frac{50000001}{100000000}.
  \tag{4.3}
 \]
@@ -47,7 +47,7 @@ covering \([u_0,2.9]\).
 
 For \(u\ge2.9\), use
 \[
- P(u)\ge\frac{e^u-2e^{-u/2}}3,qquad
+ P(u)\ge\frac{e^u-2e^{-u/2}}3,\qquad
  |N(u)|\le\frac{2e^{u/2}+e^{-u}}3.
 \]
 After clearing the positive denominator, it suffices to prove positivity of
@@ -55,7 +55,11 @@ After clearing the positive denominator, it suffices to prove positivity of
  B_T(u)=e^{2u}-4Te^u-4e^{u/2}-4Te^{-u/2}+4e^{-u}-Te^{-2u}.
 \]
 At \(u=2.9\), interval arithmetic proves
-\(aB_T-9(T-1)>0\).  Moreover
+\(aB_T-9(T-1)>0\) and the separate base gate
+\[
+ D(2.9)>506.45>0.
+\]
+Moreover
 \[
  B_T'(u)\ge D(u):=2e^u(e^u-2T)-2e^{u/2}-4e^{-u},
 \]
@@ -67,7 +71,9 @@ Indeed, for \(u\ge2.9\) one has \(e^u-T>1\), and therefore
 \[
 D'(u)>4e^u-e^{u/2}>0.
 \]
-Hence \(B_T\), and therefore \(R-T\), remain positive.
+Thus \(D(u)>0\) and then \(B_T'(u)>0\) throughout \([2.9,\infty)\).
+Together with the endpoint gate, this proves that \(B_T\), and therefore
+\(R-T\), remain positive.
 \end{proof}
 
 \begin{lemma}[Separator]\label{lem:separator}

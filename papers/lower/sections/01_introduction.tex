@@ -35,7 +35,8 @@ stated in \cref{ass:hms}.  The one-step nonuniform estimate, first-moment
 conversion, and red--blue comparison are proved locally.
 
 \begin{theorem}[Source-relative fixed-ratio bound]\label{thm:main-lower}
-Under \cref{ass:hms}, there exists \(C_0>1\) such that, for each fixed
+Fix the absolute source constant \(K\) used in \eqref{eq:source-K}.  Under
+\cref{ass:hms}, there exists \(C_0=C_0(K)>1\) such that, for each fixed
 \(C\ge C_0\),
 \[
 \liminf_{\ell\to\infty}\frac1\ell
@@ -52,8 +53,9 @@ where \(\widehat H_*(C)>0\) and
 The public coarsening \(B_R(C)/2\ge1/20\) may be substituted in (1.1).
 \end{theorem}
 
-The quantifiers are important: \(C\) is fixed before \(\ell\to\infty\), and
-the proof does not give a numerical \(C_0\).  The source contains unspecified
+The quantifiers are important: \(K\) is fixed first, then \(C\) is fixed
+before \(\ell\to\infty\), and the proof does not give a numerical \(C_0(K)\).
+The source contains unspecified
 \(O(\cdot)\) and \(o(\cdot)\) constants, so an effective threshold cannot be
 extracted from the pinned text alone.
 

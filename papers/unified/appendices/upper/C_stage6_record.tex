@@ -47,8 +47,9 @@ interval evaluation establishes all of the following obligations.
       \(q_-\lambda\le e^{-F'}\le q_+\lambda\) cancel the two
       \(\lambda\log\lambda\) singularities, so this is an analytic tail
       proof rather than extrapolation from \(\lambda_*\).
-\item At the first link, the same elementary witness proves the prior rate.
-      At every later link, \(c^{\rm prior}\) agrees entry by entry, as exact
+\item At the first link, the prior is exactly the rate in
+      \cref{up:lem:elementary-first-prior}.  At every later link,
+      \(c^{\rm prior}\) agrees entry by entry, as exact
       decimal data, with the preceding accepted target tuple.
 \end{enumerate}
 
@@ -105,7 +106,7 @@ Uniform continuity of \(G,G'\) supplies a finite descending grid
 \(\{\lambda_j\}\) such that every \(r\in I\) has a
 \(\lambda_j\in[r,r+h]\) with
 \[
- |G(\lambda_j)-G(r)|\le\epsilon/2,qquad
+ |G(\lambda_j)-G(r)|\le\epsilon/2,\qquad
  |G'(\lambda_j)-G'(r)|\le\delta.             \tag{U-C.C.9}\label{up:app-C:eq:c-9}
 \]
 Apply the balanced-book corollary of Appendix B at each grid point with
@@ -150,6 +151,68 @@ once \(k\) is large.  Thus \eqref{up:app-C:eq:c-10} is at least the induction th
 This completes the induction and the uniform \(\epsilon\)-form of \eqref{up:app-C:eq:c-7}.
 \end{proof}
 
+\begin{lemma}[Elementary first prior]\label{up:lem:elementary-first-prior}
+Let
+\[
+ c^{(0)}=\left(-\frac14,\frac{2}{25},\frac{2}{25}\right)
+ \quad\text{and}\quad
+ F_0(\lambda)=h(\lambda)+e^{-\lambda}
+ \left(-\frac14\lambda+\frac{2}{25}\lambda^2
+ +\frac{2}{25}\lambda^3\right).
+\]
+Then, uniformly for \(1\le\ell\le k\),
+\[
+ \log R(k,\ell)\le kF_0(\ell/k)+o(k),
+\]
+and the colour-swapped statement holds as well.
+\end{lemma}
+
+\begin{proof}
+The first JSON file stores the tuple \(c^{(0)}\) above and the exact splice
+\[
+ \lambda_*=0.0050000000000000001.
+\]
+For every \(0<\lambda\le1\), set
+\[
+ M=\lambda e^{-\lambda},\qquad
+ X=(1-M)\bigl(1-e^{-F_0'(\lambda)}\bigr)^{1/(1-M)},
+ \qquad Y=1-X.
+\]
+The elementary Ramsey recursion gives \((X,Y)\in\mathcal R\).  For the
+strictly smaller first coordinate \(x_{\lambda,\delta}<X\) used in
+\cref{up:lem:finite-net-descent}, choose \(z\) with
+\(x_{\lambda,\delta}<z<X\).  Then
+\((z,1-z)\in\mathcal R\), while
+\(x_{\lambda,\delta}<z\) and \(Y=1-X<1-z\); hence
+\((x_{\lambda,\delta},Y)\in\mathcal R_*\).
+
+On \((0,\lambda_*]\), the analytic small-ratio routine proves
+\(F_0,F_0'>0\), bounds \(e^{-F_0'}\) above and below by positive multiples of
+\(\lambda\), and returns an outward-rounded Arb enclosure whose lower
+endpoint satisfies
+\[
+ \frac1\lambda\left[F_0(\lambda)+\frac12
+ \{\log X+\lambda\log M+\lambda\log Y\}\right]
+ >0.00330.
+\]
+This is the same cancellation argument recorded in obligation (iv), now
+applied to the printed polynomial \(c^{(0)}\); it covers the open endpoint at
+zero analytically.
+
+The interval \([\lambda_*,1]\) is a union of 4,096 closed rational base
+cells.  At 256-bit precision, with recursive bisection if an inclusion is not
+immediately decisive, outward-rounded Arb inclusions prove on every cell that
+\(F_0,F_0'>0\), \(0<M,X,Y<1\), and
+\[
+ F_0(\lambda)+\frac12
+ \{\log X+\lambda\log M+\lambda\log Y\}
+ >10^{-6}.
+\]
+Thus all hypotheses of \cref{up:lem:finite-net-descent} hold for \(G=F_0\);
+also \(F_0-h=O(\lambda)\) at zero.  That lemma gives the claimed uniform
+prior rate, without using any later target as an assumption.
+\end{proof}
+
 \begin{proposition}[Rate-certificate correctness]\label{up:prop:rate-correctness}
 Assume the repaired book induction in Appendix B and Arb's containment
 semantics.  If the first certificate satisfies (i)--(v), its target obeys the
@@ -178,7 +241,7 @@ slack rather than a sampled extrapolation.  Because every target has the form
 \(H\) is \(O(\lambda)\).  Thus \cref{up:lem:finite-net-descent} proves one
 accepted link.
 
-For the first link the same elementary argument proves the prior.  Exact
+For the first link, \cref{up:lem:elementary-first-prior} proves the prior.  Exact
 entrywise target-to-prior equality then permits ordinary induction through
 the six links, without a rounded or refitted intermediate rate.
 \end{proof}

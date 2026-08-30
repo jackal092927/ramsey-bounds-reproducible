@@ -69,14 +69,10 @@ def namespace_labels(text: str, prefix: str) -> str:
     )
 
 
-def qualify_equation_tags(
+def equation_replacements(
     texts: dict[str, str], *, prefix: str, visible_prefix: str, scope: str
-) -> dict[str, str]:
-    """Qualify handwritten equation tags and replace prose references.
-
-    A scope is either an entire main part or one appendix file.  Tags must be
-    unique inside that scope; failing closed prevents ambiguous rewrites.
-    """
+) -> dict[str, tuple[str, str]]:
+    """Return the label and visible tag for every handwritten tag in a scope."""
 
     tag_owner: dict[str, str] = {}
     explicit_labels: dict[str, str] = {}
@@ -99,6 +95,29 @@ def qualify_equation_tags(
         label = explicit_labels.get(tag, f"{prefix}:{scope}:eq:{slug}")
         visible = f"{visible_prefix}{tag}"
         replacements[tag] = (label, visible)
+    return replacements
+
+
+def qualify_equation_tags(
+    texts: dict[str, str],
+    *,
+    prefix: str,
+    visible_prefix: str,
+    scope: str,
+    reference_replacements: dict[str, tuple[str, str]] | None = None,
+) -> dict[str, str]:
+    """Qualify handwritten tags and replace prose references across a part.
+
+    A scope is either an entire main part or one appendix file. Tags must be
+    unique inside that scope. ``reference_replacements`` may additionally
+    contain tags from the other scopes in the same part, so appendix-to-main
+    and main-to-appendix references receive the correct visible namespace.
+    """
+
+    replacements = equation_replacements(
+        texts, prefix=prefix, visible_prefix=visible_prefix, scope=scope
+    )
+    references = reference_replacements or replacements
 
     rendered: dict[str, str] = {}
     for name, text in texts.items():
@@ -112,8 +131,14 @@ def qualify_equation_tags(
             replace_tag,
             text,
         )
-        for tag, (label, _visible) in replacements.items():
-            text = text.replace(f"({tag})", rf"\eqref{{{label}}}")
+        for tag, (label, _visible) in references.items():
+            # Canonical sources use bare ``(2.9)``-style prose references.
+            # Do not rewrite the same byte sequence when it is a function
+            # argument such as ``D(2.9)`` or ``D'(2.9)``.
+            reference = re.compile(
+                rf"(?<![A-Za-z0-9_}}\]',])\({re.escape(tag)}\)"
+            )
+            text = reference.sub(lambda _match: rf"\eqref{{{label}}}", text)
         rendered[name] = text
     return rendered
 
@@ -150,23 +175,53 @@ def materialize_part(part: str, settings: dict[str, str]) -> None:
         )
         sections[filename] = sections[filename].replace("This paper", "This part")
         sections[filename] = sections[filename].replace("The paper", "This part")
-    sections = qualify_equation_tags(
+
+    appendices = read_group(source_root / "appendices", prefix=prefix)
+    main_replacements = equation_replacements(
         sections,
         prefix=prefix,
         visible_prefix=tag_prefix,
         scope="main",
     )
+    appendix_replacements: dict[str, dict[str, tuple[str, str]]] = {}
+    all_replacements = dict(main_replacements)
+    for filename, text in appendices.items():
+        source_appendix = filename.split("_", 1)[0]
+        local = equation_replacements(
+            {filename: text},
+            prefix=prefix,
+            visible_prefix=f"{tag_prefix}-{source_appendix}.",
+            scope=f"app-{source_appendix}",
+        )
+        appendix_replacements[filename] = local
+        # Bare numeric tags can legitimately repeat between the main part and
+        # a self-contained appendix. Main tags take precedence for main-text
+        # references; each appendix overrides this map with its own local tags
+        # below. Cross-scope references with an ambiguous bare number must use
+        # an explicit LaTeX label instead.
+        for tag, replacement in local.items():
+            all_replacements.setdefault(tag, replacement)
+
+    sections = qualify_equation_tags(
+        sections,
+        prefix=prefix,
+        visible_prefix=tag_prefix,
+        scope="main",
+        reference_replacements=all_replacements,
+    )
     write_group(UNIFIED / "sections" / part, sections)
 
-    appendices = read_group(source_root / "appendices", prefix=prefix)
     rendered_appendices: dict[str, str] = {}
     for filename, text in appendices.items():
         source_appendix = filename.split("_", 1)[0]
+        local_references = dict(all_replacements)
+        local_references.update(appendix_replacements[filename])
         one = qualify_equation_tags(
             {filename: text},
             prefix=prefix,
             visible_prefix=f"{tag_prefix}-{source_appendix}.",
             scope=f"app-{source_appendix}",
+            reference_replacements=local_references,
         )
         rendered_appendices[filename] = one[filename]
     write_group(UNIFIED / "appendices" / part, rendered_appendices)

@@ -15,13 +15,13 @@ from __future__ import annotations
 
 import argparse
 import hashlib
-import json
 from decimal import Decimal
 from pathlib import Path
 
 from verify_arb import (
     ONE,
     certify_elementary_prior,
+    load_certificate,
     parse,
     prove_prior_concavity,
     prove_small_regime,
@@ -66,15 +66,6 @@ def exact_coefficients(values: list[object]) -> tuple[Decimal, ...]:
 
 def file_hash(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
-
-
-def load_certificate(path: Path) -> dict:
-    payload = json.loads(path.read_text(encoding="utf-8"))
-    if payload.get("schema") != "corrected-two-sided-ramsey-v1":
-        raise AssertionError(f"{path}: unexpected certificate schema")
-    if not payload.get("segments"):
-        raise AssertionError(f"{path}: empty segment list")
-    return payload
 
 
 def verify_paper_chain_identity(paths: list[Path]) -> None:

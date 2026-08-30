@@ -34,7 +34,7 @@ Pinned source lines & Exact use in this paper\\
 HMS 145--170, 443--498&
 The Gaussian graph, Bartlett representation, column exposure, edge events,
 perfect events, and the unweighted projection state.  These are the
-probability-space and history definitions in (2.24)--(2.33).\\
+probability-space and history definitions in \eqref{low:main:eq:2-24}--\eqref{low:main:eq:2-33}.\\
 HMS 955--971, 1192--1218&
 Optimized red-perfectness and the exact cutoff approximation.  Cauchy--Schwarz gives
 \(\sqrt d\,|h_{ij}|\le\alpha_R^2\ell/\sqrt d\le\omega_0\), while the
@@ -42,26 +42,26 @@ diagonal approximation contributes \(d^{-1/5}\).  This is (S1).\\
 HMS 330--354, 878--935&
 The subgaussian definition, square-MGF lemma, pre-Cauchy centered-linear
 allocation, and centered quadratic estimate.  These give the quantified
-statements (2.35)--(2.36), the uniform \(t_0\) factor in (5.12), and the
-square estimate in (5.14); no final Cauchy coarsening is imported.\\
+statements \eqref{low:main:eq:2-35}--\eqref{low:main:eq:2-36}, the uniform \(t_0\) factor in \eqref{low:main:eq:5-12}, and the
+square estimate in \eqref{low:main:eq:5-14}; no final Cauchy coarsening is imported.\\
 Lin--Niu 359--493, 499--537&
 Monotonicity of upper-truncated Gaussian variance and the exact
-positive-direction CGF.  After replacing their upper cutoff by \(-b\),
-these give (2.4)--(2.6) and \cref{low:lem:mills}.\\
+positive-direction CGF\@.  After replacing their upper cutoff by \(-b\),
+these give \eqref{low:main:eq:2-4}--\eqref{low:main:eq:2-6} and \cref{low:lem:mills}.\\
 HMS 1192--1289&
 The red law of total probability, cutoff conditioning, projection merge, and
-scalar reverse-induction allocation.  Equations (2.33), (2.39), and (2.40)
+scalar reverse-induction allocation.  Equations \eqref{low:main:eq:2-33}, \eqref{low:main:eq:2-39}, and \eqref{low:main:eq:2-40}
 record the algebra that the separately assumed weighted extension (S3) must
-preserve; (2.41) is the frozen scalar baseline.  The nonuniform estimate is
-proved locally and is not attributed verbatim to HMS.\\
+preserve; \eqref{low:eq:scalar-baseline} is the frozen scalar baseline.  The
+nonuniform estimate is proved locally and is not attributed verbatim to HMS.\\
 HMS 385--410 and 955--971&
 For every specified retained set, the red-perfectness failure factor is
-\((p/10)^{10\ell u}\).  This is the sole external extraction input (2.42);
-the restoration estimates and binomial sum are proved in (6.5)--(6.11).\\
+\((p/10)^{10\ell u}\).  This is the sole external extraction input \eqref{low:main:eq:2-41};
+the restoration estimates and binomial sum are proved in \eqref{low:main:eq:6-5}--\eqref{low:main:eq:6-11}.\\
 HMS 977--1181, 1294--1312, together with 385--410&
 The unchanged blue reverse induction, its perfect bound, and the same greedy
-extraction argument, yielding the raw probability inequality (2.43).  The
-first-moment threshold (7.4) is derived locally.\\
+extraction argument, yielding the raw probability inequality \eqref{low:main:eq:2-42}.  The
+first-moment threshold \eqref{low:main:eq:7-4} is derived locally.\\
 \bottomrule
 \end{longtable}
 
@@ -110,9 +110,9 @@ positive-direction CGF with \(P^0_{k,d}\) gives
 \tag{L-B.B.3}\label{low:app-B:eq:b-3}
 \]
 Their difference is the same-history quantity \(\mathfrak d_i(b)\) in
-(5.16).  The cutoff monotonicities give (5.17), and summing its deterministic
-lower bound gives (2.15).  With \(k/\ell\to x\) and
-\(\sqrt d/\ell\to D\), the corresponding Riemann sum is (2.17).  Hence
+\eqref{low:main:eq:5-16}.  The cutoff monotonicities give \eqref{low:main:eq:5-17}, and summing its deterministic
+lower bound gives \eqref{low:main:eq:2-15}.  With \(k/\ell\to x\) and
+\(\sqrt d/\ell\to D\), the corresponding Riemann sum is \eqref{low:main:eq:2-17}.  Hence
 \(G_*(C)\) is defined and charged before the controlled residual is added;
 it is not imported through a final Ramsey theorem.
 
@@ -125,9 +125,9 @@ The red interface before the new two deficits is the explicit envelope
  +\frac apd^{-1/5}\binom r2+r\right].
 \tag{L-B.B.4}\label{low:app-B:eq:b-4}
 \]
-The blue interface is the explicit probability estimate (2.43).  Dividing
+The blue interface is the explicit probability estimate \eqref{low:main:eq:2-42}.  Dividing
 their logarithms by \(\ell^2\), and only then applying
-\(\binom nk\le n^k\), gives the red and blue thresholds (7.2) and (7.4).
+\(\binom nk\le n^k\), gives the red and blue thresholds \eqref{low:main:eq:7-2} and \eqref{low:main:eq:7-4}.
 The comparison is not assumed: the source asymptotics imply
 \[
  \frac{B_R(C)}2=\frac1{12}+o(1),\qquad
@@ -144,17 +144,20 @@ the active constraint for sufficiently large fixed \(C\).
 
 \subsection{Order of quantifiers and proof status}
 
-The absolute constant \(K\) in (2.10) is fixed before selecting the
+The absolute constant \(K\) in \eqref{low:eq:source-K} is fixed before selecting the
 large-\(C\) threshold, but its numerical value is not provided by the pinned
-source.  The theorem therefore has the order
+source.  At theorem level the quantifiers therefore begin in the order
 \[
- \exists C_0\ \forall C\ge C_0\ \exists\ell_0(C)\
+ \text{fix }K,\qquad
+ \exists C_0=C_0(K)\ \forall C\ge C_0\ \exists\ell_0(C)\
  \forall\ell\ge\ell_0(C),
 \tag{L-B.B.7}\label{low:app-B:eq:b-7}
 \]
-followed by \(\ell\to\infty\).  Only after that fixed-\(C\) theorem is
+followed by \(\ell\to\infty\).  Within the proof, the auxiliary \(w\) is
+fixed in an admissible right-neighborhood of \(\omega_0\) during this limit
+and is then sent down to \(\omega_0\).  Only after that fixed-\(C\) theorem is
 established is \(C\to\infty\) used to obtain the coefficient \(1/64\).
-No explicit value of \(C_0\) or \(\ell_0(C)\) is asserted.
+No explicit value of \(C_0(K)\) or \(\ell_0(C)\) is asserted.
 
 The resulting theorem is source-relative: its local residual algebra,
 three-factor bridge, reverse-induction charge, extraction sum, first moments

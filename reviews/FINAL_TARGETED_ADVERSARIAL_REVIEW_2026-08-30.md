@@ -157,3 +157,11 @@ At the close of this targeted review:
 Consequently this report supports the revised scoped claims, but it is not
 itself a substitute for the remaining release gates or for external human peer
 review.
+
+## Post-review status note
+
+The running-state sentence above is preserved as the historical state at this
+review's close. The ChatGPT Pro report subsequently completed; its concrete
+objections, repairs, and dispositions are recorded in
+`reviews/CHATGPT_PRO_REVIEW.md`. The immutable Release and credential-free
+post-release replay remain separate open gates.

@@ -1,15 +1,22 @@
-\section{Unified reproducibility and public artifact release}
+\section{Unified reproducibility and planned public artifact release}
 \label{sec:unified-reproducibility}
 
-The public repository at
+The public source repository at
 \url{https://github.com/jackal092927/ramsey-bounds-reproducible}
 exposes one canonical paper and a tiered verification entry point.  The
-accompanying evidence release is designated at
+evidence package is designated for a future release at
 \url{https://github.com/jackal092927/ramsey-bounds-reproducible/releases/tag/evidence-2026-08-30}
 and is valid only if it contains exactly the twelve compressed CNF/DRAT
-payloads listed in \path{artifacts/MANIFEST.tsv}.  Publication, immutability,
-credential-free asset verification, and final-tag replay are post-tag gates
-recorded outside the mathematical argument.
+payloads listed in \path{artifacts/MANIFEST.tsv}.  At the date of this draft,
+the final tag and immutable twelve-asset Release have not been published;
+credential-free asset verification and final-tag replay therefore remain
+pending gates outside the mathematical argument.
+
+The requested ChatGPT Pro second-opinion review has completed.  Every
+recoverable concrete objection was checked against the canonical upper,
+lower, and finite sources and either repaired or explicitly dispositioned.
+This AI-assisted author-side review is not external human peer review and
+does not change any theorem's stated trust boundary.
 A clean checkout with Python~3.11.15, exactly
 \texttt{uv 0.10.2}, and the locked dependencies is prepared by
 \begin{verbatim}

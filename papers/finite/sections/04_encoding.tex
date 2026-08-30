@@ -29,21 +29,89 @@ exact branch.
 
 \subsection{Exact deletion counter}
 
-In branch \(i\), set
+In branch \(i\), let
 \[
-  L_i=\{\neg x_e:e\in E(H)\setminus\{f_i\}\}.
+  L_i=\bigl(\neg x_e:e\in E(H)\setminus\{f_i\}\bigr)
 \]
-The list has \(826\) literals.  A PySAT sequential-counter equality encoding
+be the ordered list obtained by restricting the lexicographic pair order to
+the seed edges other than \(f_i\).  The list has \(826\) literals.  A PySAT
+sequential-counter equality encoding
 implements
 \[
   \sum_{\ell\in L_i}[\ell\text{ is true}]=5.      \tag{4.2}
 \]
 We use the standard sequential counter of Sinz~\cite{Sinz2005}.  The concrete
-generator is exposed by PySAT~\cite{Ignatiev2018}.  It introduces
-\(8210\) auxiliary variables and \(16420\) clauses, ending at variable
-\(13160\).  Complete primary assignments with residual deletion counts
-\(0,1,4,5,6,7,825,826\) were offered to an independent SAT backend; the
-auxiliary variables were extendible exactly at count five.
+generator is exposed by PySAT~\cite{Ignatiev2018}; its semantics is not used as
+an unchecked black box.
+
+For completeness, define the irredundant sequential schema explicitly.  Given
+signed literals \(z_0,\ldots,z_{n-1}\) and \(1\le q\le n-2\), introduce
+\(y_{r,j}\) for \(0\le r<q\) and \(0\le j<n-q\), and let
+\(\operatorname{SC}_{\le q}(z)\) contain
+\begin{align*}
+ \neg z_j\lor y_{0,j}\quad
+   &(0\le j<n-q),\\
+ \neg y_{r,j}\lor y_{r,j+1}\quad
+   &(0\le r<q,\ 0\le j<n-q-1),\\
+ \neg z_{j+r+1}\lor\neg y_{r,j}\lor y_{r+1,j}\quad
+   &(0\le r<q-1,\ 0\le j<n-q),\\
+ \neg z_{j+q}\lor\neg y_{q-1,j}\quad
+   &(0\le j<n-q).
+\end{align*}
+
+\begin{lemma}[Sequential-counter projection semantics]
+\label{lem:seqcounter-projection}
+For every assignment of the primary variables,
+\[
+ \exists y\ \operatorname{SC}_{\le q}(z,y)\quad\Longleftrightarrow\quad
+ \sum_{j=0}^{n-1}[z_j\text{ is true}]\le q.       \tag{4.3}
+\]
+Consequently, for \(n=826\),
+\[
+ \operatorname{SC}_{\le821}(\neg z)\land
+ \operatorname{SC}_{\le5}(z)
+\]
+has an auxiliary extension if and only if exactly five members of \(z\) are
+true.  The budget-five block \(\operatorname{SC}_{\le4}(z)\) has an auxiliary
+extension if and only if at most four members are true.
+\end{lemma}
+
+\begin{proof}
+Suppose first that at most \(q\) input literals are true.  Assign
+\(y_{r,j}=1\) exactly when at least \(r+1\) of
+\(z_0,\ldots,z_{j+r}\) are true.  The first clause family records the first
+threshold crossing.  The second propagates an attained threshold to a longer
+prefix.  In the third family, truth of both \(z_{j+r+1}\) and \(y_{r,j}\)
+raises the prefix count from at least \(r+1\) to at least \(r+2\).  The last
+family cannot be violated, because such a violation would exhibit \(q+1\)
+true inputs.  This gives the required auxiliary extension.
+
+Conversely, induction on \(r\) shows that the clauses force \(y_{r,j}=1\)
+whenever at least \(r+1\) of \(z_0,\ldots,z_{j+r}\) are true.  For \(r=0\),
+use the first clause at the position of a true input and then the propagation
+clauses.  For the induction step, let \(p\) be the position of the
+\((r+1)\)-st true input and put \(j'=p-r\).  The induction hypothesis forces
+\(y_{r-1,j'}\); the third family, together with \(z_p\), forces \(y_{r,j'}\),
+and propagation reaches \(y_{r,j}\).  If \(q+1\) inputs were true, let \(p\)
+be the position of the \((q+1)\)-st and put \(j=p-q\).  The preceding argument
+forces \(y_{q-1,j}\), while the last family forbids its conjunction with
+\(z_p\), a contradiction.  This proves (4.3).  Applying (4.3) to \(z\) and
+to its \(826\) complements gives respectively the upper and lower sides of
+the equality claim; the at-most-four claim is the direct case \(q=4\).
+\end{proof}
+
+In the exact-five DIMACS block, the complement counter at bound \(821\) comes
+first and has \(4105\) auxiliary variables and \(7394\) clauses; the positive
+counter at bound \(5\) has another \(4105\) auxiliaries and \(9026\) clauses.
+Thus the equality block has \(8210\) auxiliary variables and \(16420\) clauses,
+ending at variable \(13160\).  The checker
+\path{routes/finite/check_r3_18_seqcounter.py} does not import or call PySAT's
+cardinality generator.  It independently generates the four clause families,
+compares all six actual counter blocks clause-for-clause in their canonical
+literal order, checks their digests and variable ranges, and constructs the
+prefix-threshold auxiliary assignment from the proof above.  Exhaustive
+small-instance tests enumerate both primary and auxiliary assignments and
+verify both directions of the projected at-most and equality semantics.
 
 Thus
 \[
@@ -51,10 +119,10 @@ Thus
    (\neg x_{ab}\lor\neg x_{ac}\lor\neg x_{bc})\Bigr)
  \land \operatorname{Card}_{=5}(L_i)
  \land \neg x_{f_i}
- \land \bigwedge_{S\in\cB_i} C_S.                \tag{4.3}
+ \land \bigwedge_{S\in\cB_i} C_S.                \tag{4.4}
 \]
 
-\begin{table}[t]
+\begin{table}[H]
 \centering
 \caption{Exact-six branch dimensions.  All branches have \(4950\) primary
 variables, \(8210\) counter auxiliaries, \(161700\) triangle clauses, \(16420\)
@@ -79,8 +147,8 @@ For each \(i\), every graph \(F\in\cF\) with \(d_H(F)=6\) and
 \begin{proof}
 The triangle block holds by triangle-freeness.  The fixed unit holds by the
 branch premise.  Since \(f_i\) is one of exactly six missing input edges,
-exactly five literals in \(L_i\) are true; completeness of the equality
-encoding supplies an auxiliary assignment.  Each \(S\in\cB_i\) contains a
+exactly five literals in \(L_i\) are true; \cref{lem:seqcounter-projection}
+supplies an auxiliary assignment.  Each \(S\in\cB_i\) contains a
 present pair because \(\alpha(F)<18\), so every \(C_S\) holds.  No condition
 was imposed on an original nonedge except through triangle and hitting
 clauses, hence arbitrary additions remain represented.

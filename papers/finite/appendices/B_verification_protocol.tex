@@ -22,9 +22,13 @@ For each exact-six branch \(i\):
 order.
 \item Generate the \(161700\) triangle clauses in lexicographic triple order
 and compare them to the DIMACS prefix.
-\item Form the \(826\) residual deletion literals in stored seed-edge order.
-Regenerate the PySAT sequential equality counter at bound five.  Compare all
-\(16420\) clauses and the final variable identifier \(13160\).
+\item Form the \(826\) residual deletion literals in the lexicographic order
+inherited from the primary pair list.  Without calling PySAT's
+\texttt{CardEnc}, generate the four Sinz clause families in
+\cref{lem:seqcounter-projection}.  Generate the equality block as at-most
+\(821\) on the complemented literals followed by at-most \(5\) on the
+original literals.  Compare all \(16420\) clauses and the final variable
+identifier \(13160\).
 \item Compare the fixed negative unit for \(f_i\).
 \item For each remaining clause, require \(153\) distinct, positive primary
 literals.  Invert the pair map, recover exactly \(18\) vertices, and verify
@@ -37,6 +41,10 @@ The analogous budget-five reconstruction replaces equality at five by an
 at-most-four counter.  It has \(8238\) total variables and \(7394\) counter
 clauses in each branch.  The three hitting-bank sizes are \(287\), \(15872\),
 and \(8704\).
+The executable audit is
+\path{routes/finite/check_r3_18_seqcounter.py}; its schema-only mode is part of
+the lightweight tier, and the complete mode compares the six actual DIMACS
+blocks during \texttt{finite-heavy}.
 
 \subsection{DRAT replay}
 
@@ -44,7 +52,8 @@ Build \texttt{drat-trim} from source commit
 \sha{2e3b2dc0ecf938addbd779d42877b6ed69d9a985}.  Verify that the source tree is
 clean.  The repository helper
 \begin{verbatim}
-bash scripts/build_drat_trim.sh /absolute/new/checker-directory
+bash scripts/build_drat_trim.sh \
+  /absolute/new/checker-directory
 \end{verbatim}
 performs this source checkout and records the resulting binary hash.  A fresh
 platform build need not reproduce the historical executable hash.  For each

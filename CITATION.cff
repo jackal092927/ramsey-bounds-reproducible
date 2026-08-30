@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: >-
-  Cite the tagged software record and unified manuscript once the indicated
-  artifact URL resolves to an immutable published Release; until then, this
-  metadata describes the designated release candidate.
+  Cite the public source repository and unified manuscript. Version,
+  release-date, and artifact-URL fields will be added only after the designated
+  immutable evidence Release has actually been published and verified.
 title: >-
   Reproducible Ramsey Analysis Across Asymptotic and Finite Regimes:
   Research Software and Proof Certificates
@@ -10,10 +10,7 @@ type: software
 authors:
   - family-names: Xin
     given-names: Cheng
-version: evidence-2026-08-30
-date-released: 2026-08-30
 repository-code: https://github.com/jackal092927/ramsey-bounds-reproducible
-repository-artifact: https://github.com/jackal092927/ramsey-bounds-reproducible/releases/tag/evidence-2026-08-30
 abstract: >-
   Reproducible materials for a unified Ramsey manuscript containing a
   source-relative asymptotic diagonal upper bound, a source-relative

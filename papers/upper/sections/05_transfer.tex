@@ -72,6 +72,11 @@ Set
     \(0<r_a<\tau<r_d<1\), \(r_d+\tau<1\), and \(0<s<1\) shows that
 \(\mathcal W\) has vertices
 \((0,0),(0,r_a),(r_d,r_d)\), with sloping side \(y=r_a+sx\).
+In particular, throughout \(\mathcal W\),
+\[
+ 0\le x\le y\le r_d,\qquad 0\le y-x\le r_a<\tau.
+ \tag{5.3a}
+\]
 
 It remains to bound both possible page colours and the reservoir on
 \(\mathcal W\).  For the first page orientation put
@@ -79,9 +84,19 @@ It remains to bound both possible page colours and the reservoir on
  z=\frac{1-\tau-x}{1-y},\qquad
  P_R=c_\eta(x+y)+\tau q+(1-y)U(z).
 \]
-On the relevant piece its coordinate derivatives are
+The order above and \(r_d+\tau<1\) give the complete derivative domain
 \[
- \partial_xP_R=c_\eta-U'(z)<0,qquad
+ 0<1-\frac{\tau}{1-r_d}\le z
+ \le\frac{1-\tau}{1-r_a}<1.                 \tag{5.3b}
+\]
+Since \(U''<0\) on \((0,1]\),
+\(U'(z)\ge U'(1)=E+c_\eta>c_\eta\).  Also, for
+\(\phi(z)=U(z)-zU'(z)\),
+\(\phi'(z)=-zU''(z)>0\), and hence
+\(\phi(z)\le\phi(1)=c_\eta+A-E<c_\eta\).  Therefore its coordinate
+derivatives on all of \(\mathcal W\) are
+\[
+ \partial_xP_R=c_\eta-U'(z)<0,\qquad
  \partial_yP_R=c_\eta-U(z)+zU'(z)>0.
 \]
 It therefore suffices to follow the sloping side.  Its derivative is
@@ -90,7 +105,8 @@ It therefore suffices to follow the sloping side.  Its derivative is
  +s\{c_\eta-U(z)+zU'(z)\},
 \]
 where
-\(\mathcal B'(z)=(sz-1)U''(z)>0\).  Along the side, \(z\) decreases from
+\(\mathcal B'(z)=(sz-1)U''(z)>0\), because \(0<s,z<1\).  Along the side,
+\(z\) decreases from
 \(z_a=(1-\tau)/(1-r_a)\); the 512-bit enclosure gives
 \(\mathcal B(z_a)<-3.6952685\cdot10^{-4}\).  Hence \(P_R\) is maximized
 at \((0,r_a)\), where
@@ -100,13 +116,25 @@ at \((0,r_a)\), where
  \tag{5.4}
 \]
 
-For the other page orientation, the negative \(y\)-derivative reduces the
-maximum to \(y=x\).  There it equals
+For the other page orientation, put
+\[
+ w=\frac{1-\tau-y}{1-x},\qquad
+ P_B(x,y)=c_\eta(x+y)+\tau q+(1-x)U(w).
+\]
+Here \(0<w<1\) on \(\mathcal W\): positivity follows from
+\(y\le r_d<1-\tau\), and \(w<1\) follows from \(y\ge x\) and \(\tau>0\).
+Thus \(\partial_yP_B=c_\eta-U'(w)<0\), so the maximum reduces to \(y=x\).
+There it equals
 \[
  P_B(x,x)=2c_\eta x+\tau q
  +(1-x)U\!\left(1-\frac{\tau}{1-x}\right).
 \]
-With \(v=\tau/(1-x)\), its derivative is
+For \(0\le x\le r_d\), the variable \(v=\tau/(1-x)\) lies in
+\[
+ \tau\le v\le\frac{\tau}{1-r_d}<1,
+\]
+so every derivative below is evaluated with \(1-v\in(0,1)\).  The diagonal
+derivative is
 \[
  \Gamma(v)=2c_\eta-U(1-v)-vU'(1-v),
  \qquad \Gamma'(v)=vU''(1-v)<0.

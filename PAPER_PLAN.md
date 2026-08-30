@@ -42,20 +42,21 @@ optimality, or a priority/world-best claim.
 
 ### L — source-relative fixed-ratio lower result
 
-For every sufficiently large fixed \(C\), inside the pinned Gaussian
-reverse-induction and cumulant interfaces, the controlled-residual ledger
-contributes
+After fixing the source constant \(K\), for every sufficiently large fixed
+\(C\), inside the pinned Gaussian reverse-induction and cumulant interfaces,
+the controlled-residual ledger contributes
 
 \[
 \widehat H_*(C)=\frac{1+o_{C\to\infty}(1)}{64\log C}>0.
 \]
 
-The order of limits is part of the theorem: fix \(C\), let
-\(\ell\to\infty\), and only afterwards examine \(C\to\infty\).
+The order of limits is part of the theorem: fix \(C\) and \(w>\omega_0\), let
+\(\ell\to\infty\), then let \(w\downarrow\omega_0\), and only afterwards
+examine \(C\to\infty\).
 The statement is conditional on (S1)--(S5). Items (S1), (S2), (S4), and (S5)
 are version-pinned source hypotheses; (S3) is the paper's additional
 weighted-extension hypothesis and is not attributed as a theorem stated by
-HMS or Lin--Niu. The threshold in \(C\) is existential and non-effective. No
+HMS or Lin--Niu. The threshold \(C_0(K)\) is existential and non-effective. No
 comparison is made across incompatible terminal normalizations.
 
 ### F — local finite proof-carrying result
@@ -116,7 +117,8 @@ The post-repair reviews and their consolidated disposition are:
 - [`reviews/REPRODUCIBILITY_POST_REPAIR_REVIEW.md`](reviews/REPRODUCIBILITY_POST_REPAIR_REVIEW.md);
 - [`reviews/FRESH_INDEPENDENT_MATH_REVIEW_2026-08-30.md`](reviews/FRESH_INDEPENDENT_MATH_REVIEW_2026-08-30.md);
 - [`reviews/FINAL_TARGETED_ADVERSARIAL_REVIEW_2026-08-30.md`](reviews/FINAL_TARGETED_ADVERSARIAL_REVIEW_2026-08-30.md);
-- [`reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md`](reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md); and
+- [`reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md`](reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md);
+- [`reviews/CHATGPT_PRO_REVIEW.md`](reviews/CHATGPT_PRO_REVIEW.md); and
 - [`reviews/REVIEW_DISPOSITION.md`](reviews/REVIEW_DISPOSITION.md).
 
 Every major local finding has now been handled in one of two ways:
@@ -125,15 +127,17 @@ Every major local finding has now been handled in one of two ways:
 2. weaken the corresponding statement so that the displayed assumptions
    genuinely imply it.
 
-A separate ChatGPT Pro adversarial review was transmitted on 2026-08-30 as a
-second opinion. Its final response and claim-by-claim disposition remain
-pending; transmission alone does not close the review gate.
+A separate ChatGPT Pro adversarial review completed on 2026-08-30 as a second
+opinion. Every recoverable concrete objection was checked against the current
+canonical source and repaired or dispositioned. The report remains an
+AI-assisted author-side review, not external human peer review.
 
-The unified release candidate currently compiles to 79 pages with candidate
-SHA-256
-`bad787b9a37430d39d17d789c9dddc39db212db2db0954fa668dd43c96993804`.
-The final hash will be recorded only after the external review disposition and
-two agreeing clean builds.
+The unified release candidate currently compiles to 83 pages with local
+post-review SHA-256
+`6ff124cc1ae5f1504510c7a557cff1fe964c4ec24889e9e050294b56c9553885`.
+Two clean builds of the post-review source under the pinned toolchain produced
+byte-identical PDFs. The immutable-Release digest remains a later publication
+gate.
 The local quick, full, sources, finite-heavy, deterministic-materialization,
 log, and representative-page visual gates have passed.
 
@@ -158,13 +162,18 @@ README calls the package public.
 
 ## Release sequence
 
-1. Resolve the mathematical and reproducibility review blockers.
-2. Regenerate and compile the unified manuscript.
-3. Run fast and full checks, then the finite-heavy semantic/DRAT replay.
-4. Inspect the final PDF and archive the build and verification logs.
-5. Obtain the independent ChatGPT Pro review and incorporate or disposition
-   its concrete objections.
-6. Freeze and push the existing public GitHub repository, then create an
+1. **Completed locally:** resolve the mathematical and reproducibility review
+   blockers.
+2. **Completed locally:** regenerate and compile the unified manuscript twice
+   with byte-identical output.
+3. **Completed locally:** run quick, full, sources, and finite-heavy checks,
+   including the semantic and DRAT replays.
+4. **Completed locally:** inspect the final PDF and archive the build and
+   verification records.
+5. **Completed:** record the ChatGPT Pro review and its claim-by-claim
+   disposition.
+6. Push the final reviewed commit, require fast and full hosted verification
+   on that exact commit, then create an
    immutable release containing exactly the manifest entries.
 7. Verify the advertised process from a new clone without author-machine
    state.

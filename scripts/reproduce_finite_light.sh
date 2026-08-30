@@ -6,6 +6,7 @@ python_bin="${PYTHON:-${repo_root}/.venv/bin/python}"
 
 cd "${repo_root}"
 "${python_bin}" -m unittest discover -s routes/finite -t . -p 'test_*.py' -v
+"${python_bin}" routes/finite/check_r3_18_seqcounter.py --schema-only
 "${python_bin}" routes/finite/check_r3_18_budget7.py
 "${python_bin}" routes/finite/verify_ramsey.py routes/finite/certificates/alphaevolve_R3_13_ge_61.txt 3 13
 "${python_bin}" routes/finite/verify_ramsey.py routes/finite/certificates/alphaevolve_R3_18_ge_100.txt 3 18

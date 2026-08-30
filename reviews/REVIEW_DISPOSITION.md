@@ -3,8 +3,8 @@
 Date: 2026-08-30  
 Scope: the single canonical manuscript at `papers/unified/main.tex`, its
 generated PDF, and the complete local reproduction package  
-Status: local review complete; external second opinion transmitted and in
-progress; final-tag and public-Release verification pending
+Status: local and ChatGPT Pro author-side reviews complete and dispositioned;
+final-tag and public-Release verification pending
 
 ## Executive conclusion
 
@@ -19,7 +19,7 @@ results. The correct claim statuses are nevertheless different:
 | result | final local proof status | indispensable boundary |
 |---|---|---|
 | diagonal upper bound | **PROVABLE AS STATED ONLY UNDER THE EXPLICIT SOURCE-INTERFACE AND INTERVAL-ARITHMETIC TRUST BOUNDARY** | conditional on the three version-pinned Yang--Mao v1 interfaces, the locally proved BookCor/correlation implications, and Arb ball containment |
-| fixed-ratio lower bound | **PROVABLE AFTER WEAKENING / EXTRA ASSUMPTION** as a Ramsey headline; the local ledger is **PROVABLE AS STATED** conditional on (S1)--(S5) | (S3) is an additional weighted-extension hypothesis with a frozen scalar baseline and is not attributed as a theorem stated by HMS or Lin--Niu |
+| fixed-ratio lower bound | **PROVABLE AFTER WEAKENING / EXTRA ASSUMPTION** as a Ramsey headline; the local ledger is **PROVABLE AS STATED** conditional on (S1)--(S5) | the frozen scalar baseline belongs to (S2); (S3) consists only of the additional weighted-extension implication and is not attributed as a theorem stated by HMS or Lin--Niu |
 | fixed-seed deletion barrier | **PROVABLE AS STATED** | local to one labelled 100-vertex seed, one one-sided edit metric, semantic CNF reconstruction, exhaustive branch cover, and six checked DRAT refutations |
 | existence or nonexistence of an exact-seven repair | **NOT CURRENTLY JUSTIFIED** | all three bounded exact-seven runs ended `UNKNOWN` and produced neither a witness nor a proof |
 | a new global bound (R(3,18)\ge101) | **NOT CURRENTLY JUSTIFIED** | the fixed-seed barrier is not an existence construction and implies no global Ramsey-number improvement |
@@ -43,6 +43,26 @@ The repository-wide publication audit and safe immutable-release sequence are
 recorded in `reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md`; its
 implementation verdict is zero remaining blocker, major, or minor finding
 after repair, while live publication remains an open external gate.
+
+The ChatGPT Pro second opinion is archived and dispositioned in
+`reviews/CHATGPT_PRO_REVIEW.md`. Its valid presentation and trust-boundary
+objections led to an explicit first-prior lemma, a complete half-line base
+gate, clearer 256/512-bit separation, stricter certificate parsing, a cleaner
+S2/S3 split and limit ledger, and a constructive sequential-counter semantics
+lemma with an independent implementation. It reported no numerical
+counterexample to a scoped theorem. This remains AI-assisted author-side
+review, not external human peer review.
+
+A final hostile integration pass then found three non-theorem defects that a
+successful LaTeX build or unit test alone would not expose. The unified-source
+materializer's context-free equation-tag replacement had silently changed the
+correct function evaluation `D(2.9)` into an equation reference; it now uses a
+context-sensitive replacement rule with regression tests and explicit
+cross-scope mappings. The finite-heavy driver passed DRAT-only flags to the
+new independent sequential-counter checker; the checker and DRAT auditors now
+run as separate commands. Four missing backslashes before `\qquad` and an
+interrupting finite table placement were also repaired. Repository checks now
+fail on a recurrence of that malformed token or release-facing control bytes.
 
 ## Mathematical findings and repairs
 
@@ -129,10 +149,11 @@ the proofs. The source tier independently matched three pinned arXiv TeX
 members and five upstream graph matrices. The materializer was rerun twice
 with identical output.
 
-The current release-candidate PDF has 79 pages and candidate SHA-256
-`bad787b9a37430d39d17d789c9dddc39db212db2db0954fa668dd43c96993804`.
-It is not the final hash until the external review is dispositioned and two
-clean builds agree.
+The current release-candidate PDF has 83 pages and local post-review SHA-256
+`6ff124cc1ae5f1504510c7a557cff1fe964c4ec24889e9e050294b56c9553885`.
+Two clean builds under the pinned toolchain produced byte-identical PDFs. This
+is not yet a published-Release digest; publication and credential-free replay
+remain separate external gates.
 Its log has no overfull box, undefined or multiply defined reference, LaTeX
 warning, error, or fatal diagnostic. Representative pages spanning all three
 Parts, every appendix family, long equations, tables, hashes, commands, and
@@ -143,14 +164,12 @@ or unreadable content.
 
 The following are not closed by local evidence:
 
-1. The ChatGPT Pro review has been transmitted; its final response and
-   disposition remain pending.
-2. The public source repository exists, but the final evidence tag and
+1. The public source repository exists, but the final evidence tag and
    immutable twelve-asset Release do not.
-3. Anonymous and hosted verification passed for the initial public commit;
+2. Anonymous and hosted verification passed for the initial public commit;
    final-tag Release-asset verification remains pending.
-4. No public reuse license is granted; copyright is retained by Cheng Xin.
-5. No DOI, archival deposit, external human peer review, or proof-assistant
+3. No public reuse license is granted; copyright is retained by Cheng Xin.
+4. No DOI, archival deposit, external human peer review, or proof-assistant
    formalization is claimed.
 
 These gates affect public reproducibility and submission confidence; they do

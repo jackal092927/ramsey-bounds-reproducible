@@ -17,7 +17,7 @@ records. They are not separate publication outputs.
 | part | scoped result | evidence boundary |
 |---|---|---|
 | diagonal upper bound | \(R(k,k)\le(3.780685290)^{k+o(k)}\), with certified unrounded base below `3.780685288379640114` | asymptotic and source-relative; depends on version-pinned retained-spine/book interfaces, the certified six-stage rate, and interval-arithmetic containment semantics; no effective finite-\(k\) threshold |
-| fixed-ratio lower bound | for each sufficiently large fixed \(C\), a source-relative addition \(\widehat H_*(C)=(1+o_{C\to\infty}(1))/(64\log C)\) | conditional on (S1)--(S5); (S3) is an additional weighted-extension hypothesis not attributed as a theorem stated by HMS or Lin--Niu; the order of limits is fixed \(C\), then \(\ell\to\infty\), and only then \(C\to\infty\) |
+| fixed-ratio lower bound | after fixing the source constant \(K\), for each sufficiently large fixed \(C\), a source-relative addition \(\widehat H_*(C)=(1+o_{C\to\infty}(1))/(64\log C)\) | conditional on (S1)--(S5); (S3) is an additional weighted-extension hypothesis not attributed as a theorem stated by HMS or Lin--Niu; for fixed \(C\) and \(w>\omega_0\), first take \(\ell\to\infty\), then \(w\downarrow\omega_0\), and only afterward \(C\to\infty\); \(C_0(K)\) is non-effective |
 | finite proof-carrying barrier | for the pinned 100-vertex near miss, the one-sided deletion repair radius under free additions is at least seven | local to one labelled seed and one edit metric; exact seven remains `UNKNOWN`; this does **not** imply \(R(3,18)\ge101\) |
 
 No claim of a world-best bound, publication priority, global parameter
@@ -50,6 +50,8 @@ minor findings are consolidated in
 [`reviews/FINAL_TARGETED_ADVERSARIAL_REVIEW_2026-08-30.md`](reviews/FINAL_TARGETED_ADVERSARIAL_REVIEW_2026-08-30.md).
 The repository-wide publication protocol audit is
 [`reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md`](reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md).
+The ChatGPT Pro second-opinion report and claim-by-claim disposition are
+[`reviews/CHATGPT_PRO_REVIEW.md`](reviews/CHATGPT_PRO_REVIEW.md).
 The publication-facing state is [`STATUS.md`](STATUS.md). Local or AI-assisted
 adversarial review does not substitute for independent external human peer
 review.
@@ -59,21 +61,21 @@ review.
 On 2026-08-30 the following gates passed on the current worktree:
 
 - `quick`, `full`, and networked `sources` reproduction tiers;
-- all finite-heavy semantic audits and six independent DRAT replays;
+- all finite-heavy semantic audits and six checked DRAT replays;
 - deterministic materialization of the single canonical manuscript;
-- compilation of a 79-page PDF with no overfull box, unresolved or multiply
+- compilation of an 83-page PDF with no overfull box, unresolved or multiply
   defined reference, LaTeX warning, error, or fatal diagnostic; and
 - representative-page visual inspection.
 
 With `SOURCE_DATE_EPOCH` fixed, two clean builds under the recorded pdfTeX
 1.40.24 (TeX Live 2022) and Latexmk 4.77 toolchain were byte-identical. The
-canonical 79-page PDF SHA-256 is
-`bad787b9a37430d39d17d789c9dddc39db212db2db0954fa668dd43c96993804`.
+canonical 83-page post-review PDF SHA-256 is
+`6ff124cc1ae5f1504510c7a557cff1fe964c4ec24889e9e050294b56c9553885`.
 Byte identity across different TeX distributions, font packages, or engines is
-not claimed. The external ChatGPT Pro adversarial review was transmitted on
-2026-08-30 and remains in progress. No final report is treated as received
-until its complete response is archived and every concrete objection is
-dispositioned; it is a second opinion, not external human peer review.
+not claimed. A separate ChatGPT Pro AI second opinion completed on
+2026-08-30. Every recoverable concrete objection was checked against the
+canonical sources and repaired or explicitly dispositioned in the archived
+report. It is a second opinion, not external human peer review.
 
 ## Reproduction
 

@@ -55,11 +55,13 @@ full-box strong concavity. In the pinned source normalization, it yields
 \widehat H_*(C)=\frac{1+o_{C\to\infty}(1)}{64\log C}>0.
 \]
 
-This is a fixed-sufficiently-large-\(C\), source-relative addition conditional
-on (S1)--(S5). The weighted-extension rule (S3) is an explicit additional
-hypothesis, not a theorem attributed as stated by HMS or Lin--Niu. The logical
-order is fixed \(C\), then \(\ell\to\infty\), then \(C\to\infty\). The
-threshold is non-effective, and the result is not advertised as a comparison
+After fixing the source constant \(K\), this is a
+fixed-sufficiently-large-\(C\), source-relative addition conditional on
+(S1)--(S5). The weighted-extension rule (S3) is an explicit additional
+hypothesis, not a theorem attributed as stated by HMS or Lin--Niu. For fixed
+\(C\) and \(w>\omega_0\), the logical order is \(\ell\to\infty\), then
+\(w\downarrow\omega_0\), and only afterward \(C\to\infty\). The threshold
+\(C_0(K)\) is non-effective, and the result is not advertised as a comparison
 with every published terminal normalization.
 
 ## Part III: a proof-carrying local barrier
@@ -102,12 +104,12 @@ finding. The record is
 
 The consolidated record is
 [`reviews/REVIEW_DISPOSITION.md`](reviews/REVIEW_DISPOSITION.md). The ChatGPT
-Pro adversarial second opinion was transmitted and remains in progress; no
-final report is treated as received until its complete response is archived
-and every concrete objection is dispositioned. The immutable evidence Release
-and final-tag credential-free replay also remain pending. Neither review by an
-AI system nor a reproducibility replay is represented as external human peer
-review.
+Pro adversarial second opinion has completed; every recoverable concrete
+objection was checked and repaired or dispositioned in
+[`reviews/CHATGPT_PRO_REVIEW.md`](reviews/CHATGPT_PRO_REVIEW.md). The immutable
+evidence Release and final-tag credential-free replay remain pending. Neither
+review by an AI system nor a reproducibility replay is represented as external
+human peer review.
 
 ## Claims intentionally not made
 

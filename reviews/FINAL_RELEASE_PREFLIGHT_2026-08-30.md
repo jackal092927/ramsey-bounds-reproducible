@@ -10,13 +10,15 @@ immutable evidence Release
 The mathematical claim surfaces are mutually consistent: Part I remains
 conditional/source-relative, Part II remains conditional on S1--S5 with S3 an
 extra hypothesis, and Part III proves only a fixed-seed one-sided deletion
-radius lower bound of seven. Exact seven remains UNKNOWN and no
-(R(3,18)ge101) claim is made.
+radius lower bound of seven. Exact seven remains `UNKNOWN` and no
+\(R(3,18)\ge101\) claim is made.
 
 The final release implementation audit reached **0 blocker / 0 major /
 0 minor** after the repairs below. This is a verdict on the implementation and
 publication protocol, not a statement that the tag or Release already exists.
-The final PDF hash, ChatGPT Pro disposition, hosted final-commit checks,
+The ChatGPT Pro disposition has since been closed in
+`reviews/CHATGPT_PRO_REVIEW.md`. The local post-review PDF hash has also been
+frozen by two byte-identical clean builds. Hosted final-commit checks,
 publication, attestation, and credential-free replay remain separate gates
 until their completion is recorded.
 
@@ -60,8 +62,8 @@ live GitHub state, not the presence of these prospective files.
 
 Four status documents retained the previous candidate hash. After two clean
 builds produced identical bytes, those current-status occurrences were
-updated atomically to
-`bad787b9a37430d39d17d789c9dddc39db212db2db0954fa668dd43c96993804`.
+updated atomically to the 83-page post-review PDF digest
+`6ff124cc1ae5f1504510c7a557cff1fe964c4ec24889e9e050294b56c9553885`.
 They must be checked again if a later review changes any manuscript source.
 Historical review snapshots whose text explicitly identifies an earlier
 worktree are not rewritten.
@@ -81,6 +83,29 @@ workflows now use the current Node 24 majors, `actions/checkout` v5 and
 `actions/setup-python` v6, each pinned to the verified commit object behind
 its official major tag. This repair must pass fresh hosted CI before the
 release tag is cut.
+
+### P8. ChatGPT Pro second opinion — completed and dispositioned
+
+The pre-final uploaded manuscript received a `MAJOR REVISION` recommendation
+because several proof dependencies and machine objects were not sufficiently
+explicit to a PDF-only reviewer. Every recoverable concrete objection was
+checked against the canonical source. The resulting repairs and conservative
+dispositions are recorded in `reviews/CHATGPT_PRO_REVIEW.md`; no scoped theorem
+was strengthened in response.
+
+### P9. Post-review integration and typesetting defects — repaired
+
+A hostile comparison of canonical and materialized sources found that global
+replacement of parenthesized equation numbers had corrupted the function
+evaluation `D(2.9)` in the unified manuscript while still producing a valid
+PDF. The materializer now protects the canonical function-argument forms while
+rewriting bare prose references, resolves appendix-to-main equation references
+by scope, and has dedicated regression tests. The finite-heavy entry point no
+longer passes
+DRAT-only command-line flags to the independent sequential-counter checker.
+Finally, four bare `qquad` tokens and a table placement that interrupted a
+proof sentence were repaired and visually rechecked. These corrections changed
+neither theorem statement nor numerical constant.
 
 ## Supply-chain invariants checked
 
@@ -111,7 +136,7 @@ The current post-repair tree passed:
 - official CFF 1.2.0 schema validation;
 - deterministic unified-source materialization;
 - the quick tier, including four independent 512-bit upper transfers,
-  lower arithmetic checks, 28 finite-route unit tests, and lightweight graph
+  lower arithmetic checks, 33 finite-route unit tests, and lightweight graph
   certificates; and
 - the full tier, including the six-stage interval chain, six independent
   two-sided region replays, upper regression audits, and the complete lower
@@ -124,10 +149,10 @@ run.
 
 ## Safe publication order
 
-1. Close the independent ChatGPT Pro review and disposition every concrete
-   objection.
-2. Materialize the unified source, clean-build twice, require byte identity,
-   and update every current-status hash.
+1. **Completed:** the separate ChatGPT Pro AI second opinion and
+   concrete-objection disposition.
+2. **Completed locally:** materialize the unified source, clean-build twice,
+   require byte identity, and update every current-status hash.
 3. Push the final commit and require fast and full hosted verification on that
    exact commit.
 4. Create and push the annotated evidence tag, then verify its raw object and

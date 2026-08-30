@@ -45,21 +45,21 @@ statements (2.35)--(2.36), the uniform \(t_0\) factor in (5.12), and the
 square estimate in (5.14); no final Cauchy coarsening is imported.\\
 Lin--Niu 359--493, 499--537&
 Monotonicity of upper-truncated Gaussian variance and the exact
-positive-direction CGF.  After replacing their upper cutoff by \(-b\),
+positive-direction CGF\@.  After replacing their upper cutoff by \(-b\),
 these give (2.4)--(2.6) and \cref{lem:mills}.\\
 HMS 1192--1289&
 The red law of total probability, cutoff conditioning, projection merge, and
 scalar reverse-induction allocation.  Equations (2.33), (2.39), and (2.40)
 record the algebra that the separately assumed weighted extension (S3) must
-preserve; (2.41) is the frozen scalar baseline.  The nonuniform estimate is
-proved locally and is not attributed verbatim to HMS.\\
+preserve; \eqref{eq:scalar-baseline} is the frozen scalar baseline.  The
+nonuniform estimate is proved locally and is not attributed verbatim to HMS.\\
 HMS 385--410 and 955--971&
 For every specified retained set, the red-perfectness failure factor is
-\((p/10)^{10\ell u}\).  This is the sole external extraction input (2.42);
+\((p/10)^{10\ell u}\).  This is the sole external extraction input (2.41);
 the restoration estimates and binomial sum are proved in (6.5)--(6.11).\\
 HMS 977--1181, 1294--1312, together with 385--410&
 The unchanged blue reverse induction, its perfect bound, and the same greedy
-extraction argument, yielding the raw probability inequality (2.43).  The
+extraction argument, yielding the raw probability inequality (2.42).  The
 first-moment threshold (7.4) is derived locally.\\
 \bottomrule
 \end{longtable}
@@ -124,7 +124,7 @@ The red interface before the new two deficits is the explicit envelope
  +\frac apd^{-1/5}\binom r2+r\right].
 \tag{B.4}
 \]
-The blue interface is the explicit probability estimate (2.43).  Dividing
+The blue interface is the explicit probability estimate (2.42).  Dividing
 their logarithms by \(\ell^2\), and only then applying
 \(\binom nk\le n^k\), gives the red and blue thresholds (7.2) and (7.4).
 The comparison is not assumed: the source asymptotics imply
@@ -143,17 +143,20 @@ the active constraint for sufficiently large fixed \(C\).
 
 \subsection{Order of quantifiers and proof status}
 
-The absolute constant \(K\) in (2.10) is fixed before selecting the
+The absolute constant \(K\) in \eqref{eq:source-K} is fixed before selecting the
 large-\(C\) threshold, but its numerical value is not provided by the pinned
-source.  The theorem therefore has the order
+source.  At theorem level the quantifiers therefore begin in the order
 \[
- \exists C_0\ \forall C\ge C_0\ \exists\ell_0(C)\
+ \text{fix }K,\qquad
+ \exists C_0=C_0(K)\ \forall C\ge C_0\ \exists\ell_0(C)\
  \forall\ell\ge\ell_0(C),
 \tag{B.7}
 \]
-followed by \(\ell\to\infty\).  Only after that fixed-\(C\) theorem is
+followed by \(\ell\to\infty\).  Within the proof, the auxiliary \(w\) is
+fixed in an admissible right-neighborhood of \(\omega_0\) during this limit
+and is then sent down to \(\omega_0\).  Only after that fixed-\(C\) theorem is
 established is \(C\to\infty\) used to obtain the coefficient \(1/64\).
-No explicit value of \(C_0\) or \(\ell_0(C)\) is asserted.
+No explicit value of \(C_0(K)\) or \(\ell_0(C)\) is asserted.
 
 The resulting theorem is source-relative: its local residual algebra,
 three-factor bridge, reverse-induction charge, extraction sum, first moments
