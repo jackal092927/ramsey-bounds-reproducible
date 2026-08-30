@@ -46,7 +46,7 @@
     "triangle_clauses": 161700,
     "variables": 13160
   },
-  "seven_deletion_repair_exists": false,
+  "seven_deletion_repair_exists": null,
   "seven_deletion_repair_exists_is_established": false,
   "status": "BRANCH0_ARTIFACT_AUDITED_NOT_REPLAYED"
 }

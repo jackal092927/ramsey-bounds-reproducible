@@ -1,14 +1,13 @@
-# License status
+# Copyright and license status
 
-No public reuse license has yet been selected for this local pre-publication
-research package. Copyright is retained by Cheng Xin.
+Copyright © 2026 Cheng Xin. All rights reserved.
 
-The absence of a license must not be interpreted as permission to copy,
-modify, or redistribute the software, manuscripts, third-party graph data, or
-large proof artifacts. Before public release, the author should approve an
-explicit software license and an explicit manuscript license and separately
-verify the redistribution terms of all third-party inputs.
+No public reuse license is granted for this public repository or any of its
+releases. Public availability, citation metadata, and content hashes do not
+constitute permission to copy, modify, redistribute, sublicense, or create
+derivative works from the software, manuscripts, proof artifacts, or data.
 
-This status file is intentionally not a substitute for a license. It records
-the current boundary without granting rights or claiming that a public
-repository or release already exists.
+Third-party materials remain subject to their respective upstream terms, as
+described in `THIRD_PARTY_NOTICES.md`.
+
+This notice records the rights boundary and grants no license.

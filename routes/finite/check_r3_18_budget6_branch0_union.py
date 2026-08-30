@@ -227,8 +227,9 @@ def audit_proof(directory: Path, checker: Path | None, seconds: float) -> dict:
             text=True,
             timeout=seconds,
         )
-    if completed.returncode != 0 or "s VERIFIED" not in completed.stdout:
-        raise AssertionError("DRAT replay failed")
+    verdict_lines = {line.strip() for line in completed.stdout.splitlines()}
+    if completed.returncode != 0 or "s VERIFIED" not in verdict_lines:
+        raise AssertionError("DRAT replay did not return an exact s VERIFIED line")
     result.update({
         "status": "VERIFIED",
         "checker_sha256": checker_hash,

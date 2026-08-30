@@ -281,7 +281,8 @@ def audit_proof(directory: Path, checker: Path | None, seconds: float) -> dict:
             text=True,
             timeout=seconds,
         )
-    verified = completed.returncode == 0 and "s VERIFIED" in completed.stdout
+    verdict_lines = {line.strip() for line in completed.stdout.splitlines()}
+    verified = completed.returncode == 0 and "s VERIFIED" in verdict_lines
     result.update(
         {
             "status": "VERIFIED" if verified else "FAILED",
@@ -296,7 +297,7 @@ def audit_proof(directory: Path, checker: Path | None, seconds: float) -> dict:
         }
     )
     if not verified:
-        raise AssertionError("DRAT replay did not return s VERIFIED")
+        raise AssertionError("DRAT replay did not return an exact s VERIFIED line")
     return result
 
 

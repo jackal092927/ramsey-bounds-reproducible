@@ -9,10 +9,11 @@ created; historical labels in those files do not override this status.
 ## Overall disposition
 
 ```text
-LOCALLY REVIEWED PRE-PUBLICATION RELEASE CANDIDATE
+PUBLIC SOURCE REPOSITORY CREATED
 ONE CANONICAL UNIFIED MANUSCRIPT
-NOT YET PUBLICLY RELEASED
-EXTERNAL SECOND-OPINION AND CLEAN-CLONE GATES STILL OPEN
+RELEASE CANDIDATE NOT YET TAGGED OR PUBLISHED
+CHATGPT PRO REVIEW TRANSMITTED; FINAL RESPONSE AND DISPOSITION PENDING
+FINAL-TAG CLEAN-CLONE AND RELEASE-ASSET VERIFICATION PENDING
 ```
 
 The canonical manuscript is
@@ -45,6 +46,7 @@ Current scoped statement:
 
 ```text
 SOURCE-RELATIVE FIXED-LARGE-C RESULT
+CONDITIONAL ON (S1)--(S5), INCLUDING THE ADDITIONAL HYPOTHESIS (S3)
 Hhat_*(C) = (1+o_{C->infinity}(1))/(64 log C) > 0
 fixed C first, then ell -> infinity; threshold in C is non-effective
 ```
@@ -91,7 +93,15 @@ local to the pinned 100-vertex seed and edit metric. It does not construct a
   closed**; public repository/release verification remains open.
 - Current finite-heavy semantic and six-DRAT replay: **passed**; exact seven
   remains `UNKNOWN`.
-- ChatGPT Pro second-opinion review: **not yet transmitted or completed**.
+- Fresh independent mathematical audit: **0 fatal, 0 major, 1 resolved
+  terminological minor**; no theorem, constant, or proof architecture changed.
+- Final theorem-specific adversarial reconstructions: **0 fatal, 0 major,
+  9 resolved minor findings** across the upper, lower, and finite components;
+  the scoped theorem statements are unchanged.
+- Final release-implementation audit: **0 blocker, 0 major, 0 minor after
+  repair**; live publication and post-release replay remain pending.
+- ChatGPT Pro second-opinion review: **transmitted on 2026-08-30 and still in
+  progress**; no final response has yet been archived or dispositioned.
 
 Review files:
 
@@ -102,27 +112,38 @@ Review files:
 - [`reviews/GLOBAL_CLAIM_AUDIT.md`](reviews/GLOBAL_CLAIM_AUDIT.md)
 - [`reviews/REPRODUCIBILITY_POST_REPAIR_REVIEW.md`](reviews/REPRODUCIBILITY_POST_REPAIR_REVIEW.md)
 - [`reviews/FINITE_HEAVY_CURRENT_RUN_2026-08-30.md`](reviews/FINITE_HEAVY_CURRENT_RUN_2026-08-30.md)
+- [`reviews/FRESH_INDEPENDENT_MATH_REVIEW_2026-08-30.md`](reviews/FRESH_INDEPENDENT_MATH_REVIEW_2026-08-30.md)
+- [`reviews/FINAL_TARGETED_ADVERSARIAL_REVIEW_2026-08-30.md`](reviews/FINAL_TARGETED_ADVERSARIAL_REVIEW_2026-08-30.md)
+- [`reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md`](reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md)
 - [`reviews/REVIEW_DISPOSITION.md`](reviews/REVIEW_DISPOSITION.md)
 
-The canonical PDF has 79 pages and SHA-256
-`8ed2aec0a38278dd81bc669eda36dd15c8f86324a65c6ebf3af271d33e1c7d1a`.
+The current release-candidate PDF has 79 pages and SHA-256
+`bad787b9a37430d39d17d789c9dddc39db212db2db0954fa668dd43c96993804`.
+This is a candidate hash until the external review is dispositioned and the
+final two clean builds agree.
 Its final log has no overfull box, undefined or multiply defined reference,
 LaTeX warning, error, or fatal diagnostic; representative pages were also
 inspected visually.
 
 ## Repository and release state
 
-- Local Git history: present.
-- Verified GitHub remote: absent.
-- Public GitHub repository: not yet created or independently confirmed.
-- Immutable release containing the twelve manifest assets: not yet published.
-- Anonymous clean-clone replay: not yet completed.
+- Local Git history and verified GitHub remote: present.
+- Public source repository: confirmed at
+  <https://github.com/jackal092927/ramsey-bounds-reproducible>.
+- Initial public snapshot commit:
+  `6f833effcfb9e39f388998c5bfe4281d5c88805a`.
+- Initial-commit anonymous clone plus fast and full hosted verification:
+  passed. These runs do not verify the eventual final tag or Release assets.
+- Final evidence tag and immutable twelve-asset Release: not yet published.
+- The exact final tag target commit will be recorded after publication; it is
+  intentionally not self-referenced inside the commit that it identifies.
+- Final-tag credential-free clone and Release-asset replay: pending.
 - DOI or archival deposit: none assigned.
-- Public reuse license: not yet selected.
+- Public reuse license: none granted; copyright is retained by Cheng Xin.
 
-Therefore no manuscript, script, citation record, or status report should
-describe the current snapshot as published, publicly archived, or publicly
-reproducible.
+Therefore the current snapshot may be described as a public source release
+candidate, but not yet as a completed immutable artifact release or a
+peer-reviewed publication.
 
 ## Gate to change this status
 
@@ -131,7 +152,6 @@ are complete. The package can move to public-release status only after:
 
 1. the external ChatGPT Pro second-opinion review is completed and every
    concrete objection is repaired or dispositioned;
-2. the author selects licenses or explicitly confirms a copyright-retained
-   public repository;
-3. the GitHub repository and exact twelve-asset release are created; and
-4. the advertised workflow is verified from a credential-free fresh clone.
+2. the final tag and exact twelve-asset immutable Release are published; and
+3. the advertised workflow is verified from a credential-free fresh clone
+   and public asset download.

@@ -1,0 +1,181 @@
+name: immutable-release-finite-verification
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag
+        required: true
+        default: evidence-2026-08-30
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-verification-${{ github.event.release.tag_name || inputs.tag }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+    env:
+      RAMSEY_GITHUB_REPO: ${{ github.repository }}
+      RAMSEY_ARTIFACT_TAG: ${{ github.event.release.tag_name || inputs.tag }}
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.event.release.tag_name || inputs.tag }}
+          fetch-depth: 0
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.11.15'
+
+      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7 peeled commit
+        with:
+          version: '0.10.2'
+
+      - name: Bootstrap pinned environment
+        run: bash scripts/bootstrap.sh
+
+      - name: Require exact immutable published release
+        run: |
+          test "$(git cat-file -t "refs/tags/${RAMSEY_ARTIFACT_TAG}")" = tag
+          test "$(git rev-parse HEAD)" = \
+            "$(git rev-parse "${RAMSEY_ARTIFACT_TAG}^{commit}")"
+
+          release_json="${RUNNER_TEMP}/release.json"
+          curl --fail --location --silent --show-error \
+            --retry 12 --retry-all-errors --retry-delay 5 \
+            --header 'Accept: application/vnd.github+json' \
+            --header 'X-GitHub-Api-Version: 2026-03-10' \
+            "https://api.github.com/repos/${RAMSEY_GITHUB_REPO}/releases/tags/${RAMSEY_ARTIFACT_TAG}" \
+            --output "${release_json}"
+
+          python - "${release_json}" "${RAMSEY_ARTIFACT_TAG}" <<'PY'
+          import json
+          import sys
+
+          with open(sys.argv[1], encoding="utf-8") as handle:
+              release = json.load(handle)
+          assert release["tag_name"] == sys.argv[2]
+          assert release["draft"] is False
+          assert release["prerelease"] is False
+          assert release["immutable"] is True
+          PY
+
+      - name: Require sufficient disk headroom
+        run: |
+          minimum_kb=$((8 * 1024 * 1024))
+          for path in "${GITHUB_WORKSPACE}" "${RUNNER_TEMP}"; do
+            available_kb="$(df -Pk "${path}" | awk 'END {print $4}')"
+            test "${available_kb}" -ge "${minimum_kb}"
+          done
+          df -h "${GITHUB_WORKSPACE}" "${RUNNER_TEMP}"
+
+      - name: Verify immutable release attestation
+        run: |
+          attestation_json="${RUNNER_TEMP}/release-attestation.json"
+          verified=0
+          for attempt in $(seq 1 30); do
+            if gh release verify "${RAMSEY_ARTIFACT_TAG}" \
+                --repo "${RAMSEY_GITHUB_REPO}" \
+                --format json > "${attestation_json}"; then
+              verified=1
+              break
+            fi
+            sleep 10
+          done
+          test "${verified}" -eq 1
+
+          python - \
+            "${attestation_json}" \
+            "artifacts/MANIFEST.tsv" \
+            "$(git rev-parse "refs/tags/${RAMSEY_ARTIFACT_TAG}")" \
+            "${RAMSEY_GITHUB_REPO}" \
+            "${RAMSEY_ARTIFACT_TAG}" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          attestation_path = Path(sys.argv[1])
+          manifest_path = Path(sys.argv[2])
+          expected_source_object = sys.argv[3]
+          expected_repository = sys.argv[4]
+          expected_tag = sys.argv[5]
+
+          expected_assets = {}
+          for raw in manifest_path.read_text(encoding="utf-8").splitlines():
+              if not raw or raw.startswith("#"):
+                  continue
+              digest, _size, name = raw.split("\t")
+              assert name not in expected_assets
+              expected_assets[name] = digest
+
+          verified_release = json.loads(
+              attestation_path.read_text(encoding="utf-8")
+          )
+          statement = verified_release["verificationResult"]["statement"]
+          predicate = statement["predicate"]
+          assert predicate["repository"] == expected_repository
+          assert predicate["tag"] == expected_tag
+
+          source_subjects = [
+              subject
+              for subject in statement["subject"]
+              if "uri" in subject and "sha1" in subject.get("digest", {})
+          ]
+          assert len(source_subjects) == 1
+          assert source_subjects[0]["digest"]["sha1"] == expected_source_object
+
+          attested_assets = {
+              subject["name"]: subject["digest"]["sha256"]
+              for subject in statement["subject"]
+              if "name" in subject and "sha256" in subject.get("digest", {})
+          }
+          assert attested_assets == expected_assets
+          PY
+
+      - name: Download and hash all release assets without credentials
+        env:
+          GH_TOKEN: ''
+        run: bash scripts/download_release_artifacts.sh
+
+      - name: Build source-pinned DRAT checker
+        run: |
+          command -v git make cc shasum curl gh
+          bash scripts/build_drat_trim.sh "${RUNNER_TEMP}/drat-trim-build"
+          test "$(cat "${RUNNER_TEMP}/drat-trim-build/SOURCE_COMMIT")" = \
+            '2e3b2dc0ecf938addbd779d42877b6ed69d9a985'
+
+      - name: Bind downloaded files to the release attestation
+        run: |
+          awk -F '\t' '!/^#/ && NF == 3 {print $3}' artifacts/MANIFEST.tsv |
+          while IFS= read -r name; do
+            gh release verify-asset "${RAMSEY_ARTIFACT_TAG}" \
+              "artifacts/downloads/${name}" \
+              --repo "${RAMSEY_GITHUB_REPO}"
+          done
+
+      - name: Replay all finite certificates
+        env:
+          TMPDIR: ${{ runner.temp }}
+        run: |
+          .venv/bin/python reproduce.py finite-heavy \
+            --artifact-dir artifacts/downloads \
+            --drat-trim "${RUNNER_TEMP}/drat-trim-build/drat-trim" \
+            | tee "${RUNNER_TEMP}/finite-heavy.log"
+
+      - name: Retain finite-heavy log
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: finite-heavy-${{ github.event.release.tag_name || inputs.tag }}
+          path: ${{ runner.temp }}/finite-heavy.log
+          if-no-files-found: warn
+          retention-days: 90

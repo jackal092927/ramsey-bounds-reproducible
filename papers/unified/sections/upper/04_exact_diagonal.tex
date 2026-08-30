@@ -62,10 +62,13 @@ At \(u=2.9\), interval arithmetic proves
 \]
 and
 \[
- D'(u)=4e^{2u}-4Te^u-e^{u/2}+4e^{-u}>0
+ D'(u)=4e^{2u}-4Te^u-e^{u/2}+4e^{-u}>0.
 \]
-throughout the half-line by exponential dominance, with a strict endpoint
-check.  Hence \(B_T\), and therefore \(R-T\), remain positive.
+Indeed, for \(u\ge2.9\) one has \(e^u-T>1\), and therefore
+\[
+D'(u)>4e^u-e^{u/2}>0.
+\]
+Hence \(B_T\), and therefore \(R-T\), remain positive.
 \end{proof}
 
 \begin{lemma}[Separator]\label{up:lem:separator}
@@ -171,6 +174,11 @@ Combining \cref{up:lem:diagonal-reduction,up:lem:envelope}, if
  F(LA_1,LA_2)<D_0\exp\!\left(4u_0(M+1)^{1/3}\right).
  \tag{U4.13}\label{up:main:eq:4-13}
 \]
+If \(M\le0\), the left side is nonpositive by the sign case in
+\cref{up:lem:diagonal-reduction}, whereas the right side is positive.  If
+\(M>0\), take \(u=u_0M^{1/3}\); then the diagonal-reduction parameter is
+\(m=LM=u^3\) and the \(w\) in \cref{up:lem:envelope} equals
+\(u_0(M+1)^{1/3}\), proving the displayed inequality.
 
 \subsection{Exact moment/tail budget}
 

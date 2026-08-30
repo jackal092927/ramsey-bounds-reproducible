@@ -1,8 +1,10 @@
 \section{Reproducibility and claim boundary}\label{sec:scope-lower}
 
-The proof specification, arithmetic checker and independent source-level
-review have SHA-256 prefixes \texttt{2234a769}, \texttt{616040b9} and
-\texttt{ef6ddbce}, respectively.  The checker replays the recursion,
+The frozen pre-canonical route note, arithmetic checker and its independent
+source-level review have SHA-256 prefixes \texttt{2234a769},
+\texttt{616040b9} and \texttt{ef6ddbce}, respectively.  Their historical
+status labels do not override this manuscript's canonical theorem statement
+or proof-status ledger.  The checker replays the recursion,
 multiplicity identities, Hessian samples, exact-CGF increments, finite margins
 at four large \(C\)-values and convergence to the leading constant.  It is an
 arithmetic witness, not a substitute for the reverse-induction proof.
@@ -13,7 +15,8 @@ bash scripts/bootstrap.sh
 bash scripts/reproduce_lower.sh
 \end{verbatim}
 to reproduce the bridge, exact-CGF predecessor, nonexchangeable ledger and
-controlled-residual calculations with pinned dependencies.
+controlled-residual arithmetic calculations with pinned dependencies.  A
+passing arithmetic replay is not labelled a theorem proof.
 
 The theorem is source-relative, fixed-\(C\), asymptotic in \(\ell\), and
 non-effective in \(C_0\).  It supplies no new blue-side construction and no

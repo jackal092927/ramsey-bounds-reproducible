@@ -57,7 +57,9 @@ directory.  Then invoke
 /path/to/drat-trim formula.cnf proof.drat
 \end{verbatim}
 \endgroup
-and require both exit status zero and the terminal line \texttt{s VERIFIED}.
+and require both exit status zero and an exact output line
+\texttt{s VERIFIED}.  The checker may print timing diagnostics after that
+status line.
 Delete the temporary raw files only after recording the uncompressed hashes.
 
 For the complete package, the repository offers integrated semantic and proof

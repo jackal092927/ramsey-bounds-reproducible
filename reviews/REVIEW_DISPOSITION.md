@@ -3,8 +3,8 @@
 Date: 2026-08-30  
 Scope: the single canonical manuscript at `papers/unified/main.tex`, its
 generated PDF, and the complete local reproduction package  
-Status: local review complete; external second opinion and public clean-clone
-verification pending
+Status: local review complete; external second opinion transmitted and in
+progress; final-tag and public-Release verification pending
 
 ## Executive conclusion
 
@@ -18,11 +18,31 @@ results. The correct claim statuses are nevertheless different:
 
 | result | final local proof status | indispensable boundary |
 |---|---|---|
-| diagonal upper bound | **PROVABLE AS STATED** | conditional on the three version-pinned Yang--Mao v1 interfaces, the locally proved BookCor/correlation implications, and Arb ball containment |
+| diagonal upper bound | **PROVABLE AS STATED ONLY UNDER THE EXPLICIT SOURCE-INTERFACE AND INTERVAL-ARITHMETIC TRUST BOUNDARY** | conditional on the three version-pinned Yang--Mao v1 interfaces, the locally proved BookCor/correlation implications, and Arb ball containment |
 | fixed-ratio lower bound | **PROVABLE AFTER WEAKENING / EXTRA ASSUMPTION** as a Ramsey headline; the local ledger is **PROVABLE AS STATED** conditional on (S1)--(S5) | (S3) is an additional weighted-extension hypothesis with a frozen scalar baseline and is not attributed as a theorem stated by HMS or Lin--Niu |
 | fixed-seed deletion barrier | **PROVABLE AS STATED** | local to one labelled 100-vertex seed, one one-sided edit metric, semantic CNF reconstruction, exhaustive branch cover, and six checked DRAT refutations |
 | existence or nonexistence of an exact-seven repair | **NOT CURRENTLY JUSTIFIED** | all three bounded exact-seven runs ended `UNKNOWN` and produced neither a witness nor a proof |
 | a new global bound (R(3,18)\ge101) | **NOT CURRENTLY JUSTIFIED** | the fixed-seed barrier is not an existence construction and implies no global Ramsey-number improvement |
+
+The fresh independent audit in
+`reviews/FRESH_INDEPENDENT_MATH_REVIEW_2026-08-30.md` reached the same scoped
+verdicts without using the earlier review conclusions as premises. It found
+zero fatal and zero major issues and one terminological minor: two references
+to a “history in” the terminal event \(B_r^R\). Both occurrences now quantify
+over a red-admissible \(\mathcal F_{i-1}\)-history for target \(r\); this
+changed no estimate, theorem, or constant.
+
+The final theorem-specific hostile reconstructions are consolidated in
+`reviews/FINAL_TARGETED_ADVERSARIAL_REVIEW_2026-08-30.md`. They found zero
+fatal and zero major issues, plus nine minor findings. The upper proof now
+spells out two omitted elementary cases and separates local from external
+dependencies; the lower proof keeps S3 unambiguously hypothetical and narrows
+its replay sentinel; the finite package uses an exact DRAT status line,
+represents unknown data as null, and corrects the artifact-ledger scope.
+The repository-wide publication audit and safe immutable-release sequence are
+recorded in `reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md`; its
+implementation verdict is zero remaining blocker, major, or minor finding
+after repair, while live publication remains an open external gate.
 
 ## Mathematical findings and repairs
 
@@ -82,7 +102,7 @@ Five global-prose findings were repaired:
 | finding | disposition |
 |---|---|
 | G1: lower summary obscured the extra status of (S3) | **CLOSED**: the abstract, introduction, evidence table, and conclusion now identify (S3) explicitly |
-| G2: artifact language could imply an already public release | **CLOSED FOR PRE-PUBLICATION**: the paper labels the section a planned release and says GitHub/release publication remains pending |
+| G2: artifact language could imply an already public release | **CLOSED FOR THE TAG CANDIDATE**: the paper designates the intended tag and asset contract but does not claim that publication, immutability, credential-free download, or final-tag replay has already passed; those require a post-publication verification record |
 | G3: finite short statement omitted the same-labelled-set quantifier | **CLOSED** |
 | G4: upper source interfaces were hidden under an umbrella phrase | **CLOSED**: all three imported interfaces are enumerated and the local moment/tail proof is separated |
 | G5: “new results” risked an unsupported priority reading | **CLOSED**: the wording is now “results developed here” with no priority claim |
@@ -109,8 +129,10 @@ the proofs. The source tier independently matched three pinned arXiv TeX
 members and five upstream graph matrices. The materializer was rerun twice
 with identical output.
 
-The final canonical PDF has 79 pages and SHA-256
-`8ed2aec0a38278dd81bc669eda36dd15c8f86324a65c6ebf3af271d33e1c7d1a`.
+The current release-candidate PDF has 79 pages and candidate SHA-256
+`bad787b9a37430d39d17d789c9dddc39db212db2db0954fa668dd43c96993804`.
+It is not the final hash until the external review is dispositioned and two
+clean builds agree.
 Its log has no overfull box, undefined or multiply defined reference, LaTeX
 warning, error, or fatal diagnostic. Representative pages spanning all three
 Parts, every appendix family, long equations, tables, hashes, commands, and
@@ -121,15 +143,13 @@ or unreadable content.
 
 The following are not closed by local evidence:
 
-1. The ChatGPT Pro second-opinion review has not yet been transmitted or
-   received.
-2. The intended GitHub repository does not yet exist, and no immutable public
-   release containing exactly the twelve manifest assets has been verified.
-3. No credential-free fresh-clone replay or hosted CI result exists for the
-   release commit.
-4. No public reuse license has been selected. Copyright remains retained by
-   Cheng Xin unless the author chooses explicit software and manuscript
-   licenses.
+1. The ChatGPT Pro review has been transmitted; its final response and
+   disposition remain pending.
+2. The public source repository exists, but the final evidence tag and
+   immutable twelve-asset Release do not.
+3. Anonymous and hosted verification passed for the initial public commit;
+   final-tag Release-asset verification remains pending.
+4. No public reuse license is granted; copyright is retained by Cheng Xin.
 5. No DOI, archival deposit, external human peer review, or proof-assistant
    formalization is claimed.
 

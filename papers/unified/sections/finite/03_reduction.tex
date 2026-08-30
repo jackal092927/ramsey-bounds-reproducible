@@ -63,7 +63,8 @@ Each formula \(\Phi_0,\Phi_1,\Phi_2\) is unsatisfiable.
 \begin{proof}[Proof certificate]
 The three frozen DIMACS files have the identities and dimensions in
 \cref{fin:tab:budget6-branches}.  The corresponding DRAT traces were accepted by
-the pinned \texttt{drat-trim} checker, each ending with \texttt{s VERIFIED}.
+the pinned \texttt{drat-trim} checker, each reporting the exact status line
+\texttt{s VERIFIED}.
 Before replay, independent semantic checkers reconstructed the entire
 triangle prefix, cardinality block, fixed unit, and every \(153\)-literal
 hitting clause; they also checked the compressed and raw identities.  Details

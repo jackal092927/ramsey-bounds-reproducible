@@ -113,7 +113,10 @@ The post-repair reviews and their consolidated disposition are:
 - [`reviews/UPPER_POST_REPAIR_REVIEW.md`](reviews/UPPER_POST_REPAIR_REVIEW.md);
 - [`reviews/LOWER_POST_REPAIR_REVIEW.md`](reviews/LOWER_POST_REPAIR_REVIEW.md);
 - [`reviews/GLOBAL_CLAIM_AUDIT.md`](reviews/GLOBAL_CLAIM_AUDIT.md);
-- [`reviews/REPRODUCIBILITY_POST_REPAIR_REVIEW.md`](reviews/REPRODUCIBILITY_POST_REPAIR_REVIEW.md); and
+- [`reviews/REPRODUCIBILITY_POST_REPAIR_REVIEW.md`](reviews/REPRODUCIBILITY_POST_REPAIR_REVIEW.md);
+- [`reviews/FRESH_INDEPENDENT_MATH_REVIEW_2026-08-30.md`](reviews/FRESH_INDEPENDENT_MATH_REVIEW_2026-08-30.md);
+- [`reviews/FINAL_TARGETED_ADVERSARIAL_REVIEW_2026-08-30.md`](reviews/FINAL_TARGETED_ADVERSARIAL_REVIEW_2026-08-30.md);
+- [`reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md`](reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md); and
 - [`reviews/REVIEW_DISPOSITION.md`](reviews/REVIEW_DISPOSITION.md).
 
 Every major local finding has now been handled in one of two ways:
@@ -122,12 +125,15 @@ Every major local finding has now been handled in one of two ways:
 2. weaken the corresponding statement so that the displayed assumptions
    genuinely imply it.
 
-A separate ChatGPT Pro adversarial review remains planned as a second opinion. It
-must be recorded as pending until the manuscript is actually transmitted and
-a response is received; requesting a review is not evidence that it occurred.
+A separate ChatGPT Pro adversarial review was transmitted on 2026-08-30 as a
+second opinion. Its final response and claim-by-claim disposition remain
+pending; transmission alone does not close the review gate.
 
-The unified manuscript currently compiles to 79 pages with SHA-256
-`8ed2aec0a38278dd81bc669eda36dd15c8f86324a65c6ebf3af271d33e1c7d1a`.
+The unified release candidate currently compiles to 79 pages with candidate
+SHA-256
+`bad787b9a37430d39d17d789c9dddc39db212db2db0954fa668dd43c96993804`.
+The final hash will be recorded only after the external review disposition and
+two agreeing clean builds.
 The local quick, full, sources, finite-heavy, deterministic-materialization,
 log, and representative-page visual gates have passed.
 
@@ -158,12 +164,12 @@ README calls the package public.
 4. Inspect the final PDF and archive the build and verification logs.
 5. Obtain the independent ChatGPT Pro review and incorporate or disposition
    its concrete objections.
-6. Create the GitHub repository, push the frozen snapshot, and create an
+6. Freeze and push the existing public GitHub repository, then create an
    immutable release containing exactly the manifest entries.
 7. Verify the advertised process from a new clone without author-machine
    state.
 8. Only then update the paper, README, status, and citation metadata with the
    real commit, release URL, version, date, and—if obtained—archival DOI.
 
-Until those steps are complete, the correct label is **local pre-publication
-research package**, not published paper or public archival release.
+Until those steps are complete, the correct label is **public source release
+candidate**, not a completed immutable artifact release or published paper.

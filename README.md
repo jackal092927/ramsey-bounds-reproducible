@@ -23,20 +23,36 @@ records. They are not separate publication outputs.
 No claim of a world-best bound, publication priority, global parameter
 optimality, formal proof-assistant verification, or publication is made.
 
-## Current release state
+## Public source and release-candidate state
 
-This is a local pre-publication workspace. A GitHub repository and immutable
-release have not yet been created or verified from a clean anonymous clone.
-The large CNF/DRAT files named in
-[`artifacts/MANIFEST.tsv`](artifacts/MANIFEST.tsv) are intended to become
-release assets, but this README does not claim that those assets are publicly
-available.
+The source repository is public at
+[`jackal092927/ramsey-bounds-reproducible`](https://github.com/jackal092927/ramsey-bounds-reproducible).
+The evidence package is designated for the tagged release
+[`evidence-2026-08-30`](https://github.com/jackal092927/ramsey-bounds-reproducible/releases/tag/evidence-2026-08-30)
+and is valid only if it provides exactly the twelve CNF/DRAT payloads listed
+in [`artifacts/MANIFEST.tsv`](artifacts/MANIFEST.tsv). At this pre-release
+snapshot the final tag, immutable Release, credential-free asset download,
+and final-tag replay remain pending. Their completion must be recorded in a
+post-publication verification report rather than inferred from this README.
+
+This is a public source repository containing a reproducibility release
+candidate, not yet a completed artifact Release or a peer-reviewed
+publication. No DOI has been assigned. No public reuse license is granted;
+copyright remains with Cheng Xin.
 
 The first-round audits and all post-repair reviews are retained under
 [`reviews`](reviews). The consolidated current verdict is
 [`reviews/REVIEW_DISPOSITION.md`](reviews/REVIEW_DISPOSITION.md), and the
-publication-facing state is [`STATUS.md`](STATUS.md). Local adversarial review
-does not substitute for independent external peer review.
+fresh independent mathematical audit is
+[`reviews/FRESH_INDEPENDENT_MATH_REVIEW_2026-08-30.md`](reviews/FRESH_INDEPENDENT_MATH_REVIEW_2026-08-30.md).
+The three theorem-specific hostile reconstructions and their nine resolved
+minor findings are consolidated in
+[`reviews/FINAL_TARGETED_ADVERSARIAL_REVIEW_2026-08-30.md`](reviews/FINAL_TARGETED_ADVERSARIAL_REVIEW_2026-08-30.md).
+The repository-wide publication protocol audit is
+[`reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md`](reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md).
+The publication-facing state is [`STATUS.md`](STATUS.md). Local or AI-assisted
+adversarial review does not substitute for independent external human peer
+review.
 
 ## Verified local snapshot
 
@@ -49,11 +65,15 @@ On 2026-08-30 the following gates passed on the current worktree:
   defined reference, LaTeX warning, error, or fatal diagnostic; and
 - representative-page visual inspection.
 
-The canonical PDF SHA-256 is
-`8ed2aec0a38278dd81bc669eda36dd15c8f86324a65c6ebf3af271d33e1c7d1a`.
-The external ChatGPT Pro review, public GitHub release, and anonymous
-clean-clone replay remain pending and must not be inferred from these local
-passes.
+With `SOURCE_DATE_EPOCH` fixed, two clean builds under the recorded pdfTeX
+1.40.24 (TeX Live 2022) and Latexmk 4.77 toolchain were byte-identical. The
+canonical 79-page PDF SHA-256 is
+`bad787b9a37430d39d17d789c9dddc39db212db2db0954fa668dd43c96993804`.
+Byte identity across different TeX distributions, font packages, or engines is
+not claimed. The external ChatGPT Pro adversarial review was transmitted on
+2026-08-30 and remains in progress. No final report is treated as received
+until its complete response is archived and every concrete objection is
+dispositioned; it is a second opinion, not external human peer review.
 
 ## Reproduction
 
@@ -105,10 +125,10 @@ a binary produced on another platform.  Run the theorem replay with:
   --drat-trim /absolute/path/to/drat-trim
 ```
 
-Until a public release exists, supply the artifact directory locally. After
-publication, [`scripts/download_release_artifacts.sh`](scripts/download_release_artifacts.sh)
-is intended to compare the release's complete asset-name set with the manifest,
-download into a clean directory, and verify every byte count and digest.
+[`scripts/download_release_artifacts.sh`](scripts/download_release_artifacts.sh)
+uses the public GitHub REST endpoint without a GitHub account, CLI login, or
+token. It compares the release's complete asset-name set with the manifest,
+downloads into a clean directory, and verifies every byte count and digest.
 
 The canonical manuscript is materialized deterministically from the three
 archival components and then compiled by:
@@ -151,19 +171,19 @@ existence nor nonexistence.
 | [`reviews`](reviews) | adversarial mathematical and reproducibility reviews |
 | [`scripts`](scripts) | bootstrap, materialization, verification, and release helpers |
 
-## Publication checklist
+## Release boundary
 
-Before describing the package as a public reproducible release:
+The planned release will record one unified manuscript, a tag-bound source snapshot,
+an immutable twelve-asset evidence package, the pinned checker source revision,
+adversarial-review dispositions, and separate light/full/finite-heavy build
+logs. Historical searches and old review snapshots remain labelled by what was
+actually rerun at the time.
 
-1. resolve or explicitly scope every major mathematical review finding;
-2. make every reproduction command report only evidence actually rerun;
-3. create the GitHub repository and push a frozen commit;
-4. publish the manifest-matching large assets in an immutable release;
-5. verify the complete workflow from a fresh clone;
-6. record the commit, release URL, checker source revision, and build logs;
-7. select software and manuscript licenses with the author's approval; and
-8. update [`CITATION.cff`](CITATION.cff) without inventing a DOI, version, or
-   release date.
+Public availability does not grant reuse rights. [`LICENSE.md`](LICENSE.md)
+retains copyright and grants no license; [`CITATION.cff`](CITATION.cff) supplies
+citation metadata without inventing a DOI. No external human peer review,
+archival deposit, proof-assistant formalization, priority claim, or formal
+publication is implied.
 
 See [`PAPER_PLAN.md`](PAPER_PLAN.md) for the unified editorial plan and
 [`NARRATIVE_REPORT.md`](NARRATIVE_REPORT.md) for the claim narrative.

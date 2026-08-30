@@ -84,7 +84,7 @@
     "near_miss_independent_18_sets": 0,
     "arbitrary_additions_allowed": true,
     "proved_unsat_through_input_edge_deletion_budget": 6,
-    "minimum_deletions_for_any_completion_in_fixed_seed_ball": 7,
+    "one_sided_deletion_radius_lower_bound_in_fixed_seed_ball": 7,
     "exhaustive_branches": 3,
     "drat_traces_verified": 6,
     "budget_6_status": "ALL_THREE_EXACT_BUDGET6_BRANCHES_UNSAT_PROOF_VERIFIED",

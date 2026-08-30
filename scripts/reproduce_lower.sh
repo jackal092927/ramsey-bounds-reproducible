@@ -10,4 +10,4 @@ cd "${repo_root}"
 "${python_bin}" routes/lower/history_dependent_ledger_check.py
 "${python_bin}" routes/lower/history_weight_optimization_next_check.py
 
-echo LOWER_THEOREM_REPRODUCED
+echo LOWER_ARITHMETIC_CERTIFICATES_REPRODUCED

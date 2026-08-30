@@ -26,9 +26,9 @@ strict logical boundaries between them.
 
 ## Part I: retained spines and an exact diagonal
 
-The upper route combines a certified six-stage off-diagonal rate, a new
-exact-diagonal correlation certificate, and a retained-spine transfer. The
-numerical conclusion is
+The upper route combines a certified six-stage off-diagonal rate, an
+exact-diagonal correlation certificate developed here, and a retained-spine
+transfer. The numerical conclusion is
 
 \[
 R(k,k)\le (3.780685290)^{k+o(k)},
@@ -87,12 +87,27 @@ STATED` under its explicit conditional trust boundary. The lower headline is
 STATED`. The finite radius theorem remains `PROVABLE AS STATED` under its
 encoding, case-cover, and DRAT-checker boundary. The global claim audit's five
 wording findings and all four major reproducibility implementation findings
-are closed.
+are closed. A fresh independent audit that did not use the prior review
+verdicts found no fatal or major mathematical issue and one terminological
+minor, which has been repaired in both canonical lower-source occurrences.
+Three final theorem-specific hostile reconstructions then found no fatal or
+major issue and nine minor issues; all nine are repaired or conservatively
+dispositioned in
+[`reviews/FINAL_TARGETED_ADVERSARIAL_REVIEW_2026-08-30.md`](reviews/FINAL_TARGETED_ADVERSARIAL_REVIEW_2026-08-30.md).
+A separate repository-wide preflight found and closed a machine-readable
+exact-seven overstatement and two action/tag-pinning precision gaps; its
+audited release implementation has no remaining blocker, major, or minor
+finding. The record is
+[`reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md`](reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md).
 
 The consolidated record is
-[`reviews/REVIEW_DISPOSITION.md`](reviews/REVIEW_DISPOSITION.md). External
-ChatGPT Pro review and a credential-free clean-clone replay remain publication
-gates; local passes must not be confused with either one.
+[`reviews/REVIEW_DISPOSITION.md`](reviews/REVIEW_DISPOSITION.md). The ChatGPT
+Pro adversarial second opinion was transmitted and remains in progress; no
+final report is treated as received until its complete response is archived
+and every concrete objection is dispositioned. The immutable evidence Release
+and final-tag credential-free replay also remain pending. Neither review by an
+AI system nor a reproducibility replay is represented as external human peer
+review.
 
 ## Claims intentionally not made
 
@@ -105,9 +120,9 @@ The unified paper does not claim:
 - a global finite Ramsey improvement from the fixed-seed computation;
 - that an `UNKNOWN` exact-seven run supports existence or nonexistence;
 - formal proof-assistant verification;
-- completed external ChatGPT Pro review;
-- an already existing public GitHub repository or release; or
-- publication, priority, or world-best status.
+- a DOI-bearing archival deposit;
+- external human peer review; or
+- formal publication, priority, or world-best status.
 
 ## Canonical output
 

@@ -214,7 +214,8 @@ def verify_drat_trace(
                 "stdout_tail": (error.stdout or "")[-4000:],
                 "stderr_tail": (error.stderr or "")[-4000:],
             }
-    verified = completed.returncode == 0 and "s VERIFIED" in completed.stdout
+    verdict_lines = {line.strip() for line in completed.stdout.splitlines()}
+    verified = completed.returncode == 0 and "s VERIFIED" in verdict_lines
     return {
         "status": "VERIFIED" if verified else "FAILED",
         "checker": str(checker.resolve()),

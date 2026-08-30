@@ -11,19 +11,22 @@ The repository therefore keeps:
 - all source code and small machine-readable results in Git;
 - a SHA-256/size manifest in `artifacts/MANIFEST.sha256` and
   `artifacts/MANIFEST.tsv`;
-- verified large CNF/DRAT pairs as release assets; and
+- verified large CNF/DRAT pairs designated as release assets; and
 - incomplete or unverified traces outside the publication artifact set.
 
-After downloading release assets into `artifacts/downloads/`, run:
+After publication, download the public Release assets into a new
+`artifacts/downloads/` directory and verify them by running:
 
 ```bash
 bash scripts/download_release_artifacts.sh
 ```
 
-The planned default release tag is `evidence-2026-08-30` in the intended
-public repository. Until that release is actually published, the command is a
-release contract rather than evidence of public availability. Override
-`RAMSEY_GITHUB_REPO` or `RAMSEY_ARTIFACT_TAG` when replaying a mirror.
+The planned public artifact tag will be
+[`evidence-2026-08-30`](https://github.com/jackal092927/ramsey-bounds-reproducible/releases/tag/evidence-2026-08-30).
+The download helper defaults to that repository and tag, requires the release
+asset-name set to equal `MANIFEST.tsv` exactly, and verifies every byte count
+and SHA-256 digest. Override `RAMSEY_GITHUB_REPO` or `RAMSEY_ARTIFACT_TAG` when
+replaying a mirror.
 
 The proof status is determined by the theorem reports and verified manifests,
 not merely by the presence of a file with a `.drat.gz` suffix.

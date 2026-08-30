@@ -3,10 +3,14 @@
 
 \subsection{Two verification tiers}
 
-The repository package~\cite{Repository2026} separates lightweight tracked
-checks from large proof replay.  At the date of this draft, public GitHub and
-archival release publication remain pending; the following is the release
-contract, not a claim that an anonymous download already exists.
+The public source repository~\cite{Repository2026} separates lightweight
+tracked checks from large proof replay.  Its accompanying evidence release is
+designated at
+\url{https://github.com/jackal092927/ramsey-bounds-reproducible/releases/tag/evidence-2026-08-30}
+and is valid only if it contains exactly the twelve compressed CNF/DRAT
+payloads listed in \path{artifacts/MANIFEST.tsv}.  Publication, immutability,
+credential-free download, and final-tag replay are release gates recorded
+separately; they are not premises of the graph theorem.
 
 \paragraph{Tier 1: source and semantics.}
 Python \(3.11.15\) and the locked environment reproduce graph verification,
@@ -24,8 +28,12 @@ The proof-critical Python packages are pinned to
 uses PySAT; the other entries are repository-wide proof dependencies.
 
 \paragraph{Tier 2: large proof replay.}
-After downloading the release assets into one directory, the content manifest
-is checked before decompression:
+Once published, the release is downloaded without GitHub credentials by
+\begin{verbatim}
+bash scripts/download_release_artifacts.sh
+\end{verbatim}
+The helper first requires the complete release asset-name set to equal the
+manifest exactly and then checks the content before decompression:
 \begingroup\small
 \begin{verbatim}
 .venv/bin/python scripts/verify_artifacts.py \
@@ -46,7 +54,7 @@ integrated command
 materializes a temporary overlay containing tracked semantic metadata and the
 twelve release payloads.  It reconstructs all six formulas, replays all six
 proofs, and audits the exact-seven state.  A proof is accepted only when the
-checker exits zero and prints \texttt{s VERIFIED}.
+checker exits zero and prints an exact \texttt{s VERIFIED} status line.
 
 \subsection{Why large proofs are release assets}
 
@@ -55,9 +63,9 @@ raw DRAT traces occupy about \(6.39\) GB.  Adding the smaller budget-five
 proofs to ordinary Git history would still make cloning needlessly expensive.
 The repository therefore tracks code, matrices, cut banks, semantic records,
 tests, the paper, and a content-addressed manifest.  CNF and DRAT payloads are
-to be published as immutable release or archival assets (for example, a
-GitHub Release mirrored to Zenodo), keyed by SHA-256 and byte count.  This design
-keeps ordinary clones reviewable while preserving bit-for-bit replay.
+designated for distribution as immutable GitHub Release assets, keyed by
+SHA-256 and byte count.  No DOI-bearing archival mirror is claimed.  This design keeps ordinary
+clones reviewable while preserving bit-for-bit replay.
 
 The release is complete only if it includes both the three budget-five proof
 pairs used by \cref{fin:prop:budget5} and the three exact-six proof pairs used by
