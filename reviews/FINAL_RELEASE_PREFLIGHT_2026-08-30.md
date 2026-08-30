@@ -73,6 +73,15 @@ STATUS, PAPER_PLAN, NARRATIVE_REPORT, and consolidated disposition. The plan
 also recognizes that the public GitHub repository already exists, and the
 artifact README calls the absent Release tag planned rather than current.
 
+### P7. Hosted Node 20 deprecation warning — repaired
+
+The first candidate CI passed but GitHub forced the Node 20 checkout and
+Python-setup actions onto Node 24 and emitted deprecation annotations. The
+workflows now use the current Node 24 majors, `actions/checkout` v5 and
+`actions/setup-python` v6, each pinned to the verified commit object behind
+its official major tag. This repair must pass fresh hosted CI before the
+release tag is cut.
+
 ## Supply-chain invariants checked
 
 The audited release workflow:
