@@ -1,0 +1,955 @@
+{
+  "claim_boundary": "PySAT cores and replays are engineering telemetry, not proof certificates; UNKNOWN never learns.",
+  "common_formula": {
+    "core_clause_circularity_guard": "No extracted deletion core is ever appended to either solver.",
+    "degree_clauses": 285300,
+    "degree_clauses_sha256": "54c75b4fda7be8d3ab997f8af20533a151662cea12aafbc7e8aa2a79bbde1b85",
+    "degree_metadata": {
+      "degree_auxiliary_variables": 139400,
+      "degree_block_clause_counts": [
+        2853
+      ],
+      "degree_blocks": 100,
+      "degree_cap": 17,
+      "degree_cap_basis": "In a triangle-free graph every open neighbourhood is independent; alpha<18 therefore implies degree at most 17.",
+      "degree_clauses": 285300,
+      "maximum_variable_after_degree_encoding": 154190
+    },
+    "edge_variable_mapping_sha256": "b2408e128c44b361a9b86d3c65b3d52be571e8abcdeeae3e40feb8d47a993730",
+    "exact_residual_deletions": 6,
+    "fixed_deleted_edge": [
+      97,
+      99
+    ],
+    "formula_fingerprint_sha256": "a6f920afa451174ed05932174951481a63647a2ba603c762379f9357323fa5e2",
+    "formula_is_relaxation_of_target": true,
+    "formula_relaxation_reason": "The installed I18 bank is universally necessary but need not list every I18; UNSAT is informative, SAT is only finite-bank telemetry.",
+    "input_sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+    "learned_core_clauses_installed": 0,
+    "maximum_variable": 154190,
+    "order": 100,
+    "residual_deletion_literal_semantics": "d_e := -x_e",
+    "schema": "ramsey-r3-18-n100-exact-budget7-branch1-common-formula-v1",
+    "structural_clauses": 181381,
+    "structural_clauses_sha256": "8da0fffeac8c3d6ea839eb836c55889239ab6083e1c9f45634a9987dac8b5311",
+    "structural_metadata": {
+      "arbitrary_original_nonedge_additions_allowed": true,
+      "auxiliary_variables": 9840,
+      "edge_variables": 4950,
+      "exact_residual_input_edge_deletions": 6,
+      "exact_six_residual_counter_clauses": 19680,
+      "exact_six_residual_counter_literals": 826,
+      "exact_total_input_edge_deletions": 7,
+      "fixed_deleted_edge": [
+        97,
+        99
+      ],
+      "fixed_deleted_edge_cannot_be_readded": true,
+      "fixed_negative_units": 1,
+      "maximum_variable": 14790,
+      "original_nonedge_variables_in_deletion_counter": 0,
+      "structural_clauses": 181381,
+      "triangle_clauses": 161700
+    },
+    "total_clauses": 718452,
+    "universal_I18_bank": {
+      "masks": 251771,
+      "ordered_masks_sha256": "f10690b826b86eb03567a2ffaffb553801fae32af20cfe4337118bddf4e41afa",
+      "sha256": "91b5709248ff641a315f5a0389b4f3fde3d38514f3b1a8b31b6cad31224f250b"
+    }
+  },
+  "configuration": {
+    "conflicts_per_call": 10000,
+    "formula_only": false,
+    "global_seconds_deadline_starts_before_formula_build": 180.0,
+    "greedy_minimization": true,
+    "installation_wall_semantics": "The deadline is checked before each noninterruptible formula installation and inside every SAT slice; one installation already in progress can overrun the deadline.",
+    "max_conflicts_per_solve": 100000,
+    "max_replay_validated_cores": 16,
+    "max_seconds_per_solve": 5.0,
+    "per_call_seconds": 1.0,
+    "primary_solver": "glucose42",
+    "replay_solver": "minisat22"
+  },
+  "configuration_sha256": "349e005844e24921d21150aa2bb84c18d0a640319ab068674b2c4d100fc8dd68",
+  "counters": {
+    "core_clauses_installed_into_common_formula": 0,
+    "primary_UNSAT": 2,
+    "replay_validated_cores": 2,
+    "supports_processed": 2,
+    "supports_total": 2,
+    "unknown_learned_cores": 0
+  },
+  "dependencies": {
+    "budget6_dependency_proof_verified": true,
+    "budget6_summary": "routes/finite/r3_18_budget6_summary.json",
+    "budget6_summary_sha256": "0abd30457c039c1c5fbba5890153c8a0c5d8558e196e7c0561410cefe37afa6a",
+    "universal_bank": {
+      "masks": 251771,
+      "ordered_masks_sha256": "f10690b826b86eb03567a2ffaffb553801fae32af20cfe4337118bddf4e41afa",
+      "path": "routes/finite/r3_18_budget6_branch_0_universal_union.cuts.json",
+      "sha256": "91b5709248ff641a315f5a0389b4f3fde3d38514f3b1a8b31b6cad31224f250b",
+      "universality_reason": "Each mask is an 18-vertex set; its complete positive edge clause is necessary for every graph with independence number below 18."
+    }
+  },
+  "elapsed_seconds": 86.66783512500115,
+  "final_record_set_sha256": "46180501d71b613c1dacbeb724114ca1f9933313ef25dd1531853ccb1a403853",
+  "input": {
+    "input_edges": 827,
+    "matrix": "routes/finite/certificates/r3_18_n100_nearmiss.txt",
+    "sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+    "vertices": 100
+  },
+  "paper_grade_next_step": "Freeze DIMACS plus assumption units, generate CaDiCaL DRAT/LRAT, and verify it with an external checker before using a core in a theorem.",
+  "provenance": {
+    "runtime": {
+      "dependency_sha256": {
+        "bounded_deletion_sat_cegar.py": "d930b133d3e45b03fa92e90172f78c09267082448667aa8ae9c2a0f65d0cbba2",
+        "budget8_next.py": "ff248fd5973b74116323a7996700b0e38f95a146cbccda3e6466161acd3917fe",
+        "new_basin_search.py": "944746b24989a12b73f45b111dcffcfd425f8b6d8132d7aa73b7c7a28f7da054",
+        "r3_18_budget5_branch.py": "6190251dbe6bab3ff80248200ded6942e0161f4b5bcc22c2d05bed8b0032021c",
+        "r3_18_budget7_branch.py": "13a7cfeb564297fcad2ea2c6ca831a6bf4b4755e0223abcf9d1bd1178103d0de"
+      },
+      "git": {
+        "commit": "12021f00e000f9c2038f81d76b8a03adc2cb832b",
+        "dirty": true,
+        "worktree_status_sha256": "023690773209d66ed4feaaedbd1823d1313112785c072768c275303d83373f13"
+      },
+      "platform_machine": "arm64",
+      "platform_system": "Darwin",
+      "primary_solver_family": "glucose42",
+      "python": "3.11.15",
+      "python_executable_basename": "python",
+      "python_implementation": "CPython",
+      "python_sat": "1.9.dev13",
+      "replay_solver_family": "minisat22"
+    },
+    "script": "routes/finite/r3_18_budget7_branch1_assumption_cores.py",
+    "script_sha256": "09df979c381dc6fa8efbac512cd93a680d328dafd86c6afd4a79629dd3945982"
+  },
+  "records": [
+    {
+      "accepted_core": {
+        "deletion_edges": [
+          [
+            11,
+            62
+          ],
+          [
+            17,
+            98
+          ],
+          [
+            18,
+            61
+          ],
+          [
+            18,
+            64
+          ]
+        ],
+        "distinct_backend_replay_UNSAT": true,
+        "engineering_telemetry_not_proof_certificate": true,
+        "final_minimized_core_distinct_backend_confirmed": true,
+        "greedy_minimization_complete": false,
+        "greedy_minimization_requested": true,
+        "literals": [
+          -1085,
+          -1628,
+          -1672,
+          -1675
+        ],
+        "primary_UNSAT": true,
+        "size": 4
+      },
+      "assumption_literals": [
+        -195,
+        -999,
+        -1085,
+        -1628,
+        -1672,
+        -1675
+      ],
+      "assumption_semantics": "each listed d_e=true is passed as -x_e",
+      "clean_replay": {
+        "calls": 1,
+        "elapsed_seconds": 0.11112725012935698,
+        "last_calls": [
+          {
+            "call": 1,
+            "elapsed_seconds": 0.11084854207001626,
+            "outcome": "UNSAT",
+            "stats_delta": {
+              "conflicts": 1,
+              "decisions": 0,
+              "propagations": 97453,
+              "restarts": 1
+            },
+            "timer_interrupted": false
+          }
+        ],
+        "outcome": "UNSAT",
+        "stats_delta": {
+          "conflicts": 1,
+          "decisions": 0,
+          "propagations": 97453,
+          "restarts": 1
+        }
+      },
+      "exact_six_counter_is_in_common_formula": true,
+      "final_core_cross_check_decision": "ACCEPT_MINIMIZED_AFTER_FRESH_UNSAT",
+      "final_minimized_core_clean_primary_confirmation": {
+        "calls": 2,
+        "elapsed_seconds": 2.121765875024721,
+        "last_calls": [
+          {
+            "call": 1,
+            "elapsed_seconds": 1.639953250065446,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 359,
+              "decisions": 4335,
+              "propagations": 5815355,
+              "restarts": 3
+            },
+            "timer_interrupted": true
+          },
+          {
+            "call": 2,
+            "elapsed_seconds": 0.48149216710589826,
+            "outcome": "UNSAT",
+            "stats_delta": {
+              "conflicts": 260,
+              "decisions": 2028,
+              "propagations": 2769335,
+              "restarts": 2
+            },
+            "timer_interrupted": false
+          }
+        ],
+        "outcome": "UNSAT",
+        "stats_delta": {
+          "conflicts": 619,
+          "decisions": 6363,
+          "propagations": 8584690,
+          "restarts": 5
+        }
+      },
+      "learned_core_clauses_installed_into_common_formula": 0,
+      "learned_master_no_good": {
+        "installed_into_common_formula": false,
+        "paper_grade": false,
+        "semantics": "OR_{e in K} x_e, equivalently OR_{e in K} not d_e",
+        "x_literals": [
+          1085,
+          1628,
+          1672,
+          1675
+        ]
+      },
+      "minimization_trials": [
+        {
+          "SAT_or_UNKNOWN_retained_literal": false,
+          "calls": 1,
+          "elapsed_seconds": 0.5291577919851989,
+          "outcome": "UNSAT",
+          "removed_only_if_completed_UNSAT": true,
+          "stats_delta": {
+            "conflicts": 48,
+            "decisions": 1586,
+            "propagations": 650844,
+            "restarts": 1
+          },
+          "tested_removal_edge": [
+            1,
+            97
+          ],
+          "tested_removal_literal": -195
+        },
+        {
+          "SAT_or_UNKNOWN_retained_literal": false,
+          "calls": 4,
+          "elapsed_seconds": 3.3927678749896586,
+          "outcome": "UNSAT",
+          "removed_only_if_completed_UNSAT": true,
+          "stats_delta": {
+            "conflicts": 1401,
+            "decisions": 13887,
+            "propagations": 39338769,
+            "restarts": 13
+          },
+          "tested_removal_edge": [
+            10,
+            64
+          ],
+          "tested_removal_literal": -999
+        },
+        {
+          "SAT_or_UNKNOWN_retained_literal": true,
+          "calls": 5,
+          "elapsed_seconds": 5.003896082984284,
+          "outcome": "UNKNOWN_WALL_LIMIT",
+          "removed_only_if_completed_UNSAT": false,
+          "stats_delta": {
+            "conflicts": 2226,
+            "decisions": 23641,
+            "propagations": 61275008,
+            "restarts": 20
+          },
+          "tested_removal_edge": [
+            11,
+            62
+          ],
+          "tested_removal_literal": -1085
+        },
+        {
+          "SAT_or_UNKNOWN_retained_literal": true,
+          "calls": 5,
+          "elapsed_seconds": 5.020488458918408,
+          "outcome": "UNKNOWN_WALL_LIMIT",
+          "removed_only_if_completed_UNSAT": false,
+          "stats_delta": {
+            "conflicts": 1759,
+            "decisions": 13671,
+            "propagations": 52887457,
+            "restarts": 15
+          },
+          "tested_removal_edge": [
+            17,
+            98
+          ],
+          "tested_removal_literal": -1628
+        },
+        {
+          "SAT_or_UNKNOWN_retained_literal": true,
+          "calls": 5,
+          "elapsed_seconds": 5.005492000142112,
+          "outcome": "UNKNOWN_WALL_LIMIT",
+          "removed_only_if_completed_UNSAT": false,
+          "stats_delta": {
+            "conflicts": 2068,
+            "decisions": 21041,
+            "propagations": 59191799,
+            "restarts": 18
+          },
+          "tested_removal_edge": [
+            18,
+            61
+          ],
+          "tested_removal_literal": -1672
+        },
+        {
+          "SAT_or_UNKNOWN_retained_literal": true,
+          "calls": 5,
+          "elapsed_seconds": 5.009298084070906,
+          "outcome": "UNKNOWN_WALL_LIMIT",
+          "removed_only_if_completed_UNSAT": false,
+          "stats_delta": {
+            "conflicts": 2355,
+            "decisions": 19243,
+            "propagations": 61407513,
+            "restarts": 22
+          },
+          "tested_removal_edge": [
+            18,
+            64
+          ],
+          "tested_removal_literal": -1675
+        }
+      ],
+      "primary": {
+        "calls": 1,
+        "elapsed_seconds": 0.1323574169073254,
+        "last_calls": [
+          {
+            "call": 1,
+            "elapsed_seconds": 0.1320574169512838,
+            "outcome": "UNSAT",
+            "stats_delta": {
+              "conflicts": 1,
+              "decisions": 0,
+              "propagations": 97453,
+              "restarts": 1
+            },
+            "timer_interrupted": false
+          }
+        ],
+        "outcome": "UNSAT",
+        "stats_delta": {
+          "conflicts": 1,
+          "decisions": 0,
+          "propagations": 97453,
+          "restarts": 1
+        }
+      },
+      "primary_reported_core": {
+        "deletion_edges": [
+          [
+            1,
+            97
+          ],
+          [
+            10,
+            64
+          ],
+          [
+            11,
+            62
+          ],
+          [
+            17,
+            98
+          ],
+          [
+            18,
+            61
+          ],
+          [
+            18,
+            64
+          ]
+        ],
+        "literals": [
+          -195,
+          -999,
+          -1085,
+          -1628,
+          -1672,
+          -1675
+        ],
+        "size": 6,
+        "validated_positive_deletion_subset": true
+      },
+      "primary_solver": "glucose42",
+      "record_sha256": "1675ab7002523682c0778be9cc1b721865605db3b395ecb7e20a9a0d3beb110a",
+      "replay_solver": "minisat22",
+      "solver_installation": {
+        "final_minimized_core_confirmation": {
+          "elapsed_seconds": 5.855309624923393,
+          "initial_stats": {
+            "conflicts": 0,
+            "decisions": 0,
+            "propagations": 1,
+            "restarts": 0
+          },
+          "learned_core_clauses_installed": 0,
+          "solver": "glucose42",
+          "solver_family": "glucose42",
+          "structural_and_degree_clauses": 466681,
+          "total_clauses_installed": 718452,
+          "universal_I18_clauses": 251771
+        },
+        "primary": {
+          "elapsed_seconds": 5.5475029579829425,
+          "initial_stats": {
+            "conflicts": 0,
+            "decisions": 0,
+            "propagations": 1,
+            "restarts": 0
+          },
+          "learned_core_clauses_installed": 0,
+          "solver": "glucose42",
+          "solver_family": "glucose42",
+          "structural_and_degree_clauses": 466681,
+          "total_clauses_installed": 718452,
+          "universal_I18_clauses": 251771
+        },
+        "replay": {
+          "elapsed_seconds": 5.589996374910697,
+          "initial_stats": {
+            "conflicts": 0,
+            "decisions": 0,
+            "propagations": 1,
+            "restarts": 0
+          },
+          "learned_core_clauses_installed": 0,
+          "solver": "minisat22",
+          "solver_family": "minisat22",
+          "structural_and_degree_clauses": 466681,
+          "total_clauses_installed": 718452,
+          "universal_I18_clauses": 251771
+        }
+      },
+      "status": "CORE_REPLAY_VALIDATED_MINIMIZATION_INCOMPLETE",
+      "support": [
+        [
+          1,
+          97
+        ],
+        [
+          10,
+          64
+        ],
+        [
+          11,
+          62
+        ],
+        [
+          17,
+          98
+        ],
+        [
+          18,
+          61
+        ],
+        [
+          18,
+          64
+        ]
+      ],
+      "support_sha256": "6ab310371e7d50433c12132cff05c1a6e7efa9901435d13ef8ab280c24983b10",
+      "support_size": 6
+    },
+    {
+      "accepted_core": {
+        "deletion_edges": [
+          [
+            11,
+            62
+          ],
+          [
+            17,
+            98
+          ],
+          [
+            18,
+            61
+          ],
+          [
+            18,
+            69
+          ]
+        ],
+        "distinct_backend_replay_UNSAT": true,
+        "engineering_telemetry_not_proof_certificate": true,
+        "final_minimized_core_distinct_backend_confirmed": true,
+        "greedy_minimization_complete": false,
+        "greedy_minimization_requested": true,
+        "literals": [
+          -1085,
+          -1628,
+          -1672,
+          -1680
+        ],
+        "primary_UNSAT": true,
+        "size": 4
+      },
+      "assumption_literals": [
+        -195,
+        -999,
+        -1085,
+        -1628,
+        -1672,
+        -1680
+      ],
+      "assumption_semantics": "each listed d_e=true is passed as -x_e",
+      "clean_replay": {
+        "calls": 1,
+        "elapsed_seconds": 0.10092233400791883,
+        "last_calls": [
+          {
+            "call": 1,
+            "elapsed_seconds": 0.10075904196128249,
+            "outcome": "UNSAT",
+            "stats_delta": {
+              "conflicts": 1,
+              "decisions": 0,
+              "propagations": 97787,
+              "restarts": 1
+            },
+            "timer_interrupted": false
+          }
+        ],
+        "outcome": "UNSAT",
+        "stats_delta": {
+          "conflicts": 1,
+          "decisions": 0,
+          "propagations": 97787,
+          "restarts": 1
+        }
+      },
+      "exact_six_counter_is_in_common_formula": true,
+      "final_core_cross_check_decision": "ACCEPT_MINIMIZED_AFTER_FRESH_UNSAT",
+      "final_minimized_core_clean_primary_confirmation": {
+        "calls": 2,
+        "elapsed_seconds": 1.4255996670108289,
+        "last_calls": [
+          {
+            "call": 1,
+            "elapsed_seconds": 1.2736870828084648,
+            "outcome": "UNKNOWN",
+            "stats_delta": {
+              "conflicts": 314,
+              "decisions": 2746,
+              "propagations": 6503126,
+              "restarts": 2
+            },
+            "timer_interrupted": true
+          },
+          {
+            "call": 2,
+            "elapsed_seconds": 0.15153254196047783,
+            "outcome": "UNSAT",
+            "stats_delta": {
+              "conflicts": 36,
+              "decisions": 111,
+              "propagations": 820161,
+              "restarts": 1
+            },
+            "timer_interrupted": false
+          }
+        ],
+        "outcome": "UNSAT",
+        "stats_delta": {
+          "conflicts": 350,
+          "decisions": 2857,
+          "propagations": 7323287,
+          "restarts": 3
+        }
+      },
+      "learned_core_clauses_installed_into_common_formula": 0,
+      "learned_master_no_good": {
+        "installed_into_common_formula": false,
+        "paper_grade": false,
+        "semantics": "OR_{e in K} x_e, equivalently OR_{e in K} not d_e",
+        "x_literals": [
+          1085,
+          1628,
+          1672,
+          1680
+        ]
+      },
+      "minimization_trials": [
+        {
+          "SAT_or_UNKNOWN_retained_literal": false,
+          "calls": 1,
+          "elapsed_seconds": 0.513974874978885,
+          "outcome": "UNSAT",
+          "removed_only_if_completed_UNSAT": true,
+          "stats_delta": {
+            "conflicts": 56,
+            "decisions": 1472,
+            "propagations": 1115114,
+            "restarts": 1
+          },
+          "tested_removal_edge": [
+            1,
+            97
+          ],
+          "tested_removal_literal": -195
+        },
+        {
+          "SAT_or_UNKNOWN_retained_literal": false,
+          "calls": 4,
+          "elapsed_seconds": 3.576992082875222,
+          "outcome": "UNSAT",
+          "removed_only_if_completed_UNSAT": true,
+          "stats_delta": {
+            "conflicts": 1514,
+            "decisions": 16445,
+            "propagations": 40533474,
+            "restarts": 15
+          },
+          "tested_removal_edge": [
+            10,
+            64
+          ],
+          "tested_removal_literal": -999
+        },
+        {
+          "SAT_or_UNKNOWN_retained_literal": true,
+          "calls": 5,
+          "elapsed_seconds": 5.005360624985769,
+          "outcome": "UNKNOWN_WALL_LIMIT",
+          "removed_only_if_completed_UNSAT": false,
+          "stats_delta": {
+            "conflicts": 2123,
+            "decisions": 22619,
+            "propagations": 57818408,
+            "restarts": 19
+          },
+          "tested_removal_edge": [
+            11,
+            62
+          ],
+          "tested_removal_literal": -1085
+        },
+        {
+          "SAT_or_UNKNOWN_retained_literal": true,
+          "calls": 5,
+          "elapsed_seconds": 5.008660834049806,
+          "outcome": "UNKNOWN_WALL_LIMIT",
+          "removed_only_if_completed_UNSAT": false,
+          "stats_delta": {
+            "conflicts": 2108,
+            "decisions": 18654,
+            "propagations": 58167479,
+            "restarts": 19
+          },
+          "tested_removal_edge": [
+            17,
+            98
+          ],
+          "tested_removal_literal": -1628
+        },
+        {
+          "SAT_or_UNKNOWN_retained_literal": true,
+          "calls": 5,
+          "elapsed_seconds": 5.002791958162561,
+          "outcome": "UNKNOWN_WALL_LIMIT",
+          "removed_only_if_completed_UNSAT": false,
+          "stats_delta": {
+            "conflicts": 2140,
+            "decisions": 21117,
+            "propagations": 55745934,
+            "restarts": 19
+          },
+          "tested_removal_edge": [
+            18,
+            61
+          ],
+          "tested_removal_literal": -1672
+        },
+        {
+          "SAT_or_UNKNOWN_retained_literal": true,
+          "calls": 5,
+          "elapsed_seconds": 5.007490458898246,
+          "outcome": "UNKNOWN_WALL_LIMIT",
+          "removed_only_if_completed_UNSAT": false,
+          "stats_delta": {
+            "conflicts": 2098,
+            "decisions": 21401,
+            "propagations": 62410152,
+            "restarts": 19
+          },
+          "tested_removal_edge": [
+            18,
+            69
+          ],
+          "tested_removal_literal": -1680
+        }
+      ],
+      "primary": {
+        "calls": 1,
+        "elapsed_seconds": 0.12800054089166224,
+        "last_calls": [
+          {
+            "call": 1,
+            "elapsed_seconds": 0.12779812491498888,
+            "outcome": "UNSAT",
+            "stats_delta": {
+              "conflicts": 1,
+              "decisions": 0,
+              "propagations": 97787,
+              "restarts": 1
+            },
+            "timer_interrupted": false
+          }
+        ],
+        "outcome": "UNSAT",
+        "stats_delta": {
+          "conflicts": 1,
+          "decisions": 0,
+          "propagations": 97787,
+          "restarts": 1
+        }
+      },
+      "primary_reported_core": {
+        "deletion_edges": [
+          [
+            1,
+            97
+          ],
+          [
+            10,
+            64
+          ],
+          [
+            11,
+            62
+          ],
+          [
+            17,
+            98
+          ],
+          [
+            18,
+            61
+          ],
+          [
+            18,
+            69
+          ]
+        ],
+        "literals": [
+          -195,
+          -999,
+          -1085,
+          -1628,
+          -1672,
+          -1680
+        ],
+        "size": 6,
+        "validated_positive_deletion_subset": true
+      },
+      "primary_solver": "glucose42",
+      "record_sha256": "19ee0a26042d9b64ffb8f698ddee778e2e00b227c20ef22ae953a3c5edfff048",
+      "replay_solver": "minisat22",
+      "solver_installation": {
+        "final_minimized_core_confirmation": {
+          "elapsed_seconds": 5.524452792014927,
+          "initial_stats": {
+            "conflicts": 0,
+            "decisions": 0,
+            "propagations": 1,
+            "restarts": 0
+          },
+          "learned_core_clauses_installed": 0,
+          "solver": "glucose42",
+          "solver_family": "glucose42",
+          "structural_and_degree_clauses": 466681,
+          "total_clauses_installed": 718452,
+          "universal_I18_clauses": 251771
+        },
+        "primary": {
+          "elapsed_seconds": 5.611971250036731,
+          "initial_stats": {
+            "conflicts": 0,
+            "decisions": 0,
+            "propagations": 1,
+            "restarts": 0
+          },
+          "learned_core_clauses_installed": 0,
+          "solver": "glucose42",
+          "solver_family": "glucose42",
+          "structural_and_degree_clauses": 466681,
+          "total_clauses_installed": 718452,
+          "universal_I18_clauses": 251771
+        },
+        "replay": {
+          "elapsed_seconds": 5.504819834139198,
+          "initial_stats": {
+            "conflicts": 0,
+            "decisions": 0,
+            "propagations": 1,
+            "restarts": 0
+          },
+          "learned_core_clauses_installed": 0,
+          "solver": "minisat22",
+          "solver_family": "minisat22",
+          "structural_and_degree_clauses": 466681,
+          "total_clauses_installed": 718452,
+          "universal_I18_clauses": 251771
+        }
+      },
+      "status": "CORE_REPLAY_VALIDATED_MINIMIZATION_INCOMPLETE",
+      "support": [
+        [
+          1,
+          97
+        ],
+        [
+          10,
+          64
+        ],
+        [
+          11,
+          62
+        ],
+        [
+          17,
+          98
+        ],
+        [
+          18,
+          61
+        ],
+        [
+          18,
+          69
+        ]
+      ],
+      "support_sha256": "3c2b898acc61531fba70d39461373c830c926ce0360469e30ae788ac5f7f7bf8",
+      "support_size": 6
+    }
+  ],
+  "schema": "ramsey-r3-18-n100-exact-budget7-branch1-assumption-core-pilot-v1",
+  "solver_installation_policy": {
+    "extracted_core_clauses_installed": 0,
+    "fresh_distinct_backend_replay_per_primary_UNSAT": true,
+    "fresh_primary_per_support": true,
+    "replay_formula_contains_only_common_formula_clauses": true
+  },
+  "status": "PILOT_SUPPORT_LIST_EXHAUSTED",
+  "stop_rule": {
+    "all_first_16_size_six": "If the first 16 replay-validated greedy cores all have size six, stop this generalized-core route.",
+    "first_of": [
+      "16 replay-validated cores",
+      "180 seconds total wall",
+      "quarantined primary/replay inconsistency",
+      "input support list exhausted"
+    ]
+  },
+  "support_source": {
+    "claim_boundary": "The source endpoints had no checked proof.",
+    "cross_checked_records": [
+      "routes/finite/r3_18_budget7_benders_pilot_summary.json",
+      "routes/finite/R3_18_BUDGET7_BENDERS_PILOT_2026-08-30.md"
+    ],
+    "kind": "built_in_historical_solver_trusted_supports"
+  },
+  "supports": [
+    [
+      [
+        1,
+        97
+      ],
+      [
+        10,
+        64
+      ],
+      [
+        11,
+        62
+      ],
+      [
+        17,
+        98
+      ],
+      [
+        18,
+        61
+      ],
+      [
+        18,
+        64
+      ]
+    ],
+    [
+      [
+        1,
+        97
+      ],
+      [
+        10,
+        64
+      ],
+      [
+        11,
+        62
+      ],
+      [
+        17,
+        98
+      ],
+      [
+        18,
+        61
+      ],
+      [
+        18,
+        69
+      ]
+    ]
+  ]
+}
