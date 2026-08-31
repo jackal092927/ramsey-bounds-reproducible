@@ -66,6 +66,14 @@ def quick() -> None:
     run(["bash", "scripts/reproduce_upper.sh"])
     run([sys.executable, "routes/lower/history_weight_optimization_next_check.py"])
     run(["bash", "scripts/reproduce_finite_light.sh"])
+    run(
+        [
+            sys.executable,
+            "experiments/quantum_ramsey/implicit_majority_audit.py",
+            "--self-check",
+            "--check-only",
+        ]
+    )
     print("\nQUICK_REPRODUCTION_PASS")
 
 

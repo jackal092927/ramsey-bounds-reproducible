@@ -6,11 +6,12 @@ canonical manuscript:
 - source: [`papers/unified/main.tex`](papers/unified/main.tex)
 - locally compiled PDF: [`papers/unified/main.pdf`](papers/unified/main.pdf)
 
-The manuscript places three logically independent Ramsey results in a single
+The manuscript places four logically independent Ramsey results in a single
 claim-to-evidence framework. The older directories
 [`papers/upper`](papers/upper), [`papers/lower`](papers/lower), and
-[`papers/finite`](papers/finite) are archival source components and provenance
-records. They are not separate publication outputs.
+[`papers/finite`](papers/finite), together with the quantum source component
+[`papers/quantum`](papers/quantum), are provenance records rather than
+separate publication outputs.
 
 ## Results and exact scope
 
@@ -19,6 +20,7 @@ records. They are not separate publication outputs.
 | diagonal upper bound | \(R(k,k)\le(3.780685290)^{k+o(k)}\), with certified unrounded base below `3.780685288379640114` | asymptotic and source-relative; depends on version-pinned retained-spine/book interfaces, the certified six-stage rate, and interval-arithmetic containment semantics; no effective finite-\(k\) threshold |
 | fixed-ratio lower bound | after fixing the source constant \(K\), for each sufficiently large fixed \(C\), a source-relative addition \(\widehat H_*(C)=(1+o_{C\to\infty}(1))/(64\log C)\) | conditional on the version-pinned source items (S1), (S2), (S4), and (S5); weighted reverse propagation (S3) is proved locally from the indicator kernel and tower property; for fixed \(C\) and \(w>\omega_0\), first take \(\ell\to\infty\), then \(w\downarrow\omega_0\), and only afterward \(C\to\infty\); \(C_0(K)\) is non-effective |
 | finite proof-carrying barrier | for the pinned 100-vertex near miss, the one-sided deletion repair radius under free additions is at least seven | local to one labelled seed and one edit metric; exact seven remains `UNKNOWN`; this does **not** imply \(R(3,18)\ge101\) |
+| quantum constructive search | on any coherently queried graph with at least \(4^{K-1}\) vertices, a verified homogeneous \(K\)-set can be found in \(O(2^K K\log(K/\eta))\) edge queries; a cleaner size-biased proof gives \(O(2^K K^2\log K\log(1/\eta))\) and extends to multiple colours | proved worst-case query upper bounds; no numerical Ramsey improvement, physical-speedup claim, or separation from all randomized classical algorithms; a published lower-bound parameter conflict awaits clarification |
 
 No claim of a world-best bound, publication priority, global parameter
 optimality, formal proof-assistant verification, or publication is made.
@@ -50,6 +52,8 @@ minor findings are consolidated in
 [`reviews/FINAL_TARGETED_ADVERSARIAL_REVIEW_2026-08-30.md`](reviews/FINAL_TARGETED_ADVERSARIAL_REVIEW_2026-08-30.md).
 The subsequent local proof and adversarial closure of lower item S3 is
 [`reviews/LOWER_S3_CLOSURE_2026-08-30.md`](reviews/LOWER_S3_CLOSURE_2026-08-30.md).
+The theorem-by-theorem mathematical audit of the new quantum part is
+[`reviews/QUANTUM_RAMSEY_MATHEMATICAL_AUDIT_2026-08-31.md`](reviews/QUANTUM_RAMSEY_MATHEMATICAL_AUDIT_2026-08-31.md).
 The repository-wide publication protocol audit is
 [`reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md`](reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md).
 The ChatGPT Pro second-opinion report and claim-by-claim disposition are
@@ -57,6 +61,9 @@ The ChatGPT Pro second-opinion report and claim-by-claim disposition are
 The newer exact-seven collaboration packet is a draft only and has not been
 sent externally:
 [`reviews/CHATGPT_PRO_EXACT7_COLLABORATION_PACKET.md`](reviews/CHATGPT_PRO_EXACT7_COLLABORATION_PACKET.md).
+A separate public-only quantum collaboration packet has been sent to ChatGPT
+Pro; its review was still running when this snapshot was prepared, so no
+verdict from it is counted.
 The publication-facing state is [`STATUS.md`](STATUS.md). Local or AI-assisted
 adversarial review does not substitute for independent external human peer
 review.
@@ -95,26 +102,30 @@ fail-closed checker are documented in
 
 ## Verified local snapshot
 
-On 2026-08-31 the following gates passed on the current worktree:
+On 2026-08-31 the following gates passed after the quantum integration:
 
-- `quick`, `full`, and networked `sources` reproduction tiers;
+- the current `quick` tier, including the new exact quantum audit; the legacy
+  upper/lower components had also passed `full` and networked `sources`
+  earlier that day and were not changed mathematically by this integration;
 - the exact 26-asset finite-heavy gate, including six theorem-formula and four
   singleton-formula reconstructions, all ten checked DRAT replays, and the
   complete common-relaxation model audit;
 - deterministic materialization of the single canonical manuscript;
-- compilation of a 98-page PDF with no overfull box, unresolved or multiply
+- compilation of a 112-page PDF with no overfull box, unresolved or multiply
   defined reference, LaTeX warning, error, or fatal diagnostic; and
 - representative-page visual inspection.
 
-With `SOURCE_DATE_EPOCH` fixed, two clean builds under the recorded pdfTeX
-1.40.24 (TeX Live 2022) and Latexmk 4.77 toolchain were byte-identical. The
-canonical 98-page post-exact-seven-review PDF SHA-256 is
-`26b08245406ef905a38bf06d5fce6b4528b63eda2ed935d34367612f9cf7630b`.
+The current canonical 112-page quantum-integrated PDF SHA-256 is
+`a03cc74101011a25566a46dbcb1892508536f47a2a6f02e8dc3390c51abbeeaf`.
+With `SOURCE_DATE_EPOCH` fixed, two clean quantum-integrated builds under the
+recorded pdfTeX 1.40.24 (TeX Live 2022) and Latexmk 4.77 toolchain were
+byte-identical.
 Byte identity across different TeX distributions, font packages, or engines is
 not claimed. A separate ChatGPT Pro AI second opinion completed on
-2026-08-30. Every recoverable concrete objection was checked against the
-canonical sources and repaired or explicitly dispositioned in the archived
-report. It is a second opinion, not external human peer review.
+2026-08-30 for the first three parts. Every recoverable concrete objection was
+checked against those canonical sources and repaired or explicitly
+dispositioned in the archived report. The quantum-specific Pro review is
+still running. Neither is external human peer review.
 
 ## Reproduction
 
@@ -130,9 +141,15 @@ make paper
 ```
 
 `quick` performs repository-integrity checks, the current upper transfer
-checks, the current lower arithmetic check, all finite-route unit tests, and
-the lightweight graph-certificate checks. It does not replay the long upper
-rate chain or the large finite DRAT proofs.
+checks, the current lower arithmetic check, all finite-route unit tests, the
+lightweight graph-certificate checks, and the exact quantum-recurrence audit.
+It does not replay the long upper rate chain or the large finite DRAT proofs.
+
+The quantum diagnostics can also be run alone:
+
+```bash
+make verify-quantum
+```
 
 The heavier offline asymptotic replay is:
 
@@ -173,7 +190,7 @@ uses the public GitHub REST endpoint without a GitHub account, CLI login, or
 token. It compares the release's complete asset-name set with the manifest,
 downloads into a clean directory, and verifies every byte count and digest.
 
-The canonical manuscript is materialized deterministically from the three
+The canonical manuscript is materialized deterministically from the four
 archival components and then compiled by:
 
 ```bash
@@ -207,9 +224,11 @@ existence nor nonexistence.
 | [`papers/upper`](papers/upper) | archival upper-part source component |
 | [`papers/lower`](papers/lower) | archival lower-part source component |
 | [`papers/finite`](papers/finite) | archival finite-part source component |
+| [`papers/quantum`](papers/quantum) | quantum-part source component |
 | [`routes/upper`](routes/upper) | upper-bound proofs, searches, certificates, and replay logs |
 | [`routes/lower`](routes/lower) | lower-bound proof ledger, arithmetic checks, and audits |
 | [`routes/finite`](routes/finite) | finite graph encodings, metadata, search records, and checkers |
+| [`experiments/quantum_ramsey`](experiments/quantum_ramsey) | exact recurrence, split-tree, and ideal-sampler diagnostics |
 | [`artifacts`](artifacts) | manifest for large proof-carrying assets |
 | [`reviews`](reviews) | adversarial mathematical and reproducibility reviews |
 | [`scripts`](scripts) | bootstrap, materialization, verification, and release helpers |

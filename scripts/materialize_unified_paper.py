@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-"""Materialize the canonical unified manuscript from the three source parts.
+"""Materialize the canonical unified manuscript from the four source parts.
 
 The historical part manuscripts remain byte-stable source components.  This
 script copies their section and appendix sources into ``papers/unified`` while
 making two mechanical changes required by a single LaTeX document:
 
-* labels and references receive ``up:``, ``low:``, or ``fin:`` namespaces;
-* handwritten equation tags receive visible ``U``, ``L``, or ``F`` prefixes
-  and stable labels, so no two displayed equations share a tag.
+* labels and references receive ``up:``, ``low:``, ``fin:``, or ``qua:``
+  namespaces;
+* handwritten equation tags receive visible ``U``, ``L``, ``F``, or ``Q``
+  prefixes and stable labels, so no two displayed equations share a tag.
 
 The generated files are committed so that the paper can be inspected without
 running this script.  Re-running the script must be deterministic.
@@ -28,6 +29,7 @@ PARTS = {
     "upper": {"prefix": "up", "tag": "U"},
     "lower": {"prefix": "low", "tag": "L"},
     "finite": {"prefix": "fin", "tag": "F"},
+    "quantum": {"prefix": "qua", "tag": "Q"},
 }
 
 SECTION_TITLES = {
@@ -42,6 +44,10 @@ SECTION_TITLES = {
     ("finite", "01_introduction.tex"): (
         "Introduction",
         "Finite Ramsey barrier: problem and proof architecture",
+    ),
+    ("quantum", "01_introduction.tex"): (
+        "Introduction",
+        "Quantum constructive Ramsey search: theorem and contribution",
     ),
 }
 

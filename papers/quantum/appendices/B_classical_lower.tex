@@ -1,0 +1,52 @@
+\section{Derivation of the randomized classical lower bound}
+\label{app:classical-lower}
+
+We derive \cref{prop:classical-lower} from the random-Painter weight bound of
+Conlon--Fox--Grinshpun--He \cite{ConlonFoxGrinshpunHe2019}.  Let
+\[
+ \beta=2-\sqrt2,
+ \qquad
+ \alpha=1-\frac1{\sqrt2},
+\]
+so that $\beta=2\alpha$.  Set
+\[
+ T=\left\lfloor2^{\beta K-2}\right\rfloor,
+ \qquad
+ c=\lfloor\alpha K\rfloor=\alpha K+\epsilon,
+ \qquad -1<\epsilon\le0.
+\]
+
+Expose $G(M,1/2)$ adaptively to a deterministic $T$-query algorithm.  The
+cited random-Painter estimate bounds the probability that the queried edges
+already contain a fully exposed monochromatic $K$-set by
+\begin{equation}\label{eq:random-painter-bound}
+ 2\cdot
+ 2^{-\binom K2+c(c-1)}(2T)^{K-c}.
+\end{equation}
+Because $2T\le2^{\beta K-1}$, the base-$2$ logarithm of
+\cref{eq:random-painter-bound} is at most
+\[
+ 1-\binom K2+c(c-1)+(K-c)(\beta K-1)
+ =1-\frac K2+\epsilon^2.
+\]
+For $K\ge8$ this is at most $-2$, so the event has probability at most
+$1/4$.
+
+If the algorithm outputs a $K$-set that is not already a fully exposed
+monochromatic set, then, conditional on the transcript, either its known
+edges already conflict or at least one independent fair edge remains to be
+guessed.  Its conditional probability of being homogeneous is therefore at
+most $1/2$.  The total success probability under $G(M,1/2)$ is at most
+\[
+ \frac14+\frac34\cdot\frac12=\frac58<\frac23.
+\]
+Yao's minimax principle now implies that any randomized algorithm with
+worst-case success probability at least $2/3$ needs more than $T$ queries.
+Since $M=4^{K-1}$,
+\[
+ 2^{\beta K}
+ =\Theta\!\left(M^{\beta/2}\right)
+ =\Theta\!\left(M^{1-1/\sqrt2}\right),
+\]
+which proves \cref{prop:classical-lower}.
+

@@ -1,0 +1,136 @@
+\section{Query complexity and the classical landscape}\label{sec:complexity}
+
+For the size-biased recursion, a capped sample from a nonempty subset of the
+$M$-element universe costs $O(\sqrt M)$ membership tests and
+$O(\log(2r))$ repetitions give failure probability $O(1/r)$.  The predicate at
+level $i$ costs $O(i+1)$ edge queries, hence one fixed-cap run costs
+\[
+ O\!\left(\sqrt M\log(2r)\sum_{i=0}^{r-1}(i+1)\right)
+ =O(K^2 2^K\log K).
+\]
+The repetition in the preceding section proves the following preliminary
+bound in worst-case, rather than merely expected, query complexity.
+
+\begin{proposition}[Size-biased quantum recursion]
+\label{prop:size-biased-algorithm}
+Under the hypotheses of \cref{thm:main}, the estimation-free algorithm returns
+a verified homogeneous $K$-set with probability at least $1-\eta$ using
+\[
+ O\!\left(K^2 2^K\log K\log\frac1\eta\right)
+\]
+edge queries.
+\end{proposition}
+
+We next analyze the sharper scale-aware recursion.
+
+By \cref{lem:survival}, a capped search block at level $i$ uses
+$O(2^{i/2})$ membership tests.  Computing and uncomputing membership and
+checking the sampled edge costs $O(i+1)$ edge queries.  Put
+\[
+ b_i=(i+1)2^{i/2}.
+\]
+The batch cap uses $O(m_i+\log(r/\eta))=O(m_i)$ blocks.  Hence its total
+sampling cost is
+\begin{equation}\label{eq:query-sum}
+ O\!\left(
+ \log\frac r\eta
+ \sum_{i=0}^{r-1}b_i\varepsilon_i^{-2}
+ \right).
+\end{equation}
+
+There are at most six indices at each value of $d_i$, so
+\[
+ Z=\sum_i2^{-d_i}<6\sum_{d\ge0}2^{-d}=12.
+\]
+Using \cref{eq:error-schedule},
+\[
+ \sum_{i=0}^{r-1}b_i\varepsilon_i^{-2}
+ =O\!\left(
+ \sum_{i=0}^{r-1}(i+1)2^{i/2}4^{d_i}
+ \right).
+\]
+Write $h=r-1-i$.  Since
+$4^{\lceil h/6\rceil}\le4\cdot2^{h/3}$, the last display is bounded by
+\[
+ O\!\left(
+ 2^{r/2}\sum_{h=0}^{r-1}(r-h)2^{-h/6}
+ \right)
+ =O(r2^{r/2}).
+\]
+The high-confidence pivot searches, final search, and $K^2$ verification
+fit the same bound.  Since $r=2K-3$, this proves \cref{thm:main}.
+
+The gate complexity is
+\[
+ 2^K\operatorname{poly}\!\left(
+ K,\log N,\log\frac1\eta
+ \right)
+\]
+plus the gate cost of one supplied edge-oracle evaluation.  No QRAM is
+assumed.  The $O(K)$ measured pivot labels and colours are classical controls
+for reversible comparisons, conjunctions, and uncomputation.
+
+The known classical lower bound remains below the quantum upper bound.  The
+following direct consequence of the random-Painter analysis of
+Conlon--Fox--Grinshpun--He \cite{ConlonFoxGrinshpunHe2019} records the best
+bound located in our audit; details appear in \cref{app:classical-lower}.
+
+\begin{proposition}[Randomized classical lower bound]
+\label{prop:classical-lower}
+For $K\ge8$ and $M=4^{K-1}$, every randomized edge-query algorithm that finds
+a homogeneous $K$-set with worst-case probability at least $2/3$ uses
+\[
+ \Omega\!\left(2^{(2-\sqrt2)K}\right)
+ =\Omega\!\left(M^{1-1/\sqrt2}\right)
+\]
+queries.
+\end{proposition}
+
+The exponent $1-1/\sqrt2\approx0.292893$ does not reach the quantum upper
+exponent $1/2$, but it strengthens the earlier $M^{1/4}$ black-box lower
+bound recorded by Komargodski--Naor--Yogev in this parameterization
+\cite{KomargodskiNaorYogev2017}.  Therefore no
+quantum-versus-best-randomized-classical
+separation is claimed.  A randomized lower bound
+$2^{(1+\delta)K}$ for any fixed $\delta>0$ would, through the online Ramsey
+connection, improve the long-standing exponential lower bound for diagonal
+Ramsey numbers.  The missing separation is tied to a major combinatorial
+barrier rather than a routine query lemma.
+
+\subsection{A multicolour extension of size-biased survival}
+
+The size-biased mechanism is not specific to two colours.  Suppose every edge
+has one of $q\ge2$ colours, and let
+\[
+ r=q(K-2)+1,
+ \qquad
+ B_d=1+q+\cdots+q^{d-1}=\frac{q^d-1}{q-1}.
+\]
+Choose the power of two
+\[
+ L_q=2^{\lceil\log_2(2B_r)\rceil},
+\]
+so $2B_r\le L_q<4B_r$.  If the $s-1$ non-pivot vertices split into sizes
+$a_1,\ldots,a_q$, the induction in \cref{lem:size-biased-survival} becomes
+\[
+ \sum_{j=1}^q (a_j-B_{d-1})_+
+ \ge
+ \left(s-1-qB_{d-1}\right)_+
+ =(s-B_d)_+,
+\]
+because $B_d=1+qB_{d-1}$.  Thus, for $d\ge1$, the $d$-step survival probability is at
+least $(s-B_d)_+/(s-1)$ when $s\ge2$.  Starting from $L_q\ge2B_r$ gives
+probability greater than $1/2$, and among the $r$ recorded colours one occurs
+at least $K-1$ times.
+
+\begin{corollary}[Multicolour size-biased Ramsey search]
+\label{cor:multicolour}
+For $q,K\ge2$, every $q$-edge-coloured complete graph on at least $L_q$
+vertices admits a bounded-error quantum algorithm that outputs a
+monochromatic $K$-clique using
+\[
+ O\!\left(r^2\sqrt{L_q}\log(2r)\log\frac1\eta\right)
+\]
+colour-oracle queries in the worst case, where $r$, $B_r$, and $L_q$ are as
+defined above.
+\end{corollary}

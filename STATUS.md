@@ -13,14 +13,15 @@ PUBLIC SOURCE REPOSITORY CREATED
 ONE CANONICAL UNIFIED MANUSCRIPT
 RELEASE CANDIDATE NOT YET TAGGED OR PUBLISHED
 CHATGPT PRO REVIEW COMPLETED; RECOVERABLE OBJECTIONS DISPOSITIONED
+QUANTUM PART PROVED LOCALLY; QUANTUM-SPECIFIC PRO REVIEW RUNNING
 FINAL-TAG CLEAN-CLONE AND RELEASE-ASSET VERIFICATION PENDING
 ```
 
 The canonical manuscript is
 [`papers/unified/main.tex`](papers/unified/main.tex), with a local build at
 [`papers/unified/main.pdf`](papers/unified/main.pdf). The directories
-`papers/upper`, `papers/lower`, and `papers/finite` are archival source
-components, not separate papers.
+`papers/upper`, `papers/lower`, `papers/finite`, and `papers/quantum` are
+source components, not separate papers.
 
 ## Upper result
 
@@ -118,6 +119,40 @@ endpoint audit passes, but branch 1, exact seven, and the global Ramsey bounds
 remain unchanged.  See
 [`routes/finite/R3_18_BUDGET7_BRANCH1_MAXIMAL_UNION_GATE_2026-08-30.md`](routes/finite/R3_18_BUDGET7_BRANCH1_MAXIMAL_UNION_GATE_2026-08-30.md).
 
+## Quantum result
+
+Current scoped statements:
+
+```text
+PROVABLE WORST-CASE QUANTUM QUERY UPPER BOUND
+N >= 4^(K-1)
+Q <= O(2^K K log(K/eta))
+NO NUMERICAL RAMSEY-BOUND OR ALL-CLASSICAL SEPARATION CLAIM
+```
+
+The main scale-aware implicit-majority algorithm represents every nested
+candidate set by exact pivot constraints, samples it with capped symmetric
+quantum search, and allocates estimation accuracy according to the cost of
+each depth. A separate estimation-free size-biased recursion has query bound
+$O(2^K K^2\log K\log(1/\eta))$ and extends to $q$ colours. Independent
+mathematical reconstructions found no fatal or major correctness defect; the
+exact binary and ternary split-tree diagnostics pass.
+
+For randomized classical algorithms, the proved lower bound is only
+$\Omega(2^{(2-\sqrt2)K})=\Omega(M^{1-1/\sqrt2})$, below the quantum exponent
+$1/2$. Therefore the paper claims a new quantum upper bound and a
+near-quadratic improvement over the standard deterministic recursion, not a
+separation from the best randomized classical algorithm.
+
+Jain--Li--Robere--Xun print an incompatible $N^{1-o(1)}$ quantum lower-bound
+remark. Their formal Definition 2.6 uses $N=2^n$ and their default target is
+$K=n/2$; a different introductory shorthand is internally inconsistent and
+is not used in our comparison. Direct parameter substitution into the cited
+reduction and multi-collision theorem gives at most exponent $1/24$. The
+manuscript records this as an unresolved parameter conflict and requires
+author clarification; it does not allege an error or count the printed lower
+bound as compatible evidence.
+
 ## Review state
 
 - First-round local mathematical and reproducibility audits: **completed**;
@@ -150,6 +185,11 @@ remain unchanged.  See
 - ChatGPT Pro second-opinion review: **completed and dispositioned on
   2026-08-30**; the uploaded artifact was a pre-final candidate, and the
   report is an AI-assisted author-side check rather than human peer review.
+- Quantum theorem-specific adversarial review: **passed locally** for the
+  scale-aware, size-biased, multicolour, canonicalization, and classical-lower
+  arguments; priority and the JLRX parameter conflict remain open.
+- Quantum ChatGPT Pro packet: **sent on 2026-08-31 and still running**; no
+  result from that review is counted in the mathematical verdict.
 - Exact-seven ChatGPT Pro collaboration packet: **drafted but not submitted**;
   fresh action-time confirmation is still required before external transmission.
 
@@ -166,14 +206,16 @@ Review files:
 - [`reviews/FINAL_TARGETED_ADVERSARIAL_REVIEW_2026-08-30.md`](reviews/FINAL_TARGETED_ADVERSARIAL_REVIEW_2026-08-30.md)
 - [`reviews/LOWER_S3_CLOSURE_2026-08-30.md`](reviews/LOWER_S3_CLOSURE_2026-08-30.md)
 - [`reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md`](reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md)
+- [`reviews/QUANTUM_RAMSEY_MATHEMATICAL_AUDIT_2026-08-31.md`](reviews/QUANTUM_RAMSEY_MATHEMATICAL_AUDIT_2026-08-31.md)
 - [`reviews/CHATGPT_PRO_REVIEW.md`](reviews/CHATGPT_PRO_REVIEW.md)
 - [`reviews/REVIEW_DISPOSITION.md`](reviews/REVIEW_DISPOSITION.md)
 
-The current release-candidate PDF has 98 pages and SHA-256
-`26b08245406ef905a38bf06d5fce6b4528b63eda2ed935d34367612f9cf7630b`.
-This is the recorded local post-review hash: two clean builds under the pinned
-toolchain produced byte-identical PDFs. It is not a published-Release digest
-until the separate immutable-release procedure succeeds.
+The current quantum-integrated release-candidate PDF has 112 pages and
+SHA-256
+`a03cc74101011a25566a46dbcb1892508536f47a2a6f02e8dc3390c51abbeeaf`.
+Two clean Part-IV-integrated builds under the pinned toolchain were
+byte-identical, and the visual audit passes. This is not a published-Release
+digest until the separate immutable-release procedure succeeds.
 Its final log has no overfull box, undefined or multiply defined reference,
 LaTeX warning, error, or fatal diagnostic; representative pages were also
 inspected visually.
@@ -200,9 +242,10 @@ peer-reviewed publication.
 
 ## Gate to change this status
 
-The local mathematical, implementation, review, replay, compilation, and
-visual gates are complete. The package can move to public-release status only
-after:
+The local mathematical, current quick-replay, compilation, and visual gates
+are complete. Quantum-specific ChatGPT Pro review, expert priority review,
+and clarification of the JLRX parameter conflict remain submission gates.
+The package can move to public-release status only after:
 
 1. the final tag and exact 26-asset immutable Release are published; and
 2. the advertised workflow is verified from a credential-free fresh clone

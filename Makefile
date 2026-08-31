@@ -1,4 +1,4 @@
-.PHONY: bootstrap verify-fast verify-full verify-upper verify-lower verify-finite paper papers clean
+.PHONY: bootstrap verify-fast verify-full verify-upper verify-lower verify-finite verify-quantum paper papers clean
 
 bootstrap:
 	bash scripts/bootstrap.sh
@@ -17,6 +17,9 @@ verify-lower:
 
 verify-finite:
 	bash scripts/reproduce_finite_light.sh
+
+verify-quantum:
+	.venv/bin/python experiments/quantum_ramsey/implicit_majority_audit.py --self-check --check-only
 
 paper:
 	bash scripts/compile_papers.sh

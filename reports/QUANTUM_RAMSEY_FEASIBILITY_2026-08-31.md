@@ -2,6 +2,28 @@
 
 Date: 2026-08-31
 
+## Later addendum: a non-LLL route survived review
+
+The executive decision below records the state of the earlier
+LLL/Grover/Johnson/topology exploration.  Later on the same date, a different
+route produced a proved oracle-query theorem: capped quantum sampling of the
+implicit candidate sets in the elementary Erdős--Szekeres recursion finds a
+$K$-clique or $K$-vertex independent set in a promised valid graph on at
+least $4^{K-1}$ vertices using
+
+$$
+O\!\left(2^K K\log(K/\eta)\right)
+$$
+
+edge queries.  A separate estimation-free, size-biased implementation gives
+the cleaner bound
+$O(2^K K^2\log K\log(1/\eta))$ and extends to any number of edge colours.
+The theorem, proof, literature conflict, and nonclaims are in
+[`QUANTUM_IMPLICIT_MAJORITY_CANDIDATE_2026-08-31.md`](QUANTUM_IMPLICIT_MAJORITY_CANDIDATE_2026-08-31.md).
+It supersedes the historical statements below that there was no central
+quantum theorem or possible ITCS contribution; it does not revive the LLL or
+topology routes audited here and does not improve a numerical Ramsey bound.
+
 ## Executive decision
 
 Quantum computation is a legitimate tool for Ramsey search, but the obvious paper is already occupied and the obvious speedups are not new. A useful project must prove a Ramsey-specific, end-to-end complexity theorem. A QUBO, QAOA, annealing, or generic Grover implementation with small-graph simulations is not enough.
@@ -9,7 +31,7 @@ Quantum computation is a legitimate tool for Ramsey search, but the obvious pape
 Current status:
 
 - **Longer-term direction:** conditional go for one tightly scoped diagnostic week.
-- **ITCS 2027:** no-go. There is no central proved quantum theorem.
+- **ITCS 2027 at this earlier stage:** no-go before the later theorem above.
 - **Numerical Ramsey bound:** unchanged. No new \(R(3,18)\) witness or exhaustive certificate has been produced.
 - **Best quantum role:** discover a lower-bound witness and then verify it classically.
 - **Upper-bound role:** heuristic guidance only unless the computation emits a classical exhaustive proof certificate.
@@ -409,6 +431,8 @@ The user's intuition is directionally right: Ramsey construction is a structured
 - the present walk and universal-lower-bound proposals fail adversarial scrutiny;
 - the exact conditional identity and the \(n=10,k=6\) counterexample close a real correctness gap;
 - standard valid-batch overlap is capped by \(g(B)\le\binom k2\), so it cannot provide a polynomial improvement;
-- no numerical Ramsey bound or publishable quantum theorem has yet been obtained.
+- at the end of this LLL/topology route alone, no numerical Ramsey bound or
+  publishable quantum theorem had been obtained; the later implicit-set
+  theorem in the addendum changes the second conclusion but not the first.
 
 The present LLL-based quantum-advantage program should be stopped. Broader, non-LLL quantum Ramsey research remains logically open, but it needs a genuinely new Ramsey-specific structural theorem before it becomes an active paper project.

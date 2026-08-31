@@ -1,6 +1,6 @@
 \section{Source interfaces and evidence taxonomy}\label{sec:evidence-taxonomy}
 
-The three results have different logical dependencies.  We therefore attach
+The four results have different logical dependencies.  We therefore attach
 an evidence type to every principal statement instead of using
 ``computer-assisted'' as a single undifferentiated label.
 
@@ -79,6 +79,25 @@ traces, plus a checked satisfying model of the common relaxation. & The SAT
 model contains an explicit independent 18-set; the consequences are
 non-vacuous necessary conditions, not branch closure, an exact-seven
 resolution, or a global Ramsey-number bound. \\
+Q0 & A scale-aware implicit-set quantum algorithm finds a homogeneous
+$K$-set in every graph on at least $4^{K-1}$ vertices using
+$O(2^K K\log(K/\eta))$ coherent edge queries. & Written oracle-algorithm
+proof: capped symmetric search, conditional Hoeffding, an exact affine
+recurrence, and a geometric query sum. & A worst-case query upper bound, not
+a numerical Ramsey bound, physical implementation, or separation from all
+randomized classical algorithms. \\
+Q1 & An estimation-free size-biased recursion gives
+$O(2^K K^2\log K\,\allowbreak\log(1/\eta))$ queries and extends to $q$
+colours. & Written
+survival induction, exact nesting, fixed-cap amplification, and finite exact
+split-tree diagnostics. & The diagnostics check the formula but do not
+replace its proof; the multicolour statement is algorithmic rather than a
+competitive extremal bound. \\
+Q2 & Randomized classical query complexity is at least
+$\Omega(2^{(2-\sqrt2)K})$ at $M=4^{K-1}$. & Yao's principle applied to the
+version-cited random-Painter theorem, with a written treatment of unqueried
+output edges. & The exponent is below $1/2$ and therefore proves no
+quantum--classical separation. \\
 \bottomrule
 \end{longtable}
 

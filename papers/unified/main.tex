@@ -13,10 +13,10 @@
 \usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!65!black]{hyperref}
 \usepackage[capitalise,noabbrev]{cleveref}
 \hypersetup{
-  pdftitle={Reproducible Ramsey Analysis Across Asymptotic and Finite Regimes},
+  pdftitle={Reproducible Ramsey Analysis Across Asymptotic, Finite, and Algorithmic Regimes},
   pdfauthor={Cheng Xin},
-  pdfsubject={Conditional asymptotic Ramsey bounds and a proof-carrying finite barrier},
-  pdfkeywords={Ramsey numbers, interval arithmetic, Gaussian random graph, SAT, DRAT}}
+  pdfsubject={Asymptotic Ramsey bounds, a proof-carrying finite barrier, and quantum constructive search},
+  pdfkeywords={Ramsey numbers, quantum query complexity, interval arithmetic, Gaussian random graph, SAT, DRAT}}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -56,10 +56,10 @@
   breaklines=true,breakanywhere=true,fontsize=\small}
 \setlength{\emergencystretch}{2em}
 
-\title[Three reproducible Ramsey results]{Reproducible Ramsey Analysis Across Asymptotic and Finite Regimes:\\
-Retained Spines, Gaussian Residuals, and Proof-Carrying Barriers}
+\title[Four reproducible Ramsey results]{Reproducible Ramsey Analysis Across Asymptotic, Finite, and Algorithmic Regimes:\\
+Retained Spines, Gaussian Residuals, Proof-Carrying Barriers, and Quantum Search}
 \author{Cheng Xin}
-\date{Draft of 30 August 2026}
+\date{Draft of 31 August 2026}
 
 \begin{document}
 
@@ -68,9 +68,9 @@ Retained Spines, Gaussian Residuals, and Proof-Carrying Barriers}
 \end{abstract}
 
 \maketitle
-\subjclass[2020]{05D10, 05C35, 68V20}
+\subjclass[2020]{05D10, 05C35, 68Q12, 68V20}
 \keywords{Ramsey numbers, computer-assisted proof, interval arithmetic,
-Gaussian random graph, SAT, DRAT, reproducibility}
+Gaussian random graph, quantum query complexity, SAT, DRAT, reproducibility}
 \tableofcontents
 
 \input{sections/01_introduction}
@@ -105,6 +105,15 @@ Gaussian random graph, SAT, DRAT, reproducibility}
 \input{sections/finite/07_reproducibility}
 \input{sections/finite/08_scope}
 
+\part{Quantum implicit-majority Ramsey search}
+\input{sections/quantum/01_introduction}
+\input{sections/quantum/02_model_and_search}
+\input{sections/quantum/03_algorithm}
+\input{sections/quantum/04_correctness}
+\input{sections/quantum/05_complexity_and_lower}
+\input{sections/quantum/06_prior_art_and_conflict}
+\input{sections/quantum/07_reproducibility_and_scope}
+
 \input{sections/90_unified_reproducibility}
 \input{sections/91_conclusion}
 
@@ -117,6 +126,8 @@ Gaussian random graph, SAT, DRAT, reproducibility}
 \input{appendices/finite/A_artifact_ledger}
 \input{appendices/finite/B_verification_protocol}
 \input{appendices/finite/C_exact_seven_record}
+\input{appendices/quantum/A_capped_search}
+\input{appendices/quantum/B_classical_lower}
 
 \bibliographystyle{alpha}
 \bibliography{references}

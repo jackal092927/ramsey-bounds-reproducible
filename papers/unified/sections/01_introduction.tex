@@ -10,13 +10,13 @@ certificates.  In the finite regime, SAT solvers can explore highly
 constrained graph spaces, but a solver outcome becomes a theorem only after
 the graph-to-CNF reduction and a proof trace have both been checked.
 
-This article places three results developed here in one manuscript.  They concern
+This article places four results developed here in one manuscript.  They concern
 different regimes and use different mathematics; their unity is a common
 claim-to-evidence discipline rather than a claimed common proof mechanism.
 The first two give conditional, source-relative refinements of asymptotic
-ledgers, whereas the
-third establishes a local finite obstruction without improving a tabulated
-Ramsey number.
+ledgers, the third establishes a local finite obstruction without improving a
+tabulated Ramsey number, and the fourth gives a quantum query algorithm for
+constructive Ramsey search without changing an extremal bound.
 
 \subsection{Diagonal upper bound}
 
@@ -82,10 +82,41 @@ returned only \textsc{unknown}.  The theorem is
 local to this seed and metric: it neither constructs a $100$-vertex
 $(3,18)$-Ramsey graph nor implies $R(3,18)\ge101$.
 
+\subsection{Quantum constructive search}
+
+Part~IV quantizes the elementary majority-neighbourhood recursion.  For a
+graph on at least $4^{K-1}$ vertices, capped uniform search on implicit
+candidate predicates, conditional concentration, and a scale-aware error
+schedule find a $K$-clique or $K$-vertex independent set using
+\[
+ O\!\left(2^K K\log\frac K\eta\right)
+\]
+coherent edge queries with failure probability at most $\eta$.  At
+$N=2^n$ this finds order $\lfloor n/2\rfloor+1$ using
+$O(\sqrt N\log N\log(\log N/\eta))$ queries.  A random-Painter/Yao argument
+gives a classical randomized lower bound
+$\Omega(2^{(2-\sqrt2)K})$, still below the quantum upper bound.  Accordingly,
+we claim a near-quadratic improvement over the standard explicit recursion,
+not a separation from every classical algorithm.
+
+A second, estimation-free algorithm samples one uniform candidate and follows
+its edge colour, thereby choosing a branch in proportion to its size.  Its
+survival induction gives
+$O(2^K K^2\log K\log(1/\eta))$ queries and extends to every number of edge
+colours.  Although its two-colour polynomial factor is weaker than the
+scale-aware theorem, it isolates the simplest mechanism and shows that the
+method is not binary-specific.
+
+The exact-model prior-art audit finds an unresolved incompatibility with the
+$N^{1-o(1)}$ quantum lower bound printed by Jain, Li, Robere, and Xun:
+substitution into their Ramsey reduction and the cited multi-collision theorem
+gives exponent at most $1/24$.  The manuscript records the calculation but
+does not present it as an author-confirmed correction.
+
 \subsection{Organization}
 
 \Cref{sec:evidence-taxonomy} states the evidence taxonomy and trust
-boundaries used throughout.  Parts~I--III give the complete arguments and
+boundaries used throughout.  Parts~I--IV give the complete arguments and
 their result-specific verification records.  The unified reproduction
 contract appears in \cref{sec:unified-reproducibility}; full technical
 records, proof ledgers, and artifact tables are retained in the appendices.

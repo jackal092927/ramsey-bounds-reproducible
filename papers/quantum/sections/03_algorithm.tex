@@ -1,0 +1,82 @@
+\section{Two implicit-set recursions}\label{sec:algorithm}
+
+\subsection{An estimation-free size-biased recursion}
+
+The following algorithm isolates the simplest new mechanism.  Set
+$M=4^{K-1}$ and $r=2K-3$, restrict to the first $M$ vertices, let
+$S_0=[M]$, and fix any $v_0\in S_0$.  At step $i=0,\ldots,r-1$, define
+$T_i=S_i\setminus\{v_i\}$.  Use the permutation-symmetric repeated capped
+search of \cref{lem:capped-search}, with the universal density lower bound
+$1/M$, to sample an exactly uniform $x_i\in T_i$, or abort after a fixed cap.
+Query
+\[
+ c_i=G(v_i,x_i),
+\]
+and set
+\[
+ S_{i+1}=\{x\in T_i:G(v_i,x)=c_i\},
+ \qquad v_{i+1}=x_i.
+\]
+After the last step put $w=v_r$.  Among the $r$ labels $c_i$, choose a colour
+appearing at least $K-1$ times and return the corresponding pivots together
+with $w$, after direct verification.
+
+The set $S_i$ is never materialized.  Its membership predicate consists of
+the exact edge constraints from the earlier pivots and the exclusions of
+those pivots.  It therefore costs $O(i+1)$ edge queries.  Repeating the
+capped block $O(\log(2r))$ times makes the conditional failure probability of
+each nonempty-set sample $O(1/r)$.  The structural probability that all
+$r$ sets remain nonempty is controlled in \cref{lem:size-biased-survival}.
+
+\subsection{Scale-aware approximate majorities}
+
+Fix $M=4^{K-1}$ input vertices and set
+\[
+ r=2K-3,
+ \qquad E=\frac1{16}.
+\]
+For $0\le i<r$, define
+\[
+ d_i=\left\lceil\frac{r-1-i}{6}\right\rceil,
+ \qquad z_i=2^{-d_i},
+ \qquad Z=\sum_{j=0}^{r-1}z_j,
+\]
+and allocate
+\begin{equation}\label{eq:error-schedule}
+ \varepsilon_i=E\frac{z_i}{Z},
+ \qquad a_i=\frac12-\varepsilon_i.
+\end{equation}
+Thus $\sum_i\varepsilon_i=E$.  The error allowance doubles once every six
+levels as the search sets become more expensive.
+
+Before round $i$, retain classical pivots $v_0,\ldots,v_{i-1}$ and colours
+$c_0,\ldots,c_{i-1}$.  They define the exact implicit set
+\begin{equation}\label{eq:implicit-set}
+ S_i=\left\{
+ u\in[M]\setminus\{v_0,\ldots,v_{i-1}\}:
+ G(v_j,u)=c_j\ \text{for every }j<i
+ \right\}.
+\end{equation}
+Its reversible membership predicate uses $O(i)$ edge queries.
+
+At round $i$, use \cref{lem:capped-search} to obtain a verified pivot
+$v_i\in S_i$.  Then collect, with replacement,
+\begin{equation}\label{eq:sample-count}
+ m_i=\left\lceil
+ \frac{1}{2\varepsilon_i^2}\log\frac{4r}{\eta}
+ \right\rceil
+\end{equation}
+independent uniform samples from $S_i\setminus\{v_i\}$.  Query their edges to
+$v_i$ and write $\widehat p_i$ for the observed fraction of colour $1$.  Set
+$c_i=1$ if $\widehat p_i\ge1/2$ and $c_i=0$ otherwise, and append this exact
+constraint to \cref{eq:implicit-set} to obtain $S_{i+1}$.
+
+After $r$ rounds, use one final capped search to obtain $w\in S_r$.  Select a
+colour occurring at least $K-1$ times among $c_0,\ldots,c_{r-1}$, take any
+$K-1$ pivots carrying it, and add $w$.  Before returning, query all
+$\binom K2$ induced edges and accept only an exactly homogeneous witness.
+
+Every search uses a predetermined density bound proved in the next section.
+If an earlier random estimate was bad and a later set violates that density
+promise, the fixed cap still terminates and the algorithm returns $\bot$.
+There is no repeat-until-success loop that can hang on an empty set.

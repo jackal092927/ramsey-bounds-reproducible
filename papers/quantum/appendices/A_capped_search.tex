@@ -1,0 +1,34 @@
+\section{Capped search and batch uniformity}\label{app:capped-search}
+
+We spell out the exact properties of the search primitive used in
+\cref{lem:capped-search}.  Start from the uniform superposition on $[M]$ and
+use the randomized-iteration unknown-solution search of
+Boyer--Brassard--Høyer--Tapp \cite{BBHT1998}.  If the marked density is at
+least $\lambda$, truncate the geometric iteration schedule once its maximum
+iteration count is a sufficiently large constant multiple of
+$1/\sqrt\lambda$.  The standard analysis gives a success probability
+$p_0>0$ independent of $M$ and $\lambda$, while the total number of
+membership calls is $O(1/\sqrt\lambda)$.  The truncation is fixed before the
+oracle outcomes are seen, so the block also terminates when there are no
+marked states.
+
+For any fixed Grover iteration count, the amplitudes of all marked basis
+states are equal.  Mixing over the iteration count preserves this permutation
+symmetry.  Measure the candidate and evaluate the exact membership predicate;
+the block succeeds only when this verification accepts.  Conditional on
+acceptance, every marked identity therefore has probability $1/|T|$.  A new
+block reinitializes its registers and random choices, so accepted identities
+from distinct blocks are independent conditional on the block-success
+indicators.
+
+For the batch statement, run
+\[
+ B=C\bigl(m+\log(1/\delta)\bigr)
+\]
+independent capped blocks, with $C$ an absolute constant chosen using $p_0$.
+The number of accepted blocks stochastically dominates
+$\operatorname{Bin}(B,p_0)$.  A Chernoff lower-tail bound makes the probability
+of fewer than $m$ acceptances at most $\delta$.  Conditional on any success
+pattern with at least $m$ acceptances, the first $m$ accepted identities are
+independent and uniform on $T$.  This proves \cref{lem:capped-search}.
+

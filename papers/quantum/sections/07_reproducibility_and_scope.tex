@@ -1,0 +1,43 @@
+\section{Reproducibility, nonclaims, and open problems}
+\label{sec:scope}
+
+The standard-library script
+\path{experiments/quantum_ramsey/implicit_majority_audit.py} is invoked by
+\begin{verbatim}
+python3 experiments/quantum_ramsey/implicit_majority_audit.py \
+  --self-check --max-k 12 --simulate-k 3 --trials 20
+\end{verbatim}
+It verifies the dyadic error schedule, prefix-product inequality, and variable
+recurrence with exact rational arithmetic through $K=64$.  It also compares
+the size-biased survival lemma with an exact dynamic program over all split
+trees through nine levels, emits the Jain-et-al./Liu--Zhandry exponent
+translation, checks conditional marked-item uniformity by an explicit
+16-dimensional Grover state-vector calculation, and runs deterministic-seed
+diagnostics on complete, empty, parity, and random graphs.
+
+The end-to-end graph diagnostic replaces quantum search by an ideal uniform
+marked-item sampler; only the isolated capped-search primitive receives the
+small state-vector check just described.  These checks test the combinatorial
+invariant, error schedule, and sampler symmetry.  They are not hardware
+results or empirical proofs of quantum speedup.  The theorem is the analytic
+argument in
+\cref{sec:model,sec:algorithm,sec:correctness,sec:complexity}.
+
+The positive theorem uses no topological subroutine.  Separate Hodge and
+reconfiguration routes were examined: single-edge recolouring graphs are
+hypercube subgraphs, while homological encodings either inherit expensive
+state preparation or hide the original search in a top-dimensional simplex.
+Those observations are stop rules for the current topology route, not
+lower bounds against every future topological quantum algorithm.
+
+Three open problems delimit the contribution.  First, resolve the discrepancy
+with the printed Jain--Li--Robere--Xun quantum lower bound.  Second, determine
+whether a randomized classical algorithm can match the
+$\widetilde O(\sqrt M)$ upper bound; \cref{prop:classical-lower} leaves a
+large exponent gap.  Third, determine whether the implicit-set method can be
+adapted to off-diagonal or hypergraph Ramsey total search, and whether the
+multicolour bound in \cref{cor:multicolour} can be sharpened by a scale-aware
+estimator.
+
+No numerical Ramsey bound, $R(3,18)$ witness, physical speedup, or
+quantum-versus-all-classical separation follows from this part.
