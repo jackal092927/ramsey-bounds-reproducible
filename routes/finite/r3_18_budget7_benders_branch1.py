@@ -43,6 +43,7 @@ from pysat.solvers import Solver
 
 try:
     from .benders_budget9 import (
+        EnumerationResult,
         edge_set,
         enumerate_cliques_interruptible,
         fixed_deletion_addition_pairs,
@@ -73,6 +74,7 @@ try:
     from .verify_ramsey_sat import sat_contains_clique
 except ImportError:  # pragma: no cover - direct script execution
     from benders_budget9 import (
+        EnumerationResult,
         edge_set,
         enumerate_cliques_interruptible,
         fixed_deletion_addition_pairs,
@@ -119,6 +121,11 @@ EXPECTED_FIXED_BASE_I18 = 235_504
 EXPECTED_FIXED_BASE_I18_SHA256 = (
     "1e9f89f40cd97a5f3b6fa93bb3c4835d45cadca8362e9d3150e90d4f385f6d8c"
 )
+ORACLE_ORDER_CHOICES = ("ascending", "reverse", "bidirectional")
+DEFAULT_ORACLE_ORDER = "bidirectional"
+HISTORICAL_ASCENDING_SCRIPT_SHA256 = (
+    "36dc3b53941605bc4ec132b70b4f61c5afbbcda13742fe9056a38ddb1683e5a0"
+)
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 
 
@@ -146,6 +153,230 @@ def graph_sha256(rows: list[int]) -> str:
         f"{u},{v}\n" for u, v in sorted(edge_set(rows))
     ).encode("ascii")
     return hashlib.sha256(payload).hexdigest()
+
+
+def _relabel_adjacency(
+    adjacency: list[int], order: list[int]
+) -> tuple[list[int], list[int]]:
+    """Relabel a bitset graph; new vertex ``i`` is old vertex ``order[i]``."""
+
+    n = len(adjacency)
+    if sorted(order) != list(range(n)):
+        raise ValueError("oracle vertex order is not a permutation")
+    inverse = [0] * n
+    for new, old in enumerate(order):
+        inverse[old] = new
+    relabeled: list[int] = []
+    for old in order:
+        row = 0
+        remaining = adjacency[old]
+        while remaining:
+            bit = remaining & -remaining
+            remaining ^= bit
+            row |= 1 << inverse[bit.bit_length() - 1]
+        relabeled.append(row)
+    return relabeled, order
+
+
+def _restore_mask(mask: int, order: list[int]) -> int:
+    restored = 0
+    remaining = mask
+    while remaining:
+        bit = remaining & -remaining
+        remaining ^= bit
+        restored |= 1 << order[bit.bit_length() - 1]
+    return restored
+
+
+def _oracle_pass(
+    adjacency: list[int],
+    size: int,
+    max_witnesses: int,
+    max_nodes: int,
+    max_seconds: float,
+    order_name: str,
+) -> tuple[EnumerationResult, dict[str, Any]]:
+    """Run one exact enumeration order and return original-label witnesses."""
+
+    if order_name == "ascending":
+        # Compatibility path: this is exactly the historical low-bit call.
+        result = enumerate_cliques_interruptible(
+            adjacency, size, max_witnesses, max_nodes, max_seconds
+        )
+    elif order_name == "reverse":
+        started = time.perf_counter()
+        relabeled, order = _relabel_adjacency(
+            adjacency, list(range(len(adjacency) - 1, -1, -1))
+        )
+        remaining_seconds = max(
+            0.0, max_seconds - (time.perf_counter() - started)
+        )
+        if remaining_seconds <= 0.0:
+            result = EnumerationResult(
+                witnesses=[],
+                complete=False,
+                reason="WALL_LIMIT",
+                recursive_nodes=0,
+                elapsed_seconds=time.perf_counter() - started,
+            )
+            return result, {
+                "order": order_name,
+                "complete": result.complete,
+                "reason": result.reason,
+                "witnesses": 0,
+                "recursive_nodes": 0,
+                "elapsed_seconds": result.elapsed_seconds,
+                "node_limit": max_nodes,
+                "wall_limit_seconds": max_seconds,
+            }
+        raw = enumerate_cliques_interruptible(
+            relabeled, size, max_witnesses, max_nodes, remaining_seconds
+        )
+        result = EnumerationResult(
+            witnesses=[_restore_mask(mask, order) for mask in raw.witnesses],
+            complete=raw.complete,
+            reason=raw.reason,
+            recursive_nodes=raw.recursive_nodes,
+            elapsed_seconds=time.perf_counter() - started,
+        )
+    else:
+        raise ValueError(f"unsupported single-pass oracle order {order_name!r}")
+    telemetry = {
+        "order": order_name,
+        "complete": result.complete,
+        "reason": result.reason,
+        "witnesses": len(result.witnesses),
+        "recursive_nodes": result.recursive_nodes,
+        "elapsed_seconds": result.elapsed_seconds,
+        "node_limit": max_nodes,
+        "wall_limit_seconds": max_seconds,
+    }
+    return result, telemetry
+
+
+def enumerate_cliques_with_order(
+    adjacency: list[int],
+    size: int,
+    max_witnesses: int,
+    max_nodes: int,
+    max_seconds: float,
+    oracle_order: str,
+) -> tuple[EnumerationResult, dict[str, Any]]:
+    """Exact bounded clique separation with an explicit deterministic order.
+
+    ``ascending`` is the historical low-bit implementation, unchanged.
+    ``reverse`` is the isomorphic high-label-first search.  ``bidirectional``
+    spends at most half of the declared node and wall budget on reverse first,
+    then gives the remaining declared budget to ascending.  A resource-limited
+    pair remains incomplete; a complete pass alone is a proof of exhaustion.
+    """
+
+    if oracle_order not in ORACLE_ORDER_CHOICES:
+        raise ValueError(f"unknown oracle order {oracle_order!r}")
+    if oracle_order != "bidirectional":
+        result, pass_record = _oracle_pass(
+            adjacency,
+            size,
+            max_witnesses,
+            max_nodes,
+            max_seconds,
+            oracle_order,
+        )
+        return result, {
+            "strategy": oracle_order,
+            "passes": [pass_record],
+            "historical_ascending_reference_script_sha256": (
+                HISTORICAL_ASCENDING_SCRIPT_SHA256
+            ),
+        }
+
+    started = time.perf_counter()
+    reverse_node_limit = max_nodes // 2
+    reverse_wall_limit = max_seconds / 2.0
+    reverse, reverse_record = _oracle_pass(
+        adjacency,
+        size,
+        max_witnesses,
+        reverse_node_limit,
+        reverse_wall_limit,
+        "reverse",
+    )
+    passes = [reverse_record]
+    witnesses = list(dict.fromkeys(reverse.witnesses))
+    if len(witnesses) >= max_witnesses:
+        result = EnumerationResult(
+            witnesses=witnesses[:max_witnesses],
+            complete=False,
+            reason="WITNESS_LIMIT",
+            recursive_nodes=reverse.recursive_nodes,
+            elapsed_seconds=time.perf_counter() - started,
+        )
+    elif reverse.complete:
+        result = EnumerationResult(
+            witnesses=witnesses,
+            complete=True,
+            reason="EXHAUSTED",
+            recursive_nodes=reverse.recursive_nodes,
+            elapsed_seconds=time.perf_counter() - started,
+        )
+    else:
+        # The historical implementation permits max_nodes + 1 visited nodes.
+        # Preserve that aggregate convention while splitting the two passes.
+        remaining_node_visits = max(
+            0, max_nodes + 1 - reverse.recursive_nodes
+        )
+        remaining_seconds = max(
+            0.0, max_seconds - (time.perf_counter() - started)
+        )
+        if remaining_node_visits and remaining_seconds:
+            ascending, ascending_record = _oracle_pass(
+                adjacency,
+                size,
+                max_witnesses,
+                max(0, remaining_node_visits - 1),
+                remaining_seconds,
+                "ascending",
+            )
+            passes.append(ascending_record)
+            seen = set(witnesses)
+            for mask in ascending.witnesses:
+                if mask not in seen:
+                    witnesses.append(mask)
+                    seen.add(mask)
+            total_nodes = reverse.recursive_nodes + ascending.recursive_nodes
+            if len(witnesses) >= max_witnesses:
+                complete = False
+                reason = "WITNESS_LIMIT"
+            elif ascending.complete:
+                complete = True
+                reason = "EXHAUSTED"
+            else:
+                complete = False
+                reason = ascending.reason
+        else:
+            total_nodes = reverse.recursive_nodes
+            complete = False
+            reason = (
+                "WALL_LIMIT" if remaining_seconds <= 0.0 else "NODE_LIMIT"
+            )
+        result = EnumerationResult(
+            witnesses=witnesses[:max_witnesses],
+            complete=complete,
+            reason=reason,
+            recursive_nodes=total_nodes,
+            elapsed_seconds=time.perf_counter() - started,
+        )
+    return result, {
+        "strategy": "bidirectional",
+        "semantics": (
+            "reverse-first half-budget, then historical ascending with the "
+            "remaining aggregate node/wall budget"
+        ),
+        "passes": passes,
+        "historical_ascending_reference_script_sha256": (
+            HISTORICAL_ASCENDING_SCRIPT_SHA256
+        ),
+    }
 
 
 def vertex_selection_sat_checks(
@@ -475,9 +706,12 @@ def exact_add_only_subproblem(
     oracle_nodes: int,
     oracle_seconds: float,
     preferred_additions: set[Edge] | None = None,
+    oracle_order: str = DEFAULT_ORACLE_ORDER,
 ) -> tuple[dict[str, Any], list[int] | None]:
     """Exact bounded add-only repair for one residual deletion set."""
 
+    if oracle_order not in ORACLE_ORDER_CHOICES:
+        raise ValueError(f"unknown oracle order {oracle_order!r}")
     started = time.perf_counter()
     n = len(base_rows)
     deleted = {normalized_edge(*edge) for edge in deleted}
@@ -535,6 +769,8 @@ def exact_add_only_subproblem(
     lazy_cuts = 0
     oracle_nodes_total = 0
     oracle_seconds_total = 0.0
+    oracle_pass_counts: Counter[str] = Counter()
+    last_oracle_search: dict[str, Any] | None = None
     last_calls: deque[dict[str, Any]] = deque(maxlen=12)
     status = "UNKNOWN_INTERNAL"
     candidate: list[int] | None = None
@@ -594,9 +830,16 @@ def exact_add_only_subproblem(
                     flip_on(candidate, edge)
             if triangle_witness(candidate) is not None:
                 raise AssertionError("add-only SAT model contains a triangle")
-            search = enumerate_cliques_interruptible(
-                complement(candidate), s, 1, oracle_nodes, oracle_seconds
+            search, last_oracle_search = enumerate_cliques_with_order(
+                complement(candidate),
+                s,
+                1,
+                oracle_nodes,
+                oracle_seconds,
+                oracle_order,
             )
+            for pass_record in last_oracle_search["passes"]:
+                oracle_pass_counts[pass_record["order"]] += 1
             oracle_nodes_total += search.recursive_nodes
             oracle_seconds_total += search.elapsed_seconds
             if search.witnesses:
@@ -638,6 +881,9 @@ def exact_add_only_subproblem(
         },
         "oracle_recursive_nodes": oracle_nodes_total,
         "oracle_elapsed_seconds": oracle_seconds_total,
+        "oracle_order": oracle_order,
+        "oracle_pass_counts": dict(sorted(oracle_pass_counts.items())),
+        "last_oracle_search": last_oracle_search,
         "last_calls": list(last_calls),
         "elapsed_seconds": time.perf_counter() - started,
     }
@@ -718,6 +964,10 @@ def load_resume_state(
         "sha256": sha256(path),
         "additional_conditional_masks": len(masks),
         "fixed_deletion_unsat_no_goods": len(no_goods),
+        "source_oracle_order": payload.get("oracle", {}).get(
+            "vertex_order", "ascending"
+        ),
+        "source_oracle_order_explicitly_recorded": "oracle" in payload,
     }
     return masks, no_goods, info
 
@@ -744,9 +994,12 @@ def run_branch1_benders(
     sub_per_call_seconds: float,
     sub_max_seconds: float,
     resume_path: Path | None = None,
+    oracle_order: str = DEFAULT_ORACLE_ORDER,
 ) -> tuple[dict[str, Any], list[int] | None]:
     """Run the bounded branch-1 master/subproblem loop."""
 
+    if oracle_order not in ORACLE_ORDER_CHOICES:
+        raise ValueError(f"unknown oracle order {oracle_order!r}")
     started = time.perf_counter()
     validate_frozen_seed(initial)
     base = branch1_base(initial)
@@ -879,12 +1132,23 @@ def run_branch1_benders(
                 "cuts_per_iteration": cuts_per_iteration,
                 "oracle_nodes_per_call": oracle_nodes,
                 "oracle_seconds_per_call": oracle_seconds,
+                "oracle_order": oracle_order,
                 "subproblem_conflicts": sub_max_conflicts,
                 "subproblem_conflicts_per_call": sub_conflict_chunk,
                 "subproblem_per_call_seconds": sub_per_call_seconds,
                 "subproblem_max_seconds": sub_max_seconds,
             },
             "solvers": {"master": solver_name, "subproblem": subsolver_name},
+            "oracle": {
+                "vertex_order": oracle_order,
+                "choices": list(ORACLE_ORDER_CHOICES),
+                "historical_ascending_reference_script_sha256": (
+                    HISTORICAL_ASCENDING_SCRIPT_SHA256
+                ),
+                "ascending_compatibility": (
+                    "direct call to the historical low-bit enumerator"
+                ),
+            },
             "phase": {
                 "strategy": "top common-neighbor-wedge incidence",
                 "preferred_residual_deletions": [
@@ -980,12 +1244,13 @@ def run_branch1_benders(
                 raise AssertionError("master selected an ineligible addition")
 
             support = master_support(base, deleted, selected_y)
-            search = enumerate_cliques_interruptible(
+            search, oracle_order_telemetry = enumerate_cliques_with_order(
                 complement(support),
                 TARGET_S,
                 cuts_per_iteration,
                 oracle_nodes,
                 oracle_seconds,
+                oracle_order,
             )
             new_masks = sorted(
                 mask for mask in search.witnesses
@@ -1004,6 +1269,8 @@ def run_branch1_benders(
                 "oracle_reason": search.reason,
                 "oracle_recursive_nodes": search.recursive_nodes,
                 "oracle_elapsed_seconds": search.elapsed_seconds,
+                "oracle_order": oracle_order,
+                "oracle_order_telemetry": oracle_order_telemetry,
             }
             last_models.append(model_record)
             if new_masks:
@@ -1062,6 +1329,7 @@ def run_branch1_benders(
                 oracle_nodes,
                 oracle_seconds,
                 selected_y,
+                oracle_order,
             )
             subproblem_statuses[last_subproblem["status"]] += 1
             model_record["subproblem_status"] = last_subproblem["status"]
@@ -1179,6 +1447,16 @@ def main() -> None:
     parser.add_argument("--cuts-per-iteration", type=_positive, default=256)
     parser.add_argument("--oracle-nodes", type=_positive, default=2000000)
     parser.add_argument("--oracle-seconds", type=_positive_float, default=8.0)
+    parser.add_argument(
+        "--oracle-order",
+        choices=ORACLE_ORDER_CHOICES,
+        default=DEFAULT_ORACLE_ORDER,
+        help=(
+            "independent-set separator order: ascending preserves the "
+            "historical low-bit search; reverse searches high labels first; "
+            "bidirectional splits the declared budget reverse-first"
+        ),
+    )
     parser.add_argument("--sub-conflicts-per-call", type=_positive, default=5000)
     parser.add_argument("--sub-max-conflicts", type=_positive, default=100000)
     parser.add_argument("--sub-per-call-seconds", type=_positive_float, default=5.0)
@@ -1274,6 +1552,7 @@ def main() -> None:
         args.sub_per_call_seconds,
         args.sub_max_seconds,
         args.resume,
+        args.oracle_order,
     )
     result["provenance"] = {
         "matrix": shareable_path(args.matrix),
@@ -1285,6 +1564,10 @@ def main() -> None:
             seed_verification_bytes
         ).hexdigest(),
         "script_sha256": sha256(Path(__file__)),
+        "oracle_order": args.oracle_order,
+        "historical_ascending_reference_script_sha256": (
+            HISTORICAL_ASCENDING_SCRIPT_SHA256
+        ),
     }
 
     if candidate is not None:

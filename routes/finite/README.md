@@ -267,3 +267,81 @@ Budget-six semantic reconstruction and small regression tests:
 .venv/bin/python routes/finite/check_r3_18_budget6_branch0_union.py \
   --json routes/finite/r3_18_budget6_branch_0_universal_union_check.json
 ```
+
+### Exact-seven branch-1 deletion-first pilot
+
+`r3_18_budget7_benders_branch1.py` is a bounded diagnostic for only the
+`(97,99)` branch.  Its master chooses exactly six residual input-edge
+deletions, derives locally eligible additions from common-neighbour wedges,
+enforces the necessary degree bound \(\deg(v)\le 17\), and separates
+conditional independent-18 cuts.  The degree bound is exact as a necessary
+condition: in a triangle-free graph every open neighbourhood is independent,
+so `alpha < 18` forces its size to be at most 17.  A fixed-deletion add-only
+subproblem checks collective triangle constraints and the same degree bound
+exactly.  An `UNKNOWN` subproblem always stops without adding a deletion
+no-good.
+
+A small local smoke run, with all output kept outside the frozen artifact
+tree, is:
+
+```bash
+PYTHONUNBUFFERED=1 .venv/bin/python \
+  routes/finite/r3_18_budget7_benders_branch1.py \
+  routes/finite/certificates/r3_18_n100_nearmiss.txt \
+  --initial-fixed-base-cuts 256 \
+  --master-conflicts-per-call 100 \
+  --master-max-conflicts 1000 \
+  --master-per-call-seconds 1 \
+  --max-seconds 10 \
+  --oracle-order bidirectional \
+  --sub-max-conflicts 1000 \
+  --sub-max-seconds 2 \
+  --checkpoint /tmp/r3_18_b7_b1.checkpoint.json \
+  --json /tmp/r3_18_b7_b1.json \
+  --candidate /tmp/r3_18_b7_b1_candidate.txt
+```
+
+For a stronger bounded pilot, add the checked universal bank with
+`--universal-bank routes/finite/r3_18_budget6_branch_0_universal_union.cuts.json`
+and use `--all-fixed-base-cuts`.  The checkpoint contains only deterministic
+conditional cuts and fixed-deletion no-goods obtained from completed UNSAT
+solver endpoints; those no-goods are solver-trusted but are not proof-checked.
+Use `--resume` to import that state.  Every checkpoint's `formula` object is a
+current snapshot (including installed masks, no-goods, and total clauses), and
+the twelve-entry `last_master_models` ring records the sorted selected-`y`
+edge support needed to replay either oracle.  Repository inputs are recorded
+repository-relatively; external output paths are reduced to basenames.
+Minisat22 is the default because this runner requires a backend that supports
+resumable conflict-limited SAT slices.
+
+Both master and fixed-deletion separators use the explicit `--oracle-order`
+schedule.  `ascending` is the historical low-bit recursion, preserved as a
+direct call to the original enumerator for replay of runs made with script
+SHA-256
+`36dc3b53941605bc4ec132b70b4f61c5afbbcda13742fe9056a38ddb1683e5a0`.
+`reverse` applies the same exact recursion after the deterministic relabeling
+`99,98,...,0`.  The default `bidirectional` mode spends at most half of each
+declared node and wall budget on `reverse` first, then gives the remaining
+aggregate budget to `ascending`.  Relabeling changes only search order: every
+returned mask is mapped back to the original labels before a cut is formed.
+Resource-limited passes remain `UNKNOWN`; only a pass that exhausts its search
+space can certify absence.  Checkpoints record the chosen schedule and each
+pass's limits, nodes, time, witnesses, and completion status.  The CNF and its
+strict-state fingerprint are independent of oracle order, so a resumed run may
+change schedules without importing any heuristic exclusion.
+
+If the master support oracle reaches its node or wall limit without finding a
+new independent-18 witness, the runner records
+`MASTER_ORACLE_INCOMPLETE_FALLBACK_TO_EXACT_SUBPROBLEM` and sends the same
+six-edge deletion set to the exact add-only subproblem; the selected `y` edges
+are only a phase hint.  If the exact subproblem is SAT, the candidate still
+passes both the bitset checker and a separate vertex-selection SAT checker,
+plus an observed-versus-declared exact-seven edit check.  If it is UNSAT, only
+a solver-trusted deletion no-good is learned.  If it is UNKNOWN, the run stops
+and learns nothing from that endpoint.
+
+This pilot emits no DRAT.  A reported UNSAT endpoint is therefore unchecked
+and is not a theorem; in particular, neither a fixed-deletion no-good nor a
+master UNSAT endpoint establishes the branch theorem without proof-producing
+reconstruction.  A verified SAT witness would establish `R(3,18) >= 101`, but
+no such witness is presently claimed here.

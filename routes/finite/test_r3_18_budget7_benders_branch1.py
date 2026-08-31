@@ -14,7 +14,9 @@ from pysat.solvers import Solver
 from .benders_budget9 import (
     conditional_cut_truth,
     edge_set,
+    enumerate_cliques_interruptible,
     make_conditional_clause,
+    master_support,
     vertices,
 )
 from .budget8_next import masks_hash
@@ -30,6 +32,7 @@ from .r3_18_budget7_benders_branch1 import (
     branch1_base,
     build_master_formula,
     encode_degree_upper_bounds,
+    enumerate_cliques_with_order,
     exact_add_only_subproblem,
     fixed_base_i18_masks,
     load_resume_state,
@@ -85,6 +88,76 @@ class Budget7Branch1BendersTests(unittest.TestCase):
         self.assertEqual(masks_hash(masks), EXPECTED_FIXED_BASE_I18_SHA256)
         self.assertTrue(all(mask >> FIXED_EDGE[0] & 1 for mask in masks))
         self.assertTrue(all(mask >> FIXED_EDGE[1] & 1 for mask in masks))
+
+    def test_deep_supports_are_not_reverse_order_oracle_unknowns(self) -> None:
+        # These are the two replayable supports whose historical ascending
+        # separator and first fixed-D subproblem model each reached 20,000,001
+        # nodes without a witness.  The candidate graph is reconstructed from
+        # the recorded D and selected-y support, not read from a mutable run.
+        cases = (
+            (
+                {
+                    (3, 97), (9, 97), (10, 97),
+                    (11, 97), (27, 98), (40, 99),
+                },
+                {(27, 97), (56, 99), (72, 97)},
+            ),
+            (
+                {
+                    (17, 98), (30, 98), (33, 99),
+                    (37, 99), (41, 99), (46, 99),
+                },
+                {(30, 99), (53, 99), (57, 99), (65, 99)},
+            ),
+        )
+        expected = tuple(range(81, 98)) + (99,)
+        for deleted, selected_y in cases:
+            with self.subTest(deleted=sorted(deleted)):
+                support = master_support(self.base, deleted, selected_y)
+                adjacency = complement(support)
+                historical = enumerate_cliques_interruptible(
+                    adjacency, 18, 1, 64, 1.0
+                )
+                ascending, ascending_log = enumerate_cliques_with_order(
+                    adjacency, 18, 1, 64, 1.0, "ascending"
+                )
+                self.assertEqual(ascending.witnesses, historical.witnesses)
+                self.assertEqual(ascending.complete, historical.complete)
+                self.assertEqual(ascending.reason, historical.reason)
+                self.assertEqual(
+                    ascending.recursive_nodes, historical.recursive_nodes
+                )
+                self.assertEqual(ascending.witnesses, [])
+                self.assertFalse(ascending.complete)
+                self.assertEqual(ascending.reason, "NODE_LIMIT")
+                self.assertEqual(
+                    [record["order"] for record in ascending_log["passes"]],
+                    ["ascending"],
+                )
+
+                for strategy in ("reverse", "bidirectional"):
+                    found, telemetry = enumerate_cliques_with_order(
+                        adjacency, 18, 1, 64, 1.0, strategy
+                    )
+                    self.assertFalse(found.complete)
+                    self.assertEqual(found.reason, "WITNESS_LIMIT")
+                    self.assertEqual(len(found.witnesses), 1)
+                    witness = found.witnesses[0]
+                    chosen = tuple(vertices(witness))
+                    self.assertEqual(chosen, expected)
+                    # Independent validation uses the original support rows,
+                    # not the relabeled complement searched by the oracle.
+                    self.assertEqual(witness.bit_count(), 18)
+                    self.assertTrue(
+                        all(
+                            not ((support[u] >> v) & 1)
+                            for u, v in itertools.combinations(chosen, 2)
+                        )
+                    )
+                    self.assertEqual(telemetry["strategy"], strategy)
+                    self.assertEqual(
+                        telemetry["passes"][0]["order"], "reverse"
+                    )
 
     def test_master_dimensions_and_exact_six_cardinality(self) -> None:
         clauses, dvars, yvars, _, metadata = build_master_formula(
@@ -321,6 +394,10 @@ class Budget7Branch1BendersTests(unittest.TestCase):
         self.assertEqual(sat["status"], "SAT")
         self.assertIsNotNone(candidate)
         self.assertEqual(edge_set(candidate), edge_set(cycle))
+        self.assertEqual(sat["oracle_order"], "bidirectional")
+        self.assertEqual(
+            sat["last_oracle_search"]["strategy"], "bidirectional"
+        )
         self.assertTrue(
             vertex_selection_sat_checks(cycle, 3, "cadical195")[
                 "valid_ramsey_certificate"
@@ -407,6 +484,12 @@ class Budget7Branch1BendersTests(unittest.TestCase):
             selected = model["selected_eligible_addition_edges"]
             self.assertEqual(len(selected), model["selected_eligible_additions"])
             self.assertEqual(selected, sorted(selected))
+            self.assertEqual(result["oracle"]["vertex_order"], "bidirectional")
+            self.assertEqual(result["limits"]["oracle_order"], "bidirectional")
+            self.assertEqual(model["oracle_order"], "bidirectional")
+            self.assertEqual(
+                model["oracle_order_telemetry"]["strategy"], "bidirectional"
+            )
 
             _, dvars, _, _, metadata = build_master_formula(
                 self.base, {FIXED_EDGE}, RESIDUAL_DELETIONS
@@ -420,6 +503,8 @@ class Budget7Branch1BendersTests(unittest.TestCase):
             self.assertEqual(len(masks), 1)
             self.assertEqual(no_goods, [])
             self.assertEqual(info["path"], "checkpoint.json")
+            self.assertEqual(info["source_oracle_order"], "bidirectional")
+            self.assertTrue(info["source_oracle_order_explicitly_recorded"])
 
             damaged = Path(directory) / "damaged.json"
             payload = json.loads(checkpoint.read_text(encoding="utf-8"))
