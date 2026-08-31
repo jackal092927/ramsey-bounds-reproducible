@@ -1,5 +1,11 @@
 # Fresh Independent Adversarial Mathematical Review
 
+> **Later closure.** This report is retained as a review of its stated
+> snapshot. A subsequent targeted reconstruction proved S3 locally and removed
+> it from the assumption boundary; see
+> `reviews/LOWER_S3_CLOSURE_2026-08-30.md`. Statements below requiring S3 as an
+> extra hypothesis are therefore historical.
+
 **Manuscript:** *Reproducible Ramsey Analysis Across Asymptotic and Finite Regimes: Retained Spines, Gaussian Residuals, and Proof-Carrying Barriers*  
 **Artifact reviewed:** `papers/unified/main.pdf` (79 pages) and the corresponding current source and verification code  
 **Review date:** 2026-08-30  
@@ -16,15 +22,15 @@ The review found:
 - **Major issues:** 0
 - **Minor issues:** 1 terminological issue at two occurrences; both occurrences have now been corrected and rematerialized
 
-No theorem statement, numerical constant, proof architecture, or headline bound requires mathematical revision. The three headline results are supportable only at the scopes stated below; in particular, the fixed-ratio lower bound must retain its source interface, including the additional weighted-extension hypothesis (S3), and the finite result must not be promoted to an exact radius or a global improvement of \(R(3,18)\).
+No theorem statement, numerical constant, proof architecture, or headline bound required mathematical revision at this snapshot.  The lower S3 scope in the next table is historical: S3 was subsequently proved locally, while S1, S2, S4, and S5 remain source assumptions.  The finite result must still not be promoted to an exact radius or a global improvement of \(R(3,18)\).
 
 ## 2. Headline verdicts
 
 | Headline claim | Verdict | Required scope |
 |---|---|---|
 | Theorem 3.1, \(R(k,k)\le \exp((U(1)-3.4754\times10^{-6})k+o(k))\le(3.780685290)^{k+o(k)}\) | **PROVABLE AS STATED** | Only under source interface 4.2, the repaired BookCor/rate induction, Theorem 5.1, and Arb containment semantics, exactly as stated in the manuscript |
-| Theorem 10.1, the fixed-ratio lower bound | **PROVABLE AS STATED** as the manuscript's conditional theorem | Requires all of source interface 11.2, including the additional hypothesis (S3) |
-| Theorem 10.1 interpreted without (S1)--(S5), especially without (S3), as an unconditional Ramsey improvement | **PROVABLE AFTER WEAKENING OR EXTRA ASSUMPTION** | The safe theorem is the source-relative conditional statement actually printed |
+| Theorem 10.1, the fixed-ratio lower bound | **HISTORICAL SNAPSHOT: PROVABLE AS STATED** as the manuscript's conditional theorem | At this stage it required all of source interface 11.2, including S3; the later closure proves S3 locally |
+| Theorem 10.1 interpreted without its source boundary as an unconditional Ramsey improvement | **PROVABLE AFTER WEAKENING OR EXTRA ASSUMPTION** | The current safe theorem remains source-relative under S1, S2, S4, and S5, with S3 proved locally |
 | Theorem 19.3, the fixed-seed barrier \(\rho(H)\ge7\) | **PROVABLE AS STATED** | Requires the six semantically reconstructed CNFs and their checked DRAT refutations |
 | \(\rho(H)=7\), a seven-deletion repair, a 100-vertex \((3,18)\)-Ramsey graph, or \(R(3,18)\ge101\) | **NOT CURRENTLY JUSTIFIED** | All exact-seven branches remain `UNKNOWN` |
 
@@ -35,7 +41,7 @@ The verdicts above are mathematical verdicts relative to explicitly delimited in
 | Result | Locally checked mathematical content | Imported or computational trust boundary | Claims not licensed by that boundary |
 |---|---|---|---|
 | Diagonal upper bound | Exact-diagonal reduction, analytic tail, moment/tail conversion, retained-spine max--min transfer, outer endpoint reductions, and theorem-to-certificate logic | Version-pinned Yang--Mao regularization/book/compatibility interfaces; repaired BookCor induction in Appendix B; six-stage Arb interval containment and exact handoffs | An effective threshold in \(k\), global optimizer status, proof-assistant formalization, or an unconditional result independent of the imported interfaces |
-| Fixed-ratio lower bound | Hessian estimate, boundary square completion, nonexchangeable triangular ledger, same-history CGF comparison, multiplicity identities, extraction algebra, red--blue crossing, and the scalar-family cap | Source items (S1), (S2), (S4), and (S5); the additional weighted-extension hypothesis (S3); the non-effective source constant entering \(C_0\) | An unconditional lower bound without (S3), a finite-\(\ell\) threshold, a common-normalization comparison not proved in the paper, or global optimality of \(1/64\) |
+| Fixed-ratio lower bound | Hessian estimate, boundary square completion, nonexchangeable triangular ledger, same-history CGF comparison, multiplicity identities, extraction algebra, red--blue crossing, and the scalar-family cap | **Historical snapshot:** source items (S1), (S2), (S4), and (S5), plus S3 as an extra hypothesis; **current:** the same four source items, local S3 proof, and the non-effective source constant entering \(C_0\) | A source-independent unconditional lower bound, a finite-\(\ell\) threshold, a common-normalization comparison not proved in the paper, or global optimality of \(1/64\) |
 | Fixed-seed deletion barrier | CNF implication direction, all-pairs variable semantics, deletion-budget accounting, branch cover, and theorem assembly | Content-addressed seed/cut banks, PySAT equality-counter semantics, the six frozen CNF identities, the six DRAT traces, and the pinned DRAT checker | \(\rho(H)=7\), existence or nonexistence at budget seven, a remote 100-vertex construction, or a new global bound on \(R(3,18)\) |
 
 ## 4. Upper-bound audit

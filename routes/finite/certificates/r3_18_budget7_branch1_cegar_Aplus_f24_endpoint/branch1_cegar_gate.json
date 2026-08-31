@@ -1,0 +1,170 @@
+{
+  "augmentation": {
+    "augmented_cnf": {
+      "basename": "branch1_cegar_augmented.cnf",
+      "bytes": 183161315,
+      "clause_order": [
+        "frozen_common_clauses",
+        "four_proved_positive_units",
+        "ordered_new_I18_hitting_clauses"
+      ],
+      "clauses": 722552,
+      "header_and_clause_lines": 722553,
+      "sha256": "6fbe630343afcf31a5affa9a70a315e3033bc077b24fc9a58d5084e63fdd389f",
+      "variables": 154190
+    },
+    "new_I18_clauses": 4096,
+    "positive_edges": [
+      [
+        11,
+        62
+      ],
+      [
+        18,
+        61
+      ],
+      [
+        18,
+        64
+      ],
+      [
+        18,
+        69
+      ]
+    ],
+    "positive_units": [
+      1085,
+      1672,
+      1675,
+      1680
+    ]
+  },
+  "claim_boundary": "This is one finite CEGAR gate. SAT only authenticates a displayed model/witness; UNKNOWN learns nothing; a generated UNSAT proof is unchecked until independent drat-trim replay.",
+  "exact_seven_repair_exists": null,
+  "global_ramsey_implication": null,
+  "inputs": {
+    "common_cnf": {
+      "basename": "branch1_common.cnf.gz",
+      "bytes": 18919093,
+      "sha256": "39249ef8378de3f2ef412e514f6283cdaa032bc17fb25fc3448463e5566f5365"
+    },
+    "common_model": {
+      "basename": "branch1_common.model.gz",
+      "bytes": 391052,
+      "sha256": "9057db25b785640345e6f724cb1c79313642bb62ec2a19d9f310e25700de024d"
+    },
+    "common_model_assignment_literals": 154190,
+    "common_model_audit_status": "VERIFIED_BRANCH1_COMMON_RELAXATION_SAT_MODEL",
+    "fixed_branch1_base_exclusion": {
+      "masks": 235504,
+      "membership_check": "direct pairwise independence test in the authenticated seed with edge (97,99) removed",
+      "ordered_masks_sha256": "1e9f89f40cd97a5f3b6fa93bb3c4835d45cadca8362e9d3150e90d4f385f6d8c"
+    },
+    "historical_exclusion": {
+      "basename": "r3_18_budget7_branch1_cegar_history_exclusion.json",
+      "bytes": 2136579,
+      "masks": 64591,
+      "ordered_masks_sha256": "74b4b99c18e925a7a1bbb0e4a1636dad4bf8741ba67623c2164f3607a65172a8",
+      "sha256": "d5100bb5dce48da3ca8ab3810290ff553ebb9d6c87ff9df1f287700563f456b0",
+      "source_checkpoints": 18,
+      "source_raw_masks": 113448,
+      "within_source_duplicates": 0
+    },
+    "new_mask_batch": {
+      "all_independent_in_frozen_model": true,
+      "all_new_relative_to_three_frozen_exclusion_families": true,
+      "basename": "r3_18_budget7_branch1_cegar_Aplus_batch.json",
+      "bytes": 135906,
+      "canonical_hex_width": 25,
+      "masks": 4096,
+      "ordered_masks_sha256": "a3cff8d8a4c77c6effb49c03e76065a17f754d0a7de727d229652276b6e8cda0",
+      "sha256": "835137c2df19bc851618761cc0af92400b3fa2677dd00c47101d1074c7406e8b",
+      "three_family_overlap_counts": {
+        "exhaustive_fixed_branch1_base_family": 0,
+        "historical_learned_union": 0,
+        "universal_bank": 0
+      },
+      "three_family_zero_overlap_verified": true
+    },
+    "universal_bank": {
+      "basename": "r3_18_budget6_branch_0_universal_union.cuts.json",
+      "masks": 251771,
+      "ordered_masks_sha256": "f10690b826b86eb03567a2ffaffb553801fae32af20cfe4337118bddf4e41afa"
+    }
+  },
+  "learned_masks": [],
+  "proof_verified": false,
+  "schema": "ramsey-r3-18-n100-exact-budget7-branch1-cegar-gate-v1",
+  "solver": {
+    "I18_search": {
+      "independent_set_exists": true,
+      "installed_or_learned_by_this_gate": false,
+      "known_from_exhaustive_fixed_base_family": true,
+      "known_from_historical_learned_union": true,
+      "mask_hex": "bfffe00000000000000000000",
+      "new_relative_to_all_installed_masks": true,
+      "new_relative_to_three_frozen_exclusion_families": false,
+      "overlap_with_exclusion_families": {
+        "exhaustive_fixed_branch1_base_family": true,
+        "historical_learned_union": true,
+        "new_gate_batch": false,
+        "universal_bank": false
+      },
+      "pairwise_independence_checked": true,
+      "search_nodes": 19,
+      "witness": [
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        99
+      ]
+    },
+    "checker": {
+      "basename": "cadical",
+      "sha256": "f5e2cf978a3b9ebf17601b9a7a25f298c684c18841846b66bdd6a6e20951fb2a",
+      "source_commit": "c60730422e758ef1cebe7aeddf2dda31c996bf04",
+      "source_commit_marker_sha256": "63b647d0d86b4ee4d8bdbd619505b4053d6ebecfe52a5db75fe5f2a49dc2e762"
+    },
+    "elapsed_seconds": 2532.3617309331894,
+    "exitcode": 10,
+    "learned_masks": [],
+    "model": {
+      "basename": "branch1_cegar_sat.model.gz",
+      "bytes": 384949,
+      "sha256": "19db55d05fe0b907ab77dc9645cf9356fd383bdbb83d91aa7690c6473965ffd3",
+      "uncompressed_bytes": 1066055,
+      "uncompressed_sha256": "b7adbce4dada7dfeb41f94e36e34b25c57ee4a72a9223bf2c32bbbe4d8b561af"
+    },
+    "model_evaluation": {
+      "all_clauses_satisfied": true,
+      "clauses_evaluated": 722552
+    },
+    "status": "SAT_MODEL_VERIFIED_I18_WITNESS_NO_LEARNING",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_tail": "",
+    "stdout_sha256": "b793467f2a69c06d87bb4b7783a623c1fa2dfaa879bbdabec9425d7bb0c376c5",
+    "stdout_tail": "78 154079 154080 154081 154082 154083 154084\nv 154085 154086 154087 -154088 154089 154090 154091 154092 154093 154094\nv 154095 154096 154097 154098 154099 154100 154101 154102 154103 154104\nv -154105 154106 154107 154108 154109 154110 154111 154112 154113 154114\nv 154115 154116 154117 154118 154119 154120 154121 -154122 154123 154124\nv 154125 154126 154127 154128 154129 154130 154131 154132 154133 154134 154135\nv 154136 154137 154138 -154139 154140 154141 154142 154143 154144 154145\nv 154146 154147 154148 154149 154150 154151 154152 154153 154154 154155\nv -154156 154157 154158 154159 154160 154161 154162 154163 154164 154165\nv 154166 154167 154168 154169 154170 154171 154172 -154173 154174 154175\nv 154176 154177 154178 154179 154180 154181 154182 154183 154184 154185 154186\nv 154187 154188 154189 -154190 0\nc \nc --- [ run-time profiling ] -------------------------------------------------\nc \nc process time taken by individual solving procedures\nc (percentage relative to process time for solving)\nc \nc      2258.95   93.89% search\nc      1158.86   48.17% unstable\nc       891.85   37.07% stable\nc       197.02    8.19% walk\nc       146.94    6.11% simplify\nc        76.15    3.17% vivify\nc        27.15    1.13% sweep\nc        17.66    0.73% elim\nc        11.47    0.48% probe\nc        11.23    0.47% lucky\nc         4.16    0.17% subsume\nc         3.03    0.13% congruence\nc         2.15    0.09% parse\nc         1.90    0.08% ternary\nc         1.67    0.07% backbone\nc   =================================\nc      2405.90   99.91% solve\nc \nc last line shows process time for solving\nc (percentage relative to total process time)\nc \nc --- [ statistics ] ---------------------------------------------------------\nc \nc chronological:            246605        31.61 %  of conflicts\nc conflicts:                780157       324.27    per second\nc backbone:               10703603      6941.83 %  of vars\nc decisions:               2809065      1167.57    per second\nc eliminated:                79504        51.56 %  of all variables\nc fixed:                     12097         7.85 %  of all variables\nc learned:                  733927        94.07 %  per conflict\nc learned_lits:          321276362       100.00 %  learned literals\nc minimized:                     0         0.00 %  learned literals\nc shrunken:              167301487        52.07 %  learned literals\nc minishrunken:           40083392        12.48 %  learned literals\nc otfs:                       1084         0.14 %  of conflict\nc propagations:         5760386358         2.39 M  per second\nc reduced:                  503036        64.48 %  per conflict\nc rephased:                     39     20004.03    interval\nc restarts:                  19924        39.16    interval\nc stabilizing:                   8        45.98 %  of conflicts\nc subsumed:                 152366         3.75 %  of all clauses\nc strengthened:              12038         0.30 %  of all clauses\nc ticks:               50883409184         9.40    propagation\nc vivified:                   7434         0.18 %  of all clauses\nc walked:                       12     65013.08    interval\nc weakened:                 324926         2.94    average size\nc \nc seconds are measured in process time for solving\nc \nc --- [ glue usage ] ---------------------------------------------------------\nc \nc focused glue 1 used 5320045 clauses 78.83% accumulated 78.83% tier1\nc focused glue 2 used 715199 clauses 10.59% accumulated 89.43% tier2\nc \nc stable glue 1 used 4728915 clauses 66.06% accumulated 66.06% tier1\nc stable glue 2 used 962955 clauses 13.45% accumulated 79.51% tier2\nc \nc \nc --- [ resources ] ----------------------------------------------------------\nc \nc total process time since initialization:      2408.07    seconds\nc total real time since initialization:         2532.31    seconds\nc maximum resident set size of process:          875.15    MB\nc \nc --- [ shutting down ] ------------------------------------------------------\nc \nc exit 10\n",
+    "wall_limit_seconds": 3600.0
+  },
+  "state_machine": {
+    "NOT_RUN": "AUGMENTED_CNF_READY_SOLVER_NOT_RUN",
+    "SAT": "Require a complete model and direct evaluation of every augmented clause; report a checked I18 witness or escalate, and learn no cut.",
+    "UNKNOWN": "Timeout, nonstandard exit, malformed transcript, or invalid model; learn no cut and make no satisfiability claim.",
+    "UNSAT": "Require a nonempty proof artifact, but keep UNSAT unchecked until an independent drat-trim replay succeeds."
+  },
+  "status": "SAT_MODEL_VERIFIED_I18_WITNESS_NO_LEARNING"
+}

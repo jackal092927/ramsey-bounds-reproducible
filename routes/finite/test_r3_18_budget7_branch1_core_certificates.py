@@ -4,9 +4,13 @@ from __future__ import annotations
 
 import copy
 import gzip
+import itertools
 import json
+import math
+import sys
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 
 from .bounded_deletion_sat_cegar import build_variables
@@ -19,13 +23,19 @@ from .r3_18_budget7_branch import (
 from .r3_18_budget7_branch1_assumption_cores import CommonFormula, build_common_formula
 from .r3_18_budget7_branch1_core_certificates import (
     DEFAULT_CORES,
+    EXPECTED_CADICAL_COMMIT,
+    EXPECTED_DRAT_TRIM_COMMIT,
     EXPECTED_FORMULA_FINGERPRINT,
     _load_candidate_specs,
     _public_tool_result,
+    _validate_toolchain,
+    candidate_artifact_paths,
     classify_external_result,
+    main as certificate_main,
     full_dimacs_lines,
     require_complete_proof_artifact,
     validate_candidate,
+    validate_export_targets,
     validate_pilot,
 )
 from .verify_ramsey import read_matrix
@@ -36,6 +46,7 @@ SEED = HERE / "certificates" / "r3_18_n100_nearmiss.txt"
 BUDGET6 = HERE / "r3_18_budget6_summary.json"
 BANK = HERE / "r3_18_budget6_branch_0_universal_union.cuts.json"
 PILOT = HERE / "r3_18_budget7_branch1_assumption_core_pilot.json"
+PROOF_SUMMARY = HERE / "r3_18_budget7_branch1_core_proof_summary.json"
 
 
 class Branch1CoreCertificateTests(unittest.TestCase):
@@ -248,6 +259,143 @@ class Branch1CoreCertificateTests(unittest.TestCase):
         self.assertNotIn(str(HERE.resolve()), rendered)
         self.assertNotIn(str(executable.resolve()), rendered)
         self.assertEqual(public["tool_basename"], "sh")
+
+    def test_summary_collision_with_every_candidate_artifact_is_rejected(self) -> None:
+        candidate = validate_candidate(
+            DEFAULT_CORES[0][0], DEFAULT_CORES[0][1], self.formula, self.anchors
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "artifacts"
+            paths = candidate_artifact_paths(output, candidate)
+            for kind, summary in (
+                ("cnf", paths.cnf),
+                ("manifest", paths.manifest),
+                ("result", paths.result),
+                ("drat", paths.drat),
+            ):
+                with self.subTest(kind=kind):
+                    with self.assertRaisesRegex(ValueError, "target collision"):
+                        validate_export_targets(summary, output, [candidate])
+            self.assertFalse(output.exists())
+
+    def test_every_resolved_collision_between_candidate_targets_is_rejected(self) -> None:
+        candidate = validate_candidate(
+            DEFAULT_CORES[0][0], DEFAULT_CORES[0][1], self.formula, self.anchors
+        )
+        for source_name, target_name in itertools.combinations(
+            ("cnf", "manifest", "result", "drat"), 2
+        ):
+            with self.subTest(source=source_name, target=target_name):
+                with tempfile.TemporaryDirectory() as directory:
+                    output = Path(directory) / "artifacts"
+                    output.mkdir()
+                    paths = candidate_artifact_paths(output, candidate)
+                    source = getattr(paths, source_name)
+                    target = getattr(paths, target_name)
+                    source.symlink_to(target.name)
+                    with self.assertRaisesRegex(ValueError, "target collision"):
+                        validate_export_targets(
+                            Path(directory) / "summary.json", output, [candidate]
+                        )
+
+    def test_toolchain_is_bound_to_adjacent_source_commit_files(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            cadical_dir = root / "cadical"
+            drat_dir = root / "drat"
+            cadical_dir.mkdir()
+            drat_dir.mkdir()
+            cadical = cadical_dir / "cadical"
+            drat = drat_dir / "drat-trim"
+            for executable in (cadical, drat):
+                executable.write_text("#!/bin/sh\nexit 0\n", encoding="ascii")
+                executable.chmod(0o755)
+            (cadical_dir / "SOURCE_COMMIT").write_text(
+                EXPECTED_CADICAL_COMMIT + "\n", encoding="ascii"
+            )
+            (drat_dir / "SOURCE_COMMIT").write_text(
+                EXPECTED_DRAT_TRIM_COMMIT + "\n", encoding="ascii"
+            )
+            self.assertTrue(
+                _validate_toolchain(
+                    cadical,
+                    EXPECTED_CADICAL_COMMIT,
+                    drat,
+                    EXPECTED_DRAT_TRIM_COMMIT,
+                )
+            )
+            (drat_dir / "SOURCE_COMMIT").write_text("wrong\n", encoding="ascii")
+            with self.assertRaisesRegex(ValueError, "SOURCE_COMMIT mismatch"):
+                _validate_toolchain(
+                    cadical,
+                    EXPECTED_CADICAL_COMMIT,
+                    drat,
+                    EXPECTED_DRAT_TRIM_COMMIT,
+                )
+
+    def test_proof_summary_is_claim_bounded_and_counts_exactly(self) -> None:
+        payload = json.loads(PROOF_SUMMARY.read_text(encoding="utf-8"))
+        self.assertEqual(
+            payload["status"],
+            "FOUR_SINGLETON_NO_GOODS_PROOF_VERIFIED_EXACT_SEVEN_UNKNOWN",
+        )
+        self.assertIsNone(payload["global_ramsey_implication"])
+        self.assertIsNone(payload["exact_seven_repair_exists"])
+        self.assertFalse(payload["minimality_claim"])
+        records = payload["records"]
+        self.assertEqual(
+            [record["label"] for record in records],
+            ["K_a", "K_b", "K_c", "K_d"],
+        )
+        self.assertEqual(
+            [record["assumption_units"] for record in records],
+            [[-1085], [-1672], [-1675], [-1680]],
+        )
+        asset_names = {
+            record[field]
+            for record in records
+            for field in ("cnf_asset", "proof_asset")
+        }
+        self.assertEqual(len(asset_names), 2 * len(records))
+        self.assertTrue(
+            all("/" not in name and "\\" not in name for name in asset_names)
+        )
+        self.assertTrue(all(record["proof_verified"] for record in records))
+        coverage = payload["coverage"]
+        raw = math.comb(826, 6)
+        degree = math.comb(808, 6)
+        singleton_union = raw - math.comb(822, 6)
+        overlap = degree - math.comb(804, 6)
+        additional = singleton_union - overlap
+        self.assertEqual(coverage["raw_exact_six_supports"], raw)
+        self.assertEqual(coverage["degree_cap_excluded"], degree)
+        self.assertEqual(coverage["singleton_union_excluded"], singleton_union)
+        self.assertEqual(coverage["singleton_union_overlap_with_degree_cap"], overlap)
+        self.assertEqual(coverage["additional_excluded_beyond_degree_cap"], additional)
+        self.assertEqual(
+            coverage["combined_degree_and_singleton_excluded"], degree + additional
+        )
+        self.assertEqual(
+            coverage["remaining_after_two_filters"], raw - degree - additional
+        )
+
+    def test_cli_collision_fails_before_creating_output_directory(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "artifacts"
+            colliding_summary = output / "branch1_core_K_ab_size2.cnf.gz"
+            argv = [
+                "core-certificates",
+                "--core",
+                "K_ab:11-62,18-61",
+                "--output-dir",
+                str(output),
+                "--summary-json",
+                str(colliding_summary),
+            ]
+            with mock.patch.object(sys, "argv", argv):
+                with self.assertRaisesRegex(ValueError, "target collision"):
+                    certificate_main()
+            self.assertFalse(output.exists())
 
 
 if __name__ == "__main__":

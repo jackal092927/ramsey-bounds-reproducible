@@ -1,0 +1,679 @@
+{
+  "branch": {
+    "degree_cap": 17,
+    "exact_residual_deletions": 6,
+    "fixed_base_edges": 826,
+    "fixed_deleted_edge": [
+      97,
+      99
+    ],
+    "forced_positive_edges": [
+      [
+        11,
+        62
+      ],
+      [
+        18,
+        61
+      ],
+      [
+        18,
+        64
+      ],
+      [
+        18,
+        69
+      ]
+    ],
+    "seed_edges": 827
+  },
+  "claim_boundary": {
+    "global_addition_elimination_performed": false,
+    "no_stronger_global_support_lift_proved": false,
+    "safe_claim": "The recorded projection lemma is complete only for the triangle-and-degree subsystem.  The bank statistics certify only bounded local substitution.  Any stronger support inequality still requires global elimination of additions or proof-carrying fixed-support refutations.",
+    "vertex_18_hit_proved": false
+  },
+  "common_neighbour_no_addition": {
+    "common_neighbour_count_distribution": {
+      "1": 738,
+      "2": 1498,
+      "3": 209,
+      "4": 1132,
+      "5": 150,
+      "6": 9,
+      "8": 352,
+      "9": 36
+    },
+    "derived_edge_list_hash_format": "sorted ASCII lines: u SP v LF",
+    "derived_edge_list_sha256": "e4cf70c1cb970b637982268fc169b82a98c4f45f207487cb24b94c31122c9f68",
+    "derived_no_addition_units": 388,
+    "derived_no_addition_units_by_common_neighbours": {
+      "8": 352,
+      "9": 36
+    },
+    "fixed_base_nonedges_including_fixed_unit_edge": 4124,
+    "fixed_edge_common_neighbours": 1,
+    "lemma": "If a fixed-base nonedge uv is added, every fixed-base common neighbour w requires deletion of at least one of the two distinct wedge edges uw,vw.  More than six common neighbours therefore contradict the exact-six residual deletion counter.",
+    "new_beyond_direct_triangle_units": 387,
+    "overlap_with_direct_triangle_units": 1,
+    "solver_redundancy": "These units are logical consequences of the installed triangle clauses and exact-six counter; they strengthen explicit propagation but do not restrict the target beyond that formula.",
+    "threshold": 7,
+    "union_with_direct_and_fixed_negative_units": 391,
+    "union_with_direct_triangle_units": 390
+  },
+  "domination_lift": {
+    "Z_size_distribution_at_degree_16": {
+      "0": 49,
+      "1": 1
+    },
+    "Z_size_distribution_at_degree_17": {
+      "0": 49,
+      "1": 1
+    },
+    "claim_boundary": "This is a genuine structural separator for the common incomplete bank, not a proof that the branch or exact-seven layer is UNSAT.  Because the A+ clauses already exclude the source common model, no strict semantic shrinkage of the later A+-augmented formula is claimed merely from inventory nonmembership.  One cut is not a complete method.",
+    "common_model_forced_positive_units_retained": true,
+    "common_model_universal_bank_violations": 0,
+    "degree_16_nonclique_violations": 0,
+    "degree_17_violations": 1,
+    "degree_distribution": {
+      "16": 50,
+      "17": 50
+    },
+    "frozen_family_identities": {
+      "Aplus_batch": {
+        "masks": 4096,
+        "ordered_masks_sha256": "a3cff8d8a4c77c6effb49c03e76065a17f754d0a7de727d229652276b6e8cda0"
+      },
+      "exhaustive_fixed_base_family": {
+        "masks": 235504,
+        "membership_checked_directly_against_fixed_base": true,
+        "ordered_masks_sha256": "1e9f89f40cd97a5f3b6fa93bb3c4835d45cadca8362e9d3150e90d4f385f6d8c"
+      },
+      "historical_learned_union": {
+        "masks": 64591,
+        "ordered_masks_sha256": "74b4b99c18e925a7a1bbb0e4a1636dad4bf8741ba67623c2164f3607a65172a8"
+      },
+      "universal_bank": {
+        "masks": 251771,
+        "ordered_masks_sha256": "f10690b826b86eb03567a2ffaffb553801fae32af20cfe4337118bddf4e41afa"
+      }
+    },
+    "lemma": "For a triangle-free graph F and vertex v, let Z_v be the nonneighbours u of v with N(u) intersect N(v) empty.  N(v) and every independent set in F[Z_v] have no cross edge, so alpha(F)<18 implies alpha(F[Z_v]) <= 17-d(v).  Hence d(v)=17 forces Z_v empty; d(v)=16 forces F[Z_v] to be a clique and triangle-freeness gives |Z_v|<=2.",
+    "overlap_with_frozen_families": {
+      "Aplus_batch": false,
+      "exhaustive_fixed_base_family": false,
+      "historical_learned_union": false,
+      "universal_bank": false
+    },
+    "source_common_model": {
+      "additions": [
+        [
+          13,
+          61
+        ],
+        [
+          18,
+          97
+        ],
+        [
+          86,
+          97
+        ],
+        [
+          89,
+          97
+        ],
+        [
+          94,
+          97
+        ]
+      ],
+      "full_artifact_replay_required_for_independent_model_binding": true,
+      "full_artifact_replay_supported_by_checker": true,
+      "gzip_bytes": 391052,
+      "gzip_sha256": "9057db25b785640345e6f724cb1c79313642bb62ec2a19d9f310e25700de024d",
+      "maximum_variable": 154190,
+      "primary_projection_sha256": "b4a39182efdf9b1f0513f5e189698c9e7eba46b52df5faee37ccfef66289cfe1",
+      "raw_sha256": "51e7832b69a18b29db817d1e180f1a071f771fbb50e358de4fb57a3810cd737e",
+      "residual_deletions": [
+        [
+          2,
+          97
+        ],
+        [
+          5,
+          97
+        ],
+        [
+          8,
+          97
+        ],
+        [
+          13,
+          37
+        ],
+        [
+          13,
+          97
+        ],
+        [
+          18,
+          98
+        ]
+      ]
+    },
+    "strengthening_reason": "The displayed mask is independent in the checked common-model projection, while that graph satisfies the universal bank and four retention units.  Its universally valid I18 hitting clause therefore strictly removes that witness from the common relaxation.  Zero inventory overlap additionally shows the cut is not already listed in the later frozen families.",
+    "strict_common_relaxation_strengthening": true,
+    "unique_violation": {
+      "Z_vertex": 37,
+      "common_model_internal_edges": 0,
+      "fixed_base_internal_edges": 3,
+      "mask_hex": "2000000404414192982822020",
+      "mask_line_sha256": "31881b3f9667899000e686f2c09b3adb02a305225e561820a457f03870dd9be4",
+      "mask_vertices": [
+        5,
+        13,
+        17,
+        23,
+        25,
+        31,
+        32,
+        35,
+        37,
+        40,
+        43,
+        44,
+        50,
+        52,
+        58,
+        62,
+        70,
+        97
+      ],
+      "vertex": 86
+    },
+    "zero_overlap_verified": true
+  },
+  "forced_unit_triangle_propagation": {
+    "all_negative_edges_are_original_nonedges": true,
+    "negative_edges": [
+      [
+        61,
+        64
+      ],
+      [
+        61,
+        69
+      ],
+      [
+        64,
+        69
+      ]
+    ],
+    "negative_units": 3,
+    "positive_edges": [
+      [
+        11,
+        62
+      ],
+      [
+        18,
+        61
+      ],
+      [
+        18,
+        64
+      ],
+      [
+        18,
+        69
+      ]
+    ]
+  },
+  "full_local_no_addition_closure": {
+    "breakdown": {
+      "common_neighbours_greater_than_six": 388,
+      "coupled_degree_vertex98_budget_units": 6,
+      "direct_triangle_units_not_in_common_threshold": 2
+    },
+    "claim_boundary": "This is a solver-redundant consequence of existing triangle, degree, exact-six, fixed-branch, and four retention constraints; it is not a new restriction on the original Ramsey target.",
+    "coupled_degree_vertex98_budget_edges": [
+      [
+        55,
+        97
+      ],
+      [
+        56,
+        97
+      ],
+      [
+        57,
+        97
+      ],
+      [
+        88,
+        99
+      ],
+      [
+        89,
+        99
+      ],
+      [
+        90,
+        99
+      ]
+    ],
+    "edge_list_hash_format": "sorted ASCII lines: u SP v LF",
+    "edge_list_sha256": "ff387efadc49230f2920e842972522683d31ddab7d496d8a0380f6a2704b4492",
+    "fixed_branch_unit_edge_is_separate": true,
+    "lemma": "For each candidate added edge uv, minimize residual seed-edge deletions subject to one hit per common-neighbour wedge, the degree-cap deletion quotas at u and v, the independent vertex-98 degree hit, and the four retention units.  If the exact minimum exceeds six, or a wedge has both edges forced retained, x_uv=0.",
+    "minimum_local_deletions_distribution": {
+      "10": 24,
+      "2": 729,
+      "3": 1584,
+      "4": 166,
+      "5": 1146,
+      "6": 103,
+      "7": 6,
+      "9": 363,
+      "infeasible": 3
+    },
+    "no_addition_units": 396,
+    "universe": "all 4,124 fixed-base nonedges, including the fixed unit edge"
+  },
+  "inputs": {
+    "Aplus_batch": {
+      "basename": "r3_18_budget7_branch1_cegar_Aplus_batch.json",
+      "bytes": 135906,
+      "masks": 4096,
+      "ordered_masks_sha256": "a3cff8d8a4c77c6effb49c03e76065a17f754d0a7de727d229652276b6e8cda0",
+      "schema": "ramsey-r3-18-n100-exact-budget7-branch1-cegar-mask-batch-v1",
+      "sha256": "835137c2df19bc851618761cc0af92400b3fa2677dd00c47101d1074c7406e8b"
+    },
+    "historical_exclusion": {
+      "basename": "r3_18_budget7_branch1_cegar_history_exclusion.json",
+      "bytes": 2136579,
+      "masks": 64591,
+      "ordered_masks_sha256": "74b4b99c18e925a7a1bbb0e4a1636dad4bf8741ba67623c2164f3607a65172a8",
+      "schema": "ramsey-r3-18-n100-branch1-history-exclusion-v1",
+      "sha256": "d5100bb5dce48da3ca8ab3810290ff553ebb9d6c87ff9df1f287700563f456b0"
+    },
+    "seed": {
+      "basename": "r3_18_n100_nearmiss.txt",
+      "bytes": 20000,
+      "sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e"
+    },
+    "universal_bank": {
+      "basename": "r3_18_budget6_branch_0_universal_union.cuts.json",
+      "bytes": 8308702,
+      "masks": 251771,
+      "ordered_masks_sha256": "f10690b826b86eb03567a2ffaffb553801fae32af20cfe4337118bddf4e41afa",
+      "sha256": "91b5709248ff641a315f5a0389b4f3fde3d38514f3b1a8b31b6cad31224f250b"
+    }
+  },
+  "local_swap_probe": {
+    "addition_fixed_base_common_neighbour_counts": {
+      "13-61": 1,
+      "86-97": 2,
+      "89-97": 1,
+      "94-97": 1
+    },
+    "additions": [
+      [
+        13,
+        61
+      ],
+      [
+        86,
+        97
+      ],
+      [
+        89,
+        97
+      ],
+      [
+        94,
+        97
+      ]
+    ],
+    "claim_boundary": "This is a local probe satisfying exact-six support, the four retention units, triangle-freeness, and the degree cap while not hitting vertex 18.  It violates 12 installed bank clauses and is therefore neither a relaxation model nor a counterexample to a possible vertex-18 hit.",
+    "degree_distribution": {
+      "16": 52,
+      "17": 48
+    },
+    "deletion_support_hits_vertex_18": false,
+    "deletion_support_hits_vertex_98": true,
+    "direct_repair_definition": "An edge inside a displayed violated I18 mask whose immediate addition to this fixed graph creates no triangle and leaves both endpoint degrees at most 17, with no other edit changed.",
+    "edge_projection_sha256": "7ca2e100b4e506687e6524dcf77cad090e2933c135ffb4c90aea7b896c0c4800",
+    "exact_six_residual_deletions": true,
+    "final_edges": 824,
+    "fixed_deletion": [
+      97,
+      99
+    ],
+    "forced_positive_edges_retained": true,
+    "maximum_degree": 17,
+    "residual_deletions": [
+      [
+        2,
+        97
+      ],
+      [
+        5,
+        97
+      ],
+      [
+        8,
+        97
+      ],
+      [
+        13,
+        37
+      ],
+      [
+        13,
+        97
+      ],
+      [
+        16,
+        98
+      ]
+    ],
+    "single_edge_direct_repairs_preserving_triangle_and_degree_caps": 0,
+    "triangle_count": 0,
+    "universal_bank_satisfied": false,
+    "violated_universal_bank_masks": [
+      "a0000000000000000ffff0000",
+      "a0000000000000001fffe0000",
+      "a00100000020000009f5f2020",
+      "a00100000020000019f5e2020",
+      "b0010000002000000975f2020",
+      "b0010000002000001975e2020",
+      "b0400000082000000d74d2020",
+      "b0400080082000000d64d2020",
+      "b0410000002000000975d2020",
+      "b0410000082000000974d2020",
+      "b0410080082000000964d2020",
+      "b2410080080000000964d2020"
+    ],
+    "violated_universal_bank_masks_count": 12,
+    "violated_universal_bank_masks_sha256": "0781584d5e22dbeb508c879ef03d26c639269072a378f3457acd1156e98fe13f",
+    "violates_full_local_no_addition_closure": false
+  },
+  "record_sha256": "06fd57c94c5d21a1a9f9c50845ae0126ccbc5e9e5880fa54db752819afadf617",
+  "schema": "ramsey-r3-18-n100-exact-budget7-branch1-structural-projection-v1",
+  "status": "VERIFIED_BOUNDED_STRUCTURAL_PROJECTION_FACTS",
+  "triangle_and_degree_projection": {
+    "endpoint_degrees": {
+      "11": 17,
+      "18": 17,
+      "61": 16,
+      "62": 16,
+      "64": 16,
+      "69": 16,
+      "98": 18
+    },
+    "endpoint_neighbourhoods": {
+      "11": [
+        27,
+        35,
+        39,
+        45,
+        47,
+        53,
+        54,
+        57,
+        62,
+        65,
+        66,
+        72,
+        74,
+        80,
+        84,
+        92,
+        97
+      ],
+      "18": [
+        2,
+        34,
+        42,
+        46,
+        52,
+        54,
+        60,
+        61,
+        64,
+        69,
+        72,
+        73,
+        79,
+        81,
+        87,
+        91,
+        98
+      ],
+      "61": [
+        0,
+        6,
+        7,
+        10,
+        15,
+        18,
+        19,
+        25,
+        27,
+        33,
+        37,
+        45,
+        77,
+        85,
+        89,
+        95
+      ],
+      "62": [
+        1,
+        7,
+        8,
+        11,
+        16,
+        19,
+        20,
+        26,
+        28,
+        34,
+        38,
+        46,
+        78,
+        86,
+        90,
+        96
+      ],
+      "64": [
+        1,
+        3,
+        9,
+        10,
+        13,
+        18,
+        21,
+        22,
+        28,
+        30,
+        36,
+        40,
+        48,
+        80,
+        88,
+        92
+      ],
+      "69": [
+        0,
+        6,
+        8,
+        14,
+        15,
+        18,
+        23,
+        26,
+        27,
+        33,
+        35,
+        41,
+        45,
+        53,
+        85,
+        93
+      ],
+      "98": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        97,
+        99
+      ]
+    },
+    "fixed_base_degree_distribution": {
+      "16": 49,
+      "17": 50,
+      "18": 1
+    },
+    "fixed_base_triangle_count": 0,
+    "forced_edge_common_neighbour_counts": {
+      "11-62": 0,
+      "18-61": 0,
+      "18-64": 0,
+      "18-69": 0
+    },
+    "projection_lemma": "For the triangle and degree constraints, every exact-six residual seed-deletion support that avoids the four forced edges and hits delta(98) has the completion A=empty: deleting edges preserves triangle-freeness, and the delta(98) hit reduces the unique degree-18 vertex to the cap.  Conversely, the four units and the degree cap require those conditions.",
+    "seed_triangles": [
+      [
+        97,
+        98,
+        99
+      ]
+    ],
+    "support_conditions": [
+      "exactly six residual seed-edge deletions",
+      "do not delete any of the four forced positive edges",
+      "delete at least one fixed-base edge incident to vertex 98"
+    ],
+    "support_conditions_complete_for_triangle_degree_subsystem": true,
+    "vertices_above_degree_cap": [
+      98
+    ]
+  },
+  "universal_bank_local_substitution": {
+    "clauses_satisfied_by_forced_positive_units": 102,
+    "fixed_base_edge_literals_per_mask": {
+      "0": 4460,
+      "1": 185626,
+      "2": 48492,
+      "3": 10588,
+      "4": 2160,
+      "5": 409,
+      "6": 36
+    },
+    "fixed_base_edge_literals_per_unresolved_mask": {
+      "0": 4460,
+      "1": 185524,
+      "2": 48492,
+      "3": 10588,
+      "4": 2160,
+      "5": 409,
+      "6": 36
+    },
+    "fixed_negative_unit_incidence_among_unresolved": 12056,
+    "forced_positive_edge_incidence": {
+      "11-62": 64,
+      "18-61": 16,
+      "18-64": 6,
+      "18-69": 16
+    },
+    "forced_positive_multiplicity": {
+      "0": 251669,
+      "1": 102
+    },
+    "full_396_no_addition_units_per_unresolved_mask": {
+      "distribution": {
+        "12": 36,
+        "13": 103,
+        "14": 581,
+        "15": 2146,
+        "16": 5541,
+        "17": 13143,
+        "18": 24880,
+        "19": 36813,
+        "20": 44307,
+        "21": 43379,
+        "22": 34596,
+        "23": 23197,
+        "24": 12735,
+        "25": 6284,
+        "26": 2522,
+        "27": 940,
+        "28": 326,
+        "29": 91,
+        "30": 34,
+        "31": 13,
+        "32": 1,
+        "34": 1
+      },
+      "range": [
+        12,
+        34
+      ],
+      "total_incidence": 5160159
+    },
+    "interpretation": "The fixed unit, four positive units, three direct triangle units, and the complete 396-unit bounded structural closure do not turn any unresolved bank clause into a deletion-support-only clause.",
+    "original_seed_edge_literal_range_per_unresolved_mask": [
+      1,
+      6
+    ],
+    "propagated_negative_edge_incidence_among_unresolved": {
+      "61-64": 1154,
+      "61-69": 6249,
+      "64-69": 702
+    },
+    "propagated_negative_multiplicity_among_unresolved": {
+      "0": 244320,
+      "1": 6971,
+      "3": 378
+    },
+    "residual_original_nonedge_addition_literals_after_all_local_units": {
+      "clauses_with_zero": 0,
+      "minimum_clause": {
+        "fixed_base_seed_edge_literals": 3,
+        "forbidden_no_addition_literals": 34,
+        "free_addition_literals": 115,
+        "mask_hex": "a832130504404000000040441",
+        "original_seed_edge_literals_including_fixed_unit": 4
+      },
+      "range": [
+        115,
+        140
+      ]
+    },
+    "residual_original_nonedge_addition_literals_after_direct_units": {
+      "clauses_with_zero": 0,
+      "range": [
+        146,
+        152
+      ]
+    },
+    "support_only_clause_created_by_local_substitution": false,
+    "unresolved_clauses": 251669
+  }
+}

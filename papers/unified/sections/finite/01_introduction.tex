@@ -8,10 +8,11 @@ dynamic survey records
   100\le R(3,18)\le 120;
 \]
 see Radziszowski's continuously maintained table~\cite{Radziszowski2026}.
-A triangle-free graph on \(99\) vertices with independence number \(17\)
-certifies the lower endpoint.  Extending such a graph by one vertex produces
-a natural, but logically delicate, local search around the next possible
-certificate.
+The public construction of Nagda, Raghavan, and Thakurta supplies a
+triangle-free graph on \(99\) vertices with independence number \(17\),
+thereby certifying the lower endpoint~\cite{NagdaRaghavanThakurta2026}.
+Extending that graph by one vertex produces a natural, but logically delicate,
+local search around the next possible certificate.
 
 This part studies one labelled \(100\)-vertex extension \(H\).  The graph
 has no independent \(18\)-set but has a unique triangle.  It is therefore a
@@ -45,11 +46,38 @@ solver's report of unsatisfiability proves the CNF claim only after an
 independently checkable proof trace has been accepted.  We record both
 implications explicitly.
 
-The computation is also informative about what remains open.  We tested the
-next deletion layer, exact budget seven, with one bounded solver call in each
-branch.  Every call reached its wall-time limit before producing a separated
-model or a proof.  We record these endpoints as \textsc{unknown}.  They are
-not evidence either for or against the existence of a seven-deletion repair.
+The computation is also informative about what remains open.  We first tested
+the next deletion layer, exact budget seven, with one bounded solver call in
+each branch.  Every call reached its wall-time limit before producing a
+separated model or a proof.  A follow-up branch-1 analysis proves the necessary
+degree cap \(\deg(v)\le17\) and thereby excludes \(87.5813\ldots\%\) of its raw
+six-edge residual deletion sets.  A deletion-first pilot encoded that lift and
+initially encountered two apparent exact independent-set separator stalls.
+An order-aware reconstruction showed that both stalls were vertex-order
+artefacts: reverse ordering returned the requested witness batches in
+milliseconds.  Seven repaired gates then spent their bounded walls in the
+master after fast separation, but again produced neither a verified model nor
+a checked global proof.  A subsequent proof-carrying generalized-core route
+produced four stronger, checked singleton no-goods for branch~1: every
+satisfying assignment of the common relaxation must preserve each of four
+named seed edges.  Their CNFs were rebuilt byte for byte without the
+production encoder and their DRAT traces were replayed by separately built
+checker binaries on two architectures.  A checked satisfying model shows that
+the common relaxation is nonempty, although that model itself contains an
+independent \(18\)-set.  The singleton clauses exclude an additional
+\(1307748575589\) residual supports beyond the degree cap, about
+\(2.431110\%\) of its survivors.  This is a rigorous family-level pruning
+result, but it leaves branch~1 and the overall exact-seven problem open.  A
+subsequent exact projection found \(396\) forced original-nonedge assignments
+but no additional pure deletion-support clause.  We then proved, using the
+checked budget-six obstruction, that every feasible branch-1 repair has a
+maximal-triangle-free representative.  Combining a full all-pair encoding of
+that normal form with the complete \(530525\)-mask union gives a fixed CNF with
+\(639290\) variables and \(1972360\) clauses.  Independent reconstruction was
+byte-exact, but its single \(300\)-second bounded call timed out with no model
+or proof.  We record this and every other unresolved endpoint as
+\textsc{unknown}; none is evidence either for or against the existence of a
+seven-deletion repair.
 
 \paragraph{Claim boundary.}
 The theorem concerns one fixed, labelled seed and one one-sided edit metric.

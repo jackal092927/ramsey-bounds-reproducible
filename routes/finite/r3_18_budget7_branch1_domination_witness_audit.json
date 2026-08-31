@@ -1,0 +1,110 @@
+{
+  "claim_boundary": "This audit reconstructs structured independent-18 witnesses in one checked model of an incomplete relaxation. It proves no exact-seven repair and no branch or global Ramsey result.",
+  "generation": {
+    "degree16_candidates_emitted": 0,
+    "degree16_candidates_total": 0,
+    "degree16_truncated": false,
+    "degree17_candidates": 1,
+    "degree_histogram": {
+      "16": 50,
+      "17": 50
+    },
+    "distinct_masks": 1,
+    "nonempty_z": [
+      {
+        "center": 37,
+        "degree": 16,
+        "z": [
+          86
+        ]
+      },
+      {
+        "center": 86,
+        "degree": 17,
+        "z": [
+          37
+        ]
+      }
+    ]
+  },
+  "mask_families": {
+    "aplus": {
+      "basename": "r3_18_budget7_branch1_cegar_Aplus_batch.json",
+      "bytes": 135906,
+      "masks": 4096,
+      "sha256": "835137c2df19bc851618761cc0af92400b3fa2677dd00c47101d1074c7406e8b"
+    },
+    "history": {
+      "basename": "r3_18_budget7_branch1_cegar_history_exclusion.json",
+      "bytes": 2136579,
+      "masks": 64591,
+      "sha256": "d5100bb5dce48da3ca8ab3810290ff553ebb9d6c87ff9df1f287700563f456b0"
+    },
+    "universal": {
+      "basename": "r3_18_budget6_branch_0_universal_union.cuts.json",
+      "bytes": 8308702,
+      "masks": 251771,
+      "sha256": "91b5709248ff641a315f5a0389b4f3fde3d38514f3b1a8b31b6cad31224f250b"
+    }
+  },
+  "model": {
+    "assignment_literals": 154190,
+    "gzip_bytes": 391052,
+    "gzip_sha256": "9057db25b785640345e6f724cb1c79313642bb62ec2a19d9f310e25700de024d",
+    "raw_bytes": 1076352,
+    "raw_sha256": "51e7832b69a18b29db817d1e180f1a071f771fbb50e358de4fb57a3810cd737e"
+  },
+  "old_family_counts": {
+    "aplus": 4096,
+    "history": 64591,
+    "universal": 251771
+  },
+  "overlap_counts": {
+    "aplus": 0,
+    "fixed_base": 0,
+    "history": 0,
+    "universal": 0
+  },
+  "schema": "ramsey-r3-18-branch1-domination-witness-audit-v1",
+  "seed": {
+    "bytes": 20000,
+    "sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e"
+  },
+  "status": "VERIFIED_DOMINATION_WITNESS_AUDIT",
+  "witnesses": [
+    {
+      "center": 86,
+      "kind": "degree17",
+      "mask": "2000000404414192982822020",
+      "overlap": {
+        "aplus": false,
+        "fixed_base": false,
+        "history": false,
+        "universal": false
+      },
+      "vertices": [
+        5,
+        13,
+        17,
+        23,
+        25,
+        31,
+        32,
+        35,
+        37,
+        40,
+        43,
+        44,
+        50,
+        52,
+        58,
+        62,
+        70,
+        97
+      ],
+      "z_vertices": [
+        37
+      ]
+    }
+  ]
+}

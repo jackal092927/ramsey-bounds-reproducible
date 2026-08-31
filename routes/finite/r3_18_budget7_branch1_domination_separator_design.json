@@ -1,0 +1,55 @@
+{
+  "acceptance": {
+    "sat": "A SAT model with no generated domination witness closes only this bounded structural separator. It is not an exact-seven repair until the complete Ramsey and edit-semantics verifiers pass.",
+    "unknown": "Every wall, cap, malformed or stale model, backend error, incomplete degree-16 enumeration, or no-novel-mask endpoint is UNKNOWN and learns nothing.",
+    "unsat": "UNSAT is proof-carrying evidence only after the exact final CNF and proof are independently authenticated and replayed. A raw solver exit remains UNSAT_UNCHECKED."
+  },
+  "algorithm": {
+    "degree16": "For every degree-16 center v, enumerate nonedges {u,t} in F[Z_v] in lexicographic order and emit N(v) union {u,t}, stopping at the fixed per-model cap.",
+    "degree17": "For every degree-17 center v, emit every N(v) union {u} with u in Z_v.",
+    "definition": "Z_v consists of nonneighbors u of v with no common neighbor with v.",
+    "independent_check": "Every emitted mask must have cardinality 18 and be directly independent in the returned model before its 153-literal positive hitting clause is admitted.",
+    "novelty": "Canonical masks are deduplicated against the universal, historical, A+, and current-run families. An old-only violating model is fail-closed rather than accepted."
+  },
+  "claim_boundary": "This is a bounded structured independent-set separator. Its current checked-model audit exposes one new mask but establishes no exact-seven repair, branch refutation, repair radius, or global Ramsey bound.",
+  "files": {
+    "checker": "check_r3_18_budget7_branch1_domination_witnesses.py",
+    "common_model_audit": "r3_18_budget7_branch1_domination_witness_audit.json",
+    "runner": "r3_18_budget7_branch1_domination_cegar.py",
+    "tests": "test_r3_18_budget7_branch1_domination_cegar.py"
+  },
+  "fixed_limits": {
+    "degree16_masks_per_model": 4096,
+    "early_stop_after_models": 8,
+    "early_stop_min_novel_masks": 2,
+    "early_stop_min_novel_ratio": 0.25,
+    "max_models": 16,
+    "max_novel_masks": 65536,
+    "wall_seconds": 900
+  },
+  "no_repeat": {
+    "automatic_second_run": false,
+    "change_caps_after_endpoint": false,
+    "generic_independent_set_fallback_inside_this_gate": false,
+    "resume_unknown_as_evidence": false
+  },
+  "proof_obligation": "For any theorem-level UNSAT use, freeze the base CNF, all emitted mask records, the final CNF, the solver trace, and a fresh independent proof replay. If the four singleton units are installed, also bind and replay all four singleton proof chains.",
+  "production_mask_inputs": {
+    "aplus": {
+      "masks": 4096,
+      "sha256": "835137c2df19bc851618761cc0af92400b3fa2677dd00c47101d1074c7406e8b"
+    },
+    "history": {
+      "masks": 64591,
+      "sha256": "d5100bb5dce48da3ca8ab3810290ff553ebb9d6c87ff9df1f287700563f456b0"
+    },
+    "identity_policy": "Production mode requires exact file SHA-256 and exact mask count, rejects final-component symlinks and non-regular files, rejects duplicate JSON keys and duplicate masks, and records each accepted basename, byte count, mask count, and digest in the audit JSON.",
+    "universal": {
+      "masks": 251771,
+      "sha256": "91b5709248ff641a315f5a0389b4f3fde3d38514f3b1a8b31b6cad31224f250b"
+    }
+  },
+  "schema": "ramsey-r3-18-branch1-domination-separator-design-v1",
+  "status": "IMPLEMENTED_NOT_RUN",
+  "trusted_boundary": "The scripted command-line runner does not invoke a solver. A live backend must implement the SolverBackend contract and remains outside this record until its exact formula, binary, result, and proof are authenticated."
+}

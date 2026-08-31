@@ -1,0 +1,175 @@
+{
+  "branch_scope": {
+    "diagnostic_is_not_an_additional_formula_dependency": true,
+    "fixed_deleted_triangle_edge": [
+      97,
+      99
+    ],
+    "no_transfer_to_other_triangle_edge_branches": true,
+    "symmetry_boundary": "A separate deterministic degree-initialized 1-WL diagnostic reaches 100 singleton color classes after two refinement rounds, so the seed automorphism group is necessarily trivial.  In particular the three triangle-edge branches cannot be identified by seed symmetry."
+  },
+  "claim_boundary": {
+    "UNKNOWN_learns_any_cut": false,
+    "branch1_closed": false,
+    "exact_seven_resolved": false,
+    "global_Ramsey_improvement": false,
+    "other_triangle_edge_branches_closed": false,
+    "unchecked_solver_UNSAT_accepted": false
+  },
+  "formula": {
+    "additional_deduplicated_I18_clauses": 278754,
+    "clause_order": [
+      "authenticated common-relaxation body",
+      "four proof-checked positive units",
+      "sorted union-minus-universal I18 hitting clauses",
+      "full pair-major maximality selector clauses"
+    ],
+    "common_relaxation": {
+      "clauses": 718452,
+      "universal_I18_clauses_already_installed": 251771,
+      "variables": 154190
+    },
+    "final_clauses": 1972360,
+    "final_variables": 639290,
+    "four_positive_units": 4,
+    "full_maximal_triangle_free_selectors": {
+      "allocation": "pair-major lexicographic (u,v), then ascending w with w not in {u,v}",
+      "auxiliary_variables": 485100,
+      "binary_implication_clauses": 970200,
+      "clauses": 975150,
+      "first_auxiliary_variable": 154191,
+      "last_auxiliary_variable": 639290,
+      "long_clauses": 4950,
+      "pairs": 4950,
+      "scope": "all lexicographic unordered vertex pairs",
+      "semantics": "x_uv OR some y_uv_w, together with y_uv_w -> x_uw and y_uv_w -> x_vw",
+      "witnesses_per_pair": 98
+    },
+    "production_cnf_status": "NOT_BUILT_BY_DESIGN_AUDIT",
+    "raw_cnf_bytes": null,
+    "raw_cnf_sha256": null,
+    "total_distinct_I18_masks_installed": 530525
+  },
+  "inputs": {
+    "appended_beyond_common_universal_bank": {
+      "masks": 278754,
+      "ordered_masks_sha256": "2242d10f9ea3cefedef7a8c02be9a7df41db3cdb6580733e3fca9391db46d1d4"
+    },
+    "budget6_maximality_dependency": {
+      "arbitrary_original_nonedge_additions_allowed": true,
+      "at_most_six_excluded": true,
+      "basename": "r3_18_budget6_summary.json",
+      "bytes": 6140,
+      "sha256": "0abd30457c039c1c5fbba5890153c8a0c5d8558e196e7c0561410cefe37afa6a",
+      "status": "ALL_THREE_EXACT_BUDGET6_BRANCHES_UNSAT_PROOF_VERIFIED"
+    },
+    "canonical_insertion_new_masks": {
+      "Aplus": 4096,
+      "fixed_base": 221496,
+      "history": 53162,
+      "universal": 251771
+    },
+    "four_family_union": {
+      "masks": 530525,
+      "ordered_masks_sha256": "f5c1c60877306900c1aa81bd3a7f357c3d16464ad329c676639a6f6bda9a682d"
+    },
+    "overlap_census": {
+      "Aplus_with_prior_three_union": 0,
+      "history_fixed_base": 10194,
+      "universal_fixed_base": 4460,
+      "universal_history": 11429,
+      "universal_history_fixed_base": 646
+    },
+    "seed": {
+      "basename": "r3_18_n100_nearmiss.txt",
+      "bytes": 20000,
+      "edges": 827,
+      "sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+      "triangles": 1
+    },
+    "singleton_retention_dependency": {
+      "basename": "r3_18_budget7_branch1_core_proof_summary.json",
+      "bytes": 10406,
+      "fresh_core_replay_required_for_publication_promotion": true,
+      "positive_edges": [
+        [
+          11,
+          62
+        ],
+        [
+          18,
+          61
+        ],
+        [
+          18,
+          64
+        ],
+        [
+          18,
+          69
+        ]
+      ],
+      "positive_units": [
+        1085,
+        1672,
+        1675,
+        1680
+      ],
+      "sha256": "8ae4f0d9ea919c915ba642eb03ec3d418b4419a89781377509acbe925d89555a",
+      "status": "FOUR_SINGLETON_NO_GOODS_PROOF_VERIFIED_EXACT_SEVEN_UNKNOWN"
+    },
+    "sources": {
+      "Aplus": {
+        "basename": "r3_18_budget7_branch1_cegar_Aplus_batch.json",
+        "bytes": 135906,
+        "masks": 4096,
+        "ordered_masks_sha256": "a3cff8d8a4c77c6effb49c03e76065a17f754d0a7de727d229652276b6e8cda0",
+        "sha256": "835137c2df19bc851618761cc0af92400b3fa2677dd00c47101d1074c7406e8b"
+      },
+      "fixed_base": {
+        "complete_enumeration": true,
+        "derived_from_seed_sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+        "masks": 235504,
+        "ordered_masks_sha256": "1e9f89f40cd97a5f3b6fa93bb3c4835d45cadca8362e9d3150e90d4f385f6d8c"
+      },
+      "history": {
+        "basename": "r3_18_budget7_branch1_cegar_history_exclusion.json",
+        "bytes": 2136579,
+        "masks": 64591,
+        "ordered_masks_sha256": "74b4b99c18e925a7a1bbb0e4a1636dad4bf8741ba67623c2164f3607a65172a8",
+        "sha256": "d5100bb5dce48da3ca8ab3810290ff553ebb9d6c87ff9df1f287700563f456b0"
+      },
+      "universal": {
+        "basename": "r3_18_budget6_branch_0_universal_union.cuts.json",
+        "bytes": 8308702,
+        "masks": 251771,
+        "ordered_masks_sha256": "f10690b826b86eb03567a2ffaffb553801fae32af20cfe4337118bddf4e41afa",
+        "sha256": "91b5709248ff641a315f5a0389b4f3fde3d38514f3b1a8b31b6cad31224f250b"
+      }
+    },
+    "three_family_union": {
+      "masks": 526429,
+      "ordered_masks_sha256": "f4220088cf6dfccc7b0e8b0aa7c2d1a2ef4a47f5ce31738506eefdd591613258"
+    }
+  },
+  "limits": {
+    "generator_atomic_install": true,
+    "generator_is_streaming": true,
+    "generator_refuses_overwrite": true,
+    "learned_masks": [],
+    "solver_invoked": false
+  },
+  "non_repetition": {
+    "versus_Aplus": "A+ appended only 4,096 model-derived masks to the common formula.  This gate installs the entire four-family union and full all-pair maximality selectors.",
+    "versus_Benders_all_fixed_base_cuts": "The Benders option preloads the exhaustive fixed-base I18 family into a deletion-support master.  This is a direct primary-graph CNF over the common relaxation, also includes universal/history/A+, four retention units, and maximality."
+  },
+  "record_sha256": "007339df73fc864f70372734486b2207d11ea06b118f75dfa350c30b310c8dfd",
+  "schema": "ramsey-r3-18-n100-exact-budget7-branch1-maximal-union-design-v1",
+  "state_machine": {
+    "NOT_RUN": "MAXIMAL_UNION_CNF_READY_SOLVER_NOT_RUN",
+    "SAT": "Accept only a complete assignment satisfying every exact clause plus direct graph checks for triangle-freeness, exact seven one-sided deletions, retention units, degree cap, full maximality, and an independent-18 search.",
+    "UNKNOWN": "Timeout, disk cap, malformed output, invalid model, unchecked UNSAT, or any identity mismatch learns nothing.",
+    "UNSAT": "Accept only after fresh replay of a nonempty proof against this exact raw CNF by a binary pinned to drat-trim commit 2e3b2dc0ecf938addbd779d42877b6ed69d9a985."
+  },
+  "status": "DESIGN_VERIFIED_SOLVER_NOT_RUN"
+}

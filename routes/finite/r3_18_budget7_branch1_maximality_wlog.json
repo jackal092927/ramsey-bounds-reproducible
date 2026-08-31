@@ -1,0 +1,498 @@
+{
+  "bounded_go_no_go": {
+    "go": [
+      "preprocessing or propagation derives consequences beyond merely setting the three A+ safe additions",
+      "a checked SAT endpoint changes the deletion support or yields a genuinely new I18 witness",
+      "a checked UNSAT proof is produced for a frozen WLOG-augmented relaxation"
+    ],
+    "no_go": [
+      "the endpoint is the deterministic three-edge maximal completion of the current A+ model",
+      "SAT retains only the already historical/fixed-base I18 witness",
+      "UNKNOWN, timeout, malformed model, unchecked UNSAT, or proof growth beyond the fixed disk cap"
+    ],
+    "outcome_claims": {
+      "SAT": "telemetry only unless a complete final graph independently verifies alpha<18",
+      "UNKNOWN": "no satisfiability or Ramsey claim and no learned scientific conclusion",
+      "UNSAT_checked": "excludes only the frozen branch relaxation covered by the WLOG dependency"
+    },
+    "recommended_pilot": "Layer-A lazy selectors only; install every violation from one model in lexicographic order, at most one bounded 300-second solve after deterministic CNF/no-solver audit, and do not automatically launch a second round."
+  },
+  "claim_boundary": {
+    "branch1_closed": false,
+    "current_Aplus_assignment_eliminated_by_layer_A": true,
+    "current_Aplus_deletion_support_has_semantic_completion": true,
+    "every_raw_target_is_maximal": false,
+    "exact_seven_closed": false,
+    "global_Ramsey_improvement": false,
+    "layer_A_requires_rho_lower_bound": false,
+    "layer_B_requires_rho_lower_bound": true,
+    "maximality_implies_alpha_below_18": false
+  },
+  "inputs": {
+    "Aplus_batch": {
+      "basename": "r3_18_budget7_branch1_cegar_Aplus_batch.json",
+      "bytes": 135906,
+      "masks": 4096,
+      "ordered_masks_sha256": "a3cff8d8a4c77c6effb49c03e76065a17f754d0a7de727d229652276b6e8cda0",
+      "sha256": "835137c2df19bc851618761cc0af92400b3fa2677dd00c47101d1074c7406e8b"
+    },
+    "Aplus_gate_record": {
+      "I18_witness_mask": "bfffe00000000000000000000",
+      "augmented_cnf_sha256": "6fbe630343afcf31a5affa9a70a315e3033bc077b24fc9a58d5084e63fdd389f",
+      "basename": "branch1_cegar_gate.json",
+      "bytes": 9955,
+      "clauses_evaluated": 722552,
+      "common_model_audit_status": "VERIFIED_BRANCH1_COMMON_RELAXATION_SAT_MODEL",
+      "sha256": "d46115036cb6aba0411a50659f7bfca9efcd2dad739ba75d51f3b3286d3d36b3",
+      "status": "SAT_MODEL_VERIFIED_I18_WITNESS_NO_LEARNING"
+    },
+    "budget6_dependency": {
+      "at_most_six_excluded": true,
+      "basename": "r3_18_budget6_summary.json",
+      "bytes": 6140,
+      "free_original_nonedge_additions": true,
+      "sha256": "0abd30457c039c1c5fbba5890153c8a0c5d8558e196e7c0561410cefe37afa6a",
+      "status": "ALL_THREE_EXACT_BUDGET6_BRANCHES_UNSAT_PROOF_VERIFIED"
+    },
+    "historical_union": {
+      "basename": "r3_18_budget7_branch1_cegar_history_exclusion.json",
+      "bytes": 2136579,
+      "masks": 64591,
+      "ordered_masks_sha256": "74b4b99c18e925a7a1bbb0e4a1636dad4bf8741ba67623c2164f3607a65172a8",
+      "sha256": "d5100bb5dce48da3ca8ab3810290ff553ebb9d6c87ff9df1f287700563f456b0"
+    },
+    "seed": {
+      "basename": "r3_18_n100_nearmiss.txt",
+      "bytes": 20000,
+      "edges": 827,
+      "sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+      "triangles": 1,
+      "unique_triangle_vertices": [
+        97,
+        98,
+        99
+      ]
+    },
+    "structural_projection_ledger": {
+      "basename": "r3_18_budget7_branch1_structural_projection.json",
+      "bytes": 17684,
+      "no_addition_edge_list_sha256": "ff387efadc49230f2920e842972522683d31ddab7d496d8a0380f6a2704b4492",
+      "no_addition_units": 396,
+      "record_sha256": "06fd57c94c5d21a1a9f9c50845ae0126ccbc5e9e5880fa54db752819afadf617",
+      "sha256": "25a4120d85b58ac8afc93d6047dee3acf917917647bca447c736cd064ec3ab4d"
+    },
+    "universal_bank": {
+      "basename": "r3_18_budget6_branch_0_universal_union.cuts.json",
+      "bytes": 8308702,
+      "masks": 251771,
+      "ordered_masks_sha256": "f10690b826b86eb03567a2ffaffb553801fae32af20cfe4337118bddf4e41afa",
+      "sha256": "91b5709248ff641a315f5a0389b4f3fde3d38514f3b1a8b31b6cad31224f250b"
+    }
+  },
+  "models": {
+    "Aplus": {
+      "Aplus_batch_violations": 0,
+      "added_original_nonedges": [
+        [
+          16,
+          99
+        ],
+        [
+          17,
+          97
+        ],
+        [
+          51,
+          99
+        ]
+      ],
+      "artifact": {
+        "canonical_checker_requires_full_artifact": true,
+        "gzip_bytes": 384949,
+        "gzip_sha256": "19db55d05fe0b907ab77dc9645cf9356fd383bdbb83d91aa7690c6473965ffd3",
+        "maximum_variable": 154190,
+        "primary_projection_sha256": "788f1b97ae516df3a435dce0a770e43fa5b52223564a2469fd7b7b960ae78e5f",
+        "raw_bytes": 1066055,
+        "raw_sha256": "b7adbce4dada7dfeb41f94e36e34b25c57ee4a72a9223bf2c32bbbe4d8b561af"
+      },
+      "degree_distribution": {
+        "16": 54,
+        "17": 46
+      },
+      "deleted_seed_edges": [
+        [
+          1,
+          97
+        ],
+        [
+          16,
+          40
+        ],
+        [
+          16,
+          98
+        ],
+        [
+          17,
+          98
+        ],
+        [
+          35,
+          99
+        ],
+        [
+          44,
+          99
+        ],
+        [
+          97,
+          99
+        ]
+      ],
+      "deterministic_layer_A_completion": {
+        "added_edges": [
+          [
+            16,
+            64
+          ],
+          [
+            32,
+            98
+          ],
+          [
+            40,
+            89
+          ]
+        ],
+        "additions_count": 3,
+        "counter_auxiliary_reextension_materialized_here": false,
+        "degree_cap_17_preserved_in_this_relaxation_model": true,
+        "degree_distribution": {
+          "16": 48,
+          "17": 52
+        },
+        "deletion_support_unchanged": true,
+        "edge_projection_sha256": "7f8b410dd9ef93fbad0dfc88f37a305506830755ea482aa264a23371d87a37d8",
+        "existing_DIMACS_auxiliary_assignment_reused": false,
+        "full_maximal_triangle_free": true,
+        "layer_A_saturated": true,
+        "maximum_degree": 17,
+        "same_deletion_support_primary_graph_satisfies_relaxation_semantics": true,
+        "triangle_free": true
+      },
+      "edges": 823,
+      "exact_assignment_satisfies_full_maximality": false,
+      "exact_assignment_satisfies_layer_A": false,
+      "exact_one_sided_deletions": 7,
+      "layer_A_original_nonedge_violations": 3,
+      "layer_B_deleted_seed_edge_violations": 0,
+      "maximality_violations": 3,
+      "maximum_degree": 17,
+      "preserved_gate_I18_witness": {
+        "family_membership": {
+          "Aplus_batch": false,
+          "fixed_base_family": true,
+          "historical_union": true,
+          "universal_bank": false
+        },
+        "mask_hex": "bfffe00000000000000000000",
+        "still_independent_after_layer_A_completion": true,
+        "vertices": [
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          99
+        ]
+      },
+      "triangle_count": 0,
+      "universal_bank_violations": 0,
+      "violation_details": [
+        {
+          "belongs_to_frozen_396_no_addition_units": false,
+          "edge": [
+            16,
+            64
+          ],
+          "edge_type": "original_nonedge",
+          "endpoint_degrees": [
+            16,
+            16
+          ],
+          "fixed_base_common_neighbours": 1,
+          "fixed_branch_edge": false,
+          "minimum_local_deletions_for_396_unit_test": 2
+        },
+        {
+          "belongs_to_frozen_396_no_addition_units": false,
+          "edge": [
+            32,
+            98
+          ],
+          "edge_type": "original_nonedge",
+          "endpoint_degrees": [
+            16,
+            16
+          ],
+          "fixed_base_common_neighbours": 1,
+          "fixed_branch_edge": false,
+          "minimum_local_deletions_for_396_unit_test": 2
+        },
+        {
+          "belongs_to_frozen_396_no_addition_units": false,
+          "edge": [
+            40,
+            89
+          ],
+          "edge_type": "original_nonedge",
+          "endpoint_degrees": [
+            16,
+            16
+          ],
+          "fixed_base_common_neighbours": 1,
+          "fixed_branch_edge": false,
+          "minimum_local_deletions_for_396_unit_test": 2
+        }
+      ]
+    },
+    "common": {
+      "Aplus_batch_violations": null,
+      "added_original_nonedges": [
+        [
+          13,
+          61
+        ],
+        [
+          18,
+          97
+        ],
+        [
+          86,
+          97
+        ],
+        [
+          89,
+          97
+        ],
+        [
+          94,
+          97
+        ]
+      ],
+      "artifact": {
+        "canonical_checker_requires_full_artifact": true,
+        "gzip_bytes": 391052,
+        "gzip_sha256": "9057db25b785640345e6f724cb1c79313642bb62ec2a19d9f310e25700de024d",
+        "maximum_variable": 154190,
+        "primary_projection_sha256": "b4a39182efdf9b1f0513f5e189698c9e7eba46b52df5faee37ccfef66289cfe1",
+        "raw_bytes": 1076352,
+        "raw_sha256": "51e7832b69a18b29db817d1e180f1a071f771fbb50e358de4fb57a3810cd737e"
+      },
+      "degree_distribution": {
+        "16": 50,
+        "17": 50
+      },
+      "deleted_seed_edges": [
+        [
+          2,
+          97
+        ],
+        [
+          5,
+          97
+        ],
+        [
+          8,
+          97
+        ],
+        [
+          13,
+          37
+        ],
+        [
+          13,
+          97
+        ],
+        [
+          18,
+          98
+        ],
+        [
+          97,
+          99
+        ]
+      ],
+      "deterministic_layer_A_completion": {
+        "added_edges": [
+          [
+            37,
+            86
+          ]
+        ],
+        "additions_count": 1,
+        "counter_auxiliary_reextension_materialized_here": false,
+        "degree_cap_17_preserved_in_this_relaxation_model": false,
+        "degree_distribution": {
+          "16": 49,
+          "17": 50,
+          "18": 1
+        },
+        "deletion_support_unchanged": true,
+        "edge_projection_sha256": "c78709b1b127ef6ff3d6109a085708f0bd1de35bd780bbb1681ed69374fb4e51",
+        "existing_DIMACS_auxiliary_assignment_reused": false,
+        "full_maximal_triangle_free": true,
+        "layer_A_saturated": true,
+        "maximum_degree": 18,
+        "same_deletion_support_primary_graph_satisfies_relaxation_semantics": false,
+        "triangle_free": true
+      },
+      "domination_cut_from_degree_17_violation": {
+        "center": 86,
+        "family_membership": {
+          "Aplus_batch": false,
+          "fixed_base_family": false,
+          "historical_union": false,
+          "universal_bank": false
+        },
+        "mask_hex": "2000000404414192982822020",
+        "other": 37,
+        "vertices": [
+          5,
+          13,
+          17,
+          23,
+          25,
+          31,
+          32,
+          35,
+          37,
+          40,
+          43,
+          44,
+          50,
+          52,
+          58,
+          62,
+          70,
+          97
+        ]
+      },
+      "edges": 825,
+      "exact_assignment_satisfies_full_maximality": false,
+      "exact_assignment_satisfies_layer_A": false,
+      "exact_one_sided_deletions": 7,
+      "layer_A_original_nonedge_violations": 1,
+      "layer_B_deleted_seed_edge_violations": 0,
+      "maximality_violations": 1,
+      "maximum_degree": 17,
+      "triangle_count": 0,
+      "universal_bank_violations": 0,
+      "violation_details": [
+        {
+          "belongs_to_frozen_396_no_addition_units": false,
+          "edge": [
+            37,
+            86
+          ],
+          "edge_type": "original_nonedge",
+          "endpoint_degrees": [
+            16,
+            17
+          ],
+          "fixed_base_common_neighbours": 1,
+          "fixed_branch_edge": false,
+          "minimum_local_deletions_for_396_unit_test": 2
+        }
+      ]
+    }
+  },
+  "record_sha256": "d63f0cedb7a72533581d00b1a6cf25e8705efe240d6224b41de4d5572ede7b3b",
+  "relationship_to_existing_lifts": {
+    "domination": "A degree-17 Layer-A violation immediately exposes the independent 18-set N(v) union {u}; the common-model pair (37,86) is exactly the previously frozen domination cut.  The three A+ violations have degree 16 at both endpoints and produce no domination cut.",
+    "frozen_396_no_addition_units": "The 396 units say selected original nonedges can never be added; Layer-A saturation therefore requires a common-neighbour witness for each.  All four observed violation pairs have independent local deletion minimum two and lie outside the 396-unit family.",
+    "ordinary_I18_CEGAR": "Maximality is a WLOG normalization, not an alpha certificate.  A maximal finite-relaxation model may still contain an I18; indeed the completed A+ model retains the checked historical/fixed-base witness.  I18 separation and maximality separation remain complementary."
+  },
+  "schema": "ramsey-r3-18-n100-exact-budget7-branch1-maximality-wlog-v1",
+  "selector_CNF_design": {
+    "frozen_396_unit_subset": {
+      "auxiliary_variables": 38808,
+      "binary_implication_clauses": 77616,
+      "clauses": 78012,
+      "current_common_or_Aplus_model_directly_excluded": false,
+      "long_clauses": 396,
+      "maximum_variable_from_current_formula": 192998,
+      "pairs": 396,
+      "witnesses_per_pair": 98,
+      "x_uv_is_already_false": true
+    },
+    "layer_A_original_nonedges": {
+      "auxiliary_variables": 404054,
+      "binary_implication_clauses": 808108,
+      "clauses": 812231,
+      "clauses_with_Aplus_augmented_formula": 1534783,
+      "clauses_with_common_formula": 1530683,
+      "long_clauses": 4123,
+      "maximum_variable_from_current_formula": 558244,
+      "pairs": 4123,
+      "recommended_first_encoding": true,
+      "rho_dependency": false,
+      "witnesses_per_pair": 98
+    },
+    "layer_B_all_pairs": {
+      "auxiliary_variables": 485100,
+      "binary_implication_clauses": 970200,
+      "clauses": 975150,
+      "clauses_with_Aplus_augmented_formula": 1697702,
+      "clauses_with_common_formula": 1693602,
+      "long_clauses": 4950,
+      "maximum_variable_from_current_formula": 639290,
+      "pairs": 4950,
+      "rho_dependency": true,
+      "witnesses_per_pair": 98
+    },
+    "lazy_certificate_protocol": "Discovery may instantiate only lexicographically scanned violating pairs.  Before proof production, freeze the sorted pair set, densely renumber witnesses after variable 154190, rebuild one deterministic CNF, and require checked DRAT/LRAT for UNSAT or complete model plus direct semantic maximality evaluation for SAT.",
+    "one_lazy_pair": {
+      "auxiliary_variables": 98,
+      "binary_implication_clauses": 196,
+      "clauses": 197,
+      "long_clauses": 1,
+      "maximum_variable_from_current_formula": 154288,
+      "pairs": 1,
+      "witnesses_per_pair": 98
+    },
+    "semantics": "For each scoped pair uv and each w other than u,v, introduce y_uv_w with implications y_uv_w -> x_uw and y_uv_w -> x_vw, plus x_uv OR the 98 witnesses.  Reverse Tseitin implications are unnecessary for existential equisatisfiability."
+  },
+  "status": "VERIFIED_MAXIMALITY_WLOG_AND_MODEL_TELEMETRY",
+  "theorem": {
+    "layer_A_original_nonedge_saturation": {
+      "WLOG_equisatisfiable": true,
+      "alpha_monotonicity": "adding edges cannot create an independent set",
+      "degree_cap_reconciliation": "For a genuine triangle-free target with alpha<18, every neighbourhood is independent and hence every degree is at most 17.  Therefore a triangle-safe addition cannot create degree 18 in a genuine target: that would expose an independent 18-neighbourhood, contradicting alpha monotonicity.  An incomplete finite-bank relaxation may show this degree-18 completion, in which case the original assignment is excluded by the WLOG constraint and the completion is not claimed to remain a relaxation model.",
+      "dependency_on_radius_lower_bound": false,
+      "exact_deletion_support_preserved": true,
+      "not_a_necessary_property_of_every_raw_target": true,
+      "statement": "From any exact-seven target F, repeatedly add a missing original nonedge of H whose endpoints have no common neighbour.  Each step preserves triangle-freeness, cannot increase alpha, and leaves E(H)\\E(F) unchanged.  The finite process ends at a target with the same deletion support in which every absent original nonedge is triangle-blocked."
+    },
+    "layer_B_full_maximal_triangle_free": {
+      "WLOG_not_every_target_necessary": true,
+      "dependency_budget6_summary_sha256": "0abd30457c039c1c5fbba5890153c8a0c5d8558e196e7c0561410cefe37afa6a",
+      "diameter_two_equivalence": "For this nontrivial graph order, maximal triangle-free is equivalent to every nonedge having a common neighbour, which implies connected diameter at most two.",
+      "fixed_branch_addback_covered_by_global_three_branch_certificate": true,
+      "full_maximality_equivalence": "An exact-seven target exists iff an exact-seven maximal triangle-free target exists, conditional only on the already checked rho_H>=7 dependency.",
+      "statement": "If a deleted seed edge were triangle-safe to add back, the result would still be a target but would have exactly six one-sided deletions, contradicting the authenticated at-most-six exclusion.  This remains true for the fixed branch edge: a safe add-back implies another edge of the unique seed triangle is absent, so the six-deletion graph is covered by the global three-branch proof.  Layer-A additions cannot destroy an existing common neighbour."
+    }
+  }
+}

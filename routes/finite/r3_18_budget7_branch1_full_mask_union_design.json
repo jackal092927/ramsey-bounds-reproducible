@@ -1,0 +1,65 @@
+{
+  "acceptance": {
+    "SAT": "Accept only a complete model that directly satisfies all 997210 clauses; then independently check triangle-freeness, exact-seven edit semantics, and I18. Stop after recording the endpoint.",
+    "UNKNOWN": "Every wall, malformed output, incomplete model, or resource endpoint stops and learns nothing.",
+    "UNSAT": "A solver exit is UNSAT_UNCHECKED. The exact 4f7e8f5b... CNF and a nonempty proof must be independently replayed before theorem use."
+  },
+  "bounded_gate": {
+    "decision": "GO_BUILD_AND_AUDIT__NO_GO_LONG_SOLVE_YET",
+    "maximum_runs": 1,
+    "maximum_wall_seconds": 300,
+    "no_cap_increase": true,
+    "no_resume": true,
+    "no_solver_swap": true,
+    "solver_requirement": "one pinned proof-capable backend"
+  },
+  "claim_boundary": "The union is a stronger finite relaxation and blocks the known A+ SAT endpoint model. Construction and bounded telemetry alone do not close branch 1, establish an exact-seven repair, or improve R(3,18).",
+  "construction": {
+    "clause_order": [
+      "authenticated 718452-clause common CNF, already containing universal",
+      "four proof-checked positive units",
+      "278754 sorted unique masks in (history union fixed-base union A+) minus universal"
+    ],
+    "final_clauses": 997210,
+    "final_plain_CNF_bytes": 390604816,
+    "final_plain_CNF_sha256": "4f7e8f5b724a657888c7814d2c25cac41c283c3db356fb8f1a15f4c7322c375d",
+    "variables": 154190
+  },
+  "families": {
+    "A+": 4096,
+    "fixed_base": 235504,
+    "history": 64591,
+    "universal": 251771
+  },
+  "mathematical_basis": "For any 18-subset S, alpha(G)<18 implies OR_{uv in binom(S,2)} x_uv. Therefore every canonical 18-subset in every source is valid for any exact-seven target, independently of discovery provenance.",
+  "overlap": {
+    "A+_overlap_with_three_family_union": 0,
+    "duplicates_removed_among_three_families": 25437,
+    "full_union": 530525,
+    "history_fixed_base": 10194,
+    "three_family_union": 526429,
+    "universal_fixed_base": 4460,
+    "universal_history": 11429,
+    "universal_history_fixed_base": 646
+  },
+  "prior_route_comparison": {
+    "Benders_universal_plus_all_fixed_base": {
+      "deduplicated_masks": 482815,
+      "difference": "The full union adds 43614 history-only masks and 4096 A+ masks, and uses the full edge-variable encoding rather than projected master cuts."
+    },
+    "existing_A+_gate": {
+      "clauses": 722552,
+      "difference": "The full union installs 274658 history/fixed-base clauses absent from that gate. Its known SAT endpoint I18 mask bfffe00000000000000000000 lies in both omitted families."
+    }
+  },
+  "reproducibility": {
+    "audit_json": "r3_18_budget7_branch1_full_mask_union_audit.json",
+    "builder_and_checker": "build_r3_18_budget7_branch1_full_mask_union.py",
+    "input_policy": "Exact file SHA-256 and counts; reject symlinks, non-regular files, duplicate JSON keys, duplicate masks, noncanonical masks, and any overlap-ledger drift.",
+    "large_CNF_stored_in_git": false,
+    "tests": "test_build_r3_18_budget7_branch1_full_mask_union.py"
+  },
+  "schema": "ramsey-r3-18-n100-exact-budget7-branch1-full-mask-union-design-v1",
+  "solver_invoked_by_this_record": false,
+  "status": "IMPLEMENTED_CNF_BYTE_AUDITED_SOLVER_NOT_RUN"
+}

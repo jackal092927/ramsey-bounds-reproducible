@@ -47,7 +47,11 @@ def has_extension(
 
 class IndependentSequentialCounterTests(unittest.TestCase):
     def test_modules_do_not_import_pysat(self) -> None:
-        for name in ("independent_seqcounter.py", "check_r3_18_seqcounter.py"):
+        for name in (
+            "independent_seqcounter.py",
+            "check_r3_18_seqcounter.py",
+            "check_r3_18_budget7_branch1_core_cnf.py",
+        ):
             tree = ast.parse((HERE / name).read_text(encoding="utf-8"))
             imported = []
             for node in ast.walk(tree):

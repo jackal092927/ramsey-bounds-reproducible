@@ -119,6 +119,72 @@ class CandidateCore:
     anchor_records: tuple[dict[str, Any], ...]
 
 
+@dataclass(frozen=True)
+class CandidateArtifactPaths:
+    """All reserved output names for one candidate, proof requested or not."""
+
+    cnf: Path
+    manifest: Path
+    result: Path
+    drat: Path
+
+
+def candidate_artifact_paths(
+    output_dir: Path, candidate: CandidateCore
+) -> CandidateArtifactPaths:
+    stem = f"branch1_core_{candidate.label}_size{len(candidate.edges)}"
+    return CandidateArtifactPaths(
+        cnf=output_dir / f"{stem}.cnf.gz",
+        manifest=output_dir / f"{stem}.manifest.json",
+        result=output_dir / f"{stem}.result.json",
+        drat=output_dir / f"{stem}.drat.gz",
+    )
+
+
+def _require_distinct_resolved_targets(
+    named_paths: Sequence[tuple[str, Path]],
+) -> None:
+    """Reject aliases and symlink collisions before any artifact is written."""
+
+    owners: dict[Path, str] = {}
+    for name, path in named_paths:
+        resolved = path.resolve()
+        previous = owners.get(resolved)
+        if previous is not None:
+            raise ValueError(
+                f"artifact target collision after path resolution: {previous} and {name}"
+            )
+        owners[resolved] = name
+
+
+def validate_export_targets(
+    summary_json: Path,
+    output_dir: Path,
+    candidates: Sequence[CandidateCore],
+    *,
+    protected_inputs: Sequence[Path] = (),
+) -> list[CandidateArtifactPaths]:
+    """Reserve the complete aggregate/per-candidate output namespace."""
+
+    plans = [candidate_artifact_paths(output_dir, candidate) for candidate in candidates]
+    targets: list[tuple[str, Path]] = [("summary_json", summary_json)]
+    for candidate, paths in zip(candidates, plans):
+        targets.extend(
+            [
+                (f"{candidate.label}:cnf", paths.cnf),
+                (f"{candidate.label}:manifest", paths.manifest),
+                (f"{candidate.label}:result", paths.result),
+                (f"{candidate.label}:drat", paths.drat),
+            ]
+        )
+    targets.extend(
+        (f"protected_input_{index}", path)
+        for index, path in enumerate(protected_inputs)
+    )
+    _require_distinct_resolved_targets(targets)
+    return plans
+
+
 def canonical_sha256(payload: Any) -> str:
     encoded = json.dumps(
         payload, sort_keys=True, separators=(",", ":"), ensure_ascii=True
@@ -435,6 +501,25 @@ def _validate_toolchain(
         raise ValueError("unexpected CaDiCaL source commit")
     if drat_trim_commit != EXPECTED_DRAT_TRIM_COMMIT:
         raise ValueError("unexpected drat-trim source commit")
+    for executable, expected_commit in (
+        (cadical, cadical_commit),
+        (drat_trim, drat_trim_commit),
+    ):
+        marker = executable.parent / "SOURCE_COMMIT"
+        if not marker.is_file():
+            raise ValueError(
+                f"proof tool lacks adjacent SOURCE_COMMIT: {executable.name}"
+            )
+        try:
+            recorded_lines = marker.read_text(encoding="ascii").splitlines()
+        except UnicodeError as error:
+            raise ValueError(
+                f"proof tool has non-ASCII SOURCE_COMMIT: {executable.name}"
+            ) from error
+        if recorded_lines != [expected_commit]:
+            raise ValueError(
+                f"proof tool SOURCE_COMMIT mismatch: {executable.name}"
+            )
     return True
 
 
@@ -455,12 +540,20 @@ def export_candidate(
     proof_requested = _validate_toolchain(
         cadical, cadical_commit, drat_trim, drat_trim_commit
     )
+    paths = candidate_artifact_paths(output_dir, candidate)
+    cnf_path = paths.cnf
+    manifest_path = paths.manifest
+    result_path = paths.result
+    proof_path = paths.drat
+    _require_distinct_resolved_targets(
+        [
+            ("cnf", cnf_path),
+            ("manifest", manifest_path),
+            ("result", result_path),
+            ("drat", proof_path),
+        ]
+    )
     output_dir.mkdir(parents=True, exist_ok=True)
-    stem = f"branch1_core_{candidate.label}_size{len(candidate.edges)}"
-    cnf_path = output_dir / f"{stem}.cnf.gz"
-    manifest_path = output_dir / f"{stem}.manifest.json"
-    result_path = output_dir / f"{stem}.result.json"
-    proof_path = output_dir / f"{stem}.drat.gz"
     targets = [cnf_path, manifest_path, result_path]
     if proof_requested:
         targets.append(proof_path)
@@ -744,6 +837,21 @@ def main() -> None:
         raise ValueError("candidate labels are not unique")
     if len({candidate.candidate_sha256 for candidate in candidates}) != len(candidates):
         raise ValueError("candidate core sets are not unique")
+
+    protected_inputs = [
+        args.matrix,
+        args.budget6_summary,
+        args.universal_bank,
+        args.pilot_json,
+    ]
+    if args.cores_json is not None:
+        protected_inputs.append(args.cores_json)
+    validate_export_targets(
+        args.summary_json,
+        args.output_dir,
+        candidates,
+        protected_inputs=protected_inputs,
+    )
 
     input_manifest = {
         "matrix": {

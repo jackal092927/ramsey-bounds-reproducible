@@ -7,6 +7,8 @@ import argparse
 import hashlib
 from pathlib import Path
 
+from artifact_manifest import ManifestFormatError, load_manifest
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MANIFEST = ROOT / "artifacts" / "MANIFEST.tsv"
@@ -20,19 +22,6 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
-def load_manifest(path: Path) -> list[tuple[str, int, str]]:
-    rows: list[tuple[str, int, str]] = []
-    for number, raw in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
-        if not raw or raw.startswith("#"):
-            continue
-        fields = raw.split("\t")
-        if len(fields) != 3:
-            raise ValueError(f"{path}:{number}: expected sha256, size, name")
-        checksum, size, name = fields
-        rows.append((checksum, int(size), name))
-    return rows
-
-
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--directory", type=Path, required=True)
@@ -44,7 +33,10 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    rows = load_manifest(args.manifest)
+    try:
+        rows = load_manifest(args.manifest)
+    except ManifestFormatError as error:
+        raise SystemExit(f"INVALID_MANIFEST {error}") from error
     failures: list[str] = []
     expected_names = {name for _, _, name in rows}
     if args.exact:

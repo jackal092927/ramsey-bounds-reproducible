@@ -1,10 +1,12 @@
 # External proof artifacts
 
 Several proof traces are too large for ordinary GitHub objects. The manifest
-contains both the three budget-five dependency pairs and the three exact-six
-headline pairs. In
-particular, compressed DRAT files in `routes/finite/` range from roughly
-146 MB to more than 600 MB, above GitHub's 100 MB per-file limit.
+contains the three budget-five dependency pairs, the three exact-six headline
+pairs, four strongest branch-1 singleton CNF/DRAT pairs, and the branch-1
+common CNF/model pair.  It also freezes two audited `drat-trim` binaries, the
+pinned source marker, and the upstream MIT license.  Dominated historical
+pair-core proofs are intentionally not part of the normative antichain.
+Several compressed DRAT files exceed GitHub's 100 MB ordinary-object limit.
 
 The repository therefore keeps:
 
@@ -13,6 +15,11 @@ The repository therefore keeps:
   `artifacts/MANIFEST.tsv`;
 - verified large CNF/DRAT pairs designated as release assets; and
 - incomplete or unverified traces outside the publication artifact set.
+
+The strict `finite-heavy` core-proof gate accepts exactly the manifest's
+audited Linux x86-64 or macOS arm64 checker hash.  A local source build remains
+useful for manual comparison, but is not a substitute for either normative
+binary in the immutable Release replay.
 
 After publication, download the public Release assets into a new
 `artifacts/downloads/` directory and verify them by running:

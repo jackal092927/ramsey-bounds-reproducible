@@ -71,7 +71,7 @@ jobs:
 
       - name: Require sufficient disk headroom
         run: |
-          minimum_kb=$((8 * 1024 * 1024))
+          minimum_kb=$((20 * 1024 * 1024))
           for path in "${GITHUB_WORKSPACE}" "${RUNNER_TEMP}"; do
             available_kb="$(df -Pk "${path}" | awk 'END {print $4}')"
             test "${available_kb}" -ge "${minimum_kb}"
@@ -146,11 +146,12 @@ jobs:
           GH_TOKEN: ''
         run: bash scripts/download_release_artifacts.sh
 
-      - name: Build source-pinned DRAT checker
+      - name: Select the audited Linux DRAT checker
         run: |
-          command -v git make cc shasum curl gh
-          bash scripts/build_drat_trim.sh "${RUNNER_TEMP}/drat-trim-build"
-          test "$(cat "${RUNNER_TEMP}/drat-trim-build/SOURCE_COMMIT")" = \
+          test -x artifacts/downloads/drat-trim-2e3-linux-x86_64
+          test "$(sha256sum artifacts/downloads/drat-trim-2e3-linux-x86_64 | cut -d ' ' -f 1)" = \
+            'b535cc5334e97fba5b5db6013625c5a0b16ce348a98d59ff91b45a83fa56b39e'
+          test "$(cat artifacts/downloads/SOURCE_COMMIT)" = \
             '2e3b2dc0ecf938addbd779d42877b6ed69d9a985'
 
       - name: Bind downloaded files to the release attestation
@@ -168,7 +169,7 @@ jobs:
         run: |
           .venv/bin/python reproduce.py finite-heavy \
             --artifact-dir artifacts/downloads \
-            --drat-trim "${RUNNER_TEMP}/drat-trim-build/drat-trim" \
+            --drat-trim artifacts/downloads/drat-trim-2e3-linux-x86_64 \
             | tee "${RUNNER_TEMP}/finite-heavy.log"
 
       - name: Retain finite-heavy log

@@ -57,9 +57,9 @@ full-box strong concavity. In the pinned source normalization, it yields
 
 After fixing the source constant \(K\), this is a
 fixed-sufficiently-large-\(C\), source-relative addition conditional on
-(S1)--(S5). The weighted-extension rule (S3) is an explicit additional
-hypothesis, not a theorem attributed as stated by HMS or Lin--Niu. For fixed
-\(C\) and \(w>\omega_0\), the logical order is \(\ell\to\infty\), then
+the version-pinned items (S1), (S2), (S4), and (S5).  Weighted reverse
+propagation (S3) is proved locally rather than imported from HMS or Lin--Niu.
+For fixed \(C\) and \(w>\omega_0\), the logical order is \(\ell\to\infty\), then
 \(w\downarrow\omega_0\), and only afterward \(C\to\infty\). The threshold
 \(C_0(K)\) is non-effective, and the result is not advertised as a comparison
 with every published terminal normalization.
@@ -75,6 +75,23 @@ The exact-seven layer remains `UNKNOWN`. This is a local obstruction, not a
 new finite Ramsey number. In particular, it does not imply
 \(R(3,18)\ge101\).
 
+Within branch 1, a later proof-carrying analysis now forces four individual
+seed edges to be preserved in every model of a sound common relaxation.  Four
+standalone DRAT refutations, independent byte reconstruction, and
+cross-architecture replay support those singleton consequences.  A checked
+satisfying model shows that the relaxation is nonempty, while an explicit
+independent 18-set shows why that model is not a repair.  Together with the
+degree cap, the singleton filter removes 87.88321365513743% of the raw
+residual-support universe, but it still does not decide exact seven.
+
+The newest structural pass makes the remaining branch-1 search cleaner without
+claiming a solution.  It proves a maximal-triangle-free normal form, installs
+the complete 530,525-mask union, and freezes their combination as one
+byte-audited CNF.  A single 300-second Sirius call returned only `UNKNOWN`; its
+incomplete proof prefix was hashed and deleted.  This identifies a precise
+next target for new formulations while leaving the theorem and global Ramsey
+interval unchanged.
+
 ## Adversarial audit interpretation
 
 The first-round mathematical and reproducibility audits were intentionally
@@ -83,10 +100,12 @@ reproduction story. Those reports remain in the repository as historical
 evidence rather than being overwritten.
 
 Fresh post-repair audits now classify the upper theorem as `PROVABLE AS
-STATED` under its explicit conditional trust boundary. The lower headline is
-`PROVABLE AFTER WEAKENING / EXTRA ASSUMPTION`; conditional on the fully stated
-(S1)--(S5), the local ledger, extraction, and crossing are `PROVABLE AS
-STATED`. The finite radius theorem remains `PROVABLE AS STATED` under its
+STATED` under its explicit conditional trust boundary.  A standalone,
+source-independent reading of the lower headline remains `PROVABLE AFTER
+WEAKENING`, because the theorem still imports the version-pinned source items
+(S1), (S2), (S4), and (S5).  Under those four printed interfaces, the theorem,
+including the locally proved weighted reverse-propagation lemma (S3), is
+`PROVABLE AS STATED`. The finite radius theorem remains `PROVABLE AS STATED` under its
 encoding, case-cover, and DRAT-checker boundary. The global claim audit's five
 wording findings and all four major reproducibility implementation findings
 are closed. A fresh independent audit that did not use the prior review

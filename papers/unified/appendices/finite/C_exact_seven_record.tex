@@ -34,7 +34,8 @@ respective SHA-256 identities
 \item[tests]
 \sha{46b0324d67baaf66bae49027bf4ddbfe3aa08684d3cbe364326bc4400914c987}
 \item[generator]
-\sha{13a7cfeb564297fcad2ea2c6ca831a6bf4b4755e0223abcf9d1bd1178103d0de}
+\sha{13a7cfeb564297fcad2ea2c6ca831a6b}\linebreak
+\sha{f4b4755e0223abcf9d1bd1178103d0de}
 \end{description}
 
 Each branch loaded the common universal bank in under six seconds and then
@@ -56,3 +57,275 @@ The state checker verifies formula dimensions, the universal bank digest,
 the exact counter truth table, exclusion of original nonedges from the
 counter, and the three timeout records.  It does not transform those timeout
 records into a satisfiability or unsatisfiability claim.
+
+\subsection{Deletion-first branch-1 follow-up}
+
+The historical ascending implementation used for the first nine
+deletion-first endpoints has SHA-256 identities
+\begin{description}
+\item[runner]
+\sha{36dc3b53941605bc4ec132b70b4f61c5afbbcda13742fe9056a38ddb1683e5a0}
+\item[tests]
+\sha{ed62d2318e64d6731bca343e829f2e65c058f8f484a72b027b2a87da9f2fd76f}
+\end{description}
+The order-aware implementation used for the subsequent seven gates has
+runner and test identities
+\begin{description}
+\item[runner]
+\sha{22ddb00aa93727aa51d2edd6d09b0e536a230e0cc17426004858e98620d6c4f8}
+\item[tests]
+\sha{b65ebc6f265de6552cdf6f8c09586f4c7c2ae01db0292908ae7998beea75a35c}
+\end{description}
+The sanitized summary identity for all sixteen endpoints is updated in the
+project-relative machine record named below.
+The runner's structural fingerprint is
+\sha{e91f07db0f01b44263fa790922e46efb}\linebreak
+\sha{a149b2f461d7afb77b53f847b9641839}.
+The project-relative machine summary and human-readable command ledger are
+\path{routes/finite/r3_18_budget7_benders_pilot_summary.json} and
+\path{routes/finite/R3_18_BUDGET7_BENDERS_PILOT_2026-08-30.md}.
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash\scriptsize}p{0.20\textwidth}
+                  >{\raggedright\arraybackslash}p{0.22\textwidth}
+                  rrr@{}}
+\caption{Historical ascending branch-1 deletion-first endpoints.}
+\label{fin:tab:benders-seven}\\
+\toprule
+run & endpoint & sec. & cuts & unproved NG\\
+\midrule
+\endfirsthead
+\toprule
+run & endpoint & sec. & cuts & unproved NG\\
+\midrule
+\endhead
+\texttt{g42\_c0} & subproblem oracle limit & 3.680 & 0 & 0\\
+\texttt{g42\_c4096} & subproblem oracle limit & 9.700 & 16 & 0\\
+\texttt{m22\_c0} & subproblem oracle limit & 15.256 & 2816 & 0\\
+\texttt{m22\_c4096} & subproblem oracle limit & 47.856 & 1039 & 0\\
+\texttt{m22\_c16384} & global wall & 180.026 & 0 & 0\\
+\texttt{maple\_c4096} & subproblem oracle limit & 62.784 & 768 & 2\\
+\texttt{g42+maple} & subproblem oracle limit & 121.884 & 10780 & 0\\
+\texttt{maple+maple} & subproblem oracle limit & 197.868 & 13362 & 2\\
+\texttt{m22+maple} & global wall & 300.095 & 12800 & 0\\
+\bottomrule
+\end{longtable}
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash\scriptsize}p{0.26\textwidth}
+                  >{\raggedright\arraybackslash}p{0.15\textwidth}
+                  rrr@{}}
+\caption{Order-aware branch-1 gates.}\label{fin:tab:benders-seven-ordered}\\
+\toprule
+run & endpoint & sec. & models & cuts\\
+\midrule
+\endfirsthead
+\toprule
+run & endpoint & sec. & models & cuts\\
+\midrule
+\endhead
+\texttt{g42\_bidir60} & global wall & 64.077 & 1 & 512\\
+\texttt{maple\_bidir60} & global wall & 60.165 & 0 & 0\\
+\texttt{g42\_bidir10} & global wall & 120.218 & 5 & 2560\\
+\texttt{m22\_bidir10} & global wall & 120.038 & 1 & 512\\
+\texttt{maple\_bidir10} & global wall & 120.059 & 4 & 2048\\
+\texttt{g42\_batch4096} & global wall & 180.200 & 4 & 16384\\
+\texttt{maple\_batch4096} & global wall & 180.089 & 3 & 12288\\
+\bottomrule
+\end{longtable}
+
+In \cref{fin:tab:benders-seven}, the final column counts only solver-trusted
+fixed-deletion \textsc{unsat} endpoints retained by the search.  No DRAT or
+LRAT proof was emitted for either endpoint, and no ordered gate added a new
+no-good.  All rows in
+\cref{fin:tab:benders-seven,fin:tab:benders-seven-ordered} therefore have global
+status \textsc{unknown}, and
+none is used in the proof of the finite theorem.
+
+On the two reconstructed deep supports, reverse vertex order returned \(512\)
+validated independent \(18\)-sets in \(11{,}261\) and \(10{,}057\) nodes,
+about \(0.006\) seconds each; the ascending order had reached its resource
+limit.  Each nonempty ordered gate likewise returned its requested cut batch
+in at most \(0.075\) seconds, but none reached a fixed-deletion subproblem.
+The same oracle-cap and order/batch/master matrix was therefore stopped rather
+than extrapolated.
+
+\subsection{Proof-carrying singleton consequences}
+
+The follow-up common relaxation \(\Psi_1\) has \(154190\) variables and
+\(718452\) clauses before candidate units.  Its formula fingerprint is
+\sha{a6f920afa451174ed05932174951481a63647a2ba603c762379f9357323fa5e2}.
+It contains \(161700\) triangle clauses, \(19680\) exact-six counter clauses,
+one fixed branch unit, \(285300\) degree-cap clauses, and the ordered bank of
+\(251771\) universal independent-18 clauses.  No learned core clause is
+installed.  Appending one candidate-deletion unit gives \(718453\) clauses.
+
+The proof-run exporter is frozen by Git commit \texttt{408e3bb} and SHA-256
+\sha{5e05f75affc5c6c5323fb2f1bddd3097c7a851c00330fd558f1f731e978936cf}.
+The final four-singleton machine summary has SHA-256
+\sha{8ae4f0d9ea919c915ba642eb03ec3d418b4419a89781377509acbe925d89555a}.
+The strongest released antichain consists of the following four singleton
+refutations; the earlier pair refutations are valid but dominated and are not
+included as normative release assets.
+
+\begin{longtable}{@{}clrr@{}}
+\caption{Branch-1 singleton-proof payloads.}
+\label{fin:tab:branch1-singleton-proofs}\\
+\toprule
+label & assumed deleted edge & CNF bytes & DRAT bytes\\
+\midrule
+\endfirsthead
+\toprule
+label & assumed deleted edge & CNF bytes & DRAT bytes\\
+\midrule
+\endhead
+\texttt{K\_a} & \((11,62)\) & 18914252 & 707650273\\
+\texttt{K\_b} & \((18,61)\) & 18914251 & 855530402\\
+\texttt{K\_c} & \((18,64)\) & 18914252 & 1117799611\\
+\texttt{K\_d} & \((18,69)\) & 18914248 & 811556002\\
+\bottomrule
+\end{longtable}
+
+The corresponding compressed CNF identities are, in table order,
+\begin{description}
+\item[\texttt{K\_a}]
+\sha{1ec7a15b9afd7c7c0944bbc663db2522b47d6f4f12fe98f23501d1006fabe411}
+\item[\texttt{K\_b}]
+\sha{1df74150cf9678e977364d4df782e179d62dff811b940d9fc0ea35c30cda845b}
+\item[\texttt{K\_c}]
+\sha{95efbf95802cf05e7ce5d676c35470989b126b6145eb00f7e67a546948bde07e}
+\item[\texttt{K\_d}]
+\sha{b852ca92b33ac461d425f62309486e30645f36f7736bd18b2b5e15b90fb27483}
+\end{description}
+The compressed DRAT identities are, in the same order,
+\begin{description}
+\item[\texttt{K\_a}]
+\sha{c71be4804965a66e2783c61ae4711e1dc5faeb13a42ecab50672dd0efdd8818c}
+\item[\texttt{K\_b}]
+\sha{c34b97f66e3513c8261e1424f66b9e2299a49b9f38a6d953ade17e6c4e266bfa}
+\item[\texttt{K\_c}]
+\sha{375abf0884e415c2f4fea15d1971b818b2535996f017269fee742e90376f7fc3}
+\item[\texttt{K\_d}]
+\sha{34853e20f7055e9a1e33b2668437046414e37a06821a82526eb4c822e61ab886}
+\end{description}
+
+CaDiCaL was pinned to source commit
+\sha{c60730422e758ef1cebe7aeddf2dda31c996bf04}; \texttt{drat-trim} was pinned
+to \sha{2e3b2dc0ecf938addbd779d42877b6ed69d9a985}.  Each solver run exited 20
+with a complete proof, and each checker run exited zero with an exact
+\texttt{s VERIFIED} line.  A separately compiled arm64 checker from the same
+source commit performed a separate cross-architecture replay of all four
+traces.  This is a second binary replay, not a second implementation of DRAT
+semantics.
+
+The PySAT-free semantic checker has SHA-256
+\sha{2dcc16137a0bd555a2553e9987968fda429e9098ec8c21affb05bfd5a5e03f3b}.
+It parses the seed and ordered bank, reconstructs both counter families
+without importing the production builder, and compares the complete DIMACS
+byte stream.  Its four audit-record SHA-256 identities are
+\begin{description}
+\item[\texttt{K\_a}]
+\sha{4637a558f46abefcfafc5940781eb4c9c76556793491e48b1eb5e919d9d6d581}
+\item[\texttt{K\_b}]
+\sha{c5d1f6823fb08388517c4eb9e0cddc040e27d080168ff4bd513928e095a908a9}
+\item[\texttt{K\_c}]
+\sha{3a95e9e412d78c2fb7af1e1ff68828846958a5f969a70996051d2c5dcbbef9bf}
+\item[\texttt{K\_d}]
+\sha{f38e987e9fecd7c4ed646cd9c0f50a3838f8ee6cadd436cd4b563d5db431b26c}
+\end{description}
+
+The common relaxation itself is nonempty.  Its deterministic compressed CNF
+has SHA-256
+\sha{39249ef8378de3f2ef412e514f6283cdaa032bc17fb25fc3448463e5566f5365};
+the complete compressed model has SHA-256
+\sha{9057db25b785640345e6f724cb1c79313642bb62ec2a19d9f310e25700de024d}.
+An independent audit with SHA-256
+\sha{7b2af8d92d35721fd6197b3ac3c5d52066bd04faa545e219cc57b94dce035921}
+evaluated all clauses and recovered the independent \(18\)-set displayed in
+the main text.  Thus this witness proves non-vacuity but is not a target
+repair.
+
+The two historical fixed-deletion supports in
+\cref{fin:tab:benders-seven} delete both \((11,62)\) and \((18,61)\).  Each is
+therefore excluded already by either of the corresponding singleton
+certificates.  Their original solver calls emitted no proofs and are not
+retroactively described as certified; the later common-relaxation proofs are
+a distinct evidence chain.
+
+The machine-readable proof record is
+\path{routes/finite/r3_18_budget7_branch1_core_proof_summary.json}; the full
+human ledger is
+\path{routes/finite/R3_18_BUDGET7_BRANCH1_CORE_PROOFS_2026-08-30.md}.
+The four singleton CNF/DRAT pairs, the common CNF/model pair, and two audited
+checker binaries are designated large release assets rather than Git objects.
+Their public-release download and clean-clone replay remain a separate
+publication gate and do not alter the exact-seven status \textsc{unknown}.
+
+\subsection{Maximal-union construction and bounded endpoint}
+
+A standalone degree-initialized one-dimensional Weisfeiler--Leman checker
+certifies the color-class profile (3,15,100), and hence the triviality of the
+seed automorphism group.  Its script, three-test regression, and audit-record
+SHA-256 identities are
+\sha{613c902fe89fedfc2e2132e6a5d7ea182b7cc4b2fd245885861c29f36ba62f18},
+\sha{93047e1673d73f6adca0109bb200d524191b9f9671d0ed84b7466203f66cc114},
+and
+\sha{8ad9fbec731a3c2f3b3012695022366fc66070265c6f5a27bfc0c66f34e872ce}.
+Thus the branch-1 gate below has no seed-symmetry implication for branches zero
+and two.
+
+The direct branch-1 maximal-union formula combines the four checked retention
+units, all \(530525\) distinct independent-\(18\) masks in the four-family
+union, and the full \(4950\)-pair maximal-triangle-free selector encoding.  Its
+identity is
+\begin{center}
+\begin{tabular}{@{}lr@{}}
+\toprule
+variables & \(639290\)\\
+clauses & \(1972360\)\\
+bytes & \(408370088\)\\
+SHA-256 & \sha{09e1784c3f43c4901dc6f6b4749fc5a74b025b08f74be58133edd1ed1096ebdb}\\
+\bottomrule
+\end{tabular}
+\end{center}
+The production formula record and independent reconstruction audit have
+SHA-256 identities
+\sha{cb3eaa1ed462713e13a951dbc113555ce8f1aa8325c266658d9cc32c8dd72026}
+and
+\sha{551e9188a4b7eb42bb40080acb0b2378ca6af69d412fb51f0c964ec2460190d2},
+respectively.  A post-review rebuild retained these two record identities and
+the exact raw-CNF identity above.
+
+The final generator, independent formula checker, and their \(11\)-test
+regression have respective SHA-256 identities
+\begin{description}
+\item[generator]
+\sha{c07c76c5c6dde10474c10d48703270b83cff5a8865d223e7674342227dbafaf4}
+\item[checker]
+\sha{9458ae9cdccc380efc1d083d6a6c06c14bd7a49ac728ca43c836ee5b62bacda2}
+\item[tests]
+\sha{2a85014c95de3e13e642ee91218cada552f4b4419c04c3e73a8b530465418df1}
+\end{description}
+The tests include command-line regressions proving that authenticated input
+symlinks are not dereferenced before the non-symlink check.
+
+One Sirius invocation used CaDiCaL~3.0.1 from source commit
+\sha{c60730422e758ef1cebe7aeddf2dda31c996bf04}; the executable SHA-256 was
+\sha{bd054bcc5864fd20c9ff117f8fff94f810f5b210014ff33971a6c1db1d0eca45}.
+The external wall was \(300\) seconds and the wrapper returned \(124\); the
+solver result was exactly \texttt{c UNKNOWN}.  The incomplete DRAT prefix had
+\(922038097\) bytes and SHA-256
+\sha{a6693fe2b3bab57f9d0e9ebe39bd7baa3883bfe2af15a5eb33b0aded972b5438}.
+It was not replayed and was deleted after hashing.  In particular, it is not a
+partial certificate and supplies no evidence toward unsatisfiability.
+
+The sanitized endpoint record and its fail-closed audit have SHA-256
+identities
+\sha{e35f7761f92ddebdb4029553fe7a2828e31c79d68820d37b1aa2bb6ac4f80571}
+and
+\sha{4e4e212f0c6bae101db00dfb118f602cc6f874e9d8833f3c43cc946432e2cc54}.
+The endpoint checker and its three-test regression have identities
+\sha{7c6879bcd9c07ed27ebf25cb601a4ce8c69e5714178e35a9fb286c740b3c2ad0}
+and
+\sha{83f545543792e22d9d825ae22ee9b00883172cf902a21d8b7be368cc80e736bd}.
+They enforce the status
+\texttt{MAXIMAL\_UNION\_TIMEOUT\_UNKNOWN\_NO\_CUT}; no branch or global
+conclusion is attached to this endpoint.

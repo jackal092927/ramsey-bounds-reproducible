@@ -2,8 +2,7 @@
 \section{The unresolved exact-seven layer}\label{fin:sec:seven}
 
 The theorem implies only \(\rho(H)\ge7\).  To distinguish this lower bound
-from an exact value, we report the first bounded experiment at deletion budget
-seven.
+from an exact value, we report bounded experiments at deletion budget seven.
 
 In branch \(i\), the fixed unit \(\neg x_{f_i}\) accounts for one deletion
 and an equality counter requires exactly six of the other \(826\) input edges
@@ -29,6 +28,360 @@ recoverable state consists of the completely reconstructed initial formula
 and universal cut bank.  Internal CDCL state was not serialized.  Exact
 hashes of the frozen result and checkpoint records are listed in
 \cref{fin:app:seven-record}.
+
+\begin{proposition}[A degree-cap lift for branch~1]
+Let \(F\) be triangle-free with \(\alpha(F)<18\).  Then
+\(\deg_F(v)\le17\) for every vertex \(v\).  In branch~1, where
+\((97,99)\) is fixed absent, every feasible set of six residual seed-edge
+deletions contains an edge incident with vertex~\(98\).  Consequently this
+condition alone excludes
+\[
+  \frac{\binom{808}{6}}{\binom{826}{6}}
+  =0.875813014052041\ldots
+\]
+of the raw residual deletion sets.
+\end{proposition}
+
+\begin{proof}
+The open neighbourhood of any vertex in a triangle-free graph is independent,
+so its size is at most~\(17\).  After deleting the fixed branch edge
+\((97,99)\), vertex~\(98\) still has seed degree~\(18\).  If \(D\) denotes
+the six residual deletions and \(A\) the selected seed-nonedge additions, then
+\[
+  \deg_F(98)
+  =18-|D\cap\delta(98)|+|A\cap\delta(98)|\le17.
+\]
+Thus \(D\) must meet the \(18\) residual seed edges incident with vertex~\(98\).
+There are \(808\) residual edges not incident with \(98\), so precisely
+\(\binom{808}{6}\) of the \(\binom{826}{6}\) raw six-edge sets are excluded.
+\end{proof}
+
+For the rest of this section put
+\[
+ E_1=E(H)\setminus\{(97,99)\},\qquad
+ \Delta_{98}=\{e\in E_1:98\in e\}.
+\]
+Thus \(|E_1|=826\), \(|\Delta_{98}|=18\), and a branch-1 repair has a
+residual deletion support \(D\in\binom{E_1}{6}\).
+
+\begin{lemma}[Soundness of the branch-1 common relaxation]
+\label{fin:lem:branch1-common-relaxation}
+Let \(\Psi_1\) be the CNF consisting, in order, of all triangle clauses, an
+exact-six counter on the literals \(\{\neg x_e:e\in E_1\}\), the unit
+\(\neg x_{97,99}\), one degree-at-most-17 counter for every vertex, and the
+ordered bank of \(251771\) universal independent-18 hitting clauses.  Every
+feasible branch-1 exact-seven repair extends to a satisfying assignment of
+\(\Psi_1\).
+\end{lemma}
+
+\begin{proof}
+The primary variables \(x_{uv}\) record the final graph.  Triangle-freeness
+satisfies every triangle clause and the branch choice satisfies the fixed
+unit.  Exactly six edges of \(E_1\) are absent, so the primary assignment has
+an extension through the exact counter.  The degree-cap proposition gives an
+extension through every degree counter.  Finally, for each stored 18-set
+\(S\), the clause
+\[
+ \bigvee_{\{u,v\}\in\binom S2}x_{uv}
+\]
+is necessary when \(\alpha(F)<18\).  Hence every clause family is satisfied.
+The bank need not contain every 18-set, so \(\Psi_1\) is a relaxation rather
+than an exact encoding.
+\end{proof}
+
+\begin{proposition}[Four proof-checked singleton entailments]
+\label{fin:prop:branch1-singleton-entailments}
+Define
+\[
+ a=(11,62),\qquad b=(18,61),\qquad
+ c=(18,64),\qquad d=(18,69).
+\]
+All four edges lie in \(E_1\setminus\Delta_{98}\).  The frozen relaxation
+satisfies
+\[
+ \Psi_1\models x_a\wedge x_b\wedge x_c\wedge x_d.
+\]
+Thus none of these four seed edges can belong to the residual deletion support
+of a feasible branch-1 repair.  No minimality assertion is made.
+\end{proposition}
+
+\begin{proof}
+For each \(e\in\{a,b,c,d\}\), a standalone CaDiCaL run refuted
+\[
+ \Psi_1\wedge\neg x_e,
+\]
+and the pinned \texttt{drat-trim} checker accepted each emitted proof.  These
+four checked refutations are equivalent to the displayed entailment by
+\(\Psi_1\).  They are not asserted to be equivalent to the target-graph
+statement; the necessary condition for target graphs follows only in the
+forward direction from \cref{fin:lem:branch1-common-relaxation}.
+
+Each DIMACS instance has \(154190\) variables and \(718453\) clauses.  A
+PySAT-free checker that imports neither the production formula builder nor
+the exporter reconstructed all four compressed CNFs byte for byte, including
+the candidate-unit polarity.  A separately compiled checker binary on a
+second architecture replayed all four proofs to the exact status
+\texttt{s VERIFIED}.  The formula, proof, checker, and artifact identities are
+recorded in \cref{fin:app:seven-record}.
+\end{proof}
+
+\begin{observation}[The common relaxation is nonempty]
+A complete CaDiCaL model for \(\Psi_1\) was checked against an independent
+byte-for-byte reconstruction of all \(718452\) clauses.  The model sets all
+four displayed edge variables to true, as the proposition requires.  It also
+contains the independent \(18\)-set
+\[
+ \{99,96,97,95,92,90,87,91,85,93,84,73,70,88,82,81,78,83\}.
+\]
+Hence the singleton entailments are not consequences of an empty common
+relaxation, but this particular model is not an exact-seven Ramsey repair.
+The satisfiability of \(\Psi_1\) resolves neither existence nor nonexistence
+for the target problem because the universal bank is incomplete.
+\end{observation}
+
+\begin{corollary}[Support exclusion beyond the degree cap]
+\label{fin:cor:branch1-singleton-count}
+Every feasible branch-1 residual support \(D\) meets \(\Delta_{98}\) and
+avoids \(\{a,b,c,d\}\).  The singleton no-goods exclude an additional
+\[
+ 1307748575589
+\]
+supports beyond those already excluded by the degree cap.  Together the two
+filters exclude
+\[
+ 380670699850897
+\]
+of the \(\binom{826}{6}=433155188594590\) raw supports and leave
+\(52484488743693\) outside these two necessary-condition filters.
+\end{corollary}
+
+\begin{proof}
+The support restrictions follow from the degree-cap proposition,
+\cref{fin:lem:branch1-common-relaxation}, and
+\cref{fin:prop:branch1-singleton-entailments}.  Avoiding the four distinguished
+edges leaves \(822\) eligible residual edges.  Because those four edges avoid
+\(\Delta_{98}\), the supports that both avoid them and fail the degree test
+are precisely the six-subsets of the other \(804\) nonincident edges.  Hence
+the number surviving both filters is
+\[
+ \binom{822}{6}-\binom{804}{6}=52484488743693.
+\]
+Subtracting this from the degree-cap survivor count gives the additional
+\(1307748575589\) exclusions.  Equivalently, the singleton clauses remove
+about \(2.431110\%\) of the degree-cap survivors, and the combined filters
+exclude about \(87.883214\%\) of the raw support universe.  These are
+support-index counts, not a wall-time speedup or a count of graphs.
+\end{proof}
+
+The four retention units also permit a stricter audit of what follows from
+the local triangle and degree systems before any new SAT call.  Propagating
+those systems to the original nonedges gives exactly \(396\) forced-absent
+addition variables: \(388\) come from pairs having more than six common
+neighbours in the fixed branch base, two are forced by the retained-star
+configuration, and six arise only from the coupled exact-six,
+\(\delta(98)\), and degree constraints.  Substitution of all \(396\) units
+into the finite \(I_{18}\) bank leaves no clause involving deletion variables
+alone.  Thus this closure is useful preprocessing, but it supplies no new
+deletion-support no-good beyond the filters proved above.
+
+There is, however, a clean normal form that applies to the target problem
+rather than merely to a finite bank.
+
+\begin{proposition}[Maximal-triangle-free normal form]
+\label{fin:prop:branch1-mtf-normal-form}
+A feasible branch-1 exact-seven repair exists if and only if one exists that
+is maximal triangle-free.  Equivalently, one may require every absent pair to
+have a common neighbour.
+\end{proposition}
+
+\begin{proof}
+Only the forward direction needs proof.  Starting from a feasible repair
+\(F\), repeatedly add an absent pair \(uv\notin E(H)\) whenever \(u\) and
+\(v\) have no common neighbour.  Such an addition creates no triangle,
+cannot increase the independence number, and does not change
+\(E(H)\setminus E(F)\).  The finite process terminates with the same exact
+seven-edge deletion support and with every still-absent original nonedge
+triangle-blocked.
+
+It remains to consider an absent pair \(e\in E(H)\).  If \(e\) were safe to
+add, doing so would again preserve triangle-freeness and could not increase
+the independence number, while reducing the one-sided deletion count from
+seven to six.  This contradicts the proof-checked theorem
+\(\rho(H)\ge7\).  The argument also applies when \(e=(97,99)\): after adding
+that fixed branch edge, at least one of the other two edges of the seed's
+unique triangle remains absent, so the resulting graph is covered by the
+global three-branch budget-six exclusion.  Hence every nonedge in the final
+graph has a common neighbour, which is precisely maximal
+triangle-freeness.  The reverse implication is immediate.
+\end{proof}
+
+This is an existence normal form, not a claim that every raw repair is
+already maximal.  It is the fixed-support analogue of the standard use of
+maximal triangle-free graphs in computational Ramsey searches
+\cite{BrinkmannGoedgebeurSchlagePuchta2012}.  For a scoped pair \(uv\), an
+exact existential CNF encoding introduces variables \(y_{uv,w}\) and uses
+
+\[
+ x_{uv}\vee\bigvee_{w\notin\{u,v\}}y_{uv,w},\qquad
+ \neg y_{uv,w}\vee x_{uw},\qquad
+ \neg y_{uv,w}\vee x_{vw}.
+\]
+
+Reverse implications are unnecessary: the \(y\)-variables only select one
+common-neighbour witness when \(uv\) is absent.  Scoping this construction to
+the \(4123\) original nonedges uses \(404054\) auxiliaries and \(812231\)
+clauses; the full maximal-triangle-free encoding uses \(485100\) auxiliaries
+and \(975150\) clauses.  A complete three-vertex truth-table audit checks the
+existential semantics.
+
+The two checked relaxation models illustrate the claim boundary.  The common
+model has one unsafe original nonedge, \((37,86)\).  Adding it would create a
+degree-\(18\) vertex, so the resulting graph is not asserted to remain a model
+of the degree-capped incomplete-bank relaxation; the same pair instead
+recovers the independent-\(18\) domination witness recorded below.  The A+
+model has exactly three unsafe original nonedges,
+\((16,64),(32,98),(40,89)\).  Adding all three gives a maximal triangle-free
+primary graph with the same seven deletions and maximum degree \(17\), but it
+still contains the already known independent set
+\(\{81,82,\ldots,97,99\}\).  Maximality is therefore complementary to, not a
+replacement for, independent-set separation.
+
+Nor can a branch-1 conclusion be transferred by relabelling.  A deterministic
+degree-initialized one-dimensional Weisfeiler--Leman refinement has \(3\),
+\(15\), and \(100\) color classes at initialization, round one, and round two.
+Every automorphism preserves every refinement color, so the singleton round
+forces the automorphism group of the labelled seed to be trivial.  The other
+two triangle-edge branches therefore require independent treatment.
+
+For completeness, the domination diagnostic used above is the following
+elementary consequence of the target conditions.  Put
+
+\[
+ Z_v=\{u\ne v:uv\notin E(F),\ N_F(u)\cap N_F(v)=\varnothing\}.
+\]
+
+Then \(N_F(v)\cup I\) is independent for every independent
+\(I\subseteq F[Z_v]\), and hence
+\(\alpha(F[Z_v])\le17-\deg_F(v)\).  In particular, degree \(17\) forces
+\(Z_v=\varnothing\), while degree \(16\) forces \(Z_v\) to be a clique of
+order at most two.  On the common model this exposes the new mask
+\texttt{2000000404414192982822020}; it has zero overlap with the universal,
+historical, A+, and fixed-base mask families.  On the A+ model it yields no
+new mask, consistently with all three unsafe pairs having degree \(16\) at
+both endpoints.  These are checked separators for relaxation models, not
+new theorems about existence.
+
+We encoded the same degree cap at both levels of a deletion-first branch-1
+pilot.  The master selects six residual deletions and addition-eligibility
+variables, separates conditional independent-set clauses, and passes a fixed
+deletion set to an exact add-only subproblem.  An incomplete master separation
+call may fall back to that exact subproblem.  If the fixed-deletion subproblem
+is itself incomplete, the run stops without learning a deletion no-good.  A
+completed fixed-deletion \textsc{unsat} may be used as solver-trusted search
+telemetry, but it is not promoted without a checked proof trace.
+
+\begin{observation}[Deletion-first endpoints, still not a theorem]
+A six-configuration bounded matrix learned between zero and \(2816\) new
+conditional independent-set cuts per run.  One MapleChrono configuration
+reached two fixed-deletion \textsc{unsat} endpoints, but emitted no proof for
+them; the same run then stopped at the independent-set oracle limit.  Three
+predeclared positive-signal extensions raised that oracle limit from two
+million to twenty million nodes.  Two stopped at exactly \(20{,}000{,}001\)
+recursive nodes inside a fixed-deletion subproblem after learning \(10{,}780\)
+and \(13{,}362\) new cuts, respectively; the third learned \(12{,}800\) cuts
+but reached its \(300\)-second global wall before entering a subproblem.  No
+run returned a verified candidate or a checked refutation.  Every endpoint
+therefore remains \textsc{unknown}.
+\end{observation}
+
+The two apparent fixed-deletion separator stalls were then reconstructed under
+an order-aware implementation.  The historical ascending recursion exhausted
+its two-million-node allowance on both supports.  Reversing the vertex order,
+which leaves the graph property unchanged, instead returned \(512\) validated
+independent \(18\)-sets in \(11{,}261\) and \(10{,}057\) recursive nodes,
+respectively, taking about \(0.006\) seconds in each case.  Thus the old
+twenty-million-node endpoints were an ordering artefact on these supports,
+not evidence of a combinatorial obstruction.
+
+We consequently ran seven further bounded gates with a reverse-first,
+bidirectional exact oracle.  On every master model for which separation was
+invoked, a batch of either \(512\) or \(4096\) validated cuts was returned in
+\(0.005\)--\(0.075\) seconds.  Nevertheless, each gate reached its global
+wall after zero to five master models; none entered a fixed-deletion
+subproblem, returned a verified candidate, emitted a proof, or learned a new
+fixed-deletion no-good.  Under these particular checkpoints and limits, every
+run reached its global wall while still in the master.  This remains bounded,
+configuration-specific telemetry rather than a claim of intrinsic hardness.
+The command lines, stable implementation hashes, all sixteen deletion-first
+endpoints, and the stop rule are recorded in \cref{fin:app:seven-record}.
+
+We also tested a genuinely different deletion-only projection.  It retains
+the exact residual counter, local wedge implications for addition
+eligibility, the complete \(235504\)-member fixed-base \(I_{18}\) covering
+family, and the vertex-\(98\) hit constraint, while forgetting the full edge
+assignment.  Its natural exact-six control has \(13159\) variables and
+\(264757\) clauses.  A pinned CaDiCaL call reached its predeclared
+\(300\)-second wall without a status line.  The incomplete proof prefix was
+hashed and deleted, and the exact-seven instance was not run under the
+predeclared stop rule.  This endpoint is \textsc{unknown}; more importantly,
+the route failed its strength gate on an already known-unsatisfiable control
+and therefore supplied no reason to spend a second long call.
+
+Finally, a no-repeat A+ bank was generated from a checked common-relaxation
+model after excluding the universal, historical, and exhaustive fixed-base
+families.  Appending its \(4096\) new \(I_{18}\) clauses and the four proved
+retention units produced a formula with \(154190\) variables and \(722552\)
+clauses.  The single authorized solver call returned a complete satisfying
+model after \(2532.362\) seconds.  An independent checker evaluated every
+clause, recovered a triangle-free \(823\)-edge primary graph, and found the
+independent \(18\)-set
+\[
+ \{81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,99\}.
+\]
+That set was absent from the installed universal and A+ banks but already
+belonged to both the historical and exhaustive fixed-base families.  Thus A+
+is a rigorously audited negative endpoint and, specifically, shows why a
+fresh prefix is inferior to installing the complete deduplicated bank.  It
+does not provide a repair or a branch refutation.
+
+We therefore reconstructed that stronger bank explicitly.  The universal,
+historical, and exhaustive fixed-base families contain \(251771\), \(64591\),
+and \(235504\) masks, respectively; their deduplicated union has \(526429\)
+members.  The \(4096\) A+ masks are disjoint from all three, giving \(530525\)
+distinct necessary \(I_{18}\) clauses.  Because the common formula already
+contains the universal family, the strengthened formula appends \(278754\)
+new hitting clauses and the four retention units.  Its deterministic DIMACS
+image has \(154190\) variables, \(997210\) clauses, \(390604816\) bytes, and
+SHA-256
+\[
+ \sha{4f7e8f5b724a657888c7814d2c25cac41c283c3db356fb8f1a15f4c7322c375d}.
+\]
+An independent reconstruction agrees byte for byte.  This is strictly
+stronger than A+: it installs the two families that were previously used
+only as no-repeat filters and directly blocks the displayed A+ witness.  It
+also differs from the deletion-first master with all fixed-base cuts, because
+it retains the full edge formula and adds \(43614\) history-only masks plus
+the \(4096\) A+ masks.  Formula construction alone is not a SAT or UNSAT
+result.
+
+We finally combined this complete mask bank with the full all-pair
+maximal-triangle-free encoding of \cref{fin:prop:branch1-mtf-normal-form}.  The
+resulting direct primary-graph CNF has \(639290\) variables, \(1972360\)
+clauses, \(408370088\) bytes, and SHA-256
+\[
+ \sha{09e1784c3f43c4901dc6f6b4749fc5a74b025b08f74be58133edd1ed1096ebdb}.
+\]
+A separate reconstruction agreed byte for byte, both before and after a
+command-line symlink-validation repair that did not change the formula.
+Exactly one externally bounded Sirius call used CaDiCaL~3.0.1 at source
+commit \sha{c60730422e758ef1cebe7aeddf2dda31c996bf04}, a \(300\)-second wall,
+non-binary DRAT, and a \(10\)-GiB proof cap.  The wrapper exited \(124\), and
+the result file contained exactly \texttt{c UNKNOWN}.  The run recorded
+\(13347\) conflicts, \(105834\) decisions, and \(1216037481\) propagations;
+these are resource telemetry only.  Its incomplete \(922038097\)-byte proof
+prefix was hashed and deleted without replay.  Consequently the run produced
+no model, certificate, learned cut, branch closure, or global Ramsey
+implication.
 
 Accordingly, none of the following is established: a repair with exactly
 seven deletions; nonexistence of such a repair; the exact value of \(\rho(H)\);

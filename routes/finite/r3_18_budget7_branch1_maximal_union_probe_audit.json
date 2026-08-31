@@ -1,0 +1,10 @@
+{
+  "claim": "UNKNOWN_NO_CUT_NO_BRANCH_CLOSURE",
+  "endpoint_record_sha256": "e35f7761f92ddebdb4029553fe7a2828e31c79d68820d37b1aa2bb6ac4f80571",
+  "formula_sha256": "09e1784c3f43c4901dc6f6b4749fc5a74b025b08f74be58133edd1ed1096ebdb",
+  "proof_prefix_deleted": true,
+  "retained_files_verified": 11,
+  "schema": "ramsey-r3-18-n100-exact-budget7-branch1-maximal-union-probe-audit-v1",
+  "solver_exit_code": 124,
+  "status": "VERIFIED_MAXIMAL_UNION_TIMEOUT_UNKNOWN_ENDPOINT"
+}

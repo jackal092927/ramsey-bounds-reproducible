@@ -1,0 +1,27 @@
+{
+  "cnf": {
+    "basename": "branch1_maximal_union.cnf",
+    "bytes": 408370088,
+    "clauses": 1972360,
+    "header_and_clause_lines": 1972361,
+    "sha256": "09e1784c3f43c4901dc6f6b4749fc5a74b025b08f74be58133edd1ed1096ebdb",
+    "variables": 639290
+  },
+  "exact_seven_repair_exists": null,
+  "four_family_union": {
+    "appended_beyond_common": 278754,
+    "appended_ordered_masks_sha256": "2242d10f9ea3cefedef7a8c02be9a7df41db3cdb6580733e3fca9391db46d1d4",
+    "masks": 530525,
+    "ordered_masks_sha256": "f5c1c60877306900c1aa81bd3a7f357c3d16464ad329c676639a6f6bda9a682d"
+  },
+  "full_maximality": {
+    "auxiliary_variables": 485100,
+    "clauses": 975150,
+    "pairs": 4950
+  },
+  "global_ramsey_implication": null,
+  "learned_masks": [],
+  "schema": "ramsey-r3-18-n100-exact-budget7-branch1-maximal-union-audit-v1",
+  "solver_invoked": false,
+  "status": "MAXIMAL_UNION_CNF_RECONSTRUCTED_BYTE_EXACT"
+}

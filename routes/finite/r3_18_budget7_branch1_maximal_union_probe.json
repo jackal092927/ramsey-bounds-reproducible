@@ -1,0 +1,82 @@
+{
+  "claim_boundary": {
+    "branch1_closed": false,
+    "exact_seven_resolved": false,
+    "global_Ramsey_improvement": false,
+    "learned_cut_from_run": false,
+    "other_triangle_edge_branches_closed": false,
+    "sat_established": false,
+    "unsat_established": false
+  },
+  "formula": {
+    "bytes": 408370088,
+    "clauses": 1972360,
+    "independent_reconstruction_status": "MAXIMAL_UNION_CNF_RECONSTRUCTED_BYTE_EXACT",
+    "sha256": "09e1784c3f43c4901dc6f6b4749fc5a74b025b08f74be58133edd1ed1096ebdb",
+    "variables": 639290
+  },
+  "implementation": {
+    "checker_sha256": "9458ae9cdccc380efc1d083d6a6c06c14bd7a49ac728ca43c836ee5b62bacda2",
+    "design_record_sha256": "266ca29292b61d14f033b402345cdab934d4702336cdd03fb9153b66925ed34d",
+    "generator_sha256": "c07c76c5c6dde10474c10d48703270b83cff5a8865d223e7674342227dbafaf4",
+    "production_record_sha256": "cb3eaa1ed462713e13a951dbc113555ce8f1aa8325c266658d9cc32c8dd72026",
+    "targeted_tests": 9,
+    "targeted_tests_passed": 9,
+    "tests_sha256": "2a85014c95de3e13e642ee91218cada552f4b4419c04c3e73a8b530465418df1"
+  },
+  "probe": {
+    "binary_proof": false,
+    "conflicts": 13347,
+    "decisions": 105834,
+    "end_inferred_from_result_mtime_utc": "2026-08-31T07:14:03.593298596Z",
+    "exit_code": 124,
+    "host": "sirius.cs.rutgers.edu",
+    "maximum_resident_set_megabytes": 1897.78,
+    "proof_byte_cap": 10737418240,
+    "propagations": 1216037481,
+    "result_text": "c UNKNOWN",
+    "solver": "CaDiCaL 3.0.1",
+    "solver_binary_sha256": "bd054bcc5864fd20c9ff117f8fff94f810f5b210014ff33971a6c1db1d0eca45",
+    "solver_source_commit": "c60730422e758ef1cebe7aeddf2dda31c996bf04",
+    "start_utc": "2026-08-31T07:09:03Z",
+    "timeout_signal": "SIGTERM",
+    "wall_limit_seconds": 300,
+    "wall_seconds_reported": 300.0
+  },
+  "proof_prefix": {
+    "bytes": 922038097,
+    "complete": false,
+    "deleted_after_hashing": true,
+    "replayed": false,
+    "sha256": "a6693fe2b3bab57f9d0e9ebe39bd7baa3883bfe2af15a5eb33b0aded972b5438",
+    "usable_as_certificate": false
+  },
+  "record_collection": {
+    "end_timestamp_is_collection_time_not_solver_evidence": true,
+    "first_exit_code_serialization_attempt_failed_after_solver_completed": true,
+    "solver_exit_code_was_preserved_by_the_shell_as": 124,
+    "scientific_effect_of_collection_error": "none"
+  },
+  "retained_files": {
+    "branch1_maximal_union_gate.json": "cb3eaa1ed462713e13a951dbc113555ce8f1aa8325c266658d9cc32c8dd72026",
+    "cnf_audit.json": "551e9188a4b7eb42bb40080acb0b2378ca6af69d412fb51f0c964ec2460190d2",
+    "incomplete_proof.sha256": "2c645def694edabc2deae409d044aca18ebc5214e0f93777792b37fe72a4e297",
+    "solver.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solver.stdout": "05819030219807d0eecf6d63e30ae124288002a167754254926abd2f232fb978",
+    "solver_end_recorded_utc.txt": "3c1f63c769190c2d0dfc3b7da1054d4f4f5b28acb75923865dd4223add400d27",
+    "solver_exit_code.txt": "ca2ebdf97d7469496b1f4b78958f9dc8447efdcb623953fee7b6996b762f6fff",
+    "solver_inputs.sha256": "df4b8febc3e9e9cc312d967cdb2546646ab0c8a19c017a5fc312d9572fe0c108",
+    "solver_outputs.sha256": "43de474155efb69e71771a575828dc7d5fe56b0c0b7c8ff357b8fe3938501d83",
+    "solver_result.sol": "8fba55cea0f98be36fab7b65349dda867a58aabfcf974a46098f5123830ac5cb",
+    "solver_start_utc.txt": "c32b101b31a189a68ed38d877a9d708234ece0e3e95fb5a883ee582f2e27d715"
+  },
+  "schema": "ramsey-r3-18-n100-exact-budget7-branch1-maximal-union-probe-v1",
+  "status": "MAXIMAL_UNION_TIMEOUT_UNKNOWN_NO_CUT",
+  "stop_rule": {
+    "additional_solver_call_authorized": false,
+    "incomplete_proof_may_be_replayed_or_promoted": false,
+    "resume_allowed_under_this_gate": false,
+    "solver_swap_allowed_under_this_gate": false,
+    "timeout_learns_anything": false
+  }
+}

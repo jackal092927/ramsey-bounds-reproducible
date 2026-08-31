@@ -320,10 +320,12 @@ direct call to the original enumerator for replay of runs made with script
 SHA-256
 `36dc3b53941605bc4ec132b70b4f61c5afbbcda13742fe9056a38ddb1683e5a0`.
 `reverse` applies the same exact recursion after the deterministic relabeling
-`99,98,...,0`.  The default `bidirectional` mode spends at most half of each
-declared node and wall budget on `reverse` first, then gives the remaining
-aggregate budget to `ascending`.  Relabeling changes only search order: every
-returned mask is mapped back to the original labels before a cut is formed.
+`99,98,...,0`.  The default `bidirectional` mode starts `reverse` with half
+the configured node threshold and wall budget, then gives the remaining
+aggregate budget to `ascending`.  The historical enumerator may visit
+threshold plus one nodes, and the aggregate accounting preserves that
+convention. Relabeling changes only search order: every returned mask is
+mapped back to the original labels before a cut is formed.
 Resource-limited passes remain `UNKNOWN`; only a pass that exhausts its search
 space can certify absence.  Checkpoints record the chosen schedule and each
 pass's limits, nodes, time, witnesses, and completion status.  The CNF and its
@@ -345,3 +347,137 @@ and is not a theorem; in particular, neither a fixed-deletion no-good nor a
 master UNSAT endpoint establishes the branch theorem without proof-producing
 reconstruction.  A verified SAT witness would establish `R(3,18) >= 101`, but
 no such witness is presently claimed here.
+
+### Exact-seven branch-1 singleton certificates
+
+The strongest current branch-1 proof antichain consists of four singleton
+consequences in the frozen common relaxation:
+
+```text
+x_11,62 = x_18,61 = x_18,64 = x_18,69 = 1.
+```
+
+Each negated singleton has a standalone checked DRAT refutation. The
+PySAT-free semantic checker reconstructs all 718,453 clauses byte for byte,
+and the strict proof replay accepts only the four declared singleton asset
+pairs and one of two audited `drat-trim` binary hashes. A separate complete
+model audit proves the 718,452-clause common relaxation satisfiable and
+recovers an explicit independent 18-set, so the model is not a target repair.
+The full claim boundary, hashes, cross-architecture replay, and exact support
+counts are in
+[R3_18_BUDGET7_BRANCH1_CORE_PROOFS_2026-08-30.md](R3_18_BUDGET7_BRANCH1_CORE_PROOFS_2026-08-30.md).
+
+Targeted source checks are:
+
+```bash
+.venv/bin/python -m unittest \
+  routes.finite.test_check_r3_18_budget7_branch1_core_cnf \
+  routes.finite.test_check_r3_18_budget7_branch1_core_proofs \
+  routes.finite.test_check_r3_18_budget7_branch1_common_sat -v
+```
+
+These certificates prune branch 1 but do not close it. Exact seven remains
+`UNKNOWN`, and no `R(3,18)>=101` claim follows.
+
+### Exact-seven degree--distance-two domination separator
+
+The bounded structural separator in
+[R3_18_BUDGET7_BRANCH1_DOMINATION_SEPARATOR_2026-08-30.md](R3_18_BUDGET7_BRANCH1_DOMINATION_SEPARATOR_2026-08-30.md)
+implements the necessary condition
+`deg(v) + alpha(F[Z_v]) <= 17`, where `Z_v` contains nonneighbors of `v`
+having no common neighbor with `v`.  Its independent audit of the frozen
+common model finds one new degree-17 independent-18 mask and no degree-16
+mask.  This is an ordinary valid independent-set clause, not a stronger
+relaxation, branch refutation, or Ramsey-number improvement.
+
+Production overlap classification is fail-closed: the universal, historical,
+and A+ mask files must match their exact SHA-256 and mask count; symlinks,
+non-regular files, duplicate JSON keys, and duplicate masks are rejected.
+The accepted basename, byte count, mask count, and digest of all three inputs
+are recorded in the audit JSON.  The scripted bounded CEGAR state machine has
+fixed limits of 16 SAT models, 65,536 novel masks, 4,096 degree-16 masks per
+model, and 900 aggregate seconds.  It has not been connected to or used to
+start a live solver.
+
+The reproducible files are pinned as follows:
+
+| file | SHA-256 |
+|---|---|
+| `check_r3_18_budget7_branch1_domination_witnesses.py` | `a612d431df71fdc7c8eb7cf96afd73aa9371d0af2de1a821068de23806f976b6` |
+| `r3_18_budget7_branch1_domination_cegar.py` | `ef1051c948ef2f615d3313de8a6151805c42fa07ad70fe002f2938bdf340c202` |
+| `test_r3_18_budget7_branch1_domination_cegar.py` | `8fd35c5316e550ac541fffacf9edf793605626d7e95ae4dc9c0cdd21fc6b0351` |
+| `r3_18_budget7_branch1_domination_witness_audit.json` | `e9ccc8a14c6375e47809f4231e15a0926e76500e5bb8950761a66df3a7c41cd2` |
+| `r3_18_budget7_branch1_domination_separator_design.json` | `479f9cb616e5ec26257f3db2a4abf8cdbb2743567cf6a6405c7eddbf2a4d68a5` |
+| `R3_18_BUDGET7_BRANCH1_DOMINATION_SEPARATOR_2026-08-30.md` | `f0fda1e629ef28ad4b19b17a81e8eb7f666e0ddb1ea9c2e9f41f5c452e9383b9` |
+
+The 15 asset-light regression tests are:
+
+```bash
+.venv/bin/python -m unittest \
+  routes.finite.test_r3_18_budget7_branch1_domination_cegar -v
+```
+
+They include a same-count mask-file substitution regression, so retaining a
+count while changing file content cannot forge a zero-overlap result.  Every
+cap, timeout, incomplete scan, stale or malformed model, backend error, and
+unchecked UNSAT endpoint remains explicitly non-theorem `UNKNOWN` or
+`UNSAT_UNCHECKED` evidence.
+
+### Exact-seven branch-1 full mask union
+
+The solver-free builder and checker in
+[build_r3_18_budget7_branch1_full_mask_union.py](build_r3_18_budget7_branch1_full_mask_union.py)
+authenticates and deduplicates the universal, historical, exhaustive
+fixed-base, and A+ independent-18 mask families. The three older families
+have 526,429 distinct masks after 25,437 duplicate memberships are removed;
+the 4,096 A+ masks are disjoint, giving 530,525 masks in total. Since the
+common CNF already contains the 251,771 universal masks, the deterministic
+augmentation adds four proof-checked positive units and 278,754 new I18
+clauses.
+
+The resulting 154,190-variable, 997,210-clause plain DIMACS file has
+390,604,816 bytes and SHA-256
+`4f7e8f5b724a657888c7814d2c25cac41c283c3db356fb8f1a15f4c7322c375d`.
+It was constructed without a solver and audited line by line; the large CNF
+is reproducible and is not stored in Git. This is materially stronger than
+the earlier A+ gate: that gate used history and fixed base only as exclusion
+families and its checked SAT model violates a mask in both. It is also not a
+duplicate of Benders `--all-fixed-base-cuts`, which uses projected master
+clauses and omits 43,614 history-only plus 4,096 A+ masks.
+
+Full overlap counts, input and output hashes, the 11-test regression, and the
+one-run/300-second optional-probe stop rule are in
+[R3_18_BUDGET7_BRANCH1_FULL_MASK_UNION_2026-08-30.md](R3_18_BUDGET7_BRANCH1_FULL_MASK_UNION_2026-08-30.md).
+That solver-free formula alone has no endpoint claim.
+
+### Exact-seven branch-1 maximal-union gate
+
+The maximal-union gate combines the complete mask union above with the full
+all-pair maximal-triangle-free selector normal form.  The deterministic CNF has
+639,290 variables, 1,972,360 clauses, 408,370,088 bytes, and SHA-256
+`09e1784c3f43c4901dc6f6b4749fc5a74b025b08f74be58133edd1ed1096ebdb`.
+Independent reconstruction matched byte for byte.  The generator and checker
+reject symlinked authenticated inputs at their command-line boundary; two
+regression tests cover the formerly vulnerable pre-validation path handling.
+A separate deterministic 1-WL audit reaches 100 singleton colors after two
+refinement rounds and therefore certifies that the seed automorphism group is
+trivial; branch-1 results cannot be transferred to branches 0 or 2 by
+relabeling.
+
+Exactly one externally bounded Sirius call ran for 300 seconds.  The wrapper
+returned 124 and the result was `c UNKNOWN`; no complete model, replayed proof,
+or learned cut resulted.  The incomplete 922,038,097-byte DRAT prefix was
+hashed and deleted, so it is not a certificate.  The sanitized endpoint and
+fail-closed audit are
+`r3_18_budget7_branch1_maximal_union_probe.json` and
+`r3_18_budget7_branch1_maximal_union_probe_audit.json`.  Recheck them with:
+
+```bash
+.venv/bin/python \
+  routes/finite/check_r3_18_budget7_branch1_maximal_union_probe.py
+```
+
+Full design, reconstruction, endpoint, and stop-rule details are in
+[R3_18_BUDGET7_BRANCH1_MAXIMAL_UNION_GATE_2026-08-30.md](R3_18_BUDGET7_BRANCH1_MAXIMAL_UNION_GATE_2026-08-30.md).
+Branch 1 and exact seven remain `UNKNOWN`; there is no global Ramsey-number
+implication.

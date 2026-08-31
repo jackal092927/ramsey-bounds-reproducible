@@ -1,5 +1,11 @@
 # Second-round adversarial review of the repaired lower-bound component
 
+> **Later closure.** This report records an earlier proof state. A subsequent
+> targeted reconstruction proved the weighted implication S3 locally from the
+> indicator kernel, projection identities, and tower property; see
+> `reviews/LOWER_S3_CLOSURE_2026-08-30.md`. Earlier statements below that retain
+> S3 as a formal extra assumption are superseded.
+
 Date: 2026-08-30  
 Review mode: read-only mathematical audit; no source component was edited  
 Files reviewed:
@@ -465,7 +471,7 @@ controlled-residual calculation itself.
 
 ---
 
-## Round-2 repair disposition (2026-08-30)
+## Historical round-2 repair disposition (2026-08-30)
 
 This disposition records the state after implementing the minimal repair set
 above.  It supersedes the issue statuses in the earlier read-only audit, but
@@ -478,7 +484,7 @@ does **not** turn the source-relative theorem into an unconditional theorem.
 |---|---|---|
 | S1 | **CLOSED AS A FORMAL SOURCE HYPOTHESIS** | The Gaussian/Bartlett space, diagonal-first filtration, $h_{ij}$, $A_i^R$, exact $b_{ij}$, and the red-admissible history event $\mathfrak H^R_{r,s}$ are defined with all $r,i,j,s$ quantifiers. |
 | S2 | **CLOSED AS A FORMAL SOURCE HYPOTHESIS** | The conditioning is named; the centered variables are defined; the square-MGF range $0\le x\le1/8$, the $Q_0$ estimate, and the pre-Cauchy allocation $\sum_j(u_j^0)^2$ are displayed. |
-| S3 | **CLOSED AS A FORMAL EXTRA ASSUMPTION** | Equations (2.32)--(2.41) define $\mathcal P_s^T$, $\mathcal K_i^T$, the one-step premise, the full conditional invariant, the law of total probability, both projection identities, and the scalar baseline.  S3 is still explicitly identified as a weighted extension, not as a theorem stated verbatim in HMS or Lin--Niu. |
+| S3 | **HISTORICAL SNAPSHOT: CLOSED AS A FORMAL EXTRA ASSUMPTION; LATER PROVED LOCALLY** | Equations (2.32)--(2.41) first made the interface precise.  The subsequent closure cited at the top of this file proves S3 from the indicator-kernel conjugation and tower property, so it is no longer an assumption. |
 | S4 | **CLOSED AS A FORMAL SOURCE HYPOTHESIS** | $\Gamma_R$, $p_I$, $P^*_{R,r}$, the retained-order relabeling, and every $0\le u\le\ell$ are defined. |
 | S5 | **CLOSED AS A FORMAL SOURCE HYPOTHESIS** | $P_{B,r}$ and the blue clique event are defined, and the old $o_C(\ell^2)$ is replaced by an explicit sequence $\epsilon_{C,\ell}\to0$ for fixed $C$. |
 
@@ -495,7 +501,8 @@ On histories outside $\mathfrak H^R_{r,s}$ its left side is zero.  On an
 admissible history, the identities for $\mathcal P_i^T$ and
 $\mathcal P_{i-1}^T$ turn the kernel bound into the preceding state by exact
 reverse induction.  This closes the former undefined-state objection, while
-preserving S3 as an explicit trust-boundary assumption.
+preserving S3 as an explicit trust-boundary assumption at this historical
+snapshot.  The later closure removes that particular assumption.
 
 ### Source-line map disposition
 
@@ -563,12 +570,12 @@ definitions, method-cap definition, source appendix, and final references.
 The full `bash scripts/reproduce_lower.sh` run also passed and ended with
 `LOWER_THEOREM_REPRODUCED`.
 
-Final statuses:
+Historical snapshot statuses (superseded for S3 by the closure note above):
 
-- **Source-relative Ramsey theorem (1.1): PROVABLE AFTER WEAKENING / EXTRA
-  ASSUMPTION.**  The minimum remaining condition is the explicit S1--S5
-  interface, especially the separately stated weighted rule S3 and the frozen
-  scalar baseline.  It is not an unconditional theorem.
+- **Source-relative Ramsey theorem (1.1): HISTORICAL SNAPSHOT, PROVABLE AFTER
+  WEAKENING / EXTRA ASSUMPTION.**  At this stage the minimum condition was the
+  explicit S1--S5 interface.  In the current manuscript S3 is proved locally;
+  S1, S2, S4, and S5 remain the source boundary.
 - **Local controlled-residual ledger, extraction algebra, and red--blue
   crossing: PROVABLE AS STATED, conditional on S1--S5.**
 - **Normalized exact-merge uniqueness: PROVABLE AS STATED** in its repaired
@@ -578,6 +585,7 @@ Final statuses:
   optimality follows.
 
 Accordingly, the lower component is publication-grade as an explicitly
-source-relative conditional result.  It remains unsuitable for presentation
-as a source-independent unconditional Ramsey theorem unless S3 and the
-version-pinned source hypotheses are proved inside the manuscript.
+source-relative conditional result.  Even after the later local proof of S3,
+it remains unsuitable for presentation as a source-independent unconditional
+Ramsey theorem because S1, S2, S4, and S5 are still version-pinned source
+hypotheses.

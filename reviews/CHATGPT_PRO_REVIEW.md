@@ -1,5 +1,11 @@
 # ChatGPT Pro adversarial-review report and local disposition
 
+> **Later closure.** A subsequent targeted reconstruction proved the S3
+> weighted implication locally from the indicator kernel and tower property.
+> Statements below that retain S3 as an extra assumption describe this earlier
+> review stage and are superseded by
+> `reviews/LOWER_S3_CLOSURE_2026-08-30.md`.
+
 Date received: 2026-08-30  
 Scope: the pre-final unified manuscript uploaded to a private ChatGPT thread,
 followed by line-by-line comparison with the current repository source  
@@ -49,7 +55,7 @@ failure modes:
 | upper machine objects | The reviewer could not inspect six JSON certificates, exact-diagonal cells, outer-wedge checks, accepted logs, or source snapshots from the PDF alone. | **MOSTLY A PDF-ONLY AVAILABILITY LIMIT.** All six JSON files, their complete hashes, all tracked checkers, and the deterministic rational cell-generation code are in the public source repository. The cells are generated partitions, not missing data files. External source members are version-pinned and hash-checked on download. Public immutability of the final tagged snapshot remains a release gate. |
 | upper parser | The repair checklist requested fail-closed parsing and outward-decimal discipline. | **HARDENED POST-REVIEW.** The canonical loader rejects duplicate keys, unknown or missing fields, non-string numeric data, and non-finite decimals; canonical mode also enforces filenames, order, file hashes, and the final displayed tuple. The final base is printed from an outward upper enclosure. |
 | lower hidden constant | The reviewer requested an explicit source-error constant \(K\), \(C_0(K)\), and a finite-\(C\) source theorem. | **CURRENTLY FIXED, WITH NOTATION STRENGTHENED.** The source now fixes one non-effective absolute \(K\), defines \(B_R(C)\), and makes explicit that \(\vartheta_C\), \(B_R(C)\), and \(C_0\) suppress their dependence on \(K\). The order is: fix \(K\); for each sufficiently large fixed \(C\) and fixed \(w>\omega_0\), take \(\ell\to\infty\); then let \(w\downarrow\omega_0\); only afterward study \(C\to\infty\). |
-| lower S3 provenance | The source scalar baseline, the additional weighted implication, and the local nonuniform comparison were too tightly bundled in one item. | **VALID MINOR AND REPAIRED.** The scalar baseline is now part of (S2), only \((2.37)\Rightarrow(2.38)\) is the additional (S3) hypothesis, and the total-probability/projection identities are explicitly explanatory rather than a proof of S3. |
+| lower S3 provenance | The source scalar baseline, the additional weighted implication, and the local nonuniform comparison were too tightly bundled in one item. | **VALID REVIEW-STAGE MINOR; SUBSEQUENTLY CLOSED MORE STRONGLY.** The scalar baseline was separated into (S2); a later targeted reconstruction then proved S3 locally from the indicator kernel and tower property.  The current source assumptions are S1, S2, S4, and S5. |
 | lower histories and notation | The reviewer requested \(\mathfrak H^R_{r,i-1}\) histories and definitions of \(t_0,Q_0,u_j^0\) before use. | **HISTORIES WERE ALREADY FIXED; NOTATION REPAIRED.** "Red-admissible" was already defined as membership in \(\mathfrak H^R\). The post-review source now defines \(t_0\) and \(u_j^0\) at their first source-interface use; \(Q_0\) is defined where the reverse-induction state is introduced. |
 | lower \(1/64\) scope | The reviewer warned against a universal optimality statement. | **CURRENTLY FIXED / REVIEW AGREES.** The cap applies only to Definition 16.1's scalar residual class and expressly excludes adaptive, matrix, and higher-order methods. |
 | finite counter semantics | Clause regeneration used PySAT's sequential counter, but the paper did not give a constructive proof of its projection semantics. | **VALID TRUST-BOUNDARY HARDENING AND REPAIRED.** The finite part now proves the prefix-threshold sequential-counter lemma. A separate implementation that does not import PySAT regenerates the at-most-four and exact-five blocks, checks their clause digests and dimensions, constructs satisfying auxiliary assignments, and compares all six stored blocks when the release assets are present. |
@@ -98,15 +104,15 @@ The strongest submission-safe statements remain:
    with certified unrounded base below `3.780685288379640114`.
 
 2. After fixing the non-effective source constant \(K\), and conditional on
-   (S1), (S2), (S4), (S5), plus the additional weighted-extension hypothesis
-   (S3), the fixed-ratio exponent receives the source-relative term
+   source items (S1), (S2), (S4), and (S5), with weighted propagation (S3)
+   proved locally, the fixed-ratio exponent receives the source-relative term
 
    \[
    \widehat H_*(C)=\frac{1+o(1)}{64\log C}
    \]
 
-   in the stated order of limits. This is not an unconditional Ramsey
-   improvement with S3 removed.
+   in the stated order of limits. This is not a source-independent
+   unconditional Ramsey improvement.
 
 3. For the specified content-addressed labelled seed \(H\), every triangle-free
    \(F\) with \(\alpha(F)<18\) satisfies \(d_H(F)\ge7\), with additions outside
@@ -118,9 +124,9 @@ The strongest submission-safe statements remain:
 No submission or immutable artifact release should describe the package as
 fully publicly reproducible until the final tag, exact twelve-asset Release,
 credential-free download, and clean-clone final-tag replay have passed. No
-future edit may remove the Yang--Mao trust boundary, the additional status of
-(S3), the conventional SAT/DRAT trusted kernel, or the exact-seven and global
-\(R(3,18)\) disclaimers without new proof.
+future edit may remove the Yang--Mao trust boundary, the four remaining lower
+source items, the conventional SAT/DRAT trusted kernel, or the exact-seven and
+global \(R(3,18)\) disclaimers without new proof.
 
 After the repairs above, neither the Pro report nor the independent local
 reconstructions supply a known counterexample to any of the three scoped

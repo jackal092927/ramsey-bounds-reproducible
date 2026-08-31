@@ -7,8 +7,8 @@ The public source repository~\cite{Repository2026} separates lightweight
 tracked checks from large proof replay.  Its accompanying evidence release is
 designated at
 \url{https://github.com/jackal092927/ramsey-bounds-reproducible/releases/tag/evidence-2026-08-30}
-and is valid only if it contains exactly the twelve compressed CNF/DRAT
-payloads listed in \path{artifacts/MANIFEST.tsv}.  Publication, immutability,
+and is valid only if it contains exactly the 26 assets listed in
+\path{artifacts/MANIFEST.tsv}.  Publication, immutability,
 credential-free download, and final-tag replay are release gates recorded
 separately; they are not premises of the graph theorem.
 
@@ -23,6 +23,17 @@ bash scripts/bootstrap.sh
 .venv/bin/python reproduce.py quick
 \end{verbatim}
 \endgroup
+The retained maximal-union timeout endpoint is audited separately, without
+recreating or promoting its deleted proof prefix, by
+\begingroup\scriptsize
+\begin{verbatim}
+.venv/bin/python \
+  routes/finite/check_r3_18_budget7_branch1_maximal_union_probe.py
+\end{verbatim}
+\endgroup
+That checker requires exit \(124\), the exact \texttt{c UNKNOWN} result, the
+fixed formula and solver hashes, and the absence of any retained file named as
+a proof certificate.
 The proof-critical Python packages are pinned to
 \texttt{python-flint==0.9.0}, \texttt{mpmath==1.4.1},
 \texttt{python-sat==1.9.dev13}, and \texttt{six==1.17.0}.  The finite route
@@ -43,45 +54,54 @@ manifest exactly and then checks the content before decompression:
 \endgroup
 The exact mode also rejects unmanifested files, so a stale or mixed download
 directory cannot masquerade as the immutable release payload.
-Build \texttt{drat-trim} from the pinned source commit with
-\path{scripts/build_drat_trim.sh}; a platform-specific executable hash is
-recorded but not used as a cross-platform acceptance condition.  The one
+The manifest includes audited Linux x86-64 and macOS arm64
+\texttt{drat-trim} binaries, their source-commit marker, and the upstream
+license.  The strict branch-1 replay accepts exactly either audited binary
+hash; \path{scripts/build_drat_trim.sh} remains a non-normative manual
+comparison helper.  The one
 integrated command
 \begin{verbatim}
 .venv/bin/python reproduce.py finite-heavy \
   --artifact-dir /path/to/release-assets \
-  --drat-trim /absolute/path/to/drat-trim
+  --drat-trim /absolute/path/to/audited-manifest-binary
 \end{verbatim}
 materializes a temporary overlay containing tracked semantic metadata and the
-twelve release payloads.  It compares the independent sequential schemas with
-all six actual counter blocks, reconstructs all six formulas, replays all six
-proofs, and audits the exact-seven state.  A proof is accepted only when the
+26 release assets.  It compares the independent sequential schemas with all
+six theorem counter blocks, reconstructs the six theorem formulas and four
+singleton formulas, replays all ten proofs, checks the complete common
+relaxation model, and audits the exact-seven state.  A proof is accepted only when the
 checker exits zero and prints an exact \texttt{s VERIFIED} status line.
 
 \subsection{Why large proofs are release assets}
 
-The six exact-six compressed files occupy about \(1.26\) GB, while the three
-raw DRAT traces occupy about \(6.39\) GB.  Adding the smaller budget-five
-proofs to ordinary Git history would still make cloning needlessly expensive.
+The six exact-six compressed files already occupy about \(1.26\) GB, and the
+four singleton compressed proofs add several more gigabytes.  Adding these or
+the smaller budget-five proofs to ordinary Git history would make cloning
+needlessly expensive.
 The repository therefore tracks code, matrices, cut banks, semantic records,
 tests, the paper, and a content-addressed manifest.  CNF and DRAT payloads are
 designated for distribution as immutable GitHub Release assets, keyed by
 SHA-256 and byte count.  No DOI-bearing archival mirror is claimed.  This design keeps ordinary
 clones reviewable while preserving bit-for-bit replay.
 
-The release is complete only if it includes both the three budget-five proof
-pairs used by \cref{fin:prop:budget5} and the three exact-six proof pairs used by
-\cref{fin:prop:unsat}.  Their identities are listed in
-\cref{fin:tab:budget5-artifacts,fin:tab:budget6-artifacts}.  Incomplete, corrupt, and
-exploratory traces are explicitly excluded.
+The release is complete only if it includes the three budget-five proof pairs
+used by \cref{fin:prop:budget5}, the three exact-six proof pairs used by
+\cref{fin:prop:unsat}, the four strongest singleton proof pairs, the common
+CNF/model pair, and the audited checker toolchain files.  Their identities are
+listed in
+\cref{fin:tab:budget5-artifacts,fin:tab:budget6-artifacts,fin:tab:branch1-singleton-proofs}
+and in the strict manifest.  Dominated pair-core,
+incomplete, corrupt, and exploratory traces are explicitly excluded.
 
 \subsection{Reproducibility contract}
 
-A reproduction should report four logically distinct outcomes:
+A reproduction should report five logically distinct outcomes:
 \begin{enumerate}[label=(\arabic*)]
 \item the seed and artifact hashes match;
 \item semantic reconstruction passes;
-\item each required DRAT replay is verified; and
+\item each required DRAT replay is verified;
+\item the common-relaxation SAT model is checked and its independent
+  \(18\)-set is recovered; and
 \item the exact-seven endpoint remains \textsc{unknown}, unless a new,
   separately reviewed certificate supersedes it.
 \end{enumerate}

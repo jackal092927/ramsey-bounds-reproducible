@@ -266,9 +266,11 @@ def enumerate_cliques_with_order(
 
     ``ascending`` is the historical low-bit implementation, unchanged.
     ``reverse`` is the isomorphic high-label-first search.  ``bidirectional``
-    spends at most half of the declared node and wall budget on reverse first,
-    then gives the remaining declared budget to ascending.  A resource-limited
-    pair remains incomplete; a complete pass alone is a proof of exhaustion.
+    starts reverse with half of the configured node threshold and wall budget,
+    then gives the aggregate remainder to ascending.  The historical enumerator
+    may visit threshold plus one nodes, and that convention is preserved.
+    A resource-limited pair remains incomplete; a complete pass alone is a
+    proof of exhaustion.
     """
 
     if oracle_order not in ORACLE_ORDER_CHOICES:
@@ -369,8 +371,8 @@ def enumerate_cliques_with_order(
     return result, {
         "strategy": "bidirectional",
         "semantics": (
-            "reverse-first half-budget, then historical ascending with the "
-            "remaining aggregate node/wall budget"
+            "reverse-first half configured node threshold/wall budget, then "
+            "historical ascending with the remaining aggregate budget"
         ),
         "passes": passes,
         "historical_ascending_reference_script_sha256": (
@@ -923,11 +925,80 @@ def _strict_state_hash(masks: Iterable[int], no_goods: Iterable[set[Edge]]) -> s
     return digest.hexdigest()
 
 
+def initial_cut_bank_identity(metadata: dict[str, Any]) -> dict[str, Any]:
+    """Return the replay-critical identity of an initial master/sub seed bank."""
+
+    integer_fields = (
+        "fixed_base_I18_preloaded",
+        "deduplicated_initial_masks",
+        "subproblem_seed_mask_prefix",
+    )
+    digest_fields = (
+        "fixed_base_I18_sha256",
+        "deduplicated_initial_masks_sha256",
+        "subproblem_seed_mask_prefix_sha256",
+    )
+    for field in integer_fields:
+        value = metadata.get(field)
+        if not isinstance(value, int) or isinstance(value, bool) or value < 0:
+            raise ValueError(f"initial cut-bank metadata has invalid {field}")
+    for field in digest_fields:
+        value = metadata.get(field)
+        if (
+            not isinstance(value, str)
+            or len(value) != 64
+            or any(character not in "0123456789abcdef" for character in value)
+        ):
+            raise ValueError(f"initial cut-bank metadata has invalid {field}")
+    ordering = metadata.get("ordering")
+    if not isinstance(ordering, str) or not ordering:
+        raise ValueError("initial cut-bank metadata has invalid ordering")
+    if (
+        metadata["fixed_base_I18_preloaded"]
+        > metadata["deduplicated_initial_masks"]
+        or metadata["subproblem_seed_mask_prefix"]
+        > metadata["deduplicated_initial_masks"]
+    ):
+        raise ValueError("initial cut-bank metadata has inconsistent counts")
+    universal = metadata.get("universal_bank")
+    if universal is None:
+        universal_sha256 = None
+    elif isinstance(universal, dict):
+        universal_sha256 = universal.get("sha256")
+        if (
+            not isinstance(universal_sha256, str)
+            or len(universal_sha256) != 64
+            or any(
+                character not in "0123456789abcdef"
+                for character in universal_sha256
+            )
+        ):
+            raise ValueError(
+                "initial cut-bank metadata has invalid universal-bank digest"
+            )
+    else:
+        raise ValueError("initial cut-bank metadata has invalid universal bank")
+
+    identity: dict[str, Any] = {
+        "schema": "ramsey-initial-cut-bank-identity-v1",
+        **{field: metadata[field] for field in integer_fields},
+        **{field: metadata[field] for field in digest_fields},
+        "ordering": ordering,
+        "universal_bank_sha256": universal_sha256,
+    }
+    encoded = json.dumps(
+        identity, sort_keys=True, separators=(",", ":")
+    ).encode("ascii")
+    identity["identity_sha256"] = hashlib.sha256(encoded).hexdigest()
+    return identity
+
+
 def load_resume_state(
     path: Path | None,
     input_sha256: str,
     structural_sha256: str,
     base_edges: set[Edge],
+    current_initial_cut_bank_identity: dict[str, Any],
 ) -> tuple[list[int], list[set[Edge]], dict[str, Any] | None]:
     if path is None:
         return [], [], None
@@ -940,6 +1011,19 @@ def load_resume_state(
         "structural_fingerprint_sha256"
     ) != structural_sha256:
         raise ValueError("resume checkpoint has a different master structure")
+    source_initial_metadata = payload.get("initial_cut_bank")
+    if not isinstance(source_initial_metadata, dict):
+        raise ValueError("resume checkpoint has no usable initial cut-bank metadata")
+    source_initial_identity = initial_cut_bank_identity(source_initial_metadata)
+    explicit_source_identity = payload.get("initial_cut_bank_identity")
+    if explicit_source_identity is None:
+        identity_mode = "legacy_metadata_reconstructed"
+    else:
+        identity_mode = "explicit_identity_v1"
+        if explicit_source_identity != source_initial_identity:
+            raise ValueError("resume checkpoint initial cut-bank identity is corrupt")
+    if source_initial_identity != current_initial_cut_bank_identity:
+        raise ValueError("resume checkpoint has a different initial cut bank")
     strict = payload.get("strict_state", {})
     if strict.get("unknown_subproblem_no_goods") not in (0, None):
         raise ValueError("resume checkpoint contains forbidden UNKNOWN no-goods")
@@ -968,6 +1052,11 @@ def load_resume_state(
             "vertex_order", "ascending"
         ),
         "source_oracle_order_explicitly_recorded": "oracle" in payload,
+        "initial_cut_bank_validation": {
+            "matched": True,
+            "source_identity_mode": identity_mode,
+            "identity_sha256": source_initial_identity["identity_sha256"],
+        },
     }
     return masks, no_goods, info
 
@@ -1011,16 +1100,39 @@ def run_branch1_benders(
     if len(yvars) != EXPECTED_ADDITION_PAIRS:
         raise AssertionError("unexpected branch-1 addition-selector count")
 
+    for mask in initial_masks:
+        _validate_mask(mask, len(initial), TARGET_S)
+    for mask in sub_seed_masks:
+        _validate_mask(mask, len(initial), TARGET_S)
+    current_initial_identity = initial_cut_bank_identity(initial_mask_metadata)
+    normalized_initial_masks = sorted(set(initial_masks))
+    if len(normalized_initial_masks) != len(initial_masks):
+        raise ValueError("current initial master mask list contains duplicates")
+    if (
+        len(normalized_initial_masks)
+        != current_initial_identity["deduplicated_initial_masks"]
+        or masks_hash(normalized_initial_masks)
+        != current_initial_identity["deduplicated_initial_masks_sha256"]
+    ):
+        raise ValueError("current initial master masks do not match their metadata")
+    if (
+        len(set(sub_seed_masks)) != len(sub_seed_masks)
+        or len(sub_seed_masks)
+        != current_initial_identity["subproblem_seed_mask_prefix"]
+        or masks_hash(sub_seed_masks)
+        != current_initial_identity["subproblem_seed_mask_prefix_sha256"]
+    ):
+        raise ValueError("current subproblem seed masks do not match their metadata")
+
     base_edges = set(dvars)
     resume_masks, resume_no_goods, resume_info = load_resume_state(
         resume_path,
         input_sha256,
         formula["structural_fingerprint_sha256"],
         base_edges,
+        current_initial_identity,
     )
-    for mask in initial_masks:
-        _validate_mask(mask, len(initial), TARGET_S)
-    installed_masks = sorted(set(initial_masks) | set(resume_masks))
+    installed_masks = sorted(set(normalized_initial_masks) | set(resume_masks))
     known_masks = set(installed_masks)
     initial_set = set(initial_masks)
     additional_masks = sorted(set(resume_masks) - initial_set)
@@ -1084,6 +1196,7 @@ def run_branch1_benders(
             },
             "formula": formula_snapshot,
             "initial_cut_bank": initial_mask_metadata,
+            "initial_cut_bank_identity": current_initial_identity,
             "resume": resume_info,
             "strict_state": {
                 "heuristic_exclusion_free": True,

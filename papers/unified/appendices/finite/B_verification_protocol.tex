@@ -47,21 +47,30 @@ The executable audit is
 the lightweight tier, and the complete mode compares the six actual DIMACS
 blocks during \texttt{finite-heavy}.
 
+For each branch-1 singleton instance, independently reconstruct the common
+\(718452\)-clause relaxation including all degree counters, append exactly one
+negative primary-variable unit, and require \(154190\) variables and
+\(718453\) clauses.  The four units must be \(-1085,-1672,-1675,-1680\).
+Separately reconstruct the unit-free common CNF, parse a complete assignment
+of all \(154190\) variables, evaluate every clause, and run an exact
+independent-set verifier on the recovered graph.
+
 \subsection{DRAT replay}
 
-Build \texttt{drat-trim} from source commit
-\sha{2e3b2dc0ecf938addbd779d42877b6ed69d9a985}.  Verify that the source tree is
-clean.  The repository helper
+Use one of the two manifest-authenticated \texttt{drat-trim} binaries built
+from source commit
+\sha{2e3b2dc0ecf938addbd779d42877b6ed69d9a985}.  Verify the adjacent source
+marker and the exact platform-binary hash.  The repository helper
 \begin{verbatim}
 bash scripts/build_drat_trim.sh \
   /absolute/new/checker-directory
 \end{verbatim}
-performs this source checkout and records the resulting binary hash.  A fresh
-platform build need not reproduce the historical executable hash.  For each
-of the twelve compressed assets in
-\cref{fin:tab:budget5-artifacts,fin:tab:budget6-artifacts}, check compressed byte count
-and SHA-256, test gzip integrity, and decompress into a new temporary
-directory.  Then invoke
+performs a source checkout for non-normative manual comparison; an arbitrary
+fresh build is not accepted by the strict core-proof gate.  For each of the
+ten proof pairs in
+\cref{fin:tab:budget5-artifacts,fin:tab:budget6-artifacts,fin:tab:branch1-singleton-proofs},
+check compressed byte counts and SHA-256 values,
+test gzip integrity, and decompress into a new temporary directory.  Then invoke
 \begingroup\small
 \begin{verbatim}
 /path/to/drat-trim formula.cnf proof.drat
@@ -78,7 +87,7 @@ replay:
 \begin{verbatim}
 .venv/bin/python reproduce.py finite-heavy \
   --artifact-dir /path/to/release-assets \
-  --drat-trim /path/to/drat-trim
+  --drat-trim /path/to/audited-manifest-binary
 \end{verbatim}
 \endgroup
 Time limits may need to be increased on slower hardware.  A timeout is
@@ -99,5 +108,9 @@ have exactly six deletions;
 \item after choosing one absent \(f_i\), exactly five residual deletion
 literals are true; and
 \item checked UNSAT of all three exact-six branches contradicts the model
-provided by any candidate graph.
+provided by any candidate graph;
+\item checked UNSAT of each singleton-augmented common relaxation proves the
+corresponding positive edge consequence; and
+\item the checked common SAT model establishes only non-vacuity, while its
+explicit independent \(18\)-set prevents it from being reported as a repair.
 \end{enumerate}

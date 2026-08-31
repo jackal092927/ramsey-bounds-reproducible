@@ -8,9 +8,10 @@ immutable evidence Release
 ## Executive status
 
 The mathematical claim surfaces are mutually consistent: Part I remains
-conditional/source-relative, Part II remains conditional on S1--S5 with S3 an
-extra hypothesis, and Part III proves only a fixed-seed one-sided deletion
-radius lower bound of seven. Exact seven remains `UNKNOWN` and no
+conditional/source-relative, Part II remains conditional on the pinned source
+items S1, S2, S4, and S5, with weighted propagation S3 now proved locally, and
+Part III proves only a fixed-seed one-sided deletion radius lower bound of
+seven. Exact seven remains `UNKNOWN` and no
 \(R(3,18)\ge101\) claim is made.
 
 The final release implementation audit reached **0 blocker / 0 major /
@@ -60,13 +61,14 @@ live GitHub state, not the presence of these prospective files.
 
 ### P5. Stale candidate PDF hash — repaired for the current freeze point
 
-Four status documents retained the previous candidate hash. After two clean
-builds produced identical bytes, those current-status occurrences were
-updated atomically to the 83-page post-review PDF digest
-`6ff124cc1ae5f1504510c7a557cff1fe964c4ec24889e9e050294b56c9553885`.
-They must be checked again if a later review changes any manuscript source.
-Historical review snapshots whose text explicitly identifies an earlier
-worktree are not rewritten.
+Four status documents retained the previous candidate hash. At this preflight
+freeze point they were updated atomically after two identical clean builds.
+The later exact-seven mathematical revision superseded that PDF; the current
+98-page double-build digest is
+`26b08245406ef905a38bf06d5fce6b4528b63eda2ed935d34367612f9cf7630b`.
+Historical conclusions in this dated preflight remain scoped to their stated
+worktree, while current status is controlled by `STATUS.md` and
+`REVIEW_DISPOSITION.md`.
 
 ### P6. Review/status index drift — repaired
 
@@ -118,12 +120,14 @@ The audited release workflow:
    raw annotated-tag object, and the complete manifest digest map;
 4. downloads with no Authorization header and rejects any missing, extra,
    renamed, incomplete, size-mismatched, or digest-mismatched asset;
-5. builds `drat-trim` from the fixed source commit;
+5. selects the manifest-authenticated Linux `drat-trim` binary and checks its
+   adjacent fixed source-commit marker;
 6. binds every downloaded file to the release attestation; and
-7. reconstructs all six formulas and replays all six DRAT proofs through the
+7. reconstructs six theorem formulas and four singleton formulas, replays all
+   ten DRAT proofs, and checks the complete common-relaxation model through the
    finite-heavy entry point.
 
-The manifest contains exactly 12 rows totalling 1,342,246,254 bytes. Every
+The manifest contains exactly 26 rows totalling 4,929,871,891 bytes. Every
 local file's name, byte count, and SHA-256 matched at preflight.
 
 ## Local preflight results
@@ -143,9 +147,8 @@ The current post-repair tree passed:
   arithmetic-certificate suite.
 
 The full command ended with `FULL_REPRODUCTION_PASS`. The finite-heavy
-current-run replay had already passed against the same twelve local artifact
-bytes; the decisive public replay remains the credential-free post-release
-run.
+current-run replay passed against the same 26 local artifact bytes; the
+decisive public replay remains the credential-free post-release run.
 
 ## Safe publication order
 
@@ -157,7 +160,7 @@ run.
    exact commit.
 4. Create and push the annotated evidence tag, then verify its raw object and
    peeled commit.
-5. Create a draft Release with `--verify-tag`; upload the twelve explicit
+5. Create a draft Release with `--verify-tag`; upload the 26 explicit
    manifest paths without globbing, replacement, or clobbering.
 6. Validate the draft's exact names, states, sizes, and digests; publish once.
 7. Verify immutability, signed release attestation, and each asset binding.

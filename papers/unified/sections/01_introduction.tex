@@ -39,10 +39,10 @@ threshold nor a global optimum or priority claim.
 
 Part~II assumes the version-pinned items (S1), (S2), (S4), and (S5) imported
 from the Gaussian construction of Hunter, Milojevi\'c and Sudakov and the
-exact cumulant input of Lin and Niu \cite{HMS2025,LinNiu2026}, together with
-the separately stated weighted-extension hypothesis (S3).  Item (S3) is not
-attributed as a theorem stated in either source.  After fixing the absolute
-source constant $K$, those five explicit items give an existential threshold
+exact cumulant input of Lin and Niu \cite{HMS2025,LinNiu2026}.  The weighted
+reverse-propagation rule (S3) is proved locally from the indicator kernel,
+projection identities, and the tower property.  After fixing the absolute
+source constant $K$, those four source items give an existential threshold
 $C_0=C_0(K)>1$ such that, for each fixed $C\ge C_0$,
 \[
  \liminf_{\ell\to\infty}\frac1\ell
@@ -62,13 +62,23 @@ different normalization.
 
 \subsection{Finite proof-carrying barrier}
 
-Part~III fixes a labelled, content-addressed graph $H$ on $100$ vertices
-with $827$ edges, no independent set of order $18$, and one triangle.  If
+Part~III starts from the public $99$-vertex construction of Nagda, Raghavan,
+and Thakurta~\cite{NagdaRaghavanThakurta2026} and fixes a labelled,
+content-addressed one-vertex extension $H$ on $100$ vertices with $827$
+edges, no independent set of order $18$, and one triangle.  If
 additions outside $E(H)$ are free and only deletions from $E(H)$ are
 charged, semantic reconstruction and six DRAT refutations prove that every
 graph $F$ on the same labelled vertex set that is triangle-free and satisfies
 $\alpha(F)<18$ obeys $|E(H)\setminus E(F)|\ge7$.  Exact seven remains
-\textsc{unknown}.  The theorem is
+\textsc{unknown}.  Within branch 1, four additional proof-checked singleton
+consequences force four named seed edges to be preserved.  Together with a
+degree cap they exclude $87.8832136551\ldots\%$ of raw residual supports.  A
+checked satisfying model proves that the common relaxation is nonempty, but
+the model contains an independent 18-set and is not a repair.  The theorem is
+strengthened methodologically by a maximal-triangle-free existence normal form
+and a complete four-bank mask union.  Their combined, byte-audited branch-1
+formula has (639290) variables and (1972360) clauses; its one bounded call
+returned only \textsc{unknown}.  The theorem is
 local to this seed and metric: it neither constructs a $100$-vertex
 $(3,18)$-Ramsey graph nor implies $R(3,18)\ge101$.
 

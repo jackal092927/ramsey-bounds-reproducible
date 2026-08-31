@@ -279,10 +279,10 @@ coordinates for the conditional kernel.  On the complementary histories,
 conditional estimate below only needs to be checked on
 \(\mathfrak H^R_{r,s}\).
 
-At exposure \(i\), let
+At exposure \(i\), set \(X_j=y_j(i)\), \(j>i\), and let
 \(A_i^R=\bigcap_{j>i}\overline E_{ij}\).  Conditional on
-\(A_i^R\) and \(\mathcal F_{i-1}\), set \(X_j=y_j(i)\), \(j>i\).  Its exact
-upper cutoff is
+\(\mathcal F_{i-1}\), this is the coordinatewise event with exact upper
+cutoffs
 \[
  X_j\le-\frac{b_{ij}}{\sqrt d},\qquad
  b_{ij}=\frac{c+\sqrt d\,h_{ij}}{y_i(i)}.
@@ -307,25 +307,34 @@ For a deterministic nonnegative triangular array
  \langle\pi_s(\boldsymbol y_j),\pi_s(\boldsymbol y_q)\rangle.
 \tag{2.32}
 \]
-For \(i\ge1\), its normalized one-step kernel is
+For \(i\ge1\), put
+\(q_i=\mathbb P(A_i^R\mid\mathcal F_{i-1})\).  Its normalized one-step
+indicator kernel is
 \[
 \begin{aligned}
  \mathcal K_i^T={}&
- \exp\!\left(\sum_{j>i}T_{ij}h_{ij}\right)
- \mathbb P(A_i^R\mid\mathcal F_{i-1})\\
- &\times\mathbb E\!\left[
+ \exp\!\left(\sum_{j>i}T_{ij}h_{ij}\right)\\
+ &\times
+ \mathbb E\!\left[\mathbf 1_{A_i^R}
+ \exp\!\left\{-\sum_{i<j<q\le r}T_{jq}X_jX_q\right\}
+ \middle|\mathcal F_{i-1}\right]\\
+={}&\exp\!\left(\sum_{j>i}T_{ij}h_{ij}\right)
+ q_i\\
+ &\times
+ \mathbb E\!\left[
  \exp\!\left\{-\sum_{i<j<q\le r}T_{jq}X_jX_q\right\}
  \middle|A_i^R,\mathcal F_{i-1}\right].
 \end{aligned}
 \tag{2.33}
 \]
+The first line is the definition.  It remains meaningful on a history where
+\(q_i=0\); the second line is its usual conditional-event form on
+\(\{q_i>0\}\).
 
-\begin{assumption}[Version-pinned source and weighted-extension interface]
+\begin{assumption}[Version-pinned red source interface]
 \label{ass:hms}
-Items (S1), (S2), (S4), and (S5) are imported from the content-addressed
-HMS v2 and Lin--Niu v2 sources identified in Appendix~\ref{app:bridge}.
-Item (S3) is the exact weighted-extension hypothesis required by this paper;
-it is not represented as a theorem stated verbatim in either source.
+Items (S1) and (S2) are imported from the content-addressed HMS v2 and
+Lin--Niu v2 sources identified in Appendix~\ref{app:bridge}.
 \begin{enumerate}[label=(S\arabic*)]
 \item For every \(r\le\ell\) and \(1\le i<r\), on every red-admissible
 \(\mathcal F_{i-1}\)-history, the next-column coordinates in (2.30),
@@ -376,7 +385,14 @@ allocation and this exact-CGF replacement give, on every history in
 \]
 This scalar inequality, rather than a final Ramsey bound, is the imported
 baseline.  No nonuniform one-step estimate is imported.
-\item For every target \(r\le\ell\), every deterministic nonnegative
+\end{enumerate}
+No Ramsey-rate conclusion, red--blue comparison, or nonuniform residual term
+is included in (S1) or (S2).
+\end{assumption}
+
+\begin{lemma}[Weighted reverse propagation (S3)]
+\label{lem:weighted-reverse}
+For every target \(r\le\ell\), every deterministic nonnegative
 triangular \(T\) fixed before exposure, and every deterministic real sequence
 \(\lambda_1,\ldots,\lambda_{r-1}\), the following weighted reverse-induction
 rule holds.  If, on every history in \(\mathfrak H^R_{r,i-1}\), with
@@ -397,19 +413,45 @@ then, for every \(0\le s\le r\),
 \]
 On \((\mathfrak H^R_{r,s})^c\), the left side of (2.38) is zero, so the same
 inequality holds almost surely on the entire conditional state space.
-Only the implication (2.37)\(\Rightarrow\)(2.38) is the additional hypothesis
-in (S3).  The following source identity and deterministic projection algebra
-record what that implication must preserve; they neither add a second
-hypothesis nor prove (S3).
-The source law of total probability is
+\end{lemma}
+
+\begin{proof}
+Put
 \[
- \mathbb P(I_{i-1}\cap B^R_r\mid\mathcal F_{i-1})
- =\mathbb P(A_i^R\mid\mathcal F_{i-1})
- \mathbb E[\mathbb P(I_i\cap B^R_r\mid\mathcal F_i)
- \mid A_i^R,\mathcal F_{i-1}],
+ Z_s=\mathbb P(I_s\cap B^R_r\mid\mathcal F_s),\qquad
+ \Lambda_s=\sum_{t=s+1}^{r-1}\lambda_t.
+\]
+We first justify the exponential conditional expectations.  Given
+\(\mathcal F_{i-1}\), write \(u_j=-b_{ij}/\sqrt d\), so that
+\(A_i^R=\{X_j\le u_j:j>i\}\).  These cutoffs are finite almost surely and
+\[
+ q_i=\prod_{j>i}\Phi(-b_{ij})>0
+\]
+almost surely.  For a vector \(x\) in this truncated region, put
+\(\bar u_j=(u_j)_+\) and \(x_j^-=(-x_j)_+\).  Since \(T\ge0\),
+\[
+ \sum_{i<j<q\le r}T_{jq}x_jx_q
+ \ge-\sum_{i<j<q\le r}T_{jq}
+       \bigl(\bar u_jx_q^-+\bar u_qx_j^-\bigr).
+\]
+Consequently the integrand in (2.33) is bounded by an exponential of a
+nonnegative linear combination of the \(x_j^-\).  Gaussian linear exponential
+moments are finite, even after the coordinatewise upper truncation.  Thus
+\(\mathcal K_i^T\) and
+\(\mathbb E[e^{-\mathcal P_i^T}\mid A_i^R,\mathcal F_{i-1}]\) are finite
+almost surely.  The primary indicator form in (2.33) also supplies an
+unambiguous version on any exceptional history with \(q_i=0\).
+
+Since \(I_{i-1}=A_i^R\cap I_i\) and \(A_i^R\in\mathcal F_i\), the law of
+total probability, first in its indicator form, is
+\[
+ Z_{i-1}
+ =\mathbb E[\mathbf1_{A_i^R}Z_i\mid\mathcal F_{i-1}]
+ =q_i\mathbb E[Z_i\mid A_i^R,\mathcal F_{i-1}],
 \tag{2.39}
 \]
-and the exact projection identities are
+where the final form is only needed when \(q_i>0\).  The exact projection
+identities are
 \[
 \begin{aligned}
  \mathcal P_i^T
@@ -423,12 +465,53 @@ and the exact projection identities are
 \end{aligned}
 \tag{2.40}
 \]
-Equations (2.33), (2.39), and (2.40) record the algebra that the weighted
-extension in (S3) is required to preserve.  The rule propagates (2.38) by
-reverse induction from \(s=r\).
+Denote the first sum on the right of each identity by \(U_i\), the second sum
+in the first identity by \(V_i\), and the second sum in the second identity by
+\(W_i\).  Thus \(\mathcal P_i^T=U_i+V_i\),
+\(\mathcal P_{i-1}^T=U_i+W_i\), and (2.33) gives the exact conjugation identity
+\[
+ \mathbb E[\mathbf1_{A_i^R}e^{-\mathcal P_i^T}
+            \mid\mathcal F_{i-1}]
+ =e^{-\mathcal P_{i-1}^T}\mathcal K_i^T.
+\]
+
+There are two terminal cases.  At \(s=r\), we have \(I_r=\Omega\),
+\(\mathcal P_r^T=0\), \(\Lambda_r=0\), and
+\(Z_r\le1=\mathcal H_C(0)\).  At \(s=r-1\), we again have an empty future
+edge set, \(\mathcal P_{r-1}^T=0\), and \(\Lambda_{r-1}=0\), so
+\(Z_{r-1}\le1\le e=\mathcal H_C(1)\).  The latter is the load-bearing base
+case because the one-step premise is indexed only by \(i<r\).
+
+Assume now that (2.38) holds at level \(s=i\), where \(1\le i<r\), and put
+\(k=r-i\).  On \(\mathfrak H^R_{r,i-1}\), conditional monotonicity, (2.39),
+and the conjugation identity give
+\[
+\begin{aligned}
+ Z_{i-1}
+ &\le \mathcal H_C(k)e^{-\Lambda_i}
+ \mathbb E[\mathbf1_{A_i^R}e^{-\mathcal P_i^T}
+            \mid\mathcal F_{i-1}]\\
+ &=\mathcal H_C(k)e^{-\mathcal P_{i-1}^T-\Lambda_i}
+   \mathcal K_i^T\\
+ &\le\mathcal H_C(k+1)
+ e^{-\mathcal P_{i-1}^T-\lambda_i-\Lambda_i}.
+\end{aligned}
+\]
+Since \(\Lambda_{i-1}=\lambda_i+\Lambda_i\), this is (2.38) at level
+\(i-1\).  On \((\mathfrak H^R_{r,i-1})^c\), the same claim is automatic
+because \(Z_{i-1}=0\).  Reverse induction from \(s=r-1\), together with the
+separately checked endpoint \(s=r\), completes the proof.
+\end{proof}
+
 Sections~\ref{sec:residual}--\ref{sec:induction} compare the nonuniform kernel with
 the scalar baseline \eqref{eq:scalar-baseline} and prove (2.37) for the array
 used here.
+
+\begin{assumption}[Version-pinned extraction and blue source interfaces]
+\label{ass:hms-tail}
+Items (S4) and (S5) are imported from the content-addressed HMS v2 source
+identified in Appendix~\ref{app:bridge}.
+\begin{enumerate}[label=(S\arabic*),start=4]
 \item If red-perfect extraction deletes \(u\) vertices from a target of size
 \(\ell\), then, for each specified retained set \(I\) of size \(\ell-u\),
 \[
@@ -452,8 +535,9 @@ perfect-sequence extraction give
 \end{enumerate}
 No Ramsey-rate conclusion, no red--blue comparison, and no new residual term
 is included in (S1), (S2), (S4), or (S5).  The scalar source baseline is
-\eqref{eq:scalar-baseline}; the only additional source-side hypothesis is the
-precisely delimited weighted rule (S3).
+\eqref{eq:scalar-baseline}; the nonuniform one-step estimate is proved locally,
+and its propagation is the local \cref{lem:weighted-reverse}, not an imported
+source hypothesis.
 \end{assumption}
 
 The constant \(K\) in \eqref{eq:source-K} is not effective in the pinned source.

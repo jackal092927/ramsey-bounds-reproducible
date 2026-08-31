@@ -4,7 +4,7 @@
 \usepackage{lmodern}
 \usepackage{microtype}
 \usepackage{amsmath,amssymb,mathtools}
-\usepackage{booktabs,float,longtable}
+\usepackage{array,booktabs,float,longtable}
 \usepackage{enumitem}
 \usepackage{seqsplit}
 \usepackage{xurl}
@@ -55,10 +55,18 @@ branches is encoded as a finite CNF relaxation containing all triangle
 clauses, an exact-five sequential counter for the remaining seed edges, and
 a checked bank of independent-set hitting clauses.  Independent semantic
 reconstruction and DRAT replay verify all three refutations.  We specify the
-hashes, solver and checker revisions, and the boundary of machine trust.  A
-separate exact-seven portfolio ended with all branches \textsc{unknown}; no
-existence or nonexistence claim is made at that layer.  In particular, the
-result is local to \(H\) and does not imply \(R(3,18)\ge 101\).
+hashes, solver and checker revisions, and the boundary of machine trust.  In
+the exact-seven branch fixing \((97,99)\) absent, four additional checked DRAT
+refutations force four named seed edges to be preserved.  A checked
+satisfying model proves that this common relaxation is nonempty but contains
+an independent \(18\)-set.  We further prove that any feasible branch-1 repair
+has a maximal-triangle-free representative, reconstruct the complete union of
+four audited independent-set banks, and combine both strengthenings in a
+byte-audited CNF with \(639290\) variables and \(1972360\) clauses.  Its one
+externally bounded \(300\)-second call returned only \textsc{unknown}; no model,
+checked refutation, or learned cut resulted.  Thus the exact-seven portfolio
+remains \textsc{unknown}.  In particular, the result is local to \(H\) and does
+not imply \(R(3,18)\ge 101\).
 \end{abstract}
 
 \maketitle

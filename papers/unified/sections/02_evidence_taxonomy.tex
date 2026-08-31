@@ -49,9 +49,9 @@ retained-spine interfaces. & Asymptotic and source-relative; no effective
 threshold, global optimum, or world-best claim. \\
 L0--L3 & Exact-merge rigidity and the controlled-residual addition
 $\widehat H_*(C)=(1+o(1))/(64\log C)$. & Written argument conditional on
-pinned items (S1), (S2), (S4), (S5), plus the additional weighted-extension
-hypothesis (S3); arithmetic replay checks formulas only and is not the
-induction. & Item (S3) is not attributed as an HMS/Lin--Niu theorem.  Fix the
+pinned items (S1), (S2), (S4), (S5), with weighted propagation (S3) proved
+locally; arithmetic replay checks formulas only and is not the induction. &
+The local S3 proof uses the indicator kernel and tower property.  Fix the
 source constant $K$ and sufficiently large $C$, then take
 $\ell\to\infty$, $w\downarrow\omega_0$, and only afterwards $C\to\infty$;
 $1/64$ is a cap only in the specified scalar residual class. \\
@@ -59,8 +59,26 @@ F0--F1 & The fixed seed has the stated graph properties and deletion repair
 radius at least seven. & Direct bitset checks, branch completeness, CNF
 semantics, and six replayed DRAT proofs. & Local seed and one-sided metric;
 no implication $R(3,18)\ge101$. \\
-F2 & Three exact-seven runs ended \textsc{unknown}. & Bounded solver logs. &
-Neither existence nor nonexistence evidence. \\
+F2 & The branch-1 degree cap excludes
+$\binom{808}{6}/\binom{826}{6}=0.875813\ldots$ of raw residual deletion
+sets. & Neighbourhood-independence proof and pinned seed degrees. & A
+necessary local pruning condition, not a runtime ratio or Ramsey-number
+bound. \\
+F3 & The first three exact-seven runs and sixteen deletion-first follow-ups
+ended \textsc{unknown}. & Bounded solver logs, an independently checked
+oracle-order reconstruction, and a sanitized endpoint summary. & Reverse
+ordering removed two apparent separator stalls, but seven repaired gates then
+reached their global walls while still in the master under the tested
+configurations; neither existence nor nonexistence evidence, and
+two solver-trusted fixed-deletion \textsc{unsat} endpoints have no checked
+trace. \\
+F4 & Four branch-1 singleton consequences force four named seed edges to be
+preserved and, with F2, exclude $87.8832136551\ldots\%$ of raw residual
+supports. & Four independently reconstructed singleton CNFs and replayed DRAT
+traces, plus a checked satisfying model of the common relaxation. & The SAT
+model contains an explicit independent 18-set; the consequences are
+non-vacuous necessary conditions, not branch closure, an exact-seven
+resolution, or a global Ramsey-number bound. \\
 \bottomrule
 \end{longtable}
 

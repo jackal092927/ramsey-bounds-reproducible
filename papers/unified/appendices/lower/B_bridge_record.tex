@@ -3,8 +3,8 @@
 
 This appendix records the exact external boundary of the lower-bound
 argument.  It separates version-pinned conditional probability statements
-from the explicit weighted-extension rule and imports neither the
-first-moment conversion nor the Ramsey conclusion proved in
+from the locally proved weighted reverse-propagation lemma and imports neither
+that lemma, the first-moment conversion, nor the Ramsey conclusion proved in
 \cref{low:sec:rate-lower}.
 
 \subsection{Content-addressed source snapshots}
@@ -50,10 +50,10 @@ positive-direction CGF\@.  After replacing their upper cutoff by \(-b\),
 these give \eqref{low:main:eq:2-4}--\eqref{low:main:eq:2-6} and \cref{low:lem:mills}.\\
 HMS 1192--1289&
 The red law of total probability, cutoff conditioning, projection merge, and
-scalar reverse-induction allocation.  Equations \eqref{low:main:eq:2-33}, \eqref{low:main:eq:2-39}, and \eqref{low:main:eq:2-40}
-record the algebra that the separately assumed weighted extension (S3) must
-preserve; \eqref{low:eq:scalar-baseline} is the frozen scalar baseline.  The
-nonuniform estimate is proved locally and is not attributed verbatim to HMS.\\
+scalar reverse-induction allocation.  Equation \eqref{low:eq:scalar-baseline} is the frozen scalar
+baseline.  The indicator-kernel conjugation and weighted propagation (S3) are
+proved locally from \eqref{low:main:eq:2-33}, \eqref{low:main:eq:2-39}, and \eqref{low:main:eq:2-40}; neither the nonuniform
+one-step estimate nor its propagation is attributed verbatim to HMS.\\
 HMS 385--410 and 955--971&
 For every specified retained set, the red-perfectness failure factor is
 \((p/10)^{10\ell u}\).  This is the sole external extraction input \eqref{low:main:eq:2-41};
@@ -160,9 +160,9 @@ established is \(C\to\infty\) used to obtain the coefficient \(1/64\).
 No explicit value of \(C_0(K)\) or \(\ell_0(C)\) is asserted.
 
 The resulting theorem is source-relative: its local residual algebra,
-three-factor bridge, reverse-induction charge, extraction sum, first moments
-and red--blue crossing are proved here.  Items (S1), (S2), (S4), and (S5)
-are version-pinned source hypotheses; (S3) is the separately stated weighted
-extension rule and is not attributed verbatim to either source.  The
-arithmetic checker corroborates the finite formulas but does not replace
-these probabilistic interfaces.
+three-factor bridge, weighted propagation, reverse-induction charge,
+extraction sum, first moments and red--blue crossing are proved here.  Items
+(S1), (S2), (S4), and (S5) are version-pinned source hypotheses; (S3) is
+\cref{low:lem:weighted-reverse}, proved locally rather than attributed to either
+source.  The arithmetic checker corroborates the finite formulas but does not
+replace the four imported probabilistic interfaces or the local proof.

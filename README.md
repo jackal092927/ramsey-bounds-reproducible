@@ -17,7 +17,7 @@ records. They are not separate publication outputs.
 | part | scoped result | evidence boundary |
 |---|---|---|
 | diagonal upper bound | \(R(k,k)\le(3.780685290)^{k+o(k)}\), with certified unrounded base below `3.780685288379640114` | asymptotic and source-relative; depends on version-pinned retained-spine/book interfaces, the certified six-stage rate, and interval-arithmetic containment semantics; no effective finite-\(k\) threshold |
-| fixed-ratio lower bound | after fixing the source constant \(K\), for each sufficiently large fixed \(C\), a source-relative addition \(\widehat H_*(C)=(1+o_{C\to\infty}(1))/(64\log C)\) | conditional on (S1)--(S5); (S3) is an additional weighted-extension hypothesis not attributed as a theorem stated by HMS or Lin--Niu; for fixed \(C\) and \(w>\omega_0\), first take \(\ell\to\infty\), then \(w\downarrow\omega_0\), and only afterward \(C\to\infty\); \(C_0(K)\) is non-effective |
+| fixed-ratio lower bound | after fixing the source constant \(K\), for each sufficiently large fixed \(C\), a source-relative addition \(\widehat H_*(C)=(1+o_{C\to\infty}(1))/(64\log C)\) | conditional on the version-pinned source items (S1), (S2), (S4), and (S5); weighted reverse propagation (S3) is proved locally from the indicator kernel and tower property; for fixed \(C\) and \(w>\omega_0\), first take \(\ell\to\infty\), then \(w\downarrow\omega_0\), and only afterward \(C\to\infty\); \(C_0(K)\) is non-effective |
 | finite proof-carrying barrier | for the pinned 100-vertex near miss, the one-sided deletion repair radius under free additions is at least seven | local to one labelled seed and one edit metric; exact seven remains `UNKNOWN`; this does **not** imply \(R(3,18)\ge101\) |
 
 No claim of a world-best bound, publication priority, global parameter
@@ -29,7 +29,7 @@ The source repository is public at
 [`jackal092927/ramsey-bounds-reproducible`](https://github.com/jackal092927/ramsey-bounds-reproducible).
 The evidence package is designated for the tagged release
 [`evidence-2026-08-30`](https://github.com/jackal092927/ramsey-bounds-reproducible/releases/tag/evidence-2026-08-30)
-and is valid only if it provides exactly the twelve CNF/DRAT payloads listed
+and is valid only if it provides exactly the 26 content-addressed assets listed
 in [`artifacts/MANIFEST.tsv`](artifacts/MANIFEST.tsv). At this pre-release
 snapshot the final tag, immutable Release, credential-free asset download,
 and final-tag replay remain pending. Their completion must be recorded in a
@@ -48,29 +48,68 @@ fresh independent mathematical audit is
 The three theorem-specific hostile reconstructions and their nine resolved
 minor findings are consolidated in
 [`reviews/FINAL_TARGETED_ADVERSARIAL_REVIEW_2026-08-30.md`](reviews/FINAL_TARGETED_ADVERSARIAL_REVIEW_2026-08-30.md).
+The subsequent local proof and adversarial closure of lower item S3 is
+[`reviews/LOWER_S3_CLOSURE_2026-08-30.md`](reviews/LOWER_S3_CLOSURE_2026-08-30.md).
 The repository-wide publication protocol audit is
 [`reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md`](reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md).
 The ChatGPT Pro second-opinion report and claim-by-claim disposition are
 [`reviews/CHATGPT_PRO_REVIEW.md`](reviews/CHATGPT_PRO_REVIEW.md).
+The newer exact-seven collaboration packet is a draft only and has not been
+sent externally:
+[`reviews/CHATGPT_PRO_EXACT7_COLLABORATION_PACKET.md`](reviews/CHATGPT_PRO_EXACT7_COLLABORATION_PACKET.md).
 The publication-facing state is [`STATUS.md`](STATUS.md). Local or AI-assisted
 adversarial review does not substitute for independent external human peer
 review.
 
+The exact-seven branch-1 follow-up, including the degree-cap proof, exact
+87.5813014052041% raw deletion-set pruning, bounded Sirius matrices,
+order-aware oracle reconstruction, fail-closed endpoints, and stop rule, is
+recorded in
+[`routes/finite/R3_18_BUDGET7_BENDERS_PILOT_2026-08-30.md`](routes/finite/R3_18_BUDGET7_BENDERS_PILOT_2026-08-30.md).
+All sixteen deletion-first endpoints remain `UNKNOWN`. Reverse vertex order
+removed two apparent independent-set-separator stalls, while all seven repaired
+gates reached their global walls while still in the master under the tested
+configurations. These are diagnostic facts, not a strengthening of the global
+Ramsey interval.
+
+A proof-carrying follow-up strengthens the branch-1 filter from four pair
+clauses to four singleton consequences: every model of the frozen common
+relaxation preserves `(11,62)`, `(18,61)`, `(18,64)`, and `(18,69)`.  All four
+singleton refutations passed byte-independent CNF reconstruction and DRAT
+replay on x86-64 and arm64.  A checked SAT model proves that the common
+relaxation is nonempty, but that model contains an explicit independent
+18-set and is not a repair.  Combined with the degree cap, the singleton
+consequences exclude 87.88321365513743% of the raw branch-1 residual supports
+and leave exact seven `UNKNOWN`.  The full ledger is
+[`routes/finite/R3_18_BUDGET7_BRANCH1_CORE_PROOFS_2026-08-30.md`](routes/finite/R3_18_BUDGET7_BRANCH1_CORE_PROOFS_2026-08-30.md).
+
+The latest no-repeat gate proves a maximal-triangle-free normal form for any
+branch-1 target and combines it with the complete 530,525-mask union.  Its
+byte-audited CNF has 639,290 variables and 1,972,360 clauses (SHA-256
+`09e1784c3f43c4901dc6f6b4749fc5a74b025b08f74be58133edd1ed1096ebdb`).
+One fixed 300-second Sirius call returned wrapper exit 124 and `c UNKNOWN`.
+The incomplete proof prefix was hashed and deleted without replay; no model,
+certificate, cut, or branch closure resulted.  The exact endpoint and
+fail-closed checker are documented in
+[`routes/finite/R3_18_BUDGET7_BRANCH1_MAXIMAL_UNION_GATE_2026-08-30.md`](routes/finite/R3_18_BUDGET7_BRANCH1_MAXIMAL_UNION_GATE_2026-08-30.md).
+
 ## Verified local snapshot
 
-On 2026-08-30 the following gates passed on the current worktree:
+On 2026-08-31 the following gates passed on the current worktree:
 
 - `quick`, `full`, and networked `sources` reproduction tiers;
-- all finite-heavy semantic audits and six checked DRAT replays;
+- the exact 26-asset finite-heavy gate, including six theorem-formula and four
+  singleton-formula reconstructions, all ten checked DRAT replays, and the
+  complete common-relaxation model audit;
 - deterministic materialization of the single canonical manuscript;
-- compilation of an 83-page PDF with no overfull box, unresolved or multiply
+- compilation of a 98-page PDF with no overfull box, unresolved or multiply
   defined reference, LaTeX warning, error, or fatal diagnostic; and
 - representative-page visual inspection.
 
 With `SOURCE_DATE_EPOCH` fixed, two clean builds under the recorded pdfTeX
 1.40.24 (TeX Live 2022) and Latexmk 4.77 toolchain were byte-identical. The
-canonical 83-page post-review PDF SHA-256 is
-`6ff124cc1ae5f1504510c7a557cff1fe964c4ec24889e9e050294b56c9553885`.
+canonical 98-page post-exact-seven-review PDF SHA-256 is
+`26b08245406ef905a38bf06d5fce6b4528b63eda2ed935d34367612f9cf7630b`.
 Byte identity across different TeX distributions, font packages, or engines is
 not claimed. A separate ChatGPT Pro AI second opinion completed on
 2026-08-30. Every recoverable concrete objection was checked against the
@@ -109,22 +148,24 @@ their hashes:
 .venv/bin/python reproduce.py sources
 ```
 
-The proof-carrying finite replay requires all twelve files listed in
-[`artifacts/MANIFEST.tsv`](artifacts/MANIFEST.tsv) and an executable
-`drat-trim` built from the source revision documented in the manuscript.  A
-portable helper builds it into a new, explicit output directory:
+The proof-carrying finite replay requires every file listed in
+[`artifacts/MANIFEST.tsv`](artifacts/MANIFEST.tsv) and one of the two audited
+`drat-trim` binaries in that manifest.  The credential-free download helper
+verifies the bytes before setting executable mode.  A portable source-build
+helper remains available for non-normative manual comparison:
 
 ```bash
 bash scripts/build_drat_trim.sh /absolute/path/to/new-checker-directory
 ```
 
-The compiled-binary hash is recorded as run provenance, not required to equal
-a binary produced on another platform.  Run the theorem replay with:
+The strict core-proof gate accepts exactly the audited Linux x86-64 or macOS
+arm64 binary hash; an arbitrary local build is not a substitute for this
+normative gate.  Run the theorem replay with:
 
 ```bash
 .venv/bin/python reproduce.py finite-heavy \
   --artifact-dir /absolute/path/to/artifact-directory \
-  --drat-trim /absolute/path/to/drat-trim
+  --drat-trim /absolute/path/to/audited-manifest-binary
 ```
 
 [`scripts/download_release_artifacts.sh`](scripts/download_release_artifacts.sh)
@@ -176,7 +217,7 @@ existence nor nonexistence.
 ## Release boundary
 
 The planned release will record one unified manuscript, a tag-bound source snapshot,
-an immutable twelve-asset evidence package, the pinned checker source revision,
+an immutable 26-asset evidence package, the pinned checker source revision,
 adversarial-review dispositions, and separate light/full/finite-heavy build
 logs. Historical searches and old review snapshots remain labelled by what was
 actually rerun at the time.

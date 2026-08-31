@@ -53,11 +53,12 @@ the controlled-residual ledger contributes
 The order of limits is part of the theorem: fix \(C\) and \(w>\omega_0\), let
 \(\ell\to\infty\), then let \(w\downarrow\omega_0\), and only afterwards
 examine \(C\to\infty\).
-The statement is conditional on (S1)--(S5). Items (S1), (S2), (S4), and (S5)
-are version-pinned source hypotheses; (S3) is the paper's additional
-weighted-extension hypothesis and is not attributed as a theorem stated by
-HMS or Lin--Niu. The threshold \(C_0(K)\) is existential and non-effective. No
-comparison is made across incompatible terminal normalizations.
+The statement is conditional on the version-pinned source items (S1), (S2),
+(S4), and (S5).  The weighted reverse-propagation rule (S3) is proved locally
+from the indicator kernel, the projection identities, and the tower property;
+it is not imported from HMS or Lin--Niu. The threshold \(C_0(K)\) is
+existential and non-effective. No comparison is made across incompatible
+terminal normalizations.
 
 ### F — local finite proof-carrying result
 
@@ -68,6 +69,21 @@ local deletion repair radius is at least seven.
 
 Exact seven remains `UNKNOWN`. This result neither constructs a
 100-vertex \((3,18)\)-Ramsey graph nor proves \(R(3,18)\ge101\).
+
+The exact-seven branch-1 refinement contributes four proof-checked singleton
+consequences in a sound common relaxation, a checked SAT model establishing
+their non-vacuity, and an exact support-count corollary.  The four named edges
+must be preserved; combined with the degree cap, this excludes
+87.88321365513743% of raw residual six-deletion supports.  The checked common
+model itself contains an independent 18-set, so this refinement is a clean
+necessary-condition improvement rather than a target construction or branch
+closure.
+
+The same part also records the exact 396-unit structural projection, proves a
+maximal-triangle-free existence normal form, constructs the complete four-bank
+mask union, and combines both into a fixed 639,290-variable CNF.  Its only
+bounded endpoint is `UNKNOWN`; this is formulation and reproducibility
+progress, not a lower-bound certificate.
 
 ## Manuscript architecture
 
@@ -83,8 +99,10 @@ Exact seven remains `UNKNOWN`. This result neither constructs a
    prove the residual and concavity ledger, propagate it through reverse
    induction, and preserve the fixed-\(C\) order of limits.
 5. **Part III: proof-carrying finite barrier.** Define the seed and metric,
-   prove the branch cover and CNF semantics, replay the six DRAT proofs, and
-   record exact seven as `UNKNOWN`.
+   prove the branch cover and CNF semantics, replay the six theorem DRAT
+   proofs, then record the four separately checked singleton consequences,
+   the common-model non-vacuity audit, the maximal-triangle-free normal form,
+   the maximal-union timeout ledger, and the still-open exact-seven layer.
 6. **Unified reproducibility section.** Give one tiered interface for fast,
    full asymptotic, finite-heavy, and paper-build checks.
 7. **Appendices.** Include the proof-critical source interfaces, certificate
@@ -132,9 +150,9 @@ opinion. Every recoverable concrete objection was checked against the current
 canonical source and repaired or dispositioned. The report remains an
 AI-assisted author-side review, not external human peer review.
 
-The unified release candidate currently compiles to 83 pages with local
+The unified release candidate currently compiles to 98 pages with local
 post-review SHA-256
-`6ff124cc1ae5f1504510c7a557cff1fe964c4ec24889e9e050294b56c9553885`.
+`26b08245406ef905a38bf06d5fce6b4528b63eda2ed935d34367612f9cf7630b`.
 Two clean builds of the post-review source under the pinned toolchain produced
 byte-identical PDFs. The immutable-Release digest remains a later publication
 gate.
@@ -150,8 +168,9 @@ The final package should contain:
 - exact Python and TeX build specifications;
 - machine-readable upper and lower parameters;
 - all finite semantic metadata;
-- an immutable manifest of the large CNF/DRAT pairs;
-- the exact `drat-trim` source revision and a portable build procedure;
+- an immutable manifest of the proof, model, and audited-checker assets;
+- the exact `drat-trim` source revision, two audited platform binaries, the
+  upstream license, and a non-normative portable build procedure;
 - logs that distinguish `PASS`, `SAT`, `UNSAT`, `UNKNOWN`, and `NOT_RERUN`;
 - the adversarial reviews and their resolution record; and
 - citation and licensing metadata approved for public release.

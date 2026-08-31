@@ -1,0 +1,99 @@
+{
+  "augmented_cnf": {
+    "basename": "branch1_cegar_augmented.cnf",
+    "bytes": 183161315,
+    "clauses": 722552,
+    "exact_bytes_rehashed": true,
+    "header_and_clause_count_checked": true,
+    "sha256": "6fbe630343afcf31a5affa9a70a315e3033bc077b24fc9a58d5084e63fdd389f",
+    "variables": 154190
+  },
+  "cadical_record": {
+    "basename": "cadical",
+    "sha256": "f5e2cf978a3b9ebf17601b9a7a25f298c684c18841846b66bdd6a6e20951fb2a",
+    "source_commit": "c60730422e758ef1cebe7aeddf2dda31c996bf04",
+    "source_commit_marker_sha256": "63b647d0d86b4ee4d8bdbd619505b4053d6ebecfe52a5db75fe5f2a49dc2e762"
+  },
+  "claim_boundary": "This record audits a historical exploration endpoint. It is not hardened-runner evidence, learns no masks, and never promotes UNSAT without fresh DRAT and four-singleton replays.",
+  "direct_graph_audit": {
+    "edges": 823,
+    "independent_set_exists": true,
+    "independent_set_witness": [
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      99
+    ],
+    "independent_target": 18,
+    "pairwise_witness_check": true,
+    "search_nodes": 19,
+    "triangle_exists": false,
+    "vertices": 100
+  },
+  "endpoint": {
+    "elapsed_seconds": 2532.3617309331894,
+    "exitcode": 10,
+    "historical_status": "SAT_MODEL_VERIFIED_I18_WITNESS_NO_LEARNING",
+    "learned_masks": [],
+    "wall_limit_seconds": 3600.0
+  },
+  "exact_seven_repair_exists": null,
+  "full_cnf_evaluation": {
+    "all_clauses_satisfied": true,
+    "clauses_evaluated": 722552,
+    "cnf_sha256_evaluated": "6fbe630343afcf31a5affa9a70a315e3033bc077b24fc9a58d5084e63fdd389f"
+  },
+  "global_ramsey_implication": null,
+  "historical_gate_json": {
+    "basename": "branch1_cegar_gate.json",
+    "bytes": 9955,
+    "sha256": "d46115036cb6aba0411a50659f7bfca9efcd2dad739ba75d51f3b3286d3d36b3"
+  },
+  "historical_runner": {
+    "basename": "r3_18_budget7_branch1_cegar_gate_f24ec77_exploration_snapshot.py",
+    "bytes": 52480,
+    "sha256": "f24ec77a4d4a5d516f138c98e7d3117f6438e968dcae5d4ef1bcfaf1c339a69b"
+  },
+  "learned_masks": [],
+  "local_cadical_rehash": {
+    "binary": {
+      "basename": "cadical",
+      "bytes": 1715096,
+      "sha256": "f5e2cf978a3b9ebf17601b9a7a25f298c684c18841846b66bdd6a6e20951fb2a"
+    },
+    "executed_by_auditor": false,
+    "source_commit": "c60730422e758ef1cebe7aeddf2dda31c996bf04",
+    "source_commit_marker": {
+      "basename": "SOURCE_COMMIT",
+      "bytes": 41,
+      "sha256": "63b647d0d86b4ee4d8bdbd619505b4053d6ebecfe52a5db75fe5f2a49dc2e762"
+    }
+  },
+  "proof_verified": false,
+  "sat_claim_accepted": true,
+  "sat_model": {
+    "basename": "branch1_cegar_sat.model.gz",
+    "bytes": 384949,
+    "sha256": "19db55d05fe0b907ab77dc9645cf9356fd383bdbb83d91aa7690c6473965ffd3",
+    "uncompressed_bytes": 1066055,
+    "uncompressed_sha256": "b7adbce4dada7dfeb41f94e36e34b25c57ee4a72a9223bf2c32bbbe4d8b561af"
+  },
+  "schema": "ramsey-r3-18-n100-exact-budget7-branch1-cegar-f24-endpoint-audit-v1",
+  "solver_executed_by_auditor": false,
+  "status": "F24_SAT_REAUDITED_I18_WITNESS_NO_LOWER_BOUND",
+  "unsat_claim_accepted": false
+}

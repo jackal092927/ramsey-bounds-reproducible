@@ -1,5 +1,11 @@
 # Final targeted adversarial review
 
+> **Post-review strengthening.** A later adversarial reconstruction proved the
+> lower weighted implication S3 locally, including integrability, null-event
+> handling, and the two terminal cases. The S3-as-extra-hypothesis entries
+> below are superseded by `reviews/LOWER_S3_CLOSURE_2026-08-30.md`; the other
+> theorem-specific findings remain unchanged.
+
 **Date:** 2026-08-30  
 **Object reviewed:** the unified Ramsey-bounds manuscript and its pinned
 computational evidence  
@@ -14,7 +20,7 @@ supportable only at the scope printed in the revised manuscript:
 | Part | Verdict | Smallest safe interpretation |
 |---|---|---|
 | I: diagonal upper bound | Proved relative to the three version-locked Yang--Mao interfaces | Conditional/source-relative upper bound with certified constant \(3.780685290\) |
-| II: fixed-ratio lower rate | Proved under the explicit interfaces S1--S5 | Conditional, fixed-\(C\), non-effective rate improvement; S3 remains an extra hypothesis |
+| II: fixed-ratio lower rate | **Historical snapshot:** proved under the then-explicit interfaces S1--S5 | The later closure proves S3 locally; the current theorem is conditional on source items S1, S2, S4, and S5, and remains fixed-\(C\) and non-effective |
 | III: finite edit distance | Certified relative to the disclosed SAT/DRAT trust boundary | Every qualifying graph is at one-sided deletion distance at least seven from the fixed seed |
 
 The manuscript does **not** establish the exact value of the finite edit
@@ -76,9 +82,10 @@ Ramsey methods.
 
 Three minor evidence/status problems were found and repaired:
 
-1. S3 had been described both as an extra hypothesis and as locally proved.
-   The revised text keeps S3 as an extra source interface and says only that
-   the displayed algebra records what S3 must preserve.
+1. **Historical snapshot, superseded.** S3 had been described both as an extra
+   hypothesis and as locally proved.  That review-stage repair kept S3 as an
+   extra interface.  The later closure cited at the top of this file instead
+   proves S3 locally from the indicator kernel and tower property.
 2. The lower replay script no longer prints an overbroad theorem-reproduced
    sentinel; it now reports arithmetic-certificate reproduction.
 3. A hash-frozen pre-canonical route note retains historical wording.  Rather
@@ -86,9 +93,10 @@ Three minor evidence/status problems were found and repaired:
    as pre-canonical and states that its old labels do not override the unified
    theorem statement.
 
-Thus the safe conclusion remains conditional on S1--S5, fixed-\(C\), and
-non-effective.  The arithmetic replay does not discharge the source-level
-reverse-induction hypotheses.
+At this review snapshot the safe conclusion was conditional on S1--S5.  In
+the current manuscript S3 is discharged locally, so the remaining source
+boundary is S1, S2, S4, and S5; the fixed-\(C\), non-effective scope is
+unchanged.
 
 ## 4. Part III: finite SAT/DRAT reconstruction
 

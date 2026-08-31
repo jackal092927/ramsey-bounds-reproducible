@@ -132,4 +132,15 @@ done < "${asset_table}"
 "${repo_root}/.venv/bin/python" "${repo_root}/scripts/verify_artifacts.py" \
   --directory "${destination}" --exact
 
+# Executable mode is transport metadata rather than part of the content hash.
+# Set it only after every downloaded byte has passed the strict manifest gate.
+expected_drat_commit='2e3b2dc0ecf938addbd779d42877b6ed69d9a985'
+if [[ "$(tr -d '\n' < "${destination}/SOURCE_COMMIT")" != "${expected_drat_commit}" ]]; then
+  echo "Downloaded drat-trim source marker does not match the pinned commit." >&2
+  exit 1
+fi
+chmod 0755 \
+  "${destination}/drat-trim-2e3-linux-x86_64" \
+  "${destination}/drat-trim-2e3-macos-arm64"
+
 echo RELEASE_ASSET_LIST_AND_CONTENT_VERIFIED

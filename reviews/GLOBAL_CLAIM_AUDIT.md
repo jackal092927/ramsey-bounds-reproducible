@@ -1,5 +1,11 @@
 # Adversarial audit of the unified manuscript's global claims
 
+> **Later closure.** The claim audit below correctly described its snapshot.
+> A later targeted proof removed S3 from the assumption ledger while retaining
+> S1, S2, S4, and S5 as source assumptions; see
+> `reviews/LOWER_S3_CLOSURE_2026-08-30.md`. Earlier S3 dispositions below are
+> historical rather than current claim status.
+
 Date: 2026-08-30  
 Mode: read-only claim audit of the global manuscript layer; no paper, checker,
 certificate, or materializer source was edited  
@@ -19,7 +25,7 @@ rematerialized and compiled to a 78-page PDF; the unresolved-reference scan
 passed.  This report audits claim scope, not typesetting quality and not the
 underlying proofs a second time.
 
-## Executive verdict
+## Snapshot executive verdict
 
 The **single-manuscript requirement is satisfied**.  There is one document
 class, one abstract, one bibliography, one canonical PDF, and three Parts of
@@ -46,16 +52,16 @@ non-implication for `R(3,18)` are mutually consistent.
 | claim | verdict | audit reading |
 |---|---|---|
 | Conditional diagonal upper theorem | **PROVABLE AS STATED** | The condition consists of the three explicit Yang--Mao interfaces, the locally reproduced rate theorem, and Arb containment.  The positive-moment/tail argument is local, not imported. |
-| Lower theorem as a standalone unconditional theorem | **PROVABLE AFTER WEAKENING / EXTRA ASSUMPTION** | It requires (S1)--(S5), and current Part II correctly identifies (S3) as the paper's additional weighted-extension hypothesis. |
-| Lower theorem under explicit (S1)--(S5) | **PROVABLE AS STATED** | This is the status asserted in the repaired Part II.  The global summaries must preserve that condition and provenance boundary. |
+| Lower theorem as a standalone unconditional theorem | **HISTORICAL SNAPSHOT: PROVABLE AFTER WEAKENING / EXTRA ASSUMPTION** | At this audit stage it required (S1)--(S5), with S3 treated as an additional weighted-extension hypothesis.  The later closure proves S3 locally but does not remove S1, S2, S4, or S5. |
+| Lower theorem under explicit (S1)--(S5) | **HISTORICAL SNAPSHOT: PROVABLE AS STATED** | This was the status asserted in the then-repaired Part II.  The current theorem has the stronger four-item source boundary plus a local proof of S3. |
 | Fixed-seed deletion barrier `rho(H) >= 7` | **PROVABLE AS STATED** | It is local to the fixed labelled vertex set and one-sided metric and is supported by six semantically reconstructed, checked DRAT refutations. |
 | Existence or nonexistence of an exact-seven repair | **NOT CURRENTLY JUSTIFIED** | The paper correctly labels all three bounded runs `UNKNOWN` and asserts neither direction. |
 | Anonymous public availability of the repository and twelve release assets | **NOT CURRENTLY JUSTIFIED** | The reviewed state is local pre-publication; public GitHub/release evidence has not yet been established. |
 
-For the global prose as currently written, the lower-bound summary therefore
-has status **PROVABLE AFTER WEAKENING / EXTRA ASSUMPTION**.  After the global
-prose explicitly carries (S3), the conditional summary has status
-**PROVABLE AS STATED**.
+For the global prose at this audit snapshot, the lower-bound summary therefore
+had status **PROVABLE AFTER WEAKENING / EXTRA ASSUMPTION**.  This finding is
+closed more strongly in the current manuscript: S3 is proved locally, while
+S1, S2, S4, and S5 remain explicit source assumptions.
 
 ## Findings requiring correction
 

@@ -1,0 +1,48 @@
+{
+  "automorphism_group_order": 1,
+  "branch_symmetry_transfer_available": false,
+  "logic": "Every graph automorphism preserves degree colors and each subsequent 1-WL color.  Since round two has 100 singleton color classes, every automorphism fixes every vertex.",
+  "refinement_rounds": [
+    {
+      "classes": 3,
+      "index": 0,
+      "largest_class": 49,
+      "meaning": "degree initialization",
+      "size_histogram": {
+        "3": 1,
+        "48": 1,
+        "49": 1
+      }
+    },
+    {
+      "classes": 15,
+      "index": 1,
+      "largest_class": 14,
+      "meaning": "one-dimensional Weisfeiler-Leman refinement",
+      "size_histogram": {
+        "1": 2,
+        "3": 2,
+        "4": 1,
+        "5": 2,
+        "6": 2,
+        "9": 1,
+        "10": 2,
+        "11": 1,
+        "12": 1,
+        "14": 1
+      }
+    },
+    {
+      "classes": 100,
+      "index": 2,
+      "largest_class": 1,
+      "meaning": "one-dimensional Weisfeiler-Leman refinement",
+      "size_histogram": {
+        "1": 100
+      }
+    }
+  ],
+  "schema": "ramsey-r3-18-n100-seed-automorphism-wl-audit-v1",
+  "seed_sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+  "status": "TRIVIAL_AUTOMORPHISM_GROUP_CERTIFIED_BY_1WL"
+}

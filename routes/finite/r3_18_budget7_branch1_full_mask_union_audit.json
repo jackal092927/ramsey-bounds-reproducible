@@ -1,0 +1,210 @@
+{
+  "bounded_go_no_go": {
+    "decision": "GO_BUILD_AND_AUDIT__NO_GO_LONG_SOLVE_YET",
+    "optional_probe": {
+      "SAT": "require a complete model, evaluate all 997210 clauses, and independently search for I18; stop after recording it",
+      "UNKNOWN": "stop and learn nothing",
+      "UNSAT": "retain only as unchecked unless an exact final-CNF proof is emitted and independently replayed",
+      "maximum_runs": 1,
+      "maximum_wall_seconds": 300,
+      "no_resume_no_solver_swap_no_cap_increase": true,
+      "solver": "one pinned proof-capable backend"
+    },
+    "reason": "The union is materially stronger than the A+ CNF and blocks its known SAT model, but prior master and A+ solves took minutes to tens of minutes. Construction alone is not evidence that a long solve will close the branch."
+  },
+  "claim_boundary": "This authenticates and deduplicates universally necessary I18 clauses and, if present, byte-audits one finite CNF. It proves neither satisfiability nor unsatisfiability of exact seven, does not close branch 1, and has no global Ramsey implication.",
+  "comparison_with_existing_routes": {
+    "Benders_universal_plus_all_fixed_base": {
+      "A+_beyond_three_families": 4096,
+      "deduplicated_masks": 482815,
+      "encoding_difference": "Benders uses projected deletion/addition conditional cuts in a master; this route uses full edge-variable clauses",
+      "full_union_additional_masks": 47710,
+      "history_only_beyond_universal_and_fixed_base": 43614,
+      "is_byte_or_formula_duplicate": false
+    },
+    "existing_A+_gate": {
+      "clauses": 722552,
+      "full_union_adds_clauses": 274658,
+      "installed_I18_families": "universal plus A+",
+      "interpretation": "the historical A+ gate used history/fixed-base only as A+ exclusion families; it did not install their clauses",
+      "known_SAT_endpoint_I18_witness": "bfffe00000000000000000000",
+      "known_witness_membership": [
+        "history",
+        "fixed_base"
+      ]
+    }
+  },
+  "deduplication": {
+    "A+": {
+      "masks": 4096,
+      "zero_overlap_with_three_family_union": true
+    },
+    "duplicates_removed_three_families": 25437,
+    "exclusive_membership_counts": {
+      "A+": 4096,
+      "fixed_base": 221496,
+      "history": 43614,
+      "history+fixed_base": 9548,
+      "universal": 236528,
+      "universal+fixed_base": 3814,
+      "universal+history": 10783,
+      "universal+history+fixed_base": 646
+    },
+    "extra_beyond_common_universal_bank": {
+      "masks": 278754,
+      "ordered_masks_sha256": "2242d10f9ea3cefedef7a8c02be9a7df41db3cdb6580733e3fca9391db46d1d4"
+    },
+    "full_union": {
+      "masks": 530525,
+      "ordered_masks_sha256": "f5c1c60877306900c1aa81bd3a7f357c3d16464ad329c676639a6f6bda9a682d"
+    },
+    "pairwise_intersections": {
+      "fixed_base_A+": 0,
+      "history_A+": 0,
+      "history_fixed_base": 10194,
+      "universal_A+": 0,
+      "universal_fixed_base": 4460,
+      "universal_history": 11429
+    },
+    "raw_family_memberships_three_families": 551866,
+    "three_family_union": {
+      "masks": 526429,
+      "ordered_masks_sha256": "f4220088cf6dfccc7b0e8b0aa7c2d1a2ef4a47f5ce31738506eefdd591613258"
+    },
+    "universal_history_fixed_base_intersection": 646
+  },
+  "emitted_cnf": {
+    "basename": "branch1_full_mask_union.cnf",
+    "bytes": 390604816,
+    "clauses": 997210,
+    "embedded_common_uncompressed_bytes": 180104600,
+    "embedded_common_uncompressed_sha256": "9602ef233f5fa95748ce4e7f997457d1bef47cd46453340bf5a44c2e163d3ec7",
+    "every_appended_clause_reconstructed": true,
+    "header_and_clause_lines": 997211,
+    "sha256": "4f7e8f5b724a657888c7814d2c25cac41c283c3db356fb8f1a15f4c7322c375d",
+    "variables": 154190
+  },
+  "exact_seven_repair_exists": null,
+  "formula_plan": {
+    "all_unique_I18_masks_after_augmentation": 530525,
+    "common_clauses": 718452,
+    "common_cnf_expected": {
+      "gzip_bytes": 18919093,
+      "gzip_sha256": "39249ef8378de3f2ef412e514f6283cdaa032bc17fb25fc3448463e5566f5365",
+      "uncompressed_bytes": 180104600,
+      "uncompressed_sha256": "9602ef233f5fa95748ce4e7f997457d1bef47cd46453340bf5a44c2e163d3ec7"
+    },
+    "common_universal_I18_masks": 251771,
+    "common_variables": 154190,
+    "expected_plain_CNF_bytes": 390604816,
+    "expected_plain_CNF_sha256": "4f7e8f5b724a657888c7814d2c25cac41c283c3db356fb8f1a15f4c7322c375d",
+    "final_clauses": 997210,
+    "new_unique_I18_clauses": 278754,
+    "proved_positive_units": [
+      1085,
+      1672,
+      1675,
+      1680
+    ],
+    "solver_invoked": false
+  },
+  "global_ramsey_implication": null,
+  "inputs": {
+    "A+": {
+      "basename": "r3_18_budget7_branch1_cegar_Aplus_batch.json",
+      "bytes": 135906,
+      "distinct_role": "new reverse-first batch; required to have zero overlap with all three pre-existing families",
+      "masks": 4096,
+      "ordered_masks_sha256": "a3cff8d8a4c77c6effb49c03e76065a17f754d0a7de727d229652276b6e8cda0",
+      "sha256": "835137c2df19bc851618761cc0af92400b3fa2677dd00c47101d1074c7406e8b"
+    },
+    "fixed_base_reconstruction": {
+      "all_masks_independent_after_deleting_fixed_edge": true,
+      "enumeration": "all independent 16-sets in the endpoints' common seed nonneighbourhood, then adjoin 97 and 99",
+      "exhaustiveness_premise": "the pinned seed-verification record excludes an I18 before the fixed edge is deleted",
+      "masks": 235504,
+      "ordered_masks_sha256": "1e9f89f40cd97a5f3b6fa93bb3c4835d45cadca8362e9d3150e90d4f385f6d8c",
+      "recursive_nodes": 16213880
+    },
+    "history": {
+      "basename": "r3_18_budget7_branch1_cegar_history_exclusion.json",
+      "bytes": 2136579,
+      "masks": 64591,
+      "ordered_masks_sha256": "74b4b99c18e925a7a1bbb0e4a1636dad4bf8741ba67623c2164f3607a65172a8",
+      "sha256": "d5100bb5dce48da3ca8ab3810290ff553ebb9d6c87ff9df1f287700563f456b0",
+      "source_checkpoints": 18,
+      "source_raw_masks": 113448,
+      "union_duplicates_removed": 48857
+    },
+    "matrix": {
+      "basename": "r3_18_n100_nearmiss.txt",
+      "bytes": 20000,
+      "edges": 827,
+      "sha256": "e6527601f72ebb2d3aed11adcdd2ffb0c6aab5e326d81d439c10ee468844e85e",
+      "vertices": 100
+    },
+    "prior_A+_SAT_endpoint_audit": {
+      "SAT_model_full_CNF_evaluation_passed": true,
+      "auditor_executed_solver": false,
+      "basename": "r3_18_budget7_branch1_cegar_Aplus_f24_endpoint_audit.json",
+      "bytes": 3189,
+      "independent_18_mask": "bfffe00000000000000000000",
+      "sha256": "b1f1732dfcdd1274c84c83aa7237d8385156c260b1f5e78f90b39a3e4f24ab82"
+    },
+    "seed_no_I18_verification": {
+      "basename": "r3_18_n100_nearmiss_verification.json",
+      "bytes": 1461,
+      "forbidden_independent_set_exists": false,
+      "forbidden_independent_set_target": 18,
+      "sha256": "9e5d98390608a4623d64d7ffaf91f9edd5da63f1e236e07ab7ba87fb8ffa5a39"
+    },
+    "singleton_proof_summary": {
+      "all_four_proof_verified": true,
+      "basename": "r3_18_budget7_branch1_core_proof_summary.json",
+      "bytes": 10406,
+      "proved_positive_edges": [
+        [
+          11,
+          62
+        ],
+        [
+          18,
+          61
+        ],
+        [
+          18,
+          64
+        ],
+        [
+          18,
+          69
+        ]
+      ],
+      "proved_positive_units": [
+        1085,
+        1672,
+        1675,
+        1680
+      ],
+      "sha256": "8ae4f0d9ea919c915ba642eb03ec3d418b4419a89781377509acbe925d89555a"
+    },
+    "universal": {
+      "basename": "r3_18_budget6_branch_0_universal_union.cuts.json",
+      "bytes": 8308702,
+      "masks": 251771,
+      "ordered_digest_hex_width": 16,
+      "ordered_masks_sha256": "f10690b826b86eb03567a2ffaffb553801fae32af20cfe4337118bddf4e41afa",
+      "sha256": "91b5709248ff641a315f5a0389b4f3fde3d38514f3b1a8b31b6cad31224f250b"
+    }
+  },
+  "mathematical_soundness": {
+    "all_four_families_are_18_subsets_of_[100]": true,
+    "clause": "OR_{uv in binom(S,2)} x_uv",
+    "literals_per_mask": 153,
+    "provenance_not_needed_for_clause_validity": true,
+    "statement": "For every 18-subset S of [100], alpha(G)<18 implies that at least one of the 153 pairs in S is an edge.",
+    "valid_for_every_exact_seven_target": true
+  },
+  "schema": "ramsey-r3-18-n100-exact-budget7-branch1-full-mask-union-audit-v1",
+  "status": "FULL_MASK_UNION_CNF_BYTE_AUDITED_SOLVER_NOT_RUN"
+}

@@ -35,6 +35,7 @@ from .r3_18_budget7_benders_branch1 import (
     enumerate_cliques_with_order,
     exact_add_only_subproblem,
     fixed_base_i18_masks,
+    initial_cut_bank_identity,
     load_resume_state,
     run_branch1_benders,
     shareable_path,
@@ -158,6 +159,69 @@ class Budget7Branch1BendersTests(unittest.TestCase):
                     self.assertEqual(
                         telemetry["passes"][0]["order"], "reverse"
                     )
+
+    def test_bidirectional_second_pass_and_complete_composition(self) -> None:
+        # With only the low-label edge, reverse exhausts its half-node budget
+        # before reaching the sole K2; the historical ascending pass finds it.
+        low_edge = rows_from_edges(4, [(0, 1)])
+        found, telemetry = enumerate_cliques_with_order(
+            low_edge, 2, 1, 7, 1.0, "bidirectional"
+        )
+        self.assertEqual(
+            [record["order"] for record in telemetry["passes"]],
+            ["reverse", "ascending"],
+        )
+        self.assertEqual(telemetry["passes"][0]["reason"], "NODE_LIMIT")
+        self.assertEqual(found.witnesses, [(1 << 0) | (1 << 1)])
+        self.assertFalse(found.complete)
+        self.assertEqual(found.reason, "WITNESS_LIMIT")
+        self.assertLessEqual(found.recursive_nodes, 8)
+
+        # Reverse is again incomplete, but ascending exhausts this triangle-free
+        # graph.  A complete second pass may therefore certify global absence.
+        path = rows_from_edges(3, [(0, 2), (1, 2)])
+        exhausted, telemetry = enumerate_cliques_with_order(
+            path, 3, 10, 5, 1.0, "bidirectional"
+        )
+        self.assertEqual(
+            [record["order"] for record in telemetry["passes"]],
+            ["reverse", "ascending"],
+        )
+        self.assertFalse(telemetry["passes"][0]["complete"])
+        self.assertTrue(telemetry["passes"][1]["complete"])
+        self.assertEqual(exhausted.witnesses, [])
+        self.assertTrue(exhausted.complete)
+        self.assertEqual(exhausted.reason, "EXHAUSTED")
+        self.assertLessEqual(exhausted.recursive_nodes, 6)
+
+    def test_all_oracle_orders_against_small_graph_brute_force(self) -> None:
+        for n in range(1, 5):
+            pairs = list(itertools.combinations(range(n), 2))
+            for graph_mask in range(1 << len(pairs)):
+                adjacency = rows_from_edges(
+                    n,
+                    [edge for i, edge in enumerate(pairs) if graph_mask >> i & 1],
+                )
+                for target in range(n + 2):
+                    expected = {
+                        sum(1 << vertex for vertex in subset)
+                        for subset in itertools.combinations(range(n), target)
+                        if all(
+                            (adjacency[u] >> v) & 1
+                            for u, v in itertools.combinations(subset, 2)
+                        )
+                    }
+                    for strategy in ("ascending", "reverse", "bidirectional"):
+                        found, _ = enumerate_cliques_with_order(
+                            adjacency,
+                            target,
+                            max(1, len(expected) + 1),
+                            10000,
+                            1.0,
+                            strategy,
+                        )
+                        self.assertTrue(found.complete)
+                        self.assertEqual(set(found.witnesses), expected)
 
     def test_master_dimensions_and_exact_six_cardinality(self) -> None:
         clauses, dvars, yvars, _, metadata = build_master_formula(
@@ -494,17 +558,72 @@ class Budget7Branch1BendersTests(unittest.TestCase):
             _, dvars, _, _, metadata = build_master_formula(
                 self.base, {FIXED_EDGE}, RESIDUAL_DELETIONS
             )
+            bank_identity = initial_cut_bank_identity(self.initial_metadata())
+            self.assertEqual(result["initial_cut_bank_identity"], bank_identity)
             masks, no_goods, info = load_resume_state(
                 checkpoint,
                 EXPECTED_INPUT_SHA256,
                 metadata["structural_fingerprint_sha256"],
                 set(dvars),
+                bank_identity,
             )
             self.assertEqual(len(masks), 1)
             self.assertEqual(no_goods, [])
             self.assertEqual(info["path"], "checkpoint.json")
             self.assertEqual(info["source_oracle_order"], "bidirectional")
             self.assertTrue(info["source_oracle_order_explicitly_recorded"])
+            self.assertEqual(
+                info["initial_cut_bank_validation"]["source_identity_mode"],
+                "explicit_identity_v1",
+            )
+
+            payload = json.loads(checkpoint.read_text(encoding="utf-8"))
+            legacy = Path(directory) / "legacy.json"
+            del payload["initial_cut_bank_identity"]
+            legacy.write_text(json.dumps(payload), encoding="utf-8")
+            _, _, legacy_info = load_resume_state(
+                legacy,
+                EXPECTED_INPUT_SHA256,
+                metadata["structural_fingerprint_sha256"],
+                set(dvars),
+                bank_identity,
+            )
+            self.assertEqual(
+                legacy_info["initial_cut_bank_validation"]["source_identity_mode"],
+                "legacy_metadata_reconstructed",
+            )
+
+            mismatched_metadata = dict(self.initial_metadata())
+            mismatched_metadata.update(
+                {
+                    "fixed_base_I18_preloaded": 1,
+                    "deduplicated_initial_masks": 1,
+                    "deduplicated_initial_masks_sha256": masks_hash(
+                        [self.fixed_masks[0]]
+                    ),
+                }
+            )
+            with self.assertRaisesRegex(ValueError, "different initial cut bank"):
+                load_resume_state(
+                    checkpoint,
+                    EXPECTED_INPUT_SHA256,
+                    metadata["structural_fingerprint_sha256"],
+                    set(dvars),
+                    initial_cut_bank_identity(mismatched_metadata),
+                )
+
+            corrupt_identity = Path(directory) / "corrupt-identity.json"
+            payload = json.loads(checkpoint.read_text(encoding="utf-8"))
+            payload["initial_cut_bank_identity"]["identity_sha256"] = "0" * 64
+            corrupt_identity.write_text(json.dumps(payload), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "identity is corrupt"):
+                load_resume_state(
+                    corrupt_identity,
+                    EXPECTED_INPUT_SHA256,
+                    metadata["structural_fingerprint_sha256"],
+                    set(dvars),
+                    bank_identity,
+                )
 
             damaged = Path(directory) / "damaged.json"
             payload = json.loads(checkpoint.read_text(encoding="utf-8"))
@@ -516,6 +635,7 @@ class Budget7Branch1BendersTests(unittest.TestCase):
                     EXPECTED_INPUT_SHA256,
                     metadata["structural_fingerprint_sha256"],
                     set(dvars),
+                    bank_identity,
                 )
 
     def test_incomplete_master_oracle_falls_back_without_unknown_no_good(self) -> None:

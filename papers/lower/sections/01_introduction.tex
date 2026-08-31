@@ -30,14 +30,14 @@ The parameters \(p,c,D,\omega_0\), the source quantities \(B_R(C)\) and
 \(B_B(C)\), and the exact-CGF term \(G_*(C)\) are defined explicitly in
 \cref{sec:setup}.  The theorem imports the four version-pinned conditional
 probability, extraction, and blue-ledger items (S1), (S2), (S4), and (S5),
-together with the separately identified weighted-extension rule (S3), all
-stated in \cref{ass:hms}.  The one-step nonuniform estimate, first-moment
-conversion, and red--blue comparison are proved locally.
+stated in \cref{ass:hms,ass:hms-tail}.  The weighted reverse-propagation rule
+(S3) is proved locally in \cref{lem:weighted-reverse}, as are the one-step
+nonuniform estimate, first-moment conversion, and red--blue comparison.
 
 \begin{theorem}[Source-relative fixed-ratio bound]\label{thm:main-lower}
 Fix the absolute source constant \(K\) used in \eqref{eq:source-K}.  Under
-\cref{ass:hms}, there exists \(C_0=C_0(K)>1\) such that, for each fixed
-\(C\ge C_0\),
+\cref{ass:hms,ass:hms-tail}, there exists \(C_0=C_0(K)>1\) such that, for each
+fixed \(C\ge C_0\),
 \[
 \liminf_{\ell\to\infty}\frac1\ell
 \log R(\ell,\lfloor C\ell\rfloor)
