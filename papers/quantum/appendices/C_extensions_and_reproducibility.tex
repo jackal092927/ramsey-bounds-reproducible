@@ -48,7 +48,8 @@ the repository root by
 \begin{verbatim}
 python3 \
   experiments/quantum_ramsey/implicit_majority_audit.py \
-  --self-check --max-k 12 --simulate-k 3 --trials 20
+  --self-check --max-k 12 --simulate-k 3 \
+  --trials 1000 --seed 20260831
 \end{verbatim}
 It verifies the dyadic error schedule, prefix-product inequality, and variable
 recurrence with exact rational arithmetic through $K=64$.  It also compares
@@ -56,10 +57,41 @@ the size-biased survival lemma with an exact dynamic program over all split
 trees through nine levels, emits the Jain-et-al./Liu--Zhandry exponent
 translation, checks conditional marked-item uniformity by an explicit
 16-dimensional Grover state-vector calculation, and runs deterministic-seed
-diagnostics on complete, empty, parity, and random graphs.
+diagnostics on complete, empty, parity, fixed random, and independently
+resampled random graphs.
 
 The end-to-end diagnostic replaces quantum search by an ideal uniform
 marked-item sampler; only the isolated capped-search primitive receives the
 small state-vector check.  These checks test the combinatorial invariant,
 error schedule, and sampler symmetry.  They are not a simulation of the full
 algorithm, a hardware experiment, or an empirical proof of quantum speedup.
+
+\begin{center}
+\begin{tabular}{lrr}
+\hline
+Graph family on 16 vertices & failed/trials & minimum final $|S_3|$\\
+\hline
+complete & $0/1000$ & 13\\
+empty & $0/1000$ & 13\\
+parity & $0/1000$ & 6\\
+one fixed $G(16,1/2)$ & $0/1000$ & 2\\
+fresh $G(16,1/2)$ per trial & $0/1000$ & 2\\
+\hline
+\end{tabular}
+\end{center}
+
+The isolated 16-state calculation mixed Grover iteration counts from zero
+through four.  Across marked-set sizes $1,2,3,4,8,15$, its block-success
+probability ranged from $0.4026746749$ to $0.5973253251$, and the largest
+conditional deviation from the uniform distribution on marked items was
+zero to machine precision.  For the exhaustive split-tree checks, the
+nine-level binary instance had exact worst survival $0.5086135566$ versus
+the proved lower bound $513/1024$, and the four-level ternary instance had
+exact worst survival $0.7155732457$ versus $88/127$.  Zero observed failures
+in the table are a regression result, not an estimate that the failure
+probability is zero.
+
+As a separate pointer for the hypergraph open problem in Section~7,
+higher-order symmetry representations have been useful in a different
+hypergraph algorithmic setting \cite{ZhangXinDey2024}.  Whether such structure
+can be exposed with sublinear coherent queries in a Ramsey problem is open.

@@ -21,47 +21,51 @@
 
 \setlist[itemize]{leftmargin=*,topsep=3pt,itemsep=2pt}
 \setlength{\emergencystretch}{2em}
+\raggedbottom
 
-\title[Quantum constructive Ramsey search]{Quantum Query Algorithms for Constructive Ramsey Search}
+\title[Quantum constructive Ramsey search]{Quantum Query Algorithms for the Constructive Diagonal Ramsey Theorem}
 \author{Anonymous Authors}
 \date{}
 \subjclass[2020]{05D10, 68Q12, 68Q25}
-\keywords{Ramsey theorem, quantum query complexity, implicit sets, Grover search}
+\keywords{diagonal Ramsey theorem, clique or independent set, quantum query complexity,
+adjacency oracle, implicit sets, total search}
 
 \hypersetup{
-  pdftitle={Quantum Query Algorithms for Constructive Ramsey Search},
+  pdftitle={Quantum Query Algorithms for the Constructive Diagonal Ramsey Theorem},
   pdfauthor={Anonymous Authors},
   pdfsubject={Quantum query algorithms for constructive Ramsey search},
-  pdfkeywords={Ramsey theorem, quantum query complexity, Grover search, implicit sets}}
+  pdfkeywords={diagonal Ramsey theorem, clique or independent set, quantum query complexity,
+  adjacency oracle, implicit sets, total search}}
 
 \begin{document}
 
 \begin{abstract}
-Given coherent adjacency-oracle access to an $N$-vertex graph, we study the
-total search problem of finding a clique or independent set whose existence is
-guaranteed by the diagonal Ramsey theorem.  For $K\ge2$ and
-$N\ge4^{K-1}$, we give a bounded-error quantum algorithm that outputs a
-verified homogeneous $K$-set using
+The constructive diagonal Ramsey problem asks for a clique or an independent
+set of the size guaranteed by Ramsey's theorem, using adjacency queries to the
+input graph.  Given coherent adjacency-oracle access to an $N$-vertex simple
+graph, we give a bounded-error quantum algorithm that, for every $K\ge2$ and
+$N\ge4^{K-1}$, finds and verifies a homogeneous $K$-set using
 \[
   O\!\left(2^K K\log\frac K\eta\right)
 \]
-edge queries, where the failure probability is at most $\eta$.  In particular,
-when $N=2^n$, it finds a homogeneous set of order
+edge queries with failure probability at most $\eta$.  At the Ramsey scale
+$N=2^n$, it finds a homogeneous set of order
 $\lfloor n/2\rfloor+1$ using
 $O(\sqrt N\log N\log(\log N/\eta))$ queries.  The standard explicit
-constructive Ramsey recursion uses $O(N)$ queries.
+Erd\H{o}s--Szekeres recursion uses $O(N)$ queries.
 
-The algorithm represents each nested candidate set by an implicit membership
-predicate, samples it using capped unknown-solution quantum search, and uses a
-scale-aware concentration schedule that spends accuracy where sampling is
-cheap.  We also give an estimation-free size-biased recursion, extend that
-argument to any fixed number of edge colours, and prove a randomized classical
-lower bound of $\Omega(N^{1-1/\sqrt2})$ at the same Ramsey scale.  The latter
-does not separate the quantum algorithm from all randomized classical
-algorithms.  Finally, we identify a parameter-level incompatibility with a
-printed $N^{1-o(1)}$ quantum lower bound in prior work: direct substitution
-into its cited reduction and multicollision theorem yields exponent at most
-$1/24$ through that route.
+The algorithm implements the constructive Ramsey recursion without
+materializing its nested candidate sets.  It represents each candidate set by
+a short conjunction of adjacency constraints, samples from this implicit set
+using capped quantum search with an unknown number of marked items, and uses a
+scale-aware concentration schedule that assigns more accuracy to inexpensive
+early levels than to expensive late levels.  We also give an estimation-free
+size-biased recursion, extend it to every fixed number of edge colours, and
+prove a randomized classical lower bound of
+$\Omega(N^{1-1/\sqrt2})$ in the same parameterization.  This lower bound does
+not establish a quantum--classical separation.  The result improves the query
+complexity of finding guaranteed homogeneous sets; it does not improve a
+numerical Ramsey bound or make a gate-complexity claim.
 \end{abstract}
 
 \maketitle
@@ -83,12 +87,8 @@ $1/24$ through that route.
 \bibliography{references}
 
 \section*{AI disclosure}
-We used OpenAI Codex for algorithmic brainstorming, proof drafting and
-checking, literature comparison, implementation of reproducibility checks,
-and editorial revision, and ChatGPT Pro for brainstorming and adversarial
-review.  These tools materially affected Sections~1--7 and
-Appendices~A--C; their role is described in Section~7.  The human authors take
-full responsibility for the correctness, originality, and integrity of all
-content, including the mathematical claims, references, and code.
+OpenAI Codex and ChatGPT Pro materially assisted Sections~1--7 and
+Appendices~A--C, as detailed in Section~7.  The human authors take full
+responsibility for all claims, references, and code.
 
 \end{document}

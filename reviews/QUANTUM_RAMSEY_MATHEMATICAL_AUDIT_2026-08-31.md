@@ -175,9 +175,9 @@ parameterization.
 
 ## External AI review state
 
-A public-only collaboration packet was sent to ChatGPT Pro at
-<https://chatgpt.com/c/6a9600fb-e158-83e8-b741-d979176a5d2b>. At the time of
-this audit its review was still running, so no conclusion from that reviewer
-is counted here. Two separate background review attempts timed out without a
-verdict and are likewise not mathematical evidence either for or against the
-claims.
+The quantum-specific ChatGPT Pro review subsequently completed and found no
+fatal mathematical error. Its objections and their manuscript dispositions
+are recorded in
+[`CHATGPT_PRO_QUANTUM_REVIEW_DISPOSITION_2026-08-31.md`](CHATGPT_PRO_QUANTUM_REVIEW_DISPOSITION_2026-08-31.md).
+That review is an AI-assisted author-side check, not independent human peer
+review or mathematical evidence by itself.

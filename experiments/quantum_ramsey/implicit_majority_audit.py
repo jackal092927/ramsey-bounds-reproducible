@@ -482,11 +482,22 @@ def simulation_summary(k: int, trials: int, seed: int) -> dict[str, object]:
         "hoeffding_samples_by_round_for_failure_0.01"
     ]
     results: dict[str, object] = {}
-    for graph_index, kind in enumerate(("complete", "empty", "parity", "random")):
-        oracle = make_graph(kind, n, seed + graph_index)
+    graph_kinds = ("complete", "empty", "parity", "random", "random_resampled")
+    for graph_index, kind in enumerate(graph_kinds):
+        fixed_oracle = (
+            None
+            if kind == "random_resampled"
+            else make_graph(kind, n, seed + graph_index)
+        )
         failures = []
         minimum_final_size = n
         for trial in range(trials):
+            oracle = (
+                make_graph("random", n, seed + 1_000_000 + trial)
+                if kind == "random_resampled"
+                else fixed_oracle
+            )
+            assert oracle is not None
             trial_rng = random.Random(seed + 10_000 * graph_index + trial)
             result = ideal_sampler_trial(oracle, n, k, trial_rng, sample_counts)
             minimum_final_size = min(minimum_final_size, result["sizes"][-1])
@@ -497,6 +508,11 @@ def simulation_summary(k: int, trials: int, seed: int) -> dict[str, object]:
             "failures": len(failures),
             "first_failure": failures[0] if failures else None,
             "minimum_final_candidate_size": minimum_final_size,
+            "graph_sampling": (
+                "one fresh G(n,1/2) graph per trial"
+                if kind == "random_resampled"
+                else "one fixed graph across all algorithmic trials"
+            ),
         }
 
     return {
@@ -542,6 +558,11 @@ def main() -> None:
     parser.add_argument("--seed", type=int, default=20260831)
     parser.add_argument("--self-check", action="store_true")
     parser.add_argument(
+        "--simulation-only",
+        action="store_true",
+        help="emit only the small state-vector and end-to-end diagnostics",
+    )
+    parser.add_argument(
         "--check-only",
         action="store_true",
         help="run assertions and print only the pass marker",
@@ -560,6 +581,13 @@ def main() -> None:
         if not args.self_check:
             parser.error("check-only requires --self-check")
         print("QUANTUM_RAMSEY_AUDIT_PASS")
+        return
+    if args.simulation_only:
+        output = {
+            "small_statevector_sampler_audit": statevector_uniformity_audit(),
+            "simulation": simulation_summary(args.simulate_k, args.trials, args.seed),
+        }
+        print(json.dumps(output, indent=2))
         return
 
     output = {

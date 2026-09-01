@@ -24,7 +24,14 @@ This computes the exact one-step conditional expectation after resampling a \(k\
 
 ~~~bash
 python3 experiments/quantum_ramsey/implicit_majority_audit.py \
-  --self-check --max-k 12 --simulate-k 3 --trials 20
+  --self-check --max-k 12 --simulate-k 3 --trials 1000 --seed 20260831
+~~~
+
+The faster proof-of-concept-only command is:
+
+~~~bash
+python3 experiments/quantum_ramsey/implicit_majority_audit.py \
+  --simulation-only --simulate-k 3 --trials 1000 --seed 20260831
 ~~~
 
 The repository's quiet assertion gate is:
@@ -43,7 +50,8 @@ runs an exact dynamic program over all small split trees to check the separate
 size-biased survival lemma through nine rounds, and an explicit 16-state
 Grover evolution checks conditional uniformity of the capped sampler.  It then
 runs a deterministic-seed Monte Carlo diagnostic on complete, empty, parity,
-and random graphs.  The simulator replaces quantum search by an ideal uniform
+one fixed random graph, and independently resampled random graphs.  The
+simulator replaces quantum search by an ideal uniform
 marked-item sampler, so it validates the combinatorial invariant and cost
 formula rather than physical hardware or wall-clock quantum advantage; only
 the isolated sampler audit evolves a state vector.

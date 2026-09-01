@@ -3,14 +3,19 @@
 
 Previous quantum papers under the phrase ``Ramsey algorithm'' solve different
 problems.  Gaitan and Clark encode the existence of avoidance colourings in
-an adiabatic Hamiltonian \cite{GaitanClark2012}; Wang searches the space of
+an adiabatic Hamiltonian \cite{GaitanClark2012}, and Bian et al.\ implement
+small instances experimentally \cite{BianEtAl2013}; Wang searches the space of
 $2^{\binom V2}$ labelled graphs when testing a Ramsey threshold
 \cite{Wang2016}; and Pion and Mniszewski study QUBO reduction and quantum
 annealing for bound discovery \cite{PionMniszewski2025}.  Their square roots
 refer to the number of graph colourings, not the number of vertices of one
 given graph.  D{\"o}rn's clique and independent-set query algorithms are
 closer in oracle model but do not exploit the Ramsey totality promise or the
-majority recursion \cite{Doern2005}.  To our knowledge, no earlier work uses
+majority recursion \cite{Doern2005}.  Learning-graph algorithms for fixed
+subgraph containment \cite{LeeMagniezSantha2012} and quantum backtracking
+\cite{Montanaro2018} provide powerful generic primitives, but neither by
+itself supplies the implicit-set survival invariant used here.  To our
+knowledge, no earlier work uses
 implicit-set quantum sampling to implement the constructive
 Erdős--Szekeres proof; this priority statement is limited to the exact oracle
 model and sources compared here.

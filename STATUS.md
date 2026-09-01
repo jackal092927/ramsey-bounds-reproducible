@@ -144,7 +144,8 @@ exact binary and ternary split-tree diagnostics pass.
 For randomized classical algorithms, the proved lower bound is only
 $\Omega(2^{(2-\sqrt2)K})=\Omega(M^{1-1/\sqrt2})$, below the quantum exponent
 $1/2$. Therefore the paper claims a new quantum upper bound and a
-near-quadratic improvement over the standard deterministic recursion, not a
+square-root query improvement, up to polylogarithmic factors, over the
+standard deterministic recursion, not a
 separation from the best randomized classical algorithm.
 
 Jain--Li--Robere--Xun print an incompatible $N^{1-o(1)}$ quantum lower-bound
@@ -156,12 +157,14 @@ manuscript records this as an unresolved parameter conflict and requires
 author clarification; it does not allege an error or count the printed lower
 bound as compatible evidence.
 
-The standalone ITCS draft contains only this quantum result.  It has 13 pages
+The standalone ITCS draft contains only this quantum result.  It has 14 pages
 total, completes its main presentation on page 10, and then gives three
 technical/reproducibility appendices.  Its 11pt single-column anonymous build,
-cross-references, citations, embedded fonts, metadata, and identity scan pass.
-The current PDF SHA-256 is
-`714381c3c41ce70ad4c1f05a88b196f3a16fa3281ee1be16071fa4308fa7908f`.
+cross-references, citations, embedded fonts, and metadata pass.  It contains
+no author block, affiliation, personal email, or public repository URL; one
+relevant prior paper by the submitting author is cited in ordinary
+third-person form.  The current PDF SHA-256 is
+`3ccbc11c1d37718196826b66f68230fa1745f0dd53548c851fb574481a896d1f`.
 This is a prepared draft, not an uploaded or accepted submission; the JLRX
 clarification remains the scientific submission gate.
 
@@ -200,8 +203,10 @@ clarification remains the scientific submission gate.
 - Quantum theorem-specific adversarial review: **passed locally** for the
   scale-aware, size-biased, multicolour, canonicalization, and classical-lower
   arguments; priority and the JLRX parameter conflict remain open.
-- Quantum ChatGPT Pro packet: **sent on 2026-08-31 and still running**; no
-  result from that review is counted in the mathematical verdict.
+- Quantum ChatGPT Pro review: **completed and dispositioned on 2026-08-31**;
+  it found no fatal correctness error, endorsed the scoped query theorem as
+  apparently novel, and left significance/priority and the JLRX clarification
+  as publication risks rather than mathematical defects.
 - Exact-seven ChatGPT Pro collaboration packet: **drafted but not submitted**;
   fresh action-time confirmation is still required before external transmission.
 
@@ -219,6 +224,7 @@ Review files:
 - [`reviews/LOWER_S3_CLOSURE_2026-08-30.md`](reviews/LOWER_S3_CLOSURE_2026-08-30.md)
 - [`reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md`](reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md)
 - [`reviews/QUANTUM_RAMSEY_MATHEMATICAL_AUDIT_2026-08-31.md`](reviews/QUANTUM_RAMSEY_MATHEMATICAL_AUDIT_2026-08-31.md)
+- [`reviews/CHATGPT_PRO_QUANTUM_REVIEW_DISPOSITION_2026-08-31.md`](reviews/CHATGPT_PRO_QUANTUM_REVIEW_DISPOSITION_2026-08-31.md)
 - [`reviews/CHATGPT_PRO_REVIEW.md`](reviews/CHATGPT_PRO_REVIEW.md)
 - [`reviews/REVIEW_DISPOSITION.md`](reviews/REVIEW_DISPOSITION.md)
 

@@ -2,7 +2,7 @@
 
 ## Submission identity
 
-- Working title: **Quantum Query Algorithms for Constructive Ramsey Search**
+- Working title: **Quantum Query Algorithms for the Constructive Diagonal Ramsey Theorem**
 - Venue: ITCS 2027
 - Format: anonymous, single column, 11pt
 - Scope: the quantum-query result only
@@ -35,6 +35,7 @@ standard explicit constructive recursion.
 | Fixed-colour extension | Corollary 5.3 | symbolic recurrence check |
 | Classical lower landscape | Proposition 5.2 and Appendix B | independent exponent calculation |
 | Literature discrepancy is real at the stated parameterization | Section 6 direct substitution | printed exponent translation in audit script |
+| Small proof of concept | Section 7 and Appendix C | 16-state sampler audit, exact split-tree DPs, and 5,000 deterministic-seed small-graph runs |
 
 The executable checks are sanity checks, not substitutes for the proofs.
 
@@ -90,4 +91,3 @@ The submission does **not** claim:
 4. Re-run the quantum self-check and full repository quick test.
 5. Resolve, or explicitly and accurately disclose, the lower-bound conflict
    before external submission.
-

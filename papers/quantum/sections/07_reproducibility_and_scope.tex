@@ -1,22 +1,23 @@
 \section{Evidence boundary, open problems, and conclusion}
 \label{sec:scope}
 
-The executable audit described in \cref{app:reproducibility} checks the exact
-recurrence, error schedule, split-tree survival bound, exponent translation,
-and small sampler instances.  These are reproducibility and falsification
-checks, not hardware results or empirical evidence of speedup.  The theorem
-is the analytic argument in
-\cref{sec:model,sec:algorithm,sec:correctness,sec:complexity}.
+The audit in \cref{app:reproducibility} checks the recurrence, error schedule,
+split-tree bound, exponent translation, and small sampler instances.  These
+are falsification checks, not speedup evidence; the theorem is the analytic
+argument in \cref{sec:model,sec:algorithm,sec:correctness,sec:complexity}.
+
+\paragraph{Small proof-of-concept experiments.}
+Appendix~\ref{app:reproducibility} reports 5,000 seeded runs at $K=3,N=16$,
+an explicit 16-state Grover sampler check, and exact small split-tree programs.
+They check sampler symmetry and end-to-end combinatorial logic, but are not a
+full coherent simulation or evidence of wall-clock or hardware speedup.
 
 \paragraph{AI-assisted research process.}
-OpenAI Codex was used during development for algorithmic brainstorming,
-drafting and checking portions of the proofs and query analysis, literature
-comparison, implementation of the executable checks, and editorial revision.
-ChatGPT Pro was used for additional brainstorming and adversarial review.
-Model outputs were treated as untrusted suggestions rather than mathematical
-evidence: the claims in this paper rest on the displayed proofs, the cited
-primary sources, and the reproducible checks described above.  Responsibility
-for the submission remains entirely with the human authors.
+OpenAI Codex assisted brainstorming, proof and query-analysis checks,
+literature comparison, executable checks, and editing; ChatGPT Pro assisted
+brainstorming and adversarial review.  Outputs were treated as untrusted:
+the claims rest on the proofs, primary sources, and reproducible checks, and
+the human authors retain full responsibility.
 
 Three open problems delimit the contribution.  First, resolve the discrepancy
 with the printed Jain--Li--Robere--Xun quantum lower bound.  Second, determine

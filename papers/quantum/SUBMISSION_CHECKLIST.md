@@ -4,15 +4,17 @@ Snapshot date: 2026-08-31
 
 ## Current artifact
 
-- Title: **Quantum Query Algorithms for Constructive Ramsey Search**
+- Title: **Quantum Query Algorithms for the Constructive Diagonal Ramsey Theorem**
 - Source: `papers/quantum/main.tex`
 - Anonymous PDF: `papers/quantum/main.pdf`
-- PDF SHA-256: `13fda421f34f783da622cb65cb43aea393859216389d0a3e6c9eb7b873d3532a`
+- PDF SHA-256: `3ccbc11c1d37718196826b66f68230fa1745f0dd53548c851fb574481a896d1f`
 - Length: 14 pages total
 - Main presentation: concludes on page 10; Appendix A begins on page 11
 - Format: 11pt, single column, US letter
-- Identity scan: no personal name, affiliation, personal email, or public
-  repository URL in the PDF; metadata author is `Anonymous Authors`
+- Identity scan: no author block, affiliation, personal email, or public
+  repository URL in the PDF; metadata author is `Anonymous Authors`.  One
+  relevant prior paper by the submitting author is cited in the bibliography
+  in ordinary third-person form.
 - Fonts: all embedded
 - LaTeX diagnostics: no undefined references, undefined citations, warnings,
   errors, or overfull boxes
@@ -44,14 +46,25 @@ specific end-of-paper disclosure.
 - PDF anonymity, metadata, font embedding, marker, and cross-reference scans:
   PASS
 
+## HotCRP state
+
+- Submission `#193` is registered under the confirmed Fresno author record.
+- The title, abstract, seven topics, AI-assisted-review preference, and
+  AI-preparation survey were saved and re-opened from the submission summary.
+- The Fresno HotCRP profile contains the verified ORCID identifier; its value
+  is intentionally omitted from this anonymous repository record.
+- Lifecycle state: **REGISTERED DRAFT / NO PDF UPLOADED / NOT READY FOR REVIEW**.
+
 ## Scientific submission gate
 
+The completed ChatGPT Pro hostile review found no fatal mathematical defect,
+and its proof-specific objections have been dispositioned in the manuscript.
 The main remaining blocker is not formatting or code.  The standalone paper's
 upper bound conflicts with the printed `N^(1-o(1))` quantum lower-bound
 sentence of Jain--Li--Robere--Xun at their formal default parameters.  The
 paper gives the direct calculation showing that the cited route transfers at
-most exponent `1/24`, but author clarification and the pending ChatGPT Pro
-hostile review should be dispositioned before upload.
+most exponent `1/24`; author clarification or a carefully retained unresolved
+incompatibility statement remains necessary before upload.
 
 This gate does not retract the locally checked theorem.  It prevents an
 overconfident novelty/model comparison while the closest-source discrepancy
@@ -59,13 +72,15 @@ is unresolved.
 
 ## Human-owned submission actions
 
-- [ ] Resolve and incorporate the closest-source clarification/review.
-- [ ] Confirm the final human author list and ordering.
+- [x] Incorporate the completed ChatGPT Pro mathematical review.
+- [ ] Resolve or accurately retain the closest-source JLRX discrepancy.
+- [x] Confirm the final human author list and ordering.
 - [ ] Confirm that every listed human author accepts responsibility for the
   final claims, references, code, and AI disclosure.
-- [ ] Register the title and abstract on the ITCS submission server.
+- [x] Register the title and abstract on the ITCS submission server.
 - [ ] Upload the anonymous PDF and complete the COI declaration.
 - [ ] Retain the AI disclosure in the submitted manuscript.
-- [ ] Record the actual uploaded PDF hash and submission ID.
+- [ ] Record the actual uploaded PDF hash; submission ID `#193` is recorded.
 
-No external submission has been made by this repository update.
+The abstract is registered externally.  No PDF has been uploaded, and the
+draft is not ready for review.
