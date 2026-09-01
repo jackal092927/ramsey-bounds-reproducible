@@ -1,17 +1,19 @@
 # Reproducible Ramsey analysis
 
-This repository is the working publication and reproduction package for one
-canonical manuscript:
+This repository is the working publication and reproduction package for two
+paper artifacts built from shared theorem sources:
 
-- source: [`papers/unified/main.tex`](papers/unified/main.tex)
-- locally compiled PDF: [`papers/unified/main.pdf`](papers/unified/main.pdf)
+- archival unified manuscript: [`papers/unified/main.tex`](papers/unified/main.tex)
+  and [`papers/unified/main.pdf`](papers/unified/main.pdf);
+- standalone anonymous ITCS quantum submission: [`papers/quantum/main.tex`](papers/quantum/main.tex)
+  and [`papers/quantum/main.pdf`](papers/quantum/main.pdf).
 
-The manuscript places four logically independent Ramsey results in a single
+The unified manuscript places four logically independent Ramsey results in a single
 claim-to-evidence framework. The older directories
 [`papers/upper`](papers/upper), [`papers/lower`](papers/lower), and
-[`papers/finite`](papers/finite), together with the quantum source component
-[`papers/quantum`](papers/quantum), are provenance records rather than
-separate publication outputs.
+[`papers/finite`](papers/finite) remain provenance components.  The quantum
+directory is both the shared source component and a separate submission
+target; it intentionally excludes the other three results.
 
 ## Results and exact scope
 
@@ -110,13 +112,17 @@ On 2026-08-31 the following gates passed after the quantum integration:
 - the exact 26-asset finite-heavy gate, including six theorem-formula and four
   singleton-formula reconstructions, all ten checked DRAT replays, and the
   complete common-relaxation model audit;
-- deterministic materialization of the single canonical manuscript;
+- deterministic materialization of the unified manuscript;
+- compilation and anonymity/font/reference checks for the standalone
+  13-page ITCS quantum draft, whose main presentation concludes on page 10;
 - compilation of a 112-page PDF with no overfull box, unresolved or multiply
   defined reference, LaTeX warning, error, or fatal diagnostic; and
 - representative-page visual inspection.
 
-The current canonical 112-page quantum-integrated PDF SHA-256 is
-`a03cc74101011a25566a46dbcb1892508536f47a2a6f02e8dc3390c51abbeeaf`.
+The current 112-page unified PDF SHA-256 is
+`c2b20eee862eeabab497f51d1bef9ac16e8c7e9175a67aaf3c6d116558fd21ce`.
+The current 13-page anonymous quantum PDF SHA-256 is
+`714381c3c41ce70ad4c1f05a88b196f3a16fa3281ee1be16071fa4308fa7908f`.
 With `SOURCE_DATE_EPOCH` fixed, two clean quantum-integrated builds under the
 recorded pdfTeX 1.40.24 (TeX Live 2022) and Latexmk 4.77 toolchain were
 byte-identical.
@@ -190,14 +196,14 @@ uses the public GitHub REST endpoint without a GitHub account, CLI login, or
 token. It compares the release's complete asset-name set with the manifest,
 downloads into a clean directory, and verifies every byte count and digest.
 
-The canonical manuscript is materialized deterministically from the four
-archival components and then compiled by:
+The unified manuscript is materialized deterministically from the four source
+components, and both paper artifacts are compiled by:
 
 ```bash
 make paper
 ```
 
-`make papers` is retained only as an alias for the same single output.
+`make papers` is retained as an alias for the same two-output build.
 
 ## Evidence levels
 
@@ -220,11 +226,11 @@ existence nor nonexistence.
 
 | path | role |
 |---|---|
-| [`papers/unified`](papers/unified) | canonical manuscript and local PDF |
+| [`papers/unified`](papers/unified) | archival unified manuscript and local PDF |
 | [`papers/upper`](papers/upper) | archival upper-part source component |
 | [`papers/lower`](papers/lower) | archival lower-part source component |
 | [`papers/finite`](papers/finite) | archival finite-part source component |
-| [`papers/quantum`](papers/quantum) | quantum-part source component |
+| [`papers/quantum`](papers/quantum) | standalone anonymous ITCS submission and shared quantum source |
 | [`routes/upper`](routes/upper) | upper-bound proofs, searches, certificates, and replay logs |
 | [`routes/lower`](routes/lower) | lower-bound proof ledger, arithmetic checks, and audits |
 | [`routes/finite`](routes/finite) | finite graph encodings, metadata, search records, and checkers |

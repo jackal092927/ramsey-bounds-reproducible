@@ -14,6 +14,9 @@ export FORCE_SOURCE_DATE=1
 
 "${python_bin}" "${repo_root}/scripts/materialize_unified_paper.py"
 latexmk -pdf -interaction=nonstopmode -halt-on-error -cd \
+  "${repo_root}/papers/quantum/main.tex"
+latexmk -pdf -interaction=nonstopmode -halt-on-error -cd \
   "${repo_root}/papers/unified/main.tex"
 
+echo QUANTUM_ITCS_PAPER_COMPILED
 echo UNIFIED_PAPER_COMPILED

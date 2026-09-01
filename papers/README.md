@@ -1,7 +1,13 @@
 # Paper sources
 
-`unified/` is the only canonical manuscript and publication output.  It
-contains all three logically independent results in one paper.
+`unified/` is the archival manuscript containing all four logically
+independent results in one document.
+
+`quantum/` is also the canonical standalone ITCS 2027 submission source for
+the quantum-query result.  It has its own anonymous `main.tex`, paper plan,
+appendices, bibliography, and reproducibility instructions.  The same section
+sources are materialized into `unified/`, preventing proof drift between the
+standalone and archival presentations.
 
 `upper/`, `lower/`, and `finite/` are retained as historical source components
 and provenance records.  Their section and appendix files are deterministically

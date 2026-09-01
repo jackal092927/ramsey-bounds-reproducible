@@ -10,18 +10,21 @@ created; historical labels in those files do not override this status.
 
 ```text
 PUBLIC SOURCE REPOSITORY CREATED
-ONE CANONICAL UNIFIED MANUSCRIPT
+ONE ARCHIVAL UNIFIED MANUSCRIPT
+ONE STANDALONE ANONYMOUS ITCS QUANTUM DRAFT
 RELEASE CANDIDATE NOT YET TAGGED OR PUBLISHED
 CHATGPT PRO REVIEW COMPLETED; RECOVERABLE OBJECTIONS DISPOSITIONED
 QUANTUM PART PROVED LOCALLY; QUANTUM-SPECIFIC PRO REVIEW RUNNING
 FINAL-TAG CLEAN-CLONE AND RELEASE-ASSET VERIFICATION PENDING
 ```
 
-The canonical manuscript is
+The archival manuscript is
 [`papers/unified/main.tex`](papers/unified/main.tex), with a local build at
-[`papers/unified/main.pdf`](papers/unified/main.pdf). The directories
-`papers/upper`, `papers/lower`, `papers/finite`, and `papers/quantum` are
-source components, not separate papers.
+[`papers/unified/main.pdf`](papers/unified/main.pdf).  The quantum source now
+also has a standalone anonymous submission build at
+[`papers/quantum/main.tex`](papers/quantum/main.tex) and
+[`papers/quantum/main.pdf`](papers/quantum/main.pdf).  The upper, lower, and
+finite directories remain source components rather than separate papers.
 
 ## Upper result
 
@@ -153,6 +156,15 @@ manuscript records this as an unresolved parameter conflict and requires
 author clarification; it does not allege an error or count the printed lower
 bound as compatible evidence.
 
+The standalone ITCS draft contains only this quantum result.  It has 13 pages
+total, completes its main presentation on page 10, and then gives three
+technical/reproducibility appendices.  Its 11pt single-column anonymous build,
+cross-references, citations, embedded fonts, metadata, and identity scan pass.
+The current PDF SHA-256 is
+`714381c3c41ce70ad4c1f05a88b196f3a16fa3281ee1be16071fa4308fa7908f`.
+This is a prepared draft, not an uploaded or accepted submission; the JLRX
+clarification remains the scientific submission gate.
+
 ## Review state
 
 - First-round local mathematical and reproducibility audits: **completed**;
@@ -210,9 +222,9 @@ Review files:
 - [`reviews/CHATGPT_PRO_REVIEW.md`](reviews/CHATGPT_PRO_REVIEW.md)
 - [`reviews/REVIEW_DISPOSITION.md`](reviews/REVIEW_DISPOSITION.md)
 
-The current quantum-integrated release-candidate PDF has 112 pages and
+The current quantum-integrated unified PDF has 112 pages and
 SHA-256
-`a03cc74101011a25566a46dbcb1892508536f47a2a6f02e8dc3390c51abbeeaf`.
+`c2b20eee862eeabab497f51d1bef9ac16e8c7e9175a67aaf3c6d116558fd21ce`.
 Two clean Part-IV-integrated builds under the pinned toolchain were
 byte-identical, and the visual audit passes. This is not a published-Release
 digest until the separate immutable-release procedure succeeds.

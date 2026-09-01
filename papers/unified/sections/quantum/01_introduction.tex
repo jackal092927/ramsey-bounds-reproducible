@@ -56,11 +56,29 @@ avoidable factors of $K$ from the uniform-accuracy analysis and gives
 number of edge colours; we record the multicolour form as
 \cref{qua:cor:multicolour}.
 
+\paragraph{Contributions.}
+This part makes four precise contributions.
+\begin{itemize}
+\item It gives a worst-case
+$O(2^K K\log(K/\eta))$ quantum-query algorithm for constructive diagonal
+Ramsey search, or $\widetilde O(\sqrt N)$ at the succinct Ramsey scale.
+\item It introduces two ways to navigate the implicit recursion: a
+size-biased rule with a short survival proof, and a sharper scale-aware
+majority estimator whose accuracy budget is matched to the cost of each
+level.
+\item It extends the size-biased mechanism to a fixed number of colours and
+places the result against a randomized classical lower bound of
+$\Omega(N^{1-1/\sqrt2})$ in the same parameterization.
+\item It gives an explicit parameter audit of the closest published
+quantum-query lower-bound claim, exposing a conflict that any comparison in
+this model must resolve.
+\end{itemize}
+
 The result is algorithmic rather than extremal.  It does not change any
-Ramsey number, construct an avoidance colouring, or prove a new interval for
-$R(3,18)$.  It gives a near-quadratic query improvement over the standard
-$O(N)$ constructive recursion, but no matching lower bound against every
-randomized classical algorithm is presently known.
+numerical Ramsey bound or construct an avoidance colouring.  It gives a
+near-quadratic query improvement over the standard $O(N)$ constructive
+recursion, but no matching lower bound against every randomized classical
+algorithm is presently known.
 
 There is also a nontrivial literature issue.  Jain, Li, Robere, and Xun print
 an $N^{1-o(1)}$ quantum-query lower bound for the $N=2^n$, $K=n/2$
@@ -73,6 +91,6 @@ Liu--Zhandry theorem gives exponent at most $1/24$, not $1-o(1)$
 \cite{LiuZhandry2019}.  We state this incompatibility precisely but do not
 claim an author-confirmed correction.
 
-The rest of this part defines the oracle model and capped sampler, proves the
+The rest of the paper defines the oracle model and capped sampler, proves the
 recurrence and query bound, derives a randomized classical lower bound from
 the random-Painter theorem, and records the novelty and nonclaim boundaries.

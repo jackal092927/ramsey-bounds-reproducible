@@ -1,0 +1,65 @@
+\section{Multicolour extension and executable checks}
+
+\subsection{A multicolour extension of size-biased survival}
+\label{app:multicolour}
+
+The size-biased mechanism is not specific to two colours.  Suppose every edge
+has one of $q\ge2$ colours, and let
+\[
+ r=q(K-2)+1,
+ \qquad
+ B_d=1+q+\cdots+q^{d-1}=\frac{q^d-1}{q-1}.
+\]
+Choose the power of two
+\[
+ L_q=2^{\lceil\log_2(2B_r)\rceil},
+\]
+so $2B_r\le L_q<4B_r$.  If the $s-1$ non-pivot vertices split into sizes
+$a_1,\ldots,a_q$, the induction in \cref{lem:size-biased-survival} becomes
+\[
+ \sum_{j=1}^q (a_j-B_{d-1})_+
+ \ge
+ \left(s-1-qB_{d-1}\right)_+
+ =(s-B_d)_+,
+\]
+because $B_d=1+qB_{d-1}$.  Thus, for $d\ge1$, the $d$-step survival
+probability is at least $(s-B_d)_+/(s-1)$ when $s\ge2$.  Starting from
+$L_q\ge2B_r$ gives probability greater than $1/2$, and among the $r$
+recorded colours one occurs at least $K-1$ times.
+
+\begin{corollary}[Multicolour size-biased Ramsey search]
+\label{cor:multicolour}
+For $q,K\ge2$, every $q$-edge-coloured complete graph on at least $L_q$
+vertices admits a bounded-error quantum algorithm that outputs a
+monochromatic $K$-clique using
+\[
+ O\!\left(r^2\sqrt{L_q}\log(2r)\log\frac1\eta\right)
+\]
+colour-oracle queries in the worst case, where $r$, $B_r$, and $L_q$ are as
+defined above.
+\end{corollary}
+
+\subsection{Executable audit}
+\label{app:reproducibility}
+
+The standard-library script
+\path{experiments/quantum_ramsey/implicit_majority_audit.py} is invoked from
+the repository root by
+\begin{verbatim}
+python3 \
+  experiments/quantum_ramsey/implicit_majority_audit.py \
+  --self-check --max-k 12 --simulate-k 3 --trials 20
+\end{verbatim}
+It verifies the dyadic error schedule, prefix-product inequality, and variable
+recurrence with exact rational arithmetic through $K=64$.  It also compares
+the size-biased survival lemma with an exact dynamic program over all split
+trees through nine levels, emits the Jain-et-al./Liu--Zhandry exponent
+translation, checks conditional marked-item uniformity by an explicit
+16-dimensional Grover state-vector calculation, and runs deterministic-seed
+diagnostics on complete, empty, parity, and random graphs.
+
+The end-to-end diagnostic replaces quantum search by an ideal uniform
+marked-item sampler; only the isolated capped-search primitive receives the
+small state-vector check.  These checks test the combinatorial invariant,
+error schedule, and sampler symmetry.  They are not a simulation of the full
+algorithm, a hardware experiment, or an empirical proof of quantum speedup.

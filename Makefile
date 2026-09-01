@@ -27,4 +27,5 @@ paper:
 papers: paper
 
 clean:
+	latexmk -C -cd papers/quantum/main.tex
 	latexmk -C -cd papers/unified/main.tex

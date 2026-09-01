@@ -73,7 +73,8 @@ for reversible comparisons, conjunctions, and uncomputation.
 The known classical lower bound remains below the quantum upper bound.  The
 following direct consequence of the random-Painter analysis of
 Conlon--Fox--Grinshpun--He \cite{ConlonFoxGrinshpunHe2019} records the best
-bound located in our audit; details appear in \cref{app:classical-lower}.
+bound we obtain from the current literature; details appear in
+\cref{app:classical-lower}.
 
 \begin{proposition}[Randomized classical lower bound]
 \label{prop:classical-lower}
@@ -97,40 +98,7 @@ connection, improve the long-standing exponential lower bound for diagonal
 Ramsey numbers.  The missing separation is tied to a major combinatorial
 barrier rather than a routine query lemma.
 
-\subsection{A multicolour extension of size-biased survival}
-
-The size-biased mechanism is not specific to two colours.  Suppose every edge
-has one of $q\ge2$ colours, and let
-\[
- r=q(K-2)+1,
- \qquad
- B_d=1+q+\cdots+q^{d-1}=\frac{q^d-1}{q-1}.
-\]
-Choose the power of two
-\[
- L_q=2^{\lceil\log_2(2B_r)\rceil},
-\]
-so $2B_r\le L_q<4B_r$.  If the $s-1$ non-pivot vertices split into sizes
-$a_1,\ldots,a_q$, the induction in \cref{lem:size-biased-survival} becomes
-\[
- \sum_{j=1}^q (a_j-B_{d-1})_+
- \ge
- \left(s-1-qB_{d-1}\right)_+
- =(s-B_d)_+,
-\]
-because $B_d=1+qB_{d-1}$.  Thus, for $d\ge1$, the $d$-step survival probability is at
-least $(s-B_d)_+/(s-1)$ when $s\ge2$.  Starting from $L_q\ge2B_r$ gives
-probability greater than $1/2$, and among the $r$ recorded colours one occurs
-at least $K-1$ times.
-
-\begin{corollary}[Multicolour size-biased Ramsey search]
-\label{cor:multicolour}
-For $q,K\ge2$, every $q$-edge-coloured complete graph on at least $L_q$
-vertices admits a bounded-error quantum algorithm that outputs a
-monochromatic $K$-clique using
-\[
- O\!\left(r^2\sqrt{L_q}\log(2r)\log\frac1\eta\right)
-\]
-colour-oracle queries in the worst case, where $r$, $B_r$, and $L_q$ are as
-defined above.
-\end{corollary}
+The size-biased mechanism also extends to any fixed number of edge colours.
+The statement and its one-line recurrence proof are given in
+\cref{app:multicolour}; this extension is not needed for the sharper binary
+theorem.
