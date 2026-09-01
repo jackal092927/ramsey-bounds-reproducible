@@ -7,9 +7,9 @@ Snapshot date: 2026-08-31
 - Title: **Quantum Query Algorithms for Constructive Ramsey Search**
 - Source: `papers/quantum/main.tex`
 - Anonymous PDF: `papers/quantum/main.pdf`
-- PDF SHA-256: `714381c3c41ce70ad4c1f05a88b196f3a16fa3281ee1be16071fa4308fa7908f`
-- Length: 13 pages total
-- Main presentation: concludes on page 10; Appendix A begins on page 10
+- PDF SHA-256: `13fda421f34f783da622cb65cb43aea393859216389d0a3e6c9eb7b873d3532a`
+- Length: 14 pages total
+- Main presentation: concludes on page 10; Appendix A begins on page 11
 - Format: 11pt, single column, US letter
 - Identity scan: no personal name, affiliation, personal email, or public
   repository URL in the PDF; metadata author is `Anonymous Authors`
@@ -23,6 +23,18 @@ length limit.  It recommends that the merits, innovations, literature
 position, and central claims appear within the first ten pages.  The abstract
 deadline is 2026-09-02 16:59 PDT and the full-paper deadline is 2026-09-04
 16:59 PDT.
+
+## Generative-AI policy
+
+The ITCS 2027 call states that only humans may be listed as authors or
+co-authors.  Substantive generative-AI use must be disclosed at submission in
+an `AI Disclosure` statement at the end of the paper.  The statement must name
+the tools and identify the parts materially affected; use that materially
+affects the methodology, analysis, experiments, or implementation must also
+be described in the body.  Minor copy-editing alone would not require
+disclosure, but the use in this project is substantive.  The current source
+therefore includes both a research-process paragraph in Section 7 and a
+specific end-of-paper disclosure.
 
 ## Verification completed
 
@@ -49,6 +61,8 @@ is unresolved.
 
 - [ ] Resolve and incorporate the closest-source clarification/review.
 - [ ] Confirm the final human author list and ordering.
+- [ ] Confirm that every listed human author accepts responsibility for the
+  final claims, references, code, and AI disclosure.
 - [ ] Register the title and abstract on the ITCS submission server.
 - [ ] Upload the anonymous PDF and complete the COI declaration.
 - [ ] Retain the AI disclosure in the submitted manuscript.

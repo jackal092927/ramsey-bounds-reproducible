@@ -33,10 +33,14 @@ For $K\ge8$ this is at most $-2$, so the event has probability at most
 $1/4$.
 
 If the algorithm outputs a $K$-set that is not already a fully exposed
-monochromatic set, then, conditional on the transcript, either its known
-edges already conflict or at least one independent fair edge remains to be
-guessed.  Its conditional probability of being homogeneous is therefore at
-most $1/2$.  The total success probability under $G(M,1/2)$ is at most
+monochromatic set, condition on the transcript.  If the exposed internal
+edges contain both colours, the set cannot be homogeneous.  If they contain
+exactly one colour, at least one unexposed fair edge must match that colour,
+so the conditional success probability is at most $1/2$.  If no internal
+edge has been exposed, the probability is
+$2^{1-\binom K2}\le1/2$ for $K\ge3$.  Thus the conditional probability of a
+homogeneous output is at most $1/2$ in every case relevant here.  The total
+success probability under $G(M,1/2)$ is at most
 \[
  \frac14+\frac34\cdot\frac12=\frac58<\frac23.
 \]
@@ -49,4 +53,3 @@ Since $M=4^{K-1}$,
  =\Theta\!\left(M^{1-1/\sqrt2}\right),
 \]
 which proves \cref{prop:classical-lower}.
-
