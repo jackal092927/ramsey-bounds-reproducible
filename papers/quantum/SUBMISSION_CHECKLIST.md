@@ -1,15 +1,16 @@
 # ITCS 2027 submission checklist
 
-Snapshot date: 2026-08-31
+Snapshot date: 2026-09-01
 
 ## Current artifact
 
 - Title: **Quantum Query Algorithms for the Constructive Diagonal Ramsey Theorem**
 - Source: `papers/quantum/main.tex`
 - Anonymous PDF: `papers/quantum/main.pdf`
-- PDF SHA-256: `3ccbc11c1d37718196826b66f68230fa1745f0dd53548c851fb574481a896d1f`
-- Length: 14 pages total
-- Main presentation: concludes on page 10; Appendix A begins on page 11
+- PDF SHA-256: `8ac5f6f08123f339b1ae80e51357ba4b251b71c5a71123c96dae9846c2874bf9`
+- Length: 16 pages total
+- Main presentation: central claims, proofs, and literature comparison are
+  within the first ten pages; the scope conclusion and Appendix A share page 11
 - Format: 11pt, single column, US letter
 - Identity scan: no author block, affiliation, personal email, or public
   repository URL in the PDF; metadata author is `Anonymous Authors`.  One
@@ -59,12 +60,17 @@ specific end-of-paper disclosure.
 
 The completed ChatGPT Pro hostile review found no fatal mathematical defect,
 and its proof-specific objections have been dispositioned in the manuscript.
+A narrower final-delta review packet covering the experiment paragraph,
+references, and JLRX wording is prepared but has not been transmitted; no
+result from that additional review is counted here.
 The main remaining blocker is not formatting or code.  The standalone paper's
 upper bound conflicts with the printed `N^(1-o(1))` quantum lower-bound
 sentence of Jain--Li--Robere--Xun at their formal default parameters.  The
 paper gives the direct calculation showing that the cited route transfers at
-most exponent `1/24`; author clarification or a carefully retained unresolved
-incompatibility statement remains necessary before upload.
+most exponent `1/24`, calls this an apparent parameter mismatch, does not rely
+on the disputed consequence, and explicitly excludes their principal TFNP
+separation theorems from the audit.  Author clarification remains desirable
+before upload.
 
 This gate does not retract the locally checked theorem.  It prevents an
 overconfident novelty/model comparison while the closest-source discrepancy
@@ -73,7 +79,9 @@ is unresolved.
 ## Human-owned submission actions
 
 - [x] Incorporate the completed ChatGPT Pro mathematical review.
-- [ ] Resolve or accurately retain the closest-source JLRX discrepancy.
+- [x] Accurately retain and scope the closest-source JLRX discrepancy.
+- [ ] Seek clarification from the JLRX authors before final upload if time
+  permits.
 - [x] Confirm the final human author list and ordering.
 - [ ] Confirm that every listed human author accepts responsibility for the
   final claims, references, code, and AI disclosure.

@@ -148,23 +148,25 @@ square-root query improvement, up to polylogarithmic factors, over the
 standard deterministic recursion, not a
 separation from the best randomized classical algorithm.
 
-Jain--Li--Robere--Xun print an incompatible $N^{1-o(1)}$ quantum lower-bound
-remark. Their formal Definition 2.6 uses $N=2^n$ and their default target is
-$K=n/2$; a different introductory shorthand is internally inconsistent and
-is not used in our comparison. Direct parameter substitution into the cited
-reduction and multi-collision theorem gives at most exponent $1/24$. The
-manuscript records this as an unresolved parameter conflict and requires
-author clarification; it does not allege an error or count the printed lower
-bound as compatible evidence.
+Jain--Li--Robere--Xun state an incompatible $N^{1-o(1)}$ quantum lower-bound
+remark. Their formal Definition II.6 uses $N=2^n$ and their default target is
+$K=n/2$; a different introductory shorthand is not used in our comparison.
+Direct parameter substitution into the cited reduction and fixed-multiplicity
+multi-collision theorem gives at most exponent $1/24$. The manuscript now
+records this as an apparent mismatch in a side consequence, says explicitly
+that it does not affect their principal TFNP separation theorems, and does not
+use the disputed lower bound. Author clarification remains desirable.
 
-The standalone ITCS draft contains only this quantum result.  It has 14 pages
-total, completes its main presentation on page 10, and then gives three
-technical/reproducibility appendices.  Its 11pt single-column anonymous build,
+The standalone ITCS draft contains only this quantum result.  It has 16 pages
+total; the central claims, proofs, significance, and literature comparison
+appear within the first ten pages, while the scope conclusion and Appendix A
+share page 11.  It then gives three technical/reproducibility appendices.  Its
+11pt single-column anonymous build,
 cross-references, citations, embedded fonts, and metadata pass.  It contains
 no author block, affiliation, personal email, or public repository URL; one
 relevant prior paper by the submitting author is cited in ordinary
 third-person form.  The current PDF SHA-256 is
-`3ccbc11c1d37718196826b66f68230fa1745f0dd53548c851fb574481a896d1f`.
+`8ac5f6f08123f339b1ae80e51357ba4b251b71c5a71123c96dae9846c2874bf9`.
 This is a prepared draft, not an uploaded or accepted submission; the JLRX
 clarification remains the scientific submission gate.
 
@@ -207,6 +209,9 @@ clarification remains the scientific submission gate.
   it found no fatal correctness error, endorsed the scoped query theorem as
   apparently novel, and left significance/priority and the JLRX clarification
   as publication risks rather than mathematical defects.
+- Final narrow quantum ChatGPT Pro differential review: **packet prepared but
+  not transmitted as of 2026-09-01**; no result from this additional review is
+  counted in the evidence ledger.
 - Exact-seven ChatGPT Pro collaboration packet: **drafted but not submitted**;
   fresh action-time confirmation is still required before external transmission.
 
@@ -225,12 +230,14 @@ Review files:
 - [`reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md`](reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md)
 - [`reviews/QUANTUM_RAMSEY_MATHEMATICAL_AUDIT_2026-08-31.md`](reviews/QUANTUM_RAMSEY_MATHEMATICAL_AUDIT_2026-08-31.md)
 - [`reviews/CHATGPT_PRO_QUANTUM_REVIEW_DISPOSITION_2026-08-31.md`](reviews/CHATGPT_PRO_QUANTUM_REVIEW_DISPOSITION_2026-08-31.md)
+- [`reviews/JLRX_PARAMETER_AUDIT_2026-09-01.md`](reviews/JLRX_PARAMETER_AUDIT_2026-09-01.md)
+- [`reviews/CHATGPT_PRO_QUANTUM_FINAL_DELTA_PROMPT_2026-09-01.md`](reviews/CHATGPT_PRO_QUANTUM_FINAL_DELTA_PROMPT_2026-09-01.md)
 - [`reviews/CHATGPT_PRO_REVIEW.md`](reviews/CHATGPT_PRO_REVIEW.md)
 - [`reviews/REVIEW_DISPOSITION.md`](reviews/REVIEW_DISPOSITION.md)
 
-The current quantum-integrated unified PDF has 112 pages and
+The current quantum-integrated unified PDF has 115 pages and
 SHA-256
-`c2b20eee862eeabab497f51d1bef9ac16e8c7e9175a67aaf3c6d116558fd21ce`.
+`a2bf661530592cd3833b526304cc502e3780d55e91a506e782914701befc64ae`.
 Two clean Part-IV-integrated builds under the pinned toolchain were
 byte-identical, and the visual audit passes. This is not a published-Release
 digest until the separate immutable-release procedure succeeds.

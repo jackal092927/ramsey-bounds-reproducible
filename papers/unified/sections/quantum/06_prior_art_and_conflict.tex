@@ -7,30 +7,49 @@ problems.  Gaitan and Clark encode the existence of avoidance colourings in
 an adiabatic Hamiltonian \cite{GaitanClark2012}, and Bian et al.\ implement
 small instances experimentally \cite{BianEtAl2013}; Wang searches the space of
 $2^{\binom V2}$ labelled graphs when testing a Ramsey threshold
-\cite{Wang2016}; and Pion and Mniszewski study QUBO reduction and quantum
-annealing for bound discovery \cite{PionMniszewski2025}.  Their square roots
+\cite{Wang2016}; Qu et al.\ use quantum counting for hypergraph Ramsey numbers
+\cite{QuLiWangBaoCao2013}; and generalized/ordinary bound discovery has been
+studied through adiabatic optimization and QUBO reduction
+\cite{RanjbarMacreadyClarkGaitan2016,PionMniszewski2025}.  Their square roots
 refer to the number of graph colourings, not the number of vertices of one
 given graph.  D{\"o}rn's clique and independent-set query algorithms are
 closer in oracle model but do not exploit the Ramsey totality promise or the
-majority recursion \cite{Doern2005}.  Learning-graph algorithms for fixed
-subgraph containment \cite{LeeMagniezSantha2012} and quantum backtracking
-\cite{Montanaro2018} provide powerful generic primitives, but neither by
-itself supplies the implicit-set survival invariant used here.  To our
-knowledge, no earlier work uses
+majority recursion \cite{Doern2005}.  Quantum subset-finding algorithms already
+give nontrivial clique-query bounds \cite{ChildsEisenberg2005}, while
+learning-graph algorithms for fixed subgraph containment
+\cite{LeeMagniezSantha2012,Zhu2012} and quantum backtracking
+\cite{Montanaro2018}
+provide powerful generic primitives.  None by itself supplies the
+implicit-set survival invariant used here.  To our knowledge, no earlier work uses
 implicit-set quantum sampling to implement the constructive
 Erdős--Szekeres proof; this priority statement is limited to the exact oracle
 model and sources compared here.
 
-The closest exact-model source is Jain--Li--Robere--Xun
-\cite{JainLiRobereXun2024}.  Their formal definitions use $N=2^n$ vertices
-and default target $K=n/2$, and their query-complexity paragraph states an
-$N^{1-o(1)}$ quantum lower bound via a graph-hash reduction and the
-Liu--Zhandry multicollision theorem \cite{LiuZhandry2019}.  The hard instances
-are symmetric valid graphs, while \cref{qua:cor:unpromised} also aligns our upper
-bound with the locally verifiable arbitrary-circuit relation.
+Kraj{\'\i}\v{c}ek connected Ramsey and weak-pigeonhole proof complexity
+\cite{Krajicek2001} and later formulated the structured-pigeonhole search
+problem for circuit-encoded homogeneous sets \cite{Krajicek2005}.  Pasarkar,
+Papadimitriou, and Yannakakis
+place Ramsey search in their polynomial long-choice class PLC, which captures
+iterated pigeonhole arguments \cite{PasarkarPapadimitriouYannakakis2023}.
+The closest exact-model source is the FOCS 2024 proceedings paper of
+Jain--Li--Robere--Xun \cite{JainLiRobereXun2024}.  Definition II.6 of its
+proceedings version uses $N=2^n$ vertices, and the convention after
+Definition II.7 sets the default target to $K=n/2$.  The unnumbered ``Query
+complexity of RAMSEY'' paragraph in Section III states an $N^{1-o(1)}$
+quantum lower bound via Lemma III.1 and the Liu--Zhandry multicollision theorem
+\cite{LiuZhandry2019}.  The reduction's hard instances are symmetric valid
+graphs, while \cref{qua:cor:unpromised} also aligns our upper bound with the
+locally verifiable arbitrary-circuit relation.  Moreover,
+\cref{qua:cor:succinct} returns $\lfloor n/2\rfloor+1$ vertices, so discarding one
+if necessary solves their default target up to the suppressed rounding
+convention.  Thus malformed encodings and the target convention do not remove
+the apparent conflict.
 
-For collision range size $B$ and fixed multiplicity $t$, the reduction has
-$M\asymp B^{4t}$, whereas Liu--Zhandry's exponent in $B$ is
+Write $H$ for the multicollision range size and $G$ for the number of
+vertices in the Ramsey instance.  For fixed multiplicity $t$, the sufficient
+parameter condition in Jain et al.'s Theorem I.3 is
+$G\ge H^{4t}/4^t$.  At the boundary
+$G=\Theta_t(H^{4t})$, Liu--Zhandry's exponent in $H$ is
 $\alpha_t=(2^{t-1}-1)/(2^t-1)$.  The inherited exponent is therefore
 \[
  \frac{\alpha_t}{4t}
@@ -38,9 +57,13 @@ $\alpha_t=(2^{t-1}-1)/(2^t-1)$.  The inherited exponent is therefore
  \qquad t\ge2,
 \]
 with equality at $t=2$.  Thus these two ingredients do not yield
-$M^{1-o(1)}$.
+$G^{1-o(1)}$.
 
-The upper theorem and the printed near-linear lower cannot both hold in the
-same model.  We have found no public correction.  We leave clarification of
-the discrepancy as an open issue and make no claim about the intended
-parameterization.
+Consequently, the stated near-linear consequence is not obtained by directly
+composing the two cited statements.  If that consequence is intended for the
+same bounded-error quantum-query relation, it is incompatible with our upper
+bound.  Our proof does not use this consequence.  This observation concerns
+only the parameter substitution in the unnumbered query-complexity discussion
+and does not concern the principal black-box nonreducibility or TFNP separation
+theorems of Jain et al.  An additional ingredient or a different intended
+normalization may resolve the discrepancy.

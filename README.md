@@ -114,15 +114,16 @@ On 2026-08-31 the following gates passed after the quantum integration:
   complete common-relaxation model audit;
 - deterministic materialization of the unified manuscript;
 - compilation and anonymity/font/reference checks for the standalone
-  13-page ITCS quantum draft, whose main presentation concludes on page 10;
-- compilation of a 112-page PDF with no overfull box, unresolved or multiply
+  16-page ITCS quantum draft, whose central claims and literature comparison
+  appear within the first ten pages;
+- compilation of a 115-page PDF with no overfull box, unresolved or multiply
   defined reference, LaTeX warning, error, or fatal diagnostic; and
 - representative-page visual inspection.
 
-The current 112-page unified PDF SHA-256 is
-`c2b20eee862eeabab497f51d1bef9ac16e8c7e9175a67aaf3c6d116558fd21ce`.
-The current 13-page anonymous quantum PDF SHA-256 is
-`714381c3c41ce70ad4c1f05a88b196f3a16fa3281ee1be16071fa4308fa7908f`.
+The current 115-page unified PDF SHA-256 is
+`a2bf661530592cd3833b526304cc502e3780d55e91a506e782914701befc64ae`.
+The current 16-page anonymous quantum PDF SHA-256 is
+`8ac5f6f08123f339b1ae80e51357ba4b251b71c5a71123c96dae9846c2874bf9`.
 With `SOURCE_DATE_EPOCH` fixed, two clean quantum-integrated builds under the
 recorded pdfTeX 1.40.24 (TeX Live 2022) and Latexmk 4.77 toolchain were
 byte-identical.
@@ -130,8 +131,11 @@ Byte identity across different TeX distributions, font packages, or engines is
 not claimed. A separate ChatGPT Pro AI second opinion completed on
 2026-08-30 for the first three parts. Every recoverable concrete objection was
 checked against those canonical sources and repaired or explicitly
-dispositioned in the archived report. The quantum-specific Pro review is
-still running. Neither is external human peer review.
+dispositioned in the archived report. The quantum-specific Pro review
+completed and was dispositioned on 2026-08-31. A narrower final-delta packet
+covering the experiment paragraph, references, and JLRX wording was prepared
+on 2026-09-01 but has not been externally transmitted, so it has no review
+result yet. Neither completed review is external human peer review.
 
 ## Reproduction
 

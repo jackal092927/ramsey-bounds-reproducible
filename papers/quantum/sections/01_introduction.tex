@@ -7,6 +7,9 @@ with $M$ vertices this uses $O(M)$ edge queries, because every retained set is
 represented explicitly.  This paper shows that the same proof architecture
 has a substantially cheaper quantum implementation when the nested candidate
 sets are instead represented by their membership predicates.
+We use the elementary $4^{K-1}$ sufficient threshold because it supports this
+recursion; it is not the best current extremal bound, which has exponential
+base strictly below four \cite{CamposGriffithsMorrisSahasrabudhe2026}.
 
 We work in the promised valid-graph adjacency-oracle model.  One coherent
 query returns the colour of a requested unordered vertex pair.  The output is
@@ -70,8 +73,8 @@ level.
 places the result against a randomized classical lower bound of
 $\Omega(N^{1-1/\sqrt2})$ in the same parameterization.
 \item It gives an explicit parameter audit of the closest published
-quantum-query lower-bound claim, exposing a conflict that any comparison in
-this model must resolve.
+quantum-query lower-bound claim and isolates an apparent mismatch in the
+cited parameter substitution that any comparison in this model must resolve.
 \end{itemize}
 
 The result is algorithmic rather than extremal.  It does not change any
@@ -80,16 +83,19 @@ square-root query improvement, up to polylogarithmic factors, over the
 standard $O(N)$ constructive recursion, but no matching lower bound against
 every randomized classical algorithm is presently known.
 
-There is also a nontrivial literature issue.  Jain, Li, Robere, and Xun print
+There is also a nontrivial literature issue.  Jain, Li, Robere, and Xun state
 an $N^{1-o(1)}$ quantum-query lower bound for the $N=2^n$, $K=n/2$
-default Ramsey problem in their formal definition
-\cite{JainLiRobereXun2024}.  Their hard instances are valid graph-hash
-products, while \cref{thm:main} gives an
+default Ramsey problem in the unnumbered ``Query complexity of RAMSEY''
+paragraph of Section III \cite{JainLiRobereXun2024}.  Their hard instances are valid
+graph-hash products, while \cref{thm:main} gives an
 $O(\sqrt N\operatorname{polylog}N)$ upper bound on promised valid graphs.
-Direct substitution into the Ramsey reduction and the cited
-Liu--Zhandry theorem gives exponent at most $1/24$, not $1-o(1)$
-\cite{LiuZhandry2019}.  We state this incompatibility precisely but do not
-claim an author-confirmed correction.
+As detailed in \cref{sec:prior-art}, direct substitution into the cited
+reduction and the fixed-multiplicity Liu--Zhandry theorem yields at most an
+$N^{1/24}$ lower bound through that route \cite{LiuZhandry2019}.  We do not
+use the reported near-linear consequence.  Our observation concerns this
+parameter substitution, not the principal TFNP separation theorems of
+Jain et al., and we leave open whether another intended normalization
+resolves the discrepancy.
 
 The rest of the paper defines the oracle model and capped sampler, proves the
 recurrence and query bound, derives a randomized classical lower bound from
