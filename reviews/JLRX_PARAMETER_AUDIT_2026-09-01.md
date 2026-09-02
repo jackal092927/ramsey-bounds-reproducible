@@ -83,27 +83,33 @@ scope of the audit.
 
 ## Proposed author-clarification message
 
-Subject: Parameter question about the quantum RAMSEY query lower bound
+Subject: Clarification request about the quantum query lower bound for RAMSEY
 
 Dear Professors Jain, Li, Robere, and Xun,
 
-We are preparing a paper on quantum query algorithms for the default RAMSEY
-relation and would appreciate clarification about the quantum query lower-bound
-statement in the unnumbered “Query complexity of RAMSEY” paragraph in Section
-III of your FOCS 2024 paper.
+We are preparing a manuscript on quantum query algorithms for the default
+RAMSEY relation, and we would be grateful for clarification about the quantum
+query lower-bound statement in the unnumbered “Query complexity of RAMSEY”
+paragraph in Section III of your FOCS 2024 paper.
 
+We may be overlooking an intended normalization or an additional ingredient.
 Using `H` for the range size of the multicollision instance and `G` for the
-Ramsey graph size, the sufficient parameter condition in Theorem I.3 is
-`G >= H^(4t)/4^t`.  Combining this with the fixed-`t` Liu--Zhandry exponent
-`alpha_t = (2^(t-1)-1)/(2^t-1)` seems to give exponent
-`alpha_t/(4t)` in `G`, whose maximum for `t >= 2` is `1/24`, rather than
-`1-o(1)`.  We are using the formal convention `G = 2^n`, `K = n/2` from
-Definitions II.6--II.7.
+Ramsey graph size, we read the sufficient parameter condition in Theorem I.3
+as `G >= H^(4t)/4^t`.  Combining this with the fixed-`t` Liu--Zhandry exponent
+`alpha_t = (2^(t-1)-1)/(2^t-1)` appears to transfer the exponent
+`alpha_t/(4t)` to `G`; for `t >= 2`, its maximum is `1/24`.  We are using the
+formal convention `G = 2^n`, `K = n/2` from Definitions II.6--II.7.
 
-Is there a different intended normalization, parameter choice, or additional
-lower-bound ingredient behind the near-linear statement?  We want to describe
-your result accurately and would be grateful for any correction to our
-calculation.
+Our manuscript obtains an `O(sqrt(G) polylog(G))` upper bound for the same
+apparently intended bounded-error query relation, so it is important for us to
+align the models and parameters correctly.  Is there a different parameter
+choice, normalization, reduction direction, or additional lower-bound
+ingredient behind the near-linear statement?  We want to describe your result
+accurately and would greatly appreciate any guidance or correction to our
+calculation.  We would also be happy to share the relevant comparison section
+of our draft if helpful.
 
 Best regards,
-Cheng Xin
+Cheng Xin, Ph.D.
+Assistant Professor of Computer Science
+California State University, Fresno

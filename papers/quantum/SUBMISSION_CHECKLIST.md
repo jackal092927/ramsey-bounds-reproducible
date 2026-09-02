@@ -61,8 +61,9 @@ specific end-of-paper disclosure.
 The completed ChatGPT Pro hostile review found no fatal mathematical defect,
 and its proof-specific objections have been dispositioned in the manuscript.
 A narrower final-delta review packet covering the experiment paragraph,
-references, and JLRX wording is prepared but has not been transmitted; no
-result from that additional review is counted here.
+references, and JLRX wording was submitted to the existing personal-account
+Pro conversation on 2026-09-01 and is running; no result from that additional
+review is counted here yet.
 The main remaining blocker is not formatting or code.  The standalone paper's
 upper bound conflicts with the printed `N^(1-o(1))` quantum lower-bound
 sentence of Jain--Li--Robere--Xun at their formal default parameters.  The

@@ -209,9 +209,9 @@ clarification remains the scientific submission gate.
   it found no fatal correctness error, endorsed the scoped query theorem as
   apparently novel, and left significance/priority and the JLRX clarification
   as publication risks rather than mathematical defects.
-- Final narrow quantum ChatGPT Pro differential review: **packet prepared but
-  not transmitted as of 2026-09-01**; no result from this additional review is
-  counted in the evidence ledger.
+- Final narrow quantum ChatGPT Pro differential review: **submitted to the
+  existing personal-account conversation on 2026-09-01 and running**; no result
+  from this additional review is counted in the evidence ledger yet.
 - Exact-seven ChatGPT Pro collaboration packet: **drafted but not submitted**;
   fresh action-time confirmation is still required before external transmission.
 
@@ -268,8 +268,9 @@ peer-reviewed publication.
 ## Gate to change this status
 
 The local mathematical, current quick-replay, compilation, and visual gates
-are complete. Quantum-specific ChatGPT Pro review, expert priority review,
-and clarification of the JLRX parameter conflict remain submission gates.
+are complete. Completion and disposition of the final-delta ChatGPT Pro
+review, expert priority review, and clarification of the JLRX parameter
+conflict remain submission gates.
 The package can move to public-release status only after:
 
 1. the final tag and exact 26-asset immutable Release are published; and

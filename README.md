@@ -134,8 +134,9 @@ checked against those canonical sources and repaired or explicitly
 dispositioned in the archived report. The quantum-specific Pro review
 completed and was dispositioned on 2026-08-31. A narrower final-delta packet
 covering the experiment paragraph, references, and JLRX wording was prepared
-on 2026-09-01 but has not been externally transmitted, so it has no review
-result yet. Neither completed review is external human peer review.
+and submitted to the same personal-account Pro conversation on 2026-09-01;
+its status is running and no result from it is counted yet. Neither completed
+review is external human peer review.
 
 ## Reproduction
 
