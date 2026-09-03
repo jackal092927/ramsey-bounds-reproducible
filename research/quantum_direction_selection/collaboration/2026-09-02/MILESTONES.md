@@ -78,11 +78,13 @@ Consolidation started September 2, 2026 PDT; new dispatch and follow-up setup co
 | M72 | Minimal clean complexity theorem | **UPDATED** in CLEAN_RESTRICTED_REDUCTION_THEOREM.md | Polynomial reduction from explicit \(\operatorname{SepPerfectFraction}^{\mathcal G_R}\) with target error below \(\delta_f/2\); no BQP, DQC1 or unrestricted SDQC1 hardness claim |
 | M73 | Eight-label perfect-completeness source | **NEW LOCAL DERIVATION; INDEPENDENT LOCAL ALGEBRA/INTERFACE REVIEW PASSED** | Exact \(G_2\) verifier maps to \(M=\operatorname{diag}(1,p,p,p,p,p,0,0)\otimes I\), giving perfect fractions \(3/4\) versus \(1/8\), growing denominator, and no controlled Hadamard |
 | M74 | Rudolph BQP1 gate-source check | **TARGETED PRIMARY SOURCE CHECK** | arXiv v2 Definition 2.2 and Theorems 2.3/3.4 support clean input/output, exact \(G_2\) error reduction, and cyclotomic-gate inclusion; optional QSAT and Marriott--Watrous routes not needed or checked |
-| M75 | Eight-label BQP1 bounded review packet | **PREPARED; NOT SUBMITTED** | Five-file 36077-byte packet includes the source lemma and independent local audit, freezing the exact operator/interface question; fresh action-time user confirmation is required before submission |
+| M75 | Eight-label BQP1 bounded review packet | **PREPARED AND SOURCE-FROZEN** | Five-file 36077-byte packet includes the source lemma and independent local audit, freezing the exact operator/interface question |
+| M76 | BQP1 source-review checkpoint | **PUSHED AND REMOTE-VERIFIED**, f11cb4ed83bdbc7d738b6b159e7267850f49ad92 | Source lemma, Rudolph source check, independent local audit and bounded packet were synchronized before external submission |
+| M77 | Eight-label BQP1 source/interface audit | **SENT AND RUNNING**, user message 8; UI 2026-09-03 12:48 PM PDT | Exact prompt and packet lineage recorded in PRO_BQP1_SOURCE_DISPATCH_RECEIPT_2026-09-03.md; fresh DOM showed one new message and active Pro run |
 
 ## Current unresolved research gates
 
-1. Obtain the prepared bounded external Pro interface/composition review of the eight-label \(\mathsf{BQP}_1^{G_2}\) source before promoting the named gate-dependent hardness claim beyond the locally checked theorem package.
+1. Collect and independently disposition the running bounded Pro interface/composition review of the eight-label \(\mathsf{BQP}_1^{G_2}\) source before promoting the named gate-dependent hardness claim beyond the locally checked theorem package.
 2. Determine whether the arbitrary-geometric-chain concentration theorem over degenerate logical kernels, its whole-kernel gap, natural filtered rank, and the eight-label non-all-or-none source combination are new, already implicit, or already explicit.
 3. Keep unrestricted \(\mathsf{SDQC}_1\) stopped; the eight-label construction uses perfect completeness and does not repair arbitrary trace thresholds.
 4. Evaluate whether the persistent-Laplacian theorem supplies sufficient additional substance and whether the poor polynomial gap exponent is acceptable for a structural TCS result.

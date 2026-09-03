@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-03T19:45:31Z",
+  "updated_at": "2026-09-03T19:50:02Z",
   "objective": "Review and advance true normalized persistence toward a substantial TCS theorem; archive every useful positive/negative milestone and Pro result.",
   "repository": {
     "url": "https://github.com/jackal092927/ramsey-bounds-reproducible",
@@ -16,34 +16,34 @@
     "topic": "Quantum TDA functorial unweighting and theorem mechanisms",
     "url": "https://chatgpt.com/c/6a98c05a-ecf4-83e8-b356-4e20dc3fde3f",
     "account": "visible identity matched local personal Pro channel registry",
-    "previous_response": "collected",
-    "new_request": "completed_collected_checked",
+    "previous_response": "message_7_collected_and_checked",
+    "new_request": "sent_running",
     "current_request": {
-      "source_commit": "b78da7ab9472f6d2c0858634b56f3c1210a3e931",
-      "message_file": "PRO_SOURCE_COMPLEXITY_SUBMISSION_2026-09-03.md",
-      "request_file": "PRO_SOURCE_COMPLEXITY_REQUEST_2026-09-03.md",
-      "attachment_file": "PRO_SOURCE_COMPLEXITY_PACKET_2026-09-03.md",
-      "attachment_bytes": 28196,
-      "attachment_sha256": "7f38dd8353d90b9fe7c471dfb0e83bcd5bdca31a7ee5a011cbbd64ad91a12c15",
+      "source_commit": "f11cb4ed83bdbc7d738b6b159e7267850f49ad92",
+      "message_file": "PRO_BQP1_SOURCE_SUBMISSION_2026-09-03.md",
+      "request_file": "PRO_BQP1_SOURCE_REQUEST_2026-09-03.md",
+      "attachment_file": "PRO_BQP1_SOURCE_PACKET_2026-09-03.md",
+      "attachment_bytes": 36077,
+      "attachment_sha256": "4f68ce7c35596f5ae0c1aaa80891de9cc27880b0d9d673818b2dc05cfeb38934",
+      "submission_bytes": 1080,
+      "submission_sha256": "8ad8b46a0a2edcab7e26c6059a6a9bfe82e40ab44a1cc68b766a76742abbcf5e",
       "surface": "Chat",
       "model_label": "GPT-5.6 Sol",
       "thinking": "Pro, 5 of 5",
-      "user_message_number": 7,
-      "completed_assistant_messages_before_this_request": 5,
+      "user_message_number": 8,
+      "chat_user_message_id": "fd24c66e-639f-44b5-bd4e-a4a23ac0e53e",
+      "completed_assistant_messages_before_this_request": 6,
       "failed_assistant_attempts_before_this_request": 1,
-      "sent_running_observed_at": "2026-09-03T18:43:37.927728Z",
-      "last_observed_at": "2026-09-03T19:27:37.090Z",
-      "last_observation": "Completed seventh-request answer: Worked for 8m 41s, no Stop answering. Full response and 113 equation sources archived; authenticated personal Pro identity remained the verified browser session.",
-      "receipt": "PRO_SOURCE_COMPLEXITY_DISPATCH_RECEIPT_2026-09-03.md",
-      "scope": "Completed <=2400-word exact source-complexity audit; corrected geometric theorem treated as a hypothesis; no browsing, code, renewed gadget review, approximate gate universality, priority or paper-readiness task.",
-      "prompt_verification": "1011-character prepared submission matched normalized composer text; one completed attachment, enabled Send, no active run before sending; sent once.",
-      "source_basis": "Targeted arXiv:2607.03278v1 Definition 2 / Eq. 9 / Sections 5.5-5.6 / Section 7 check recorded in SOURCE_COMPLEXITY_GATE.md; not a full paper audit.",
-      "completed_collected_at": "2026-09-03T19:27:37.090Z",
-      "response_file": "PRO_SOURCE_COMPLEXITY_REVIEW_2026-09-03.md",
-      "capture_file": "PRO_SOURCE_COMPLEXITY_REVIEW_CAPTURE_2026-09-03.json",
-      "disposition_file": "PRO_SOURCE_COMPLEXITY_DISPOSITION_2026-09-03.md",
-      "terminal_status": "completed and collected; separated exact-real-gate corollary accepted and unrestricted SDQC1 inference stopped",
-      "source_checking": "No source or literature checking by this Pro response; source statements came from the supplied packet."
+      "sent_ui_local_time": "2026-09-03 12:48 PM America/Los_Angeles",
+      "sent_running_observed_at": "2026-09-03T19:50:02Z",
+      "last_observed_at": "2026-09-03T19:50:02Z",
+      "last_observation": "Exactly eight user messages; final turn contains the packet and frozen prompt; composer empty; Stop answering visible; activity read Composed the hardness argument.",
+      "receipt": "PRO_BQP1_SOURCE_DISPATCH_RECEIPT_2026-09-03.md",
+      "scope": "Bounded <=2000-word exact eight-label acceptance-operator/interface and gate-dependent BQP1 source-composition audit; no browsing, gadget review, novelty, unweighted unconditionality, ordinary BQP or unrestricted SDQC1 promotion.",
+      "prompt_verification": "1079-character browser text matched the 1080-byte prepared file after whitespace normalization; exactly one completed attachment, enabled Send and no active run before submission; fresh DOM after submission showed one new user turn and no duplicate.",
+      "source_basis": "Targeted local check of Rudolph arXiv:2411.02681v2 Definition 2.2 and Theorems 2.3/3.4 plus independent local algebra/interface audit; complete paper and priority audit not performed.",
+      "terminal_status": "running; no mathematical conclusion collected yet",
+      "source_checking": "The request instructs Pro to distinguish source checking not performed; no response conclusion exists yet."
     },
     "request_history": [
       {
@@ -161,6 +161,33 @@
         "disposition_file": "PRO_RESTRICTED_THEOREM_DISPOSITION_2026-09-03.md",
         "terminal_status": "completed and collected; integration accepted after source-interface correction",
         "source_checking": "No source or literature checking by this Pro response."
+      },
+      {
+        "source_commit": "b78da7ab9472f6d2c0858634b56f3c1210a3e931",
+        "message_file": "PRO_SOURCE_COMPLEXITY_SUBMISSION_2026-09-03.md",
+        "request_file": "PRO_SOURCE_COMPLEXITY_REQUEST_2026-09-03.md",
+        "attachment_file": "PRO_SOURCE_COMPLEXITY_PACKET_2026-09-03.md",
+        "attachment_bytes": 28196,
+        "attachment_sha256": "7f38dd8353d90b9fe7c471dfb0e83bcd5bdca31a7ee5a011cbbd64ad91a12c15",
+        "surface": "Chat",
+        "model_label": "GPT-5.6 Sol",
+        "thinking": "Pro, 5 of 5",
+        "user_message_number": 7,
+        "completed_assistant_messages_before_this_request": 5,
+        "failed_assistant_attempts_before_this_request": 1,
+        "sent_running_observed_at": "2026-09-03T18:43:37.927728Z",
+        "last_observed_at": "2026-09-03T19:27:37.090Z",
+        "last_observation": "Completed seventh-request answer: Worked for 8m 41s, no Stop answering. Full response and 113 equation sources archived; authenticated personal Pro identity remained the verified browser session.",
+        "receipt": "PRO_SOURCE_COMPLEXITY_DISPATCH_RECEIPT_2026-09-03.md",
+        "scope": "Completed <=2400-word exact source-complexity audit; corrected geometric theorem treated as a hypothesis; no browsing, code, renewed gadget review, approximate gate universality, priority or paper-readiness task.",
+        "prompt_verification": "1011-character prepared submission matched normalized composer text; one completed attachment, enabled Send, no active run before sending; sent once.",
+        "source_basis": "Targeted arXiv:2607.03278v1 Definition 2 / Eq. 9 / Sections 5.5-5.6 / Section 7 check recorded in SOURCE_COMPLEXITY_GATE.md; not a full paper audit.",
+        "completed_collected_at": "2026-09-03T19:27:37.090Z",
+        "response_file": "PRO_SOURCE_COMPLEXITY_REVIEW_2026-09-03.md",
+        "capture_file": "PRO_SOURCE_COMPLEXITY_REVIEW_CAPTURE_2026-09-03.json",
+        "disposition_file": "PRO_SOURCE_COMPLEXITY_DISPOSITION_2026-09-03.md",
+        "terminal_status": "completed and collected; separated exact-real-gate corollary accepted and unrestricted SDQC1 inference stopped",
+        "source_checking": "No source or literature checking by this Pro response; source statements came from the supplied packet."
       }
     ],
     "prepared_successor": {
@@ -170,11 +197,13 @@
       "attachment_sha256": "4f68ce7c35596f5ae0c1aaa80891de9cc27880b0d9d673818b2dc05cfeb38934",
       "intended_user_message_number": 8,
       "scope": "Bounded <=2000-word exact operator/interface and gate-dependent BQP1 source-composition audit; no browsing, gadget review, novelty or unrestricted-class promotion.",
-      "status": "prepared_not_sent",
+      "status": "submitted_running",
       "source_commit": "f11cb4ed83bdbc7d738b6b159e7267850f49ad92",
       "submission_file": "PRO_BQP1_SOURCE_SUBMISSION_2026-09-03.md",
       "submission_bytes": 1080,
-      "submission_sha256": "8ad8b46a0a2edcab7e26c6059a6a9bfe82e40ab44a1cc68b766a76742abbcf5e"
+      "submission_sha256": "8ad8b46a0a2edcab7e26c6059a6a9bfe82e40ab44a1cc68b766a76742abbcf5e",
+      "submitted_ui_local_time": "2026-09-03 12:48 PM America/Los_Angeles",
+      "dispatch_receipt": "PRO_BQP1_SOURCE_DISPATCH_RECEIPT_2026-09-03.md"
     }
   },
   "backup_channel": {
@@ -214,24 +243,25 @@
     "bqp1_independent_review": "NORMALIZED_BQP1_SOURCE_GATE_INDEPENDENT_REVIEW.md; block compression, coherent labels, clean/mixed register split, reversible scratch, dummy denominator, exact gate support and uniformity passed. Novelty and downstream geometry were outside scope."
   },
   "github": {
-    "status": "bqp1_review_source_checkpoint_pushed_remote_verified",
+    "status": "bqp1_source_checkpoint_remote_verified_message8_running",
     "review_source_commit": "f11cb4ed83bdbc7d738b6b159e7267850f49ad92",
     "verification": "Local source HEAD and git ls-remote agreed at f11cb4ed83bdbc7d738b6b159e7267850f49ad92; the five-file packet is 36077 bytes with SHA-256 4f68ce7c35596f5ae0c1aaa80891de9cc27880b0d9d673818b2dc05cfeb38934.",
-    "receipt_note": "The eight-label source, independent local audit and bounded packet are synchronized. Message 8 remains prepared and not submitted pending fresh action-time user confirmation."
+    "receipt_note": "The source checkpoint f11cb4e is remote-verified. Message 8 was submitted once with the frozen 36077-byte packet and is running; dispatch evidence is in PRO_BQP1_SOURCE_DISPATCH_RECEIPT_2026-09-03.md."
   },
   "follow_up": {
     "status": "active",
     "automation_id": "tda-pro-github",
     "kind": "thread heartbeat",
     "schedule": "hourly",
-    "policy": "Collect new final responses from the exact channel; preserve raw text and equations, independently disposition before adopting, and sync each useful positive/negative milestone. Local and read-only work may continue. Never send a new external message, upload an attachment, start a new conversation, interrupt a running response, or duplicate a submission without fresh action-time user confirmation.",
+    "policy": "Collect and independently disposition the running bounded review; preserve raw text and equations; sync each useful positive or negative milestone. Existing user authorization covers the ongoing Pro collaboration and GitHub archival. Send at most one scoped successor after its source checkpoint is pushed and verified, and never duplicate or interrupt a running submission.",
     "workflow": "FOLLOW_UP_WORKFLOW.md",
     "stop": "Pause when a substantial scoped result or documented stopping conclusion is reached, or user intervention is necessary.",
     "pending_for_next_completed_response": [
-      "Audit the eight-label BQP1^G2 circuit interface and derive the exact compressed acceptance operator, including clean/mixed registers, label coherence, output locality, and soundness reduction.",
-      "If accepted, state the strongest gate-dependent hardness consequence and exact exclusions; then move to the primary-source novelty collision audit."
+      "Archive the complete message-8 answer, including formulas and explicit statements about source checking not performed.",
+      "Independently disposition every operator, interface, gate-set and complexity-composition claim before adoption.",
+      "If the source composition survives, freeze the strongest weighted BQP1^G2 theorem and then open a primary-source novelty collision audit; keep unweighted and unrestricted SDQC1 claims conditional or stopped."
     ],
-    "phase": "Message 7 completed, collected and dispositioned. Eight-label BQP1 source and independent local audit pass; source checkpoint f11cb4e is pushed and remote-verified. Bounded message 8 is prepared but not submitted, pending fresh action-time user confirmation.",
+    "phase": "Message 8 sent once and running from source commit f11cb4e. Its bounded task audits the eight-label BQP1 exact operator/interface and the gate-dependent weighted-hardness composition. Novelty remains the next gate after collection and disposition.",
     "automation_prompt_updated_for_current_request": true,
     "automation_updated_at": "2026-09-03T19:24:23Z"
   },
