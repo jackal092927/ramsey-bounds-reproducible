@@ -54,7 +54,9 @@ Consolidation started September 2, 2026 PDT; new dispatch and follow-up setup co
 | M48 | Selected-cycle guard mechanism | **LOCAL STRUCTURAL DERIVATION; EXTERNAL REVIEW PENDING**, SELECTED_CYCLE_GUARD_CLOSURE.md | Explicit alternative graph Z=(Y*S_beta) union (R*B), with intended filling and Q'=Q tensor selected harmonic line |
 | M49 | Guard construction exact checks | **PASS**, 46998 relative/zero-weight boundary identities and 1528-term integer filling | Whole-domain T0 cancellation, eight logical cycles annihilated by T1, and normalized 176-dimensional bulk pair transported exactly. Raw central-coordinate weight-one obstruction retained |
 | M50 | Elementary basis cone | **EXACT CERTIFICATE PASS**, 8 vertices, 12 edges, 4 triangles | Boundary ranks 7 and 4, target Betti 1, zero-weight pair rank 10 and kernel dimension 2, Q=0; nontrivial difference/two-term atoms remain open |
-| M51 | Next bounded guard audit | **PREPARED**, two complete files in PRO_SELECTED_GUARD_PACKET_2026-09-03.md | One explicit guard lemma, <=2200 words, no browsing or execution; actual sending will have a separate receipt |
+| M51 | Next bounded guard audit | **SENT AND RUNNING**, user message 5, observed 2026-09-03T16:46:01.151Z | One explicit guard lemma, <=2200 words; 13966-byte packet, exact composer/attachment checks and dispatch receipt archived |
+| M52 | Completed-review and guard source checkpoint | **PUSHED AND REMOTE-VERIFIED**, 9f2e0880db89fb570b439156e6926b664828dcee | Sixteen scoped files, complete review/formulas/disposition, guard proof and exact evidence; GitHub packet bytes/SHA independently matched |
+| M53 | Guard continuation retargeted | **ACTIVE AND UPDATED**, existing tda-pro-github hourly heartbeat | Tracks current_request 5; next gate after disposition is one remaining difference/two-term active atom; no duplicate automation |
 
 ## Current unresolved research gates
 
