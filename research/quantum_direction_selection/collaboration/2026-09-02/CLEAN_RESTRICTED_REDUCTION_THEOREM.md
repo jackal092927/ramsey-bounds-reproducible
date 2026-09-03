@@ -1,0 +1,216 @@
+# Clean restricted reduction theorem for true normalized persistence
+
+September 3, 2026. **LOCAL END-TO-END SYNTHESIS; FINITE PALETTE CERTIFICATES PASS; SOURCE-PROMISE HARDNESS AND NOVELTY OPEN.** This is the strongest clean theorem currently supported by the local proofs and exact certificates. It is a promise-preserving transformation, not an unrestricted SDQC1 or BQP hardness theorem.
+
+## 1. Explicit source problem
+
+Let U be a length-L real quantum circuit with clean work, an explicitly mixed input register of dimension D>0, and one final acceptance measurement P_acc. The exact gate family is
+\[
+G_2=\{X,\mathrm{CX},\mathrm{CCX},H\otimes H\}.
+\]
+Equivalently, single H gates are allowed after adding the one mixed, unmeasured spectator from the exact extension below.
+
+Let J embed the D-dimensional allowed input sector together with the clean work state, and define
+\[
+M=J^\dagger U^\dagger P_{\rm acc}UJ,\qquad
+S=\ker(I-M).
+\]
+Assume the explicit spectral promise
+\[
+M|_{S^\perp}\preceq rI,\qquad r\le\frac13.
+\tag{1}
+\]
+If a decision promise is desired, set \(p=\operatorname{Tr}(M)/D\) and promise
+\[
+p\ge\frac23\quad\text{or}\quad p\le\frac13.
+\tag{2}
+\]
+No standard complexity classification of this restricted exact source problem is assumed.
+
+## 2. Output
+
+There is a polynomial-time construction of two nested weighted clique complexes
+\[
+X_{\rm in}\subseteq X_{\rm out}
+\]
+represented by polynomial-size graphs, with a common target degree d and binary vertex weights in \(\{1,\lambda\}\), such that
+\[
+\beta_d(X_{\rm in})=D,
+\tag{3}
+\]
+and
+\[
+\operatorname{rank}\!\left[
+H_d(X_{\rm in})\longrightarrow H_d(X_{\rm out})
+\right]=\dim S.
+\tag{4}
+\]
+Consequently their true normalized persistence is exactly
+\[
+\boxed{
+\frac{\beta_d(X_{\rm in}\to X_{\rm out})}{\beta_d(X_{\rm in})}
+=
+\frac{\dim\ker(I-M)}{D}.
+}
+\tag{5}
+\]
+This is initial-homology normalization. No simplex-count denominator and no low-positive-energy surrogate occurs in (5).
+
+Both degree-d geometric Laplacians have the exact kernel dimensions in (3)-(4) and an inverse-polynomial gap above the whole kernel. For a fixed error parameter \(0<\eta<1\), a term bound t, logical gap g, and locality at most six, one may choose a dyadic
+\[
+\lambda=\Theta(\eta/t)
+\]
+within the fixed palette constants. With \(\kappa=26\), a common weighted positive-gap floor is
+\[
+E=\Omega\!\left(\frac{\eta^{28}g}{t^{26}}\right).
+\tag{6}
+\]
+For the circuit histories below, \(g=\Omega(L^{-3})\), so (6) is inverse polynomial in the source size. These are conservative floors rather than optimal valuations or runtime estimates.
+
+Under the separate common-copy unweighting theorem, choose \(F=\lambda^{-2}\) and use the same labeled copy blocks through the filtration. This gives nested unweighted clique complexes with the same Betti numbers, induced rank, and normalized ratio, and with positive-gap floor
+\[
+\min\{FE,1\},\qquad
+FE=\Omega\!\left(\frac{\eta^{26}g}{t^{24}}\right).
+\tag{7}
+\]
+This corollary is conditional on the recorded symmetric/asymmetric common-copy spectral decomposition.
+
+## 3. Logical history Hamiltonians
+
+Replace each \(H\otimes H\) transition by consecutive gain and loss propagation steps \(\sqrt2H\) and \(H/\sqrt2\). The forbidden vectors are rational three-term states; all other propagation and penalty terms are rank-one basis or two-term states with basis guards. Let the post-split legal clock positions still be denoted by L.
+
+The initial logical Hamiltonian contains clock, propagation, and clean-input terms. Its complete zero space is the known history image
+\[
+\mathcal V
+=
+Z^{-1/2}\sum_{\tau=0}^{L-1}s_\tau|\tau\rangle U_\tau J,
+\qquad s_\tau\in\{1,\sqrt2\},
+\qquad \mathcal V^\dagger\mathcal V=I_D.
+\tag{8}
+\]
+Propagation and the clean anchor rule out every extra zero vector; (8) is not merely an isometric lower-bound construction. The weighted path argument gives
+\[
+g_{\rm in}\ge\frac1{8L^2}.
+\tag{9}
+\]
+
+Add the final rejection term for the second complex. Restricted to the initial history space, its zero space is exactly \(\mathcal VS\). Under (1), the principal-angle/output penalty is at least \(1/(3L)\) on its orthogonal complement. The sharp two-positive-operator bound gives
+\[
+g_{\rm out}
+\ge
+\frac{1}{3L(8L^2+1)}
+\ge
+\frac1{27L^3}.
+\tag{10}
+\]
+Thus both logical Hamiltonians have known kernels and inverse-polynomial whole positive gaps. Equation (10) includes \(S=0\).
+
+## 4. Complete finite local palette
+
+Every logical rank-one term belongs to a fixed family through total support locality six:
+
+- basis penalties use the elementary selected-petal cone;
+- \(|0\rangle-|1\rangle\) uses the source-pinned **state_0m1** graph;
+- \(|00\rangle-|11\rangle\) uses **state_00m11**;
+- \(|01\rangle-|10\rangle\) is its exact second-bowtie X relabeling and also matches **state_01m10**;
+- the four Hadamard three-term states are exact register relabelings of the certified **state_00m10m11** graph;
+- computational-basis guards use the reviewed selected-cycle construction
+  \[
+  Z=(Y*S_\beta)\cup(R*B).
+  \]
+
+[REMAINING_ACTIVE_ATOM_CERTIFICATES.md](REMAINING_ACTIVE_ATOM_CERTIFICATES.md), [ACTIVE_HADAMARD_ORBIT.md](ACTIVE_HADAMARD_ORBIT.md), and [SELECTED_CYCLE_GUARD_CLOSURE.md](SELECTED_CYCLE_GUARD_CLOSURE.md) supply exact filling, zero-weight kernel, private-pair and guard-transfer evidence. All source graph replays are pinned to immutable code and have offline mathematical modes. This avoids any general integer-state gadget theorem.
+
+For every palette member a target-degree certificate supplies
+\[
+B_d(Y_j)\cap V=\operatorname{ran}\Pi_j,\qquad
+\ker D_{j,0}=V\oplus Q_j,
+\tag{11}
+\]
+and a private projected pair
+\[
+T_j(\lambda)=\lambda T_{j,1},\qquad
+T_{j,1}V=0,\qquad
+\|T_{j,1}q\|\ge b\|q\|.
+\tag{12}
+\]
+The finite family gives uniform constants. Unused logical registers are padded with outside harmonics in every actual bidegree. Distinct gadget interiors have disjoint private chain coordinates.
+
+## 5. Geometric transfer
+
+For any term set A, let \(H_A=\sum_{j\in A}\Pi_j\) be the logical operator and let \(\Delta_A\) be the full degree-d geometric Laplacian. They are different operators.
+
+The finite-certificate theorem applies to every normalized geometric chain x:
+\[
+\|(I-P_{K_A})x\|^2
+\le
+C\left[
+t\lambda^2+
+\frac{\langle x,\Delta_Ax\rangle}{g_A\lambda^{26}}
+\right],
+\qquad
+K_A=\ker H_A.
+\tag{13}
+\]
+This is concentration toward the embedded logical kernel, not toward the initially unknown geometric kernel.
+
+Independent gadget boundaries give
+\[
+B_d(X_A)\cap V
+=
+W_A:=\sum_{j\in A}\operatorname{ran}\Pi_j.
+\tag{14}
+\]
+Hence \(V/W_A\) injects into \(H_d(X_A)\) and supplies \(\dim K_A\) exact zeros. Applying (13) to the entire geometric spectral subspace below E gives the reverse dimension inequality. Therefore
+\[
+H_d(X_A)\cong V/W_A,\qquad
+\dim\ker\Delta_A=\dim K_A,
+\qquad
+\operatorname{spec}(\Delta_A)\cap(0,E)=\varnothing.
+\tag{15}
+\]
+When \(K_A=0\), the whole spectrum starts at E.
+
+For \(A\subseteq B\), the isomorphism in (15) is induced by \(v\mapsto[v]\). Inclusion is therefore the natural quotient map
+\[
+V/W_A\twoheadrightarrow V/W_B.
+\tag{16}
+\]
+Take A to be the initial history terms and B to add final rejection. Equations (8), (15), and (16) prove (3)-(5).
+
+## 6. Exact single-H extension and fraction promise
+
+For a circuit over \(\{X,\mathrm{CX},\mathrm{CCX},H\}\), add one mixed unmeasured qubit a and replace every H by \(H\otimes H_a\). If h is the number of Hadamards,
+\[
+U'=U\otimes H_a^h,\qquad
+P_{\rm acc}'=P_{\rm acc}\otimes I_a,\qquad
+J'=J\otimes I_a.
+\]
+Then exactly
+\[
+M'=(J'^\dagger U'^\dagger P_{\rm acc}'U'J')=M\otimes I_a.
+\tag{17}
+\]
+Both D and \(\dim S\) double, while their fraction, promise (1), and gap estimates remain unchanged. No complex-phase extension is asserted.
+
+Finally, for
+\[
+f=\frac{\dim S}{D},
+\]
+one has exactly
+\[
+f\le p\le r+(1-r)f.
+\tag{18}
+\]
+Under (1)-(2), YES instances satisfy \(f\ge1/2\) and NO instances satisfy \(f\le1/3\). Estimating (5) to additive error strictly below \(1/12\), for example \(1/24\), distinguishes these promises. This is a consequence for the explicit circuit promise. It does not, by itself, prove that this promise is BQP-hard, SDQC1-hard, or outside BPP.
+
+## 7. Remaining claims gate
+
+The mathematical package now has a complete fixed local palette and a clean conditional transfer theorem. The next nonlocal obligations are:
+
+1. audit every dependency in this synthesis against its owning proof/certificate;
+2. identify a natural standard or independently meaningful exact source problem;
+3. establish novelty of the degenerate-kernel whole-gap plus normalized filtered-rank package;
+4. decide whether the poor gap exponent is acceptable for a theory result despite its lack of practical value.
+
+Until the source-promise and priority gates pass, the defensible claim is the explicit transformation (3)-(7), not a standard-class hardness theorem or paper-readiness verdict.

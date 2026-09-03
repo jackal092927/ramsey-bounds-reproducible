@@ -18,6 +18,9 @@
 - [有界证明审查完整答复](PRO_BOUNDED_PROOF_REVIEW_2026-09-03.md)与[独立处理意见](PRO_BOUNDED_PROOF_DISPOSITION_2026-09-03.md)：已完成并收集，138 个公式完整保留；显式假设下的全链定理经本地核查后采纳。
 - [selected-cycle guard 闭包证明](SELECTED_CYCLE_GUARD_CLOSURE.md)与[精确检查结果](SELECTED_CYCLE_GUARD_CHECKS.json)：新构造的局部推导和整数检查已完成，一般证明待下一轮独立审查。
 - [guard 审查发送回执](PRO_SELECTED_GUARD_DISPATCH_RECEIPT_2026-09-03.md)：第五条请求已在原 Pro 5/5 会话运行，固定 source commit **9f2e088** 与 13966 字节附件。
+- [guard 完整答复](PRO_SELECTED_GUARD_REVIEW_2026-09-03.md)与[独立处理意见](PRO_SELECTED_GUARD_DISPOSITION_2026-09-03.md)：条件性闭包已采纳，124 个公式及三项表述修正完整归档。
+- [剩余活跃态精确证书](REMAINING_ACTIVE_ATOM_CERTIFICATES.md)：单比特差态和两类双比特两项态均通过源码固定的整数证书与离线重算；显式固定 palette 的本地证书链已闭合。
+- [最小受限 reduction 定理](CLEAN_RESTRICTED_REDUCTION_THEOREM.md)：将精确实门电路 promise 转成真实归一化 persistence；标准复杂性来源与新颖性仍是开放关卡。
 - [四个 Hadamard 活跃态的精确重标号证明](ACTIVE_HADAMARD_ORBIT.md)：同一个证书覆盖四个无 guard 三项约束，四条整数填充式全部核验。
 - [离线复现结果](OFFLINE_REPRESENTATIVE_CHECKS.json)：无需 gh 或网络重算归档图的全部证书条件。
 - [上一轮 TDA Pro 完整答复](PRO_PREVIOUS_TDA_RESPONSE.md)：已收集的模型建议，未经采纳不算已证明。
@@ -32,4 +35,4 @@
 
 目前最实质的候选是由有限零权重证书推出任意低能几何链的全局 concentration，得到对逻辑 gap 的线性依赖；后面的维数与商空间推理属于标准推论。一个实际 gadget 已完成整数证书核验，完整固定家族、精确电路源问题的复杂性价值和新颖性仍待独立 review。备选方向包括 persistent Laplacian 低谱的共同复制转换、量子几何采样及自然的 evaluated-Hom-width 受限类。
 
-研究快照 a46f408 的 Pro 请求已完成并完整收集，界面记录处理用时 155 分 30 秒。后续快照 **789f87f** 的请求以“Thinking failed”终止，没有最终答复。可见复现错误已归档，离线检查器已补齐；快照 **f4ec1b7** 的有界证明审查已完成，显示处理用时 8 分 39 秒。source commit **9f2e088** 的第五条请求已发送并运行，只审查显式 selected-cycle guard 闭包。每小时回收与继续推进仍有效。目录名保留起始日期。本目录不是已完成论文，也不是投稿或整套 reduction 正确性的认证。
+研究快照 a46f408 的 Pro 请求已完成并完整收集，界面记录处理用时 155 分 30 秒。后续快照 **789f87f** 的请求以“Thinking failed”终止，没有最终答复。快照 **f4ec1b7** 的全链审查和 **9f2e088** 的 guard 审查均已完成、收集并独立处理。剩余活跃态的源码固定证书现已通过；下一轮只审查最小受限 reduction 的端到端整合。实际发送状态以 COLLABORATION_STATE.json 和最新回执为准。每小时回收仍有效。本目录不是投稿或标准复杂性硬度认证。

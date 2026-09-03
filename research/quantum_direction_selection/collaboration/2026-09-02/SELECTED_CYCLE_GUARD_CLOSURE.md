@@ -96,7 +96,7 @@ For Z the corresponding orthogonal splitting is
 \]
 Consequently the private zero-weight Laplacian is the tensor sum on every actual bidegree. At target degree D=d+2, the only outside-harmonic bidegree is (d,1). All other bidegrees have the positive reduced S_beta gap, even if Y has cells above d. Equations (6)-(7) therefore prove
 \[
-\ker D_{Z,0}=V'\oplus(Q\otimes\mathbb C\gamma_\beta)=V'\oplus Q'.
+\ker D_{Z,0}^{(D)}=V'\oplus(Q\otimes\mathbb C\gamma_\beta)=V'\oplus Q'.
 \tag{8}
 \]
 Its positive gap is bounded below by the minimum of the old private target gap, the S_beta gap, and the positive gap of the fixed full register R'. No eigenspace of the unknown positive-weight geometric Laplacian is used.
@@ -105,11 +105,11 @@ This is also why taking all central coordinates fails after the guard: the new g
 
 ## 4. Projected private pair
 
-In the down and up output degrees of Z, retain the old private output subspaces tensored with C gamma_beta; project orthogonally onto them. Call this projection R_Z^out. It is supported on outputs containing an old private vertex. Define
+Let P_gamma be orthogonal projection onto C gamma_beta in guard degree one, extended by zero in every other guard degree. In the down and up output degrees of Z, retain the old private output subspaces tensored with C gamma_beta and project orthogonally onto them. Call this degreewise projection R_Z^out. It is supported on outputs containing an old private vertex. Define
 \[
 T_Z(\lambda)=R_Z^{out}D_Z(\lambda).
 \]
-The outside differential terms vanish after this projection: gamma_beta is both closed and coclosed in the reduced chain complex of S_beta. On outputs with a private vertex, the outside complex is S_beta, not the entire B. For register inputs, restriction to S_beta is followed by the same harmonic projection.
+The outside differential terms vanish after this projection: partial_S gamma_beta=0 and P_gamma im(partial_S^*)=0. On outputs with a private vertex, the outside complex is S_beta, not the entire B. Inputs in guard degrees zero and minus one therefore project to zero; for register inputs, restriction to S_beta is followed by the same degree-one harmonic projection. This treats the entire target chain domain, including the unselected bowtie petal.
 
 Thus the remaining active part is the old T_Y tensor the selected harmonic component, including the contractive restriction on register inputs. It follows on the entire target chain space that
 \[
@@ -126,7 +126,7 @@ with the fixed join orientation convention on each output summand. Since gamma_b
 \|T_{Z,1}(q\otimes\gamma_\beta)\|\ge b\|q\|.
 \tag{10}
 \]
-The finite operator norms remain bounded. The private-to-register interface still comes only from removing one old private vertex, with coefficient lambda. The number of such vertices is unchanged, giving a fixed interface constant. Conditions (5), (8), (9)-(10) supply the required finite data.
+The finite operator norms remain bounded. The private-to-register interface can only remove the unique old private vertex from a simplex containing exactly one such vertex, with coefficient lambda. For each private vertex this is a signed partial isometry, and those input blocks are disjoint, so LL*<=N_priv lambda^2 I. The number of private vertices is unchanged by guard iteration. Conditions (5), (8), (9)-(10) supply the required finite data.
 
 ## 5. Basis-projector base case and iteration
 
@@ -148,4 +148,4 @@ With total locality m<=6, the elementary diagonal-scaling argument supplies the 
 
 These checks support the explicit construction; they do not substitute for the general proof above or certify the original source's different guard operation. The original graph certificate remains the input for its numerical constants, with upstream provenance already recorded there.
 
-The claim is submitted for a bounded hostile proof review. Remaining active types include the nontrivial one-qubit difference and two-qubit two-term atoms. Complete-palette integration, exact source-complexity significance, and priority remain open. No unrestricted quantum-class equivalence follows from this lemma.
+**Review update:** the [bounded hostile review](PRO_SELECTED_GUARD_REVIEW_2026-09-03.md) and [independent disposition](PRO_SELECTED_GUARD_DISPOSITION_2026-09-03.md) accept the conditional lemma after the target-degree, augmented-gap and degreewise-projection clarifications above. Remaining active types include the nontrivial one-qubit difference and two-qubit two-term atoms. Complete-palette integration, exact source-complexity significance, and priority remain open. No unrestricted quantum-class equivalence follows from this lemma.

@@ -57,10 +57,18 @@ Consolidation started September 2, 2026 PDT; new dispatch and follow-up setup co
 | M51 | Next bounded guard audit | **SENT AND RUNNING**, user message 5, observed 2026-09-03T16:46:01.151Z | One explicit guard lemma, <=2200 words; 13966-byte packet, exact composer/attachment checks and dispatch receipt archived |
 | M52 | Completed-review and guard source checkpoint | **PUSHED AND REMOTE-VERIFIED**, 9f2e0880db89fb570b439156e6926b664828dcee | Sixteen scoped files, complete review/formulas/disposition, guard proof and exact evidence; GitHub packet bytes/SHA independently matched |
 | M53 | Guard continuation retargeted | **ACTIVE AND UPDATED**, existing tda-pro-github hourly heartbeat | Tracks current_request 5; next gate after disposition is one remaining difference/two-term active atom; no duplicate automation |
+| M54 | Selected-cycle guard review | **COMPLETED AND COLLECTED**, user message 5; UI Worked for 8m 39s | Full answer and 124 equation sources archived; three scope clarifications identified |
+| M55 | Independent guard disposition | **CONDITIONAL LEMMA ACCEPTED** | Target-degree kernel, augmented degrees -1/0/1, and degreewise harmonic projection made explicit; no source-graph or novelty promotion |
+| M56 | Remaining source atom replay | **PINNED PRIMARY CODE + EXACT INTEGER CERTIFICATES PASS**, commit 30ac70e | One-qubit difference: 16 vertices, Q dimension 8, 24-term filling. Two-qubit difference: 33 vertices, Q dimension 112, 248-term filling |
+| M57 | Second two-term atom transport | **EXACT GRAPH ISOMORPHISM AND FILLING PASS** | Logical X on the second bowtie maps state_00m11 to the separately recovered state_01m10 graph and transports all finite data |
+| M58 | Remaining-atom offline mode | **PASS WITH EXTERNAL COMMANDS DISABLED** | Recomputed all three atom sections from archived graphs; verifies mathematics, not upstream provenance |
+| M59 | Fixed local palette | **LOCALLY COMPLETE FOR EXPLICIT REAL-GATE HISTORY** | Basis cone, one-/two-term atoms, four Hadamard atoms, and selected-cycle guards cover the stated rank-one terms through locality six |
+| M60 | Clean restricted reduction theorem | **LOCAL END-TO-END SYNTHESIS**, CLEAN_RESTRICTED_REDUCTION_THEOREM.md | Exact normalized fraction and whole gaps for an explicit circuit promise; standard source-class hardness and novelty remain open |
+| M61 | Restricted-theorem integration audit | **PREPARED**, PRO_RESTRICTED_THEOREM_REQUEST_2026-09-03.md | Bounded review of palette exhaustiveness, natural filtration, exact denominator, gaps, spectator and fraction strength |
 
 ## Current unresolved research gates
 
-1. Independently review the new selected-cycle guard construction, then certify the remaining one-qubit difference and two-qubit two-term active atoms. The finite-certificate concentration implication has passed bounded review and local rechecking; the older spectral-sector route remains separately archived.
+1. Independently audit the clean restricted reduction synthesis. The concentration and guard implications have passed bounded reviews; every listed local atom now has an exact source-pinned or transported certificate.
 2. Determine whether the global whole-kernel theorem and its filtered normalized consequence are new, already implicit, or already explicit.
 3. Establish the strongest meaningful consequence for the exact restricted circuit source without unrestricted SDQC1 equivalence or approximate compilation.
 4. Evaluate whether the persistent-Laplacian theorem supplies sufficient additional substance; its elementary domination proof alone does not establish impact.

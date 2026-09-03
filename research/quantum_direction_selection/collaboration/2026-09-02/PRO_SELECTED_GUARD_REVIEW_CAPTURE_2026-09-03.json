@@ -1,0 +1,519 @@
+{
+  "captured_at": "2026-09-03T17:22:01.737Z",
+  "conversation_url": "https://chatgpt.com/c/6a98c05a-ecf4-83e8-b356-4e20dc3fde3f",
+  "user_message_number": 5,
+  "source_commit": "9f2e0880db89fb570b439156e6926b664828dcee",
+  "visible_duration": "Worked for 8m 39s",
+  "links": [],
+  "markdown": "# Verdict\n\n\nThe selected-cycle guard lemma is **valid under the stated old finite certificate**. I find no invalid inference and no counterexample satisfying its hypotheses.\n\n\nThree points should be stated more precisely:\n\n\n1. The zero-weight identity is a statement about the **target-degree differential pair**\n  \n  \n  \n  \\[\n  \\ker D_{Z,0}^{(D)}=V'\\oplus Q',\n  \\]\n  \n  \n  not the kernel of the entire graded differential.\n\n2. The positive-gap argument uses the augmented/reduced Laplacian of \\(S_\\beta\\) in every degree \\(-1,0,1\\), not merely its ordinary degree-one gap.\n\n3. The projected-pair proof should explicitly define the harmonic projection degreewise. Once this is done, inputs involving the unselected bowtie petal and inputs in the other private bidegrees contribute zero rather than producing hidden weight-one terms.\n\n\nAllowing \\(Q\\) to be an arbitrary orthogonally projected subspace supported on private coordinates is legitimate. The all-chain concentration proof uses private support, orthogonality, a zero-weight gap on \\((V\\oplus Q)^\\perp\\), and injectivity of \\(T_1|_Q\\); it never requires \\(Q\\) to be spanned by individual simplices. The note explicitly makes this revised scope part of the criterion. 〔PRO_SELECTED_GUARD_PACKET_2026-…〕\n\n\n\n---\n\n\n# Selected-cycle guard closure theorem\n\n\nLet \\(Y\\) contain an induced top-dimensional register \\(R\\), \\(\\dim R=d\\), with\n\n\n\n\\[\nV=Z_d(R).\n\\]\n\n\nAssume\n\n\n\n\\[\nB_d(Y)\\cap V=\\mathbb C\\phi,\n\\qquad\n\\ker D_{Y,0}^{(d)}=V\\oplus Q,\n\\]\n\n\nwhere \\(Q\\) is an orthogonal subspace supported on private chain coordinates. Assume further that a private-output projection gives\n\n\n\n\\[\nT_Y(\\lambda)=\\lambda T_{Y,1},\\qquad\nT_{Y,1}V=0,\\qquad\n\\|T_{Y,1}q\\|\\ge b\\|q\\|\n\\quad(q\\in Q).\n\\]\n\n\nLet \\(B\\) be a seven-vertex bowtie, let \\(S_\\beta\\) be one induced four-cycle, and let \\(\\gamma_\\beta\\) be its normalized oriented cycle. Form \\(Z\\) by joining all vertices of \\(B\\) to \\(R\\), while joining only the vertices of \\(S_\\beta\\) to the private vertices of \\(Y\\). Then, with\n\n\n\n\\[\nR'=R*B,\\qquad D=d+2,\n\\]\n\n\nthe guarded gadget satisfies\n\n\n\n\\[\nB_D(Z)\\cap Z_D(R')\n=\n\\mathbb C(\\phi\\otimes\\gamma_\\beta),\n\\]\n\n\n\n\\[\n\\ker D_{Z,0}^{(D)}\n=\nV'\\oplus Q',\n\\qquad\nV'=V\\otimes Z_1(B),\n\\qquad\nQ'=Q\\otimes\\mathbb C\\gamma_\\beta,\n\\]\n\n\nand admits a private projected pair\n\n\n\n\\[\nT_Z(\\lambda)=\\lambda T_{Z,1},\n\\qquad\nT_{Z,1}V'=0,\n\\qquad\n\\|T_{Z,1}q'\\|\\ge b\\|q'\\|\n\\quad(q'\\in Q').\n\\]\n\n\nThus it satisfies the same finite concentration criterion for the projector\n\n\n\n\\[\n\\Pi_\\phi\\otimes\n|\\gamma_\\beta\\rangle\\langle\\gamma_\\beta|.\n\\]\n\n\n\n---\n\n\n## 1. Clique union and exact boundary intersection\n\n\nA clique in \\(Z\\) containing an old private vertex can use only vertices of \\(S_\\beta\\) from the new bowtie. Its old vertices form a clique of \\(Y\\). Hence it lies in \\(Y*S_\\beta\\).\n\n\nA clique containing no old private vertex has its old part in \\(R\\), and its bowtie part is an arbitrary clique of \\(B\\). Hence it lies in \\(R*B\\). Conversely, both stated joins occur by construction. Therefore, as full clique complexes,\n\n\n\n\\[\nZ=(Y*S_\\beta)\\cup(R*B),\n\\qquad\n(Y*S_\\beta)\\cap(R*B)=R*S_\\beta.\n\\]\n\n\nThis establishes the claimed clique-union description. 〔PRO_SELECTED_GUARD_PACKET_2026-…〕\n\n\nPut \\(R'=R*B\\). Simplicial excision and the reduced join-chain formula give, in **all degrees**,\n\n\n\n\\[\n\\begin{aligned}\n\\widetilde C_*(Z,R')\n&\\cong\n\\widetilde C_*(Y*S_\\beta,R*S_\\beta)\\\\\n&\\cong\n\\widetilde C_*(Y,R)\n\\,\\widehat\\otimes\\,\n\\widetilde C_*(S_\\beta).\n\\end{aligned}\n\\]\n\n\nThis is also evident directly from bases: a simplex surviving modulo \\(R'\\) contains an old private vertex, and therefore has a unique decomposition into a relative simplex of \\((Y,R)\\) and a simplex of \\(S_\\beta\\). Deleting an old vertex gives the relative differential; deleting an \\(S_\\beta\\) vertex gives the second tensor differential.\n\n\nSince\n\n\n\n\\[\n\\widetilde H_s(S_\\beta)=\n\\begin{cases}\n\\mathbb C[\\gamma_\\beta],&s=1,\\\\\n0,&s\\ne1,\n\\end{cases}\n\\]\n\n\nthe relative Künneth formula yields\n\n\n\n\\[\nH_{D+1}(Z,R')\n\\cong\nH_{d+1}(Y,R)\\otimes\n\\mathbb C[\\gamma_\\beta].\n\\]\n\n\nLet \\(\\delta_Y\\) and \\(\\delta_Z\\) be the connecting maps. If \\(c\\) is an old relative cycle with \\(\\partial c\\in C_d(R)\\), then, up to the harmless global join-orientation sign,\n\n\n\n\\[\n\\delta_Z([c]\\otimes[\\gamma_\\beta])\n=\n[\\partial c]\\otimes[\\gamma_\\beta].\n\\]\n\n\nThus\n\n\n\n\\[\n\\operatorname{im}\\delta_Z\n=\n(\\operatorname{im}\\delta_Y)\n\\otimes\\mathbb C[\\gamma_\\beta].\n\\]\n\n\nBecause \\(R\\) is top-dimensional,\n\n\n\n\\[\n\\operatorname{im}\\delta_Y\n=\nB_d(Y)\\cap Z_d(R)\n=\n\\mathbb C\\phi.\n\\]\n\n\nBecause \\(R'=R*B\\) is top-dimensional in degree \\(D\\), it has no \\(D\\)-boundaries, and exactness of the pair sequence gives\n\n\n\n\\[\nB_D(Z)\\cap Z_D(R')\n=\n\\operatorname{im}\\delta_Z\n=\n\\mathbb C(\\phi\\otimes\\gamma_\\beta).\n\\]\n\n\nNo assumption that all old homology is represented inside \\(R\\) is used. Additional classes in \\(H_{d+1}(Y,R)\\) either lie in \\(\\ker\\delta_Y\\) or have boundary in the already prescribed one-dimensional image. They cannot enlarge the new intersection. This validates the note’s connecting-map argument. 〔PRO_SELECTED_GUARD_PACKET_2026-…〕\n\n\nFor every \\(\\lambda>0\\), diagonal weight gauge preserves the boundary space and fixes every \\(R'\\)-simplex because all \\(R\\)- and \\(B\\)-vertices have weight one. Hence the same boundary intersection holds at every positive weight.\n\n\n\n---\n\n\n## 2. Zero-weight decomposition in all bidegrees\n\n\nAt \\(\\lambda=0\\), a boundary term that deletes an old private vertex has coefficient zero. Consequently:\n\n\n- register simplices map only to register simplices;\n\n- simplices containing an old private vertex map only to simplices still containing an old private vertex.\n\n\nThus the zero-weight chain complex splits orthogonally in every degree:\n\n\n\n\\[\n(C_*(Y),\\partial_{Y,0})\n=\n(C_*(R),\\partial_R)\n\\oplus\n(C_*^{\\mathrm{priv}}(Y),\\partial_{\\mathrm{priv},0}).\n\\]\n\n\nFor \\(Z\\), every private simplex uses only \\(S_\\beta\\) on the bowtie factor, so\n\n\n\n\\[\nC_*^{\\mathrm{priv}}(Z)\n\\cong\nC_*^{\\mathrm{priv}}(Y)\n\\,\\widehat\\otimes\\,\n\\widetilde C_*(S_\\beta).\n\\]\n\n\nThe corresponding private Laplacian is a tensor sum on each bidegree.\n\n\nAt target degree \\(D=d+2\\), the possible \\(S_\\beta\\)-degrees are\n\n\n\n\\[\ns=1,\\ 0,\\ -1,\n\\]\n\n\nwith old private degrees respectively\n\n\n\n\\[\nr=d,\\ d+1,\\ d+2.\n\\]\n\n\nThus cells of \\(Y\\) above the old target degree are included. The only bidegree in which the \\(S_\\beta\\) factor is harmonic is\n\n\n\n\\[\n(r,s)=(d,1).\n\\]\n\n\nThere the private kernel is\n\n\n\n\\[\nQ\\otimes\\mathbb C\\gamma_\\beta.\n\\]\n\n\nFor \\(s=0\\) or \\(s=-1\\), the augmented reduced Laplacian of the nonempty connected cycle \\(S_\\beta\\) is strictly positive. Hence even an old private harmonic vector in degree \\(d+1\\) or \\(d+2\\) cannot create a new target zero mode.\n\n\nThe register summand has target kernel\n\n\n\n\\[\nZ_D(R*B)=Z_d(R)\\otimes Z_1(B)=V'.\n\\]\n\n\nTherefore\n\n\n\n\\[\n\\boxed{\n\\ker D_{Z,0}^{(D)}\n=\nV'\\oplus\n\\bigl(Q\\otimes\\mathbb C\\gamma_\\beta\\bigr).\n}\n\\]\n\n\nIts positive gap is bounded below by a positive constant depending only on:\n\n\n- the old target-degree private gap;\n\n- the finitely many positive augmented gaps of \\(S_\\beta\\);\n\n- the target-degree positive gap of the fixed register \\(R*B\\).\n\n\nThis proves both the kernel identity and the uniform zero-weight gap without any reference to the unknown positive-\\(\\lambda\\) geometric kernel. 〔PRO_SELECTED_GUARD_PACKET_2026-…〕\n\n\n\n---\n\n\n## 3. Projected private pair on the full target domain\n\n\nLet \\(P_\\gamma\\) denote orthogonal projection onto\n\n\\(\\mathbb C\\gamma_\\beta\\) in degree one of \\(S_\\beta\\), extended by zero in its other degrees. In the down- and up-output spaces, retain precisely\n\n\n\n\\[\n\\operatorname{ran}R_Y^{\\mathrm{out}}\n\\otimes\\mathbb C\\gamma_\\beta.\n\\]\n\n\nCall the resulting projection \\(R_Z^{\\mathrm{out}}\\), and define\n\n\n\n\\[\nT_Z(\\lambda)=R_Z^{\\mathrm{out}}D_Z(\\lambda).\n\\]\n\n\nUnder the join bigrading, only the input bidegree \\((d,1)\\) can survive this output projection. On that bidegree, the local part is the old projected pair tensored with \\(P_\\gamma\\).\n\n\nEvery outside-differential contribution vanishes because\n\n\n\n\\[\n\\partial_{S_\\beta}\\gamma_\\beta=0,\n\\qquad\nP_\\gamma\\operatorname{im}\\partial_{S_\\beta}^*=0.\n\\]\n\n\nThis handles both directions:\n\n\n- differentiating an input already in the harmonic line;\n\n- projecting the differential or coboundary of an arbitrary \\(S_\\beta\\)-chain onto that line.\n\n\nHence private inputs in bidegrees \\((d+1,0)\\) and \\((d+2,-1)\\) contribute zero. Register inputs involving the unselected bowtie petal merely undergo the contractive restriction/projection onto \\(\\gamma_\\beta\\); no weight-one outside term survives.\n\n\nConsequently, on the **entire** degree-\\(D\\) chain space,\n\n\n\n\\[\nT_Z(\\lambda)=\\lambda T_{Z,1}.\n\\]\n\n\nFor \\(v\\in V\\) and \\(z\\in Z_1(B)\\),\n\n\n\n\\[\nT_{Z,1}(v\\otimes z)\n=\n(T_{Y,1}v)\\otimes P_\\gamma z\n=\n0,\n\\]\n\n\nso \\(T_{Z,1}V'=0\\).\n\n\nFinally, for \\(q\\in Q\\),\n\n\n\n\\[\nT_{Z,1}(q\\otimes\\gamma_\\beta)\n=\n(T_{Y,1}q)\\otimes\\gamma_\\beta,\n\\]\n\n\nand therefore\n\n\n\n\\[\n\\|T_{Z,1}(q\\otimes\\gamma_\\beta)\\|\n\\ge\nb\\|q\\otimes\\gamma_\\beta\\|.\n\\]\n\n\nThe old bulk constant is preserved exactly. The range still consists of chains containing an old private vertex, so retained outputs remain orthogonal between independently attached gadgets. 〔PRO_SELECTED_GUARD_PACKET_2026-…〕\n\n\nThe reported finite check that raw central coordinates need not cancel, whereas the selected harmonic sum does, is consistent with this proof and explains why replacing \\(Q'\\) by the full central coordinate span would be wrong. 〔PRO_SELECTED_GUARD_PACKET_2026-…〕\n\n\n\n---\n\n\n## 4. Basis cone, interface, iteration, and exponent\n\n\nFor the basis atom\n\n\n\n\\[\nY=R\\cup(v*S_0),\n\\]\n\n\nthe relative connecting map has one-dimensional image generated by the selected petal cycle. Hence\n\n\n\n\\[\nB_1(Y)\\cap Z_1(R)=\\mathbb C\\gamma_0.\n\\]\n\n\nAt zero weight, the target private pair is the augmented reduced differential pair of \\(S_0\\) in degree zero. Since \\(S_0\\) is connected,\n\n\n\n\\[\n\\widetilde H_0(S_0)=0,\n\\]\n\n\nso this private pair is injective. Therefore \\(Q=0\\). Taking the zero output projection satisfies the projected-pair condition vacuously. Petal exchange gives the \\(|1\\rangle\\) atom.\n\n\nFor the guarded construction, the private-to-register interface can arise only by deleting the unique old private vertex of a simplex containing exactly one private vertex. Its coefficient is \\(\\lambda\\). For each private vertex, deletion is a signed partial isometry; hence\n\n\n\n\\[\nLL^*\\preceq\nN_{\\mathrm{priv}}\\lambda^2I.\n\\]\n\n\nThe guard adds no private vertices, so this interface constant does not grow under iteration.\n\n\nApplying the construction repeatedly tensors\n\n\n\n\\[\nQ\\longmapsto\nQ\\otimes\\mathbb C\\gamma_{\\beta_1}\n\\otimes\\cdots\\otimes\n\\mathbb C\\gamma_{\\beta_s},\n\\]\n\n\nwhile the intended projector becomes the old active projector tensored with the selected computational-basis guard. All constants remain uniform over the finite family of guard strings of total locality at most six.\n\n\nAt locality \\(m\\), the guarded register target degree is\n\n\n\n\\[\n2m-1.\n\\]\n\n\nThe conservative diagonal-scaling argument therefore gives\n\n\n\n\\[\n\\gamma_+(\\Delta)\n\\ge\nc\\lambda^{\\,2(2m-1)+4}\n=\nc\\lambda^{4m+2}.\n\\]\n\n\nFor \\(m\\le6\\),\n\n\n\n\\[\n\\boxed{\\kappa\\le26.}\n\\]\n\n\nThe basis-cone and iteration conclusions in the note are therefore correct. 〔PRO_SELECTED_GUARD_PACKET_2026-…〕\n\n\n# Status\n\n\n**Selected computational-basis guards are closed**, conditional on the old active gadget satisfying the finite certificate. This closure is an abstract proof for the explicit alternative construction \\(Z=(Y*S_\\beta)\\cup(R*B)\\), not a certification of the source’s different joined-implementing-sphere graph.\n\n\nThe exact remaining finite gate is unchanged: establish the criterion for the nontrivial one-qubit difference atoms and the two-qubit two-term atoms. No full-palette, source-priority, complexity-class, optimal-gap, or paper-readiness conclusion follows from this guard lemma alone.\n",
+  "math": [
+    {
+      "display": true,
+      "source": "\\ker D_{Z,0}^{(D)}=V'\\oplus Q',"
+    },
+    {
+      "display": false,
+      "source": "S_\\beta"
+    },
+    {
+      "display": false,
+      "source": "-1,0,1"
+    },
+    {
+      "display": false,
+      "source": "Q"
+    },
+    {
+      "display": false,
+      "source": "(V\\oplus Q)^\\perp"
+    },
+    {
+      "display": false,
+      "source": "T_1|_Q"
+    },
+    {
+      "display": false,
+      "source": "Q"
+    },
+    {
+      "display": false,
+      "source": "Y"
+    },
+    {
+      "display": false,
+      "source": "R"
+    },
+    {
+      "display": false,
+      "source": "\\dim R=d"
+    },
+    {
+      "display": true,
+      "source": "V=Z_d(R)."
+    },
+    {
+      "display": true,
+      "source": "B_d(Y)\\cap V=\\mathbb C\\phi,\n\\qquad\n\\ker D_{Y,0}^{(d)}=V\\oplus Q,"
+    },
+    {
+      "display": false,
+      "source": "Q"
+    },
+    {
+      "display": true,
+      "source": "T_Y(\\lambda)=\\lambda T_{Y,1},\\qquad\nT_{Y,1}V=0,\\qquad\n\\|T_{Y,1}q\\|\\ge b\\|q\\|\n\\quad(q\\in Q)."
+    },
+    {
+      "display": false,
+      "source": "B"
+    },
+    {
+      "display": false,
+      "source": "S_\\beta"
+    },
+    {
+      "display": false,
+      "source": "\\gamma_\\beta"
+    },
+    {
+      "display": false,
+      "source": "Z"
+    },
+    {
+      "display": false,
+      "source": "B"
+    },
+    {
+      "display": false,
+      "source": "R"
+    },
+    {
+      "display": false,
+      "source": "S_\\beta"
+    },
+    {
+      "display": false,
+      "source": "Y"
+    },
+    {
+      "display": true,
+      "source": "R'=R*B,\\qquad D=d+2,"
+    },
+    {
+      "display": true,
+      "source": "B_D(Z)\\cap Z_D(R')\n=\n\\mathbb C(\\phi\\otimes\\gamma_\\beta),"
+    },
+    {
+      "display": true,
+      "source": "\\ker D_{Z,0}^{(D)}\n=\nV'\\oplus Q',\n\\qquad\nV'=V\\otimes Z_1(B),\n\\qquad\nQ'=Q\\otimes\\mathbb C\\gamma_\\beta,"
+    },
+    {
+      "display": true,
+      "source": "T_Z(\\lambda)=\\lambda T_{Z,1},\n\\qquad\nT_{Z,1}V'=0,\n\\qquad\n\\|T_{Z,1}q'\\|\\ge b\\|q'\\|\n\\quad(q'\\in Q')."
+    },
+    {
+      "display": true,
+      "source": "\\Pi_\\phi\\otimes\n|\\gamma_\\beta\\rangle\\langle\\gamma_\\beta|."
+    },
+    {
+      "display": false,
+      "source": "Z"
+    },
+    {
+      "display": false,
+      "source": "S_\\beta"
+    },
+    {
+      "display": false,
+      "source": "Y"
+    },
+    {
+      "display": false,
+      "source": "Y*S_\\beta"
+    },
+    {
+      "display": false,
+      "source": "R"
+    },
+    {
+      "display": false,
+      "source": "B"
+    },
+    {
+      "display": false,
+      "source": "R*B"
+    },
+    {
+      "display": true,
+      "source": "Z=(Y*S_\\beta)\\cup(R*B),\n\\qquad\n(Y*S_\\beta)\\cap(R*B)=R*S_\\beta."
+    },
+    {
+      "display": false,
+      "source": "R'=R*B"
+    },
+    {
+      "display": true,
+      "source": "\\begin{aligned}\n\\widetilde C_*(Z,R')\n&\\cong\n\\widetilde C_*(Y*S_\\beta,R*S_\\beta)\\\\\n&\\cong\n\\widetilde C_*(Y,R)\n\\,\\widehat\\otimes\\,\n\\widetilde C_*(S_\\beta).\n\\end{aligned}"
+    },
+    {
+      "display": false,
+      "source": "R'"
+    },
+    {
+      "display": false,
+      "source": "(Y,R)"
+    },
+    {
+      "display": false,
+      "source": "S_\\beta"
+    },
+    {
+      "display": false,
+      "source": "S_\\beta"
+    },
+    {
+      "display": true,
+      "source": "\\widetilde H_s(S_\\beta)=\n\\begin{cases}\n\\mathbb C[\\gamma_\\beta],&s=1,\\\\\n0,&s\\ne1,\n\\end{cases}"
+    },
+    {
+      "display": true,
+      "source": "H_{D+1}(Z,R')\n\\cong\nH_{d+1}(Y,R)\\otimes\n\\mathbb C[\\gamma_\\beta]."
+    },
+    {
+      "display": false,
+      "source": "\\delta_Y"
+    },
+    {
+      "display": false,
+      "source": "\\delta_Z"
+    },
+    {
+      "display": false,
+      "source": "c"
+    },
+    {
+      "display": false,
+      "source": "\\partial c\\in C_d(R)"
+    },
+    {
+      "display": true,
+      "source": "\\delta_Z([c]\\otimes[\\gamma_\\beta])\n=\n[\\partial c]\\otimes[\\gamma_\\beta]."
+    },
+    {
+      "display": true,
+      "source": "\\operatorname{im}\\delta_Z\n=\n(\\operatorname{im}\\delta_Y)\n\\otimes\\mathbb C[\\gamma_\\beta]."
+    },
+    {
+      "display": false,
+      "source": "R"
+    },
+    {
+      "display": true,
+      "source": "\\operatorname{im}\\delta_Y\n=\nB_d(Y)\\cap Z_d(R)\n=\n\\mathbb C\\phi."
+    },
+    {
+      "display": false,
+      "source": "R'=R*B"
+    },
+    {
+      "display": false,
+      "source": "D"
+    },
+    {
+      "display": false,
+      "source": "D"
+    },
+    {
+      "display": true,
+      "source": "B_D(Z)\\cap Z_D(R')\n=\n\\operatorname{im}\\delta_Z\n=\n\\mathbb C(\\phi\\otimes\\gamma_\\beta)."
+    },
+    {
+      "display": false,
+      "source": "R"
+    },
+    {
+      "display": false,
+      "source": "H_{d+1}(Y,R)"
+    },
+    {
+      "display": false,
+      "source": "\\ker\\delta_Y"
+    },
+    {
+      "display": false,
+      "source": "\\lambda>0"
+    },
+    {
+      "display": false,
+      "source": "R'"
+    },
+    {
+      "display": false,
+      "source": "R"
+    },
+    {
+      "display": false,
+      "source": "B"
+    },
+    {
+      "display": false,
+      "source": "\\lambda=0"
+    },
+    {
+      "display": true,
+      "source": "(C_*(Y),\\partial_{Y,0})\n=\n(C_*(R),\\partial_R)\n\\oplus\n(C_*^{\\mathrm{priv}}(Y),\\partial_{\\mathrm{priv},0})."
+    },
+    {
+      "display": false,
+      "source": "Z"
+    },
+    {
+      "display": false,
+      "source": "S_\\beta"
+    },
+    {
+      "display": true,
+      "source": "C_*^{\\mathrm{priv}}(Z)\n\\cong\nC_*^{\\mathrm{priv}}(Y)\n\\,\\widehat\\otimes\\,\n\\widetilde C_*(S_\\beta)."
+    },
+    {
+      "display": false,
+      "source": "D=d+2"
+    },
+    {
+      "display": false,
+      "source": "S_\\beta"
+    },
+    {
+      "display": true,
+      "source": "s=1,\\ 0,\\ -1,"
+    },
+    {
+      "display": true,
+      "source": "r=d,\\ d+1,\\ d+2."
+    },
+    {
+      "display": false,
+      "source": "Y"
+    },
+    {
+      "display": false,
+      "source": "S_\\beta"
+    },
+    {
+      "display": true,
+      "source": "(r,s)=(d,1)."
+    },
+    {
+      "display": true,
+      "source": "Q\\otimes\\mathbb C\\gamma_\\beta."
+    },
+    {
+      "display": false,
+      "source": "s=0"
+    },
+    {
+      "display": false,
+      "source": "s=-1"
+    },
+    {
+      "display": false,
+      "source": "S_\\beta"
+    },
+    {
+      "display": false,
+      "source": "d+1"
+    },
+    {
+      "display": false,
+      "source": "d+2"
+    },
+    {
+      "display": true,
+      "source": "Z_D(R*B)=Z_d(R)\\otimes Z_1(B)=V'."
+    },
+    {
+      "display": true,
+      "source": "\\boxed{\n\\ker D_{Z,0}^{(D)}\n=\nV'\\oplus\n\\bigl(Q\\otimes\\mathbb C\\gamma_\\beta\\bigr).\n}"
+    },
+    {
+      "display": false,
+      "source": "S_\\beta"
+    },
+    {
+      "display": false,
+      "source": "R*B"
+    },
+    {
+      "display": false,
+      "source": "\\lambda"
+    },
+    {
+      "display": false,
+      "source": "P_\\gamma"
+    },
+    {
+      "display": false,
+      "source": "\\mathbb C\\gamma_\\beta"
+    },
+    {
+      "display": false,
+      "source": "S_\\beta"
+    },
+    {
+      "display": true,
+      "source": "\\operatorname{ran}R_Y^{\\mathrm{out}}\n\\otimes\\mathbb C\\gamma_\\beta."
+    },
+    {
+      "display": false,
+      "source": "R_Z^{\\mathrm{out}}"
+    },
+    {
+      "display": true,
+      "source": "T_Z(\\lambda)=R_Z^{\\mathrm{out}}D_Z(\\lambda)."
+    },
+    {
+      "display": false,
+      "source": "(d,1)"
+    },
+    {
+      "display": false,
+      "source": "P_\\gamma"
+    },
+    {
+      "display": true,
+      "source": "\\partial_{S_\\beta}\\gamma_\\beta=0,\n\\qquad\nP_\\gamma\\operatorname{im}\\partial_{S_\\beta}^*=0."
+    },
+    {
+      "display": false,
+      "source": "S_\\beta"
+    },
+    {
+      "display": false,
+      "source": "(d+1,0)"
+    },
+    {
+      "display": false,
+      "source": "(d+2,-1)"
+    },
+    {
+      "display": false,
+      "source": "\\gamma_\\beta"
+    },
+    {
+      "display": false,
+      "source": "D"
+    },
+    {
+      "display": true,
+      "source": "T_Z(\\lambda)=\\lambda T_{Z,1}."
+    },
+    {
+      "display": false,
+      "source": "v\\in V"
+    },
+    {
+      "display": false,
+      "source": "z\\in Z_1(B)"
+    },
+    {
+      "display": true,
+      "source": "T_{Z,1}(v\\otimes z)\n=\n(T_{Y,1}v)\\otimes P_\\gamma z\n=\n0,"
+    },
+    {
+      "display": false,
+      "source": "T_{Z,1}V'=0"
+    },
+    {
+      "display": false,
+      "source": "q\\in Q"
+    },
+    {
+      "display": true,
+      "source": "T_{Z,1}(q\\otimes\\gamma_\\beta)\n=\n(T_{Y,1}q)\\otimes\\gamma_\\beta,"
+    },
+    {
+      "display": true,
+      "source": "\\|T_{Z,1}(q\\otimes\\gamma_\\beta)\\|\n\\ge\nb\\|q\\otimes\\gamma_\\beta\\|."
+    },
+    {
+      "display": false,
+      "source": "Q'"
+    },
+    {
+      "display": true,
+      "source": "Y=R\\cup(v*S_0),"
+    },
+    {
+      "display": true,
+      "source": "B_1(Y)\\cap Z_1(R)=\\mathbb C\\gamma_0."
+    },
+    {
+      "display": false,
+      "source": "S_0"
+    },
+    {
+      "display": false,
+      "source": "S_0"
+    },
+    {
+      "display": true,
+      "source": "\\widetilde H_0(S_0)=0,"
+    },
+    {
+      "display": false,
+      "source": "Q=0"
+    },
+    {
+      "display": false,
+      "source": "|1\\rangle"
+    },
+    {
+      "display": false,
+      "source": "\\lambda"
+    },
+    {
+      "display": true,
+      "source": "LL^*\\preceq\nN_{\\mathrm{priv}}\\lambda^2I."
+    },
+    {
+      "display": true,
+      "source": "Q\\longmapsto\nQ\\otimes\\mathbb C\\gamma_{\\beta_1}\n\\otimes\\cdots\\otimes\n\\mathbb C\\gamma_{\\beta_s},"
+    },
+    {
+      "display": false,
+      "source": "m"
+    },
+    {
+      "display": true,
+      "source": "2m-1."
+    },
+    {
+      "display": true,
+      "source": "\\gamma_+(\\Delta)\n\\ge\nc\\lambda^{\\,2(2m-1)+4}\n=\nc\\lambda^{4m+2}."
+    },
+    {
+      "display": false,
+      "source": "m\\le6"
+    },
+    {
+      "display": true,
+      "source": "\\boxed{\\kappa\\le26.}"
+    },
+    {
+      "display": false,
+      "source": "Z=(Y*S_\\beta)\\cup(R*B)"
+    }
+  ],
+  "messageId": "29b8393d-5601-4260-97f4-3f7786e396d8",
+  "model": "gpt-5-6-pro",
+  "sourceMarkers": [
+    "PRO_SELECTED_GUARD_PACKET_2026-…",
+    "PRO_SELECTED_GUARD_PACKET_2026-…",
+    "PRO_SELECTED_GUARD_PACKET_2026-…",
+    "PRO_SELECTED_GUARD_PACKET_2026-…",
+    "PRO_SELECTED_GUARD_PACKET_2026-…",
+    "PRO_SELECTED_GUARD_PACKET_2026-…",
+    "PRO_SELECTED_GUARD_PACKET_2026-…"
+  ],
+  "visibleText": "Verdict\n\nThe selected-cycle guard lemma is valid under the stated old finite certificate. I find no invalid inference and no counterexample satisfying its hypotheses.\n\nThree points should be stated more precisely:\n\nThe zero-weight identity is a statement about the target-degree differential pair\n\nkerD\nZ,0\n(D)\n\t​\n\n=V\n′\n⊕Q\n′\n,\n\nnot the kernel of the entire graded differential.\n\nThe positive-gap argument uses the augmented/reduced Laplacian of S\nβ\n\t​\n\n in every degree −1,0,1, not merely its ordinary degree-one gap.\n\nThe projected-pair proof should explicitly define the harmonic projection degreewise. Once this is done, inputs involving the unselected bowtie petal and inputs in the other private bidegrees contribute zero rather than producing hidden weight-one terms.\n\nAllowing Q to be an arbitrary orthogonally projected subspace supported on private coordinates is legitimate. The all-chain concentration proof uses private support, orthogonality, a zero-weight gap on (V⊕Q)\n⊥\n, and injectivity of T\n1\n\t​\n\n∣\nQ\n\t​\n\n; it never requires Q to be spanned by individual simplices. The note explicitly makes this revised scope part of the criterion. \n\nPRO_SELECTED_GUARD_PACKET_2026-…\n\nSelected-cycle guard closure theorem\n\nLet Y contain an induced top-dimensional register R, dimR=d, with\n\nV=Z\nd\n\t​\n\n(R).\n\nAssume\n\nB\nd\n\t​\n\n(Y)∩V=Cϕ,kerD\nY,0\n(d)\n\t​\n\n=V⊕Q,\n\nwhere Q is an orthogonal subspace supported on private chain coordinates. Assume further that a private-output projection gives\n\nT\nY\n\t​\n\n(λ)=λT\nY,1\n\t​\n\n,T\nY,1\n\t​\n\nV=0,∥T\nY,1\n\t​\n\nq∥≥b∥q∥(q∈Q).\n\nLet B be a seven-vertex bowtie, let S\nβ\n\t​\n\n be one induced four-cycle, and let γ\nβ\n\t​\n\n be its normalized oriented cycle. Form Z by joining all vertices of B to R, while joining only the vertices of S\nβ\n\t​\n\n to the private vertices of Y. Then, with\n\nR\n′\n=R∗B,D=d+2,\n\nthe guarded gadget satisfies\n\nB\nD\n\t​\n\n(Z)∩Z\nD\n\t​\n\n(R\n′\n)=C(ϕ⊗γ\nβ\n\t​\n\n),\nkerD\nZ,0\n(D)\n\t​\n\n=V\n′\n⊕Q\n′\n,V\n′\n=V⊗Z\n1\n\t​\n\n(B),Q\n′\n=Q⊗Cγ\nβ\n\t​\n\n,\n\nand admits a private projected pair\n\nT\nZ\n\t​\n\n(λ)=λT\nZ,1\n\t​\n\n,T\nZ,1\n\t​\n\nV\n′\n=0,∥T\nZ,1\n\t​\n\nq\n′\n∥≥b∥q\n′\n∥(q\n′\n∈Q\n′\n).\n\nThus it satisfies the same finite concentration criterion for the projector\n\nΠ\nϕ\n\t​\n\n⊗∣γ\nβ\n\t​\n\n⟩⟨γ\nβ\n\t​\n\n∣.\n1. Clique union and exact boundary intersection\n\nA clique in Z containing an old private vertex can use only vertices of S\nβ\n\t​\n\n from the new bowtie. Its old vertices form a clique of Y. Hence it lies in Y∗S\nβ\n\t​\n\n.\n\nA clique containing no old private vertex has its old part in R, and its bowtie part is an arbitrary clique of B. Hence it lies in R∗B. Conversely, both stated joins occur by construction. Therefore, as full clique complexes,\n\nZ=(Y∗S\nβ\n\t​\n\n)∪(R∗B),(Y∗S\nβ\n\t​\n\n)∩(R∗B)=R∗S\nβ\n\t​\n\n.\n\nThis establishes the claimed clique-union description. \n\nPRO_SELECTED_GUARD_PACKET_2026-…\n\nPut R\n′\n=R∗B. Simplicial excision and the reduced join-chain formula give, in all degrees,\n\nC\n∗\n\t​\n\n(Z,R\n′\n)\n\t​\n\n≅\nC\n∗\n\t​\n\n(Y∗S\nβ\n\t​\n\n,R∗S\nβ\n\t​\n\n)\n≅\nC\n∗\n\t​\n\n(Y,R)\n⊗\n\t​\n\nC\n∗\n\t​\n\n(S\nβ\n\t​\n\n).\n\t​\n\n\nThis is also evident directly from bases: a simplex surviving modulo R\n′\n contains an old private vertex, and therefore has a unique decomposition into a relative simplex of (Y,R) and a simplex of S\nβ\n\t​\n\n. Deleting an old vertex gives the relative differential; deleting an S\nβ\n\t​\n\n vertex gives the second tensor differential.\n\nSince\n\nH\ns\n\t​\n\n(S\nβ\n\t​\n\n)={\nC[γ\nβ\n\t​\n\n],\n0,\n\t​\n\ns=1,\ns\n\n=1,\n\t​\n\n\nthe relative Künneth formula yields\n\nH\nD+1\n\t​\n\n(Z,R\n′\n)≅H\nd+1\n\t​\n\n(Y,R)⊗C[γ\nβ\n\t​\n\n].\n\nLet δ\nY\n\t​\n\n and δ\nZ\n\t​\n\n be the connecting maps. If c is an old relative cycle with ∂c∈C\nd\n\t​\n\n(R), then, up to the harmless global join-orientation sign,\n\nδ\nZ\n\t​\n\n([c]⊗[γ\nβ\n\t​\n\n])=[∂c]⊗[γ\nβ\n\t​\n\n].\n\nThus\n\nimδ\nZ\n\t​\n\n=(imδ\nY\n\t​\n\n)⊗C[γ\nβ\n\t​\n\n].\n\nBecause R is top-dimensional,\n\nimδ\nY\n\t​\n\n=B\nd\n\t​\n\n(Y)∩Z\nd\n\t​\n\n(R)=Cϕ.\n\nBecause R\n′\n=R∗B is top-dimensional in degree D, it has no D-boundaries, and exactness of the pair sequence gives\n\nB\nD\n\t​\n\n(Z)∩Z\nD\n\t​\n\n(R\n′\n)=imδ\nZ\n\t​\n\n=C(ϕ⊗γ\nβ\n\t​\n\n).\n\nNo assumption that all old homology is represented inside R is used. Additional classes in H\nd+1\n\t​\n\n(Y,R) either lie in kerδ\nY\n\t​\n\n or have boundary in the already prescribed one-dimensional image. They cannot enlarge the new intersection. This validates the note’s connecting-map argument. \n\nPRO_SELECTED_GUARD_PACKET_2026-…\n\nFor every λ>0, diagonal weight gauge preserves the boundary space and fixes every R\n′\n-simplex because all R- and B-vertices have weight one. Hence the same boundary intersection holds at every positive weight.\n\n2. Zero-weight decomposition in all bidegrees\n\nAt λ=0, a boundary term that deletes an old private vertex has coefficient zero. Consequently:\n\nregister simplices map only to register simplices;\n\nsimplices containing an old private vertex map only to simplices still containing an old private vertex.\n\nThus the zero-weight chain complex splits orthogonally in every degree:\n\n(C\n∗\n\t​\n\n(Y),∂\nY,0\n\t​\n\n)=(C\n∗\n\t​\n\n(R),∂\nR\n\t​\n\n)⊕(C\n∗\npriv\n\t​\n\n(Y),∂\npriv,0\n\t​\n\n).\n\nFor Z, every private simplex uses only S\nβ\n\t​\n\n on the bowtie factor, so\n\nC\n∗\npriv\n\t​\n\n(Z)≅C\n∗\npriv\n\t​\n\n(Y)\n⊗\n\t​\n\nC\n∗\n\t​\n\n(S\nβ\n\t​\n\n).\n\nThe corresponding private Laplacian is a tensor sum on each bidegree.\n\nAt target degree D=d+2, the possible S\nβ\n\t​\n\n-degrees are\n\ns=1, 0, −1,\n\nwith old private degrees respectively\n\nr=d, d+1, d+2.\n\nThus cells of Y above the old target degree are included. The only bidegree in which the S\nβ\n\t​\n\n factor is harmonic is\n\n(r,s)=(d,1).\n\nThere the private kernel is\n\nQ⊗Cγ\nβ\n\t​\n\n.\n\nFor s=0 or s=−1, the augmented reduced Laplacian of the nonempty connected cycle S\nβ\n\t​\n\n is strictly positive. Hence even an old private harmonic vector in degree d+1 or d+2 cannot create a new target zero mode.\n\nThe register summand has target kernel\n\nZ\nD\n\t​\n\n(R∗B)=Z\nd\n\t​\n\n(R)⊗Z\n1\n\t​\n\n(B)=V\n′\n.\n\nTherefore\n\nkerD\nZ,0\n(D)\n\t​\n\n=V\n′\n⊕(Q⊗Cγ\nβ\n\t​\n\n).\n\t​\n\n\nIts positive gap is bounded below by a positive constant depending only on:\n\nthe old target-degree private gap;\n\nthe finitely many positive augmented gaps of S\nβ\n\t​\n\n;\n\nthe target-degree positive gap of the fixed register R∗B.\n\nThis proves both the kernel identity and the uniform zero-weight gap without any reference to the unknown positive-λ geometric kernel. \n\nPRO_SELECTED_GUARD_PACKET_2026-…\n\n3. Projected private pair on the full target domain\n\nLet P\nγ\n\t​\n\n denote orthogonal projection onto\nCγ\nβ\n\t​\n\n in degree one of S\nβ\n\t​\n\n, extended by zero in its other degrees. In the down- and up-output spaces, retain precisely\n\nranR\nY\nout\n\t​\n\n⊗Cγ\nβ\n\t​\n\n.\n\nCall the resulting projection R\nZ\nout\n\t​\n\n, and define\n\nT\nZ\n\t​\n\n(λ)=R\nZ\nout\n\t​\n\nD\nZ\n\t​\n\n(λ).\n\nUnder the join bigrading, only the input bidegree (d,1) can survive this output projection. On that bidegree, the local part is the old projected pair tensored with P\nγ\n\t​\n\n.\n\nEvery outside-differential contribution vanishes because\n\n∂\nS\nβ\n\t​\n\n\t​\n\nγ\nβ\n\t​\n\n=0,P\nγ\n\t​\n\nim∂\nS\nβ\n\t​\n\n∗\n\t​\n\n=0.\n\nThis handles both directions:\n\ndifferentiating an input already in the harmonic line;\n\nprojecting the differential or coboundary of an arbitrary S\nβ\n\t​\n\n-chain onto that line.\n\nHence private inputs in bidegrees (d+1,0) and (d+2,−1) contribute zero. Register inputs involving the unselected bowtie petal merely undergo the contractive restriction/projection onto γ\nβ\n\t​\n\n; no weight-one outside term survives.\n\nConsequently, on the entire degree-D chain space,\n\nT\nZ\n\t​\n\n(λ)=λT\nZ,1\n\t​\n\n.\n\nFor v∈V and z∈Z\n1\n\t​\n\n(B),\n\nT\nZ,1\n\t​\n\n(v⊗z)=(T\nY,1\n\t​\n\nv)⊗P\nγ\n\t​\n\nz=0,\n\nso T\nZ,1\n\t​\n\nV\n′\n=0.\n\nFinally, for q∈Q,\n\nT\nZ,1\n\t​\n\n(q⊗γ\nβ\n\t​\n\n)=(T\nY,1\n\t​\n\nq)⊗γ\nβ\n\t​\n\n,\n\nand therefore\n\n∥T\nZ,1\n\t​\n\n(q⊗γ\nβ\n\t​\n\n)∥≥b∥q⊗γ\nβ\n\t​\n\n∥.\n\nThe old bulk constant is preserved exactly. The range still consists of chains containing an old private vertex, so retained outputs remain orthogonal between independently attached gadgets. \n\nPRO_SELECTED_GUARD_PACKET_2026-…\n\nThe reported finite check that raw central coordinates need not cancel, whereas the selected harmonic sum does, is consistent with this proof and explains why replacing Q\n′\n by the full central coordinate span would be wrong. \n\nPRO_SELECTED_GUARD_PACKET_2026-…\n\n4. Basis cone, interface, iteration, and exponent\n\nFor the basis atom\n\nY=R∪(v∗S\n0\n\t​\n\n),\n\nthe relative connecting map has one-dimensional image generated by the selected petal cycle. Hence\n\nB\n1\n\t​\n\n(Y)∩Z\n1\n\t​\n\n(R)=Cγ\n0\n\t​\n\n.\n\nAt zero weight, the target private pair is the augmented reduced differential pair of S\n0\n\t​\n\n in degree zero. Since S\n0\n\t​\n\n is connected,\n\nH\n0\n\t​\n\n(S\n0\n\t​\n\n)=0,\n\nso this private pair is injective. Therefore Q=0. Taking the zero output projection satisfies the projected-pair condition vacuously. Petal exchange gives the ∣1⟩ atom.\n\nFor the guarded construction, the private-to-register interface can arise only by deleting the unique old private vertex of a simplex containing exactly one private vertex. Its coefficient is λ. For each private vertex, deletion is a signed partial isometry; hence\n\nLL\n∗\n⪯N\npriv\n\t​\n\nλ\n2\nI.\n\nThe guard adds no private vertices, so this interface constant does not grow under iteration.\n\nApplying the construction repeatedly tensors\n\nQ⟼Q⊗Cγ\nβ\n1\n\t​\n\n\t​\n\n⊗⋯⊗Cγ\nβ\ns\n\t​\n\n\t​\n\n,\n\nwhile the intended projector becomes the old active projector tensored with the selected computational-basis guard. All constants remain uniform over the finite family of guard strings of total locality at most six.\n\nAt locality m, the guarded register target degree is\n\n2m−1.\n\nThe conservative diagonal-scaling argument therefore gives\n\nγ\n+\n\t​\n\n(Δ)≥cλ\n2(2m−1)+4\n=cλ\n4m+2\n.\n\nFor m≤6,\n\nκ≤26.\n\t​\n\n\nThe basis-cone and iteration conclusions in the note are therefore correct. \n\nPRO_SELECTED_GUARD_PACKET_2026-…\n\nStatus\n\nSelected computational-basis guards are closed, conditional on the old active gadget satisfying the finite certificate. This closure is an abstract proof for the explicit alternative construction Z=(Y∗S\nβ\n\t​\n\n)∪(R∗B), not a certification of the source’s different joined-implementing-sphere graph.\n\nThe exact remaining finite gate is unchanged: establish the criterion for the nontrivial one-qubit difference atoms and the two-qubit two-term atoms. No full-palette, source-priority, complexity-class, optimal-gap, or paper-readiness conclusion follows from this guard lemma alone."
+}
