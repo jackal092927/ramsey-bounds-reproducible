@@ -64,7 +64,9 @@ Consolidation started September 2, 2026 PDT; new dispatch and follow-up setup co
 | M58 | Remaining-atom offline mode | **PASS WITH EXTERNAL COMMANDS DISABLED** | Recomputed all three atom sections from archived graphs; verifies mathematics, not upstream provenance |
 | M59 | Fixed local palette | **LOCALLY COMPLETE FOR EXPLICIT REAL-GATE HISTORY** | Basis cone, one-/two-term atoms, four Hadamard atoms, and selected-cycle guards cover the stated rank-one terms through locality six |
 | M60 | Clean restricted reduction theorem | **LOCAL END-TO-END SYNTHESIS**, CLEAN_RESTRICTED_REDUCTION_THEOREM.md | Exact normalized fraction and whole gaps for an explicit circuit promise; standard source-class hardness and novelty remain open |
-| M61 | Restricted-theorem integration audit | **PREPARED**, PRO_RESTRICTED_THEOREM_REQUEST_2026-09-03.md | Bounded review of palette exhaustiveness, natural filtration, exact denominator, gaps, spectator and fraction strength |
+| M61 | Restricted-theorem integration audit | **SENT AND RUNNING**, user message 6, observed 2026-09-03T17:36:16.680Z | 20589-byte packet; audits palette exhaustiveness, natural filtration, exact denominator, gaps, spectator and fraction strength |
+| M62 | Guard response and complete-palette source checkpoint | **PUSHED AND REMOTE-VERIFIED**, 23f83cf0db8fd62eed1dd2c7b90b806bb9e3a6e7 | Full guard response/disposition, remaining atom source certificates, offline receipt and clean theorem; GitHub packet bytes/SHA matched |
+| M63 | Restricted-theorem continuation | **ACTIVE**, existing tda-pro-github retargeted | Tracks request 6 without duplicating the conversation or automation; next issue is source complexity or novelty only after integration disposition |
 
 ## Current unresolved research gates
 
