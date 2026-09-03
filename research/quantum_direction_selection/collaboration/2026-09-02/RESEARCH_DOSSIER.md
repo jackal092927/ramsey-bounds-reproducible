@@ -41,6 +41,8 @@ the second under the separate common-copy unweighting theorem. Neither expressio
 
 One [actual Rudolph representative](REPRESENTATIVE_GADGET_CERTIFICATE.md) now has an exact source-pinned certificate: target Betti number 3; an integer filling of the intended three-term cycle; zero-weight kernel dimension \(180=4+176\); and an injective central bulk pair. Every required guarded palette member has not yet been certified. The graph also exposed and repaired a false two-bidegree enumeration in the old padding note. The candidate theorem still needs independent review, complete finite-family integration, and priority assessment.
 
+Later the same day, [explicit register relabelings](ACTIVE_HADAMARD_ORBIT.md) transported this certificate to all four unguarded active Hadamard three-term states; four integer filling equations were checked. A new offline verifier recomputes the archived graph certificate without gh/network access. The broad follow-up Pro attempt ended with “Thinking failed,” so it supplies no final mathematical verdict; [its visible activity and concrete reproduction errors](PRO_FAILED_ATTEMPT_2026-09-03.md) are preserved. The successor is narrowed to a completed audit of the conditional all-chain proof.
+
 ## 2. Core finite-palette transfer theorem (original conservative parameters)
 
 Work over \(\mathbb C\), or over \(\mathbb R\) for the real construction. Let \(R\) be a top-dimensional register complex with \(\dim R=d\ge1\), and let

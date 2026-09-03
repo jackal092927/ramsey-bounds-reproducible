@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "verification_mode": "archived_graph",
+  "upstream_replayed_this_run": false,
+  "source_sha256": "c8918f9e037ae79796bb65640170c8e60f31883625d24348f3476f7644dcd29a",
+  "graph_vertices": 41,
+  "graph_edges": 322,
+  "simplex_counts": {
+    "0": 41,
+    "1": 322,
+    "2": 914,
+    "3": 1082,
+    "4": 477,
+    "5": 30
+  },
+  "maximum_dimension": 5,
+  "central_link_simplex_counts": {
+    "0": 26,
+    "1": 114,
+    "2": 176,
+    "3": 88
+  },
+  "gram_dimension": 176,
+  "prime": 1000003,
+  "determinant_mod_prime": 797443,
+  "infinity_norm": 14,
+  "rational_bound_denominator_digits": 202,
+  "exact_boundary_ranks_over_Q": {
+    "1": 40,
+    "2": 282,
+    "3": 632,
+    "4": 447,
+    "5": 30
+  },
+  "betti_over_Q": {
+    "0": 1,
+    "1": 0,
+    "2": 0,
+    "3": 3,
+    "4": 0,
+    "5": 0
+  },
+  "filling_chain_nonzeros": 382,
+  "filling_denominator": 1,
+  "zero_weight_pair_rank": 902,
+  "zero_weight_kernel_dimension": 180,
+  "zero_weight_gram_infinity_norm": 12,
+  "derivative_gram_infinity_norm": 15,
+  "unweighted_gram_infinity_norm": 21,
+  "input_certificate": "RUDOLPH_REPRESENTATIVE_BULK_CERTIFICATE.json",
+  "input_certificate_sha256": "916819fb8a9e371b322a1fab1161b1fc2686ad7fdaf9cf785f52fc2fcb0cae3a",
+  "recomputed_fields_match_archive": [
+    "projector",
+    "graph",
+    "central_link",
+    "certificate",
+    "topology_certificate",
+    "zero_weight_certificate"
+  ],
+  "scope": "Exact recomputation from supplied graph data; upstream provenance was not reverified.",
+  "file": "OFFLINE_REPRESENTATIVE_CHECKS.json"
+}

@@ -40,8 +40,13 @@ Consolidation started September 2, 2026 PDT; new dispatch and follow-up setup co
 | M34 | Higher-simplex padding correction | **MATHEMATICAL ERROR CORRECTED** | Actual source graph has degree-5 simplices at target degree 3; use every bidegree and the outside gap. Frozen old packet preserved |
 | M35 | Further targeted primary checks | **LIMITED PRIMARY SOURCE/CODE CHECK PERFORMED** | KK local statement/up sum; Hayakawa quotient statement; Rudolph states/joins/code. Full papers and complete priority still unverified |
 | M36 | New proof/certificate source checkpoint | **PUSHED AND REMOTE-VERIFIED**, 789f87f8825ca4d57790a857a14e745abbcb2c00 | GitHub content API independently matched the 201169-byte packet and SHA; all nine included files matched the frozen manifest |
-| M37 | Focused proof/guarded-palette follow-up | **SENT AND RUNNING**, same Pro 5/5 conversation, user message 3 | New attachment and Pro thinking observed by 2026-09-03T11:06:49Z; exact submission and receipt archived; no duplicate send after browser timeout |
+| M37 | Focused proof/guarded-palette follow-up | **SENT, THEN TERMINATED WITHOUT FINAL ANSWER**, user message 3 | Running observed by 11:06:49Z; “Thinking failed” recorded around 14:20Z. Exact submission, failure and visible activity preserved |
 | M38 | Hourly continuation retargeted | **ACTIVE AND VERIFIED**, existing tda-pro-github heartbeat | Uses current_request and the new proof/certificate/disposition; unchanged running states stay quiet |
+| M39 | Failed Pro attempt examined | **NO MATHEMATICAL VERDICT**, PRO_FAILED_ATTEMPT_2026-09-03.md | Nine-file extraction succeeded; visible checker execution failed for missing gh, then a download prerequisite. Progress titles/interim approval are not proof |
+| M40 | Offline certificate mode | **PASS**, all six mathematical sections recomputed from archived graph with external-command calls disabled | Removes the concrete gh/network reproduction dependency; upstream provenance is a separate mode |
+| M41 | Source replay after checker refactor | **PASS**, original JSON remains byte-identical with SHA 916819fb8a9e371b322a1fab1161b1fc2686ad7fdaf9cf785f52fc2fcb0cae3a | Confirms the default pinned-source path remains reproducible |
+| M42 | All four active Hadamard three-term atoms | **LOCAL ISOMETRY PROOF + 4 EXACT FILLING CHECKS PASS**, ACTIVE_HADAMARD_ORBIT.md | One representative suffices under explicit X/Z register relabelings; other atom types and guarded products remain open |
+| M43 | Bounded theorem-only successor prepared | **PREPARED, NOT YET SENT**; 15805-byte packet, two complete files | Restricts Pro to a completed <=2500-word proof audit, with no browsing or code execution; full guard/priority tasks remain separate |
 
 ## Current unresolved research gates
 

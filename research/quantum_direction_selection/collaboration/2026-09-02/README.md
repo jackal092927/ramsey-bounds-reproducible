@@ -14,6 +14,9 @@
 - [当前最强条件性证明](FINITE_CERTIFICATE_CONCENTRATION.md)：有限零权重证书推出全几何链 concentration，逻辑 gap 依赖降为线性；[先得到的谱分区证明](EXACT_FILLING_COERCIVITY.md)作为中间里程碑保留。
 - [实际三项 gadget 的精确证书](REPRESENTATIVE_GADGET_CERTIFICATE.md)：包含原始图、整数填充链、模素数秩证明及[可复现检查器](certify_representative_bulk.py)；完整 guard 家族仍待覆盖。
 - [新一轮聚焦请求与发送回执](PRO_FOLLOWUP_DISPATCH_RECEIPT_2026-09-03.md)：固定快照、实际正文、附件哈希和运行证据。
+- [聚焦请求的运行失败记录](PRO_FAILED_ATTEMPT_2026-09-03.md)：没有最终数学答复；保留可见活动与具体复现错误。
+- [四个 Hadamard 活跃态的精确重标号证明](ACTIVE_HADAMARD_ORBIT.md)：同一个证书覆盖四个无 guard 三项约束，四条整数填充式全部核验。
+- [离线复现结果](OFFLINE_REPRESENTATIVE_CHECKS.json)：无需 gh 或网络重算归档图的全部证书条件。
 - [上一轮 TDA Pro 完整答复](PRO_PREVIOUS_TDA_RESPONSE.md)：已收集的模型建议，未经采纳不算已证明。
 - [persistent Laplacian 条件性扩展](PERSISTENT_LAPLACIAN_EXTENSION.md)：对 Pro 提案的独立推导与边界。
 - [复现实验原始输出](REPRODUCTION_RESULTS.json)：7 个已有小型检查的本次重跑结果。
@@ -26,4 +29,4 @@
 
 目前最实质的候选是由有限零权重证书推出任意低能几何链的全局 concentration，得到对逻辑 gap 的线性依赖；后面的维数与商空间推理属于标准推论。一个实际 gadget 已完成整数证书核验，完整固定家族、精确电路源问题的复杂性价值和新颖性仍待独立 review。备选方向包括 persistent Laplacian 低谱的共同复制转换、量子几何采样及自然的 evaluated-Hom-width 受限类。
 
-研究快照 a46f408 的 Pro 请求已完成并完整收集，界面记录处理用时 155 分 30 秒。新的证明与证书快照 **789f87f** 已推送并核验，聚焦后续请求已在同一 Pro 5/5 会话发送，当前正在思考。每小时回收与继续推进仍有效，后续答复将完整归档并独立核查。目录名保留起始日期。本目录不是已完成论文，也不是投稿或整套 reduction 正确性的认证。
+研究快照 a46f408 的 Pro 请求已完成并完整收集，界面记录处理用时 155 分 30 秒。后续快照 **789f87f** 的请求以“Thinking failed”终止，没有最终答复。可见复现错误已归档，离线检查器已补齐；新的有界请求只审查全链证明，正在准备发送。每小时回收与继续推进仍有效。目录名保留起始日期。本目录不是已完成论文，也不是投稿或整套 reduction 正确性的认证。

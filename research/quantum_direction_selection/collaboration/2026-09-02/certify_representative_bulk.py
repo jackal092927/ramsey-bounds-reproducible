@@ -5,8 +5,13 @@ We fetch its pinned source but do not redistribute it here. Only the inspected
 graph-building function definitions are evaluated; the graph shim stops before
 Sage homology routines, plotting, or any top-level upstream calls execute.
 Outputs are mathematical graph data and a modular certificate for an integer Gram matrix.
+
+With --offline, read the archived graph instead and recompute every mathematical
+certificate field without invoking gh or the network. This mode verifies the
+supplied graph; it does not independently replay upstream graph construction.
 """
 
+import argparse
 import ast
 from pathlib import Path
 import hashlib
@@ -20,6 +25,7 @@ import numpy as np
 
 SOURCE_COMMIT = "30ac70e5dacdecce97c38d801c128ec3ed93a96a"
 SOURCE_SHA256 = "c8918f9e037ae79796bb65640170c8e60f31883625d24348f3476f7644dcd29a"
+VERTEX_NAMES = "xx, a2, a3, a4, b2, b3, b4".split(", ")
 SOURCE_PATH = "gadget_homology.py"
 SOURCE_URL = (
     "https://github.com/DorianRudolph/QMA1-gateset-paper/blob/"
@@ -195,13 +201,7 @@ def register_basis(cells):
     return basis
 
 
-def main():
-    upstream = subprocess.check_output([
-        "gh", "api",
-        "repos/DorianRudolph/QMA1-gateset-paper/contents/"
-        + SOURCE_PATH + "?ref=" + SOURCE_COMMIT,
-        "-H", "Accept: application/vnd.github.raw+json",
-    ])
+def recover_source_graph(upstream):
     assert hashlib.sha256(upstream).hexdigest() == SOURCE_SHA256
     wanted = {
         "make_graph", "thicken", "fill_cycle", "join_keep_names",
@@ -215,15 +215,44 @@ def main():
     assert {node.name for node in definitions} == wanted
     namespace = {
         "Graph": Graph, "itertools": itertools, "v0": "v0",
-        "vertex_names": "xx, a2, a3, a4, b2, b3, b4".split(", "),
+        "vertex_names": VERTEX_NAMES,
     }
     exec(compile(ast.Module(body=definitions, type_ignores=[]), SOURCE_URL, "exec"), namespace)
     try:
         namespace["state_00m10m11"]()
     except CaptureGraph as captured:
-        graph = captured.graph
+        return captured.graph
     else:
         raise AssertionError("Expected capture before source homology computation")
+
+
+def main():
+    folder = Path(__file__).resolve().parent
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--offline", action="store_true",
+                        help="Recompute the certificate from archived graph data; no gh/network.")
+    parser.add_argument("--certificate", type=Path,
+                        default=folder / "RUDOLPH_REPRESENTATIVE_BULK_CERTIFICATE.json")
+    args = parser.parse_args()
+    archived = None
+    archived_bytes = None
+    if args.offline:
+        archived_bytes = args.certificate.read_bytes()
+        archived = json.loads(archived_bytes)
+        assert archived["source"]["commit"] == SOURCE_COMMIT
+        assert archived["source"]["sha256"] == SOURCE_SHA256
+        graph = Graph(archived["graph"]["edges"])
+        declared_vertices = set(archived["graph"]["vertices"])
+        assert graph.vertices <= declared_vertices
+        graph.vertices = declared_vertices
+    else:
+        upstream = subprocess.check_output([
+            "gh", "api",
+            "repos/DorianRudolph/QMA1-gateset-paper/contents/"
+            + SOURCE_PATH + "?ref=" + SOURCE_COMMIT,
+            "-H", "Accept: application/vnd.github.raw+json",
+        ])
+        graph = recover_source_graph(upstream)
 
     cells = all_cliques(graph)
     central = "v0"
@@ -296,7 +325,7 @@ def main():
     betti = {str(k): len(cells[k]) - ranks.get(k, 0) - ranks.get(k + 1, 0) for k in cells}
     assert betti["3"] == 3
     register_vertices = {f"{qubit}.{name}" for qubit in (0, 1)
-                         for name in namespace["vertex_names"]}
+                         for name in VERTEX_NAMES}
     zero_weights = {v: int(v in register_vertices) for v in graph.vertices}
     one_weights = {v: 1 - zero_weights[v] for v in graph.vertices}
     down0 = weighted_boundary(cells, 3, zero_weights)
@@ -332,7 +361,7 @@ def main():
         "scope": "Exact target homology, intended filling, zero-weight kernel, and central-relative-bulk injectivity for one source graph; not the complete guarded palette",
         "source": {
             "url": SOURCE_URL, "commit": SOURCE_COMMIT,
-            "sha256": hashlib.sha256(upstream).hexdigest(),
+            "sha256": SOURCE_SHA256,
             "function": "state_00m10m11", "upstream_license": "GPLv2-or-later",
             "execution": "Only inspected graph-building AST definitions; stopped before Sage operations",
         },
@@ -407,11 +436,10 @@ def main():
             "Full reduction or priority",
         ],
     }
-    folder = Path(__file__).resolve().parent
-    destination = folder / "RUDOLPH_REPRESENTATIVE_BULK_CERTIFICATE.json"
-    destination.write_text(json.dumps(output, indent=2) + "\n")
-    print(json.dumps({
-        "status": output["status"], "file": destination.name,
+    summary = {
+        "status": output["status"],
+        "verification_mode": "archived_graph" if args.offline else "pinned_source_replay",
+        "upstream_replayed_this_run": not args.offline,
         "source_sha256": output["source"]["sha256"],
         "graph_vertices": len(graph.vertices), "graph_edges": len(graph.pairs),
         "simplex_counts": output["graph"]["simplex_counts"],
@@ -426,7 +454,28 @@ def main():
         "zero_weight_pair_rank": rank0,
         "zero_weight_kernel_dimension": known_kernel_dimension,
         **gram_bounds,
-    }, indent=2))
+    }
+    if args.offline:
+        checked_fields = [
+            "projector", "graph", "central_link", "certificate",
+            "topology_certificate", "zero_weight_certificate",
+        ]
+        for field in checked_fields:
+            assert output[field] == archived[field], ("certificate mismatch", field)
+        summary.update({
+            "input_certificate": args.certificate.name,
+            "input_certificate_sha256": hashlib.sha256(archived_bytes).hexdigest(),
+            "recomputed_fields_match_archive": checked_fields,
+            "scope": "Exact recomputation from supplied graph data; upstream provenance was not reverified.",
+        })
+        destination = folder / "OFFLINE_REPRESENTATIVE_CHECKS.json"
+        summary["file"] = destination.name
+        destination.write_text(json.dumps(summary, indent=2) + "\n")
+    else:
+        destination = folder / "RUDOLPH_REPRESENTATIVE_BULK_CERTIFICATE.json"
+        summary["file"] = destination.name
+        destination.write_text(json.dumps(output, indent=2) + "\n")
+    print(json.dumps(summary, indent=2))
 
 
 if __name__ == "__main__":

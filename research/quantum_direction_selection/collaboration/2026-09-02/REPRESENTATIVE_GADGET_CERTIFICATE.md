@@ -24,6 +24,8 @@ Reproduce with Python, NumPy and a configured GitHub CLI:
 
 The output certificate includes the graph, orientation/order conventions, prime, integer filling chain, and matrix hash. It does not require trusting a floating-point eigenvalue threshold.
 
+**Offline reproduction added September 3:** when the upstream checkout/replay is not needed, run the same checker with **--offline**. It reads the archived graph and recomputes all six mathematical certificate sections, without invoking gh or the network. It writes [OFFLINE_REPRESENTATIVE_CHECKS.json](OFFLINE_REPRESENTATIVE_CHECKS.json), leaving the original source certificate unchanged. This mode verifies the supplied graph; it does not reverify its upstream provenance. The mode passed with external-command execution deliberately disabled. This addresses a concrete reproduction failure exposed by the Pro environment.
+
 ## 1. Exact topology and intended logical projector
 
 The source function encodes
@@ -129,12 +131,13 @@ The mutable round-2 note is corrected and cross-linked. The previously transmitt
 
 ## 5. Remaining gates
 
+[An exact relabeling argument](ACTIVE_HADAMARD_ORBIT.md) now transports this certificate to all four unguarded active Hadamard three-term states. The corresponding cycle actions and integer fillings passed exact checks. This covers those active atoms, not the guarded attaching-sphere products.
+
 This graph passes the exact topology, zero-weight kernel and projected-bulk injectivity requirements of the new conditional theorem. Still open:
 
-- the other active atom types and their allowed signed/relabeling symmetries;
+- basis and one-/two-term active atom types under the new finite criterion;
 - a proof of closure under joins of the implementing spheres and attaching maps with computational-basis guards, or finite certificates for every required guarded graph through locality six;
 - a complete literature comparison for the all-chain theorem and improved gap dependence;
 - a meaningful exact circuit-source complexity consequence beyond the conditional D=1, perfect-completeness specialization.
 
 The certificate and the abstract proof must survive independent review before stronger claims are promoted. No full reduction, unrestricted SDQC1 equivalence, or paper-readiness conclusion is recorded.
-
