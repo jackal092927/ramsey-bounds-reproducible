@@ -249,6 +249,8 @@ Under (1)-(2), YES instances satisfy \(f\ge1/2\) and NO instances satisfy \(f\le
 
 A separate [eight-label source lemma](NORMALIZED_BQP1_SOURCE_GATE.md), derived after the source-complexity review, reduces exact \(\mathsf{BQP}_1^{G_2}\) verification to this standard-constant promise while forcing perfect fractions \(3/4\) and \(1/8\). Its independent local algebra/interface review and the subsequent bounded Pro audit passed; the [independent disposition](PRO_BQP1_SOURCE_DISPOSITION_2026-09-03.md) accepts the composition under this theorem's displayed hypotheses. Therefore (3)--(7) give weighted true-normalized-persistence hardness for that recognized gate-dependent class. This limited upgrade does not affect the rejection of arbitrary-threshold \(\mathsf{SDQC}_1\). Novelty remains open.
 
+The strongest honest restriction uses no ignored mixed dummy bits: then \(D=8\), \(\beta_d(X_{\rm in})=8\), and the persistent ranks are exactly six in YES instances and one in NO instances. Hardness therefore already holds at fixed initial target-degree Betti number eight. Adding ignored mixed bits gives an exact tensor-replication closure with growing \(D\), but that growth is not a separate source of difficulty; see [DENOMINATOR_IMPACT_GATE_2026-09-03.md](DENOMINATOR_IMPACT_GATE_2026-09-03.md).
+
 ## 7. Remaining claims gate
 
 The mathematical package now has a complete fixed local palette, a clean conditional transfer theorem, and an exact separated-source corollary. The next nonlocal obligations are:

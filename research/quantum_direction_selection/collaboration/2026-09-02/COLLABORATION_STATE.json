@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-03T20:24:26Z",
+  "updated_at": "2026-09-03T20:28:47Z",
   "objective": "Review and advance true normalized persistence toward a substantial TCS theorem; archive every useful positive/negative milestone and Pro result.",
   "repository": {
     "url": "https://github.com/jackal092927/ramsey-bounds-reproducible",
@@ -277,13 +277,14 @@
     "bqp1_source_gate": "CLOSED at weighted BQP1^G2 hardness under the recorded geometric theorem; values 3/4 versus 1/8, threshold 7/16, additive error 1/24 safe. Denominator growth is padding-generated.",
     "unweighting_naturality": "No local obstruction: common labeled blocks commute with inclusions, dyadic F=lambda^-2 is polynomial, and future gadget vertices may be isolated initially for d>=1. Result remains dependent on Hayakawa single-level symmetric/asymmetric theorem and is likely a direct corollary.",
     "king_corollary_boundary": "Equation-level check: conditional on uniform King-Kohler Lemmas 10.2-10.4, qualitative degenerate-kernel concentration, exact multiplicity and whole-positive-gap follow by a short projection/min-max argument. The surviving technical delta is the finite-certificate repair and g-linear gap scaling.",
-    "uniform_perturbation_counterexample": "Exact graph-subspace family with r=lambda^-2 has paired orthonormal basis error lambda*sqrt(2-sqrt(2)) while projector distance is 1/sqrt(2); basiswise O(lambda) is not instance-uniform in growing rank."
+    "uniform_perturbation_counterexample": "Exact graph-subspace family with r=lambda^-2 has paired orthonormal basis error lambda*sqrt(2-sqrt(2)) while projector distance is 1/sqrt(2); basiswise O(lambda) is not instance-uniform in growing rank.",
+    "denominator_impact": "Primary corollary needs no dummies: beta_in=8 exactly and persistent ranks are 6 versus 1. Growing denominator via M tensor I is an exact but replicated closure; reversible scrambling does not make it intrinsic."
   },
   "github": {
-    "status": "post_dispatch_king_boundary_prepared_for_commit",
+    "status": "manuscript_outline_and_post_dispatch_results_prepared_for_commit",
     "review_source_commit": "6e70274a78872cd891cedd4319145d68195d02fc",
     "verification": "Novelty source checkpoint 6e70274a78872cd891cedd4319145d68195d02fc matched local HEAD and git ls-remote after push. The seven-file successor packet is 72511 bytes with SHA-256 220304109773ce44ed91f8cf8846a91d9cecaeab82565df13a0a4c06e8c0c3e1.",
-    "receipt_note": "Message 9 remains running. A post-dispatch equation-level source comparison and exact uniform-perturbation counterexample are prepared for synchronization; they were not in the frozen packet.",
+    "receipt_note": "Message 9 remains running. The King boundary, fixed-eight denominator framing and restartable manuscript outline are prepared for synchronization.",
     "dispatch_commit": "pending"
   },
   "follow_up": {
@@ -299,9 +300,10 @@
       "Decide whether quotient naturality gives a meaningful restricted resolution of the Lowe et al. normalized-persistence conjecture.",
       "Audit common-copy unweighting as an unweighted theorem corollary and give a theorem-or-no-go novelty disposition."
     ],
-    "phase": "Message 9 remains running. A post-dispatch local check narrowed the qualitative degenerate-kernel closure to a short King-Kohler corollary under uniform estimates; the finite-certificate repair and g-linear gap dependence are now the candidate technical delta.",
+    "phase": "Message 9 remains running. Local work now frames the result as fixed-beta_in=8 hardness plus a reusable finite-certificate transfer theorem; dummy growth is only a replication closure. Prepare manuscript v0 after disposition rather than opening an unbounded novelty loop.",
     "automation_prompt_updated_for_current_request": true,
-    "automation_updated_at": "2026-09-03T20:19:11Z"
+    "automation_updated_at": "2026-09-03T20:19:11Z",
+    "writing_policy": "Mathematical correctness, source interfaces and claim boundaries remain hard gates. HIGH novelty is not a prerequisite for writing. After the current source comparison and unweighting audit close without a counterexample, create a restartable positioning/outline checkpoint and begin manuscript v0 as a focused theory contribution."
   },
   "coordination": {
     "canonical_scope": "research/quantum_direction_selection and existing TDA Pro channel",
@@ -319,5 +321,12 @@
       "check_scope": "This ingestion verified archive integrity; it did not rerun the supplemental numerical checks or certify the archived arguments.",
       "submission_status": "Supplemental PRO_REQUEST was never sent and is superseded. The actual a46f408 request is now completed/collected; new focused continuation remains in the same canonical TDA conversation."
     }
+  },
+  "manuscript": {
+    "status": "positioning_outline_prepared_waiting_for_message_9_disposition",
+    "file": "MANUSCRIPT_POSITIONING_AND_OUTLINE_2026-09-03.md",
+    "working_title": "Gapped Clique Filtrations for Exact Normalized Persistence",
+    "policy": "Correctness and source interfaces are hard gates; novelty rating controls positioning and venue, not whether v0 is written.",
+    "next": "After message-9 disposition, freeze theorem statuses and begin manuscript_v0.tex with the introduction, theorem stack and all-chain proof."
   }
 }

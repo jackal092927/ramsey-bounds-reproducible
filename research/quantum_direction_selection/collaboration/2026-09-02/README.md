@@ -34,6 +34,8 @@
 - [第九条冻结审查包](PRO_NOVELTY_PACKET_2026-09-03.md)：从远端已核对的 source commit **6e70274** 固定七份文件；附件 72511 字节，SHA-256 `220304109773ce44ed91f8cf8846a91d9cecaeab82565df13a0a4c06e8c0c3e1`。
 - [第九条发送回执](PRO_NOVELTY_DISPATCH_RECEIPT_2026-09-03.md)：原 Pro 5/5 会话中的第九条用户消息已发送一次并观察到运行；消息 ID、时间、source/packet commits、正文与附件哈希均已记录。
 - [King--Kohler 推论边界](KING_COROLLARY_BOUNDARY_2026-09-03.md)：逐行代数表明，若旧 all-chain 估计具有统一常数，退化核 whole-gap 的定性结论只是短推论；可保留的技术增量是 finite-certificate 证明对增长维数扰动与 padded bulk 的修复，以及最终 gap 对逻辑 \(g\) 的线性依赖。
+- [分母影响力关卡](DENOMINATOR_IMPACT_GATE_2026-09-03.md)：主定理可删除所有 dummy padding，并加强表述为固定 \(\beta_d(X_{\rm in})=8\)、persistent rank 六对一的 hardness；增长分母只作为诚实标注的 tensor-replication closure。
+- [论文定位与可重启提纲](MANUSCRIPT_POSITIONING_AND_OUTLINE_2026-09-03.md)：把 correctness/source boundary 作为 hard gate，但不再等待 HIGH novelty；第九条审查 disposition 后立即启动 focused theory manuscript v0。
 - [四个 Hadamard 活跃态的精确重标号证明](ACTIVE_HADAMARD_ORBIT.md)：同一个证书覆盖四个无 guard 三项约束，四条整数填充式全部核验。
 - [离线复现结果](OFFLINE_REPRESENTATIVE_CHECKS.json)：无需 gh 或网络重算归档图的全部证书条件。
 - [上一轮 TDA Pro 完整答复](PRO_PREVIOUS_TDA_RESPONSE.md)：已收集的模型建议，未经采纳不算已证明。

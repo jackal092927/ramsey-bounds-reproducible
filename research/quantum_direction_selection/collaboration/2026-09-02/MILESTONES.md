@@ -92,6 +92,8 @@ Consolidation started September 2, 2026 PDT; new dispatch and follow-up setup co
 | M86 | Novelty-review continuation | **ACTIVE AND RETARGETED**, existing hourly tda-pro-github heartbeat | Tracks message 9 collection, direct-source evidence, independent disposition and GitHub sync; no new automation and no duplicate request |
 | M87 | King--Kohler corollary boundary | **TARGETED SOURCE COMPARISON + LOCAL PROOF**, KING_COROLLARY_BOUNDARY_2026-09-03.md | Qualitative degenerate-kernel closure is a short corollary if their all-chain bounds are uniform; finite-certificate estimate survives as a proof repair and improves final gap dependence from high-degree to linear in logical \(g\) |
 | M88 | Uniform perturbation counterexample | **EXACT ABSTRACT FAMILY** | Per-basis-vector \(O(\lambda)\) closeness in growing rank does not imply uniform projector-norm \(O(\lambda)\); fixed-local-before-padding structure or a direct operator estimate is required |
+| M89 | Denominator impact gate | **REFRAMED WITHOUT MATHEMATICAL CHANGE**, DENOMINATOR_IMPACT_GATE_2026-09-03.md | Primary theorem can set \(\beta_d(X_{\rm in})=8\) and ranks six versus one; growing dummy denominator is retained only as explicit tensor replication, not an impact claim |
+| M90 | Manuscript positioning and outline | **RESTARTABLE WRITING CHECKPOINT PREPARED**, MANUSCRIPT_POSITIONING_AND_OUTLINE_2026-09-03.md | HIGH novelty is no longer a writing gate; v0 starts after message-9 disposition with the finite-certificate theorem, fixed-eight hardness, quotient naturality and accurate unweighting status |
 
 ## Current unresolved research gates
 

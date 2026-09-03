@@ -65,6 +65,8 @@ M_x=\operatorname{diag}(1,p_x,p_x,p_x,p_x,p_x,0,0)\otimes I_{\rm dummy}.
 \]
 The perfect-space fraction is therefore \(3/4\) in YES instances and \(1/8\) in NO instances, while the latter has off-perfect ceiling at most \(1/3\). The construction runs the verifier unconditionally, so it introduces no controlled-Hadamard requirement. The local algebra and the clean-input/output interface in Rudolph's Definition 2.2, exact \(G_2\) soundness reduction in Theorem 2.3, and cyclotomic inclusion in Theorem 3.4 were checked. The [bounded Pro audit](PRO_BQP1_SOURCE_REVIEW_2026-09-03.md) and [independent disposition](PRO_BQP1_SOURCE_DISPOSITION_2026-09-03.md) accept the exact source composition. This supports gate-dependent \(\mathsf{BQP}_1^{G_2}\)-hardness for the weighted target, conditional on the geometric theorem. The denominator growth is padding-generated, which is mathematically valid but weakens the conceptual impact claim.
 
+The revised primary framing removes the dummy bits. It gives \(\beta_d(X_{\rm in})=8\) exactly and persistent ranks six versus one, so the same hardness holds under a fixed-eight initial-Betti promise. Tensoring ignored dummies is retained only as a closure property. Reversible scrambling can make every dummy coordinate appear active but remains unitarily equivalent to \(M\otimes I\), so it does not make the growing denominator intrinsic. See [DENOMINATOR_IMPACT_GATE_2026-09-03.md](DENOMINATOR_IMPACT_GATE_2026-09-03.md).
+
 ## 2. Core finite-palette transfer theorem (original conservative parameters)
 
 Work over \(\mathbb C\), or over \(\mathbb R\) for the real construction. Let \(R\) be a top-dimensional register complex with \(\dim R=d\ge1\), and let
