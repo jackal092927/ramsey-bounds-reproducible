@@ -87,6 +87,7 @@ Consolidation started September 2, 2026 PDT; new dispatch and follow-up setup co
 | M81 | Primary-source novelty collision pass | **TARGETED SIX-SOURCE CHECK COMPLETED**, NOVELTY_COLLISION_AUDIT_2026-09-03.md | Exact multiplicity and the normalized target are prior; King--Kohler contains most arbitrary-chain machinery; Gyurik et al. already claims a particular whole-kernel gap; absence of a broader collision is not certified |
 | M82 | Local priority disposition | **MEDIUM, CONDITIONAL** | Strongest possible delta is a reusable degenerate-kernel transfer theorem plus its restricted normalized-rank application; quotient/min--max, eight-label logic and common-copy functoriality are supporting corollaries |
 | M83 | Common-copy unweighting recheck | **NO FUNCTORIALITY COUNTEREXAMPLE; SOURCE DEPENDENCY RETAINED** | Same labeled blocks give a commuting inclusion square; dyadic \(F=\lambda^{-2}\) has polynomial size; isolated future gadget vertices handle a common vertex set for \(d\ge1\). Main mechanism is likely a direct Hayakawa corollary |
+| M84 | Primary-source novelty Pro packet | **PREPARED FROM REMOTE-VERIFIED SOURCE COMMIT 6e70274** | Seven-file 72511-byte packet, SHA-256 220304109773ce44ed91f8cf8846a91d9cecaeab82565df13a0a4c06e8c0c3e1; requests direct source checking and one theorem-or-no-go result |
 
 ## Current unresolved research gates
 

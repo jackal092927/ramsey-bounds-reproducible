@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-03T20:03:52Z",
+  "updated_at": "2026-09-03T20:13:35Z",
   "objective": "Review and advance true normalized persistence toward a substantial TCS theorem; archive every useful positive/negative milestone and Pro result.",
   "repository": {
     "url": "https://github.com/jackal092927/ramsey-bounds-reproducible",
@@ -17,7 +17,7 @@
     "url": "https://chatgpt.com/c/6a98c05a-ecf4-83e8-b356-4e20dc3fde3f",
     "account": "visible identity matched local personal Pro channel registry",
     "previous_response": "message_8_collected_and_checked",
-    "new_request": "completed_collected_checked",
+    "new_request": "novelty_packet_prepared_not_sent",
     "current_request": {
       "source_commit": "f11cb4ed83bdbc7d738b6b159e7267850f49ad92",
       "message_file": "PRO_BQP1_SOURCE_SUBMISSION_2026-09-03.md",
@@ -195,19 +195,17 @@
       }
     ],
     "prepared_successor": {
-      "request_file": "PRO_BQP1_SOURCE_REQUEST_2026-09-03.md",
-      "attachment_file": "PRO_BQP1_SOURCE_PACKET_2026-09-03.md",
-      "attachment_bytes": 36077,
-      "attachment_sha256": "4f68ce7c35596f5ae0c1aaa80891de9cc27880b0d9d673818b2dc05cfeb38934",
-      "intended_user_message_number": 8,
-      "scope": "Bounded <=2000-word exact operator/interface and gate-dependent BQP1 source-composition audit; no browsing, gadget review, novelty or unrestricted-class promotion.",
-      "status": "completed_collected_checked",
-      "source_commit": "f11cb4ed83bdbc7d738b6b159e7267850f49ad92",
-      "submission_file": "PRO_BQP1_SOURCE_SUBMISSION_2026-09-03.md",
-      "submission_bytes": 1080,
-      "submission_sha256": "8ad8b46a0a2edcab7e26c6059a6a9bfe82e40ab44a1cc68b766a76742abbcf5e",
-      "submitted_ui_local_time": "2026-09-03 12:48 PM America/Los_Angeles",
-      "dispatch_receipt": "PRO_BQP1_SOURCE_DISPATCH_RECEIPT_2026-09-03.md"
+      "request_file": "PRO_NOVELTY_REQUEST_2026-09-03.md",
+      "attachment_file": "PRO_NOVELTY_PACKET_2026-09-03.md",
+      "attachment_bytes": 72511,
+      "attachment_sha256": "220304109773ce44ed91f8cf8846a91d9cecaeab82565df13a0a4c06e8c0c3e1",
+      "intended_user_message_number": 9,
+      "scope": "Bounded <=3000-word primary-source novelty and impact audit; browse the six cited sources, identify the first nontrivial theorem or a corollary/no-go, and separate mathematical objections from priority risk.",
+      "status": "prepared_not_sent",
+      "source_commit": "6e70274a78872cd891cedd4319145d68195d02fc",
+      "submission_file": "PRO_NOVELTY_SUBMISSION_2026-09-03.md",
+      "submission_bytes": 1214,
+      "submission_sha256": "c203e4ecca82b303837feb0c583931da1b6e2010544ced36d27473a36e96ab68"
     }
   },
   "backup_channel": {
@@ -221,8 +219,8 @@
     "new_persistent_domain_probe": "passed",
     "source_ledger": "prior-local-checks-reported; complete primary-source reread not performed in consolidation",
     "full_reduction": "not_certified",
-    "novelty": "open",
-    "additional_primary_source_check": "Mémoli–Wan–Wang Theorem 5.1 proof; September 3 targeted King–Kohler Lemma 9.1/Claim 10.4, Hayakawa Lemma 5.4, Rudolph Appendix D.1 and pinned supplementary graph code. Full papers and priority not certified. Lowe-Kim-Bondesan-Hayakawa arXiv:2607.03278v1 Definition 2, Eq. 9, Sections 5.5-5.6 and Section 7 checked for the source-complexity gate.",
+    "novelty": "Targeted six-source collision audit completed: MEDIUM, conditional. Exact multiplicity and the normalized target are prior; King-Kohler contains most arbitrary-chain machinery; Gyurik et al. already states a particular whole-kernel gap. Exhaustive priority not certified.",
+    "additional_primary_source_check": "Existing targeted checks plus September 3 collision pass over Crichigno-Kohler 2024, King-Kohler arXiv:2311.17234v2, Gyurik et al. arXiv:2410.21258v2, Lowe-Kim-Bondesan-Hayakawa arXiv:2607.03278v1, Hayakawa arXiv:2608.02726v1 and Rudolph arXiv:2411.02681v2. Relevant theorem/definition/proof locations checked; full citation graph, later versions and priority remain unverified.",
     "new_conditional_coercivity": "EXACT_FILLING_COERCIVITY.md; local proof checked, external review pending",
     "coercivity_fixtures": "15 clique fixtures and two hypothesis guards passed; not the full palette",
     "finite_certificate_theorem": "Conditional implication accepted after completed bounded Pro review and independent local algebraic check; complete fixed palette instantiated. Novelty remains open.",
@@ -242,17 +240,18 @@
     "clean_restricted_theorem": "End-to-end integration accepted after explicit source-interface correction; exact endpoint Betti numbers, induced rank and whole-kernel gaps follow under the finite hypotheses.",
     "source_complexity_gate": "Closed at explicit SepPerfectFraction^{G_R}: delta_f=max(0,(a-r)/(1-r))-b must be inverse polynomial and positive; target error below delta_f/2. Same-fraction construction and amplification obstruction independently accepted. No unrestricted SDQC1 hardness.",
     "source_complexity_pro_review": "Completed and collected with 113 exact equation sources; algebraic conclusions independently dispositioned. Pro performed no primary-source checking.",
-    "bqp1_eight_label_source": "Local derivation and independent local algebra/interface review pass: exact G2 perfect-completeness verifier maps to diag(1,p,p,p,p,p,0,0) on a mixed 3-bit label, with fractions 3/4 versus 1/8 and off-perfect ceiling <=1/3. Bounded external Pro review pending.",
+    "bqp1_eight_label_source": "Local derivation, independent local algebra/interface review and bounded Pro review pass: exact G2 perfect-completeness verifier maps to diag(1,p,p,p,p,p,0,0) on a mixed 3-bit label, with fractions 3/4 versus 1/8 and off-perfect ceiling <=1/3.",
     "bqp1_primary_source_check": "Rudolph arXiv:2411.02681v2 Definition 2.2 and Theorems 2.3/3.4 checked for clean BQP1 interface, exact G2 soundness reduction, and cyclotomic gate-set inclusion. Optional TQC and Marriott-Watrous routes are not needed for the core lemma.",
     "bqp1_independent_review": "NORMALIZED_BQP1_SOURCE_GATE_INDEPENDENT_REVIEW.md; block compression, coherent labels, clean/mixed register split, reversible scratch, dummy denominator, exact gate support and uniformity passed. Novelty and downstream geometry were outside scope.",
     "bqp1_pro_review": "Completed and collected with 98 exact equation sources; operator/interface and conditional weighted composition accepted after independent disposition. Pro performed no source checking.",
-    "bqp1_source_gate": "CLOSED at weighted BQP1^G2 hardness under the recorded geometric theorem; values 3/4 versus 1/8, threshold 7/16, additive error 1/24 safe. Denominator growth is padding-generated."
+    "bqp1_source_gate": "CLOSED at weighted BQP1^G2 hardness under the recorded geometric theorem; values 3/4 versus 1/8, threshold 7/16, additive error 1/24 safe. Denominator growth is padding-generated.",
+    "unweighting_naturality": "No local obstruction: common labeled blocks commute with inclusions, dyadic F=lambda^-2 is polynomial, and future gadget vertices may be isolated initially for d>=1. Result remains dependent on Hayakawa single-level symmetric/asymmetric theorem and is likely a direct corollary."
   },
   "github": {
-    "status": "bqp1_review_integration_prepared_for_commit",
-    "review_source_commit": "f11cb4ed83bdbc7d738b6b159e7267850f49ad92",
-    "verification": "Source checkpoint f11cb4e and dispatch archive f6b4681 were each matched by local HEAD/commit and git ls-remote after push; the frozen packet remains 36077 bytes with SHA-256 4f68ce7c35596f5ae0c1aaa80891de9cc27880b0d9d673818b2dc05cfeb38934.",
-    "receipt_note": "Message 8 completed and its full response, exact formula capture and independent disposition are prepared for synchronization. Existing dispatch commit 896b027 is remote-verified.",
+    "status": "novelty_packet_prepared_for_commit",
+    "review_source_commit": "6e70274a78872cd891cedd4319145d68195d02fc",
+    "verification": "Novelty source checkpoint 6e70274a78872cd891cedd4319145d68195d02fc matched local HEAD and git ls-remote after push. The seven-file successor packet is 72511 bytes with SHA-256 220304109773ce44ed91f8cf8846a91d9cecaeab82565df13a0a4c06e8c0c3e1.",
+    "receipt_note": "Primary-source novelty packet is prepared but not yet sent. Existing message-8 response remains completed, collected and independently dispositioned.",
     "dispatch_commit": "f6b4681e7e85d4a57afe5c50a41afb1c4417e66a"
   },
   "follow_up": {
@@ -264,11 +263,11 @@
     "workflow": "FOLLOW_UP_WORKFLOW.md",
     "stop": "Pause when a substantial scoped result or documented stopping conclusion is reached, or user intervention is necessary.",
     "pending_for_next_completed_response": [
-      "Run a primary-source collision audit focused on arbitrary-chain concentration over degenerate logical kernels, whole-kernel positive gap, and natural filtered rank.",
-      "Separate exact multiplicity, normalization definitions, quotient/min-max steps and credited gadget ingredients from any genuine delta.",
-      "Assess whether the padding-generated denominator and poor polynomial gap leave a credible high-quality TCS contribution; preserve negative findings and stop if the combined theorem is already explicit."
+      "Directly source-check whether King-Kohler already implies the degenerate-kernel all-chain theorem and whether Gyurik et al. closes its arbitrary-chain step.",
+      "Decide whether quotient naturality gives a meaningful restricted resolution of the Lowe et al. normalized-persistence conjecture.",
+      "Audit common-copy unweighting as an unweighted theorem corollary and give a theorem-or-no-go novelty disposition."
     ],
-    "phase": "Message 8 completed, collected and independently dispositioned. The weighted BQP1^G2 composition is accepted under the geometric hypotheses; the next active gate is primary-source novelty collision and impact assessment, including the padding-generated denominator.",
+    "phase": "Message 8 is closed. Local six-source novelty audit is MEDIUM, conditional. Message-9 primary-source novelty packet is prepared from remote-verified source commit 6e70274 and has not yet been sent.",
     "automation_prompt_updated_for_current_request": true,
     "automation_updated_at": "2026-09-03T19:53:34Z"
   },

@@ -31,6 +31,7 @@
 - [八标签 BQP1 完整审查](PRO_BQP1_SOURCE_REVIEW_2026-09-03.md)与[独立处理意见](PRO_BQP1_SOURCE_DISPOSITION_2026-09-03.md)：第八条答复已完成并收集，98 个公式完整归档；exact operator 与受限加权 hardness composition 通过，padding-generated denominator 被保留为影响力风险。
 - [严格新颖性碰撞审计](NOVELTY_COLLISION_AUDIT_2026-09-03.md)：对六项核心来源做了定点复查；当前价值评为 **MEDIUM, conditional**。King--Kohler 已含大部分任意链估计，Gyurik 等已陈述特例 whole-kernel gap；可主张的增量必须落在可复用的退化核 transfer theorem 与受限 normalized-rank 应用上。
 - [第九条 Pro 新颖性任务书](PRO_NOVELTY_REQUEST_2026-09-03.md)：要求直接核查原始来源、区分数学错误与优先权风险，并给出一个可证明的一般 transfer lemma 或明确的 corollary/no-go 结论。
+- [第九条冻结审查包](PRO_NOVELTY_PACKET_2026-09-03.md)：从远端已核对的 source commit **6e70274** 固定七份文件；附件 72511 字节，SHA-256 `220304109773ce44ed91f8cf8846a91d9cecaeab82565df13a0a4c06e8c0c3e1`。
 - [四个 Hadamard 活跃态的精确重标号证明](ACTIVE_HADAMARD_ORBIT.md)：同一个证书覆盖四个无 guard 三项约束，四条整数填充式全部核验。
 - [离线复现结果](OFFLINE_REPRESENTATIVE_CHECKS.json)：无需 gh 或网络重算归档图的全部证书条件。
 - [上一轮 TDA Pro 完整答复](PRO_PREVIOUS_TDA_RESPONSE.md)：已收集的模型建议，未经采纳不算已证明。
