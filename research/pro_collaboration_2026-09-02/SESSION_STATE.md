@@ -20,8 +20,8 @@ Primary work: TDA exact normalized persistence and the strongest surviving relat
 - Consolidation documents: created locally and integrated with the canonical TDA record.
 - Existing fixture replay: completed; `verification/existing_probes.json`.
 - New follow-up: sent by the canonical collaboration thread, using frozen packet a46f4087693edc088663e0cbf4f6aa9961494325. The parallel dispatch transcript and local registry were checked; the current new response is still running.
-- Canonical TDA GitHub synchronization: a46f4087693edc088663e0cbf4f6aa9961494325 verified on origin/codex/fill-ramsey-gaps. Supplemental dossier synchronization is pending its data commit at this snapshot.
-- New Pro result: none yet; do not count the older response as review of the round-2 proof package.
+- GitHub synchronization: supplemental data commit 92f0a7cac99c26e145a0d7ec625e805fa714a7f5 pushed to origin/codex/fill-ramsey-gaps and verified against local HEAD, git ls-remote and the GitHub commit API. It descends from canonical TDA packet a46f4087693edc088663e0cbf4f6aa9961494325 and dispatch/continuation receipt c9ed876857a5a6f72f6ba73e8362d195a7c54611. See [the synchronization receipt](SYNCHRONIZATION_RECEIPT.md).
+- New Pro result: no new final answer has been retrieved in this dossier. The canonical dispatch receipt observed the new round running; consult its current continuation state. Do not count the older response as review of the round-2 proof package.
 - Follow-up: one active hourly thread heartbeat, “TDA Pro 推进与 GitHub 归档” (id tda-pro-github). It checks the same conversation, archives completed responses, validates conclusions and pushes useful milestones. No duplicate heartbeat was created here.
 
 Canonical request, dispatch receipt and mutable continuation state live in [the TDA collaboration directory](../quantum_direction_selection/collaboration/2026-09-02/README.md). Read its current state before any browser action. [INTEGRATION.md](INTEGRATION.md) records the division of work and extra findings handed to that owner.
