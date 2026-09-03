@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-03T19:47:00Z",
+  "updated_at": "2026-09-03T19:45:31Z",
   "objective": "Review and advance true normalized persistence toward a substantial TCS theorem; archive every useful positive/negative milestone and Pro result.",
   "repository": {
     "url": "https://github.com/jackal092927/ramsey-bounds-reproducible",
@@ -17,7 +17,7 @@
     "url": "https://chatgpt.com/c/6a98c05a-ecf4-83e8-b356-4e20dc3fde3f",
     "account": "visible identity matched local personal Pro channel registry",
     "previous_response": "collected",
-    "new_request": "completed_collected",
+    "new_request": "completed_collected_checked",
     "current_request": {
       "source_commit": "b78da7ab9472f6d2c0858634b56f3c1210a3e931",
       "message_file": "PRO_SOURCE_COMPLEXITY_SUBMISSION_2026-09-03.md",
@@ -171,7 +171,10 @@
       "intended_user_message_number": 8,
       "scope": "Bounded <=2000-word exact operator/interface and gate-dependent BQP1 source-composition audit; no browsing, gadget review, novelty or unrestricted-class promotion.",
       "status": "prepared_not_sent",
-      "source_commit": "pending"
+      "source_commit": "f11cb4ed83bdbc7d738b6b159e7267850f49ad92",
+      "submission_file": "PRO_BQP1_SOURCE_SUBMISSION_2026-09-03.md",
+      "submission_bytes": 1080,
+      "submission_sha256": "8ad8b46a0a2edcab7e26c6059a6a9bfe82e40ab44a1cc68b766a76742abbcf5e"
     }
   },
   "backup_channel": {
@@ -206,30 +209,31 @@
     "clean_restricted_theorem": "End-to-end integration accepted after explicit source-interface correction; exact endpoint Betti numbers, induced rank and whole-kernel gaps follow under the finite hypotheses.",
     "source_complexity_gate": "Closed at explicit SepPerfectFraction^{G_R}: delta_f=max(0,(a-r)/(1-r))-b must be inverse polynomial and positive; target error below delta_f/2. Same-fraction construction and amplification obstruction independently accepted. No unrestricted SDQC1 hardness.",
     "source_complexity_pro_review": "Completed and collected with 113 exact equation sources; algebraic conclusions independently dispositioned. Pro performed no primary-source checking.",
-    "bqp1_eight_label_source": "Local derivation and algebra/interface check pass: exact G2 perfect-completeness verifier maps to diag(1,p,p,p,p,p,0,0) on a mixed 3-bit label, with fractions 3/4 versus 1/8 and off-perfect ceiling <=1/3. Bounded Pro review pending.",
-    "bqp1_primary_source_check": "Rudolph arXiv:2411.02681v2 Definition 2.2 and Theorems 2.3/3.4 checked for clean BQP1 interface, exact G2 soundness reduction, and cyclotomic gate-set inclusion. Optional TQC and Marriott-Watrous routes not checked or needed."
+    "bqp1_eight_label_source": "Local derivation and independent local algebra/interface review pass: exact G2 perfect-completeness verifier maps to diag(1,p,p,p,p,p,0,0) on a mixed 3-bit label, with fractions 3/4 versus 1/8 and off-perfect ceiling <=1/3. Bounded external Pro review pending.",
+    "bqp1_primary_source_check": "Rudolph arXiv:2411.02681v2 Definition 2.2 and Theorems 2.3/3.4 checked for clean BQP1 interface, exact G2 soundness reduction, and cyclotomic gate-set inclusion. Optional TQC and Marriott-Watrous routes are not needed for the core lemma.",
+    "bqp1_independent_review": "NORMALIZED_BQP1_SOURCE_GATE_INDEPENDENT_REVIEW.md; block compression, coherent labels, clean/mixed register split, reversible scratch, dummy denominator, exact gate support and uniformity passed. Novelty and downstream geometry were outside scope."
   },
   "github": {
-    "status": "bqp1_review_source_checkpoint_pending_commit",
-    "review_source_commit": "b78da7ab9472f6d2c0858634b56f3c1210a3e931",
-    "verification": "Local source HEAD and git ls-remote agreed; raw GitHub packet bytes were 28196 with SHA-256 7f38dd8353d90b9fe7c471dfb0e83bcd5bdca31a7ee5a011cbbd64ad91a12c15 before submission.",
-    "receipt_note": "Message-7 archive/disposition and the new locally checked eight-label BQP1 source are ready for a scoped source checkpoint before Pro message 8."
+    "status": "bqp1_review_source_checkpoint_pushed_remote_verified",
+    "review_source_commit": "f11cb4ed83bdbc7d738b6b159e7267850f49ad92",
+    "verification": "Local source HEAD and git ls-remote agreed at f11cb4ed83bdbc7d738b6b159e7267850f49ad92; the five-file packet is 36077 bytes with SHA-256 4f68ce7c35596f5ae0c1aaa80891de9cc27880b0d9d673818b2dc05cfeb38934.",
+    "receipt_note": "The eight-label source, independent local audit and bounded packet are synchronized. Message 8 remains prepared and not submitted pending fresh action-time user confirmation."
   },
   "follow_up": {
     "status": "active",
     "automation_id": "tda-pro-github",
     "kind": "thread heartbeat",
     "schedule": "hourly",
-    "policy": "Collect new final responses from the exact channel; preserve raw text and equations, independently disposition before adopting, and sync each useful positive/negative milestone. Continue concrete in-scope proof questions when productive; never interrupt a running Pro response or duplicate a submission.",
+    "policy": "Collect new final responses from the exact channel; preserve raw text and equations, independently disposition before adopting, and sync each useful positive/negative milestone. Local and read-only work may continue. Never send a new external message, upload an attachment, start a new conversation, interrupt a running response, or duplicate a submission without fresh action-time user confirmation.",
     "workflow": "FOLLOW_UP_WORKFLOW.md",
     "stop": "Pause when a substantial scoped result or documented stopping conclusion is reached, or user intervention is necessary.",
     "pending_for_next_completed_response": [
       "Audit the eight-label BQP1^G2 circuit interface and derive the exact compressed acceptance operator, including clean/mixed registers, label coherence, output locality, and soundness reduction.",
       "If accepted, state the strongest gate-dependent hardness consequence and exact exclusions; then move to the primary-source novelty collision audit."
     ],
-    "phase": "Message 7 completed and dispositioned. Eight-label BQP1 source, independent local audit, and bounded message-8 packet prepared; source checkpoint must be pushed and verified before the authorized submission.",
-    "automation_prompt_updated_for_current_request": false,
-    "automation_updated_at": "2026-09-03T19:27:37.090Z"
+    "phase": "Message 7 completed, collected and dispositioned. Eight-label BQP1 source and independent local audit pass; source checkpoint f11cb4e is pushed and remote-verified. Bounded message 8 is prepared but not submitted, pending fresh action-time user confirmation.",
+    "automation_prompt_updated_for_current_request": true,
+    "automation_updated_at": "2026-09-03T19:24:23Z"
   },
   "coordination": {
     "canonical_scope": "research/quantum_direction_selection and existing TDA Pro channel",
