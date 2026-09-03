@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-03T20:13:35Z",
+  "updated_at": "2026-09-03T20:19:11Z",
   "objective": "Review and advance true normalized persistence toward a substantial TCS theorem; archive every useful positive/negative milestone and Pro result.",
   "repository": {
     "url": "https://github.com/jackal092927/ramsey-bounds-reproducible",
@@ -17,37 +17,34 @@
     "url": "https://chatgpt.com/c/6a98c05a-ecf4-83e8-b356-4e20dc3fde3f",
     "account": "visible identity matched local personal Pro channel registry",
     "previous_response": "message_8_collected_and_checked",
-    "new_request": "novelty_packet_prepared_not_sent",
+    "new_request": "sent_running",
     "current_request": {
-      "source_commit": "f11cb4ed83bdbc7d738b6b159e7267850f49ad92",
-      "message_file": "PRO_BQP1_SOURCE_SUBMISSION_2026-09-03.md",
-      "request_file": "PRO_BQP1_SOURCE_REQUEST_2026-09-03.md",
-      "attachment_file": "PRO_BQP1_SOURCE_PACKET_2026-09-03.md",
-      "attachment_bytes": 36077,
-      "attachment_sha256": "4f68ce7c35596f5ae0c1aaa80891de9cc27880b0d9d673818b2dc05cfeb38934",
-      "submission_bytes": 1080,
-      "submission_sha256": "8ad8b46a0a2edcab7e26c6059a6a9bfe82e40ab44a1cc68b766a76742abbcf5e",
+      "source_commit": "6e70274a78872cd891cedd4319145d68195d02fc",
+      "packet_commit": "18a47e92d169d7312355b8f94372a78eccf4b8fe",
+      "message_file": "PRO_NOVELTY_SUBMISSION_2026-09-03.md",
+      "request_file": "PRO_NOVELTY_REQUEST_2026-09-03.md",
+      "attachment_file": "PRO_NOVELTY_PACKET_2026-09-03.md",
+      "attachment_bytes": 72511,
+      "attachment_sha256": "220304109773ce44ed91f8cf8846a91d9cecaeab82565df13a0a4c06e8c0c3e1",
+      "submission_bytes": 1214,
+      "submission_sha256": "c203e4ecca82b303837feb0c583931da1b6e2010544ced36d27473a36e96ab68",
       "surface": "Chat",
       "model_label": "GPT-5.6 Sol",
       "thinking": "Pro, 5 of 5",
-      "user_message_number": 8,
-      "chat_user_message_id": "fd24c66e-639f-44b5-bd4e-a4a23ac0e53e",
-      "completed_assistant_messages_before_this_request": 6,
+      "user_message_number": 9,
+      "chat_user_message_id": "635d858a-521b-47ce-aa13-9f78a7a2a36a",
+      "completed_assistant_messages_before_this_request": 7,
       "failed_assistant_attempts_before_this_request": 1,
-      "sent_ui_local_time": "2026-09-03 12:48 PM America/Los_Angeles",
-      "sent_running_observed_at": "2026-09-03T19:50:02Z",
-      "last_observed_at": "2026-09-03T19:56:12.693Z",
-      "last_observation": "Completed eighth-request answer: Worked for 5m 56s, no Stop answering. Full response and 98 equation sources archived; authenticated personal Pro identity remained the verified browser session.",
-      "receipt": "PRO_BQP1_SOURCE_DISPATCH_RECEIPT_2026-09-03.md",
-      "scope": "Bounded <=2000-word exact eight-label acceptance-operator/interface and gate-dependent BQP1 source-composition audit; no browsing, gadget review, novelty, unweighted unconditionality, ordinary BQP or unrestricted SDQC1 promotion.",
-      "prompt_verification": "1079-character browser text matched the 1080-byte prepared file after whitespace normalization; exactly one completed attachment, enabled Send and no active run before submission; fresh DOM after submission showed one new user turn and no duplicate.",
-      "source_basis": "Targeted local check of Rudolph arXiv:2411.02681v2 Definition 2.2 and Theorems 2.3/3.4 plus independent local algebra/interface audit; complete paper and priority audit not performed.",
-      "terminal_status": "completed, collected and independently checked; exact source composition accepted under displayed hypotheses",
-      "source_checking": "No primary-source or literature checking by this Pro response. Targeted Rudolph checking was performed locally before dispatch; full paper and novelty audits remain open.",
-      "completed_collected_at": "2026-09-03T19:56:12.693Z",
-      "response_file": "PRO_BQP1_SOURCE_REVIEW_2026-09-03.md",
-      "capture_file": "PRO_BQP1_SOURCE_REVIEW_CAPTURE_2026-09-03.json",
-      "disposition_file": "PRO_BQP1_SOURCE_DISPOSITION_2026-09-03.md"
+      "sent_ui_local_time": "2026-09-03 01:17:18 PM America/Los_Angeles",
+      "sent_running_observed_at": "2026-09-03T20:17:18Z",
+      "last_observed_at": "2026-09-03T20:17:18Z",
+      "last_observation": "Ninth user turn visible with one attached packet, empty composer, one Stop answering control and Pro thinking. Sent once; no duplicate.",
+      "receipt": "PRO_NOVELTY_DISPATCH_RECEIPT_2026-09-03.md",
+      "scope": "Bounded <=3000-word primary-source novelty and impact audit; direct source browsing required; produce a general theorem or a documented corollary/no-go result.",
+      "prompt_verification": "Prepared 1214-byte submission matched the final composer after whitespace normalization; one completed attachment label, enabled Send and no active run before submission; fresh DOM after the single click showed one new user turn and active Pro thinking.",
+      "source_basis": "Local targeted six-source collision audit in NOVELTY_COLLISION_AUDIT_2026-09-03.md; exhaustive source coverage and priority remain unverified.",
+      "terminal_status": "sent and running; no review result yet",
+      "source_checking": "Requested from Pro; not yet completed or collected."
     },
     "request_history": [
       {
@@ -192,6 +189,37 @@
         "disposition_file": "PRO_SOURCE_COMPLEXITY_DISPOSITION_2026-09-03.md",
         "terminal_status": "completed and collected; separated exact-real-gate corollary accepted and unrestricted SDQC1 inference stopped",
         "source_checking": "No source or literature checking by this Pro response; source statements came from the supplied packet."
+      },
+      {
+        "source_commit": "f11cb4ed83bdbc7d738b6b159e7267850f49ad92",
+        "message_file": "PRO_BQP1_SOURCE_SUBMISSION_2026-09-03.md",
+        "request_file": "PRO_BQP1_SOURCE_REQUEST_2026-09-03.md",
+        "attachment_file": "PRO_BQP1_SOURCE_PACKET_2026-09-03.md",
+        "attachment_bytes": 36077,
+        "attachment_sha256": "4f68ce7c35596f5ae0c1aaa80891de9cc27880b0d9d673818b2dc05cfeb38934",
+        "submission_bytes": 1080,
+        "submission_sha256": "8ad8b46a0a2edcab7e26c6059a6a9bfe82e40ab44a1cc68b766a76742abbcf5e",
+        "surface": "Chat",
+        "model_label": "GPT-5.6 Sol",
+        "thinking": "Pro, 5 of 5",
+        "user_message_number": 8,
+        "chat_user_message_id": "fd24c66e-639f-44b5-bd4e-a4a23ac0e53e",
+        "completed_assistant_messages_before_this_request": 6,
+        "failed_assistant_attempts_before_this_request": 1,
+        "sent_ui_local_time": "2026-09-03 12:48 PM America/Los_Angeles",
+        "sent_running_observed_at": "2026-09-03T19:50:02Z",
+        "last_observed_at": "2026-09-03T19:56:12.693Z",
+        "last_observation": "Completed eighth-request answer: Worked for 5m 56s, no Stop answering. Full response and 98 equation sources archived; authenticated personal Pro identity remained the verified browser session.",
+        "receipt": "PRO_BQP1_SOURCE_DISPATCH_RECEIPT_2026-09-03.md",
+        "scope": "Bounded <=2000-word exact eight-label acceptance-operator/interface and gate-dependent BQP1 source-composition audit; no browsing, gadget review, novelty, unweighted unconditionality, ordinary BQP or unrestricted SDQC1 promotion.",
+        "prompt_verification": "1079-character browser text matched the 1080-byte prepared file after whitespace normalization; exactly one completed attachment, enabled Send and no active run before submission; fresh DOM after submission showed one new user turn and no duplicate.",
+        "source_basis": "Targeted local check of Rudolph arXiv:2411.02681v2 Definition 2.2 and Theorems 2.3/3.4 plus independent local algebra/interface audit; complete paper and priority audit not performed.",
+        "terminal_status": "completed, collected and independently checked; exact source composition accepted under displayed hypotheses",
+        "source_checking": "No primary-source or literature checking by this Pro response. Targeted Rudolph checking was performed locally before dispatch; full paper and novelty audits remain open.",
+        "completed_collected_at": "2026-09-03T19:56:12.693Z",
+        "response_file": "PRO_BQP1_SOURCE_REVIEW_2026-09-03.md",
+        "capture_file": "PRO_BQP1_SOURCE_REVIEW_CAPTURE_2026-09-03.json",
+        "disposition_file": "PRO_BQP1_SOURCE_DISPOSITION_2026-09-03.md"
       }
     ],
     "prepared_successor": {
@@ -201,11 +229,13 @@
       "attachment_sha256": "220304109773ce44ed91f8cf8846a91d9cecaeab82565df13a0a4c06e8c0c3e1",
       "intended_user_message_number": 9,
       "scope": "Bounded <=3000-word primary-source novelty and impact audit; browse the six cited sources, identify the first nontrivial theorem or a corollary/no-go, and separate mathematical objections from priority risk.",
-      "status": "prepared_not_sent",
+      "status": "sent_running",
       "source_commit": "6e70274a78872cd891cedd4319145d68195d02fc",
       "submission_file": "PRO_NOVELTY_SUBMISSION_2026-09-03.md",
       "submission_bytes": 1214,
-      "submission_sha256": "c203e4ecca82b303837feb0c583931da1b6e2010544ced36d27473a36e96ab68"
+      "submission_sha256": "c203e4ecca82b303837feb0c583931da1b6e2010544ced36d27473a36e96ab68",
+      "submitted_ui_local_time": "2026-09-03 01:17:18 PM America/Los_Angeles",
+      "dispatch_receipt": "PRO_NOVELTY_DISPATCH_RECEIPT_2026-09-03.md"
     }
   },
   "backup_channel": {
@@ -248,11 +278,11 @@
     "unweighting_naturality": "No local obstruction: common labeled blocks commute with inclusions, dyadic F=lambda^-2 is polynomial, and future gadget vertices may be isolated initially for d>=1. Result remains dependent on Hayakawa single-level symmetric/asymmetric theorem and is likely a direct corollary."
   },
   "github": {
-    "status": "novelty_packet_prepared_for_commit",
+    "status": "novelty_dispatch_archive_prepared_for_commit",
     "review_source_commit": "6e70274a78872cd891cedd4319145d68195d02fc",
     "verification": "Novelty source checkpoint 6e70274a78872cd891cedd4319145d68195d02fc matched local HEAD and git ls-remote after push. The seven-file successor packet is 72511 bytes with SHA-256 220304109773ce44ed91f8cf8846a91d9cecaeab82565df13a0a4c06e8c0c3e1.",
-    "receipt_note": "Primary-source novelty packet is prepared but not yet sent. Existing message-8 response remains completed, collected and independently dispositioned.",
-    "dispatch_commit": "f6b4681e7e85d4a57afe5c50a41afb1c4417e66a"
+    "receipt_note": "Message 9 was sent once and observed running. Its exact dispatch receipt and lifecycle state are prepared for synchronization.",
+    "dispatch_commit": "pending"
   },
   "follow_up": {
     "status": "active",
@@ -267,9 +297,9 @@
       "Decide whether quotient naturality gives a meaningful restricted resolution of the Lowe et al. normalized-persistence conjecture.",
       "Audit common-copy unweighting as an unweighted theorem corollary and give a theorem-or-no-go novelty disposition."
     ],
-    "phase": "Message 8 is closed. Local six-source novelty audit is MEDIUM, conditional. Message-9 primary-source novelty packet is prepared from remote-verified source commit 6e70274 and has not yet been sent.",
+    "phase": "Message 9 primary-source novelty and impact audit is running. Collect the complete response, preserve its checked source locations and negative conclusions, write an independent disposition, and do not duplicate or interrupt it.",
     "automation_prompt_updated_for_current_request": true,
-    "automation_updated_at": "2026-09-03T19:53:34Z"
+    "automation_updated_at": "2026-09-03T20:19:11Z"
   },
   "coordination": {
     "canonical_scope": "research/quantum_direction_selection and existing TDA Pro channel",

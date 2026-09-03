@@ -88,6 +88,8 @@ Consolidation started September 2, 2026 PDT; new dispatch and follow-up setup co
 | M82 | Local priority disposition | **MEDIUM, CONDITIONAL** | Strongest possible delta is a reusable degenerate-kernel transfer theorem plus its restricted normalized-rank application; quotient/min--max, eight-label logic and common-copy functoriality are supporting corollaries |
 | M83 | Common-copy unweighting recheck | **NO FUNCTORIALITY COUNTEREXAMPLE; SOURCE DEPENDENCY RETAINED** | Same labeled blocks give a commuting inclusion square; dyadic \(F=\lambda^{-2}\) has polynomial size; isolated future gadget vertices handle a common vertex set for \(d\ge1\). Main mechanism is likely a direct Hayakawa corollary |
 | M84 | Primary-source novelty Pro packet | **PREPARED FROM REMOTE-VERIFIED SOURCE COMMIT 6e70274** | Seven-file 72511-byte packet, SHA-256 220304109773ce44ed91f8cf8846a91d9cecaeab82565df13a0a4c06e8c0c3e1; requests direct source checking and one theorem-or-no-go result |
+| M85 | Primary-source novelty/impact review | **SENT ONCE AND RUNNING**, user message 9; observed 2026-09-03T20:17:18Z | Exact prompt, packet lineage, browser message ID and no-duplicate evidence recorded in PRO_NOVELTY_DISPATCH_RECEIPT_2026-09-03.md |
+| M86 | Novelty-review continuation | **ACTIVE AND RETARGETED**, existing hourly tda-pro-github heartbeat | Tracks message 9 collection, direct-source evidence, independent disposition and GitHub sync; no new automation and no duplicate request |
 
 ## Current unresolved research gates
 
