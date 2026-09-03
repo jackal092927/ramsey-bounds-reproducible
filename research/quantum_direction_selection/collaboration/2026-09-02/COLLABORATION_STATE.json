@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-03T18:37:14Z",
+  "updated_at": "2026-09-03T18:43:37.927728Z",
   "objective": "Review and advance true normalized persistence toward a substantial TCS theorem; archive every useful positive/negative milestone and Pro result.",
   "repository": {
     "url": "https://github.com/jackal092927/ramsey-bounds-reproducible",
@@ -17,32 +17,27 @@
     "url": "https://chatgpt.com/c/6a98c05a-ecf4-83e8-b356-4e20dc3fde3f",
     "account": "visible identity matched local personal Pro channel registry",
     "previous_response": "collected",
-    "new_request": "prepared_not_sent",
+    "new_request": "sent_running",
     "current_request": {
-      "source_commit": "23f83cf0db8fd62eed1dd2c7b90b806bb9e3a6e7",
-      "message_file": "PRO_RESTRICTED_THEOREM_SUBMISSION_2026-09-03.md",
-      "request_file": "PRO_RESTRICTED_THEOREM_REQUEST_2026-09-03.md",
-      "attachment_file": "PRO_RESTRICTED_THEOREM_PACKET_2026-09-03.md",
-      "attachment_bytes": 20589,
-      "attachment_sha256": "ed873b118bf5dc19ee233e1380db811dd1d4f33c271fae5089925d1611f99b20",
+      "source_commit": "b78da7ab9472f6d2c0858634b56f3c1210a3e931",
+      "message_file": "PRO_SOURCE_COMPLEXITY_SUBMISSION_2026-09-03.md",
+      "request_file": "PRO_SOURCE_COMPLEXITY_REQUEST_2026-09-03.md",
+      "attachment_file": "PRO_SOURCE_COMPLEXITY_PACKET_2026-09-03.md",
+      "attachment_bytes": 28196,
+      "attachment_sha256": "7f38dd8353d90b9fe7c471dfb0e83bcd5bdca31a7ee5a011cbbd64ad91a12c15",
       "surface": "Chat",
       "model_label": "GPT-5.6 Sol",
       "thinking": "Pro, 5 of 5",
-      "user_message_number": 6,
-      "completed_assistant_messages_before_this_request": 4,
+      "user_message_number": 7,
+      "completed_assistant_messages_before_this_request": 5,
       "failed_assistant_attempts_before_this_request": 1,
-      "sent_running_observed_at": "2026-09-03T17:36:16.680Z",
-      "last_observed_at": "2026-09-03T18:24:32.030Z",
-      "last_observation": "Completed sixth-request answer: Worked for 10m 40s, no Stop answering. Full response and 137 equation sources archived; visible registered personal Pro identity verified, with email omitted from the public archive.",
-      "receipt": "PRO_RESTRICTED_THEOREM_DISPATCH_RECEIPT_2026-09-03.md",
-      "scope": "Completed <=2500-word mathematical integration audit; exact finite checks treated as hypotheses; no browsing, recomputation, source-priority or standard-class-hardness task.",
-      "prompt_verification": "4328-character prepared submission matched normalized composer text; one completed attachment, enabled Send, no active run before sending; sent once.",
-      "completed_collected_at": "2026-09-03T18:24:32.030Z",
-      "response_file": "PRO_RESTRICTED_THEOREM_REVIEW_2026-09-03.md",
-      "capture_file": "PRO_RESTRICTED_THEOREM_REVIEW_CAPTURE_2026-09-03.json",
-      "disposition_file": "PRO_RESTRICTED_THEOREM_DISPOSITION_2026-09-03.md",
-      "terminal_status": "completed and collected; integration accepted after source-interface correction",
-      "source_checking": "No source or literature checking by this Pro response."
+      "sent_running_observed_at": "2026-09-03T18:43:37.927728Z",
+      "last_observed_at": "2026-09-03T18:43:37.927728Z",
+      "last_observation": "Seventh user message, exact source-complexity packet, Pro thinking and Stop answering visible. Message 6 is completed and dispositioned; historical failure belongs to message 3.",
+      "receipt": "PRO_SOURCE_COMPLEXITY_DISPATCH_RECEIPT_2026-09-03.md",
+      "scope": "Completed <=2400-word exact source-complexity audit; corrected geometric theorem treated as a hypothesis; no browsing, code, renewed gadget review, approximate gate universality, priority or paper-readiness task.",
+      "prompt_verification": "1011-character prepared submission matched normalized composer text; one completed attachment, enabled Send, no active run before sending; sent once.",
+      "source_basis": "Targeted arXiv:2607.03278v1 Definition 2 / Eq. 9 / Sections 5.5-5.6 / Section 7 check recorded in SOURCE_COMPLEXITY_GATE.md; not a full paper audit."
     },
     "request_history": [
       {
@@ -134,17 +129,34 @@
         "capture_file": "PRO_SELECTED_GUARD_REVIEW_CAPTURE_2026-09-03.json",
         "disposition_file": "PRO_SELECTED_GUARD_DISPOSITION_2026-09-03.md",
         "terminal_status": "completed and collected; conditional guard lemma independently checked"
+      },
+      {
+        "source_commit": "23f83cf0db8fd62eed1dd2c7b90b806bb9e3a6e7",
+        "message_file": "PRO_RESTRICTED_THEOREM_SUBMISSION_2026-09-03.md",
+        "request_file": "PRO_RESTRICTED_THEOREM_REQUEST_2026-09-03.md",
+        "attachment_file": "PRO_RESTRICTED_THEOREM_PACKET_2026-09-03.md",
+        "attachment_bytes": 20589,
+        "attachment_sha256": "ed873b118bf5dc19ee233e1380db811dd1d4f33c271fae5089925d1611f99b20",
+        "surface": "Chat",
+        "model_label": "GPT-5.6 Sol",
+        "thinking": "Pro, 5 of 5",
+        "user_message_number": 6,
+        "completed_assistant_messages_before_this_request": 4,
+        "failed_assistant_attempts_before_this_request": 1,
+        "sent_running_observed_at": "2026-09-03T17:36:16.680Z",
+        "last_observed_at": "2026-09-03T18:24:32.030Z",
+        "last_observation": "Completed sixth-request answer: Worked for 10m 40s, no Stop answering. Full response and 137 equation sources archived; visible registered personal Pro identity verified, with email omitted from the public archive.",
+        "receipt": "PRO_RESTRICTED_THEOREM_DISPATCH_RECEIPT_2026-09-03.md",
+        "scope": "Completed <=2500-word mathematical integration audit; exact finite checks treated as hypotheses; no browsing, recomputation, source-priority or standard-class-hardness task.",
+        "prompt_verification": "4328-character prepared submission matched normalized composer text; one completed attachment, enabled Send, no active run before sending; sent once.",
+        "completed_collected_at": "2026-09-03T18:24:32.030Z",
+        "response_file": "PRO_RESTRICTED_THEOREM_REVIEW_2026-09-03.md",
+        "capture_file": "PRO_RESTRICTED_THEOREM_REVIEW_CAPTURE_2026-09-03.json",
+        "disposition_file": "PRO_RESTRICTED_THEOREM_DISPOSITION_2026-09-03.md",
+        "terminal_status": "completed and collected; integration accepted after source-interface correction",
+        "source_checking": "No source or literature checking by this Pro response."
       }
-    ],
-    "next_request_prepared": {
-      "message_file": "PRO_SOURCE_COMPLEXITY_SUBMISSION_2026-09-03.md",
-      "request_file": "PRO_SOURCE_COMPLEXITY_REQUEST_2026-09-03.md",
-      "attachment_file": "PRO_SOURCE_COMPLEXITY_PACKET_2026-09-03.md",
-      "attachment_bytes": 28196,
-      "attachment_sha256": "7f38dd8353d90b9fe7c471dfb0e83bcd5bdca31a7ee5a011cbbd64ad91a12c15",
-      "status": "prepared_not_sent",
-      "scope": "Bounded exact source-complexity audit: separated fraction condition, arbitrary-threshold failure, exact gate compatibility, and restricted Conjecture 1 versus Conjecture 2."
-    }
+    ]
   },
   "backup_channel": {
     "topic": "Quantum hyperbolic navigation beyond generic search",
@@ -180,9 +192,9 @@
   },
   "github": {
     "status": "source_checkpoint_pushed_and_remote_verified",
-    "review_source_commit": "23f83cf0db8fd62eed1dd2c7b90b806bb9e3a6e7",
-    "verification": "Local HEAD and git ls-remote agreed; GitHub content API returned identical restricted-theorem packet bytes and SHA before submission.",
-    "receipt_note": "Dispatch and follow-up receipts are archived in subsequent commits; compare the actual branch with origin before reporting the latest sync state."
+    "review_source_commit": "b78da7ab9472f6d2c0858634b56f3c1210a3e931",
+    "verification": "Local source HEAD and git ls-remote agreed; raw GitHub packet bytes were 28196 with SHA-256 7f38dd8353d90b9fe7c471dfb0e83bcd5bdca31a7ee5a011cbbd64ad91a12c15 before submission.",
+    "receipt_note": "The source-complexity dispatch receipt and finalized submission metadata are archived in the next lifecycle commit."
   },
   "follow_up": {
     "status": "active",
@@ -193,11 +205,12 @@
     "workflow": "FOLLOW_UP_WORKFLOW.md",
     "stop": "Pause when a substantial scoped result or documented stopping conclusion is reached, or user intervention is necessary.",
     "pending_for_next_completed_response": [
-      "Audit whether exact-kernel fraction hardness follows only for the separated real-gate source or for arbitrary-threshold SDQC1.",
-      "Check whether the quotient rank theorem directly proves the restricted Conjecture 1 conclusion while bypassing the stronger exact-isometry Conjecture 2."
+      "Disposition whether only the separated real-gate source survives or a stronger exact class statement is proved.",
+      "If source complexity stops at the restricted promise, move next to a tightly scoped novelty audit of the whole-kernel concentration plus natural filtered-rank package."
     ],
-    "phase": "Sixth integration audit completed and dispositioned; seventh bounded source-complexity request prepared but not yet sent.",
-    "automation_prompt_updated_for_current_request": false
+    "phase": "Seventh bounded exact source-complexity audit running; unrestricted SDQC1 hardness and novelty remain open.",
+    "automation_prompt_updated_for_current_request": true,
+    "automation_updated_at": "2026-09-03T18:43:37.927728Z"
   },
   "coordination": {
     "canonical_scope": "research/quantum_direction_selection and existing TDA Pro channel",

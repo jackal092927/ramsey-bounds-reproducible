@@ -66,11 +66,13 @@ Consolidation started September 2, 2026 PDT; new dispatch and follow-up setup co
 | M60 | Clean restricted reduction theorem | **LOCAL END-TO-END SYNTHESIS**, CLEAN_RESTRICTED_REDUCTION_THEOREM.md | Exact normalized fraction and whole gaps for an explicit circuit promise; standard source-class hardness and novelty remain open |
 | M61 | Restricted-theorem integration audit | **SENT AND RUNNING**, user message 6, observed 2026-09-03T17:36:16.680Z | 20589-byte packet; audits palette exhaustiveness, natural filtration, exact denominator, gaps, spectator and fraction strength |
 | M62 | Guard response and complete-palette source checkpoint | **PUSHED AND REMOTE-VERIFIED**, 23f83cf0db8fd62eed1dd2c7b90b806bb9e3a6e7 | Full guard response/disposition, remaining atom source certificates, offline receipt and clean theorem; GitHub packet bytes/SHA matched |
-| M63 | Restricted-theorem continuation | **ACTIVE**, existing tda-pro-github retargeted | Tracks request 6 without duplicating the conversation or automation; next issue is source complexity or novelty only after integration disposition |
+| M63 | Restricted-theorem continuation | **COMPLETED BY M64**, existing tda-pro-github retained | Request 6 was collected without duplicating the conversation or automation |
 | M64 | Restricted-theorem integration review | **COMPLETED AND COLLECTED**, user message 6; UI Worked for 10m 40s | Full response, 137 equation sources and browser capture archived; no literature or source-complexity checking was performed by that response |
 | M65 | Integration disposition and theorem repair | **ACCEPTED AFTER ONE SOURCE-INTERFACE CORRECTION** | Restricts \(J\) to mixed-input/computational-basis-clean inclusion and \(P_{\rm acc}\) to fixed-local computational-basis measurement; separately states \(\beta_d(X_{\rm out})=\dim S\) |
 | M66 | SDQC1 source-complexity check | **TARGETED PRIMARY SOURCE + ALGEBRA CHECK** | Standard \((2/3,1/3,1/3)\) constants give a \(1/6\) fraction gap; arbitrary trace gaps do not determine perfect-space fraction, and subspace-preserving amplification alone does not repair this |
-| M67 | Exact source-complexity successor | **PREPARED, NOT YET SENT** | One bounded packet asks for the strongest separated real-gate consequence, exact gate/threshold obligations, and the relation to Conjectures 1--2 |
+| M67 | Exact source-complexity successor | **SENT AND RUNNING**, user message 7, observed 2026-09-03T18:43:37.927728Z | One bounded packet asks for the strongest separated real-gate consequence, exact gate/threshold obligations, and the relation to Conjectures 1--2 |
+| M68 | Integration-response and source-gate checkpoint | **PUSHED AND REMOTE-VERIFIED**, b78da7ab9472f6d2c0858634b56f3c1210a3e931 | Complete message-6 response/capture/disposition, corrected theorem, primary source gate, and frozen 28196-byte successor packet; raw GitHub bytes/SHA matched |
+| M69 | Source-complexity continuation | **ACTIVE**, existing tda-pro-github to be retargeted | Tracks request 7; after disposition, move to novelty only if exact class significance has a documented boundary |
 
 ## Current unresolved research gates
 

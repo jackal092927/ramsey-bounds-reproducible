@@ -24,6 +24,7 @@
 - [受限定理整合审查回执](PRO_RESTRICTED_THEOREM_DISPATCH_RECEIPT_2026-09-03.md)：第六条有界请求已在原 Pro 5/5 会话运行，固定 source commit **23f83cf**。
 - [受限定理完整审查](PRO_RESTRICTED_THEOREM_REVIEW_2026-09-03.md)与[独立处理意见](PRO_RESTRICTED_THEOREM_DISPOSITION_2026-09-03.md)：端到端整合在修正 source interface 后通过；137 个公式完整归档。
 - [源复杂度关卡](SOURCE_COMPLEXITY_GATE.md)：标准常数给出 \(1/6\) 的 fixed-space fraction gap；任意 trace gap 与 exact-rank gap 不等价，restricted real-gate source 与 unrestricted SDQC1 必须分开。
+- [源复杂度 Pro 请求与发送回执](PRO_SOURCE_COMPLEXITY_DISPATCH_RECEIPT_2026-09-03.md)：第七条有界请求已在同一 Pro 5/5 会话运行；固定 source commit **b78da7a** 与 28196 字节附件。
 - [四个 Hadamard 活跃态的精确重标号证明](ACTIVE_HADAMARD_ORBIT.md)：同一个证书覆盖四个无 guard 三项约束，四条整数填充式全部核验。
 - [离线复现结果](OFFLINE_REPRESENTATIVE_CHECKS.json)：无需 gh 或网络重算归档图的全部证书条件。
 - [上一轮 TDA Pro 完整答复](PRO_PREVIOUS_TDA_RESPONSE.md)：已收集的模型建议，未经采纳不算已证明。
@@ -38,4 +39,4 @@
 
 目前最实质的候选是由有限零权重证书推出任意低能几何链的全局 concentration，得到对逻辑 gap 的线性依赖；后面的维数与商空间推理属于标准推论。固定实门 palette 及端到端受限 transfer theorem 已通过分阶段证书和有界审查。当前首要关卡转为 exact source complexity：标准常数的 separated promise 有效，但 unrestricted SDQC1 与优先权仍未建立。备选方向包括 persistent Laplacian 低谱的共同复制转换、量子几何采样及自然的 evaluated-Hom-width 受限类。
 
-研究快照 a46f408 的 Pro 请求已完成并完整收集，界面记录处理用时 155 分 30 秒。后续快照 **789f87f** 的请求以“Thinking failed”终止，没有最终答复。快照 **f4ec1b7** 的全链审查、**9f2e088** 的 guard 审查及 **23f83cf** 的受限定理整合审查均已完成、收集并独立处理。下一轮只审查 separated real-gate source 能支持的精确复杂度表述。每小时回收仍有效。本目录不是投稿或 unrestricted 标准复杂性硬度认证。
+研究快照 a46f408 的 Pro 请求已完成并完整收集，界面记录处理用时 155 分 30 秒。后续快照 **789f87f** 的请求以“Thinking failed”终止，没有最终答复。快照 **f4ec1b7** 的全链审查、**9f2e088** 的 guard 审查及 **23f83cf** 的受限定理整合审查均已完成、收集并独立处理。source commit **b78da7a** 的第七条请求正在审查 separated real-gate source 能支持的精确复杂度表述。每小时回收仍有效。本目录不是投稿或 unrestricted 标准复杂性硬度认证。
