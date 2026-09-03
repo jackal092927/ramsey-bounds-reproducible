@@ -79,5 +79,4 @@ Reproduce with Python and NumPy:
 
 The unguarded three-term portion of the split-Hadamard palette requires only the original representative certificate plus these explicit register symmetries. This is a standard chain-isometry consequence and a useful reduction of finite verification work, not a new gadget construction or the main novelty claim.
 
-Still open: the basis and one-/two-term active atoms under the new finite criterion, and computational-basis guard closure or finite certificates for the guarded attaching-sphere family through locality six. The general concentration theorem remains conditional on that completed family and independent proof review.
-
+At the time of this orbit certificate, basis/one-/two-term atoms and guard closure remained open. A subsequent [selected-cycle guard lemma](SELECTED_CYCLE_GUARD_CLOSURE.md) now supplies a local guard-transfer proof and elementary basis atom, with exact checks and separate external review pending. The one-qubit difference and two-qubit two-term base atoms still need finite certificates. The general concentration implication has since passed bounded review and local rechecking; the full reduction remains conditional on the completed family.

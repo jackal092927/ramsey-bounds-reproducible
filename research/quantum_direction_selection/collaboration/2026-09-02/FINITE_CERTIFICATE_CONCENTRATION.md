@@ -1,6 +1,6 @@
 # All-chain concentration from finite zero-weight certificates
 
-2026-09-03. **INDEPENDENT LOCAL DERIVATION; COMPLETE PALETTE NOT YET CERTIFIED.** This sharpens and simplifies [the spectral-sector derivation](EXACT_FILLING_COERCIVITY.md). One actual source representative passes every finite check below; closure for the complete guarded circuit palette is a separate open gate. No optimal spectral valuation or priority is asserted.
+2026-09-03. **CONDITIONAL PROOF LOCALLY CHECKED AND REVIEWED; COMPLETE PALETTE NOT YET CERTIFIED.** This sharpens and simplifies [the spectral-sector derivation](EXACT_FILLING_COERCIVITY.md). The [bounded Pro review](PRO_BOUNDED_PROOF_REVIEW_2026-09-03.md) and [independent disposition](PRO_BOUNDED_PROOF_DISPOSITION_2026-09-03.md) support the implication under the stated finite hypotheses. One actual source representative passes every finite check below; closure for the complete guarded circuit palette is a separate gate. No optimal spectral valuation or priority is asserted.
 
 The candidate result is
 \[
@@ -21,7 +21,7 @@ D_a(\lambda)=
 \]
 The value at zero is a matrix limit; no invertible weight gauge at zero is assumed.
 
-Let V_a=Z_{d_a}(R_a), with projector P_a. A certificate supplies a coordinate subspace Q_a supported on private simplices and an output projection R_a^{out}. Require:
+Let V_a=Z_{d_a}(R_a), with projector P_a. A certificate supplies an explicitly specified subspace Q_a supported entirely on private chain coordinates and an output projection R_a^{out}. Q_a need not be spanned by individual simplices: the proof only uses private support, orthogonality and the certified bounds. This makes explicit the scope already used by outside-harmonic padding. Require:
 
 1. **Exact topology at positive weight:** at lambda=1,
    \[
@@ -60,7 +60,12 @@ The singular-value inequality for invertible left and right scalings, at the fix
 \sigma_{\min}^+(\partial_{w,k})\ge
 \lambda^{k+1}\sigma_{\min}^+(\partial_{1,k}).
 \]
-Zero-rank boundary blocks can be omitted. The Hodge decomposition gives
+For clarity, if A is any nonzero rectangular matrix and L,R are invertible, put K=ker A. For a unit x perpendicular to R^{-1}K,
+\[
+\operatorname{dist}(Rx,K)=\inf_{z\in R^{-1}K}\|R(x-z)\|
+\ge\sigma_{\min}(R).
+\]
+Consequently ||LARx||>=sigma_min(L) sigma_min^+(A) sigma_min(R). This proves the scaling inequality without assuming full rank. Zero-rank boundary blocks can be omitted. The Hodge decomposition gives
 \[
 \gamma_+(\Delta_{a,d_a}(\lambda))
 \ge c_a\lambda^{2d_a+4}.
@@ -228,4 +233,4 @@ This is a complete check of the finite inputs needed by this route for that one 
 
 Outstanding: every other required active atom, closure under guarded attaching-sphere products through locality six, complete source/priority assessment, and the strongest meaningful exact source-complexity consequence. The current theorem is conditional on the finite family satisfying the listed data. It is not a certification of the full circuit reduction or submission readiness.
 
-**Later September 3 update:** [explicit register relabelings](ACTIVE_HADAMARD_ORBIT.md) transport the representative certificate to all four unguarded active Hadamard three-term vectors. Exact chain-map and integer-filling checks pass. Basis/one-/two-term atoms and guarded attaching-sphere closure remain open. The proof above and the previously sent packet remain distinct: this status addendum does not retroactively alter the frozen Pro input.
+**Later September 3 update:** [explicit register relabelings](ACTIVE_HADAMARD_ORBIT.md) transport the representative certificate to all four unguarded active Hadamard three-term vectors. Exact chain-map and integer-filling checks pass. The subsequent [selected-cycle guard lemma](SELECTED_CYCLE_GUARD_CLOSURE.md) gives an alternative explicit guard construction and an elementary basis-cone atom, with exact checks archived and general proof review pending. The nontrivial one-qubit difference and two-qubit two-term atoms remain open. The proof above and the previously sent packet remain distinct: these updates do not retroactively alter frozen Pro inputs.

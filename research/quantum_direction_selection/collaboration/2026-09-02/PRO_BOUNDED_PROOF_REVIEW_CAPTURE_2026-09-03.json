@@ -1,0 +1,572 @@
+{
+  "captured_at": "2026-09-03T16:26:26.285Z",
+  "conversation_url": "https://chatgpt.com/c/6a98c05a-ecf4-83e8-b356-4e20dc3fde3f",
+  "user_message_number": 4,
+  "source_commit": "f4ec1b73ca99fa909b728e8165fb3e87fa9214b3",
+  "visible_duration": "Worked for 8m 39s",
+  "finalDataEnd": "11025",
+  "links": [],
+  "markdown": "# Verdict\n\n\nThe implication is **valid under the hypotheses stated in the bounded packet**. I find no counterexample satisfying all of them.\n\n\nTwo justifications were compressed rather than false:\n\n\n1. the nonzero-singular-value inequality under invertible diagonal scaling remains valid for rank-deficient boundaries, but it needs a distance-to-kernel proof;\n\n2. the padding argument must be stated over **all** join bidegrees. Once that is done, the unique outside-harmonic bidegree is indeed the only one contributing to the zero-weight kernel.\n\n\nNo estimate involving the unknown geometric harmonic projector is used before the min–max step. The logical operator \\(H\\) and geometric Laplacian \\(\\Delta_X\\) remain distinct throughout. The theorem is conditional on the finite local certificate; this audit says nothing about complete palette closure, novelty, or paper readiness. The governing statement and hypotheses are those in the attached note. 〔PRO_BOUNDED_PROOF_PACKET_2026-0…〕\n\n\n\n---\n\n\n# Conditional concentration theorem\n\n\nLet \\(t\\ge1\\), \\(0<g\\le1\\), and let \\(P\\) project onto the embedded logical register cycle space \\(V\\). Let\n\n\n\n\\[\nH=\\sum_{i=1}^t\\Pi_i\n\\quad\\text{and}\\quad\nH\\succeq g(P-P_K),\n\\]\n\n\nwhere \\(P_K\\) projects onto \\(\\ker H\\subseteq V\\).\n\n\nAssume the fixed finite gadget palette satisfies:\n\n\n- exact filling\n  \n  \n  \n  \\[\n  B_d(Y_i)\\cap V=\\operatorname{ran}\\Pi_i;\n  \\]\n\n- independent gadget interiors and no register \\((d+1)\\)-simplices;\n\n- after padding, the zero-weight differential pair satisfies\n  \n  \n  \n  \\[\n  \\ker D_{i,0}=V\\oplus Q_i\n  \\]\n  \n  \n  orthogonally, with a palette-uniform positive gap on its complement;\n\n- a projected private pair\n  \n  \n  \n  \\[\n  T_i(\\lambda)=\\lambda T_{i,1},\\qquad\n  T_{i,1}P=0,\\qquad\n  \\|T_{i,1}Q_iz\\|\\ge b\\|Q_iz\\|;\n  \\]\n\n- retained \\(T_i\\)-outputs are private to gadget \\(i\\);\n\n- the interface maps satisfy\n  \n  \n  \n  \\[\n  L_iL_i^*\\preceq N_*\\lambda^2I;\n  \\]\n\n- all outside-register nonharmonic modes have a uniform positive gap.\n\n\nThen there are palette-dependent constants \\(c,C>0\\) such that, for\n\n\n\n\\[\n0<\\lambda\\le \\frac{c}{t},\n\\]\n\n\nevery unit degree-\\(d\\) chain \\(x\\) satisfies\n\n\n\n\\[\n\\boxed{\n\\|(I-P_K)x\\|^2\n\\le\nC\\left[\nt\\lambda^2+\n\\frac{\\langle x,\\Delta_Xx\\rangle}{g\\lambda^\\kappa}\n\\right].\n}\n\\]\n\n\nFor maximum active locality \\(m\\),\n\n\n\n\\[\n\\kappa=4m+2.\n\\]\n\n\nAll constants depend only on the finite certified palette, including its zero-weight gaps, private-pair lower bounds, matrix norms, interface constant, and outside spectral gap—not on \\(t\\), the outside-register dimension, the logical dimension, \\(g\\), or \\(\\lambda\\).\n\n\n\n---\n\n\n## 1. Rank-deficient singular-value scaling\n\n\nLet \\(A\\) be any nonzero matrix, possibly rank deficient, and let \\(L,R\\) be invertible. Then\n\n\n\n\\[\n\\boxed{\n\\sigma_{\\min}^+(LAR)\n\\ge\n\\sigma_{\\min}(L)\\,\n\\sigma_{\\min}^+(A)\\,\n\\sigma_{\\min}(R).\n}\n\\]\n\n\nIndeed, let \\(K=\\ker A\\). For a unit vector\n\n\n\n\\[\nx\\perp\\ker(LAR)=R^{-1}K,\n\\]\n\n\nwe have\n\n\n\n\\[\n\\begin{aligned}\n\\operatorname{dist}(Rx,K)\n&=\\inf_{z\\in R^{-1}K}\\|R(x-z)\\|\\\\\n&\\ge \\sigma_{\\min}(R)\n   \\operatorname{dist}(x,R^{-1}K)\\\\\n&=\\sigma_{\\min}(R).\n\\end{aligned}\n\\]\n\n\nSince \\(A\\) annihilates \\(K\\),\n\n\n\n\\[\n\\|ARx\\|\n\\ge\n\\sigma_{\\min}^+(A)\\operatorname{dist}(Rx,K),\n\\]\n\n\nand left multiplication by \\(L\\) gives the result. Thus rank deficiency causes no failure. Zero-rank blocks are simply omitted.\n\n\nFor a degree-\\(k\\) weighted boundary,\n\n\n\n\\[\n\\partial_{w,k}=W_{k-1}^{-1}\\partial_{1,k}W_k.\n\\]\n\n\nWith vertex weights in \\(\\{1,\\lambda\\}\\) and \\(0<\\lambda\\le1\\),\n\n\n\n\\[\n\\sigma_{\\min}(W_{k-1}^{-1})\\ge1,\n\\qquad\n\\sigma_{\\min}(W_k)\\ge\\lambda^{k+1},\n\\]\n\n\nhence\n\n\n\n\\[\n\\sigma_{\\min}^+(\\partial_{w,k})\n\\ge\n\\lambda^{k+1}\n\\sigma_{\\min}^+(\\partial_{1,k}).\n\\]\n\n\nIn degree \\(d_a\\), Hodge decomposition gives\n\n\n\n\\[\n\\gamma_+(\\Delta_{d_a})\n\\ge\n\\min\\left\\{\n\\sigma_{\\min}^+(\\partial_{d_a})^2,\n\\sigma_{\\min}^+(\\partial_{d_a+1})^2\n\\right\\}\n\\ge\nc_a\\lambda^{2d_a+4}.\n\\]\n\n\nThe second exponent is the worse one for \\(0<\\lambda\\le1\\). If \\(d_a=2m_a-1\\), this is\n\n\n\n\\[\n2d_a+4=4m_a+2.\n\\]\n\n\nFor \\(m_a\\le m\\), a finite-palette minimum yields\n\n\n\n\\[\n\\boxed{\\gamma_+(\\Delta_{d_a})\\ge c\\lambda^{4m+2}.}\n\\]\n\n\nThis is only a sufficient floor, not an optimal valuation.\n\n\n\n---\n\n\n## 2. Padding over every bidegree\n\n\nUsing reduced chains, the target-degree chain space of the join decomposes as\n\n\n\n\\[\nC_d(Y_a*R_{\\mathrm{out}})\n=\n\\bigoplus_{r+s=d-1}\nC_r(Y_a)\\otimes C_s(R_{\\mathrm{out}}),\n\\]\n\n\nand on each bidegree\n\n\n\n\\[\n\\Delta_{\\mathrm{join}}\n=\n\\Delta_{Y_a,r}\\otimes I+\nI\\otimes\\Delta_{\\mathrm{out},s}.\n\\]\n\n\nBoth summands are positive semidefinite, so the kernel on that bidegree is\n\n\n\n\\[\n\\ker\\Delta_{Y_a,r}\\otimes\n\\ker\\Delta_{\\mathrm{out},s}.\n\\]\n\n\nBy hypothesis, the outside complex has reduced harmonics only in degree \\(q\\). At global degree\n\n\n\n\\[\nd=d_a+q+1,\n\\]\n\n\nthe condition \\(s=q\\) forces \\(r=d_a\\). Thus the only outside-harmonic bidegree is\n\n\n\n\\[\n(d_a,q).\n\\]\n\n\nEvery other actual bidegree—including those with local simplices above \\(d_a\\)—has a uniform positive outside contribution. Hence the padded zero-weight kernel is exactly\n\n\n\n\\[\nV\\oplus(Q_a\\otimes\\mathcal H_{\\mathrm{out}}),\n\\]\n\n\nand the positive gap outside it is uniform. At positive \\(\\lambda\\), the padded whole gap is at least\n\n\n\n\\[\n\\min\\{c\\lambda^\\kappa,\\delta_{\\mathrm{out}}\\}\n\\ge c'\\lambda^\\kappa.\n\\]\n\n\nPadding \\(T_a\\) with the outside harmonic projector removes all outside boundary and coboundary terms, so its injectivity and \\(O(\\lambda)\\) norm bounds persist.\n\n\n\n---\n\n\n## 3. Shared-register interface estimate\n\n\nWrite\n\n\n\n\\[\nx=\\omega_0+\\sum_{i=1}^t\\omega_i,\n\\qquad\nx_i=\\omega_0+\\omega_i,\n\\]\n\n\nand define\n\n\n\n\\[\ne=\\|D_Xx\\|^2,\\qquad\nU=\\sum_i\\|\\omega_i\\|^2.\n\\]\n\n\nLet\n\n\n\n\\[\na=\\partial_R\\omega_0,\\qquad\ny_i=L_i\\omega_i,\\qquad\ny=\\sum_i y_i,\\qquad\nr=a+y.\n\\]\n\n\nThe single-gadget register boundary is\n\n\n\n\\[\na+y_i=r-(y-y_i).\n\\]\n\n\nMoreover,\n\n\n\n\\[\n\\sum_i\\|y-y_i\\|^2\n=\n(t-2)\\|y\\|^2+\\sum_i\\|y_i\\|^2.\n\\]\n\n\nLet\n\n\n\n\\[\n\\rho=\\lambda^{-2}\\|[L_1\\ \\cdots\\ L_t]\\|^2.\n\\]\n\n\nBecause the input blocks are orthogonal,\n\n\n\n\\[\n[L_1\\ \\cdots\\ L_t][L_1\\ \\cdots\\ L_t]^*\n=\n\\sum_iL_iL_i^*\n\\preceq N_*t\\lambda^2I,\n\\]\n\n\nso \\(\\rho\\le N_*t\\). Also,\n\n\n\n\\[\n\\|y\\|^2\\le\\rho\\lambda^2U,\n\\qquad\n\\sum_i\\|y_i\\|^2\\le N_*\\lambda^2U.\n\\]\n\n\nConsequently,\n\n\n\n\\[\n\\sum_i\\|y-y_i\\|^2\n\\le\n\\chi\\lambda^2U,\n\\qquad\n\\chi=(t-2)_+\\rho+N_*=O(t^2).\n\\]\n\n\nAll nonregister down-boundary outputs and all up outputs split by gadget. Therefore\n\n\n\n\\[\n\\boxed{\n\\sum_i\\|D_i(\\lambda)x_i\\|^2\n\\le\n2te+2\\chi\\lambda^2U.\n}\n\\]\n\n\nShared outputs of the \\(L_i\\) cause no error; output orthogonality was never used.\n\n\n\n---\n\n\n## 4. Geometric leakage without geometric-kernel assumptions\n\n\nSet\n\n\n\n\\[\nA_{i,0}=I-P-Q_i.\n\\]\n\n\nThe zero-weight gap and\n\n\n\n\\[\nD_i(\\lambda)=D_{i,0}+\\lambda D_{i,1}\n\\]\n\n\ngive\n\n\n\n\\[\n\\begin{aligned}\nS_A\n&:=\\sum_i\\|A_{i,0}x_i\\|^2\\\\\n&\\le\nC\\sum_i\\|D_{i,0}x_i\\|^2\\\\\n&\\le\nC\\left(\nte+\\chi\\lambda^2U+t\\lambda^2\n\\right),\n\\end{aligned}\n\\]\n\n\nbecause\n\n\n\n\\[\n\\sum_i\\|x_i\\|^2\n=\n1+(t-1)\\|\\omega_0\\|^2\n\\le t.\n\\]\n\n\nSince \\(T_iP=0\\),\n\n\n\n\\[\nT_iQ_ix_i=T_ix_i-T_iA_{i,0}x_i.\n\\]\n\n\nPrivate-pair injectivity and \\(\\|T_i\\|=O(\\lambda)\\) imply\n\n\n\n\\[\nS_Q:=\\sum_i\\|Q_ix_i\\|^2\n\\le\nC\\left(\n\\lambda^{-2}\\sum_i\\|T_ix_i\\|^2+S_A\n\\right).\n\\]\n\n\nThe retained \\(T_i\\)-outputs are gadget-private, so\n\n\n\n\\[\n\\sum_i\\|T_ix_i\\|^2\\le e.\n\\]\n\n\nHence\n\n\n\n\\[\nS_Q\\le C(e/\\lambda^2+S_A).\n\\]\n\n\nNow let\n\n\n\n\\[\nN=\\|(I-P)x\\|^2.\n\\]\n\n\nOrthogonality gives\n\n\n\n\\[\nN\\le U+t\\|(I-P)\\omega_0\\|^2=S_A+S_Q.\n\\]\n\n\nUsing \\(U\\le N\\),\n\n\n\n\\[\nN\n\\le\nC\\left[\n(t+\\lambda^{-2})e+t\\lambda^2\n\\right]\n+C\\chi\\lambda^2N.\n\\]\n\n\nSince \\(\\chi=O(t^2)\\), choosing \\(\\lambda\\le c/t\\) makes the last coefficient at most \\(1/2\\). Absorption yields\n\n\n\n\\[\n\\boxed{\nN\\le\nC\\left[\nt\\lambda^2+(t+\\lambda^{-2})e\n\\right].\n}\n\\]\n\n\nNo comparison with \\(\\ker\\Delta_X\\) or its projector has occurred. This is exactly the leakage mechanism described in the packet. 〔PRO_BOUNDED_PROOF_PACKET_2026-0…〕\n\n\n\n---\n\n\n## 5. Logical coercivity\n\n\nExact filling gives\n\n\n\n\\[\n\\operatorname{ran}\\Pi_i\\subseteq B_d(Y_i).\n\\]\n\n\nOn the boundary subspace, the full local Laplacian equals its up part. Therefore the local whole positive gap implies\n\n\n\n\\[\n\\Delta_i^\\uparrow\n\\succeq\nc\\lambda^\\kappa P_{B_d(Y_i)}\n\\succeq\nc\\lambda^\\kappa\\Pi_i.\n\\]\n\n\nThe global \\((d+1)\\)-columns partition by gadget, so, even though their degree-\\(d\\) outputs may overlap,\n\n\n\n\\[\n\\Delta_X^\\uparrow\n=\n\\sum_i\\iota_i\\Delta_i^\\uparrow\\iota_i^*\n\\succeq\nc\\lambda^\\kappa H^{\\mathrm{emb}}.\n\\]\n\n\nThus\n\n\n\n\\[\n\\langle x,(P-P_K)x\\rangle\n\\le\n\\frac{\\langle x,H^{\\mathrm{emb}}x\\rangle}{g}\n\\le\n\\frac{e}{cg\\lambda^\\kappa}.\n\\]\n\n\nSince \\(P_K\\le P\\),\n\n\n\n\\[\n\\|(I-P_K)x\\|^2\n=\nN+\\langle x,(P-P_K)x\\rangle.\n\\]\n\n\nCombining with the leakage estimate,\n\n\n\n\\[\n\\|(I-P_K)x\\|^2\n\\le\nC\\left[\nt\\lambda^2+(t+\\lambda^{-2})e+\n\\frac{e}{g\\lambda^\\kappa}\n\\right].\n\\]\n\n\nFor \\(\\lambda\\le c/t\\), \\(\\kappa\\ge2\\), and \\(g\\le1\\),\n\n\n\n\\[\nt+\\lambda^{-2}\n\\le C\\lambda^{-\\kappa}\n\\le \\frac{C}{g\\lambda^\\kappa}.\n\\]\n\n\nTherefore\n\n\n\n\\[\n\\boxed{\n\\|(I-P_K)x\\|^2\n\\le\nC\\left[\nt\\lambda^2+\n\\frac{e}{g\\lambda^\\kappa}\n\\right].\n}\n\\]\n\n\n\n---\n\n\n# Multiplicity, gap, and persistence\n\n\nChoose\n\n\n\n\\[\n\\lambda\\le c\\min\\{t^{-1},\\eta t^{-1/2}\\},\n\\qquad\nE\\le c'\\eta^2g\\lambda^\\kappa,\n\\qquad\n0<\\eta<1.\n\\]\n\n\nEvery unit vector in\n\n\n\n\\[\n\\mathcal L_{<E}\n=\n\\operatorname{ran}\\mathbf1_{[0,E)}(\\Delta_X)\n\\]\n\n\nhas nonzero projection onto \\(\\ker H\\). Hence\n\n\n\n\\[\n\\dim\\mathcal L_{<E}\\le\\dim\\ker H.\n\\]\n\n\nIndependent interiors and exact filling give\n\n\n\n\\[\nB_d(X)\\cap V\n=\n\\sum_i\\operatorname{ran}\\Pi_i.\n\\]\n\n\nThus\n\n\n\n\\[\nV\\Big/\\sum_i\\operatorname{ran}\\Pi_i\n\\hookrightarrow H_d(X)\n\\]\n\n\nsupplies \\(\\dim\\ker H\\) exact zero modes. Consequently,\n\n\n\n\\[\n\\boxed{\n\\dim\\ker\\Delta_X=\\dim\\ker H,\n\\qquad\n\\operatorname{spec}(\\Delta_X)\\cap(0,E)=\\varnothing.\n}\n\\]\n\n\nEqual dimensions plus concentration give\n\n\n\n\\[\n\\boxed{\n\\|P_{\\ker\\Delta_X}-P_K\\|\\le\\eta.\n}\n\\]\n\n\nIf \\(\\ker H=0\\), then \\(\\mathcal L_{<E}=0\\), so the entire geometric spectrum is at least \\(E\\).\n\n\nFor nested term sets \\(A\\subseteq B\\),\n\n\n\n\\[\nH_d(X_A)\\cong V/W_A,\n\\qquad\nW_A=\\sum_{i\\in A}\\operatorname{ran}\\Pi_i,\n\\]\n\n\nnaturally with respect to inclusion. The induced map is the surjection\n\n\n\n\\[\nV/W_A\\twoheadrightarrow V/W_B,\n\\]\n\n\nso\n\n\n\n\\[\n\\boxed{\n\\operatorname{rank}[H_d(X_A)\\to H_d(X_B)]\n=\n\\dim\\ker H_B.\n}\n\\]\n\n\nThis remains valid when \\(\\ker H_B=0\\); the persistent rank is then zero. If the initial kernel has known dimension \\(D>0\\), true normalized persistence is\n\n\n\n\\[\n\\frac{\\dim\\ker H_B}{D}.\n\\]\n\n\nThese deductions are exactly the standard dimension/naturality consequences following the all-chain bound. 〔PRO_BOUNDED_PROOF_PACKET_2026-0…〕\n\n\n\n---\n\n\n# Conservative scales\n\n\nWith \\(m\\le6\\),\n\n\n\n\\[\n\\kappa=26.\n\\]\n\n\nTaking\n\n\n\n\\[\n\\lambda=\\Theta(\\eta/t)\n\\]\n\n\ngives\n\n\n\n\\[\n\\boxed{\nE=\\Omega\\!\\left(\\frac{\\eta^{28}g}{t^{26}}\\right).\n}\n\\]\n\n\nUnder the separate common-copy theorem, \\(F=\\lambda^{-2}\\), so the unweighted gap floor is\n\n\n\n\\[\n\\min\\{FE,1\\},\n\\qquad\n\\boxed{\nFE=\\Omega\\!\\left(\\frac{\\eta^{26}g}{t^{24}}\\right).\n}\n\\]\n\n\nThese are lower-bound floors, not equalities or runtime estimates. 〔PRO_BOUNDED_PROOF_PACKET_2026-0…〕\n\n\nA modest refinement is possible: the absorption really requires only\n\n\n\n\\[\n\\chi\\lambda^2\\le c_0,\n\\]\n\n\nnot the universal substitution \\(\\lambda\\le c/t\\). Thus instances with certified interface congestion \\(\\chi=o(t^2)\\) may use larger weights, subject also to the final error condition \\(t\\lambda^2=O(\\eta^2)\\). This does not alter the conservative worst-case theorem.\n",
+  "math": [
+    {
+      "display": false,
+      "source": "H"
+    },
+    {
+      "display": false,
+      "source": "\\Delta_X"
+    },
+    {
+      "display": false,
+      "source": "t\\ge1"
+    },
+    {
+      "display": false,
+      "source": "0<g\\le1"
+    },
+    {
+      "display": false,
+      "source": "P"
+    },
+    {
+      "display": false,
+      "source": "V"
+    },
+    {
+      "display": true,
+      "source": "H=\\sum_{i=1}^t\\Pi_i\n\\quad\\text{and}\\quad\nH\\succeq g(P-P_K),"
+    },
+    {
+      "display": false,
+      "source": "P_K"
+    },
+    {
+      "display": false,
+      "source": "\\ker H\\subseteq V"
+    },
+    {
+      "display": true,
+      "source": "B_d(Y_i)\\cap V=\\operatorname{ran}\\Pi_i;"
+    },
+    {
+      "display": false,
+      "source": "(d+1)"
+    },
+    {
+      "display": true,
+      "source": "\\ker D_{i,0}=V\\oplus Q_i"
+    },
+    {
+      "display": true,
+      "source": "T_i(\\lambda)=\\lambda T_{i,1},\\qquad\nT_{i,1}P=0,\\qquad\n\\|T_{i,1}Q_iz\\|\\ge b\\|Q_iz\\|;"
+    },
+    {
+      "display": false,
+      "source": "T_i"
+    },
+    {
+      "display": false,
+      "source": "i"
+    },
+    {
+      "display": true,
+      "source": "L_iL_i^*\\preceq N_*\\lambda^2I;"
+    },
+    {
+      "display": false,
+      "source": "c,C>0"
+    },
+    {
+      "display": true,
+      "source": "0<\\lambda\\le \\frac{c}{t},"
+    },
+    {
+      "display": false,
+      "source": "d"
+    },
+    {
+      "display": false,
+      "source": "x"
+    },
+    {
+      "display": true,
+      "source": "\\boxed{\n\\|(I-P_K)x\\|^2\n\\le\nC\\left[\nt\\lambda^2+\n\\frac{\\langle x,\\Delta_Xx\\rangle}{g\\lambda^\\kappa}\n\\right].\n}"
+    },
+    {
+      "display": false,
+      "source": "m"
+    },
+    {
+      "display": true,
+      "source": "\\kappa=4m+2."
+    },
+    {
+      "display": false,
+      "source": "t"
+    },
+    {
+      "display": false,
+      "source": "g"
+    },
+    {
+      "display": false,
+      "source": "\\lambda"
+    },
+    {
+      "display": false,
+      "source": "A"
+    },
+    {
+      "display": false,
+      "source": "L,R"
+    },
+    {
+      "display": true,
+      "source": "\\boxed{\n\\sigma_{\\min}^+(LAR)\n\\ge\n\\sigma_{\\min}(L)\\,\n\\sigma_{\\min}^+(A)\\,\n\\sigma_{\\min}(R).\n}"
+    },
+    {
+      "display": false,
+      "source": "K=\\ker A"
+    },
+    {
+      "display": true,
+      "source": "x\\perp\\ker(LAR)=R^{-1}K,"
+    },
+    {
+      "display": true,
+      "source": "\\begin{aligned}\n\\operatorname{dist}(Rx,K)\n&=\\inf_{z\\in R^{-1}K}\\|R(x-z)\\|\\\\\n&\\ge \\sigma_{\\min}(R)\n   \\operatorname{dist}(x,R^{-1}K)\\\\\n&=\\sigma_{\\min}(R).\n\\end{aligned}"
+    },
+    {
+      "display": false,
+      "source": "A"
+    },
+    {
+      "display": false,
+      "source": "K"
+    },
+    {
+      "display": true,
+      "source": "\\|ARx\\|\n\\ge\n\\sigma_{\\min}^+(A)\\operatorname{dist}(Rx,K),"
+    },
+    {
+      "display": false,
+      "source": "L"
+    },
+    {
+      "display": false,
+      "source": "k"
+    },
+    {
+      "display": true,
+      "source": "\\partial_{w,k}=W_{k-1}^{-1}\\partial_{1,k}W_k."
+    },
+    {
+      "display": false,
+      "source": "\\{1,\\lambda\\}"
+    },
+    {
+      "display": false,
+      "source": "0<\\lambda\\le1"
+    },
+    {
+      "display": true,
+      "source": "\\sigma_{\\min}(W_{k-1}^{-1})\\ge1,\n\\qquad\n\\sigma_{\\min}(W_k)\\ge\\lambda^{k+1},"
+    },
+    {
+      "display": true,
+      "source": "\\sigma_{\\min}^+(\\partial_{w,k})\n\\ge\n\\lambda^{k+1}\n\\sigma_{\\min}^+(\\partial_{1,k})."
+    },
+    {
+      "display": false,
+      "source": "d_a"
+    },
+    {
+      "display": true,
+      "source": "\\gamma_+(\\Delta_{d_a})\n\\ge\n\\min\\left\\{\n\\sigma_{\\min}^+(\\partial_{d_a})^2,\n\\sigma_{\\min}^+(\\partial_{d_a+1})^2\n\\right\\}\n\\ge\nc_a\\lambda^{2d_a+4}."
+    },
+    {
+      "display": false,
+      "source": "0<\\lambda\\le1"
+    },
+    {
+      "display": false,
+      "source": "d_a=2m_a-1"
+    },
+    {
+      "display": true,
+      "source": "2d_a+4=4m_a+2."
+    },
+    {
+      "display": false,
+      "source": "m_a\\le m"
+    },
+    {
+      "display": true,
+      "source": "\\boxed{\\gamma_+(\\Delta_{d_a})\\ge c\\lambda^{4m+2}.}"
+    },
+    {
+      "display": true,
+      "source": "C_d(Y_a*R_{\\mathrm{out}})\n=\n\\bigoplus_{r+s=d-1}\nC_r(Y_a)\\otimes C_s(R_{\\mathrm{out}}),"
+    },
+    {
+      "display": true,
+      "source": "\\Delta_{\\mathrm{join}}\n=\n\\Delta_{Y_a,r}\\otimes I+\nI\\otimes\\Delta_{\\mathrm{out},s}."
+    },
+    {
+      "display": true,
+      "source": "\\ker\\Delta_{Y_a,r}\\otimes\n\\ker\\Delta_{\\mathrm{out},s}."
+    },
+    {
+      "display": false,
+      "source": "q"
+    },
+    {
+      "display": true,
+      "source": "d=d_a+q+1,"
+    },
+    {
+      "display": false,
+      "source": "s=q"
+    },
+    {
+      "display": false,
+      "source": "r=d_a"
+    },
+    {
+      "display": true,
+      "source": "(d_a,q)."
+    },
+    {
+      "display": false,
+      "source": "d_a"
+    },
+    {
+      "display": true,
+      "source": "V\\oplus(Q_a\\otimes\\mathcal H_{\\mathrm{out}}),"
+    },
+    {
+      "display": false,
+      "source": "\\lambda"
+    },
+    {
+      "display": true,
+      "source": "\\min\\{c\\lambda^\\kappa,\\delta_{\\mathrm{out}}\\}\n\\ge c'\\lambda^\\kappa."
+    },
+    {
+      "display": false,
+      "source": "T_a"
+    },
+    {
+      "display": false,
+      "source": "O(\\lambda)"
+    },
+    {
+      "display": true,
+      "source": "x=\\omega_0+\\sum_{i=1}^t\\omega_i,\n\\qquad\nx_i=\\omega_0+\\omega_i,"
+    },
+    {
+      "display": true,
+      "source": "e=\\|D_Xx\\|^2,\\qquad\nU=\\sum_i\\|\\omega_i\\|^2."
+    },
+    {
+      "display": true,
+      "source": "a=\\partial_R\\omega_0,\\qquad\ny_i=L_i\\omega_i,\\qquad\ny=\\sum_i y_i,\\qquad\nr=a+y."
+    },
+    {
+      "display": true,
+      "source": "a+y_i=r-(y-y_i)."
+    },
+    {
+      "display": true,
+      "source": "\\sum_i\\|y-y_i\\|^2\n=\n(t-2)\\|y\\|^2+\\sum_i\\|y_i\\|^2."
+    },
+    {
+      "display": true,
+      "source": "\\rho=\\lambda^{-2}\\|[L_1\\ \\cdots\\ L_t]\\|^2."
+    },
+    {
+      "display": true,
+      "source": "[L_1\\ \\cdots\\ L_t][L_1\\ \\cdots\\ L_t]^*\n=\n\\sum_iL_iL_i^*\n\\preceq N_*t\\lambda^2I,"
+    },
+    {
+      "display": false,
+      "source": "\\rho\\le N_*t"
+    },
+    {
+      "display": true,
+      "source": "\\|y\\|^2\\le\\rho\\lambda^2U,\n\\qquad\n\\sum_i\\|y_i\\|^2\\le N_*\\lambda^2U."
+    },
+    {
+      "display": true,
+      "source": "\\sum_i\\|y-y_i\\|^2\n\\le\n\\chi\\lambda^2U,\n\\qquad\n\\chi=(t-2)_+\\rho+N_*=O(t^2)."
+    },
+    {
+      "display": true,
+      "source": "\\boxed{\n\\sum_i\\|D_i(\\lambda)x_i\\|^2\n\\le\n2te+2\\chi\\lambda^2U.\n}"
+    },
+    {
+      "display": false,
+      "source": "L_i"
+    },
+    {
+      "display": true,
+      "source": "A_{i,0}=I-P-Q_i."
+    },
+    {
+      "display": true,
+      "source": "D_i(\\lambda)=D_{i,0}+\\lambda D_{i,1}"
+    },
+    {
+      "display": true,
+      "source": "\\begin{aligned}\nS_A\n&:=\\sum_i\\|A_{i,0}x_i\\|^2\\\\\n&\\le\nC\\sum_i\\|D_{i,0}x_i\\|^2\\\\\n&\\le\nC\\left(\nte+\\chi\\lambda^2U+t\\lambda^2\n\\right),\n\\end{aligned}"
+    },
+    {
+      "display": true,
+      "source": "\\sum_i\\|x_i\\|^2\n=\n1+(t-1)\\|\\omega_0\\|^2\n\\le t."
+    },
+    {
+      "display": false,
+      "source": "T_iP=0"
+    },
+    {
+      "display": true,
+      "source": "T_iQ_ix_i=T_ix_i-T_iA_{i,0}x_i."
+    },
+    {
+      "display": false,
+      "source": "\\|T_i\\|=O(\\lambda)"
+    },
+    {
+      "display": true,
+      "source": "S_Q:=\\sum_i\\|Q_ix_i\\|^2\n\\le\nC\\left(\n\\lambda^{-2}\\sum_i\\|T_ix_i\\|^2+S_A\n\\right)."
+    },
+    {
+      "display": false,
+      "source": "T_i"
+    },
+    {
+      "display": true,
+      "source": "\\sum_i\\|T_ix_i\\|^2\\le e."
+    },
+    {
+      "display": true,
+      "source": "S_Q\\le C(e/\\lambda^2+S_A)."
+    },
+    {
+      "display": true,
+      "source": "N=\\|(I-P)x\\|^2."
+    },
+    {
+      "display": true,
+      "source": "N\\le U+t\\|(I-P)\\omega_0\\|^2=S_A+S_Q."
+    },
+    {
+      "display": false,
+      "source": "U\\le N"
+    },
+    {
+      "display": true,
+      "source": "N\n\\le\nC\\left[\n(t+\\lambda^{-2})e+t\\lambda^2\n\\right]\n+C\\chi\\lambda^2N."
+    },
+    {
+      "display": false,
+      "source": "\\chi=O(t^2)"
+    },
+    {
+      "display": false,
+      "source": "\\lambda\\le c/t"
+    },
+    {
+      "display": false,
+      "source": "1/2"
+    },
+    {
+      "display": true,
+      "source": "\\boxed{\nN\\le\nC\\left[\nt\\lambda^2+(t+\\lambda^{-2})e\n\\right].\n}"
+    },
+    {
+      "display": false,
+      "source": "\\ker\\Delta_X"
+    },
+    {
+      "display": true,
+      "source": "\\operatorname{ran}\\Pi_i\\subseteq B_d(Y_i)."
+    },
+    {
+      "display": true,
+      "source": "\\Delta_i^\\uparrow\n\\succeq\nc\\lambda^\\kappa P_{B_d(Y_i)}\n\\succeq\nc\\lambda^\\kappa\\Pi_i."
+    },
+    {
+      "display": false,
+      "source": "(d+1)"
+    },
+    {
+      "display": false,
+      "source": "d"
+    },
+    {
+      "display": true,
+      "source": "\\Delta_X^\\uparrow\n=\n\\sum_i\\iota_i\\Delta_i^\\uparrow\\iota_i^*\n\\succeq\nc\\lambda^\\kappa H^{\\mathrm{emb}}."
+    },
+    {
+      "display": true,
+      "source": "\\langle x,(P-P_K)x\\rangle\n\\le\n\\frac{\\langle x,H^{\\mathrm{emb}}x\\rangle}{g}\n\\le\n\\frac{e}{cg\\lambda^\\kappa}."
+    },
+    {
+      "display": false,
+      "source": "P_K\\le P"
+    },
+    {
+      "display": true,
+      "source": "\\|(I-P_K)x\\|^2\n=\nN+\\langle x,(P-P_K)x\\rangle."
+    },
+    {
+      "display": true,
+      "source": "\\|(I-P_K)x\\|^2\n\\le\nC\\left[\nt\\lambda^2+(t+\\lambda^{-2})e+\n\\frac{e}{g\\lambda^\\kappa}\n\\right]."
+    },
+    {
+      "display": false,
+      "source": "\\lambda\\le c/t"
+    },
+    {
+      "display": false,
+      "source": "\\kappa\\ge2"
+    },
+    {
+      "display": false,
+      "source": "g\\le1"
+    },
+    {
+      "display": true,
+      "source": "t+\\lambda^{-2}\n\\le C\\lambda^{-\\kappa}\n\\le \\frac{C}{g\\lambda^\\kappa}."
+    },
+    {
+      "display": true,
+      "source": "\\boxed{\n\\|(I-P_K)x\\|^2\n\\le\nC\\left[\nt\\lambda^2+\n\\frac{e}{g\\lambda^\\kappa}\n\\right].\n}"
+    },
+    {
+      "display": true,
+      "source": "\\lambda\\le c\\min\\{t^{-1},\\eta t^{-1/2}\\},\n\\qquad\nE\\le c'\\eta^2g\\lambda^\\kappa,\n\\qquad\n0<\\eta<1."
+    },
+    {
+      "display": true,
+      "source": "\\mathcal L_{<E}\n=\n\\operatorname{ran}\\mathbf1_{[0,E)}(\\Delta_X)"
+    },
+    {
+      "display": false,
+      "source": "\\ker H"
+    },
+    {
+      "display": true,
+      "source": "\\dim\\mathcal L_{<E}\\le\\dim\\ker H."
+    },
+    {
+      "display": true,
+      "source": "B_d(X)\\cap V\n=\n\\sum_i\\operatorname{ran}\\Pi_i."
+    },
+    {
+      "display": true,
+      "source": "V\\Big/\\sum_i\\operatorname{ran}\\Pi_i\n\\hookrightarrow H_d(X)"
+    },
+    {
+      "display": false,
+      "source": "\\dim\\ker H"
+    },
+    {
+      "display": true,
+      "source": "\\boxed{\n\\dim\\ker\\Delta_X=\\dim\\ker H,\n\\qquad\n\\operatorname{spec}(\\Delta_X)\\cap(0,E)=\\varnothing.\n}"
+    },
+    {
+      "display": true,
+      "source": "\\boxed{\n\\|P_{\\ker\\Delta_X}-P_K\\|\\le\\eta.\n}"
+    },
+    {
+      "display": false,
+      "source": "\\ker H=0"
+    },
+    {
+      "display": false,
+      "source": "\\mathcal L_{<E}=0"
+    },
+    {
+      "display": false,
+      "source": "E"
+    },
+    {
+      "display": false,
+      "source": "A\\subseteq B"
+    },
+    {
+      "display": true,
+      "source": "H_d(X_A)\\cong V/W_A,\n\\qquad\nW_A=\\sum_{i\\in A}\\operatorname{ran}\\Pi_i,"
+    },
+    {
+      "display": true,
+      "source": "V/W_A\\twoheadrightarrow V/W_B,"
+    },
+    {
+      "display": true,
+      "source": "\\boxed{\n\\operatorname{rank}[H_d(X_A)\\to H_d(X_B)]\n=\n\\dim\\ker H_B.\n}"
+    },
+    {
+      "display": false,
+      "source": "\\ker H_B=0"
+    },
+    {
+      "display": false,
+      "source": "D>0"
+    },
+    {
+      "display": true,
+      "source": "\\frac{\\dim\\ker H_B}{D}."
+    },
+    {
+      "display": false,
+      "source": "m\\le6"
+    },
+    {
+      "display": true,
+      "source": "\\kappa=26."
+    },
+    {
+      "display": true,
+      "source": "\\lambda=\\Theta(\\eta/t)"
+    },
+    {
+      "display": true,
+      "source": "\\boxed{\nE=\\Omega\\!\\left(\\frac{\\eta^{28}g}{t^{26}}\\right).\n}"
+    },
+    {
+      "display": false,
+      "source": "F=\\lambda^{-2}"
+    },
+    {
+      "display": true,
+      "source": "\\min\\{FE,1\\},\n\\qquad\n\\boxed{\nFE=\\Omega\\!\\left(\\frac{\\eta^{26}g}{t^{24}}\\right).\n}"
+    },
+    {
+      "display": true,
+      "source": "\\chi\\lambda^2\\le c_0,"
+    },
+    {
+      "display": false,
+      "source": "\\lambda\\le c/t"
+    },
+    {
+      "display": false,
+      "source": "\\chi=o(t^2)"
+    },
+    {
+      "display": false,
+      "source": "t\\lambda^2=O(\\eta^2)"
+    }
+  ],
+  "messageId": "3081b39c-e6b9-4aa0-8429-3298425bfb6e",
+  "sourceMarkers": [
+    "PRO_BOUNDED_PROOF_PACKET_2026-0…",
+    "PRO_BOUNDED_PROOF_PACKET_2026-0…",
+    "PRO_BOUNDED_PROOF_PACKET_2026-0…",
+    "PRO_BOUNDED_PROOF_PACKET_2026-0…"
+  ],
+  "visibleText": "Verdict\n\nThe implication is valid under the hypotheses stated in the bounded packet. I find no counterexample satisfying all of them.\n\nTwo justifications were compressed rather than false:\n\nthe nonzero-singular-value inequality under invertible diagonal scaling remains valid for rank-deficient boundaries, but it needs a distance-to-kernel proof;\n\nthe padding argument must be stated over all join bidegrees. Once that is done, the unique outside-harmonic bidegree is indeed the only one contributing to the zero-weight kernel.\n\nNo estimate involving the unknown geometric harmonic projector is used before the min–max step. The logical operator H and geometric Laplacian Δ\nX\n\t​\n\n remain distinct throughout. The theorem is conditional on the finite local certificate; this audit says nothing about complete palette closure, novelty, or paper readiness. The governing statement and hypotheses are those in the attached note. \n\nPRO_BOUNDED_PROOF_PACKET_2026-0…\n\nConditional concentration theorem\n\nLet t≥1, 0<g≤1, and let P project onto the embedded logical register cycle space V. Let\n\nH=\ni=1\n∑\nt\n\t​\n\nΠ\ni\n\t​\n\nandH⪰g(P−P\nK\n\t​\n\n),\n\nwhere P\nK\n\t​\n\n projects onto kerH⊆V.\n\nAssume the fixed finite gadget palette satisfies:\n\nexact filling\n\nB\nd\n\t​\n\n(Y\ni\n\t​\n\n)∩V=ranΠ\ni\n\t​\n\n;\n\nindependent gadget interiors and no register (d+1)-simplices;\n\nafter padding, the zero-weight differential pair satisfies\n\nkerD\ni,0\n\t​\n\n=V⊕Q\ni\n\t​\n\n\northogonally, with a palette-uniform positive gap on its complement;\n\na projected private pair\n\nT\ni\n\t​\n\n(λ)=λT\ni,1\n\t​\n\n,T\ni,1\n\t​\n\nP=0,∥T\ni,1\n\t​\n\nQ\ni\n\t​\n\nz∥≥b∥Q\ni\n\t​\n\nz∥;\n\nretained T\ni\n\t​\n\n-outputs are private to gadget i;\n\nthe interface maps satisfy\n\nL\ni\n\t​\n\nL\ni\n∗\n\t​\n\n⪯N\n∗\n\t​\n\nλ\n2\nI;\n\nall outside-register nonharmonic modes have a uniform positive gap.\n\nThen there are palette-dependent constants c,C>0 such that, for\n\n0<λ≤\nt\nc\n\t​\n\n,\n\nevery unit degree-d chain x satisfies\n\n∥(I−P\nK\n\t​\n\n)x∥\n2\n≤C[tλ\n2\n+\ngλ\nκ\n⟨x,Δ\nX\n\t​\n\nx⟩\n\t​\n\n].\n\t​\n\n\nFor maximum active locality m,\n\nκ=4m+2.\n\nAll constants depend only on the finite certified palette, including its zero-weight gaps, private-pair lower bounds, matrix norms, interface constant, and outside spectral gap—not on t, the outside-register dimension, the logical dimension, g, or λ.\n\n1. Rank-deficient singular-value scaling\n\nLet A be any nonzero matrix, possibly rank deficient, and let L,R be invertible. Then\n\nσ\nmin\n+\n\t​\n\n(LAR)≥σ\nmin\n\t​\n\n(L)σ\nmin\n+\n\t​\n\n(A)σ\nmin\n\t​\n\n(R).\n\t​\n\n\nIndeed, let K=kerA. For a unit vector\n\nx⊥ker(LAR)=R\n−1\nK,\n\nwe have\n\ndist(Rx,K)\n\t​\n\n=\nz∈R\n−1\nK\ninf\n\t​\n\n∥R(x−z)∥\n≥σ\nmin\n\t​\n\n(R)dist(x,R\n−1\nK)\n=σ\nmin\n\t​\n\n(R).\n\t​\n\n\nSince A annihilates K,\n\n∥ARx∥≥σ\nmin\n+\n\t​\n\n(A)dist(Rx,K),\n\nand left multiplication by L gives the result. Thus rank deficiency causes no failure. Zero-rank blocks are simply omitted.\n\nFor a degree-k weighted boundary,\n\n∂\nw,k\n\t​\n\n=W\nk−1\n−1\n\t​\n\n∂\n1,k\n\t​\n\nW\nk\n\t​\n\n.\n\nWith vertex weights in {1,λ} and 0<λ≤1,\n\nσ\nmin\n\t​\n\n(W\nk−1\n−1\n\t​\n\n)≥1,σ\nmin\n\t​\n\n(W\nk\n\t​\n\n)≥λ\nk+1\n,\n\nhence\n\nσ\nmin\n+\n\t​\n\n(∂\nw,k\n\t​\n\n)≥λ\nk+1\nσ\nmin\n+\n\t​\n\n(∂\n1,k\n\t​\n\n).\n\nIn degree d\na\n\t​\n\n, Hodge decomposition gives\n\nγ\n+\n\t​\n\n(Δ\nd\na\n\t​\n\n\t​\n\n)≥min{σ\nmin\n+\n\t​\n\n(∂\nd\na\n\t​\n\n\t​\n\n)\n2\n,σ\nmin\n+\n\t​\n\n(∂\nd\na\n\t​\n\n+1\n\t​\n\n)\n2\n}≥c\na\n\t​\n\nλ\n2d\na\n\t​\n\n+4\n.\n\nThe second exponent is the worse one for 0<λ≤1. If d\na\n\t​\n\n=2m\na\n\t​\n\n−1, this is\n\n2d\na\n\t​\n\n+4=4m\na\n\t​\n\n+2.\n\nFor m\na\n\t​\n\n≤m, a finite-palette minimum yields\n\nγ\n+\n\t​\n\n(Δ\nd\na\n\t​\n\n\t​\n\n)≥cλ\n4m+2\n.\n\t​\n\n\nThis is only a sufficient floor, not an optimal valuation.\n\n2. Padding over every bidegree\n\nUsing reduced chains, the target-degree chain space of the join decomposes as\n\nC\nd\n\t​\n\n(Y\na\n\t​\n\n∗R\nout\n\t​\n\n)=\nr+s=d−1\n⨁\n\t​\n\nC\nr\n\t​\n\n(Y\na\n\t​\n\n)⊗C\ns\n\t​\n\n(R\nout\n\t​\n\n),\n\nand on each bidegree\n\nΔ\njoin\n\t​\n\n=Δ\nY\na\n\t​\n\n,r\n\t​\n\n⊗I+I⊗Δ\nout,s\n\t​\n\n.\n\nBoth summands are positive semidefinite, so the kernel on that bidegree is\n\nkerΔ\nY\na\n\t​\n\n,r\n\t​\n\n⊗kerΔ\nout,s\n\t​\n\n.\n\nBy hypothesis, the outside complex has reduced harmonics only in degree q. At global degree\n\nd=d\na\n\t​\n\n+q+1,\n\nthe condition s=q forces r=d\na\n\t​\n\n. Thus the only outside-harmonic bidegree is\n\n(d\na\n\t​\n\n,q).\n\nEvery other actual bidegree—including those with local simplices above d\na\n\t​\n\n—has a uniform positive outside contribution. Hence the padded zero-weight kernel is exactly\n\nV⊕(Q\na\n\t​\n\n⊗H\nout\n\t​\n\n),\n\nand the positive gap outside it is uniform. At positive λ, the padded whole gap is at least\n\nmin{cλ\nκ\n,δ\nout\n\t​\n\n}≥c\n′\nλ\nκ\n.\n\nPadding T\na\n\t​\n\n with the outside harmonic projector removes all outside boundary and coboundary terms, so its injectivity and O(λ) norm bounds persist.\n\n3. Shared-register interface estimate\n\nWrite\n\nx=ω\n0\n\t​\n\n+\ni=1\n∑\nt\n\t​\n\nω\ni\n\t​\n\n,x\ni\n\t​\n\n=ω\n0\n\t​\n\n+ω\ni\n\t​\n\n,\n\nand define\n\ne=∥D\nX\n\t​\n\nx∥\n2\n,U=\ni\n∑\n\t​\n\n∥ω\ni\n\t​\n\n∥\n2\n.\n\nLet\n\na=∂\nR\n\t​\n\nω\n0\n\t​\n\n,y\ni\n\t​\n\n=L\ni\n\t​\n\nω\ni\n\t​\n\n,y=\ni\n∑\n\t​\n\ny\ni\n\t​\n\n,r=a+y.\n\nThe single-gadget register boundary is\n\na+y\ni\n\t​\n\n=r−(y−y\ni\n\t​\n\n).\n\nMoreover,\n\ni\n∑\n\t​\n\n∥y−y\ni\n\t​\n\n∥\n2\n=(t−2)∥y∥\n2\n+\ni\n∑\n\t​\n\n∥y\ni\n\t​\n\n∥\n2\n.\n\nLet\n\nρ=λ\n−2\n∥[L\n1\n\t​\n\n ⋯ L\nt\n\t​\n\n]∥\n2\n.\n\nBecause the input blocks are orthogonal,\n\n[L\n1\n\t​\n\n ⋯ L\nt\n\t​\n\n][L\n1\n\t​\n\n ⋯ L\nt\n\t​\n\n]\n∗\n=\ni\n∑\n\t​\n\nL\ni\n\t​\n\nL\ni\n∗\n\t​\n\n⪯N\n∗\n\t​\n\ntλ\n2\nI,\n\nso ρ≤N\n∗\n\t​\n\nt. Also,\n\n∥y∥\n2\n≤ρλ\n2\nU,\ni\n∑\n\t​\n\n∥y\ni\n\t​\n\n∥\n2\n≤N\n∗\n\t​\n\nλ\n2\nU.\n\nConsequently,\n\ni\n∑\n\t​\n\n∥y−y\ni\n\t​\n\n∥\n2\n≤χλ\n2\nU,χ=(t−2)\n+\n\t​\n\nρ+N\n∗\n\t​\n\n=O(t\n2\n).\n\nAll nonregister down-boundary outputs and all up outputs split by gadget. Therefore\n\ni\n∑\n\t​\n\n∥D\ni\n\t​\n\n(λ)x\ni\n\t​\n\n∥\n2\n≤2te+2χλ\n2\nU.\n\t​\n\n\nShared outputs of the L\ni\n\t​\n\n cause no error; output orthogonality was never used.\n\n4. Geometric leakage without geometric-kernel assumptions\n\nSet\n\nA\ni,0\n\t​\n\n=I−P−Q\ni\n\t​\n\n.\n\nThe zero-weight gap and\n\nD\ni\n\t​\n\n(λ)=D\ni,0\n\t​\n\n+λD\ni,1\n\t​\n\n\ngive\n\nS\nA\n\t​\n\n\t​\n\n:=\ni\n∑\n\t​\n\n∥A\ni,0\n\t​\n\nx\ni\n\t​\n\n∥\n2\n≤C\ni\n∑\n\t​\n\n∥D\ni,0\n\t​\n\nx\ni\n\t​\n\n∥\n2\n≤C(te+χλ\n2\nU+tλ\n2\n),\n\t​\n\n\nbecause\n\ni\n∑\n\t​\n\n∥x\ni\n\t​\n\n∥\n2\n=1+(t−1)∥ω\n0\n\t​\n\n∥\n2\n≤t.\n\nSince T\ni\n\t​\n\nP=0,\n\nT\ni\n\t​\n\nQ\ni\n\t​\n\nx\ni\n\t​\n\n=T\ni\n\t​\n\nx\ni\n\t​\n\n−T\ni\n\t​\n\nA\ni,0\n\t​\n\nx\ni\n\t​\n\n.\n\nPrivate-pair injectivity and ∥T\ni\n\t​\n\n∥=O(λ) imply\n\nS\nQ\n\t​\n\n:=\ni\n∑\n\t​\n\n∥Q\ni\n\t​\n\nx\ni\n\t​\n\n∥\n2\n≤C(λ\n−2\ni\n∑\n\t​\n\n∥T\ni\n\t​\n\nx\ni\n\t​\n\n∥\n2\n+S\nA\n\t​\n\n).\n\nThe retained T\ni\n\t​\n\n-outputs are gadget-private, so\n\ni\n∑\n\t​\n\n∥T\ni\n\t​\n\nx\ni\n\t​\n\n∥\n2\n≤e.\n\nHence\n\nS\nQ\n\t​\n\n≤C(e/λ\n2\n+S\nA\n\t​\n\n).\n\nNow let\n\nN=∥(I−P)x∥\n2\n.\n\nOrthogonality gives\n\nN≤U+t∥(I−P)ω\n0\n\t​\n\n∥\n2\n=S\nA\n\t​\n\n+S\nQ\n\t​\n\n.\n\nUsing U≤N,\n\nN≤C[(t+λ\n−2\n)e+tλ\n2\n]+Cχλ\n2\nN.\n\nSince χ=O(t\n2\n), choosing λ≤c/t makes the last coefficient at most 1/2. Absorption yields\n\nN≤C[tλ\n2\n+(t+λ\n−2\n)e].\n\t​\n\n\nNo comparison with kerΔ\nX\n\t​\n\n or its projector has occurred. This is exactly the leakage mechanism described in the packet. \n\nPRO_BOUNDED_PROOF_PACKET_2026-0…\n\n5. Logical coercivity\n\nExact filling gives\n\nranΠ\ni\n\t​\n\n⊆B\nd\n\t​\n\n(Y\ni\n\t​\n\n).\n\nOn the boundary subspace, the full local Laplacian equals its up part. Therefore the local whole positive gap implies\n\nΔ\ni\n↑\n\t​\n\n⪰cλ\nκ\nP\nB\nd\n\t​\n\n(Y\ni\n\t​\n\n)\n\t​\n\n⪰cλ\nκ\nΠ\ni\n\t​\n\n.\n\nThe global (d+1)-columns partition by gadget, so, even though their degree-d outputs may overlap,\n\nΔ\nX\n↑\n\t​\n\n=\ni\n∑\n\t​\n\nι\ni\n\t​\n\nΔ\ni\n↑\n\t​\n\nι\ni\n∗\n\t​\n\n⪰cλ\nκ\nH\nemb\n.\n\nThus\n\n⟨x,(P−P\nK\n\t​\n\n)x⟩≤\ng\n⟨x,H\nemb\nx⟩\n\t​\n\n≤\ncgλ\nκ\ne\n\t​\n\n.\n\nSince P\nK\n\t​\n\n≤P,\n\n∥(I−P\nK\n\t​\n\n)x∥\n2\n=N+⟨x,(P−P\nK\n\t​\n\n)x⟩.\n\nCombining with the leakage estimate,\n\n∥(I−P\nK\n\t​\n\n)x∥\n2\n≤C[tλ\n2\n+(t+λ\n−2\n)e+\ngλ\nκ\ne\n\t​\n\n].\n\nFor λ≤c/t, κ≥2, and g≤1,\n\nt+λ\n−2\n≤Cλ\n−κ\n≤\ngλ\nκ\nC\n\t​\n\n.\n\nTherefore\n\n∥(I−P\nK\n\t​\n\n)x∥\n2\n≤C[tλ\n2\n+\ngλ\nκ\ne\n\t​\n\n].\n\t​\n\nMultiplicity, gap, and persistence\n\nChoose\n\nλ≤cmin{t\n−1\n,ηt\n−1/2\n},E≤c\n′\nη\n2\ngλ\nκ\n,0<η<1.\n\nEvery unit vector in\n\nL\n<E\n\t​\n\n=ran1\n[0,E)\n\t​\n\n(Δ\nX\n\t​\n\n)\n\nhas nonzero projection onto kerH. Hence\n\ndimL\n<E\n\t​\n\n≤dimkerH.\n\nIndependent interiors and exact filling give\n\nB\nd\n\t​\n\n(X)∩V=\ni\n∑\n\t​\n\nranΠ\ni\n\t​\n\n.\n\nThus\n\nV/\ni\n∑\n\t​\n\nranΠ\ni\n\t​\n\n↪H\nd\n\t​\n\n(X)\n\nsupplies dimkerH exact zero modes. Consequently,\n\ndimkerΔ\nX\n\t​\n\n=dimkerH,spec(Δ\nX\n\t​\n\n)∩(0,E)=∅.\n\t​\n\n\nEqual dimensions plus concentration give\n\n∥P\nkerΔ\nX\n\t​\n\n\t​\n\n−P\nK\n\t​\n\n∥≤η.\n\t​\n\n\nIf kerH=0, then L\n<E\n\t​\n\n=0, so the entire geometric spectrum is at least E.\n\nFor nested term sets A⊆B,\n\nH\nd\n\t​\n\n(X\nA\n\t​\n\n)≅V/W\nA\n\t​\n\n,W\nA\n\t​\n\n=\ni∈A\n∑\n\t​\n\nranΠ\ni\n\t​\n\n,\n\nnaturally with respect to inclusion. The induced map is the surjection\n\nV/W\nA\n\t​\n\n↠V/W\nB\n\t​\n\n,\n\nso\n\nrank[H\nd\n\t​\n\n(X\nA\n\t​\n\n)→H\nd\n\t​\n\n(X\nB\n\t​\n\n)]=dimkerH\nB\n\t​\n\n.\n\t​\n\n\nThis remains valid when kerH\nB\n\t​\n\n=0; the persistent rank is then zero. If the initial kernel has known dimension D>0, true normalized persistence is\n\nD\ndimkerH\nB\n\t​\n\n\t​\n\n.\n\nThese deductions are exactly the standard dimension/naturality consequences following the all-chain bound. \n\nPRO_BOUNDED_PROOF_PACKET_2026-0…\n\nConservative scales\n\nWith m≤6,\n\nκ=26.\n\nTaking\n\nλ=Θ(η/t)\n\ngives\n\nE=Ω(\nt\n26\nη\n28\ng\n\t​\n\n).\n\t​\n\n\nUnder the separate common-copy theorem, F=λ\n−2\n, so the unweighted gap floor is\n\nmin{FE,1},\nFE=Ω(\nt\n24\nη\n26\ng\n\t​\n\n).\n\t​\n\n\nThese are lower-bound floors, not equalities or runtime estimates. \n\nPRO_BOUNDED_PROOF_PACKET_2026-0…\n\nA modest refinement is possible: the absorption really requires only\n\nχλ\n2\n≤c\n0\n\t​\n\n,\n\nnot the universal substitution λ≤c/t. Thus instances with certified interface congestion χ=o(t\n2\n) may use larger weights, subject also to the final error condition tλ\n2\n=O(η\n2\n). This does not alter the conservative worst-case theorem."
+}

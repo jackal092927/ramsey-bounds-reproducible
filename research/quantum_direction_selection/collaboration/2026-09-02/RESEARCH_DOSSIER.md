@@ -43,6 +43,10 @@ One [actual Rudolph representative](REPRESENTATIVE_GADGET_CERTIFICATE.md) now ha
 
 Later the same day, [explicit register relabelings](ACTIVE_HADAMARD_ORBIT.md) transported this certificate to all four unguarded active Hadamard three-term states; four integer filling equations were checked. A new offline verifier recomputes the archived graph certificate without gh/network access. The broad follow-up Pro attempt ended with “Thinking failed,” so it supplies no final mathematical verdict; [its visible activity and concrete reproduction errors](PRO_FAILED_ATTEMPT_2026-09-03.md) are preserved. The successor is narrowed to a completed audit of the conditional all-chain proof.
 
+The bounded successor is now [completed and fully collected](PRO_BOUNDED_PROOF_REVIEW_2026-09-03.md), with UI duration 8m 39s. The [independent disposition](PRO_BOUNDED_PROOF_DISPOSITION_2026-09-03.md) accepts the explicit conditional all-chain implication and expands its rank-deficient scaling justification. This is not source or full-palette certification.
+
+A new [selected-cycle guard construction](SELECTED_CYCLE_GUARD_CLOSURE.md) uses Z=(Y*S_beta) union (R*B): private vertices connect only to the selected guard petal. Relative chains prove the intended filling relation; the zero-weight private complex tensors with the selected cycle, giving Q'=Q tensor span(gamma_beta). A private-supported subspace suffices; it need not be a coordinate span. The general lemma awaits its own external review. On one guarded source atom, [46,998 exact boundary identities and a 1,528-term integer filling](SELECTED_CYCLE_GUARD_CHECKS.json) pass, including all-domain projected T0 cancellation and exact normalized bulk-pair transfer. A separate basis-cone certificate has target Betti 1 and zero-weight kernel dimension 2 with Q=0. The one-qubit difference and two-qubit two-term active atoms remain open under this finite criterion.
+
 ## 2. Core finite-palette transfer theorem (original conservative parameters)
 
 Work over \(\mathbb C\), or over \(\mathbb R\) for the real construction. Let \(R\) be a top-dimensional register complex with \(\dim R=d\ge1\), and let

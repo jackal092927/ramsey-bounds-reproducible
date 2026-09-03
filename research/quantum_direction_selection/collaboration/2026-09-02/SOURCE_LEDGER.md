@@ -17,8 +17,8 @@ The six-item ledger below was supplied by the user as checked locally. Existing 
 | --- | --- | --- |
 | Independent interior-chain decomposition | ../../round2/NORMALIZED_PERSISTENCE_PROBE.md, abstract proof | Local derivation under exact intersections |
 | Exact filling for each palette member | Old weight-gauge/nullity argument; new REPRESENTATIVE_GADGET_CERTIFICATE.md | One source graph has an explicit integer filling and certified quotient; full guarded family remains open |
-| All-chain concentration with term-count-uniform constants | FINITE_CERTIFICATE_CONCENTRATION.md and EXACT_FILLING_COERCIVITY.md | Two stronger local conditional proofs; independent review pending |
-| Central bulk and zero-weight local data | certify_representative_bulk.py and exact JSON certificate | One actual atom certified; other atoms/guard closure open |
+| All-chain concentration with term-count-uniform constants | FINITE_CERTIFICATE_CONCENTRATION.md and EXACT_FILLING_COERCIVITY.md | Finite-certificate implication accepted after bounded Pro review and independent local proof check; full palette remains open |
+| Central bulk and zero-weight local data | certify_representative_bulk.py, ACTIVE_HADAMARD_ORBIT.md and exact certificates | Four unguarded Hadamard atoms covered; elementary basis cone checked; new selected-cycle guard transfer locally derived and checked, external review pending |
 | Local whole-positive-gap floor | FINITE_CERTIFICATE_CONCENTRATION.md, diagonal scaling plus Hodge decomposition | Elementary conditional finite-family lower bound; optimal valuation and leading coefficient not needed |
 | Older lifted-cycle spectral-sector route | King–Kohler fixed-size package with explicit palette | Retained imported route; full spectral-sequence proof not independently reconstructed |
 | Rational projector palette and tensor guards | ../../round2/UNARY_PALETTE_ADDENDUM.md | Explicit local source matching and derivation; imported gadget facts remain |

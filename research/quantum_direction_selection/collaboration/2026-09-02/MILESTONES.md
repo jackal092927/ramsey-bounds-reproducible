@@ -46,13 +46,19 @@ Consolidation started September 2, 2026 PDT; new dispatch and follow-up setup co
 | M40 | Offline certificate mode | **PASS**, all six mathematical sections recomputed from archived graph with external-command calls disabled | Removes the concrete gh/network reproduction dependency; upstream provenance is a separate mode |
 | M41 | Source replay after checker refactor | **PASS**, original JSON remains byte-identical with SHA 916819fb8a9e371b322a1fab1161b1fc2686ad7fdaf9cf785f52fc2fcb0cae3a | Confirms the default pinned-source path remains reproducible |
 | M42 | All four active Hadamard three-term atoms | **LOCAL ISOMETRY PROOF + 4 EXACT FILLING CHECKS PASS**, ACTIVE_HADAMARD_ORBIT.md | One representative suffices under explicit X/Z register relabelings; other atom types and guarded products remain open |
-| M43 | Bounded theorem-only successor | **SENT AND RUNNING**, user message 4, observed 2026-09-03T14:34:28Z; 15805-byte packet, two complete files | Restricts Pro to a completed <=2500-word proof audit, with no browsing or code execution; full guard/priority tasks remain separate |
+| M43 | Bounded theorem-only successor | **COMPLETED AND COLLECTED**, user message 4; UI Worked for 8m 39s | Raw answer and all 138 equation sources archived; full guard/priority tasks remain separate |
 | M44 | Recovery and active-orbit source checkpoint | **PUSHED AND REMOTE-VERIFIED**, f4ec1b73ca99fa909b728e8165fb3e87fa9214b3 | Includes failed-run evidence, offline mode, four-atom certificate, and frozen bounded packet; GitHub packet bytes/SHA matched |
 | M45 | Continuation after the terminal failure | **ACTIVE**, existing hourly tda-pro-github updated | Current request identifies the bounded successor; historical failure and interim statements remain separate from completed proofs |
+| M46 | Bounded all-chain review collected | **COMPLETE RESPONSE ARCHIVED**, PRO_BOUNDED_PROOF_REVIEW_2026-09-03.md and raw capture JSON | Explicitly conditional approval; no source, full-palette or priority certification |
+| M47 | Independent proof disposition | **CONDITIONAL IMPLICATION ACCEPTED**, PRO_BOUNDED_PROOF_DISPOSITION_2026-09-03.md | Expanded rank-deficient scaling proof; all-bidegree repair was already present. Private-supported Q need not be a coordinate span |
+| M48 | Selected-cycle guard mechanism | **LOCAL STRUCTURAL DERIVATION; EXTERNAL REVIEW PENDING**, SELECTED_CYCLE_GUARD_CLOSURE.md | Explicit alternative graph Z=(Y*S_beta) union (R*B), with intended filling and Q'=Q tensor selected harmonic line |
+| M49 | Guard construction exact checks | **PASS**, 46998 relative/zero-weight boundary identities and 1528-term integer filling | Whole-domain T0 cancellation, eight logical cycles annihilated by T1, and normalized 176-dimensional bulk pair transported exactly. Raw central-coordinate weight-one obstruction retained |
+| M50 | Elementary basis cone | **EXACT CERTIFICATE PASS**, 8 vertices, 12 edges, 4 triangles | Boundary ranks 7 and 4, target Betti 1, zero-weight pair rank 10 and kernel dimension 2, Q=0; nontrivial difference/two-term atoms remain open |
+| M51 | Next bounded guard audit | **PREPARED**, two complete files in PRO_SELECTED_GUARD_PACKET_2026-09-03.md | One explicit guard lemma, <=2200 words, no browsing or execution; actual sending will have a separate receipt |
 
 ## Current unresolved research gates
 
-1. Independently review the two stronger concentration proofs; prove guarded-palette closure under the finite zero-weight criterion or certify every remaining required active graph.
+1. Independently review the new selected-cycle guard construction, then certify the remaining one-qubit difference and two-qubit two-term active atoms. The finite-certificate concentration implication has passed bounded review and local rechecking; the older spectral-sector route remains separately archived.
 2. Determine whether the global whole-kernel theorem and its filtered normalized consequence are new, already implicit, or already explicit.
 3. Establish the strongest meaningful consequence for the exact restricted circuit source without unrestricted SDQC1 equivalence or approximate compilation.
 4. Evaluate whether the persistent-Laplacian theorem supplies sufficient additional substance; its elementary domination proof alone does not establish impact.
