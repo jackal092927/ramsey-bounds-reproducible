@@ -20,11 +20,13 @@
 - [guard 审查发送回执](PRO_SELECTED_GUARD_DISPATCH_RECEIPT_2026-09-03.md)：第五条请求已在原 Pro 5/5 会话运行，固定 source commit **9f2e088** 与 13966 字节附件。
 - [guard 完整答复](PRO_SELECTED_GUARD_REVIEW_2026-09-03.md)与[独立处理意见](PRO_SELECTED_GUARD_DISPOSITION_2026-09-03.md)：条件性闭包已采纳，124 个公式及三项表述修正完整归档。
 - [剩余活跃态精确证书](REMAINING_ACTIVE_ATOM_CERTIFICATES.md)：单比特差态和两类双比特两项态均通过源码固定的整数证书与离线重算；显式固定 palette 的本地证书链已闭合。
-- [最小受限 reduction 定理](CLEAN_RESTRICTED_REDUCTION_THEOREM.md)：将精确实门电路 promise 转成真实归一化 persistence；标准复杂性来源与新颖性仍是开放关卡。
+- [最小受限 reduction 定理](CLEAN_RESTRICTED_REDUCTION_THEOREM.md)：将 separated 精确实门电路 promise 转成真实归一化 persistence；显式 promise corollary 已成立，标准类等价与新颖性仍是开放关卡。
 - [受限定理整合审查回执](PRO_RESTRICTED_THEOREM_DISPATCH_RECEIPT_2026-09-03.md)：第六条有界请求已在原 Pro 5/5 会话运行，固定 source commit **23f83cf**。
 - [受限定理完整审查](PRO_RESTRICTED_THEOREM_REVIEW_2026-09-03.md)与[独立处理意见](PRO_RESTRICTED_THEOREM_DISPOSITION_2026-09-03.md)：端到端整合在修正 source interface 后通过；137 个公式完整归档。
 - [源复杂度关卡](SOURCE_COMPLEXITY_GATE.md)：标准常数给出 \(1/6\) 的 fixed-space fraction gap；任意 trace gap 与 exact-rank gap 不等价，restricted real-gate source 与 unrestricted SDQC1 必须分开。
 - [源复杂度 Pro 请求与发送回执](PRO_SOURCE_COMPLEXITY_DISPATCH_RECEIPT_2026-09-03.md)：第七条有界请求已在同一 Pro 5/5 会话运行；固定 source commit **b78da7a** 与 28196 字节附件。
+- [源复杂度完整审查](PRO_SOURCE_COMPLEXITY_REVIEW_2026-09-03.md)与[独立处理意见](PRO_SOURCE_COMPLEXITY_DISPOSITION_2026-09-03.md)：第七条答复已完成并收集，113 个公式完整归档；接受 separated exact-real-gate promise corollary，停止 unrestricted SDQC1 硬度表述。
+- [八标签 BQP1 source lemma](NORMALIZED_BQP1_SOURCE_GATE.md)：在第七条答复之后得到的本地构造，把 exact \(G_2\) 的 perfect-completeness verifier 变为 perfect fraction \(3/4\) 对 \(1/8\)；代数与 Rudolph 原始定义已核查，下一轮只审 interface 与 hardness composition。
 - [四个 Hadamard 活跃态的精确重标号证明](ACTIVE_HADAMARD_ORBIT.md)：同一个证书覆盖四个无 guard 三项约束，四条整数填充式全部核验。
 - [离线复现结果](OFFLINE_REPRESENTATIVE_CHECKS.json)：无需 gh 或网络重算归档图的全部证书条件。
 - [上一轮 TDA Pro 完整答复](PRO_PREVIOUS_TDA_RESPONSE.md)：已收集的模型建议，未经采纳不算已证明。
@@ -37,6 +39,6 @@
 - [此前 hyperbolic 备选讨论](PRO_PREVIOUS_HYPERBOLIC_RESPONSE.md)：保留完整建议及停止理由。
 - [项目级补充档案](../../../pro_collaboration_2026-09-02/README.md)：47 份来源快照、四份历史 Pro 回复、39 个 persistent-domain 检查及 Ramsey 成果总览；补充任务书未发送，当前请求仍以本目录的固定附件为准。
 
-目前最实质的候选是由有限零权重证书推出任意低能几何链的全局 concentration，得到对逻辑 gap 的线性依赖；后面的维数与商空间推理属于标准推论。固定实门 palette 及端到端受限 transfer theorem 已通过分阶段证书和有界审查。当前首要关卡转为 exact source complexity：标准常数的 separated promise 有效，但 unrestricted SDQC1 与优先权仍未建立。备选方向包括 persistent Laplacian 低谱的共同复制转换、量子几何采样及自然的 evaluated-Hom-width 受限类。
+目前最实质的候选是由有限零权重证书推出任意低能几何链的全局 concentration，得到对逻辑 gap 的线性依赖；后面的维数与商空间推理属于标准推论。固定实门 palette 及端到端受限 transfer theorem 已通过分阶段证书和有界审查。任意 threshold 的 unrestricted SDQC1 推论已经否定；随后出现的八标签构造可能把有效 source 升级为 gate-dependent \(\mathsf{BQP}_1^{G_2}\)-hardness。当前先完成这一窄 interface 审查，再进入全链、退化逻辑核、whole-kernel gap 与自然 filtered-rank 组合的严格新颖性核查。
 
-研究快照 a46f408 的 Pro 请求已完成并完整收集，界面记录处理用时 155 分 30 秒。后续快照 **789f87f** 的请求以“Thinking failed”终止，没有最终答复。快照 **f4ec1b7** 的全链审查、**9f2e088** 的 guard 审查及 **23f83cf** 的受限定理整合审查均已完成、收集并独立处理。source commit **b78da7a** 的第七条请求正在审查 separated real-gate source 能支持的精确复杂度表述。每小时回收仍有效。本目录不是投稿或 unrestricted 标准复杂性硬度认证。
+研究快照 a46f408 的 Pro 请求已完成并完整收集，界面记录处理用时 155 分 30 秒。后续快照 **789f87f** 的请求以“Thinking failed”终止，没有最终答复。快照 **f4ec1b7** 的全链审查、**9f2e088** 的 guard 审查、**23f83cf** 的受限定理整合审查及 source commit **b78da7a** 的源复杂度审查均已完成、收集并独立处理。第七条答复明确给出一般同 fraction 反例；该 hard stop 针对 arbitrary-threshold SDQC1，不排除随后构造的 perfect-completeness BQP1 source。每小时回收将跟踪这一新有界关卡。本目录不是投稿或 unrestricted 标准复杂性硬度认证。

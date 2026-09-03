@@ -1,6 +1,6 @@
 # Clean restricted reduction theorem for true normalized persistence
 
-September 3, 2026. **LOCAL END-TO-END SYNTHESIS; FINITE PALETTE CERTIFICATES PASS; SOURCE-PROMISE HARDNESS AND NOVELTY OPEN.** This is the strongest clean theorem currently supported by the local proofs and exact certificates. It is a promise-preserving transformation, not an unrestricted SDQC1 or BQP hardness theorem.
+September 3, 2026. **LOCAL END-TO-END SYNTHESIS; FINITE PALETTE CERTIFICATES PASS; SEPARATED EXACT-SOURCE COROLLARY ESTABLISHED; UNRESTRICTED CLASS HARDNESS AND NOVELTY OPEN.** This is the strongest clean theorem currently supported by the local proofs and exact certificates. It is a promise-preserving transformation, not an unrestricted \(\mathsf{SDQC}_1\) or BQP hardness theorem.
 
 ## 1. Explicit source problem
 
@@ -29,6 +29,10 @@ If a decision promise is desired, set \(p=\operatorname{Tr}(M)/D\) and promise
 p\ge\frac23\quad\text{or}\quad p\le\frac13.
 \tag{2}
 \]
+Together with (1), this is the standard-constant instance of the explicit source promise
+\(\operatorname{SepPerfectFraction}^{\mathcal G_R}(a,b,r)\), where
+\(\mathcal G_R=\{X,\mathrm{CX},\mathrm{CCX},H\}\) before applying the mixed-spectator extension. The name denotes this circuit promise; it is not asserted to be a standard complexity class.
+
 An arbitrary entangled input-code isometry or arbitrary global acceptance projector is outside the certified finite palette. No standard complexity classification of this restricted exact source problem is assumed.
 
 ## 2. Output
@@ -187,7 +191,7 @@ V/W_A\twoheadrightarrow V/W_B.
 \]
 Take A to be the initial history terms and B to add final rejection. Equations (8), (15), and (16) prove (3)-(5).
 
-## 6. Exact single-H extension and fraction promise
+## 6. Exact single-H extension and separated-fraction corollary
 
 For a circuit over \(\{X,\mathrm{CX},\mathrm{CCX},H\}\), add one mixed unmeasured qubit a and replace every H by \(H\otimes H_a\). If h is the number of Hadamards,
 \[
@@ -211,15 +215,47 @@ one has exactly
 f\le p\le r+(1-r)f.
 \tag{18}
 \]
-Under (1)-(2), YES instances satisfy \(f\ge1/2\) and NO instances satisfy \(f\le1/3\). Estimating (5) to additive error strictly below \(1/12\), for example \(1/24\), distinguishes these promises. This is a consequence for the explicit circuit promise. It does not, by itself, prove that this promise is BQP-hard, SDQC1-hard, or outside BPP.
+For general trace thresholds \(1\ge a>b\ge0\) with the same off-perfect bound \(r\le1/3\), define
+\[
+\ell=\max\!\left\{0,\frac{a-r}{1-r}\right\},
+\qquad
+\delta_f=\ell-b.
+\tag{19}
+\]
+Equation (18) gives
+\[
+f_{\rm YES}\ge\ell,
+\qquad
+f_{\rm NO}\le b.
+\tag{20}
+\]
+Thus, whenever \(\delta_f\ge1/\operatorname{poly}(n)>0\), the construction is a polynomial many-one reduction from
+\(\operatorname{SepPerfectFraction}^{\mathcal G_R}(a,b,r)\) to additive approximation of (5) with error
+\[
+\varepsilon<\frac{\delta_f}{2}.
+\tag{21}
+\]
+This is the minimal clean complexity corollary: the source is stated directly as an exact real-gate circuit promise with the standard mixed/clean interface, rather than identified with an unrestricted named class.
+
+The condition \(\delta_f>0\) is also necessary for any promise-level reduction whose target statistic sees only the unchanged fraction \(f\). If the YES and NO intervals overlap at a rational \(q\), the admissible operators
+\[
+M_N=I_{qD}\oplus0,
+\qquad
+M_Y=I_{qD}\oplus\frac{a-q}{1-q}I
+\]
+have the same perfect-space fraction and can satisfy opposite trace promises. Exact amplification that preserves the perfect subspace, even up to a fixed ancillary tensor factor, cannot remove this obstruction.
+
+Under (1)-(2), YES instances satisfy \(f\ge1/2\) and NO instances satisfy \(f\le1/3\), so \(\delta_f=1/6\). Estimating (5) to additive error strictly below \(1/12\), for example \(1/24\), distinguishes these promises. This consequence does not prove BQP, DQC1, or unrestricted \(\mathsf{SDQC}_1\) hardness. Defining a restricted gate-dependent class around this promise is formally possible but adds no standard-class equivalence.
+
+A separate [eight-label source lemma](NORMALIZED_BQP1_SOURCE_GATE.md), derived after the source-complexity review, locally reduces exact \(\mathsf{BQP}_1^{G_2}\) verification to this standard-constant promise while forcing perfect fractions \(3/4\) and \(1/8\). If its pending bounded interface review confirms the construction, (3)-(7) give weighted true-normalized-persistence hardness for that recognized gate-dependent class. This possible upgrade does not affect the rejection of arbitrary-threshold \(\mathsf{SDQC}_1\).
 
 ## 7. Remaining claims gate
 
-The mathematical package now has a complete fixed local palette and a clean conditional transfer theorem. The next nonlocal obligations are:
+The mathematical package now has a complete fixed local palette, a clean conditional transfer theorem, and an exact separated-source corollary. The next nonlocal obligations are:
 
 1. audit every dependency in this synthesis against its owning proof/certificate;
-2. identify a natural standard or independently meaningful exact source problem;
-3. establish novelty of the degenerate-kernel whole-gap plus normalized filtered-rank package;
+2. establish novelty of the degenerate-kernel whole-gap plus normalized filtered-rank package;
+3. complete the bounded review of the eight-label \(\mathsf{BQP}_1^{G_2}\) source and retain its exact gate-dependent scope;
 4. decide whether the poor gap exponent is acceptable for a theory result despite its lack of practical value.
 
-Until the source-promise and priority gates pass, the defensible claim is the explicit transformation (3)-(7), not a standard-class hardness theorem or paper-readiness verdict.
+The defensible claim is the explicit transformation (3)-(7) and the separated-promise corollary (19)-(21). Unrestricted standard-class hardness and paper readiness remain withheld.

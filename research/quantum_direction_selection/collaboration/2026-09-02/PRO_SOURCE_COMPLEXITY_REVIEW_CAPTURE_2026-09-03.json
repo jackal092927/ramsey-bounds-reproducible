@@ -1,0 +1,480 @@
+{
+  "captured_at": "2026-09-03T19:27:37.090Z",
+  "formatting_recaptured_at": "2026-09-03T19:27:37.090Z",
+  "conversation_url": "https://chatgpt.com/c/6a98c05a-ecf4-83e8-b356-4e20dc3fde3f",
+  "user_message_number": 7,
+  "source_commit": "b78da7ab9472f6d2c0858634b56f3c1210a3e931",
+  "visible_duration": "Worked for 8m 41s",
+  "visible_account": {
+    "name": "Jackal Xin",
+    "plan": "Pro",
+    "matched_registered_personal_identity": true,
+    "email_omitted_from_public_archive": true,
+    "verification_note": "Identity was verified earlier in the same browser session and the collection remained in that authenticated conversation."
+  },
+  "message_id": "b5689354-9df8-49c3-9616-d4100d8db361",
+  "model_slug": "gpt-5-6-pro",
+  "links": [],
+  "markdown": "# Verdict\n\n**Arbitrary-threshold \\(\\mathsf{SDQC}_1\\) does not reduce, from the supplied definitions alone, to the exact perfect-space fraction**\n\\[\nf=\\frac{\\dim\\ker(I-M)}{D}.\n\\]\n\nThe obstruction occurs **before** gate compilation or TDA geometry: an arbitrary inverse-polynomial gap in the normalized trace\n\\[\np=\\frac{\\operatorname{Tr}M}{D}\n\\]\nneed not imply any gap in \\(f\\). Exact perfect-subspace-preserving Marriott–Watrous amplification does not repair this; it preserves \\(f\\) and drives the amplified trace toward that same \\(f\\), potentially erasing a distinction carried entirely by imperfectly accepting states.\n\nThe strongest surviving consequence is:\n\n> a polynomial reduction from an explicitly defined, exact-real-gate, perfect-eigenspace-separated circuit promise whose thresholds satisfy a positive perfect-fraction separation condition.\n\nIn particular, the standard constants\n\\[\n(a,b,r)=\\left(\\frac23,\\frac13,\\frac13\\right)\n\\]\nare valid and yield\n\\[\nf_{\\mathrm{YES}}\\ge\\frac12,\\qquad\nf_{\\mathrm{NO}}\\le\\frac13.\n\\]\n\nI did not independently reopen Lowe–Kim–Bondesan–Hayakawa for this bounded task. The source statements used below are the targeted reading recorded in the packet: Definition 2 allows arbitrary inverse-polynomial trace thresholds, equation (9) concerns amplification toward the perfect-space fraction, and the exact gate set is explicitly material. 〔PRO_SOURCE_COMPLEXITY_PACKET_20…〕\n\n---\n\n# 1. Exact characterization of the possible fractions\n\nLet\n\n\\[\n0\\preceq M\\preceq I,\\qquad\nS=\\ker(I-M),\n\\]\n\nand assume\n\n\\[\nM|_{S^\\perp}\\preceq rI,\\qquad 0\\le r<1.\n\\]\n\nSet\n\n\\[\nf=\\frac{\\dim S}{D},\n\\qquad\np=\\frac{\\operatorname{Tr}M}{D}.\n\\]\n\nThe eigenvalues on \\(S\\) are exactly \\(1\\); those on \\(S^\\perp\\) lie in \\([0,r]\\). Therefore\n\n\\[\n\\boxed{\nf\\le p\\le f+r(1-f)=r+(1-r)f.\n}\n\\]\n\nThus:\n\n\\[\np\\ge a\n\\quad\\Longrightarrow\\quad\nf\\ge\n\\ell:=\n\\max\\left\\{0,\\frac{a-r}{1-r}\\right\\},\n\\]\n\nwhile\n\n\\[\np\\le b\n\\quad\\Longrightarrow\\quad\nf\\le p\\le b.\n\\]\n\nHence the guaranteed fraction separation is\n\n\\[\n\\boxed{\n\\delta_f=\\ell-b\n=\n\\max\\left\\{0,\\frac{a-r}{1-r}\\right\\}-b.\n}\n\\]\n\nThese are the intervals recorded in the packet. 〔PRO_SOURCE_COMPLEXITY_PACKET_20…〕\n\n## Necessity, not merely sufficiency\n\nUnder only these operator promises, the possible fraction sets are exactly\n\n\\[\nF_{\\mathrm{YES}}=[\\ell,1],\n\\qquad\nF_{\\mathrm{NO}}=[0,b],\n\\]\n\nup to the rational discretization \\(fD\\in\\mathbb Z\\).\n\nTo see the nontrivial direction, suppose \\(q\\in[\\ell,b]\\) and choose \\(D\\) with \\(qD\\in\\mathbb Z\\). Let \\(S_0\\) have dimension \\(qD\\). Define\n\n\\[\nM_{\\mathrm N}=I_{S_0}\\oplus0_{S_0^\\perp}.\n\\]\n\nThen\n\n\\[\nf(M_{\\mathrm N})=q,\\qquad\np(M_{\\mathrm N})=q\\le b.\n\\]\n\nFor the YES operator, assuming \\(q<a\\), set\n\n\\[\n\\alpha=\\frac{a-q}{1-q},\n\\qquad\nM_{\\mathrm Y}=I_{S_0}\\oplus\\alpha I_{S_0^\\perp}.\n\\]\n\nBecause \\(q\\ge(a-r)/(1-r)\\),\n\n\\[\n\\alpha\\le r.\n\\]\n\nMoreover,\n\n\\[\np(M_{\\mathrm Y})\n=\nq+(1-q)\\alpha\n=\na,\n\\]\n\nwhile\n\n\\[\nf(M_{\\mathrm Y})=q=f(M_{\\mathrm N}).\n\\]\n\nTherefore, whenever \\(\\delta_f\\le0\\), admissible YES and NO operators can have **identical exact perfect-space fractions**. No reduction whose target statistic is exactly \\(f\\), followed by postprocessing that sees only \\(f\\), can distinguish all such instances.\n\nThe packet’s special case\n\n\\[\nM_{\\mathrm Y}=\\frac14I,\\qquad M_{\\mathrm N}=0\n\\]\n\nis the choice \\(a=1/4\\), \\(q=0\\), \\(r=1/3\\). 〔PRO_SOURCE_COMPLEXITY_PACKET_20…〕\n\nAccordingly,\n\n\\[\n\\boxed{\\delta_f>0}\n\\]\n\nis necessary and sufficient for a promise-level reduction that simply realizes the exact perfect-space fraction.\n\nThis does not rule out a fundamentally different exact transformation that creates a new perfect subspace encoding the original trace.\n\n---\n\n# 2. Why perfect-space-preserving amplification does not repair arbitrary thresholds\n\nSuppose an exact amplification maps the acceptance operator \\(M\\) to \\(\\widetilde M\\) such that:\n\n1. the perfectly accepted space is unchanged, possibly tensored with a fixed ancilla space;\n2. eigenvalue \\(1\\) remains exactly \\(1\\);\n3. every eigenvalue in \\([0,r]\\) is mapped to an amplified acceptance value at most \\(\\varepsilon\\).\n\nThen the perfect fraction is unchanged:\n\n\\[\n\\widetilde f=f.\n\\]\n\nThe amplified normalized trace satisfies\n\n\\[\nf\n\\le\n\\widetilde p\n\\le\nf+\\varepsilon(1-f),\n\\]\n\nso\n\n\\[\n|\\widetilde p-f|\\le\\varepsilon.\n\\]\n\nThis is precisely what an equation asserting that amplified acceptance is close to the normalized perfect-space dimension means. It is a valid statement. But it does not imply that the original trace promise separates \\(f\\).\n\nFor the two same-\\(f\\) operators above, amplification sends both traces toward the same number \\(q\\). Their original distinction may have resided entirely in the eigenvalues below \\(1\\), and amplification suppresses those eigenvalues.\n\nTherefore:\n\n- **valid inference:** amplification preserves the exact perfect subspace and makes amplified trace approximate \\(f\\);\n- **first invalid inference:** using an arbitrary original trace gap \\(p_{\\mathrm Y}\\ge a\\), \\(p_{\\mathrm N}\\le b\\) to conclude that the unchanged fractions \\(f_{\\mathrm Y}\\) and \\(f_{\\mathrm N}\\), or the amplified traces converging to them, remain separated.\n\nThe failure is algebraic, not a TDA issue. Exact gate-set compatibility of amplification is a second, later obstacle.\n\n---\n\n# 3. Strongest noncircular source promise\n\nDefine the promise problem\n\n\\[\n\\operatorname{SepPerfectFraction}^{\\mathcal G_R}(a,b,r)\n\\]\n\nas follows.\n\nThe input is a polynomial-size exact circuit over\n\n\\[\n\\mathcal G_R=\n\\{X,\\mathrm{CX},\\mathrm{CCX},H\\},\n\\]\n\nwith:\n\n- maximally mixed input qubits;\n- computational-basis clean ancillas;\n- the standard inclusion\n  \\[\n  J=I_{\\mathrm{mixed}}\\otimes|c\\rangle_{\\mathrm{clean}};\n  \\]\n- a fixed-local computational-basis acceptance measurement \\(P_{\\mathrm{acc}}\\).\n\nLet\n\n\\[\nM=J^\\dagger U^\\dagger P_{\\mathrm{acc}}UJ,\n\\qquad\nS=\\ker(I-M),\n\\qquad\nD=\\dim\\operatorname{dom}J.\n\\]\n\nPromise:\n\n\\[\nM|_{S^\\perp}\\preceq rI,\n\\]\n\nand either\n\n\\[\np=\\frac{\\operatorname{Tr}M}{D}\\ge a\n\\]\n\nor\n\n\\[\np\\le b,\n\\]\n\nwhere\n\n\\[\n\\boxed{\n\\delta_f=\n\\max\\left\\{0,\\frac{a-r}{1-r}\\right\\}-b\n\\ge\\frac1{\\operatorname{poly}(n)}.\n}\n\\]\n\nThis source is noncircular: its decision promise is stated using the circuit’s trace acceptance probability, not using the target persistence ratio.\n\n## Corrected reduction corollary\n\nAssuming the previously accepted finite-palette geometric theorem, there is a polynomial many-one transformation to nested weighted clique complexes\n\n\\[\nX_{\\mathrm{in}}\\subseteq X_{\\mathrm{out}}\n\\]\n\nsuch that\n\n\\[\n\\beta_d(X_{\\mathrm{in}})=D,\n\\]\n\n\\[\n\\beta_d(X_{\\mathrm{out}})\n=\n\\operatorname{rank}\n\\left[\nH_d(X_{\\mathrm{in}})\n\\to H_d(X_{\\mathrm{out}})\n\\right]\n=\n\\dim S,\n\\]\n\nand therefore\n\n\\[\n\\boxed{\nq(X_{\\mathrm{in}},X_{\\mathrm{out}})\n=\n\\frac{\\beta_d(X_{\\mathrm{in}}\\to X_{\\mathrm{out}})}\n{\\beta_d(X_{\\mathrm{in}})}\n=\n\\frac{\\dim S}{D}\n=f.\n}\n\\]\n\nBoth endpoint Laplacians have the previously established inverse-polynomial whole-kernel gaps. The common-copy unweighted version remains conditional on its separate theorem. 〔PRO_SOURCE_COMPLEXITY_PACKET_20…〕\n\nAn additive approximation with error\n\n\\[\n\\varepsilon<\\frac{\\delta_f}{2}\n\\]\n\ndecides the source promise.\n\nAt\n\n\\[\n(a,b,r)=\\left(\\frac23,\\frac13,\\frac13\\right),\n\\]\n\none obtains\n\n\\[\nf_{\\mathrm Y}\\ge\\frac12,\n\\qquad\nf_{\\mathrm N}\\le\\frac13,\n\\qquad\n\\delta_f=\\frac16.\n\\]\n\nThe decision threshold is\n\n\\[\n\\frac{1/2+1/3}{2}=\\frac5{12},\n\\]\n\nand error \\(1/24\\) is safely below \\(1/12\\).\n\n---\n\n# 4. May this be called \\(\\operatorname{SepSDQC}_1^{\\mathcal G_R}\\)-hard?\n\n**Formally yes, with a qualification.**\n\nOne may define \\(\\operatorname{SepSDQC}_1^{\\mathcal G_R}\\) to be the class of languages having uniform exact \\(\\mathcal G_R\\)-verifiers with the standard mixed/clean interface and, for example,\n\n\\[\n(a,b,r)=\\left(\\frac23,\\frac13,\\frac13\\right).\n\\]\n\nFor every language in that class, its uniform circuit constructor followed by the geometric transformation is a polynomial reduction. Thus normalized persistence is hard for that explicitly defined restricted class.\n\nHowever, this is a newly delimited, gate-dependent subclass. Until a robustness or equivalence theorem relates it to the source’s arbitrary-threshold Definition 2 or another recognized class, the phrase\n\n> “\\(\\operatorname{SepSDQC}_1^{\\mathcal G_R}\\)-hard”\n\nhas less content than the explicit circuit-promise reduction and can be mistaken for unrestricted \\(\\mathsf{SDQC}_1\\)-hardness.\n\nThe cleanest theorem headline should therefore use the explicit promise problem. The restricted-class formulation is an optional formal corollary. The packet reaches the same boundary. 〔PRO_SOURCE_COMPLEXITY_PACKET_20…〕\n\n---\n\n# 5. Exact gate and spectator compatibility\n\nFor circuits already over\n\n\\[\n\\mathcal G_R=\\{X,\\mathrm{CX},\\mathrm{CCX},H\\},\n\\]\n\nthe mixed spectator exactly converts every single Hadamard into an allowed \\(H\\otimes H\\) gate.\n\nAdd one maximally mixed, unmeasured spectator \\(a\\), and replace each system Hadamard \\(H_j\\) by\n\n\\[\nH_j\\otimes H_a.\n\\]\n\nIf the original circuit contains \\(h\\) Hadamards, then\n\n\\[\nU'=U\\otimes H_a^h.\n\\]\n\nWith\n\n\\[\nJ'=J\\otimes I_a,\n\\qquad\nP_{\\mathrm{acc}}'=P_{\\mathrm{acc}}\\otimes I_a,\n\\]\n\none has, for either parity of \\(h\\),\n\n\\[\n\\begin{aligned}\nM'\n&=\nJ'^\\dagger U'^\\dagger\nP_{\\mathrm{acc}}'\nU'J'\\\\\n&=\nM\\otimes I_a.\n\\end{aligned}\n\\]\n\nConsequently,\n\n\\[\nS'=S\\otimes\\mathbb C^2,\n\\qquad\nD'=2D,\n\\qquad\nf'=f,\n\\]\n\nand the off-perfect spectral ceiling remains \\(r\\). This suffices for source circuits already expressed exactly over \\(\\mathcal G_R\\). 〔PRO_SOURCE_COMPLEXITY_PACKET_20…〕\n\nIt does **not** show that Marriott–Watrous amplification can be implemented exactly over \\(\\mathcal G_R\\), nor that arbitrary exact gate sets reduce to \\(\\mathcal G_R\\). Approximate universality is irrelevant because approximate compilation need not preserve the eigenvalue-\\(1\\) space.\n\n---\n\n# 6. Relation to the two normalized-persistence conjectures\n\nThe quotient theorem directly proves, for the supported separated real-gate histories,\n\n\\[\n\\beta_d(X_1)=\\dim\\ker H_1,\n\\]\n\nand\n\n\\[\n\\beta_d(X_1\\to X_2)=\\dim\\ker H_2.\n\\]\n\nThus it proves the **rank conclusion** needed for a restricted version of Conjecture 1, without constructing one exact common harmonic isometry satisfying every operator identity posited in Conjecture 2.\n\nTherefore:\n\n- Conjecture 2 is **bypassed as a sufficient mechanism**;\n- it is **not proved**;\n- the restricted rank/hardness conclusion can nevertheless follow directly from quotient naturality and exact whole-kernel multiplicity.\n\nThis distinction is explicitly recognized in the source-complexity note. 〔PRO_SOURCE_COMPLEXITY_PACKET_20…〕\n\n---\n\n# 7. Status table\n\n| Claim | Status |\n|---|---|\n| Reduction from the explicit standard-constant real-gate promise | **Established**, conditional on the accepted geometric theorem |\n| Reduction for general \\(a,b,r\\) with \\(\\delta_f\\ge1/\\mathrm{poly}\\) | **Established** |\n| Hardness for an explicitly defined \\(\\operatorname{SepSDQC}_1^{\\mathcal G_R}\\) | **Formally defensible**, but this is a nonstandard restricted class |\n| Arbitrary-threshold Definition-2 \\(\\mathsf{SDQC}_1\\) | **Not established**; the direct fraction inference is false |\n| Repair by perfect-space-preserving amplification | **Refuted** as a general solution |\n| Exact \\(\\mathcal G_R\\to G_2\\) spectator interface | **Established** |\n| Exact gate compatibility of an amplification procedure | **Unproved** |\n| Restricted Conjecture-1 rank conclusion | **Established** for the supported separated source |\n| Conjecture 2’s exact compatible harmonic isometries | **Not established and not needed for this restricted conclusion** |\n| BQP, DQC1, or unrestricted SDQC1 hardness | **Not implied** |\n\n# Exact remaining gate\n\nThe smallest upgrading lemma would have to state:\n\n> Given an arbitrary-threshold Definition-2 verifier over an exact specified gate set, construct in polynomial time an exact compatible verifier whose perfect-space fraction has an inverse-polynomial YES/NO separation, while retaining a whole off-perfect spectral ceiling and the standard mixed/clean interface.\n\nA transformation that merely preserves\n\n\\[\nS=\\ker(I-M)\n\\]\n\nup to a fixed ancillary tensor factor cannot satisfy this lemma: the same-\\(f\\), different-trace operators above remain a counterexample. The transformation would have to create new exact eigenvalue-\\(1\\) states based on information in the imperfect spectrum, or the source definition must add the promise \\(\\delta_f>0\\).\n\nNo such exact spectral-thresholding or gate-set theorem is supplied. The hard stop is therefore:\n\n\\[\n\\boxed{\n\\text{retain the separated real-gate promise corollary; do not claim unrestricted }\n\\mathsf{SDQC}_1\\text{-hardness.}\n}\n\\]\n",
+  "math": [
+    {
+      "display": false,
+      "source": "\\mathsf{SDQC}_1"
+    },
+    {
+      "display": true,
+      "source": "f=\\frac{\\dim\\ker(I-M)}{D}."
+    },
+    {
+      "display": true,
+      "source": "p=\\frac{\\operatorname{Tr}M}{D}"
+    },
+    {
+      "display": false,
+      "source": "f"
+    },
+    {
+      "display": false,
+      "source": "f"
+    },
+    {
+      "display": false,
+      "source": "f"
+    },
+    {
+      "display": true,
+      "source": "(a,b,r)=\\left(\\frac23,\\frac13,\\frac13\\right)"
+    },
+    {
+      "display": true,
+      "source": "f_{\\mathrm{YES}}\\ge\\frac12,\\qquad\nf_{\\mathrm{NO}}\\le\\frac13."
+    },
+    {
+      "display": true,
+      "source": "0\\preceq M\\preceq I,\\qquad\nS=\\ker(I-M),"
+    },
+    {
+      "display": true,
+      "source": "M|_{S^\\perp}\\preceq rI,\\qquad 0\\le r<1."
+    },
+    {
+      "display": true,
+      "source": "f=\\frac{\\dim S}{D},\n\\qquad\np=\\frac{\\operatorname{Tr}M}{D}."
+    },
+    {
+      "display": false,
+      "source": "S"
+    },
+    {
+      "display": false,
+      "source": "1"
+    },
+    {
+      "display": false,
+      "source": "S^\\perp"
+    },
+    {
+      "display": false,
+      "source": "[0,r]"
+    },
+    {
+      "display": true,
+      "source": "\\boxed{\nf\\le p\\le f+r(1-f)=r+(1-r)f.\n}"
+    },
+    {
+      "display": true,
+      "source": "p\\ge a\n\\quad\\Longrightarrow\\quad\nf\\ge\n\\ell:=\n\\max\\left\\{0,\\frac{a-r}{1-r}\\right\\},"
+    },
+    {
+      "display": true,
+      "source": "p\\le b\n\\quad\\Longrightarrow\\quad\nf\\le p\\le b."
+    },
+    {
+      "display": true,
+      "source": "\\boxed{\n\\delta_f=\\ell-b\n=\n\\max\\left\\{0,\\frac{a-r}{1-r}\\right\\}-b.\n}"
+    },
+    {
+      "display": true,
+      "source": "F_{\\mathrm{YES}}=[\\ell,1],\n\\qquad\nF_{\\mathrm{NO}}=[0,b],"
+    },
+    {
+      "display": false,
+      "source": "fD\\in\\mathbb Z"
+    },
+    {
+      "display": false,
+      "source": "q\\in[\\ell,b]"
+    },
+    {
+      "display": false,
+      "source": "D"
+    },
+    {
+      "display": false,
+      "source": "qD\\in\\mathbb Z"
+    },
+    {
+      "display": false,
+      "source": "S_0"
+    },
+    {
+      "display": false,
+      "source": "qD"
+    },
+    {
+      "display": true,
+      "source": "M_{\\mathrm N}=I_{S_0}\\oplus0_{S_0^\\perp}."
+    },
+    {
+      "display": true,
+      "source": "f(M_{\\mathrm N})=q,\\qquad\np(M_{\\mathrm N})=q\\le b."
+    },
+    {
+      "display": false,
+      "source": "q<a"
+    },
+    {
+      "display": true,
+      "source": "\\alpha=\\frac{a-q}{1-q},\n\\qquad\nM_{\\mathrm Y}=I_{S_0}\\oplus\\alpha I_{S_0^\\perp}."
+    },
+    {
+      "display": false,
+      "source": "q\\ge(a-r)/(1-r)"
+    },
+    {
+      "display": true,
+      "source": "\\alpha\\le r."
+    },
+    {
+      "display": true,
+      "source": "p(M_{\\mathrm Y})\n=\nq+(1-q)\\alpha\n=\na,"
+    },
+    {
+      "display": true,
+      "source": "f(M_{\\mathrm Y})=q=f(M_{\\mathrm N})."
+    },
+    {
+      "display": false,
+      "source": "\\delta_f\\le0"
+    },
+    {
+      "display": false,
+      "source": "f"
+    },
+    {
+      "display": false,
+      "source": "f"
+    },
+    {
+      "display": true,
+      "source": "M_{\\mathrm Y}=\\frac14I,\\qquad M_{\\mathrm N}=0"
+    },
+    {
+      "display": false,
+      "source": "a=1/4"
+    },
+    {
+      "display": false,
+      "source": "q=0"
+    },
+    {
+      "display": false,
+      "source": "r=1/3"
+    },
+    {
+      "display": true,
+      "source": "\\boxed{\\delta_f>0}"
+    },
+    {
+      "display": false,
+      "source": "M"
+    },
+    {
+      "display": false,
+      "source": "\\widetilde M"
+    },
+    {
+      "display": false,
+      "source": "1"
+    },
+    {
+      "display": false,
+      "source": "1"
+    },
+    {
+      "display": false,
+      "source": "[0,r]"
+    },
+    {
+      "display": false,
+      "source": "\\varepsilon"
+    },
+    {
+      "display": true,
+      "source": "\\widetilde f=f."
+    },
+    {
+      "display": true,
+      "source": "f\n\\le\n\\widetilde p\n\\le\nf+\\varepsilon(1-f),"
+    },
+    {
+      "display": true,
+      "source": "|\\widetilde p-f|\\le\\varepsilon."
+    },
+    {
+      "display": false,
+      "source": "f"
+    },
+    {
+      "display": false,
+      "source": "f"
+    },
+    {
+      "display": false,
+      "source": "q"
+    },
+    {
+      "display": false,
+      "source": "1"
+    },
+    {
+      "display": false,
+      "source": "f"
+    },
+    {
+      "display": false,
+      "source": "p_{\\mathrm Y}\\ge a"
+    },
+    {
+      "display": false,
+      "source": "p_{\\mathrm N}\\le b"
+    },
+    {
+      "display": false,
+      "source": "f_{\\mathrm Y}"
+    },
+    {
+      "display": false,
+      "source": "f_{\\mathrm N}"
+    },
+    {
+      "display": true,
+      "source": "\\operatorname{SepPerfectFraction}^{\\mathcal G_R}(a,b,r)"
+    },
+    {
+      "display": true,
+      "source": "\\mathcal G_R=\n\\{X,\\mathrm{CX},\\mathrm{CCX},H\\},"
+    },
+    {
+      "display": true,
+      "source": "J=I_{\\mathrm{mixed}}\\otimes|c\\rangle_{\\mathrm{clean}};"
+    },
+    {
+      "display": false,
+      "source": "P_{\\mathrm{acc}}"
+    },
+    {
+      "display": true,
+      "source": "M=J^\\dagger U^\\dagger P_{\\mathrm{acc}}UJ,\n\\qquad\nS=\\ker(I-M),\n\\qquad\nD=\\dim\\operatorname{dom}J."
+    },
+    {
+      "display": true,
+      "source": "M|_{S^\\perp}\\preceq rI,"
+    },
+    {
+      "display": true,
+      "source": "p=\\frac{\\operatorname{Tr}M}{D}\\ge a"
+    },
+    {
+      "display": true,
+      "source": "p\\le b,"
+    },
+    {
+      "display": true,
+      "source": "\\boxed{\n\\delta_f=\n\\max\\left\\{0,\\frac{a-r}{1-r}\\right\\}-b\n\\ge\\frac1{\\operatorname{poly}(n)}.\n}"
+    },
+    {
+      "display": true,
+      "source": "X_{\\mathrm{in}}\\subseteq X_{\\mathrm{out}}"
+    },
+    {
+      "display": true,
+      "source": "\\beta_d(X_{\\mathrm{in}})=D,"
+    },
+    {
+      "display": true,
+      "source": "\\beta_d(X_{\\mathrm{out}})\n=\n\\operatorname{rank}\n\\left[\nH_d(X_{\\mathrm{in}})\n\\to H_d(X_{\\mathrm{out}})\n\\right]\n=\n\\dim S,"
+    },
+    {
+      "display": true,
+      "source": "\\boxed{\nq(X_{\\mathrm{in}},X_{\\mathrm{out}})\n=\n\\frac{\\beta_d(X_{\\mathrm{in}}\\to X_{\\mathrm{out}})}\n{\\beta_d(X_{\\mathrm{in}})}\n=\n\\frac{\\dim S}{D}\n=f.\n}"
+    },
+    {
+      "display": true,
+      "source": "\\varepsilon<\\frac{\\delta_f}{2}"
+    },
+    {
+      "display": true,
+      "source": "(a,b,r)=\\left(\\frac23,\\frac13,\\frac13\\right),"
+    },
+    {
+      "display": true,
+      "source": "f_{\\mathrm Y}\\ge\\frac12,\n\\qquad\nf_{\\mathrm N}\\le\\frac13,\n\\qquad\n\\delta_f=\\frac16."
+    },
+    {
+      "display": true,
+      "source": "\\frac{1/2+1/3}{2}=\\frac5{12},"
+    },
+    {
+      "display": false,
+      "source": "1/24"
+    },
+    {
+      "display": false,
+      "source": "1/12"
+    },
+    {
+      "display": false,
+      "source": "\\operatorname{SepSDQC}_1^{\\mathcal G_R}"
+    },
+    {
+      "display": false,
+      "source": "\\operatorname{SepSDQC}_1^{\\mathcal G_R}"
+    },
+    {
+      "display": false,
+      "source": "\\mathcal G_R"
+    },
+    {
+      "display": true,
+      "source": "(a,b,r)=\\left(\\frac23,\\frac13,\\frac13\\right)."
+    },
+    {
+      "display": false,
+      "source": "\\operatorname{SepSDQC}_1^{\\mathcal G_R}"
+    },
+    {
+      "display": false,
+      "source": "\\mathsf{SDQC}_1"
+    },
+    {
+      "display": true,
+      "source": "\\mathcal G_R=\\{X,\\mathrm{CX},\\mathrm{CCX},H\\},"
+    },
+    {
+      "display": false,
+      "source": "H\\otimes H"
+    },
+    {
+      "display": false,
+      "source": "a"
+    },
+    {
+      "display": false,
+      "source": "H_j"
+    },
+    {
+      "display": true,
+      "source": "H_j\\otimes H_a."
+    },
+    {
+      "display": false,
+      "source": "h"
+    },
+    {
+      "display": true,
+      "source": "U'=U\\otimes H_a^h."
+    },
+    {
+      "display": true,
+      "source": "J'=J\\otimes I_a,\n\\qquad\nP_{\\mathrm{acc}}'=P_{\\mathrm{acc}}\\otimes I_a,"
+    },
+    {
+      "display": false,
+      "source": "h"
+    },
+    {
+      "display": true,
+      "source": "\\begin{aligned}\nM'\n&=\nJ'^\\dagger U'^\\dagger\nP_{\\mathrm{acc}}'\nU'J'\\\\\n&=\nM\\otimes I_a.\n\\end{aligned}"
+    },
+    {
+      "display": true,
+      "source": "S'=S\\otimes\\mathbb C^2,\n\\qquad\nD'=2D,\n\\qquad\nf'=f,"
+    },
+    {
+      "display": false,
+      "source": "r"
+    },
+    {
+      "display": false,
+      "source": "\\mathcal G_R"
+    },
+    {
+      "display": false,
+      "source": "\\mathcal G_R"
+    },
+    {
+      "display": false,
+      "source": "\\mathcal G_R"
+    },
+    {
+      "display": false,
+      "source": "1"
+    },
+    {
+      "display": true,
+      "source": "\\beta_d(X_1)=\\dim\\ker H_1,"
+    },
+    {
+      "display": true,
+      "source": "\\beta_d(X_1\\to X_2)=\\dim\\ker H_2."
+    },
+    {
+      "display": false,
+      "source": "a,b,r"
+    },
+    {
+      "display": false,
+      "source": "\\delta_f\\ge1/\\mathrm{poly}"
+    },
+    {
+      "display": false,
+      "source": "\\operatorname{SepSDQC}_1^{\\mathcal G_R}"
+    },
+    {
+      "display": false,
+      "source": "\\mathsf{SDQC}_1"
+    },
+    {
+      "display": false,
+      "source": "\\mathcal G_R\\to G_2"
+    },
+    {
+      "display": true,
+      "source": "S=\\ker(I-M)"
+    },
+    {
+      "display": false,
+      "source": "f"
+    },
+    {
+      "display": false,
+      "source": "1"
+    },
+    {
+      "display": false,
+      "source": "\\delta_f>0"
+    },
+    {
+      "display": true,
+      "source": "\\boxed{\n\\text{retain the separated real-gate promise corollary; do not claim unrestricted }\n\\mathsf{SDQC}_1\\text{-hardness.}\n}"
+    }
+  ],
+  "visible_text": "Verdict\n\nArbitrary-threshold SDQC\n1\n\t​\n\n does not reduce, from the supplied definitions alone, to the exact perfect-space fraction\n\nf=\nD\ndimker(I−M)\n\t​\n\n.\n\nThe obstruction occurs before gate compilation or TDA geometry: an arbitrary inverse-polynomial gap in the normalized trace\n\np=\nD\nTrM\n\t​\n\n\nneed not imply any gap in f. Exact perfect-subspace-preserving Marriott–Watrous amplification does not repair this; it preserves f and drives the amplified trace toward that same f, potentially erasing a distinction carried entirely by imperfectly accepting states.\n\nThe strongest surviving consequence is:\n\na polynomial reduction from an explicitly defined, exact-real-gate, perfect-eigenspace-separated circuit promise whose thresholds satisfy a positive perfect-fraction separation condition.\n\nIn particular, the standard constants\n\n(a,b,r)=(\n3\n2\n\t​\n\n,\n3\n1\n\t​\n\n,\n3\n1\n\t​\n\n)\n\nare valid and yield\n\nf\nYES\n\t​\n\n≥\n2\n1\n\t​\n\n,f\nNO\n\t​\n\n≤\n3\n1\n\t​\n\n.\n\nI did not independently reopen Lowe–Kim–Bondesan–Hayakawa for this bounded task. The source statements used below are the targeted reading recorded in the packet: Definition 2 allows arbitrary inverse-polynomial trace thresholds, equation (9) concerns amplification toward the perfect-space fraction, and the exact gate set is explicitly material. \n\nPRO_SOURCE_COMPLEXITY_PACKET_20…\n\n1. Exact characterization of the possible fractions\n\nLet\n\n0⪯M⪯I,S=ker(I−M),\n\nand assume\n\nM∣\nS\n⊥\n\t​\n\n⪯rI,0≤r<1.\n\nSet\n\nf=\nD\ndimS\n\t​\n\n,p=\nD\nTrM\n\t​\n\n.\n\nThe eigenvalues on S are exactly 1; those on S\n⊥\n lie in [0,r]. Therefore\n\nf≤p≤f+r(1−f)=r+(1−r)f.\n\t​\n\n\nThus:\n\np≥a⟹f≥ℓ:=max{0,\n1−r\na−r\n\t​\n\n},\n\nwhile\n\np≤b⟹f≤p≤b.\n\nHence the guaranteed fraction separation is\n\nδ\nf\n\t​\n\n=ℓ−b=max{0,\n1−r\na−r\n\t​\n\n}−b.\n\t​\n\n\nThese are the intervals recorded in the packet. \n\nPRO_SOURCE_COMPLEXITY_PACKET_20…\n\nNecessity, not merely sufficiency\n\nUnder only these operator promises, the possible fraction sets are exactly\n\nF\nYES\n\t​\n\n=[ℓ,1],F\nNO\n\t​\n\n=[0,b],\n\nup to the rational discretization fD∈Z.\n\nTo see the nontrivial direction, suppose q∈[ℓ,b] and choose D with qD∈Z. Let S\n0\n\t​\n\n have dimension qD. Define\n\nM\nN\n\t​\n\n=I\nS\n0\n\t​\n\n\t​\n\n⊕0\nS\n0\n⊥\n\t​\n\n\t​\n\n.\n\nThen\n\nf(M\nN\n\t​\n\n)=q,p(M\nN\n\t​\n\n)=q≤b.\n\nFor the YES operator, assuming q<a, set\n\nα=\n1−q\na−q\n\t​\n\n,M\nY\n\t​\n\n=I\nS\n0\n\t​\n\n\t​\n\n⊕αI\nS\n0\n⊥\n\t​\n\n\t​\n\n.\n\nBecause q≥(a−r)/(1−r),\n\nα≤r.\n\nMoreover,\n\np(M\nY\n\t​\n\n)=q+(1−q)α=a,\n\nwhile\n\nf(M\nY\n\t​\n\n)=q=f(M\nN\n\t​\n\n).\n\nTherefore, whenever δ\nf\n\t​\n\n≤0, admissible YES and NO operators can have identical exact perfect-space fractions. No reduction whose target statistic is exactly f, followed by postprocessing that sees only f, can distinguish all such instances.\n\nThe packet’s special case\n\nM\nY\n\t​\n\n=\n4\n1\n\t​\n\nI,M\nN\n\t​\n\n=0\n\nis the choice a=1/4, q=0, r=1/3. \n\nPRO_SOURCE_COMPLEXITY_PACKET_20…\n\nAccordingly,\n\nδ\nf\n\t​\n\n>0\n\t​\n\n\nis necessary and sufficient for a promise-level reduction that simply realizes the exact perfect-space fraction.\n\nThis does not rule out a fundamentally different exact transformation that creates a new perfect subspace encoding the original trace.\n\n2. Why perfect-space-preserving amplification does not repair arbitrary thresholds\n\nSuppose an exact amplification maps the acceptance operator M to \nM\n such that:\n\nthe perfectly accepted space is unchanged, possibly tensored with a fixed ancilla space;\n\neigenvalue 1 remains exactly 1;\n\nevery eigenvalue in [0,r] is mapped to an amplified acceptance value at most ε.\n\nThen the perfect fraction is unchanged:\n\nf\n\t​\n\n=f.\n\nThe amplified normalized trace satisfies\n\nf≤\np\n\t​\n\n≤f+ε(1−f),\n\nso\n\n∣\np\n\t​\n\n−f∣≤ε.\n\nThis is precisely what an equation asserting that amplified acceptance is close to the normalized perfect-space dimension means. It is a valid statement. But it does not imply that the original trace promise separates f.\n\nFor the two same-f operators above, amplification sends both traces toward the same number q. Their original distinction may have resided entirely in the eigenvalues below 1, and amplification suppresses those eigenvalues.\n\nTherefore:\n\nvalid inference: amplification preserves the exact perfect subspace and makes amplified trace approximate f;\n\nfirst invalid inference: using an arbitrary original trace gap p\nY\n\t​\n\n≥a, p\nN\n\t​\n\n≤b to conclude that the unchanged fractions f\nY\n\t​\n\n and f\nN\n\t​\n\n, or the amplified traces converging to them, remain separated.\n\nThe failure is algebraic, not a TDA issue. Exact gate-set compatibility of amplification is a second, later obstacle.\n\n3. Strongest noncircular source promise\n\nDefine the promise problem\n\nSepPerfectFraction\nG\nR\n\t​\n\n(a,b,r)\n\nas follows.\n\nThe input is a polynomial-size exact circuit over\n\nG\nR\n\t​\n\n={X,CX,CCX,H},\n\nwith:\n\nmaximally mixed input qubits;\n\ncomputational-basis clean ancillas;\n\nthe standard inclusion\n\nJ=I\nmixed\n\t​\n\n⊗∣c⟩\nclean\n\t​\n\n;\n\na fixed-local computational-basis acceptance measurement P\nacc\n\t​\n\n.\n\nLet\n\nM=J\n†\nU\n†\nP\nacc\n\t​\n\nUJ,S=ker(I−M),D=dimdomJ.\n\nPromise:\n\nM∣\nS\n⊥\n\t​\n\n⪯rI,\n\nand either\n\np=\nD\nTrM\n\t​\n\n≥a\n\nor\n\np≤b,\n\nwhere\n\nδ\nf\n\t​\n\n=max{0,\n1−r\na−r\n\t​\n\n}−b≥\npoly(n)\n1\n\t​\n\n.\n\t​\n\n\nThis source is noncircular: its decision promise is stated using the circuit’s trace acceptance probability, not using the target persistence ratio.\n\nCorrected reduction corollary\n\nAssuming the previously accepted finite-palette geometric theorem, there is a polynomial many-one transformation to nested weighted clique complexes\n\nX\nin\n\t​\n\n⊆X\nout\n\t​\n\n\nsuch that\n\nβ\nd\n\t​\n\n(X\nin\n\t​\n\n)=D,\nβ\nd\n\t​\n\n(X\nout\n\t​\n\n)=rank[H\nd\n\t​\n\n(X\nin\n\t​\n\n)→H\nd\n\t​\n\n(X\nout\n\t​\n\n)]=dimS,\n\nand therefore\n\nq(X\nin\n\t​\n\n,X\nout\n\t​\n\n)=\nβ\nd\n\t​\n\n(X\nin\n\t​\n\n)\nβ\nd\n\t​\n\n(X\nin\n\t​\n\n→X\nout\n\t​\n\n)\n\t​\n\n=\nD\ndimS\n\t​\n\n=f.\n\t​\n\n\nBoth endpoint Laplacians have the previously established inverse-polynomial whole-kernel gaps. The common-copy unweighted version remains conditional on its separate theorem. \n\nPRO_SOURCE_COMPLEXITY_PACKET_20…\n\nAn additive approximation with error\n\nε<\n2\nδ\nf\n\t​\n\n\t​\n\n\ndecides the source promise.\n\nAt\n\n(a,b,r)=(\n3\n2\n\t​\n\n,\n3\n1\n\t​\n\n,\n3\n1\n\t​\n\n),\n\none obtains\n\nf\nY\n\t​\n\n≥\n2\n1\n\t​\n\n,f\nN\n\t​\n\n≤\n3\n1\n\t​\n\n,δ\nf\n\t​\n\n=\n6\n1\n\t​\n\n.\n\nThe decision threshold is\n\n2\n1/2+1/3\n\t​\n\n=\n12\n5\n\t​\n\n,\n\nand error 1/24 is safely below 1/12.\n\n4. May this be called SepSDQC\n1\nG\nR\n\t​\n\n\t​\n\n-hard?\n\nFormally yes, with a qualification.\n\nOne may define SepSDQC\n1\nG\nR\n\t​\n\n\t​\n\n to be the class of languages having uniform exact G\nR\n\t​\n\n-verifiers with the standard mixed/clean interface and, for example,\n\n(a,b,r)=(\n3\n2\n\t​\n\n,\n3\n1\n\t​\n\n,\n3\n1\n\t​\n\n).\n\nFor every language in that class, its uniform circuit constructor followed by the geometric transformation is a polynomial reduction. Thus normalized persistence is hard for that explicitly defined restricted class.\n\nHowever, this is a newly delimited, gate-dependent subclass. Until a robustness or equivalence theorem relates it to the source’s arbitrary-threshold Definition 2 or another recognized class, the phrase\n\n“SepSDQC\n1\nG\nR\n\t​\n\n\t​\n\n-hard”\n\nhas less content than the explicit circuit-promise reduction and can be mistaken for unrestricted SDQC\n1\n\t​\n\n-hardness.\n\nThe cleanest theorem headline should therefore use the explicit promise problem. The restricted-class formulation is an optional formal corollary. The packet reaches the same boundary. \n\nPRO_SOURCE_COMPLEXITY_PACKET_20…\n\n5. Exact gate and spectator compatibility\n\nFor circuits already over\n\nG\nR\n\t​\n\n={X,CX,CCX,H},\n\nthe mixed spectator exactly converts every single Hadamard into an allowed H⊗H gate.\n\nAdd one maximally mixed, unmeasured spectator a, and replace each system Hadamard H\nj\n\t​\n\n by\n\nH\nj\n\t​\n\n⊗H\na\n\t​\n\n.\n\nIf the original circuit contains h Hadamards, then\n\nU\n′\n=U⊗H\na\nh\n\t​\n\n.\n\nWith\n\nJ\n′\n=J⊗I\na\n\t​\n\n,P\nacc\n′\n\t​\n\n=P\nacc\n\t​\n\n⊗I\na\n\t​\n\n,\n\none has, for either parity of h,\n\nM\n′\n\t​\n\n=J\n′†\nU\n′†\nP\nacc\n′\n\t​\n\nU\n′\nJ\n′\n=M⊗I\na\n\t​\n\n.\n\t​\n\n\nConsequently,\n\nS\n′\n=S⊗C\n2\n,D\n′\n=2D,f\n′\n=f,\n\nand the off-perfect spectral ceiling remains r. This suffices for source circuits already expressed exactly over G\nR\n\t​\n\n. \n\nPRO_SOURCE_COMPLEXITY_PACKET_20…\n\nIt does not show that Marriott–Watrous amplification can be implemented exactly over G\nR\n\t​\n\n, nor that arbitrary exact gate sets reduce to G\nR\n\t​\n\n. Approximate universality is irrelevant because approximate compilation need not preserve the eigenvalue-1 space.\n\n6. Relation to the two normalized-persistence conjectures\n\nThe quotient theorem directly proves, for the supported separated real-gate histories,\n\nβ\nd\n\t​\n\n(X\n1\n\t​\n\n)=dimkerH\n1\n\t​\n\n,\n\nand\n\nβ\nd\n\t​\n\n(X\n1\n\t​\n\n→X\n2\n\t​\n\n)=dimkerH\n2\n\t​\n\n.\n\nThus it proves the rank conclusion needed for a restricted version of Conjecture 1, without constructing one exact common harmonic isometry satisfying every operator identity posited in Conjecture 2.\n\nTherefore:\n\nConjecture 2 is bypassed as a sufficient mechanism;\n\nit is not proved;\n\nthe restricted rank/hardness conclusion can nevertheless follow directly from quotient naturality and exact whole-kernel multiplicity.\n\nThis distinction is explicitly recognized in the source-complexity note. \n\nPRO_SOURCE_COMPLEXITY_PACKET_20…\n\n7. Status table\nClaim\tStatus\nReduction from the explicit standard-constant real-gate promise\tEstablished, conditional on the accepted geometric theorem\nReduction for general a,b,r with δ\nf\n\t​\n\n≥1/poly\tEstablished\nHardness for an explicitly defined SepSDQC\n1\nG\nR\n\t​\n\n\t​\n\n\tFormally defensible, but this is a nonstandard restricted class\nArbitrary-threshold Definition-2 SDQC\n1\n\t​\n\n\tNot established; the direct fraction inference is false\nRepair by perfect-space-preserving amplification\tRefuted as a general solution\nExact G\nR\n\t​\n\n→G\n2\n\t​\n\n spectator interface\tEstablished\nExact gate compatibility of an amplification procedure\tUnproved\nRestricted Conjecture-1 rank conclusion\tEstablished for the supported separated source\nConjecture 2’s exact compatible harmonic isometries\tNot established and not needed for this restricted conclusion\nBQP, DQC1, or unrestricted SDQC1 hardness\tNot implied\nExact remaining gate\n\nThe smallest upgrading lemma would have to state:\n\nGiven an arbitrary-threshold Definition-2 verifier over an exact specified gate set, construct in polynomial time an exact compatible verifier whose perfect-space fraction has an inverse-polynomial YES/NO separation, while retaining a whole off-perfect spectral ceiling and the standard mixed/clean interface.\n\nA transformation that merely preserves\n\nS=ker(I−M)\n\nup to a fixed ancillary tensor factor cannot satisfy this lemma: the same-f, different-trace operators above remain a counterexample. The transformation would have to create new exact eigenvalue-1 states based on information in the imperfect spectrum, or the source definition must add the promise δ\nf\n\t​\n\n>0.\n\nNo such exact spectral-thresholding or gate-set theorem is supplied. The hard stop is therefore:\n\nretain the separated real-gate promise corollary; do not claim unrestricted SDQC\n1\n\t​\n\n-hardness.\n\t​\n",
+  "html_length": 225120,
+  "clipboard_crosscheck": {
+    "bytes": 13222,
+    "sha256": "fb279f228c62e01e1f4e1f688607d43788206d5b696c9834b048227714d829c2",
+    "note": "ChatGPT Copy response output uses dollar delimiters and omits rendered attachment-citation controls; wording and formulas were cross-checked against the DOM transcription."
+  }
+}

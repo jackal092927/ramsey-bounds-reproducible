@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-03T18:43:37.927728Z",
+  "updated_at": "2026-09-03T19:37:00Z",
   "objective": "Review and advance true normalized persistence toward a substantial TCS theorem; archive every useful positive/negative milestone and Pro result.",
   "repository": {
     "url": "https://github.com/jackal092927/ramsey-bounds-reproducible",
@@ -17,7 +17,7 @@
     "url": "https://chatgpt.com/c/6a98c05a-ecf4-83e8-b356-4e20dc3fde3f",
     "account": "visible identity matched local personal Pro channel registry",
     "previous_response": "collected",
-    "new_request": "sent_running",
+    "new_request": "completed_collected",
     "current_request": {
       "source_commit": "b78da7ab9472f6d2c0858634b56f3c1210a3e931",
       "message_file": "PRO_SOURCE_COMPLEXITY_SUBMISSION_2026-09-03.md",
@@ -32,12 +32,18 @@
       "completed_assistant_messages_before_this_request": 5,
       "failed_assistant_attempts_before_this_request": 1,
       "sent_running_observed_at": "2026-09-03T18:43:37.927728Z",
-      "last_observed_at": "2026-09-03T18:43:37.927728Z",
-      "last_observation": "Seventh user message, exact source-complexity packet, Pro thinking and Stop answering visible. Message 6 is completed and dispositioned; historical failure belongs to message 3.",
+      "last_observed_at": "2026-09-03T19:27:37.090Z",
+      "last_observation": "Completed seventh-request answer: Worked for 8m 41s, no Stop answering. Full response and 113 equation sources archived; authenticated personal Pro identity remained the verified browser session.",
       "receipt": "PRO_SOURCE_COMPLEXITY_DISPATCH_RECEIPT_2026-09-03.md",
       "scope": "Completed <=2400-word exact source-complexity audit; corrected geometric theorem treated as a hypothesis; no browsing, code, renewed gadget review, approximate gate universality, priority or paper-readiness task.",
       "prompt_verification": "1011-character prepared submission matched normalized composer text; one completed attachment, enabled Send, no active run before sending; sent once.",
-      "source_basis": "Targeted arXiv:2607.03278v1 Definition 2 / Eq. 9 / Sections 5.5-5.6 / Section 7 check recorded in SOURCE_COMPLEXITY_GATE.md; not a full paper audit."
+      "source_basis": "Targeted arXiv:2607.03278v1 Definition 2 / Eq. 9 / Sections 5.5-5.6 / Section 7 check recorded in SOURCE_COMPLEXITY_GATE.md; not a full paper audit.",
+      "completed_collected_at": "2026-09-03T19:27:37.090Z",
+      "response_file": "PRO_SOURCE_COMPLEXITY_REVIEW_2026-09-03.md",
+      "capture_file": "PRO_SOURCE_COMPLEXITY_REVIEW_CAPTURE_2026-09-03.json",
+      "disposition_file": "PRO_SOURCE_COMPLEXITY_DISPOSITION_2026-09-03.md",
+      "terminal_status": "completed and collected; separated exact-real-gate corollary accepted and unrestricted SDQC1 inference stopped",
+      "source_checking": "No source or literature checking by this Pro response; source statements came from the supplied packet."
     },
     "request_history": [
       {
@@ -188,13 +194,16 @@
     "remaining_active_atoms": "PASS source-pinned certificates: state_0m1 has 8-dimensional Q and 24-term filling; state_00m11 has 112-dimensional Q and 248-term filling; state_01m10 is exact graph relabeling. Offline recomputation passed with external commands disabled.",
     "fixed_palette": "Locally complete for the explicit G2 weighted unary history through locality six, using basis cone, remaining atom certificates, Hadamard orbit, and selected-cycle guards.",
     "clean_restricted_theorem": "End-to-end integration accepted after explicit source-interface correction; exact endpoint Betti numbers, induced rank and whole-kernel gaps follow under the finite hypotheses.",
-    "source_complexity_gate": "Targeted arXiv:2607.03278v1 Definition 2 / Eq. 9 / Sections 5.5-5.6 / Section 7 check: standard constants yield fraction gap 1/6; arbitrary trace thresholds do not imply exact perfect-space fraction separation. Unrestricted SDQC1 hardness remains open."
+    "source_complexity_gate": "Closed at explicit SepPerfectFraction^{G_R}: delta_f=max(0,(a-r)/(1-r))-b must be inverse polynomial and positive; target error below delta_f/2. Same-fraction construction and amplification obstruction independently accepted. No unrestricted SDQC1 hardness.",
+    "source_complexity_pro_review": "Completed and collected with 113 exact equation sources; algebraic conclusions independently dispositioned. Pro performed no primary-source checking.",
+    "bqp1_eight_label_source": "Local derivation and algebra/interface check pass: exact G2 perfect-completeness verifier maps to diag(1,p,p,p,p,p,0,0) on a mixed 3-bit label, with fractions 3/4 versus 1/8 and off-perfect ceiling <=1/3. Bounded Pro review pending.",
+    "bqp1_primary_source_check": "Rudolph arXiv:2411.02681v2 Definition 2.2 and Theorems 2.3/3.4 checked for clean BQP1 interface, exact G2 soundness reduction, and cyclotomic gate-set inclusion. Optional TQC and Marriott-Watrous routes not checked or needed."
   },
   "github": {
-    "status": "source_checkpoint_pushed_and_remote_verified",
+    "status": "source_and_bqp1_candidate_checkpoint_pending_push",
     "review_source_commit": "b78da7ab9472f6d2c0858634b56f3c1210a3e931",
     "verification": "Local source HEAD and git ls-remote agreed; raw GitHub packet bytes were 28196 with SHA-256 7f38dd8353d90b9fe7c471dfb0e83bcd5bdca31a7ee5a011cbbd64ad91a12c15 before submission.",
-    "receipt_note": "The source-complexity dispatch receipt and finalized submission metadata are archived in the next lifecycle commit."
+    "receipt_note": "Message-7 archive/disposition and the new locally checked eight-label BQP1 source are ready for a scoped source checkpoint before Pro message 8."
   },
   "follow_up": {
     "status": "active",
@@ -205,12 +214,12 @@
     "workflow": "FOLLOW_UP_WORKFLOW.md",
     "stop": "Pause when a substantial scoped result or documented stopping conclusion is reached, or user intervention is necessary.",
     "pending_for_next_completed_response": [
-      "Disposition whether only the separated real-gate source survives or a stronger exact class statement is proved.",
-      "If source complexity stops at the restricted promise, move next to a tightly scoped novelty audit of the whole-kernel concentration plus natural filtered-rank package."
+      "Audit the eight-label BQP1^G2 circuit interface and derive the exact compressed acceptance operator, including clean/mixed registers, label coherence, output locality, and soundness reduction.",
+      "If accepted, state the strongest gate-dependent hardness consequence and exact exclusions; then move to the primary-source novelty collision audit."
     ],
-    "phase": "Seventh bounded exact source-complexity audit running; unrestricted SDQC1 hardness and novelty remain open.",
-    "automation_prompt_updated_for_current_request": true,
-    "automation_updated_at": "2026-09-03T18:43:37.927728Z"
+    "phase": "Message 7 completed, collected and dispositioned. New eight-label BQP1^G2 source locally passes and is the next bounded Pro gate; unrestricted SDQC1 remains stopped.",
+    "automation_prompt_updated_for_current_request": false,
+    "automation_updated_at": "2026-09-03T19:27:37.090Z"
   },
   "coordination": {
     "canonical_scope": "research/quantum_direction_selection and existing TDA Pro channel",

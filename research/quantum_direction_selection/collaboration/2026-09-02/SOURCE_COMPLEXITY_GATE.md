@@ -43,7 +43,7 @@ f_{\rm NO}\le b.
 \]
 The guaranteed fixed-space gap is therefore
 \[
-\delta_f=max\!\left\{0,\frac{a-r}{1-r}\right\}-b.
+\delta_f=\max\!\left\{0,\frac{a-r}{1-r}\right\}-b.
 \tag{3}
 \]
 A reduction through the exact kernel fraction requires \(\delta_f>0\).
@@ -76,7 +76,7 @@ This is a mathematical objection to the displayed arbitrary-threshold rank infer
 
 ## 4. Strongest immediate source statement
 
-Define the explicit separated source promise \(\operatorname{SepSDQC}_1^{\mathcal G_R}(a,b,r)\) by the standard mixed-input/clean-output circuit interface, exact gate family
+Define the explicit separated source promise \(\operatorname{SepPerfectFraction}^{\mathcal G_R}(a,b,r)\) by the standard mixed-input/clean-output circuit interface, exact gate family
 \[
 \mathcal G_R=\{X,\mathrm{CX},\mathrm{CCX},H\},
 \]
@@ -84,7 +84,7 @@ and conditions (1)--(3) with \(\delta_f\ge1/\operatorname{poly}(n)\). The exact 
 
 The clean reduction theorem then gives a polynomial many-one reduction from this promise to weighted clique-complex normalized harmonic persistence, with precision below \(\delta_f/2\), exact denominator \(D\), exact persistent rank \(\dim S\), and inverse-polynomial gaps above both whole kernels. At the standard constants, the required target precision may be fixed at \(1/24\).
 
-This is a mathematically valid complexity corollary for an explicit source promise. Calling it unrestricted \(\mathsf{SDQC}_1\)-hardness requires two additional results that are not currently in the archive:
+This is a mathematically valid complexity corollary for an explicit source promise. One may optionally define a gate-dependent restricted class \(\operatorname{SepSDQC}_1^{\mathcal G_R}\) around this promise, but that name supplies no equivalence with a recognized class. Calling the target unrestricted \(\mathsf{SDQC}_1\)-hard requires two additional results that are not currently in the archive:
 
 1. a theorem equating the arbitrary-threshold source definition with its separated fixed-threshold version while preserving the exact perfect subspace; and
 2. exact gate-set compatibility for the amplification or source reduction, rather than approximate compilation between universal gate sets.
@@ -103,8 +103,10 @@ with natural quotient maps and inverse-polynomial endpoint gaps. This bypasses t
 
 Consequently it may establish the source's Conjecture 1 for the separated real-gate source even though it does not prove every operator-level isometry identity demanded by Conjecture 2. That distinction is potentially valuable: Conjecture 2 is a sufficient route, not logically necessary for the rank statement.
 
-## 6. Decision gate
+## 6. Completed Pro audit and decision gate
 
-**GO** if a precise complexity definition already standardizes \((a,b,r)=(2/3,1/3,1/3)\) for the exact real gate set, or if an exact transformation to such parameters is proved without changing the encoded perfect-space fraction. Then the current geometric theorem has a named restricted-class hardness consequence and directly advances the stated NHP conjecture.
+The bounded source-complexity request is now [completed and archived](PRO_SOURCE_COMPLEXITY_REVIEW_2026-09-03.md), with a separate [independent disposition](PRO_SOURCE_COMPLEXITY_DISPOSITION_2026-09-03.md). The response independently rederived the exact intervals, supplied a general same-fraction YES/NO construction showing necessity of \(\delta_f>0\), confirmed the spectator identity for either Hadamard parity, and located the first invalid unrestricted inference at the trace-to-perfect-fraction step. It performed no primary-source checking; all source statements were inherited from this note's packet.
 
-**STOP the unrestricted hardness claim** if no such theorem is available. Retain the representation/transfer theorem and the separated-promise corollary, and present arbitrary-threshold \(\mathsf{SDQC}_1\) plus full source priority as open. Classical reversible predicates give growing \(D\) and exact \(f=p\), but their constant additive-gap promise is sampleable and supplies only a baseline, not the desired quantum-hard source.
+**GO** for the explicit \(\operatorname{SepPerfectFraction}^{\mathcal G_R}\) reduction and its restricted Conjecture-1 rank conclusion. At \((a,b,r)=(2/3,1/3,1/3)\), the reduction has target gap \(1/6\) and safe additive error \(1/24\).
+
+**STOP the unrestricted hardness claim.** No exact upgrading or gate-set-equivalence theorem is in the archive. Retain the representation/transfer theorem and the separated-promise corollary, and present arbitrary-threshold \(\mathsf{SDQC}_1\) as open. Classical reversible predicates give growing \(D\) and exact \(f=p\), but their constant additive-gap promise is sampleable and supplies only a baseline, not the desired quantum-hard source.

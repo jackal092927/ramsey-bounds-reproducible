@@ -10,7 +10,7 @@ q(X_1,X_2)=\frac{\operatorname{rank}[H_d(X_1)\to H_d(X_2)]}{\dim H_d(X_1)},\qqua
 \]
 It is the fraction of initial homology that survives. The target concerns exact zero modes. Neither simplex-normalized Betti numbers nor quasi-low-energy counts substitute for this statistic.
 
-The aim is a high-quality, impactful theoretical computer science paper. The strongest current candidate is a global geometric concentration theorem for a fixed supported gadget palette, leading to exact multiplicities, whole-positive-spectrum gaps, and natural filtered rank transfer. Whether this is new and whether the restricted source yields a meaningful complexity consequence remain open. Quantum persistence and parsimonious homology encodings already exist according to the supplied ledger.
+The aim is a high-quality, impactful theoretical computer science paper. The strongest current candidate is a global geometric concentration theorem for a fixed supported gadget palette, leading to exact multiplicities, whole-positive-spectrum gaps, and natural filtered rank transfer. It has a mathematically valid consequence for an explicit separated exact-real-gate circuit promise. A later locally checked eight-label construction may upgrade this to gate-dependent \(\mathsf{BQP}_1^{G_2}\)-hardness; bounded interface review is pending. Equivalence with unrestricted \(\mathsf{SDQC}_1\) is not established, and novelty of the geometric package remains open. Quantum persistence and parsimonious homology encodings already exist according to the supplied ledger.
 
 Evidence labels used throughout:
 
@@ -52,6 +52,18 @@ The [remaining active-atom certificate](REMAINING_ACTIVE_ATOM_CERTIFICATES.md) n
 The [completed end-to-end Pro audit](PRO_RESTRICTED_THEOREM_REVIEW_2026-09-03.md) and [independent disposition](PRO_RESTRICTED_THEOREM_DISPOSITION_2026-09-03.md) accept the integration after restricting the source interface to maximally mixed inputs, computational-basis clean ancillas and a fixed-local computational-basis output measurement. The theorem now separately states the output Betti number and the induced rank. No local mathematical gap remains under the displayed finite hypotheses.
 
 A [targeted source-complexity check](SOURCE_COMPLEXITY_GATE.md) identifies the next obstruction. The fixed constants \((a,b,r)=(2/3,1/3,1/3)\) give a valid perfect-space fraction gap \(1/6\), but arbitrary inverse-polynomial trace thresholds do not: \(M=I/4\) and \(M=0\) have different traces and the same zero perfect-space fraction. The checked arXiv v1 definition of \(\mathsf{SDQC}_1\) permits arbitrary thresholds and explicitly depends on its exact gate set. The present result therefore supports a separated real-gate source promise; unrestricted \(\mathsf{SDQC}_1\)-hardness still requires a threshold-preserving, exact-gate reduction.
+
+The [completed source-complexity Pro audit](PRO_SOURCE_COMPLEXITY_REVIEW_2026-09-03.md) and [independent disposition](PRO_SOURCE_COMPLEXITY_DISPOSITION_2026-09-03.md) close this gate at the restricted boundary. For general thresholds, the guaranteed exact-fraction gap is
+\[
+\delta_f=\max\!\left\{0,\frac{a-r}{1-r}\right\}-b.
+\]
+The response gives admissible YES and NO operators with the same exact perfect-space fraction whenever these intervals overlap, so \(\delta_f>0\) is necessary as well as sufficient for a reduction that realizes only that fraction. Perfect-subspace-preserving amplification cannot repair an arbitrary trace promise. The accepted source statement is therefore \(\operatorname{SepPerfectFraction}^{\mathcal G_R}(a,b,r)\), stated directly as a circuit promise; a restricted class name is optional and carries no standard-class equivalence. Pro performed no source checking in this round.
+
+After that review, a separate [eight-label source construction](NORMALIZED_BQP1_SOURCE_GATE.md) supplied a stronger route. Starting from an exact \(G_2\) BQP verifier with perfect completeness and soundness at most \(1/3\), one mixed three-bit label produces
+\[
+M_x=\operatorname{diag}(1,p_x,p_x,p_x,p_x,p_x,0,0)\otimes I_{\rm dummy}.
+\]
+The perfect-space fraction is therefore \(3/4\) in YES instances and \(1/8\) in NO instances, while the latter has off-perfect ceiling at most \(1/3\). The construction runs the verifier unconditionally, so it introduces no controlled-Hadamard requirement. The local algebra and the clean-input/output interface in Rudolph's Definition 2.2, exact \(G_2\) soundness reduction in Theorem 2.3, and cyclotomic inclusion in Theorem 3.4 were checked. This supports a provisional gate-dependent \(\mathsf{BQP}_1^{G_2}\)-hardness corollary, conditional on the geometric theorem; it was not part of the completed source-complexity Pro response and is the next bounded review gate.
 
 ## 2. Core finite-palette transfer theorem (original conservative parameters)
 
@@ -171,19 +183,22 @@ Let \(M=J^\dagger U^\dagger P_{\rm acc}UJ\), \(0\preceq M\preceq I\), \(S=\ker(I
 \[
 f\le p\le r+(1-r)f.
 \]
-Consequently trace promises \(p\ge a\) and \(p\le b\) yield separated guaranteed fraction ranges only if
+Consequently trace promises \(p\ge a\) and \(p\le b\) give the exact guaranteed ranges
 \[
-\max\{0,(a-r)/(1-r)\}>b.
+f_{\rm YES}\ge\ell:=\max\{0,(a-r)/(1-r)\},
+\qquad f_{\rm NO}\le b.
 \]
+Define \(\delta_f=\ell-b\). The exact-fraction target separates the promise cases if \(\delta_f>0\). Conversely, whenever the intervals overlap, a rational \(q\in[\ell,b]\) supports admissible YES and NO operators with the same fraction: use \(M_N=I_{qD}\oplus0\) and \(M_Y=I_{qD}\oplus[(a-q)/(1-q)]I\). Thus positive \(\delta_f\) is necessary as well as sufficient for a reduction that realizes only \(f\).
+
 For \(a=2/3,b=1/3,r=1/3\): YES gives \(f\ge1/2\), NO gives \(f\le1/3\). Additive error must be below \(1/12\); \(1/24\) with decision threshold \(5/12\) works. A trace gap alone fails, as \(M=I/4\) versus \(M=0\) both have \(f=0\).
 
-The minimal theorem is a polynomial transformation from the explicitly specified real-gate circuit promise to a nested weighted clique pair with
+The minimal theorem is a polynomial transformation from the explicitly specified separated real-gate circuit promise \(\operatorname{SepPerfectFraction}^{\mathcal G_R}(a,b,r)\), with \(\delta_f\ge1/\operatorname{poly}(n)\), to a nested weighted clique pair with
 \[
 \beta_d(X_1)=D,\qquad \beta_d(X_1\to X_2)=\dim S,\qquad q=f,
 \]
-both whole-positive-spectrum gaps, and an explicitly costed approximate initial harmonic mixture. After the spectator extension both dimensions double, with \(q\) unchanged. A common-copy unweighting corollary is available under its own exact, polynomial multiplicity assumptions.
+both whole-positive-spectrum gaps, and an explicitly costed approximate initial harmonic mixture. Additive target error below \(\delta_f/2\) decides the source. After the spectator extension both dimensions double, with \(q\) unchanged. A common-copy unweighting corollary is available under its own exact, polynomial multiplicity assumptions.
 
-This transfers the **explicit circuit promise problem**. It does not by itself establish BQP-hardness, unrestricted SDQC1 hardness, or that this restricted problem is outside BPP. Identifying a defensible source-class consequence is a central next task, not a consequence of the numerical thresholds.
+This transfers the **explicit circuit promise problem**. The subsequent eight-label lemma provisionally composes that theorem with \(\mathsf{BQP}_1^{G_2}\); the composition awaits one bounded interface review. It does not establish ordinary BQP-hardness, DQC1-hardness, unrestricted \(\mathsf{SDQC}_1\)-hardness, or that the separated trace promise itself is outside BPP. The arbitrary-threshold boundary is documented, and novelty remains a separate gate.
 
 ## 7. Preparation and unweighting
 
@@ -201,7 +216,7 @@ The previous Pro response proposed extending this to the persistent Laplacian it
 
 | Priority | Direction | What exists | What would justify further investment |
 | --- | --- | --- | --- |
-| Main | True normalized persistence through global concentration | Conditional proof accepted; complete fixed real-gate palette certified; end-to-end restricted transfer theorem reviewed | Establish exact source-class significance and priority of the whole-kernel filtered-rank theorem |
+| Main | True normalized persistence through global concentration | Conditional proof accepted; complete fixed real-gate palette certified; end-to-end restricted transfer theorem reviewed; eight-label \(\mathsf{BQP}_1^{G_2}\) source locally checked | First close the bounded source-interface review, then establish priority of the arbitrary-chain, degenerate-kernel whole-gap and natural filtered-rank package; do not count standard quotient/min-max consequences as the novelty |
 | Secondary structural | Simultaneous persistent-Laplacian spectral unweighting | Pro proposal and independent conditional derivation | Source-check the restricted-domain/adjoint step and novelty; seek an additional nontrivial consequence |
 | Secondary algorithmic | Quantum epsilon-net and additive barcode approximation | Expected \(\widetilde O(\sqrt{nK})\) point-query upper bound; fixed-scale 1D lower bound | A new parameter tradeoff or matching multi-parameter lower bound beyond known sampling plus stability |
 | Direct continuation | Bounded evaluated-Hom width for decomposition | Exact update-rank formula and arbitrary-rank obstruction | A natural non-interval class with provably small evaluated rank and an improved fully charged classical comparison |
@@ -223,6 +238,6 @@ All seven existing probes were rerun successfully during this consolidation. The
 
 ## 9. Requested next research milestone
 
-First audit the strongest theorem with the actual written hypotheses and source dependencies. Retract incorrect objections explicitly. Then develop the best surviving route as far as possible: prove additional lemmas, identify counterexamples, sharpen the source model, and deliver a theorem/proof package that could justify a substantial TCS submission. If the main direction collapses to an elementary corollary or an uninformative promise reduction, say so and develop the strongest alternative rather than embellishing the claim.
+The immediate bounded milestone is an interface and composition audit of the eight-label \(\mathsf{BQP}_1^{G_2}\) source. It must verify the exact acceptance operator, clean/mixed input separation, fixed-local output, exact \(G_2\) implementation, soundness reduction, growing denominator, and the precise gate-dependent hardness wording. After that, run a primary-source novelty audit centered on the all-geometric-chain concentration estimate over degenerate logical kernels, the resulting inverse-polynomial gap above the entire geometric kernel, and the exact natural filtered rank. Exact multiplicity alone, the normalized-persistence definition, quotient dimension counting, ordinary min-max, and the already sourced local gadgets are excluded from the novelty claim.
 
 Every response, useful failed derivation, correction, dependency change, and verified milestone should be archived before updating conclusions. Raw Pro outputs and adopted results remain separate. MILESTONES.md records the current lifecycle state.

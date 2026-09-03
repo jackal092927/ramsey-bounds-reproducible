@@ -72,14 +72,19 @@ Consolidation started September 2, 2026 PDT; new dispatch and follow-up setup co
 | M66 | SDQC1 source-complexity check | **TARGETED PRIMARY SOURCE + ALGEBRA CHECK** | Standard \((2/3,1/3,1/3)\) constants give a \(1/6\) fraction gap; arbitrary trace gaps do not determine perfect-space fraction, and subspace-preserving amplification alone does not repair this |
 | M67 | Exact source-complexity successor | **SENT AND RUNNING**, user message 7, observed 2026-09-03T18:43:37.927728Z | One bounded packet asks for the strongest separated real-gate consequence, exact gate/threshold obligations, and the relation to Conjectures 1--2 |
 | M68 | Integration-response and source-gate checkpoint | **PUSHED AND REMOTE-VERIFIED**, b78da7ab9472f6d2c0858634b56f3c1210a3e931 | Complete message-6 response/capture/disposition, corrected theorem, primary source gate, and frozen 28196-byte successor packet; raw GitHub bytes/SHA matched |
-| M69 | Source-complexity continuation | **ACTIVE**, existing tda-pro-github to be retargeted | Tracks request 7; after disposition, move to novelty only if exact class significance has a documented boundary |
+| M69 | Source-complexity continuation | **COMPLETED BY M70**, existing tda-pro-github retained | Request 7 was collected without duplicate submission or automation |
+| M70 | Source-complexity Pro review | **COMPLETED AND COLLECTED**, user message 7; UI Worked for 8m 41s | Full response, 113 equation sources and browser capture archived; Pro explicitly performed no primary-source checking |
+| M71 | Source-complexity disposition | **RESTRICTED COROLLARY ACCEPTED; UNRESTRICTED CLAIM STOPPED** | General same-fraction construction proves \(\delta_f>0\) is necessary for a target seeing only exact perfect fraction; subspace-preserving amplification cannot repair arbitrary thresholds |
+| M72 | Minimal clean complexity theorem | **UPDATED** in CLEAN_RESTRICTED_REDUCTION_THEOREM.md | Polynomial reduction from explicit \(\operatorname{SepPerfectFraction}^{\mathcal G_R}\) with target error below \(\delta_f/2\); no BQP, DQC1 or unrestricted SDQC1 hardness claim |
+| M73 | Eight-label perfect-completeness source | **NEW LOCAL DERIVATION; ALGEBRA/INTERFACE CHECK PASS** | Exact \(G_2\) verifier maps to \(M=\operatorname{diag}(1,p,p,p,p,p,0,0)\otimes I\), giving perfect fractions \(3/4\) versus \(1/8\), growing denominator, and no controlled Hadamard |
+| M74 | Rudolph BQP1 gate-source check | **TARGETED PRIMARY SOURCE CHECK** | arXiv v2 Definition 2.2 and Theorems 2.3/3.4 support clean input/output, exact \(G_2\) error reduction, and cyclotomic-gate inclusion; optional QSAT and Marriott--Watrous routes not needed or checked |
 
 ## Current unresolved research gates
 
-1. Establish the strongest meaningful consequence for the separated exact real-gate source without promoting arbitrary-threshold \(\mathsf{SDQC}_1\) or using approximate gate compilation.
-2. Determine whether the global whole-kernel theorem and its filtered normalized consequence are new, already implicit, or already explicit.
-3. Decide whether an exact threshold-preserving reduction to the supported gate set exists; otherwise record a hard stop at the explicit separated promise.
-4. Evaluate whether the persistent-Laplacian theorem supplies sufficient additional substance; its elementary domination proof alone does not establish impact.
+1. Complete a bounded interface/composition review of the eight-label \(\mathsf{BQP}_1^{G_2}\) source before promoting the named gate-dependent hardness claim.
+2. Determine whether the arbitrary-geometric-chain concentration theorem over degenerate logical kernels, its whole-kernel gap, and its natural filtered-rank consequence are new, already implicit, or already explicit.
+3. Keep unrestricted \(\mathsf{SDQC}_1\) stopped; the eight-label construction uses perfect completeness and does not repair arbitrary trace thresholds.
+4. Evaluate whether the persistent-Laplacian theorem supplies sufficient additional substance and whether the poor polynomial gap exponent is acceptable for a structural TCS result.
 5. For the net and evaluated-Hom alternatives, prove a new parameter or structural result that survives the strongest relevant classical baseline.
 
 ## Archival rules
