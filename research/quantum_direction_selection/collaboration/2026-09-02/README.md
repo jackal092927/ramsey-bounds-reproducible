@@ -18,6 +18,7 @@
 - [发送后的来源纠正](POST_DISPATCH_SOURCE_UPDATE.md)：persistent Laplacian 单调性已有来源，列入下一轮评估。
 - [后续工作流程](FOLLOW_UP_WORKFLOW.md)：每小时回收、独立核查、继续推进和同步。
 - [此前 hyperbolic 备选讨论](PRO_PREVIOUS_HYPERBOLIC_RESPONSE.md)：保留完整建议及停止理由。
+- [项目级补充档案](../../../pro_collaboration_2026-09-02/README.md)：47 份来源快照、四份历史 Pro 回复、39 个 persistent-domain 检查及 Ramsey 成果总览；补充任务书未发送，当前请求仍以本目录的固定附件为准。
 
 目前最实质的候选是任意低能几何链的全局 concentration 论证；后面的维数与商空间推理属于标准推论。固定 gadget 的来源整合、精确电路源问题的复杂性价值和新颖性仍待独立 review。备选方向包括 persistent Laplacian 低谱的共同复制转换、量子几何采样及自然的 evaluated-Hom-width 受限类。
 

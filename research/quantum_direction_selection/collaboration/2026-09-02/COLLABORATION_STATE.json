@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-03T07:08:40Z",
+  "updated_at": "2026-09-03T07:27:27Z",
   "objective": "Review and advance true normalized persistence toward a substantial TCS theorem; archive every useful positive/negative milestone and Pro result.",
   "repository": {
     "url": "https://github.com/jackal092927/ramsey-bounds-reproducible",
@@ -69,6 +69,17 @@
     "canonical_scope": "research/quantum_direction_selection and existing TDA Pro channel",
     "supplemental_scope": "research/pro_collaboration_2026-09-02 plus separately owned Ramsey root/manuscript synchronization",
     "duplicate_submission": "avoided",
-    "duplicate_automation": "avoided"
+    "duplicate_automation": "avoided",
+    "supplemental_archive": {
+      "entry": "research/pro_collaboration_2026-09-02/README.md",
+      "source_commit": "92f0a7cac99c26e145a0d7ec625e805fa714a7f5",
+      "receipt_commit": "029b12da60606d040ca1df660432ae8cc87481f4",
+      "source_manifest": "research/pro_collaboration_2026-09-02/SOURCE_SNAPSHOT.json",
+      "source_files": 47,
+      "verification": "Local branch and git ls-remote agreed at receipt commit; all 47 frozen source sizes and SHA-256 hashes independently matched blobs at source commit.",
+      "contents": "Four historical Pro responses, project-wide Ramsey portfolio, review dispositions, and a 39-case persistent-domain check archive.",
+      "check_scope": "This ingestion verified archive integrity; it did not rerun the supplemental numerical checks or certify the archived arguments.",
+      "submission_status": "Supplemental PRO_REQUEST was never sent and is superseded. The actual active request remains the frozen a46f408 packet in the existing TDA conversation."
+    }
   }
 }

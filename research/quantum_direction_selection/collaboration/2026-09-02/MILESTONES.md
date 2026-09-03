@@ -29,6 +29,7 @@ Consolidation started September 2, 2026 PDT; new dispatch and follow-up setup co
 | M23 | Pro follow-up collection and archival | **ACTIVE** hourly thread follow-up, tda-pro-github | Collect and independently disposition new results, advance concrete proof gates, then commit and push |
 | M24 | Persistent domination source correction | **PRIMARY SOURCE CHECKED**, Mémoli–Wan–Wang Theorem 5.1 proof | Existing operator decomposition gives the inequality; correct the old Pro novelty emphasis in the next round without interrupting the current one |
 | M25 | Parallel consolidation coordination | **SCOPE COORDINATED** with research/pro_collaboration_2026-09-02 | One canonical TDA Pro conversation and hourly continuation; supplemental portfolio/history is owned separately |
+| M26 | Supplemental portfolio incorporated into continuation | **ARCHIVE INTEGRITY VERIFIED**: branch and remote matched receipt 029b12da60606d040ca1df660432ae8cc87481f4; all 47 source sizes/hashes matched commit 92f0a7cac99c26e145a0d7ec625e805fa714a7f5 | Companion archive adds four historical responses and a 39-case check record; its unsent task brief is superseded. Existing Pro packet and follow-up remain unchanged; numerical checks were not rerun during this ingestion |
 
 ## Current unresolved research gates
 

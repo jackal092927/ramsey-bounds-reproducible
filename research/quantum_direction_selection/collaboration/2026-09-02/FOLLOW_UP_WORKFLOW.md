@@ -2,6 +2,8 @@
 
 Current scope and hypotheses are in RESEARCH_DOSSIER.md. Corrections supersede older raw criticism.
 
+The [project-wide supplement](../../../pro_collaboration_2026-09-02/README.md) is now synchronized at source commit 92f0a7cac99c26e145a0d7ec625e805fa714a7f5 with receipt 029b12da60606d040ca1df660432ae8cc87481f4. Its 47-file frozen manifest was independently checked against the source commit. Consult its historical responses, review dispositions, and 39-case persistent-domain evidence when relevant to a concrete next question. Its PRO_REQUEST was never sent and is superseded; this supplement does not change the packet actually received by the current Pro run.
+
 1. Read COLLABORATION_STATE.json, MILESTONES.md and the latest receipts. Inspect Git status and origin for codex/fill-ramsey-gaps. Preserve unrelated manuscript work.
 2. Use the collaborator and Chrome skills. Query the existing TDA channel registry and verify the visible personal account. Reuse the exact recorded conversation. The public archive intentionally omits the account email.
 3. Identify the latest request by its exact commit and text. The first new request is user message 2, following one completed historical assistant response. Its attachment is PRO_CONTEXT_PACKET.md. Do not collect the old response again as the answer to this packet.
