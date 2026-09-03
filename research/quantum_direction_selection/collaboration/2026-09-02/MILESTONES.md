@@ -39,6 +39,9 @@ Consolidation started September 2, 2026 PDT; new dispatch and follow-up setup co
 | M33 | Actual representative zero-weight data | **EXACT CERTIFICATE PASS** | Rank D0=902, kernel dimension 180=4+176, projected pair annihilates V; supplies finite assumptions for one atom |
 | M34 | Higher-simplex padding correction | **MATHEMATICAL ERROR CORRECTED** | Actual source graph has degree-5 simplices at target degree 3; use every bidegree and the outside gap. Frozen old packet preserved |
 | M35 | Further targeted primary checks | **LIMITED PRIMARY SOURCE/CODE CHECK PERFORMED** | KK local statement/up sum; Hayakawa quotient statement; Rudolph states/joins/code. Full papers and complete priority still unverified |
+| M36 | New proof/certificate source checkpoint | **PUSHED AND REMOTE-VERIFIED**, 789f87f8825ca4d57790a857a14e745abbcb2c00 | GitHub content API independently matched the 201169-byte packet and SHA; all nine included files matched the frozen manifest |
+| M37 | Focused proof/guarded-palette follow-up | **SENT AND RUNNING**, same Pro 5/5 conversation, user message 3 | New attachment and Pro thinking observed by 2026-09-03T11:06:49Z; exact submission and receipt archived; no duplicate send after browser timeout |
+| M38 | Hourly continuation retargeted | **ACTIVE AND VERIFIED**, existing tda-pro-github heartbeat | Uses current_request and the new proof/certificate/disposition; unchanged running states stay quiet |
 
 ## Current unresolved research gates
 
