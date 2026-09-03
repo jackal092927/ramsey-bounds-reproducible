@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-03T19:37:00Z",
+  "updated_at": "2026-09-03T19:47:00Z",
   "objective": "Review and advance true normalized persistence toward a substantial TCS theorem; archive every useful positive/negative milestone and Pro result.",
   "repository": {
     "url": "https://github.com/jackal092927/ramsey-bounds-reproducible",
@@ -162,7 +162,17 @@
         "terminal_status": "completed and collected; integration accepted after source-interface correction",
         "source_checking": "No source or literature checking by this Pro response."
       }
-    ]
+    ],
+    "prepared_successor": {
+      "request_file": "PRO_BQP1_SOURCE_REQUEST_2026-09-03.md",
+      "attachment_file": "PRO_BQP1_SOURCE_PACKET_2026-09-03.md",
+      "attachment_bytes": 36077,
+      "attachment_sha256": "4f68ce7c35596f5ae0c1aaa80891de9cc27880b0d9d673818b2dc05cfeb38934",
+      "intended_user_message_number": 8,
+      "scope": "Bounded <=2000-word exact operator/interface and gate-dependent BQP1 source-composition audit; no browsing, gadget review, novelty or unrestricted-class promotion.",
+      "status": "prepared_not_sent",
+      "source_commit": "pending"
+    }
   },
   "backup_channel": {
     "topic": "Quantum hyperbolic navigation beyond generic search",
@@ -200,7 +210,7 @@
     "bqp1_primary_source_check": "Rudolph arXiv:2411.02681v2 Definition 2.2 and Theorems 2.3/3.4 checked for clean BQP1 interface, exact G2 soundness reduction, and cyclotomic gate-set inclusion. Optional TQC and Marriott-Watrous routes not checked or needed."
   },
   "github": {
-    "status": "source_and_bqp1_candidate_checkpoint_pending_push",
+    "status": "bqp1_review_source_checkpoint_pending_commit",
     "review_source_commit": "b78da7ab9472f6d2c0858634b56f3c1210a3e931",
     "verification": "Local source HEAD and git ls-remote agreed; raw GitHub packet bytes were 28196 with SHA-256 7f38dd8353d90b9fe7c471dfb0e83bcd5bdca31a7ee5a011cbbd64ad91a12c15 before submission.",
     "receipt_note": "Message-7 archive/disposition and the new locally checked eight-label BQP1 source are ready for a scoped source checkpoint before Pro message 8."
@@ -217,7 +227,7 @@
       "Audit the eight-label BQP1^G2 circuit interface and derive the exact compressed acceptance operator, including clean/mixed registers, label coherence, output locality, and soundness reduction.",
       "If accepted, state the strongest gate-dependent hardness consequence and exact exclusions; then move to the primary-source novelty collision audit."
     ],
-    "phase": "Message 7 completed, collected and dispositioned. New eight-label BQP1^G2 source locally passes and is the next bounded Pro gate; unrestricted SDQC1 remains stopped.",
+    "phase": "Message 7 completed and dispositioned. Eight-label BQP1 source, independent local audit, and bounded message-8 packet prepared; source checkpoint must be pushed and verified before the authorized submission.",
     "automation_prompt_updated_for_current_request": false,
     "automation_updated_at": "2026-09-03T19:27:37.090Z"
   },

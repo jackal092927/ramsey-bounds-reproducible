@@ -110,3 +110,21 @@ The bounded source-complexity request is now [completed and archived](PRO_SOURCE
 **GO** for the explicit \(\operatorname{SepPerfectFraction}^{\mathcal G_R}\) reduction and its restricted Conjecture-1 rank conclusion. At \((a,b,r)=(2/3,1/3,1/3)\), the reduction has target gap \(1/6\) and safe additive error \(1/24\).
 
 **STOP the unrestricted hardness claim.** No exact upgrading or gate-set-equivalence theorem is in the archive. Retain the representation/transfer theorem and the separated-promise corollary, and present arbitrary-threshold \(\mathsf{SDQC}_1\) as open. Classical reversible predicates give growing \(D\) and exact \(f=p\), but their constant additive-gap promise is sampleable and supplies only a baseline, not the desired quantum-hard source.
+
+## 7. Later recognized-source upgrade
+
+The completed Pro audit above correctly stopped the unrestricted inference but did not exhaust narrower recognized sources. A later local construction, recorded in [NORMALIZED_BQP1_SOURCE_GATE.md](NORMALIZED_BQP1_SOURCE_GATE.md), starts with a clean-input \(\mathsf{BQP}_1^{G_2}\) circuit of acceptance probability \(p_x\) and uses eight mixed labels to obtain
+
+\[
+M_x=\operatorname{diag}(1,p_xI_5,0I_2)\otimes I_{\rm dummy}.
+\]
+
+Its YES and NO perfect-space fractions are exactly \(3/4\) and \(1/8\), respectively, while the NO off-perfect spectrum is at most \(1/3\). The algebra and circuit interface have passed a separate [independent local review](NORMALIZED_BQP1_SOURCE_GATE_INDEPENDENT_REVIEW.md), and Rudolph's exact-gate theorem was checked at the primary source.
+
+This changes the decision as follows:
+
+- **LIMITED GO:** the weighted, whole-kernel-gapped normalized-persistence target has a locally proved \(\mathsf{BQP}_1^{G_2}\)-hard route under the recorded clean geometric theorem hypotheses;
+- **STILL STOPPED:** unrestricted \(\mathsf{SDQC}_1\), ordinary \(\mathsf{BQP}\), and gate-independent arbitrary \(\mathsf{BQP}_1\) hardness;
+- **CONDITIONAL:** the unweighted conclusion still depends on a separate common-copy unweighting theorem.
+
+The next gate is no longer source existence. It is primary-source novelty/positioning against nearby harmonic-persistence hardness and an external Pro audit of this exact interface.
