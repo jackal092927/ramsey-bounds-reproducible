@@ -90,6 +90,8 @@ Consolidation started September 2, 2026 PDT; new dispatch and follow-up setup co
 | M84 | Primary-source novelty Pro packet | **PREPARED FROM REMOTE-VERIFIED SOURCE COMMIT 6e70274** | Seven-file 72511-byte packet, SHA-256 220304109773ce44ed91f8cf8846a91d9cecaeab82565df13a0a4c06e8c0c3e1; requests direct source checking and one theorem-or-no-go result |
 | M85 | Primary-source novelty/impact review | **SENT ONCE AND RUNNING**, user message 9; observed 2026-09-03T20:17:18Z | Exact prompt, packet lineage, browser message ID and no-duplicate evidence recorded in PRO_NOVELTY_DISPATCH_RECEIPT_2026-09-03.md |
 | M86 | Novelty-review continuation | **ACTIVE AND RETARGETED**, existing hourly tda-pro-github heartbeat | Tracks message 9 collection, direct-source evidence, independent disposition and GitHub sync; no new automation and no duplicate request |
+| M87 | King--Kohler corollary boundary | **TARGETED SOURCE COMPARISON + LOCAL PROOF**, KING_COROLLARY_BOUNDARY_2026-09-03.md | Qualitative degenerate-kernel closure is a short corollary if their all-chain bounds are uniform; finite-certificate estimate survives as a proof repair and improves final gap dependence from high-degree to linear in logical \(g\) |
+| M88 | Uniform perturbation counterexample | **EXACT ABSTRACT FAMILY** | Per-basis-vector \(O(\lambda)\) closeness in growing rank does not imply uniform projector-norm \(O(\lambda)\); fixed-local-before-padding structure or a direct operator estimate is required |
 
 ## Current unresolved research gates
 

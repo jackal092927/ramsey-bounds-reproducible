@@ -101,3 +101,7 @@ Downgrade to **LOW as a standalone theory paper** if King--Kohler's displayed in
 ## Evidence boundary
 
 This pass targeted the six ledger sources and the nearby normalized persistent Betti algorithm literature. It checked the specific theorem/definition/proof locations summarized above. It did not exhaust later versions, citations, independent papers, conference proceedings, or unpublished work. Search nonappearance was not treated as evidence of novelty. The full reduction and local certificate family were not recertified during this source pass.
+
+## Post-dispatch equation-level refinement
+
+After freezing and sending the Pro packet, [KING_COROLLARY_BOUNDARY_2026-09-03.md](KING_COROLLARY_BOUNDARY_2026-09-03.md) completed the cheap falsification test. Conditional on uniform validity of King--Kohler's Lemmas 10.2--10.4, their displayed norm decomposition gives the qualitative degenerate-kernel concentration and whole-gap theorem by a short projection argument. The novelty target is therefore narrowed to the finite-certificate proof repair and quantitative strengthening: it avoids a nonuniform growing-rank perturbation inference and the padded coordinate-bulk obstruction, chooses \(\lambda\) independently of \(g\), and yields a final gap linear in \(g\). This later conclusion is not part of the frozen packet and must be compared with the eventual Pro response separately.

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-03T20:19:11Z",
+  "updated_at": "2026-09-03T20:24:26Z",
   "objective": "Review and advance true normalized persistence toward a substantial TCS theorem; archive every useful positive/negative milestone and Pro result.",
   "repository": {
     "url": "https://github.com/jackal092927/ramsey-bounds-reproducible",
@@ -275,13 +275,15 @@
     "bqp1_independent_review": "NORMALIZED_BQP1_SOURCE_GATE_INDEPENDENT_REVIEW.md; block compression, coherent labels, clean/mixed register split, reversible scratch, dummy denominator, exact gate support and uniformity passed. Novelty and downstream geometry were outside scope.",
     "bqp1_pro_review": "Completed and collected with 98 exact equation sources; operator/interface and conditional weighted composition accepted after independent disposition. Pro performed no source checking.",
     "bqp1_source_gate": "CLOSED at weighted BQP1^G2 hardness under the recorded geometric theorem; values 3/4 versus 1/8, threshold 7/16, additive error 1/24 safe. Denominator growth is padding-generated.",
-    "unweighting_naturality": "No local obstruction: common labeled blocks commute with inclusions, dyadic F=lambda^-2 is polynomial, and future gadget vertices may be isolated initially for d>=1. Result remains dependent on Hayakawa single-level symmetric/asymmetric theorem and is likely a direct corollary."
+    "unweighting_naturality": "No local obstruction: common labeled blocks commute with inclusions, dyadic F=lambda^-2 is polynomial, and future gadget vertices may be isolated initially for d>=1. Result remains dependent on Hayakawa single-level symmetric/asymmetric theorem and is likely a direct corollary.",
+    "king_corollary_boundary": "Equation-level check: conditional on uniform King-Kohler Lemmas 10.2-10.4, qualitative degenerate-kernel concentration, exact multiplicity and whole-positive-gap follow by a short projection/min-max argument. The surviving technical delta is the finite-certificate repair and g-linear gap scaling.",
+    "uniform_perturbation_counterexample": "Exact graph-subspace family with r=lambda^-2 has paired orthonormal basis error lambda*sqrt(2-sqrt(2)) while projector distance is 1/sqrt(2); basiswise O(lambda) is not instance-uniform in growing rank."
   },
   "github": {
-    "status": "novelty_dispatch_archive_prepared_for_commit",
+    "status": "post_dispatch_king_boundary_prepared_for_commit",
     "review_source_commit": "6e70274a78872cd891cedd4319145d68195d02fc",
     "verification": "Novelty source checkpoint 6e70274a78872cd891cedd4319145d68195d02fc matched local HEAD and git ls-remote after push. The seven-file successor packet is 72511 bytes with SHA-256 220304109773ce44ed91f8cf8846a91d9cecaeab82565df13a0a4c06e8c0c3e1.",
-    "receipt_note": "Message 9 was sent once and observed running. Its exact dispatch receipt and lifecycle state are prepared for synchronization.",
+    "receipt_note": "Message 9 remains running. A post-dispatch equation-level source comparison and exact uniform-perturbation counterexample are prepared for synchronization; they were not in the frozen packet.",
     "dispatch_commit": "pending"
   },
   "follow_up": {
@@ -297,7 +299,7 @@
       "Decide whether quotient naturality gives a meaningful restricted resolution of the Lowe et al. normalized-persistence conjecture.",
       "Audit common-copy unweighting as an unweighted theorem corollary and give a theorem-or-no-go novelty disposition."
     ],
-    "phase": "Message 9 primary-source novelty and impact audit is running. Collect the complete response, preserve its checked source locations and negative conclusions, write an independent disposition, and do not duplicate or interrupt it.",
+    "phase": "Message 9 remains running. A post-dispatch local check narrowed the qualitative degenerate-kernel closure to a short King-Kohler corollary under uniform estimates; the finite-certificate repair and g-linear gap dependence are now the candidate technical delta.",
     "automation_prompt_updated_for_current_request": true,
     "automation_updated_at": "2026-09-03T20:19:11Z"
   },
