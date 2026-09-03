@@ -80,7 +80,7 @@ Apply this inequality to the blow-up and restrict to its reducing asymmetric sec
 
 ## Scope and checks
 
-This is a short conditional structural theorem. Its newness and independent paper value remain unknown. The standard domination inequality is not advertised as novel.
+This is a short conditional structural theorem. Its newness and independent paper value remain unknown. The domination inequality already follows from the persistent-domain decomposition in [Mémoli–Wan–Wang, Theorem 5.1's proof](https://arxiv.org/html/2012.02808v1). This source was independently checked after the Pro packet was sent; see [the post-dispatch correction](POST_DISPATCH_SOURCE_UPDATE.md). The inequality is not a new contribution.
 
 The argument does not deduce a persistent positive gap from the two endpoint positive gaps: shrinking a kernel can introduce new, small positive eigenvalues. It uses domination only to transfer the **already positive asymmetric sector** bound. It does not turn a low-energy approximation into an exact homology count, solve the unrestricted normalized-persistence conjecture, or provide a barcode algorithm.
 

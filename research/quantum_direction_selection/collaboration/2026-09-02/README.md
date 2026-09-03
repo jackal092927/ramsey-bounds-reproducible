@@ -14,7 +14,11 @@
 - [persistent Laplacian 条件性扩展](PERSISTENT_LAPLACIAN_EXTENSION.md)：对 Pro 提案的独立推导与边界。
 - [复现实验原始输出](REPRODUCTION_RESULTS.json)：7 个已有小型检查的本次重跑结果。
 - [执行状态](COLLABORATION_STATE.json)：发送、运行、收集、核查、同步分别记录。
+- [本轮发送回执](PRO_DISPATCH_RECEIPT.md)：固定 Git 快照、实际任务消息、附件哈希和 Pro 运行证据。
+- [发送后的来源纠正](POST_DISPATCH_SOURCE_UPDATE.md)：persistent Laplacian 单调性已有来源，列入下一轮评估。
+- [后续工作流程](FOLLOW_UP_WORKFLOW.md)：每小时回收、独立核查、继续推进和同步。
+- [此前 hyperbolic 备选讨论](PRO_PREVIOUS_HYPERBOLIC_RESPONSE.md)：保留完整建议及停止理由。
 
 目前最实质的候选是任意低能几何链的全局 concentration 论证；后面的维数与商空间推理属于标准推论。固定 gadget 的来源整合、精确电路源问题的复杂性价值和新颖性仍待独立 review。备选方向包括 persistent Laplacian 低谱的共同复制转换、量子几何采样及自然的 evaluated-Hom-width 受限类。
 
-仓库同步和 Pro 发送以执行状态中的回执为准。本目录不是已完成论文，也不是投稿或整套 reduction 正确性的认证。
+研究快照 a46f408 已推送并经远端核验；新请求已发送到原 TDA 会话，Chat / Pro 5/5，目前正在处理。已启用本任务每小时回收与继续推进。本次工作跨过午夜，发送回执日期为 9 月 3 日，目录名保留起始日期。本目录不是已完成论文，也不是投稿或整套 reduction 正确性的认证。

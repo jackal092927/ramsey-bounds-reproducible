@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-02T23:58:21.877353-07:00",
+  "updated_at": "2026-09-03T07:08:40Z",
   "objective": "Review and advance true normalized persistence toward a substantial TCS theorem; archive every useful positive/negative milestone and Pro result.",
   "repository": {
     "url": "https://github.com/jackal092927/ramsey-bounds-reproducible",
@@ -17,7 +17,21 @@
     "url": "https://chatgpt.com/c/6a98c05a-ecf4-83e8-b356-4e20dc3fde3f",
     "account": "visible identity matched local personal Pro channel registry",
     "previous_response": "collected",
-    "new_request": "prepared"
+    "new_request": "sent_running",
+    "current_request": {
+      "source_commit": "a46f4087693edc088663e0cbf4f6aa9961494325",
+      "message_file": "PRO_SUBMISSION_MESSAGE.md",
+      "attachment_file": "PRO_CONTEXT_PACKET.md",
+      "attachment_bytes": 126132,
+      "attachment_sha256": "91d330f28ac61ad0be3de4169d0ad5b26a899ff723ea9c3f31a22cb81fc77a10",
+      "surface": "Chat",
+      "thinking": "Pro, 5 of 5",
+      "user_message_number": 2,
+      "completed_assistant_messages_before_this_request": 1,
+      "last_observation": "New user message contains the source commit; active Stop answering control and Searching the web status; no new completed assistant message collected.",
+      "last_observed_at": "2026-09-03T07:08:40Z",
+      "receipt": "PRO_DISPATCH_RECEIPT.md"
+    }
   },
   "backup_channel": {
     "topic": "Quantum hyperbolic navigation beyond generic search",
@@ -30,14 +44,31 @@
     "new_persistent_domain_probe": "passed",
     "source_ledger": "prior-local-checks-reported; complete primary-source reread not performed in consolidation",
     "full_reduction": "not_certified",
-    "novelty": "open"
+    "novelty": "open",
+    "additional_primary_source_check": "Mémoli–Wan–Wang arXiv:2012.02808v1 Section 2.2 and Theorem 5.1 proof; the six main source dependencies remain incompletely independently checked."
   },
   "github": {
-    "status": "prepared_not_yet_pushed",
-    "latest_verified_remote_commit": null
+    "status": "source_checkpoint_pushed_and_remote_verified",
+    "review_source_commit": "a46f4087693edc088663e0cbf4f6aa9961494325",
+    "verification": "Local HEAD, git ls-remote, and GitHub commit API agreed before Pro submission.",
+    "receipt_note": "Dispatch and follow-up receipts are archived in subsequent commits; compare the actual branch with origin before reporting the latest sync state."
   },
   "follow_up": {
-    "status": "to_be_configured_after_submission",
-    "policy": "Collect exact-channel final responses; archive raw material, validate before adopting, and sync each useful milestone. Do not interrupt a running Pro response or duplicate a submission."
+    "status": "active",
+    "automation_id": "tda-pro-github",
+    "kind": "thread heartbeat",
+    "schedule": "hourly",
+    "policy": "Collect new final responses from the exact channel; preserve raw text and equations, independently disposition before adopting, and sync each useful positive/negative milestone. Continue concrete in-scope proof questions when productive; never interrupt a running Pro response or duplicate a submission.",
+    "workflow": "FOLLOW_UP_WORKFLOW.md",
+    "stop": "Pause when a substantial scoped result or documented stopping conclusion is reached, or user intervention is necessary.",
+    "pending_for_next_completed_response": [
+      "POST_DISPATCH_SOURCE_UPDATE.md: independently checked Mémoli–Wan–Wang Theorem 5.1 proof already contains persistent domination; novelty correction only, no interruption sent."
+    ]
+  },
+  "coordination": {
+    "canonical_scope": "research/quantum_direction_selection and existing TDA Pro channel",
+    "supplemental_scope": "research/pro_collaboration_2026-09-02 plus separately owned Ramsey root/manuscript synchronization",
+    "duplicate_submission": "avoided",
+    "duplicate_automation": "avoided"
   }
 }

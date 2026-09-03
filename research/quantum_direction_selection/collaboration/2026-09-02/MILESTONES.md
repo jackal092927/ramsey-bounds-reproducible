@@ -1,6 +1,6 @@
 # Milestone ledger
 
-Last consolidation: September 2, 2026 PDT. This ledger records mathematical content and execution states separately. The machine-readable receipt is COLLABORATION_STATE.json. Original reports are retained as dated historical snapshots.
+Consolidation started September 2, 2026 PDT; new dispatch and follow-up setup completed after midnight on September 3 PDT. This ledger records mathematical content and execution states separately. The machine-readable receipt is COLLABORATION_STATE.json. Original reports are retained as dated historical snapshots.
 
 | ID | Result / work product | Evidence and status | Practical consequence |
 | --- | --- | --- | --- |
@@ -24,9 +24,11 @@ Last consolidation: September 2, 2026 PDT. This ledger records mathematical cont
 | M18 | Finite persistent-domain check | **PASS** for degree 0/1 at three pairs, including filling through a later diagonal | Tests inherited domain metric, adjoint, cross-sector reduction and rank by a separate calculation |
 | M19 | Existing reproduction suite | **7/7 PASS** in this consolidation; raw outputs archived | Reproducibility evidence for finite probes only |
 | M20 | Consolidated dossier, source table, request and research index | **WRITTEN** | Concrete reviewable handoff, with positive/negative results and outstanding dependencies |
-| M21 | GitHub research checkpoint | **PREPARED; pending first push** | Exact committed and remotely verified state will be recorded in the dispatch receipt |
-| M22 | New Pro review-and-advance request | **PREPARED; not yet sent** | Must use the existing TDA conversation and visible personal account, Pro 5/5 |
-| M23 | Pro follow-up collection and archival | **PENDING SUBMISSION** | Preserve each useful result, independently disposition it, then commit and push |
+| M21 | GitHub research checkpoint | **PUSHED AND REMOTE-VERIFIED** at a46f4087693edc088663e0cbf4f6aa9961494325 | 43 research files synchronized before the new Pro submission |
+| M22 | New Pro review-and-advance request | **SENT AND RUNNING** in the existing TDA conversation, Chat / Pro 5/5 | New message and attachment observed; Stop answering and web-search activity confirmed; new final answer not yet collected |
+| M23 | Pro follow-up collection and archival | **ACTIVE** hourly thread follow-up, tda-pro-github | Collect and independently disposition new results, advance concrete proof gates, then commit and push |
+| M24 | Persistent domination source correction | **PRIMARY SOURCE CHECKED**, Mémoli–Wan–Wang Theorem 5.1 proof | Existing operator decomposition gives the inequality; correct the old Pro novelty emphasis in the next round without interrupting the current one |
+| M25 | Parallel consolidation coordination | **SCOPE COORDINATED** with research/pro_collaboration_2026-09-02 | One canonical TDA Pro conversation and hourly continuation; supplemental portfolio/history is owned separately |
 
 ## Current unresolved research gates
 
