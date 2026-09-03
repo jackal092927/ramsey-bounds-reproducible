@@ -1,0 +1,134 @@
+\section{Proof of the all-chain transfer theorem}
+\label{app:transfer-proof}
+
+This appendix proves \cref{thm:transfer} from the finite local hypotheses. All constants below depend only on the fixed palette.
+
+\subsection{Global decomposition and interface energy}
+
+Write the target chain space as the orthogonal coordinate sum
+\[
+C_d(X_A)=C_d(R)\oplus\bigoplus_{j\in A}C_{d,j}^{\rm priv}.
+\]
+For a unit chain \(x\), write
+\[
+x=\omega_0+\sum_j\omega_j,
+\qquad
+x_j=\omega_0+\omega_j,
+\qquad
+U=\sum_j\|\omega_j\|^2,
+\qquad
+e=\langle x,\Delta_Ax\rangle.
+\]
+Let \(a=\partial_R\omega_0\), \(y_j=L_j\omega_j\), \(y=\sum_jy_j\), and \(r=a+y\). The vector \(r\) is the shared-register component of the global down-boundary. Since
+\(
+a+y_j=r-(y-y_j)
+\),
+\[
+\sum_j\|a+y_j\|^2
+\le2t_A\|r\|^2+2\sum_j\|y-y_j\|^2.
+\]
+The elementary identity
+\[
+\sum_j\|y-y_j\|^2
+=(t_A-2)\|y\|^2+\sum_j\|y_j\|^2
+\]
+also holds for \(t_A=1\). Put
+\[
+\rho=\lambda^{-2}\|[L_1\ \cdots\ L_{t_A}]\|^2
+\le N_*t_A,
+\qquad
+\chi=(t_A-2)_+\rho+N_*\le C t_A^2.
+\]
+Then~\cref{eq:interface} gives
+\[
+\sum_j\|y-y_j\|^2\le\chi\lambda^2U.
+\]
+All nonregister down-boundary coordinates and all up-boundary coordinates are private and partition by gadget. We obtain
+\begin{equation}
+\label{eq:appendix-local-energy}
+\sum_j\|D_j(\lambda)x_j\|^2
+\le2t_Ae+2\chi\lambda^2U.
+\end{equation}
+
+\subsection{Zero-weight and private-sector coercivity}
+
+Let \(A_{j,0}=I-P_V-Q_j\) in the padded local chain space. The positive singular-value floor of \(D_{j,0}\) on \(\ran A_{j,0}\), together with
+\(
+D_j(\lambda)=D_{j,0}+\lambda D_{j,1}
+\), gives
+\begin{align}
+S_A:=\sum_j\|A_{j,0}x_j\|^2
+&\le C\sum_j\|D_{j,0}x_j\|^2\notag\\
+&\le C\left(
+t_Ae+\chi\lambda^2U+
+\lambda^2\sum_j\|x_j\|^2
+\right)\notag\\
+&\le C\left(t_Ae+\chi\lambda^2U+t_A\lambda^2\right).
+\label{eq:appendix-SA}
+\end{align}
+The final inequality uses
+\(
+\sum_j\|x_j\|^2
+=t_A\|\omega_0\|^2+U\le t_A
+\).
+
+Because \(T_jP_V=0\),
+\[
+T_jQ_jx_j=T_jx_j-T_jA_{j,0}x_j.
+\]
+The lower bound on \(T_j\) restricted to \(Q_j\), the estimate \(\|T_j\|\le C\lambda\), and orthogonality of the retained private output blocks imply
+\begin{equation}
+\label{eq:appendix-SQ}
+S_Q:=\sum_j\|Q_jx_j\|^2
+\le C\left(\frac{e}{\lambda^2}+S_A\right).
+\end{equation}
+The orthogonality here concerns the retained \(T_j\) outputs. The shared \(L_j\) outputs were handled by their horizontal operator norm and need not be orthogonal.
+
+Let \(N=\|(I-P_V)x\|^2\). Summing the orthogonal decompositions \(P_V\oplus Q_j\oplus\ran A_{j,0}\) gives
+\[
+N\le U+t_A\|(I-P_V)\omega_0\|^2=S_A+S_Q.
+\]
+Since \(U\le N\), substituting~\cref{eq:appendix-SA,eq:appendix-SQ} and using \(\chi\le Ct_A^2\) yields
+\[
+N\le C\left[t_A\lambda^2+(t_A+\lambda^{-2})e\right]
++Ct_A^2\lambda^2N.
+\]
+Choosing \(\lambda\le c_0/t_{\max}\) absorbs the last term and proves~\cref{eq:geometric-leakage}.
+
+\subsection{Logical coercivity}
+
+For each gadget, exact filling gives \(\ran\Pi_j\subseteq B_d(Y_j)\). The up-Laplacian has kernel \(B_d(Y_j)^\perp\), and~\cref{eq:local-gap} lower-bounds its positive spectrum. Therefore, after the common embedding into \(X_A\),
+\[
+\Delta_j^\uparrow\succeq c\lambda^\kappa\Pi_j.
+\]
+The top-dimensional register has no up-columns, and every degree-\((d+1)\) simplex with a private vertex belongs to exactly one gadget. Hence the global up-Laplacian is the exact sum of the embedded local up-Laplacians, proving~\cref{eq:logical-domination}.
+
+Since \(K_A\subseteq V\), the squared distance decomposes as
+\[
+\|(I-P_{K_A})x\|^2
+=N+\langle x,(P_V-P_{K_A})x\rangle.
+\]
+\Cref{eq:logical-gap,eq:logical-domination} give
+\[
+\langle x,(P_V-P_{K_A})x\rangle
+\le\frac{e}{cg_A\lambda^\kappa}.
+\]
+Together with~\cref{eq:geometric-leakage},
+\[
+\|(I-P_{K_A})x\|^2
+\le C\left[t_A\lambda^2+(t_A+\lambda^{-2})e
++\frac{e}{g_A\lambda^\kappa}\right].
+\]
+For \(\lambda\le c_0/t_{\max}\), \(g_A\le1\), and \(\kappa\ge2\), the last energy term dominates the middle energy terms up to a palette constant. This proves~\cref{eq:transfer-bound}.
+
+\subsection{Exact multiplicity and the whole-positive-spectrum gap}
+
+Let \(\mathcal L_A(E_A)\) be the span of all eigenvectors of \(\Delta_A\) with eigenvalue below \(E_A\). Every unit \(x\in\mathcal L_A(E_A)\) obeys \(e<E_A\). Choosing the constants in~\cref{eq:lambda-E-choice} makes the right-hand side of~\cref{eq:transfer-bound} strictly less than \(\eta^2<1\). Therefore \(P_{K_A}x\neq0\) for every nonzero \(x\in\mathcal L_A(E_A)\), so \(P_{K_A}|_{\mathcal L_A(E_A)}\) is injective and
+\begin{equation}
+\label{eq:low-dimension}
+\dim\mathcal L_A(E_A)\le\dim K_A.
+\end{equation}
+
+Every \(v\in V\) remains a cycle after attaching the gadgets. By \cref{lem:independent-filling}, the map \(V/W_A\to H_d(X_A)\) is injective. Its domain has dimension \(\dim K_A\), so Hodge theory supplies at least \(\dim K_A\) zero eigenvectors of \(\Delta_A\). These zero vectors belong to \(\mathcal L_A(E_A)\). Combining this lower bound with~\cref{eq:low-dimension} forces equality throughout: the geometric kernel has dimension \(\dim K_A\), and no positive eigenvalue lies below \(E_A\).
+
+If \(K_A=0\), any unit vector in \(\mathcal L_A(E_A)\) would have distance one from \(K_A\), contradicting the strict \(\eta<1\) bound. Thus the same argument proves \(\Delta_A\succeq E_AI\) in the zero-kernel case. No additional global relative-acyclicity assumption is required.

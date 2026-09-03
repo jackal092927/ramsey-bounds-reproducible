@@ -1,0 +1,60 @@
+\section{Preliminaries and problem statement}
+
+All chain spaces are finite-dimensional over \(\C\). A vertex-weighted simplicial complex assigns a positive weight \(w(v)\) to every vertex and the product weight \(w(\sigma)=\prod_{v\in\sigma}w(v)\) to a simplex. We use normalized simplex coordinates, so weighted boundary maps are diagonal rescalings of ordinary incidence matrices. For a complex \(X\), let
+\[
+\partial_{X,d}:C_d(X)\longrightarrow C_{d-1}(X),
+\qquad
+\Delta_{X,d}=\partial_{X,d}^*\partial_{X,d}
++\partial_{X,d+1}\partial_{X,d+1}^*.
+\]
+Write \(Z_d(X)=\ker\partial_{X,d}\), \(B_d(X)=\ran\partial_{X,d+1}\), and \(H_d(X)=Z_d(X)/B_d(X)\). Finite-dimensional Hodge theory identifies \(H_d(X)\) isometrically with \(\ker\Delta_{X,d}\), and hence \(\beta_d(X)=\dim\ker\Delta_{X,d}\).
+
+For an inclusion \(J:X_1\hookrightarrow X_2\), the degree-\(d\) persistent Betti number is
+\[
+\beta_d(X_1\to X_2)
+:=\rank\bigl[H_d(X_1)\longrightarrow H_d(X_2)\bigr].
+\]
+When \(\beta_d(X_1)>0\), define the true normalized persistence ratio
+\begin{equation}
+\label{eq:true-ratio}
+q_d(X_1,X_2)
+:=\frac{\beta_d(X_1\to X_2)}{\beta_d(X_1)}.
+\end{equation}
+This denominator is the initial Betti number. It is unrelated to the number of degree-\(d\) simplices. We require an inverse-polynomial lower bound on every positive eigenvalue of both endpoint Laplacians. Thus \(q_d\) is an exact-kernel statistic rather than a count of eigenvalues below a nonzero energy cutoff.
+
+\begin{definition}[Gapped true normalized persistence]
+An instance consists of polynomial-size graph descriptions of nested clique complexes \(X_1\subseteq X_2\), a degree \(d\), a promised lower bound \(E\ge1/\poly(n)\) on the positive spectrum of both \(\Delta_{X_1,d}\) and \(\Delta_{X_2,d}\), and the promise \(\beta_d(X_1)>0\). The task is to approximate~\cref{eq:true-ratio} to a stated additive accuracy.
+\end{definition}
+
+The construction starts from a top-dimensional register complex \(R\). Top-dimensional means \(C_{d+1}(R)=0\), and we set
+\[
+V:=Z_d(R)\subseteq C_d(R).
+\]
+The register is a tensor join of normalized disjoint-edge cycles, so its logical embedding into \(V\) is explicit and isometric. A finite collection of rank-one projectors \(\Pi_j\) acts on \(V\). For a term set \(A\), define
+\begin{equation}
+\label{eq:logical-sum}
+H_A:=\sum_{j\in A}\Pi_j,
+\quad
+K_A:=\ker H_A,
+\quad
+W_A:=\sum_{j\in A}\ran\Pi_j.
+\end{equation}
+Because \(H_A\) is positive semidefinite, \(W_A=\ran H_A=K_A^\perp\) inside \(V\), and \(\dim(V/W_A)=\dim K_A\).
+
+Each \(\Pi_j\) is implemented by attaching a weighted clique gadget \(Y_j\) along the register. Gadget vertices have weight \(\lambda\in(0,1]\), register vertices have weight one, and private interiors of distinct gadgets share no simplex. The resulting clique complex is denoted \(X_A\), and its full degree-\(d\) geometric Laplacian is \(\Delta_A\). The distinction between \(H_A\) and \(\Delta_A\) is central: \(H_A\) acts on the logical cycle register, while \(\Delta_A\) acts on every geometric \(d\)-chain.
+
+We assume a known logical gap
+\begin{equation}
+\label{eq:logical-gap}
+H_A\succeq g_A(P_V-P_{K_A}),
+\qquad 0<g_A\le1,
+\end{equation}
+where projectors are extended by zero outside \(V\). The goal is to transfer~\cref{eq:logical-gap} to the full spectrum of \(\Delta_A\), preserving the entire zero-space multiplicity.
+
+For the complexity application, an exact circuit \(U\) has a maximally mixed logical input, computational-basis clean work qubits, and one computational-basis output measurement \(P_{\rm acc}\). If \(J\) inserts the fixed clean string, its compressed acceptance operator is
+\begin{equation}
+\label{eq:acceptance-operator}
+M=J^*U^*P_{\rm acc}UJ,
+\qquad 0\preceq M\preceq I.
+\end{equation}
+The perfect accepting space is \(S=\ker(I-M)\). The final history Hamiltonian will have kernel isomorphic to \(S\), while the initial history Hamiltonian has a known kernel isomorphic to the entire input space.

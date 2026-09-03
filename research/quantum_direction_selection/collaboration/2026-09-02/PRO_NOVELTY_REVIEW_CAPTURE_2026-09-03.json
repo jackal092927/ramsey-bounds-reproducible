@@ -1,0 +1,314 @@
+{
+  "captured_at": "2026-09-03T20:36:43.564Z",
+  "conversation_url": "https://chatgpt.com/c/6a98c05a-ecf4-83e8-b356-4e20dc3fde3f",
+  "user_message_number": 9,
+  "source_commit": "6e70274a78872cd891cedd4319145d68195d02fc",
+  "dispatch_archive_commit": "18a47e92d169d7312355b8f94372a78eccf4b8fe",
+  "visible_duration": "Worked for 15m 38s",
+  "packet": {
+    "path": "PRO_NOVELTY_PACKET_2026-09-03.md",
+    "bytes": 72511,
+    "sha256": "220304109773ce44ed91f8cf8846a91d9cecaeab82565df13a0a4c06e8c0c3e1"
+  },
+  "messageId": "d2855e9c-808a-4c5d-b7ec-38ff09d08534",
+  "model": "gpt-5-6-pro",
+  "links": [
+    {
+      "href": "https://arxiv.org/html/2311.17234v2",
+      "i": 0,
+      "text": "arXiv+3arXiv+3arXiv+3",
+      "title": null
+    },
+    {
+      "href": "https://arxiv.org/html/2311.17234v2",
+      "i": 1,
+      "text": "arXiv",
+      "title": null
+    },
+    {
+      "href": "https://epubs.siam.org/doi/10.1137/24M1710243",
+      "i": 2,
+      "text": "SIAM+1",
+      "title": null
+    },
+    {
+      "href": "https://arxiv.org/html/2311.17234v2",
+      "i": 3,
+      "text": "arXiv+1",
+      "title": null
+    },
+    {
+      "href": "https://arxiv.org/html/2410.21258v2",
+      "i": 4,
+      "text": "arXiv",
+      "title": null
+    },
+    {
+      "href": "https://arxiv.org/html/2410.21258v2",
+      "i": 5,
+      "text": "arXiv+1",
+      "title": null
+    },
+    {
+      "href": "https://arxiv.org/html/2607.03278v1",
+      "i": 6,
+      "text": "arXiv+1",
+      "title": null
+    },
+    {
+      "href": "https://arxiv.org/html/2607.03278v1",
+      "i": 7,
+      "text": "arXiv+2arXiv+2",
+      "title": null
+    },
+    {
+      "href": "https://arxiv.org/html/2608.02726v1",
+      "i": 8,
+      "text": "arXiv+3arXiv+3arXiv+3",
+      "title": null
+    },
+    {
+      "href": "https://arxiv.org/html/2608.02726v1",
+      "i": 9,
+      "text": "arXiv",
+      "title": null
+    },
+    {
+      "href": "https://www.nature.com/articles/s41467-024-54118-z",
+      "i": 10,
+      "text": "Nature+2Nature+2",
+      "title": null
+    },
+    {
+      "href": "https://arxiv.org/html/2411.02681v2",
+      "i": 11,
+      "text": "arXiv",
+      "title": null
+    },
+    {
+      "href": "https://arxiv.org/html/2404.15407v2",
+      "i": 12,
+      "text": "arXiv",
+      "title": null
+    }
+  ],
+  "markdown": "# Strongest collision\n\nThe **degenerate-kernel upgrade itself is almost a one-paragraph King–Kohler corollary**.\n\nIn King–Kohler arXiv v2, Theorem 10.1 assumes a positive-definite logical Hamiltonian, but its proof first takes an arbitrary vector in the **full geometric chain space**, expands it into single-gadget sectors, and obtains a master inequality involving simulated-register mass, logical energy, and high/bulk/lifted errors. The assumption \\(H\\succeq gI\\) is used only at the final coercivity step. Their Lemmas 10.2–10.4 are also stated for arbitrary full-chain vectors. [arXiv](https://arxiv.org/html/2311.17234v2)\n\nConsequently, **once a correct arbitrary-chain master estimate is granted**, replacing\n\n$$\nH\\succeq gI\n$$\n\nby\n\n$$\nH\\succeq g(P-P_K)\n$$\n\nimmediately yields concentration toward \\(K=\\ker H\\); exact filling plus projection/min–max then yields exact multiplicity and a gap above the entire geometric kernel. Those last steps are not a substantial novelty.\n\nHowever, the current finite-certificate proof is **not merely a valid invocation of the arXiv-v2 proof**, because King–Kohler’s padded bulk Claim 10.2 is not valid as written. Their proof says that every vertex touching the coordinate bulk has weight \\(\\lambda\\). After join-padding, outside-register vertices have weight one and form cofaces with local bulk simplices. [arXiv](https://arxiv.org/html/2311.17234v2)\n\nConcretely, let \\(\\tau\\) be a local simplex containing the central bulk vertex and let \\(\\eta\\) be an outside-register simplex containing a weight-one vertex \\(u\\). For the padded simplex \\(\\tau*\\eta\\),\n\n$$\n\\partial(\\tau*\\eta)\n\\supseteq\n\\pm\\tau*(\\eta\\setminus\\{u\\})\n$$\n\nwith coefficient \\(w(u)=1\\). The output still contains the central vertex and therefore remains in the full coordinate bulk. Distinct deleted outside vertices give orthogonal simplex coordinates, so the projected norm is bounded below independently of \\(\\lambda\\), contradicting an \\(O(\\lambda)\\) estimate.\n\nThe first potentially new lemma is therefore not “allow \\(\\ker H\\neq0\\).” It is:\n\n> **A corrected arbitrary-chain leakage theorem from finite zero-weight data, projected private-pair coercivity, all-bidegree harmonic padding, and shared-register interface control.**\n\nThat lemma replaces the defective coordinate-bulk argument, obtains the quadratic structural remainder \\(t\\lambda^{2}\\), and lets \\(\\lambda\\) be chosen independently of \\(g\\). This is a genuine proof delta relative to arXiv v2, although still close enough to King–Kohler’s architecture that its conceptual novelty is **medium rather than high**. The packet’s intended theorem and its exact scope are stated explicitly. 〔PRO_NOVELTY_PACKET_2026-09-03〕\n\nI accessed the SIAM publication’s metadata and abstract, but its detailed full text was access-restricted. I therefore cannot determine whether the final SIAM Section 10 or appendix repaired Claim 10.2 or added an equivalent arbitrary-chain lemma. The detailed comparison below is against arXiv:2311.17234v2, not a certification of the final published proof. [SIAM](https://epubs.siam.org/doi/10.1137/24M1710243)\n\n# Source-by-source findings\n\n## 1. King–Kohler\n\n**Directly checked:** Theorem 10.1; Claim 10.2; Claim 10.4; Lemmas 10.2–10.4; and the final calculation in Section 10.\n\nTheorem 10.1 chooses\n\n$$\n\\lambda=ct^{-1}g,\\qquad\nE=c\\lambda^{4m+2}t^{-1}g,\n$$\n\nunder a lower bound on the entire logical spectrum. The proof already treats arbitrary geometric chains and isolates the logical Hamiltonian term before using positive definiteness. Claim 10.4 also gives exact additivity of the global up-Laplacian over gadgets. [arXiv](https://arxiv.org/html/2311.17234v2)\n\n**Deduction:** If their full arbitrary-chain estimates were accepted unchanged, the degenerate-kernel extension would be routine. The current project’s substantive addition is the replacement leakage proof and its weaker finite local hypotheses—not the final quotient/min–max argument.\n\n**Mathematical issue:** arXiv-v2 Claim 10.2’s full-coordinate padded bulk estimate has the counterexample above.\n\n**Priority uncertainty:** the inaccessible final SIAM proof might contain a correction.\n\n## 2. Gyurik et al.\n\nGyurik et al. already state a gap above the complete final harmonic space in Lemma 7. The nonempty-kernel case starts with an arbitrary geometric low-energy vector orthogonal to the harmonic space and invokes Lemma 11 to conclude high overlap with the simulated logical kernel. [arXiv](https://arxiv.org/html/2410.21258v2)\n\nBut Lemma 11 explicitly assumes\n\n$$\n|\\sigma\\rangle=s(|\\varphi\\rangle)\\in\\mathfrak H_{\\mathrm{sim}},\n$$\n\nrather than an arbitrary full-chain vector. [arXiv](https://arxiv.org/html/2410.21258v2)\n\nThus:\n\n- Gyurik et al. **already claims** a particular degenerate whole-kernel gap;\n- its displayed proof does **not explicitly close** the arbitrary-chain-to-simulated-register bridge;\n- this is a proof-domain mismatch, not a counterexample to the theorem;\n- the present result should be framed as an **independent repair and generalization**, not the first whole-kernel gap theorem.\n\nThe current theorem is stronger in its uniform statement over arbitrary degenerate logical kernels, exact multiplicity, both endpoints, and natural quotient filtrations. But the prior claim sharply limits novelty.\n\n## 3. Lowe–Kim–Bondesan–Hayakawa\n\nProblem 9 already defines the target statistic exactly as\n\n$$\n\\frac{\\beta_d^{1,2}}{\\beta_d^1},\n$$\n\nwith gaps above zero at both endpoints. Conjecture 1 asks for hardness of this true normalized problem. [arXiv](https://arxiv.org/html/2607.03278v1)\n\nSection 7 explicitly says King–Kohler is not sufficient as a black box and formulates Conjecture 2 using exact kernel realization and compatible harmonic isometries across the filtration. [arXiv](https://arxiv.org/html/2607.03278v1)\n\nThe quotient route is therefore a **meaningful but restricted bypass**:\n\n$$\nH_d(X_A)\\cong V/W_A,\n\\qquad\nW_A=\\sum_{i\\in A}\\operatorname{ran}\\Pi_i,\n$$\n\nand for \\(A\\subseteq B\\), inclusion becomes\n\n$$\nV/W_A\\twoheadrightarrow V/W_B.\n$$\n\nThis proves the desired numerical persistent rank without producing one exact compatible harmonic-representative isometry.\n\nThat is not already written in Lowe et al.; filtration compatibility is precisely one of their identified missing ingredients. But it resolves only the specially engineered nested-term-set family and the gate-dependent perfect-completeness source. It neither proves Conjecture 2 nor resolves their unrestricted Conjecture 1.\n\n## 4. Hayakawa\n\nHayakawa’s Lemma 4.2 identifies the block-symmetric sector exactly with the weighted base complex. The common scale \\(M\\) multiplies the weighted Laplacian by \\(M\\). Theorem 4.3 gives an asymmetric-sector gap of at least the smallest block multiplicity, and Corollary 4.4 excludes all asymmetric homology. [arXiv](https://arxiv.org/html/2608.02726v1)\n\nWith the **same labeled copy block** at every filtration level, the additional argument is one line:\n\n$$\n\\widehat J_{AB}U_A=U_BJ_{AB}.\n$$\n\nTherefore\n\n$$\n\\widehat P_BU_BJ_{AB}\n=\nU_BP_BJ_{AB},\n$$\n\nand equivalently\n\n$$\n\\widehat P_B\\widehat J_{AB}U_A\n=\nU_BP_BJ_{AB}.\n$$\n\nAll harmonic-map singular values and ranks are preserved. The endpoint gap becomes\n\n$$\n\\min\\{M\\gamma_A,\\min_v f_v\\}.\n$$\n\nFor weights \\(\\{1,\\lambda\\}\\), dyadic \\(\\lambda\\), and\n\n$$\nM=\\lambda^{-2},\n$$\n\nregister blocks have size \\(M\\), gadget blocks size one, and the blow-up is polynomial whenever \\(\\lambda^{-1}\\) is polynomial. Later gadget vertices may be included initially as isolated vertices; because the target degree is positive, they add no target-degree chains.\n\nSo the unweighted filtration result is **mathematically a short direct corollary**, not a blocked theorem and not a main novelty claim. Hayakawa explicitly leaves filtered applications as future work, but his operator theorem already supplies essentially everything needed. [arXiv](https://arxiv.org/html/2608.02726v1)\n\n## 5. Exact multiplicity, normalized persistence, and gadgets\n\nCrichigno–Kohler already give a parsimonious reduction in which satisfying states correspond one-to-one with homology classes. Exact kernel/homology multiplicity is therefore prior art. They also explain that their construction does not establish the required inverse-polynomial Laplacian promise gap. [Nature Communications](https://www.nature.com/articles/s41467-024-54118-z)\n\nRudolph’s Appendix D.1 already supplies the concrete few-term integer states and join construction used for the finite palette, while warning that the more general gadget construction lacks a correctness proof. The finite certificates add verification and source integration, not conceptual ownership of those gadgets. [arXiv](https://arxiv.org/html/2411.02681v2)\n\nNearby work on “normalized persistent Betti numbers” commonly uses simplex-count normalization,\n\n$$\n\\beta_k^{i,j}/n_k,\n$$\n\nnot Lowe et al.’s initial-Betti normalization. Thus the present statistic is not collided by that terminology—but Lowe et al. already defines the exact statistic under study. [arXiv](https://arxiv.org/html/2404.15407v2)\n\n# Concrete theorem delta\n\n## Proposition 1 — the kernel upgrade is routine\n\nSuppose an arbitrary-chain estimate has already established, for every unit \\(x\\),\n\n$$\n1-\\langle x,Px\\rangle+\\langle x,Hx\\rangle\\le R(e),\n\\qquad\ne=\\langle x,\\Delta x\\rangle,\n$$\n\nwhere \\(H\\) is supported on \\(V=\\operatorname{ran}P\\), and\n\n$$\nH\\succeq g(P-P_K),\\qquad 0<g\\le1.\n$$\n\nThen\n\n$$\n\\begin{aligned}\ng\\|(I-P_K)x\\|^2\n&=\ng\\bigl(1-\\langle x,Px\\rangle\\bigr)\n+\ng\\langle x,(P-P_K)x\\rangle\\\\\n&\\le\n1-\\langle x,Px\\rangle+\\langle x,Hx\\rangle\\\\\n&\\le R(e).\n\\end{aligned}\n$$\n\nHence\n\n$$\n\\boxed{\\|(I-P_K)x\\|^2\\le R(e)/g.}\n$$\n\nIf exact filling supplies \\(\\dim K\\) exact geometric zero modes and \\(R(E)<g\\), projection onto \\(K\\) is injective on the geometric spectral subspace below \\(E\\). Therefore that subspace has dimension at most \\(\\dim K\\), proving exact kernel multiplicity and a whole-positive-spectrum gap.\n\nThis proposition documents why the kernel/min–max portion cannot carry the novelty claim.\n\n## Theorem 2 — surviving functorial finite-certificate transfer\n\nAssume the packet’s finite zero-weight kernel, projected private-pair, all-bidegree padding, interface, exact filling, and independent-interior hypotheses. I did not independently recompute those finite certificates.\n\nFor every finite nested family of term sets \\(A\\), let\n\n$$\nH_A=\\sum_{i\\in A}\\Pi_i,\\qquad\nK_A=\\ker H_A,\\qquad\nW_A=\\sum_{i\\in A}\\operatorname{ran}\\Pi_i,\n$$\n\nand suppose\n\n$$\nH_A\\succeq g_A(P-P_{K_A}).\n$$\n\nThen, uniformly for \\(\\lambda\\le c/t_{\\max}\\), every normalized full geometric chain satisfies\n\n$$\n\\boxed{\n\\operatorname{dist}(x,K_A)^2\n\\le\nC\\left[\nt_A\\lambda^2+\n\\frac{\\langle x,\\Delta_Ax\\rangle}\n{g_A\\lambda^\\kappa}\n\\right].\n}\n$$\n\nMoreover, for\n\n$$\nE_A\\le c'\\eta^2g_A\\lambda^\\kappa,\n$$\n\nthere are natural isomorphisms\n\n$$\n\\boxed{H_d(X_A)\\cong V/W_A}\n$$\n\nsimultaneously over the whole term-set diagram, and\n\n$$\n\\dim\\ker\\Delta_A=\\dim K_A,\n\\qquad\n\\operatorname{spec}(\\Delta_A)\\cap(0,E_A)=\\varnothing.\n$$\n\nEvery arrow \\(A\\subseteq B\\) is the quotient map\n\n$$\nV/W_A\\twoheadrightarrow V/W_B,\n$$\n\nso its rank is \\(\\dim K_B\\). For a chain filtration, all maps are epimorphisms: there are deaths but no new births in this degree.\n\n### Proof\n\nThe finite-certificate leakage argument gives\n\n$$\n\\|(I-P)x\\|^2\n\\le\nC\\!\\left[t_A\\lambda^2+\n(t_A+\\lambda^{-2})\\langle x,\\Delta_Ax\\rangle\\right].\n$$\n\nExact filling and the local whole-positive-gap floor imply\n\n$$\n\\Delta_A^\\uparrow\n\\succeq c\\lambda^\\kappa H_A^{\\mathrm{emb}},\n$$\n\nbecause on local boundary chains the up-Laplacian equals the full Laplacian, and up-columns partition by gadget. Thus\n\n$$\n\\langle x,(P-P_{K_A})x\\rangle\n\\le\n\\frac{\\langle x,\\Delta_Ax\\rangle}\n{cg_A\\lambda^\\kappa}.\n$$\n\nAdding geometric leakage and forbidden logical mass proves concentration. Exact filling and independent interiors give\n\n$$\nB_d(X_A)\\cap V=W_A,\n$$\n\nhence an injection \\(V/W_A\\hookrightarrow H_d(X_A)\\). Concentration bounds the entire low-energy dimension in the reverse direction. Equality and naturality follow. This is precisely the part of the packet that can plausibly be presented as the reusable theorem, rather than as a specialized final step. 〔PRO_NOVELTY_PACKET_2026-09-03〕\n\nCommon-copy blow-up then produces a naturally equivalent unweighted diagram with gap floor \\(\\min\\{ME_A,\\min f_v\\}\\). That last statement is a Hayakawa corollary, not an additional analytic theorem.\n\n# Correct positioning\n\nA defensible title is:\n\n> **Gapped Kernel Realization in Clique Filtrations: Exact Multiplicity and True Normalized Persistence**\n\nThe strongest current theorem package is:\n\n- **weighted:** conditional on the packet’s exact finite certificates, a polynomial construction with exact endpoint multiplicities, natural persistent rank, and whole-kernel gaps;\n- **complexity:** weighted additive true normalized persistence is hard for the exact gate-dependent class \\(\\mathsf{BQP}_1^{G_2}\\), using the already-audited eight-label source;\n- **unweighted:** a direct common-copy corollary conditional on the weighted theorem and Hayakawa’s symmetric/asymmetric decomposition;\n- **not established:** ordinary BQP, unrestricted \\(\\mathsf{SDQC}_1\\), gate-independent \\(\\mathsf{BQP}_1\\), or complex-phase coverage.\n\n# Status and value\n\n| Component | Mathematical status | Novelty/impact status |\n| --- | --- | --- |\n| Degenerate-kernel substitution | Valid | **LOW**; routine once arbitrary-chain control exists |\n| Exact multiplicity via quotient/min–max | Valid | **LOW**; standard closure and collided by parsimonious homology |\n| Finite-certificate all-chain leakage | Valid under supplied certificates | **MEDIUM**; genuine repair/strengthening of arXiv-v2 proof |\n| Gyurik whole-kernel gap | Prior claimed result | Strong collision; displayed arbitrary-chain bridge incomplete |\n| Quotient filtration | Valid | **MEDIUM-LOW**; meaningful restricted bypass of Lowe Conjecture 2 |\n| Common-copy unweighting | Valid | **LOW**; direct Hayakawa corollary |\n| Weighted \\(\\mathsf{BQP}_1^{G_2}\\)-hard NHP | Conditional on geometric package | Meaningful but gate-dependent |\n| Padding-generated denominator | Valid | Significant conceptual weakness |\n| Gap exponent \\(26\\) | Inverse polynomial | Theoretically adequate, practically poor |\n| Overall project | **MEDIUM, conditional** | Not presently a high-impact breakthrough |\n\nThe plausible current venue band is **TQC / Quantum**, with an **ITCS or ICALP borderline case** if the final paper cleanly establishes the unweighted theorem, documents the published-proof repair, and presents the finite-certificate transfer as a reusable result. Without that, the work risks reading as a careful technical completion of King–Kohler plus Gyurik. It is not presently a STOC/FOCS-level delta.\n\n# Finite go/no-go gate\n\nThe cheapest decisive falsification test is to obtain the final SIAM text and inspect the published analogues of Claim 10.2 and Appendix B:\n\n- If it already replaces coordinate bulk by local bulk tensored with outside harmonics—or proves an equivalent zero-weight/private-pair arbitrary-chain leakage estimate with quadratic \\(t\\lambda^2\\) error—then the main analytic novelty largely collapses. **No-go as a standalone transfer paper.**\n- If the final proof retains the arXiv-v2 bulk argument, the current theorem is a documented repair and strengthening. **Go**, but headline the finite-certificate leakage theorem and restricted quotient realization, not the elementary kernel/min–max or unweighting corollaries.\n\nPriority beyond these directly checked sources remains unresolved; search nonappearance is not evidence of novelty.\n",
+  "math": [
+    {
+      "source": "H\\succeq gI"
+    },
+    {
+      "source": "H\\succeq gI"
+    },
+    {
+      "source": "H\\succeq g(P-P_K)"
+    },
+    {
+      "source": "K=\\ker H"
+    },
+    {
+      "source": "\\lambda"
+    },
+    {
+      "source": "\\tau"
+    },
+    {
+      "source": "\\eta"
+    },
+    {
+      "source": "u"
+    },
+    {
+      "source": "\\tau*\\eta"
+    },
+    {
+      "source": "\\partial(\\tau*\\eta)\n\\supseteq\n\\pm\\tau*(\\eta\\setminus\\{u\\})"
+    },
+    {
+      "source": "w(u)=1"
+    },
+    {
+      "source": "\\lambda"
+    },
+    {
+      "source": "O(\\lambda)"
+    },
+    {
+      "source": "\\ker H\\neq0"
+    },
+    {
+      "source": "t\\lambda^{2}"
+    },
+    {
+      "source": "\\lambda"
+    },
+    {
+      "source": "g"
+    },
+    {
+      "source": "\\lambda=ct^{-1}g,\\qquad\nE=c\\lambda^{4m+2}t^{-1}g,"
+    },
+    {
+      "source": "|\\sigma\\rangle=s(|\\varphi\\rangle)\\in\\mathfrak H_{\\mathrm{sim}},"
+    },
+    {
+      "source": "\\frac{\\beta_d^{1,2}}{\\beta_d^1},"
+    },
+    {
+      "source": "H_d(X_A)\\cong V/W_A,\n\\qquad\nW_A=\\sum_{i\\in A}\\operatorname{ran}\\Pi_i,"
+    },
+    {
+      "source": "A\\subseteq B"
+    },
+    {
+      "source": "V/W_A\\twoheadrightarrow V/W_B."
+    },
+    {
+      "source": "M"
+    },
+    {
+      "source": "M"
+    },
+    {
+      "source": "\\widehat J_{AB}U_A=U_BJ_{AB}."
+    },
+    {
+      "source": "\\widehat P_BU_BJ_{AB}\n=\nU_BP_BJ_{AB},"
+    },
+    {
+      "source": "\\widehat P_B\\widehat J_{AB}U_A\n=\nU_BP_BJ_{AB}."
+    },
+    {
+      "source": "\\min\\{M\\gamma_A,\\min_v f_v\\}."
+    },
+    {
+      "source": "\\{1,\\lambda\\}"
+    },
+    {
+      "source": "\\lambda"
+    },
+    {
+      "source": "M=\\lambda^{-2},"
+    },
+    {
+      "source": "M"
+    },
+    {
+      "source": "\\lambda^{-1}"
+    },
+    {
+      "source": "\\beta_k^{i,j}/n_k,"
+    },
+    {
+      "source": "x"
+    },
+    {
+      "source": "1-\\langle x,Px\\rangle+\\langle x,Hx\\rangle\\le R(e),\n\\qquad\ne=\\langle x,\\Delta x\\rangle,"
+    },
+    {
+      "source": "H"
+    },
+    {
+      "source": "V=\\operatorname{ran}P"
+    },
+    {
+      "source": "H\\succeq g(P-P_K),\\qquad 0<g\\le1."
+    },
+    {
+      "source": "\\begin{aligned}\ng\\|(I-P_K)x\\|^2\n&=\ng\\bigl(1-\\langle x,Px\\rangle\\bigr)\n+\ng\\langle x,(P-P_K)x\\rangle\\\\\n&\\le\n1-\\langle x,Px\\rangle+\\langle x,Hx\\rangle\\\\\n&\\le R(e).\n\\end{aligned}"
+    },
+    {
+      "source": "\\boxed{\\|(I-P_K)x\\|^2\\le R(e)/g.}"
+    },
+    {
+      "source": "\\dim K"
+    },
+    {
+      "source": "R(E)<g"
+    },
+    {
+      "source": "K"
+    },
+    {
+      "source": "E"
+    },
+    {
+      "source": "\\dim K"
+    },
+    {
+      "source": "A"
+    },
+    {
+      "source": "H_A=\\sum_{i\\in A}\\Pi_i,\\qquad\nK_A=\\ker H_A,\\qquad\nW_A=\\sum_{i\\in A}\\operatorname{ran}\\Pi_i,"
+    },
+    {
+      "source": "H_A\\succeq g_A(P-P_{K_A})."
+    },
+    {
+      "source": "\\lambda\\le c/t_{\\max}"
+    },
+    {
+      "source": "\\boxed{\n\\operatorname{dist}(x,K_A)^2\n\\le\nC\\left[\nt_A\\lambda^2+\n\\frac{\\langle x,\\Delta_Ax\\rangle}\n{g_A\\lambda^\\kappa}\n\\right].\n}"
+    },
+    {
+      "source": "E_A\\le c'\\eta^2g_A\\lambda^\\kappa,"
+    },
+    {
+      "source": "\\boxed{H_d(X_A)\\cong V/W_A}"
+    },
+    {
+      "source": "\\dim\\ker\\Delta_A=\\dim K_A,\n\\qquad\n\\operatorname{spec}(\\Delta_A)\\cap(0,E_A)=\\varnothing."
+    },
+    {
+      "source": "A\\subseteq B"
+    },
+    {
+      "source": "V/W_A\\twoheadrightarrow V/W_B,"
+    },
+    {
+      "source": "\\dim K_B"
+    },
+    {
+      "source": "\\|(I-P)x\\|^2\n\\le\nC\\!\\left[t_A\\lambda^2+\n(t_A+\\lambda^{-2})\\langle x,\\Delta_Ax\\rangle\\right]."
+    },
+    {
+      "source": "\\Delta_A^\\uparrow\n\\succeq c\\lambda^\\kappa H_A^{\\mathrm{emb}},"
+    },
+    {
+      "source": "\\langle x,(P-P_{K_A})x\\rangle\n\\le\n\\frac{\\langle x,\\Delta_Ax\\rangle}\n{cg_A\\lambda^\\kappa}."
+    },
+    {
+      "source": "B_d(X_A)\\cap V=W_A,"
+    },
+    {
+      "source": "V/W_A\\hookrightarrow H_d(X_A)"
+    },
+    {
+      "source": "\\min\\{ME_A,\\min f_v\\}"
+    },
+    {
+      "source": "\\mathsf{BQP}_1^{G_2}"
+    },
+    {
+      "source": "\\mathsf{SDQC}_1"
+    },
+    {
+      "source": "\\mathsf{BQP}_1"
+    },
+    {
+      "source": "\\mathsf{BQP}_1^{G_2}"
+    },
+    {
+      "source": "26"
+    },
+    {
+      "source": "t\\lambda^2"
+    }
+  ],
+  "visibleText": "Strongest collision\n\nThe degenerate-kernel upgrade itself is almost a one-paragraph King–Kohler corollary.\n\nIn King–Kohler arXiv v2, Theorem 10.1 assumes a positive-definite logical Hamiltonian, but its proof first takes an arbitrary vector in the full geometric chain space, expands it into single-gadget sectors, and obtains a master inequality involving simulated-register mass, logical energy, and high/bulk/lifted errors. The assumption H⪰gI is used only at the final coercivity step. Their Lemmas 10.2–10.4 are also stated for arbitrary full-chain vectors. \narXiv\n+3\narXiv\n+3\narXiv\n+3\n\nConsequently, once a correct arbitrary-chain master estimate is granted, replacing\n\nH⪰gI\n\nby\n\nH⪰g(P−P\nK\n\t​\n\n)\n\nimmediately yields concentration toward K=kerH; exact filling plus projection/min–max then yields exact multiplicity and a gap above the entire geometric kernel. Those last steps are not a substantial novelty.\n\nHowever, the current finite-certificate proof is not merely a valid invocation of the arXiv-v2 proof, because King–Kohler’s padded bulk Claim 10.2 is not valid as written. Their proof says that every vertex touching the coordinate bulk has weight λ. After join-padding, outside-register vertices have weight one and form cofaces with local bulk simplices. \narXiv\n\nConcretely, let τ be a local simplex containing the central bulk vertex and let η be an outside-register simplex containing a weight-one vertex u. For the padded simplex τ∗η,\n\n∂(τ∗η)⊇±τ∗(η∖{u})\n\nwith coefficient w(u)=1. The output still contains the central vertex and therefore remains in the full coordinate bulk. Distinct deleted outside vertices give orthogonal simplex coordinates, so the projected norm is bounded below independently of λ, contradicting an O(λ) estimate.\n\nThe first potentially new lemma is therefore not “allow kerH\n\n=0.” It is:\n\nA corrected arbitrary-chain leakage theorem from finite zero-weight data, projected private-pair coercivity, all-bidegree harmonic padding, and shared-register interface control.\n\nThat lemma replaces the defective coordinate-bulk argument, obtains the quadratic structural remainder tλ\n2\n, and lets λ be chosen independently of g. This is a genuine proof delta relative to arXiv v2, although still close enough to King–Kohler’s architecture that its conceptual novelty is medium rather than high. The packet’s intended theorem and its exact scope are stated explicitly. \n\nPRO_NOVELTY_PACKET_2026-09-03\n\nI accessed the SIAM publication’s metadata and abstract, but its detailed full text was access-restricted. I therefore cannot determine whether the final SIAM Section 10 or appendix repaired Claim 10.2 or added an equivalent arbitrary-chain lemma. The detailed comparison below is against arXiv:2311.17234v2, not a certification of the final published proof. \nSIAM\n+1\n\nSource-by-source findings\n1. King–Kohler\n\nDirectly checked: Theorem 10.1; Claim 10.2; Claim 10.4; Lemmas 10.2–10.4; and the final calculation in Section 10.\n\nTheorem 10.1 chooses\n\nλ=ct\n−1\ng,E=cλ\n4m+2\nt\n−1\ng,\n\nunder a lower bound on the entire logical spectrum. The proof already treats arbitrary geometric chains and isolates the logical Hamiltonian term before using positive definiteness. Claim 10.4 also gives exact additivity of the global up-Laplacian over gadgets. \narXiv\n+1\n\nDeduction: If their full arbitrary-chain estimates were accepted unchanged, the degenerate-kernel extension would be routine. The current project’s substantive addition is the replacement leakage proof and its weaker finite local hypotheses—not the final quotient/min–max argument.\n\nMathematical issue: arXiv-v2 Claim 10.2’s full-coordinate padded bulk estimate has the counterexample above.\n\nPriority uncertainty: the inaccessible final SIAM proof might contain a correction.\n\n2. Gyurik et al.\n\nGyurik et al. already state a gap above the complete final harmonic space in Lemma 7. The nonempty-kernel case starts with an arbitrary geometric low-energy vector orthogonal to the harmonic space and invokes Lemma 11 to conclude high overlap with the simulated logical kernel. \narXiv\n\nBut Lemma 11 explicitly assumes\n\n∣σ⟩=s(∣φ⟩)∈H\nsim\n\t​\n\n,\n\nrather than an arbitrary full-chain vector. \narXiv\n+1\n\nThus:\n\nGyurik et al. already claims a particular degenerate whole-kernel gap;\n\nits displayed proof does not explicitly close the arbitrary-chain-to-simulated-register bridge;\n\nthis is a proof-domain mismatch, not a counterexample to the theorem;\n\nthe present result should be framed as an independent repair and generalization, not the first whole-kernel gap theorem.\n\nThe current theorem is stronger in its uniform statement over arbitrary degenerate logical kernels, exact multiplicity, both endpoints, and natural quotient filtrations. But the prior claim sharply limits novelty.\n\n3. Lowe–Kim–Bondesan–Hayakawa\n\nProblem 9 already defines the target statistic exactly as\n\nβ\nd\n1\n\t​\n\nβ\nd\n1,2\n\t​\n\n\t​\n\n,\n\nwith gaps above zero at both endpoints. Conjecture 1 asks for hardness of this true normalized problem. \narXiv\n+1\n\nSection 7 explicitly says King–Kohler is not sufficient as a black box and formulates Conjecture 2 using exact kernel realization and compatible harmonic isometries across the filtration. \narXiv\n+2\narXiv\n+2\n\nThe quotient route is therefore a meaningful but restricted bypass:\n\nH\nd\n\t​\n\n(X\nA\n\t​\n\n)≅V/W\nA\n\t​\n\n,W\nA\n\t​\n\n=\ni∈A\n∑\n\t​\n\nranΠ\ni\n\t​\n\n,\n\nand for A⊆B, inclusion becomes\n\nV/W\nA\n\t​\n\n↠V/W\nB\n\t​\n\n.\n\nThis proves the desired numerical persistent rank without producing one exact compatible harmonic-representative isometry.\n\nThat is not already written in Lowe et al.; filtration compatibility is precisely one of their identified missing ingredients. But it resolves only the specially engineered nested-term-set family and the gate-dependent perfect-completeness source. It neither proves Conjecture 2 nor resolves their unrestricted Conjecture 1.\n\n4. Hayakawa\n\nHayakawa’s Lemma 4.2 identifies the block-symmetric sector exactly with the weighted base complex. The common scale M multiplies the weighted Laplacian by M. Theorem 4.3 gives an asymmetric-sector gap of at least the smallest block multiplicity, and Corollary 4.4 excludes all asymmetric homology. \narXiv\n+3\narXiv\n+3\narXiv\n+3\n\nWith the same labeled copy block at every filtration level, the additional argument is one line:\n\nJ\nAB\n\t​\n\nU\nA\n\t​\n\n=U\nB\n\t​\n\nJ\nAB\n\t​\n\n.\n\nTherefore\n\nP\nB\n\t​\n\nU\nB\n\t​\n\nJ\nAB\n\t​\n\n=U\nB\n\t​\n\nP\nB\n\t​\n\nJ\nAB\n\t​\n\n,\n\nand equivalently\n\nP\nB\n\t​\n\nJ\nAB\n\t​\n\nU\nA\n\t​\n\n=U\nB\n\t​\n\nP\nB\n\t​\n\nJ\nAB\n\t​\n\n.\n\nAll harmonic-map singular values and ranks are preserved. The endpoint gap becomes\n\nmin{Mγ\nA\n\t​\n\n,\nv\nmin\n\t​\n\nf\nv\n\t​\n\n}.\n\nFor weights {1,λ}, dyadic λ, and\n\nM=λ\n−2\n,\n\nregister blocks have size M, gadget blocks size one, and the blow-up is polynomial whenever λ\n−1\n is polynomial. Later gadget vertices may be included initially as isolated vertices; because the target degree is positive, they add no target-degree chains.\n\nSo the unweighted filtration result is mathematically a short direct corollary, not a blocked theorem and not a main novelty claim. Hayakawa explicitly leaves filtered applications as future work, but his operator theorem already supplies essentially everything needed. \narXiv\n\n5. Exact multiplicity, normalized persistence, and gadgets\n\nCrichigno–Kohler already give a parsimonious reduction in which satisfying states correspond one-to-one with homology classes. Exact kernel/homology multiplicity is therefore prior art. They also explain that their construction does not establish the required inverse-polynomial Laplacian promise gap. \nNature\n+2\nNature\n+2\n\nRudolph’s Appendix D.1 already supplies the concrete few-term integer states and join construction used for the finite palette, while warning that the more general gadget construction lacks a correctness proof. The finite certificates add verification and source integration, not conceptual ownership of those gadgets. \narXiv\n\nNearby work on “normalized persistent Betti numbers” commonly uses simplex-count normalization,\n\nβ\nk\ni,j\n\t​\n\n/n\nk\n\t​\n\n,\n\nnot Lowe et al.’s initial-Betti normalization. Thus the present statistic is not collided by that terminology—but Lowe et al. already defines the exact statistic under study. \narXiv\n\nConcrete theorem delta\nProposition 1 — the kernel upgrade is routine\n\nSuppose an arbitrary-chain estimate has already established, for every unit x,\n\n1−⟨x,Px⟩+⟨x,Hx⟩≤R(e),e=⟨x,Δx⟩,\n\nwhere H is supported on V=ranP, and\n\nH⪰g(P−P\nK\n\t​\n\n),0<g≤1.\n\nThen\n\ng∥(I−P\nK\n\t​\n\n)x∥\n2\n\t​\n\n=g(1−⟨x,Px⟩)+g⟨x,(P−P\nK\n\t​\n\n)x⟩\n≤1−⟨x,Px⟩+⟨x,Hx⟩\n≤R(e).\n\t​\n\n\nHence\n\n∥(I−P\nK\n\t​\n\n)x∥\n2\n≤R(e)/g.\n\t​\n\n\nIf exact filling supplies dimK exact geometric zero modes and R(E)<g, projection onto K is injective on the geometric spectral subspace below E. Therefore that subspace has dimension at most dimK, proving exact kernel multiplicity and a whole-positive-spectrum gap.\n\nThis proposition documents why the kernel/min–max portion cannot carry the novelty claim.\n\nTheorem 2 — surviving functorial finite-certificate transfer\n\nAssume the packet’s finite zero-weight kernel, projected private-pair, all-bidegree padding, interface, exact filling, and independent-interior hypotheses. I did not independently recompute those finite certificates.\n\nFor every finite nested family of term sets A, let\n\nH\nA\n\t​\n\n=\ni∈A\n∑\n\t​\n\nΠ\ni\n\t​\n\n,K\nA\n\t​\n\n=kerH\nA\n\t​\n\n,W\nA\n\t​\n\n=\ni∈A\n∑\n\t​\n\nranΠ\ni\n\t​\n\n,\n\nand suppose\n\nH\nA\n\t​\n\n⪰g\nA\n\t​\n\n(P−P\nK\nA\n\t​\n\n\t​\n\n).\n\nThen, uniformly for λ≤c/t\nmax\n\t​\n\n, every normalized full geometric chain satisfies\n\ndist(x,K\nA\n\t​\n\n)\n2\n≤C[t\nA\n\t​\n\nλ\n2\n+\ng\nA\n\t​\n\nλ\nκ\n⟨x,Δ\nA\n\t​\n\nx⟩\n\t​\n\n].\n\t​\n\n\nMoreover, for\n\nE\nA\n\t​\n\n≤c\n′\nη\n2\ng\nA\n\t​\n\nλ\nκ\n,\n\nthere are natural isomorphisms\n\nH\nd\n\t​\n\n(X\nA\n\t​\n\n)≅V/W\nA\n\t​\n\n\t​\n\n\nsimultaneously over the whole term-set diagram, and\n\ndimkerΔ\nA\n\t​\n\n=dimK\nA\n\t​\n\n,spec(Δ\nA\n\t​\n\n)∩(0,E\nA\n\t​\n\n)=∅.\n\nEvery arrow A⊆B is the quotient map\n\nV/W\nA\n\t​\n\n↠V/W\nB\n\t​\n\n,\n\nso its rank is dimK\nB\n\t​\n\n. For a chain filtration, all maps are epimorphisms: there are deaths but no new births in this degree.\n\nProof\n\nThe finite-certificate leakage argument gives\n\n∥(I−P)x∥\n2\n≤C[t\nA\n\t​\n\nλ\n2\n+(t\nA\n\t​\n\n+λ\n−2\n)⟨x,Δ\nA\n\t​\n\nx⟩].\n\nExact filling and the local whole-positive-gap floor imply\n\nΔ\nA\n↑\n\t​\n\n⪰cλ\nκ\nH\nA\nemb\n\t​\n\n,\n\nbecause on local boundary chains the up-Laplacian equals the full Laplacian, and up-columns partition by gadget. Thus\n\n⟨x,(P−P\nK\nA\n\t​\n\n\t​\n\n)x⟩≤\ncg\nA\n\t​\n\nλ\nκ\n⟨x,Δ\nA\n\t​\n\nx⟩\n\t​\n\n.\n\nAdding geometric leakage and forbidden logical mass proves concentration. Exact filling and independent interiors give\n\nB\nd\n\t​\n\n(X\nA\n\t​\n\n)∩V=W\nA\n\t​\n\n,\n\nhence an injection V/W\nA\n\t​\n\n↪H\nd\n\t​\n\n(X\nA\n\t​\n\n). Concentration bounds the entire low-energy dimension in the reverse direction. Equality and naturality follow. This is precisely the part of the packet that can plausibly be presented as the reusable theorem, rather than as a specialized final step. \n\nPRO_NOVELTY_PACKET_2026-09-03\n\nCommon-copy blow-up then produces a naturally equivalent unweighted diagram with gap floor min{ME\nA\n\t​\n\n,minf\nv\n\t​\n\n}. That last statement is a Hayakawa corollary, not an additional analytic theorem.\n\nCorrect positioning\n\nA defensible title is:\n\nGapped Kernel Realization in Clique Filtrations: Exact Multiplicity and True Normalized Persistence\n\nThe strongest current theorem package is:\n\nweighted: conditional on the packet’s exact finite certificates, a polynomial construction with exact endpoint multiplicities, natural persistent rank, and whole-kernel gaps;\n\ncomplexity: weighted additive true normalized persistence is hard for the exact gate-dependent class BQP\n1\nG\n2\n\t​\n\n\t​\n\n, using the already-audited eight-label source;\n\nunweighted: a direct common-copy corollary conditional on the weighted theorem and Hayakawa’s symmetric/asymmetric decomposition;\n\nnot established: ordinary BQP, unrestricted SDQC\n1\n\t​\n\n, gate-independent BQP\n1\n\t​\n\n, or complex-phase coverage.\n\nStatus and value\nComponent\tMathematical status\tNovelty/impact status\nDegenerate-kernel substitution\tValid\tLOW; routine once arbitrary-chain control exists\nExact multiplicity via quotient/min–max\tValid\tLOW; standard closure and collided by parsimonious homology\nFinite-certificate all-chain leakage\tValid under supplied certificates\tMEDIUM; genuine repair/strengthening of arXiv-v2 proof\nGyurik whole-kernel gap\tPrior claimed result\tStrong collision; displayed arbitrary-chain bridge incomplete\nQuotient filtration\tValid\tMEDIUM-LOW; meaningful restricted bypass of Lowe Conjecture 2\nCommon-copy unweighting\tValid\tLOW; direct Hayakawa corollary\nWeighted BQP\n1\nG\n2\n\t​\n\n\t​\n\n-hard NHP\tConditional on geometric package\tMeaningful but gate-dependent\nPadding-generated denominator\tValid\tSignificant conceptual weakness\nGap exponent 26\tInverse polynomial\tTheoretically adequate, practically poor\nOverall project\tMEDIUM, conditional\tNot presently a high-impact breakthrough\n\nThe plausible current venue band is TQC / Quantum, with an ITCS or ICALP borderline case if the final paper cleanly establishes the unweighted theorem, documents the published-proof repair, and presents the finite-certificate transfer as a reusable result. Without that, the work risks reading as a careful technical completion of King–Kohler plus Gyurik. It is not presently a STOC/FOCS-level delta.\n\nFinite go/no-go gate\n\nThe cheapest decisive falsification test is to obtain the final SIAM text and inspect the published analogues of Claim 10.2 and Appendix B:\n\nIf it already replaces coordinate bulk by local bulk tensored with outside harmonics—or proves an equivalent zero-weight/private-pair arbitrary-chain leakage estimate with quadratic tλ\n2\n error—then the main analytic novelty largely collapses. No-go as a standalone transfer paper.\n\nIf the final proof retains the arXiv-v2 bulk argument, the current theorem is a documented repair and strengthening. Go, but headline the finite-certificate leakage theorem and restricted quotient realization, not the elementary kernel/min–max or unweighting corollaries.\n\nPriority beyond these directly checked sources remains unresolved; search nonappearance is not evidence of novelty.",
+  "stale_clipboard_rejected": {
+    "bytes": 13222,
+    "sha256": "fb279f228c62e01e1f4e1f688607d43788206d5b696c9834b048227714d829c2",
+    "reason": "Clipboard contained the previous source-complexity response and failed strongest-collision, finite-certificate, and priority-boundary checks."
+  }
+}

@@ -94,15 +94,18 @@ Consolidation started September 2, 2026 PDT; new dispatch and follow-up setup co
 | M88 | Uniform perturbation counterexample | **EXACT ABSTRACT FAMILY** | Per-basis-vector \(O(\lambda)\) closeness in growing rank does not imply uniform projector-norm \(O(\lambda)\); fixed-local-before-padding structure or a direct operator estimate is required |
 | M89 | Denominator impact gate | **REFRAMED WITHOUT MATHEMATICAL CHANGE**, DENOMINATOR_IMPACT_GATE_2026-09-03.md | Primary theorem can set \(\beta_d(X_{\rm in})=8\) and ranks six versus one; growing dummy denominator is retained only as explicit tensor replication, not an impact claim |
 | M90 | Manuscript positioning and outline | **RESTARTABLE WRITING CHECKPOINT PREPARED**, MANUSCRIPT_POSITIONING_AND_OUTLINE_2026-09-03.md | HIGH novelty is no longer a writing gate; v0 starts after message-9 disposition with the finite-certificate theorem, fixed-eight hardness, quotient naturality and accurate unweighting status |
+| M91 | Primary-source novelty/impact Pro review | **COMPLETED AND COLLECTED**, user message 9; UI Worked for 15m 38s | Full response, 70 equation sources and 13 external links archived. Browser Copy response returned stale message-7 content and was rejected; rendered-DOM capture is the preserved source |
+| M92 | Novelty disposition and writing decision | **INDEPENDENTLY DISPOSITIONED; NO COUNTEREXAMPLE FOUND UNDER EXPLICIT HYPOTHESES** | Kernel/min--max closure is routine; finite-certificate all-chain leakage is the surviving proof contribution; unweighting is a sourced corollary. Final SIAM detailed text remains a priority gate, not a writing gate |
+| M93 | Integrated manuscript v0 | **DRAFTED AND COMPILED**, 19 pages, zero LaTeX warnings after final build | Modular source and PDF cover the transfer theorem, quotient naturality, fixed-eight \(\mathsf{BQP}_1^{G_2}\) application, unweighting, source collisions, and limitations |
 
 ## Current unresolved research gates
 
-1. Perform a line-by-line external comparison deciding whether King--Kohler's existing arbitrary-chain estimates already imply the same degenerate-kernel theorem, and whether Gyurik et al.'s whole-kernel argument contains the missing all-chain step.
-2. Decide whether the quotient route is a meaningful restricted resolution of Lowe et al.'s normalized-persistence conjecture or only a specially engineered corollary; padding-generated denominator growth remains the central impact risk.
-3. Keep unrestricted \(\mathsf{SDQC}_1\) stopped; the eight-label construction uses perfect completeness and does not repair arbitrary trace thresholds.
-4. Evaluate whether the persistent-Laplacian theorem supplies sufficient additional substance and whether the poor polynomial gap exponent is acceptable for a structural TCS result.
-5. Finish the exact convention/source audit for common-copy unweighting before promoting the unweighted corollary; no local inclusion or polynomial-size obstruction remains.
-6. For the net and evaluated-Hom alternatives, prove a new parameter or structural result that survives the strongest relevant classical baseline.
+1. Obtain and inspect the detailed final SIAM King--Kohler proof at the analogues of arXiv-v2 Claim 10.2 and Appendix B. If it already contains the outside-harmonic/fixed-local repair or an equivalent uniform \(t\lambda^2\) estimate, sharply reduce the analytic novelty claim.
+2. Audit manuscript v0 line by line against every finite certificate and source interface. The current build verifies typesetting and internal references; it is not a fresh proof certification.
+3. Keep unrestricted \(\mathsf{SDQC}_1\), ordinary \(\mathsf{BQP}\), gate-independent \(\mathsf{BQP}_1\), complex phases, and intrinsic growing-denominator claims stopped.
+4. Decide venue only after the final-source comparison and manuscript proof audit. The current external advice is TQC/Quantum, with ITCS/ICALP conditional on a clean reusable unweighted theorem.
+5. Treat the common-copy unweighted result as a direct Hayakawa corollary with explicit common-block, orientation, and asymmetric-gap conventions.
+6. For the persistent-Laplacian, net, and evaluated-Hom alternatives, require an additional structural consequence beyond the current main theorem before expanding manuscript scope.
 
 ## Archival rules
 

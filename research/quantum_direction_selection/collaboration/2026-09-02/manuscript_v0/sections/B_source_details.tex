@@ -1,0 +1,102 @@
+\section{History-gap and source calculations}
+\label{app:source-details}
+
+\subsection{Weighted path estimate}
+
+For a legal-clock state, write \(f_t=s_tV_t\xi_t\), with the notation of~\cref{eq:history-isometry}. Its norm and initial-history energy are
+\[
+N(\xi)=\sum_tw_t\|\xi_t\|^2,
+\qquad
+E(\xi)=\sum_{t=1}^{L-1}c_t\|\xi_t-\xi_{t-1}\|^2
++\langle\xi_0,A_{\rm in}\xi_0\rangle,
+\]
+where \(w_t=s_t^2\in[1,2]\) and \(c_t\in\{1/2,2/3\}\). Split every \(\xi_t\) into the clean subspace \(C=\ker A_{\rm in}\) and its orthogonal complement.
+
+For a state orthogonal to all valid histories, the clean component has weighted mean zero:
+\[
+\sum_tw_t\xi_t^C=0.
+\]
+The weighted variance identity and path Cauchy--Schwarz inequality give
+\[
+\sum_tw_t\|\xi_t^C\|^2
+=\frac1{2\sum_tw_t}
+\sum_{i,j}w_iw_j\|\xi_i^C-\xi_j^C\|^2
+\le2L^2E_C.
+\]
+For the dirty component, set \(a=\|\xi_0^{C^\perp}\|^2\) and
+\(
+D_B=\sum_t\|\xi_t^{C^\perp}-\xi_{t-1}^{C^\perp}\|^2
+\).
+The bound
+\[
+\|\xi_t^{C^\perp}\|^2\le2a+2(L-1)D_B
+\]
+implies
+\[
+\sum_tw_t\|\xi_t^{C^\perp}\|^2
+\le8L^2E_B.
+\]
+Adding both sectors proves \(N(\xi)\le8L^2E(\xi)\) on the orthogonal complement of the complete initial kernel, establishing~\cref{eq:initial-kernel-gap}.
+
+\subsection{Adding the output projector}
+
+We record the two-positive-operator estimate used for~\cref{eq:output-gap}. Let \(A\succeq g(I-P)\), let \(R\) be an orthogonal projector, and let \(\mathcal S=\ker A\cap\ker R\). Suppose the compression \(PRP\) is at least \(\alpha\) on \(\ker A\ominus\mathcal S\). Canonical two-projection blocks give
+\begin{equation}
+\label{eq:two-positive}
+\gamma_+(A+R)
+\ge
+\frac{g+1-\sqrt{(g+1)^2-4g\alpha}}2
+\ge\frac{g\alpha}{g+1}.
+\end{equation}
+For the history Hamiltonian, \(g=1/(8L^2)\) and \(\alpha=(1-r)/Z\ge1/(3L)\) when \(r\le1/3\). Substitution into~\cref{eq:two-positive} gives
+\[
+\gamma_+(H_{\rm out})
+\ge\frac1{3L(8L^2+1)}.
+\]
+The kernel identity follows directly from positivity:
+\[
+\ker(H_{\rm in}+H_{\rm rej})
+=\ker H_{\rm in}\cap\ker H_{\rm rej}
+=\cV\ker(I-M).
+\]
+
+\subsection{Exact eight-label compression}
+
+Let \(U_x\) denote the fixed-input verifier and \(q\) its output bit. The label \(z\) is never changed. After computing and uncomputing the constant-size acceptance predicate, compression through all clean work registers has no matrix element between distinct labels. On \(z=000\), acceptance is the identity. On five labels it is the scalar
+\(
+p_x=\|P_{\rm acc}U_x\ket{0\cdots0}\|^2
+\),
+and on two labels it is zero. This proves~\cref{eq:eight-label} even for a coherent vector across label values.
+
+The normalized trace is
+\[
+\frac{\operatorname{Tr}M_x}{8}
+=\frac{1+5p_x}{8}.
+\]
+If \(p_x=1\), this equals \(3/4\) and coincides with the perfect-space fraction. If \(p_x\le1/3\), it is at most \(1/3\), the perfect-space fraction is exactly \(1/8\), and every off-perfect eigenvalue is at most \(1/3\). Thus the construction simultaneously supplies the trace promise, the perfect-space separation, and the off-perfect ceiling needed by the output-gap proof.
+
+\subsection{Finite palette audit boundary}
+
+The local theorem requires exact data only for the following fixed families:
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Logical vector type & Construction & Role \\
+\midrule
+Basis vector & selected-petal cone & clock/input/output penalties \\
+
+\(\ket0-\ket1\) & explicit one-qubit gadget & unary difference \\
+
+\(\ket{00}-\ket{11}\) & explicit two-qubit gadget & ordinary propagation \\
+
+\(\ket{01}-\ket{10}\) & register relabeling & ordinary propagation \\
+
+four three-term states & petal relabelings of one base gadget & gain/loss Hadamards \\
+
+fixed basis factors & selected-cycle join guard & locality extension \\
+\bottomrule
+\end{tabular}
+\end{center}
+For each base graph, the finite evidence consists of an exact filling chain, an exact kernel description at zero weight, and an injective projected private map. Register relabelings transport these identities exactly, and the selected-cycle guard tensors the chosen harmonic line while placing all other guard modes in a separately coercive sector. The analytic theorem uses these identities as hypotheses; it does not infer them from numerical spectra.
+
+The arXiv-v2 King--Kohler comparison and the final-published-version comparison are distinct evidence states. The former motivates the corrected padding proof above. A final version of this manuscript must report the latter before making a priority claim about that repair.

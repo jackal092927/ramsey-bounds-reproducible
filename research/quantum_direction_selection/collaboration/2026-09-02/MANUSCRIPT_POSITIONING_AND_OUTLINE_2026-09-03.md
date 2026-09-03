@@ -1,6 +1,6 @@
 # Manuscript positioning and restartable outline
 
-September 3, 2026. **WRITING CHECKPOINT; MESSAGE-9 SOURCE AUDIT RUNNING.** This document converts the current proof archive into a focused theory-paper plan. Mathematical correctness, source interfaces and claim boundaries remain hard gates. A HIGH novelty rating is not required to begin the manuscript.
+September 3, 2026. **WRITING CHECKPOINT EXECUTED; MESSAGE-9 SOURCE AUDIT COMPLETED.** This document converted the proof archive into a focused theory-paper plan. The resulting modular [manuscript v0](manuscript_v0/README.md) compiles to 19 pages. Mathematical correctness, source interfaces and claim boundaries remain hard gates. A HIGH novelty rating is not required to maintain and improve the manuscript.
 
 ## Working title
 

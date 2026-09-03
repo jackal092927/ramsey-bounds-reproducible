@@ -1,0 +1,66 @@
+\section{A natural unweighted corollary}
+\label{sec:unweighting}
+
+The weighted construction uses only weights \(1\) and a dyadic inverse-polynomial \(\lambda\). Hayakawa's clique blow-up replaces a vertex \(v\) by a clique of \(f_v\) labeled copies and replaces each base edge by all edges between the corresponding blocks~\cite{hayakawa2026unweighted}. The block-symmetric sector reproduces the weighted Hodge Laplacian, while the asymmetric sector has an independent spectral floor.
+
+Choose one integer \(F\) such that
+\[
+f_v=F w(v)^2\in\N
+\]
+for every vertex, and use the same labeled block for a shared vertex at every filtration level. For the two weights in our construction, choose dyadic \(\lambda\) and
+\[
+F=\lambda^{-2}.
+\]
+Then register vertices have \(F\) copies and gadget vertices have one copy. Since \(\lambda^{-1}\) is polynomial, the blown-up graph remains polynomial in size.
+
+In degree \(k\), let \(U_{i,k}\) map a normalized base simplex to the normalized average of its one-copy-per-block lifts. With orientations fixed consistently across the filtration, Hayakawa's symmetric-sector identities read
+\begin{equation}
+\label{eq:unweight-operator}
+\widehat\partial_{i,k}U_{i,k}
+=\sqrt F\,U_{i,k-1}\partial_{i,k},
+\qquad
+\widehat\Delta_{i,k}U_{i,k}
+=F U_{i,k}\Delta_{i,k}.
+\end{equation}
+The common labeled blocks also give the exact inclusion identity
+\begin{equation}
+\label{eq:unweight-natural}
+\widehat J_{ij}U_{i,d}=U_{j,d}J_{ij}.
+\end{equation}
+There is no normalization factor in~\cref{eq:unweight-natural}: inclusion preserves degree, weights, labels, and the set of copied simplices.
+
+Let \(P_i\) and \(\widehat P_i\) be the weighted and blown-up harmonic projectors. The asymmetric-sector lower bound excludes asymmetric harmonic vectors, so
+\[
+\ker\widehat\Delta_{i,d}=U_{i,d}\ker\Delta_{i,d},
+\qquad
+\widehat P_i=U_{i,d}P_iU_{i,d}^*.
+\]
+Combining this with~\cref{eq:unweight-natural} gives
+\begin{equation}
+\label{eq:harmonic-map-natural}
+\widehat P_j\widehat J_{ij}U_{i,d}
+=U_{j,d}P_jJ_{ij}.
+\end{equation}
+Thus every harmonic persistence map is unitarily equivalent to its weighted counterpart. Endpoint Betti numbers, singular values, induced ranks, and the ratio~\cref{eq:true-ratio} are preserved exactly.
+
+If \(E_i\) is a lower bound on the positive weighted spectrum, Hayakawa's asymmetric bound yields
+\begin{equation}
+\label{eq:unweighted-gap}
+\gamma_+(\widehat\Delta_{i,d})
+\ge\min\{FE_i,\min_v f_v\}.
+\end{equation}
+Here \(\min_v f_v=1\). Combining~\cref{eq:weighted-gap,eq:unweighted-gap} gives the conservative unweighted floor
+\[
+FE_i
+=\Omega\!\left(\frac{\eta^{26}g_i}{t_{\max}^{24}}\right)
+\]
+until it reaches one.
+
+To use a common vertex set, include every future gadget vertex at the initial level as an isolated vertex. The target degree in the reduction is positive, so these isolated vertices add no degree-\(d\) chain and do not alter the relevant Betti number or Laplacian. They acquire their prescribed edges when their gadget enters the filtration.
+
+\begin{corollary}[Unweighted true normalized persistence]
+\label{cor:unweighted-hardness}
+The reduction in \cref{thm:weighted-hardness} can be mapped in polynomial time to nested unweighted clique complexes with the same endpoint Betti numbers, persistent rank, and normalized values \(3/4\) and \(1/8\). Both unweighted endpoint Laplacians retain inverse-polynomial gaps above their complete kernels.
+\end{corollary}
+
+This corollary uses Hayakawa's symmetric/asymmetric decomposition as a black box. The new observation needed for filtrations is~\cref{eq:unweight-natural}, which follows from maintaining common labeled blocks. The unweighting mechanism itself is not claimed as a contribution.

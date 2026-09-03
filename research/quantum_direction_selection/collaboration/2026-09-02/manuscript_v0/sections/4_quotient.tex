@@ -1,0 +1,75 @@
+\section{Filtered quotient naturality}
+\label{sec:quotient}
+
+The transfer theorem determines the dimension of every endpoint kernel. Exact filling determines the maps between those kernels at the homology level. This separation is useful: spectral concentration proves that there are no extra classes, while the quotient model computes persistence without comparing harmonic representatives.
+
+\begin{lemma}[Independent filling]
+\label{lem:independent-filling}
+For every term set \(A\),
+\begin{equation}
+\label{eq:boundary-intersection}
+B_d(X_A)\cap V=W_A
+=\sum_{j\in A}\ran\Pi_j.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Every vector in \(\ran\Pi_j\) has a filling in gadget \(j\), so \(W_A\subseteq B_d(X_A)\cap V\). Conversely, write a degree-\((d+1)\) chain as a sum of its gadget components. If its total boundary lies in \(V\), then its boundary has zero coordinate on every private \(d\)-simplex. Private supports of distinct gadgets are disjoint, so this vanishing holds separately for each gadget component. The remaining register boundary of component \(j\) lies in \(B_d(Y_j)\cap V=\ran\Pi_j\). Summing over \(j\) proves the reverse inclusion.
+\end{proof}
+
+No relative-acyclicity hypothesis appears in \cref{lem:independent-filling}. Extra geometric homology outside \(V\) is excluded later by the all-chain concentration theorem, not by the boundary decomposition alone.
+
+\begin{theorem}[Natural quotient realization]
+\label{thm:quotient}
+Under the hypotheses and parameter choice of \cref{thm:transfer}, the map
+\begin{equation}
+\label{eq:qA}
+q_A:V/W_A\longrightarrow H_d(X_A),
+\qquad
+q_A(v+W_A)=[v],
+\end{equation}
+is an isomorphism. For \(A\subseteq B\), these isomorphisms make the diagram
+\[
+\begin{CD}
+V/W_A @>{\rho_{AB}}>> V/W_B\\
+@V{q_A}V{\cong}V @VV{\cong}V{q_B}\\
+H_d(X_A) @>{(\iota_{AB})_*}>> H_d(X_B)
+\end{CD}
+\]
+commute, where \(\rho_{AB}\) is the natural quotient map. Consequently,
+\begin{equation}
+\label{eq:persistent-rank}
+\rank(\iota_{AB})_*
+=\dim(V/W_B)
+=\dim K_B.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+\Cref{eq:boundary-intersection} makes \(q_A\) well-defined and injective. Its domain has dimension
+\[
+\dim(V/W_A)=\dim K_A.
+\]
+By Hodge theory and \cref{eq:kernel-gap-conclusion}, the codomain has dimension
+\(
+\beta_d(X_A)=\dim\ker\Delta_A=\dim K_A
+\).
+Thus \(q_A\) is surjective as well.
+
+If \(A\subseteq B\), both paths send \(v+W_A\) to the class of the same register cycle \(v\) in \(X_B\). The diagram therefore commutes. Since \(W_A\subseteq W_B\), \(\rho_{AB}\) is onto, and its rank equals the dimension of \(V/W_B\). Finally, \(W_B=\ran H_B=K_B^\perp\) inside \(V\), which proves~\cref{eq:persistent-rank}.
+\end{proof}
+
+For a chain \(A_0\subseteq A_1\subseteq\cdots\subseteq A_s\), every arrow in degree \(d\) is an epimorphism. The constructed barcode therefore has deaths but no new births in this degree. More generally, for any \(i\le j\),
+\[
+\rank\bigl[H_d(X_{A_i})\to H_d(X_{A_j})\bigr]
+=\dim K_{A_j}.
+\]
+The result concerns the algebraic homology maps. Harmonic subspaces at different filtration levels need not be related by a literal common isometry; their Hodge representatives can rotate while the quotient maps remain exact.
+
+Taking \(A_{\rm in}\) to be the clock, propagation, and clean-input terms of a history Hamiltonian, and taking \(A_{\rm out}\) to add the final rejection term, gives
+\begin{equation}
+\label{eq:history-ratio}
+q_d(\Xin,\Xout)
+=\frac{\dim K_{\rm out}}{\dim K_{\rm in}}.
+\end{equation}
+This identity is the bridge from exact logical perfect-space fractions to true normalized persistence.

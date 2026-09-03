@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-03T20:28:47Z",
+  "updated_at": "2026-09-03T20:54:19Z",
   "objective": "Review and advance true normalized persistence toward a substantial TCS theorem; archive every useful positive/negative milestone and Pro result.",
   "repository": {
     "url": "https://github.com/jackal092927/ramsey-bounds-reproducible",
@@ -16,8 +16,8 @@
     "topic": "Quantum TDA functorial unweighting and theorem mechanisms",
     "url": "https://chatgpt.com/c/6a98c05a-ecf4-83e8-b356-4e20dc3fde3f",
     "account": "visible identity matched local personal Pro channel registry",
-    "previous_response": "message_8_collected_and_checked",
-    "new_request": "sent_running",
+    "previous_response": "message_9_collected_and_checked",
+    "new_request": "completed_collected_checked",
     "current_request": {
       "source_commit": "6e70274a78872cd891cedd4319145d68195d02fc",
       "packet_commit": "18a47e92d169d7312355b8f94372a78eccf4b8fe",
@@ -37,14 +37,26 @@
       "failed_assistant_attempts_before_this_request": 1,
       "sent_ui_local_time": "2026-09-03 01:17:18 PM America/Los_Angeles",
       "sent_running_observed_at": "2026-09-03T20:17:18Z",
-      "last_observed_at": "2026-09-03T20:17:18Z",
-      "last_observation": "Ninth user turn visible with one attached packet, empty composer, one Stop answering control and Pro thinking. Sent once; no duplicate.",
+      "last_observed_at": "2026-09-03T20:36:43.564Z",
+      "last_observation": "Completed ninth-request answer: GPT-5.6 Pro, Worked for 15m 38s. Full rendered response, 70 equation sources and 13 external links archived; stale Copy-response output was rejected.",
       "receipt": "PRO_NOVELTY_DISPATCH_RECEIPT_2026-09-03.md",
       "scope": "Bounded <=3000-word primary-source novelty and impact audit; direct source browsing required; produce a general theorem or a documented corollary/no-go result.",
       "prompt_verification": "Prepared 1214-byte submission matched the final composer after whitespace normalization; one completed attachment label, enabled Send and no active run before submission; fresh DOM after the single click showed one new user turn and active Pro thinking.",
       "source_basis": "Local targeted six-source collision audit in NOVELTY_COLLISION_AUDIT_2026-09-03.md; exhaustive source coverage and priority remain unverified.",
-      "terminal_status": "sent and running; no review result yet",
-      "source_checking": "Requested from Pro; not yet completed or collected."
+      "terminal_status": "completed, collected and independently dispositioned; no mathematical counterexample under the explicit theorem hypotheses",
+      "source_checking": "Relevant public arXiv/Nature pages were checked by Pro. Detailed final SIAM text, local certificate recomputation, exhaustive citation search and priority certification were not performed.",
+      "completed_collected_at": "2026-09-03T20:36:43.564Z",
+      "assistant_message_id": "d2855e9c-808a-4c5d-b7ec-38ff09d08534",
+      "response_file": "PRO_NOVELTY_REVIEW_2026-09-03.md",
+      "response_bytes": 17423,
+      "response_sha256": "775c78dcedf67bab046f5ea029ca00500be8719048aa206c1cdafe7629bd9c06",
+      "capture_file": "PRO_NOVELTY_REVIEW_CAPTURE_2026-09-03.json",
+      "capture_bytes": 38654,
+      "capture_sha256": "071bdf069e362f39bd5d1738821f5383a98deeb9a4387307057e3ca92a7e555a",
+      "disposition_file": "PRO_NOVELTY_DISPOSITION_2026-09-03.md",
+      "equation_elements": 70,
+      "external_links": 13,
+      "capture_note": "Rendered DOM is authoritative for this archive. Browser Copy response returned stale message-7 Markdown and failed content checks."
     },
     "request_history": [
       {
@@ -220,6 +232,46 @@
         "response_file": "PRO_BQP1_SOURCE_REVIEW_2026-09-03.md",
         "capture_file": "PRO_BQP1_SOURCE_REVIEW_CAPTURE_2026-09-03.json",
         "disposition_file": "PRO_BQP1_SOURCE_DISPOSITION_2026-09-03.md"
+      },
+      {
+        "source_commit": "6e70274a78872cd891cedd4319145d68195d02fc",
+        "packet_commit": "18a47e92d169d7312355b8f94372a78eccf4b8fe",
+        "message_file": "PRO_NOVELTY_SUBMISSION_2026-09-03.md",
+        "request_file": "PRO_NOVELTY_REQUEST_2026-09-03.md",
+        "attachment_file": "PRO_NOVELTY_PACKET_2026-09-03.md",
+        "attachment_bytes": 72511,
+        "attachment_sha256": "220304109773ce44ed91f8cf8846a91d9cecaeab82565df13a0a4c06e8c0c3e1",
+        "submission_bytes": 1214,
+        "submission_sha256": "c203e4ecca82b303837feb0c583931da1b6e2010544ced36d27473a36e96ab68",
+        "surface": "Chat",
+        "model_label": "GPT-5.6 Sol",
+        "thinking": "Pro, 5 of 5",
+        "user_message_number": 9,
+        "chat_user_message_id": "635d858a-521b-47ce-aa13-9f78a7a2a36a",
+        "completed_assistant_messages_before_this_request": 7,
+        "failed_assistant_attempts_before_this_request": 1,
+        "sent_ui_local_time": "2026-09-03 01:17:18 PM America/Los_Angeles",
+        "sent_running_observed_at": "2026-09-03T20:17:18Z",
+        "last_observed_at": "2026-09-03T20:36:43.564Z",
+        "last_observation": "Completed ninth-request answer: GPT-5.6 Pro, Worked for 15m 38s. Full rendered response, 70 equation sources and 13 external links archived; stale Copy-response output was rejected.",
+        "receipt": "PRO_NOVELTY_DISPATCH_RECEIPT_2026-09-03.md",
+        "scope": "Bounded <=3000-word primary-source novelty and impact audit; direct source browsing required; produce a general theorem or a documented corollary/no-go result.",
+        "prompt_verification": "Prepared 1214-byte submission matched the final composer after whitespace normalization; one completed attachment label, enabled Send and no active run before submission; fresh DOM after the single click showed one new user turn and active Pro thinking.",
+        "source_basis": "Local targeted six-source collision audit in NOVELTY_COLLISION_AUDIT_2026-09-03.md; exhaustive source coverage and priority remain unverified.",
+        "terminal_status": "completed, collected and independently dispositioned; no mathematical counterexample under the explicit theorem hypotheses",
+        "source_checking": "Relevant public arXiv/Nature pages were checked by Pro. Detailed final SIAM text, local certificate recomputation, exhaustive citation search and priority certification were not performed.",
+        "completed_collected_at": "2026-09-03T20:36:43.564Z",
+        "assistant_message_id": "d2855e9c-808a-4c5d-b7ec-38ff09d08534",
+        "response_file": "PRO_NOVELTY_REVIEW_2026-09-03.md",
+        "response_bytes": 17423,
+        "response_sha256": "775c78dcedf67bab046f5ea029ca00500be8719048aa206c1cdafe7629bd9c06",
+        "capture_file": "PRO_NOVELTY_REVIEW_CAPTURE_2026-09-03.json",
+        "capture_bytes": 38654,
+        "capture_sha256": "071bdf069e362f39bd5d1738821f5383a98deeb9a4387307057e3ca92a7e555a",
+        "disposition_file": "PRO_NOVELTY_DISPOSITION_2026-09-03.md",
+        "equation_elements": 70,
+        "external_links": 13,
+        "capture_note": "Rendered DOM is authoritative for this archive. Browser Copy response returned stale message-7 Markdown and failed content checks."
       }
     ],
     "prepared_successor": {
@@ -229,13 +281,17 @@
       "attachment_sha256": "220304109773ce44ed91f8cf8846a91d9cecaeab82565df13a0a4c06e8c0c3e1",
       "intended_user_message_number": 9,
       "scope": "Bounded <=3000-word primary-source novelty and impact audit; browse the six cited sources, identify the first nontrivial theorem or a corollary/no-go, and separate mathematical objections from priority risk.",
-      "status": "sent_running",
+      "status": "completed_collected_checked",
       "source_commit": "6e70274a78872cd891cedd4319145d68195d02fc",
       "submission_file": "PRO_NOVELTY_SUBMISSION_2026-09-03.md",
       "submission_bytes": 1214,
       "submission_sha256": "c203e4ecca82b303837feb0c583931da1b6e2010544ced36d27473a36e96ab68",
       "submitted_ui_local_time": "2026-09-03 01:17:18 PM America/Los_Angeles",
-      "dispatch_receipt": "PRO_NOVELTY_DISPATCH_RECEIPT_2026-09-03.md"
+      "dispatch_receipt": "PRO_NOVELTY_DISPATCH_RECEIPT_2026-09-03.md",
+      "completed_collected_at": "2026-09-03T20:36:43.564Z",
+      "response_file": "PRO_NOVELTY_REVIEW_2026-09-03.md",
+      "capture_file": "PRO_NOVELTY_REVIEW_CAPTURE_2026-09-03.json",
+      "disposition_file": "PRO_NOVELTY_DISPOSITION_2026-09-03.md"
     }
   },
   "backup_channel": {
@@ -249,11 +305,11 @@
     "new_persistent_domain_probe": "passed",
     "source_ledger": "prior-local-checks-reported; complete primary-source reread not performed in consolidation",
     "full_reduction": "not_certified",
-    "novelty": "Targeted six-source collision audit completed: MEDIUM, conditional. Exact multiplicity and the normalized target are prior; King-Kohler contains most arbitrary-chain machinery; Gyurik et al. already states a particular whole-kernel gap. Exhaustive priority not certified.",
-    "additional_primary_source_check": "Existing targeted checks plus September 3 collision pass over Crichigno-Kohler 2024, King-Kohler arXiv:2311.17234v2, Gyurik et al. arXiv:2410.21258v2, Lowe-Kim-Bondesan-Hayakawa arXiv:2607.03278v1, Hayakawa arXiv:2608.02726v1 and Rudolph arXiv:2411.02681v2. Relevant theorem/definition/proof locations checked; full citation graph, later versions and priority remain unverified.",
+    "novelty": "Completed local and bounded Pro source-collision audits: MEDIUM, conditional. No counterexample under explicit finite-certificate hypotheses. Kernel/min-max closure is routine; the surviving candidate is the corrected finite-certificate all-chain leakage theorem and its restricted filtered application. Final SIAM detailed proof remains unchecked.",
+    "additional_primary_source_check": "Message-9 Pro audit directly checked relevant public arXiv/Nature pages and nearby simplex-normalized terminology. Detailed final SIAM King-Kohler text was access-restricted; no exhaustive citation graph or priority certification was completed.",
     "new_conditional_coercivity": "EXACT_FILLING_COERCIVITY.md; local proof checked, external review pending",
     "coercivity_fixtures": "15 clique fixtures and two hypothesis guards passed; not the full palette",
-    "finite_certificate_theorem": "Conditional implication accepted after completed bounded Pro review and independent local algebraic check; complete fixed palette instantiated. Novelty remains open.",
+    "finite_certificate_theorem": "Conditional implication retained after completed novelty review: no counterexample found. The manuscript must explicitly derive up-Laplacian domination from exact filling, boundary-harmonic orthogonality, the local positive floor and partitioned up-columns.",
     "actual_source_representative": "RUDOLPH_REPRESENTATIVE_BULK_CERTIFICATE.json; PASS exact integer topology, filling, zero-weight kernel and central-bulk checks for one pinned graph",
     "strongest_gap_floor": "Conditional weighted Omega(eta^28 g/t^26); under common-copy unweighting Omega(eta^26 g/t^24), m<=6, conservative dyadic lambda=Theta(eta/t).",
     "mathematical_corrections": [
@@ -275,35 +331,37 @@
     "bqp1_independent_review": "NORMALIZED_BQP1_SOURCE_GATE_INDEPENDENT_REVIEW.md; block compression, coherent labels, clean/mixed register split, reversible scratch, dummy denominator, exact gate support and uniformity passed. Novelty and downstream geometry were outside scope.",
     "bqp1_pro_review": "Completed and collected with 98 exact equation sources; operator/interface and conditional weighted composition accepted after independent disposition. Pro performed no source checking.",
     "bqp1_source_gate": "CLOSED at weighted BQP1^G2 hardness under the recorded geometric theorem; values 3/4 versus 1/8, threshold 7/16, additive error 1/24 safe. Denominator growth is padding-generated.",
-    "unweighting_naturality": "No local obstruction: common labeled blocks commute with inclusions, dyadic F=lambda^-2 is polynomial, and future gadget vertices may be isolated initially for d>=1. Result remains dependent on Hayakawa single-level symmetric/asymmetric theorem and is likely a direct corollary.",
+    "unweighting_naturality": "Accepted as a direct Hayakawa corollary: common labeled blocks commute with inclusions; dyadic F=lambda^-2 is polynomial; asymmetric floor excludes extra homology. The mechanism is credited and not claimed as novelty.",
     "king_corollary_boundary": "Equation-level check: conditional on uniform King-Kohler Lemmas 10.2-10.4, qualitative degenerate-kernel concentration, exact multiplicity and whole-positive-gap follow by a short projection/min-max argument. The surviving technical delta is the finite-certificate repair and g-linear gap scaling.",
     "uniform_perturbation_counterexample": "Exact graph-subspace family with r=lambda^-2 has paired orthonormal basis error lambda*sqrt(2-sqrt(2)) while projector distance is 1/sqrt(2); basiswise O(lambda) is not instance-uniform in growing rank.",
-    "denominator_impact": "Primary corollary needs no dummies: beta_in=8 exactly and persistent ranks are 6 versus 1. Growing denominator via M tensor I is an exact but replicated closure; reversible scrambling does not make it intrinsic."
+    "denominator_impact": "Primary corollary needs no dummies: beta_in=8 exactly and persistent ranks are 6 versus 1. Growing denominator via M tensor I is an exact but replicated closure; reversible scrambling does not make it intrinsic.",
+    "pro_novelty_review": "Completed and collected: 15m 38s displayed duration, 70 equations, 13 links. Raw rendered response and independent disposition archived; detailed final SIAM source unavailable.",
+    "manuscript_v0": "Integrated modular draft created and compiled to 19 pages. Covers transfer, quotient, fixed-eight gate-dependent hardness, unweighting, related-work collisions and limitations. Typesetting validation is not a fresh proof audit."
   },
   "github": {
-    "status": "manuscript_outline_and_post_dispatch_results_prepared_for_commit",
+    "status": "novelty_review_and_manuscript_v0_prepared_for_commit",
     "review_source_commit": "6e70274a78872cd891cedd4319145d68195d02fc",
     "verification": "Novelty source checkpoint 6e70274a78872cd891cedd4319145d68195d02fc matched local HEAD and git ls-remote after push. The seven-file successor packet is 72511 bytes with SHA-256 220304109773ce44ed91f8cf8846a91d9cecaeab82565df13a0a4c06e8c0c3e1.",
-    "receipt_note": "Message 9 remains running. The King boundary, fixed-eight denominator framing and restartable manuscript outline are prepared for synchronization.",
+    "receipt_note": "Message 9 is completed, archived and dispositioned. Manuscript v0 compiles to 19 pages. Commit and remote verification pending.",
     "dispatch_commit": "pending"
   },
   "follow_up": {
-    "status": "active",
+    "status": "active_no_running_pro_request",
     "automation_id": "tda-pro-github",
     "kind": "thread heartbeat",
     "schedule": "hourly",
-    "policy": "Collect and independently disposition the running bounded review; preserve raw text and equations; sync each useful positive or negative milestone. Existing user authorization covers the ongoing Pro collaboration and GitHub archival. Send at most one scoped successor after its source checkpoint is pushed and verified, and never duplicate or interrupt a running submission.",
+    "policy": "Maintain the manuscript and source/proof gates. Do not send a new Pro message without specific action-time confirmation. Archive and sync every useful positive or negative milestone.",
     "workflow": "FOLLOW_UP_WORKFLOW.md",
     "stop": "Pause when a substantial scoped result or documented stopping conclusion is reached, or user intervention is necessary.",
     "pending_for_next_completed_response": [
-      "Directly source-check whether King-Kohler already implies the degenerate-kernel all-chain theorem and whether Gyurik et al. closes its arbitrary-chain step.",
-      "Decide whether quotient naturality gives a meaningful restricted resolution of the Lowe et al. normalized-persistence conjecture.",
-      "Audit common-copy unweighting as an unweighted theorem corollary and give a theorem-or-no-go novelty disposition."
+      "Inspect the detailed final SIAM King-Kohler proof for an outside-harmonic or equivalent uniform finite-local repair.",
+      "Audit manuscript v0 line by line against the owning finite certificates and source interfaces.",
+      "Revise positioning and venue only after those checks; keep current claim firewalls."
     ],
-    "phase": "Message 9 remains running. Local work now frames the result as fixed-beta_in=8 hardness plus a reusable finite-certificate transfer theorem; dummy growth is only a replication closure. Prepare manuscript v0 after disposition rather than opening an unbounded novelty loop.",
-    "automation_prompt_updated_for_current_request": true,
+    "phase": "Message 9 completed and dispositioned. Manuscript v0 drafted and compiled. No Pro request is running; next work is final-SIAM comparison and local manuscript proof audit.",
+    "automation_prompt_updated_for_current_request": false,
     "automation_updated_at": "2026-09-03T20:19:11Z",
-    "writing_policy": "Mathematical correctness, source interfaces and claim boundaries remain hard gates. HIGH novelty is not a prerequisite for writing. After the current source comparison and unweighting audit close without a counterexample, create a restartable positioning/outline checkpoint and begin manuscript v0 as a focused theory contribution."
+    "writing_policy": "Correctness and source interfaces remain hard gates. Novelty controls positioning and venue, not whether the scoped manuscript is written. No new Pro message without explicit action-time confirmation."
   },
   "coordination": {
     "canonical_scope": "research/quantum_direction_selection and existing TDA Pro channel",
@@ -323,10 +381,17 @@
     }
   },
   "manuscript": {
-    "status": "positioning_outline_prepared_waiting_for_message_9_disposition",
-    "file": "MANUSCRIPT_POSITIONING_AND_OUTLINE_2026-09-03.md",
-    "working_title": "Gapped Clique Filtrations for Exact Normalized Persistence",
-    "policy": "Correctness and source interfaces are hard gates; novelty rating controls positioning and venue, not whether v0 is written.",
-    "next": "After message-9 disposition, freeze theorem statuses and begin manuscript_v0.tex with the introduction, theorem stack and all-chain proof."
+    "status": "v0_drafted_and_compiled",
+    "directory": "manuscript_v0",
+    "source_file": "manuscript_v0/main.tex",
+    "pdf_file": "manuscript_v0/main.pdf",
+    "pages": 19,
+    "working_title": "Gapped Kernel Realization in Clique Filtrations: Exact Multiplicity and True Normalized Persistence",
+    "contents": "Finite-certificate all-chain transfer, exact whole-kernel closure, quotient naturality, fixed-eight BQP1^G2 hardness, common-copy unweighting, related work and limitations.",
+    "validation": "latexmk PDF build completed with resolved references/citations and no LaTeX warnings; this does not certify the proof.",
+    "policy": "Correctness and source interfaces are hard gates; novelty rating controls positioning and venue, not whether v0 is maintained.",
+    "next": "Final SIAM King-Kohler detailed-proof comparison and line-by-line manuscript audit against local certificates. No new Pro message without user confirmation.",
+    "pdf_bytes": 391021,
+    "pdf_sha256": "37fb1594b852d09cc673e7fa0efe367d8f691b3872f6e9071e125bc236da0b6a"
   }
 }

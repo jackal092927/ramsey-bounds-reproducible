@@ -1,0 +1,9 @@
+For an inclusion of clique complexes \(X_1\subseteq X_2\), true normalized persistence is the fraction
+\[
+\frac{\rank[H_d(X_1)\to H_d(X_2)]}{\dim H_d(X_1)}.
+\]
+Hardness reductions for this quantity must control three features simultaneously: exact homology multiplicities, the inclusion-induced map, and an inverse-polynomial gap above the complete kernel of each endpoint Laplacian. We give a finite-certificate transfer theorem that supplies all three for a fixed palette of weighted clique gadgets. Its main estimate applies to every geometric chain and bounds squared distance to an embedded degenerate logical kernel by
+\[
+C\left(t\lambda^2+\frac{\langle x,\Delta x\rangle}{g\lambda^{26}}\right).
+\]
+The gadget weight \(\lambda\) is independent of the logical gap \(g\), yielding a geometric gap linear in \(g\). Exact filling identifies the endpoint homology as a quotient \(V/W_A\); nested term sets induce the natural quotient epimorphisms, so persistent rank equals the later logical-kernel dimension. Applying the theorem to an exact real-gate perfect-completeness verifier gives weighted instances with \(\beta_d(X_1)=8\), persistent rank \(6\) in YES instances and \(1\) in NO instances, and inverse-polynomial whole-kernel gaps. Thus additive true normalized persistence is hard for the gate-dependent class \(\BQPone^{G_2}\), where \(G_2=\{X,\CX,\CCX,H\otimes H\}\). A common-copy construction transfers the result to unweighted clique filtrations. The theorem does not imply ordinary \(\BQP\), unrestricted \(\SDQCone\), or gate-independent \(\BQPone\) hardness.

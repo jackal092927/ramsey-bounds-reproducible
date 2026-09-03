@@ -1,0 +1,45 @@
+\section{Relation to prior work}
+\label{sec:related}
+
+\paragraph{Exact clique homology.}
+Crichigno and Kohler give a parsimonious reduction from quantum satisfiability to clique homology: satisfying states correspond one-to-one with homology classes, yielding \(\QMAone\)-hardness for existence and \(\#\BQP\)-hardness for exact counting~\cite{crichigno2024clique}. This establishes that exact multiplicity alone is prior art. Their construction does not supply the inverse-polynomial Laplacian promise needed to identify exact zero modes robustly. Our target couples exact multiplicity with a gap above the complete kernel at two filtration endpoints and computes the inclusion rank between them.
+
+\paragraph{Gapped clique homology.}
+King and Kohler construct weighted clique gadgets and prove hardness for gapped clique homology~\cite{king2024gapped}. Their many-gadget proof begins with arbitrary geometric chains, decomposes them into simulated and nonsimulated sectors, and applies positive definiteness of the logical Hamiltonian at the final coercivity step. Once a correct uniform arbitrary-chain master estimate is available, replacing positive definiteness by a gap above a degenerate logical kernel makes the final kernel and min--max argument short. We therefore do not claim the substitution itself as new.
+
+Our technical difference lies earlier. In arXiv version 2, the proof of the padded coordinate-bulk estimate states that every relevant boundary coefficient contains a weight-\(\lambda\) vertex. A padded local bulk simplex can instead lose a weight-one outside-register vertex and remain in that coordinate bulk. The resulting term has coefficient one. We avoid this sector by projecting the fixed local private pair onto outside harmonics in every bidegree and placing nonharmonic outside factors in a separately gapped sector. We also use direct finite matrices rather than converting basiswise perturbation into a dimension-uniform projector estimate. This produces the \(t\lambda^2\) structural error in \cref{eq:transfer-bound}. Our current source comparison is against arXiv version 2; whether the final SIAM text contains an equivalent repair must be checked before a priority claim is made.
+
+\paragraph{Harmonic survival.}
+Gyurik, Schmidhuber, King, Dunjko, and Hayakawa study whether a specified harmonic guide survives a filtration and prove gate-dependent \(\BQPone\)-hardness for that problem~\cite{gyurik2026provable}. Their construction also states a gap above the complete final harmonic space. The displayed proof invokes a lemma formulated on the simulated-register image while discussing an arbitrary low-energy geometric chain. We treat this as a proof-interface issue rather than a counterexample to their theorem. Our all-chain estimate is independent, uniform over arbitrary degenerate logical kernels, and used at both endpoints. The computational statistic is also different: one-guide survival does not return the fraction of the complete initial homology that survives.
+
+\paragraph{Normalized persistence and persistent Laplacians.}
+Lowe, Kim, Bondesan, and Hayakawa define the same initial-Betti-normalized ratio studied here and formulate hardness conjectures requiring exact multiplicity, endpoint gaps, and filtration compatibility~\cite{lowe2026normalized}. They propose compatible harmonic isometries as a sufficient mechanism. We obtain the required numerical rank for a restricted family through the natural quotients \(V/W_A\), without constructing a common harmonic-representative isometry. This is a restricted bypass, not a proof of their general compatibility conjecture or their unrestricted complexity conjecture.
+
+Persistent Laplacians give a canonical spectral representation of persistent Betti numbers~\cite{memoli2022persistent}. Their nullity equals the inclusion rank, and their operator decomposition already supplies standard domination relations between ordinary and persistent Laplacians. Our proof uses ordinary endpoint Laplacians to certify exact kernels and uses the quotient model to compute the induced map. We do not claim the general persistent-Laplacian formalism or its basic spectral inequalities.
+
+\paragraph{Exact gates and concrete gadgets.}
+Rudolph develops exact gate-set simulations for perfect-completeness classes and supplies the gain/loss Hadamard factorization, concrete few-term states, and join closure used by our palette~\cite{rudolph2026universal}. Those ingredients are credited. Our role is to restrict the reduction to a finite list, certify the exact local data needed by \cref{ass:local-certificate}, and integrate the list with the all-chain and quotient arguments. No general integer-state clique-gadget theorem is assumed.
+
+\paragraph{Unweighting.}
+Hayakawa proves that common clique blow-ups reproduce a weighted Laplacian on a symmetric sector and give a positive floor on its orthogonal complement~\cite{hayakawa2026unweighted}. That result removes weights from gapped clique homology. Our filtration-level use keeps identical labeled blocks throughout the nested complexes, which gives~\cref{eq:unweight-natural}. This naturality check is elementary, and \cref{cor:unweighted-hardness} should be read as a direct application of Hayakawa's theorem rather than an independent unweighting technique.
+
+\begin{table}[t]
+\centering
+\footnotesize
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X
+  >{\centering\arraybackslash}p{0.18\linewidth}
+  >{\centering\arraybackslash}p{0.18\linewidth}
+  >{\centering\arraybackslash}p{0.21\linewidth}@{}}
+\toprule
+Result type & Exact full multiplicity & Whole-kernel gap & Full-homology persistence ratio \\
+\midrule
+Parsimonious clique homology~\cite{crichigno2024clique} & yes & not supplied & no \\
+Gapped clique homology~\cite{king2024gapped} & NO-case focus & yes in stated promise & no \\
+Guided harmonic survival~\cite{gyurik2026provable} & not the target statistic & final construction & one guide \\
+Normalized-persistence conjecture~\cite{lowe2026normalized} & required & required & yes, conjectural clique step \\
+This work & yes & both endpoints & yes, nested term sets \\
+\bottomrule
+\end{tabularx}
+\caption{The theorem package is distinguished by the conjunction of exact endpoint multiplicity, whole-kernel gaps, and a natural map on the complete initial homology. The table records problem scope rather than priority certification.}
+\label{tab:comparison}
+\end{table}

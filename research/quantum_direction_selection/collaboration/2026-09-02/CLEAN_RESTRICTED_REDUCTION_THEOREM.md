@@ -251,14 +251,14 @@ A separate [eight-label source lemma](NORMALIZED_BQP1_SOURCE_GATE.md), derived a
 
 The strongest honest restriction uses no ignored mixed dummy bits: then \(D=8\), \(\beta_d(X_{\rm in})=8\), and the persistent ranks are exactly six in YES instances and one in NO instances. Hardness therefore already holds at fixed initial target-degree Betti number eight. Adding ignored mixed bits gives an exact tensor-replication closure with growing \(D\), but that growth is not a separate source of difficulty; see [DENOMINATOR_IMPACT_GATE_2026-09-03.md](DENOMINATOR_IMPACT_GATE_2026-09-03.md).
 
-## 7. Remaining claims gate
+## 7. Current claims gate
 
-The mathematical package now has a complete fixed local palette, a clean conditional transfer theorem, and an exact separated-source corollary. The next nonlocal obligations are:
+The mathematical package has a complete fixed local palette, a conditional finite-certificate transfer theorem, an exact separated-source corollary, and a fixed-eight \(\mathsf{BQP}_1^{G_2}\) composition. The targeted local and Pro source-collision audits found no counterexample under the displayed hypotheses. They also established that the degenerate-kernel substitution, quotient dimension closure, and common-copy naturality cannot carry the main novelty claim.
 
-1. audit every dependency in this synthesis against its owning proof/certificate;
-2. establish novelty of the degenerate-kernel whole-gap plus normalized filtered-rank package;
-3. perform a primary-source collision audit against nearby harmonic-persistence hardness and exact-kernel/clique-homology reductions;
-4. decide whether the padding-generated denominator weakens the normalized claim's conceptual value;
-5. decide whether the poor gap exponent is acceptable for a theory result despite its lack of practical value.
+The common-copy construction now gives an unweighted corollary, conditional on this weighted theorem and Hayakawa's symmetric/asymmetric decomposition. The same labeled copy blocks are used throughout the filtration, so the inclusion maps commute with the symmetric-sector isometries; the asymmetric positive floor excludes extra homology. This is a sourced application, not a new unweighting theorem.
 
-The strongest locally defensible claim is the explicit transformation (3)--(7), the separated-promise corollary (19)--(21), and the weighted \(\mathsf{BQP}_1^{G_2}\)-hard composition above. Ordinary \(\mathsf{BQP}\), unrestricted \(\mathsf{SDQC}_1\), gate-independent \(\mathsf{BQP}_1\), unconditional unweighted hardness and paper readiness remain withheld.
+The strongest defensible claim is therefore the finite-certificate arbitrary-chain estimate (13), its exact whole-kernel and natural quotient consequences (15)--(16), the fixed-eight gate-dependent hardness result, and the sourced unweighted corollary. A [19-page manuscript v0](manuscript_v0/README.md) states this package and its limitations.
+
+The remaining priority gate is the detailed final SIAM King--Kohler proof. The completed Pro audit could inspect only its metadata and abstract. If the published proof already replaces the arXiv-v2 coordinate bulk with an equivalent outside-harmonic/fixed-local argument and obtains a uniform \(t\lambda^2\) leakage bound, the analytic novelty must be reduced. A fresh line-by-line manuscript proof audit against the owning finite certificates is also still required before paper-readiness can be claimed.
+
+Ordinary \(\mathsf{BQP}\), unrestricted \(\mathsf{SDQC}_1\), gate-independent \(\mathsf{BQP}_1\), complex-phase coverage, intrinsic growing-denominator hardness, near-term practicality, and first-quantum-persistence claims remain withheld.
