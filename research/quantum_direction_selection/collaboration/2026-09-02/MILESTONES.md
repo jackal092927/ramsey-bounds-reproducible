@@ -46,7 +46,9 @@ Consolidation started September 2, 2026 PDT; new dispatch and follow-up setup co
 | M40 | Offline certificate mode | **PASS**, all six mathematical sections recomputed from archived graph with external-command calls disabled | Removes the concrete gh/network reproduction dependency; upstream provenance is a separate mode |
 | M41 | Source replay after checker refactor | **PASS**, original JSON remains byte-identical with SHA 916819fb8a9e371b322a1fab1161b1fc2686ad7fdaf9cf785f52fc2fcb0cae3a | Confirms the default pinned-source path remains reproducible |
 | M42 | All four active Hadamard three-term atoms | **LOCAL ISOMETRY PROOF + 4 EXACT FILLING CHECKS PASS**, ACTIVE_HADAMARD_ORBIT.md | One representative suffices under explicit X/Z register relabelings; other atom types and guarded products remain open |
-| M43 | Bounded theorem-only successor prepared | **PREPARED, NOT YET SENT**; 15805-byte packet, two complete files | Restricts Pro to a completed <=2500-word proof audit, with no browsing or code execution; full guard/priority tasks remain separate |
+| M43 | Bounded theorem-only successor | **SENT AND RUNNING**, user message 4, observed 2026-09-03T14:34:28Z; 15805-byte packet, two complete files | Restricts Pro to a completed <=2500-word proof audit, with no browsing or code execution; full guard/priority tasks remain separate |
+| M44 | Recovery and active-orbit source checkpoint | **PUSHED AND REMOTE-VERIFIED**, f4ec1b73ca99fa909b728e8165fb3e87fa9214b3 | Includes failed-run evidence, offline mode, four-atom certificate, and frozen bounded packet; GitHub packet bytes/SHA matched |
+| M45 | Continuation after the terminal failure | **ACTIVE**, existing hourly tda-pro-github updated | Current request identifies the bounded successor; historical failure and interim statements remain separate from completed proofs |
 
 ## Current unresolved research gates
 
