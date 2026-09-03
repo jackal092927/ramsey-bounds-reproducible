@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-03T19:50:02Z",
+  "updated_at": "2026-09-03T19:53:34Z",
   "objective": "Review and advance true normalized persistence toward a substantial TCS theorem; archive every useful positive/negative milestone and Pro result.",
   "repository": {
     "url": "https://github.com/jackal092927/ramsey-bounds-reproducible",
@@ -243,10 +243,11 @@
     "bqp1_independent_review": "NORMALIZED_BQP1_SOURCE_GATE_INDEPENDENT_REVIEW.md; block compression, coherent labels, clean/mixed register split, reversible scratch, dummy denominator, exact gate support and uniformity passed. Novelty and downstream geometry were outside scope."
   },
   "github": {
-    "status": "bqp1_source_checkpoint_remote_verified_message8_running",
+    "status": "bqp1_message8_dispatch_archive_pushed_remote_verified",
     "review_source_commit": "f11cb4ed83bdbc7d738b6b159e7267850f49ad92",
-    "verification": "Local source HEAD and git ls-remote agreed at f11cb4ed83bdbc7d738b6b159e7267850f49ad92; the five-file packet is 36077 bytes with SHA-256 4f68ce7c35596f5ae0c1aaa80891de9cc27880b0d9d673818b2dc05cfeb38934.",
-    "receipt_note": "The source checkpoint f11cb4e is remote-verified. Message 8 was submitted once with the frozen 36077-byte packet and is running; dispatch evidence is in PRO_BQP1_SOURCE_DISPATCH_RECEIPT_2026-09-03.md."
+    "verification": "Source checkpoint f11cb4e and dispatch archive f6b4681 were each matched by local HEAD/commit and git ls-remote after push; the frozen packet remains 36077 bytes with SHA-256 4f68ce7c35596f5ae0c1aaa80891de9cc27880b0d9d673818b2dc05cfeb38934.",
+    "receipt_note": "The source checkpoint f11cb4e is remote-verified. Message 8 was submitted once with the frozen 36077-byte packet and is running; dispatch evidence is in PRO_BQP1_SOURCE_DISPATCH_RECEIPT_2026-09-03.md.",
+    "dispatch_commit": "f6b4681e7e85d4a57afe5c50a41afb1c4417e66a"
   },
   "follow_up": {
     "status": "active",
@@ -263,7 +264,7 @@
     ],
     "phase": "Message 8 sent once and running from source commit f11cb4e. Its bounded task audits the eight-label BQP1 exact operator/interface and the gate-dependent weighted-hardness composition. Novelty remains the next gate after collection and disposition.",
     "automation_prompt_updated_for_current_request": true,
-    "automation_updated_at": "2026-09-03T19:24:23Z"
+    "automation_updated_at": "2026-09-03T19:53:34Z"
   },
   "coordination": {
     "canonical_scope": "research/quantum_direction_selection and existing TDA Pro channel",

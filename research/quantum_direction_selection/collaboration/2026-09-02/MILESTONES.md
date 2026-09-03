@@ -81,6 +81,7 @@ Consolidation started September 2, 2026 PDT; new dispatch and follow-up setup co
 | M75 | Eight-label BQP1 bounded review packet | **PREPARED AND SOURCE-FROZEN** | Five-file 36077-byte packet includes the source lemma and independent local audit, freezing the exact operator/interface question |
 | M76 | BQP1 source-review checkpoint | **PUSHED AND REMOTE-VERIFIED**, f11cb4ed83bdbc7d738b6b159e7267850f49ad92 | Source lemma, Rudolph source check, independent local audit and bounded packet were synchronized before external submission |
 | M77 | Eight-label BQP1 source/interface audit | **SENT AND RUNNING**, user message 8; UI 2026-09-03 12:48 PM PDT | Exact prompt and packet lineage recorded in PRO_BQP1_SOURCE_DISPATCH_RECEIPT_2026-09-03.md; fresh DOM showed one new message and active Pro run |
+| M78 | Message-8 dispatch archive | **PUSHED AND REMOTE-VERIFIED**, f6b4681e7e85d4a57afe5c50a41afb1c4417e66a | Running-state receipt, lifecycle ledger and workflow are synchronized; the existing hourly heartbeat now tracks collection and independent disposition of message 8 |
 
 ## Current unresolved research gates
 
