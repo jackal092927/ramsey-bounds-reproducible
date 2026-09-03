@@ -4,13 +4,17 @@ September 3, 2026. **LOCAL END-TO-END SYNTHESIS; FINITE PALETTE CERTIFICATES PAS
 
 ## 1. Explicit source problem
 
-Let U be a length-L real quantum circuit with clean work, an explicitly mixed input register of dimension D>0, and one final acceptance measurement P_acc. The exact gate family is
+Let U be a length-L real qubit circuit with k maximally mixed input qubits, computational-basis clean work qubits, and a fixed-local computational-basis final acceptance measurement P_acc (normally measurement of one designated output qubit). Put D=2^k>0. The allowed-input isometry is the standard inclusion
+\[
+J=I_{\rm mixed}\otimes |c\rangle_{\rm clean},
+\]
+where \(|c\rangle\) is a fixed computational-basis string; fixed computational-basis ancillas may be absorbed into this notation. The exact gate family is
 \[
 G_2=\{X,\mathrm{CX},\mathrm{CCX},H\otimes H\}.
 \]
 Equivalently, single H gates are allowed after adding the one mixed, unmeasured spectator from the exact extension below.
 
-Let J embed the D-dimensional allowed input sector together with the clean work state, and define
+Define
 \[
 M=J^\dagger U^\dagger P_{\rm acc}UJ,\qquad
 S=\ker(I-M).
@@ -25,7 +29,7 @@ If a decision promise is desired, set \(p=\operatorname{Tr}(M)/D\) and promise
 p\ge\frac23\quad\text{or}\quad p\le\frac13.
 \tag{2}
 \]
-No standard complexity classification of this restricted exact source problem is assumed.
+An arbitrary entangled input-code isometry or arbitrary global acceptance projector is outside the certified finite palette. No standard complexity classification of this restricted exact source problem is assumed.
 
 ## 2. Output
 
@@ -39,6 +43,11 @@ represented by polynomial-size graphs, with a common target degree d and binary 
 \tag{3}
 \]
 and
+\[
+\beta_d(X_{\rm out})=\dim S,
+\tag{4a}
+\]
+while the inclusion-induced map satisfies
 \[
 \operatorname{rank}\!\left[
 H_d(X_{\rm in})\longrightarrow H_d(X_{\rm out})
@@ -56,7 +65,7 @@ Consequently their true normalized persistence is exactly
 \]
 This is initial-homology normalization. No simplex-count denominator and no low-positive-energy surrogate occurs in (5).
 
-Both degree-d geometric Laplacians have the exact kernel dimensions in (3)-(4) and an inverse-polynomial gap above the whole kernel. For a fixed error parameter \(0<\eta<1\), a term bound t, logical gap g, and locality at most six, one may choose a dyadic
+Both degree-d geometric Laplacians have the exact endpoint kernel dimensions in (3) and (4a), and an inverse-polynomial gap above the whole kernel. For a fixed error parameter \(0<\eta<1\), a term bound t, logical gap g, and locality at most six, one may choose a dyadic
 \[
 \lambda=\Theta(\eta/t)
 \]

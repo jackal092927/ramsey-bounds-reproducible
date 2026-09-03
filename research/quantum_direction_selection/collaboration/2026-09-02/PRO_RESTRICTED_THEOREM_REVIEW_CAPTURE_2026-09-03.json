@@ -1,0 +1,570 @@
+{
+  "captured_at": "2026-09-03T18:24:32.030Z",
+  "formatting_recaptured_at": "2026-09-03T18:29:18.305Z",
+  "conversation_url": "https://chatgpt.com/c/6a98c05a-ecf4-83e8-b356-4e20dc3fde3f",
+  "user_message_number": 6,
+  "source_commit": "23f83cf0db8fd62eed1dd2c7b90b806bb9e3a6e7",
+  "visible_duration": "Worked for 10m 40s",
+  "visible_account": {
+    "name": "Jackal Xin",
+    "plan": "Pro",
+    "matched_registered_personal_identity": true,
+    "email_omitted_from_public_archive": true
+  },
+  "message_id": "1d6c2987-1315-4255-8594-4d2b1b6b3db6",
+  "model_slug": "gpt-5-6-pro",
+  "links": [],
+  "markdown": "# Verdict\n\nThe end-to-end integration is **mathematically valid after one source-model correction**. I find no missing local atom and no failure in the history, concentration, quotient, or gap arguments once the reported finite certificates and the previously reviewed concentration/guard lemmas are taken as hypotheses.\n\nThe first issue is an **under-specified hypothesis**, not a failed derivation: the source statement currently permits an abstract isometry \\(J\\) and an unspecified final projector \\(P_{\\rm acc}\\). 〔PRO_RESTRICTED_THEOREM_PACKET_2…〕 The certified palette only covers the standard circuit model in which:\n\n\\(J=I_{\\text{mixed}}\\otimes |0\\cdots0\\rangle_{\\text{clean}}\\)\nup to fixed computational-basis ancillas, and \\(P_{\\rm acc}\\) is a fixed-local computational-basis output measurement, normally \\(|1\\rangle\\langle1|\\) on a designated output qubit. An arbitrary real entangled input-code isometry or arbitrary global acceptance projector need not belong to the finite palette.\n\nWith that restriction made explicit, the claimed transformation and exact normalized-persistence identities survive. The theorem should also replace the phrase “kernel dimensions in (3)–(4)” by the explicit statement\n\n\\(\\dim\\ker\\Delta_d(X_{\\rm out})=\\dim S,\\)\nsince equation (4) itself states a persistent rank, not an endpoint nullity.\n\n## Claim status\n\n| Integration point | Verdict |\n| --- | --- |\n| Four-item atom list | **Complete**, for standard clean-input and computational-basis output circuits |\n| One global target degree | **Valid** |\n| \\(X_{\\rm in}\\subseteq X_{\\rm out}\\) by adding rejection gadgets | **Valid** |\n| \\(\\beta_d(X_{\\rm in})=D\\) | **Valid** |\n| Final logical kernel \\(=\\mathcal VS\\) | **Valid** |\n| Final logical gap, including \\(S=0\\) | **Valid** |\n| Exact whole homology, not merely low-energy counting | **Valid** |\n| Persistent rank \\(=\\dim S\\) | **Valid**, including \\(\\dim S=0\\) |\n| Weighted and common-copy gap exponents | **Algebraically correct** |\n| Mixed-spectator extension | **Exactly correct** |\n| Fraction separation | **Exactly correct at the stated strength** |\n| Standard-class hardness | **Open and not implied** |\n| Finite certificate computations | **Assumed as instructed, not independently certified here** |\n\n# Corrected restricted reduction theorem\n\nWork over \\(\\mathbb R\\), or equivalently its complexification. Let \\(U\\) be an exact polynomial-size qubit circuit over\n\n\\(G_2=\\{X,\\mathrm{CX},\\mathrm{CCX},H\\otimes H\\}.\\)\nAssume:\n\n  - \\(k\\) input qubits are maximally mixed, so \\(D=2^k>0\\);\n\n  - every remaining input qubit is initialized to a fixed computational-basis clean state;\n\n  - \\(J\\) is the corresponding standard inclusion;\n\n  - acceptance is a fixed-local computational-basis projective measurement;\n\n  - with\n\n\\(M=J^\\dagger U^\\dagger P_{\\rm acc}UJ,\\qquad\nS=\\ker(I-M),\\)\none has\n\n\\(M|_{S^\\perp}\\preceq rI,\\qquad r\\le\\frac13;\\)\n\n  - the supplied finite atom certificates, selected-cycle guard theorem, outside-harmonic padding, independent-interior hypotheses, and all-chain concentration theorem hold uniformly for the stated palette.\n\nThen, for constant or inverse-polynomially bounded \\(\\eta>0\\), there is a polynomial transformation to nested weighted clique complexes\n\n\\(X_{\\rm in}\\subseteq X_{\\rm out}\\)\nwith a common degree \\(d\\) and weights in \\(\\{1,\\lambda\\}\\), such that\n\n\\(\\boxed{\\beta_d(X_{\\rm in})=D,}\\)\n\\(\\boxed{\\beta_d(X_{\\rm out})=\\dim S,}\\)\nand\n\n\\(\\boxed{\n\\operatorname{rank}\\!\\left[\nH_d(X_{\\rm in})\\longrightarrow H_d(X_{\\rm out})\n\\right]=\\dim S.\n}\\)\nConsequently,\n\n\\(\\boxed{\n\\frac{\\beta_d(X_{\\rm in}\\to X_{\\rm out})}\n{\\beta_d(X_{\\rm in})}\n=\n\\frac{\\dim\\ker(I-M)}{D}.\n}\\)\nBoth endpoint degree-\\(d\\) Laplacians have an inverse-polynomial floor above their entire kernels. The output statement remains valid when \\(S=0\\), in which case\n\n\\(H_d(X_{\\rm out})=0\\)\nand the full output Laplacian spectrum is bounded below by the stated positive floor.\n\nThe packet’s intended theorem and explicit exclusion of standard-class hardness are stated at lines 81–127 and 258–267. 〔PRO_RESTRICTED_THEOREM_PACKET_2… +1〕\n\n# 1. Atom exhaustion\n\nAfter the gain/loss split, every local positive term belongs to the stated four families.\n\n### Clock, input, and output terms\n\nIllegal-clock penalties, clean-input anchors, neighboring-clock guards, and final rejection penalties are computational-basis projectors. They are covered by the basis cone and fixed selected-cycle guards.\n\nThis requires the corrected source assumption that clean ancillas and the measured rejection state are computational-basis states.\n\n### \\(X,\\mathrm{CX},\\mathrm{CCX}\\) propagation\n\nFor a reversible classical gate \\(G\\), the propagation projector decomposes into orthogonal rank-one terms\n\n\\(\\frac{\n\\bigl(|0\\rangle_c|z\\rangle-|1\\rangle_c|Gz\\rangle\\bigr)\n\\bigl(\\langle0|_c\\langle z|-\\langle1|_c\\langle Gz|\\bigr)\n}{2},\\)\none for each computational-basis \\(z\\) on the gate support.\n\nIf \\(Gz=z\\), the forbidden vector factors as\n\n\\((|0\\rangle-|1\\rangle)_c\\otimes|z\\rangle,\\)\nso the active atom is \\(|0\\rangle-|1\\rangle\\), with fixed-basis guards.\n\nIf the target flips, the active clock-target component is one of\n\n\\(|00\\rangle-|11\\rangle,\n\\qquad\n|01\\rangle-|10\\rangle.\\)\nThe control values and unchanged acted-on bits are fixed-basis guards. Thus controlled flips and Toffoli introduce no additional active state.\n\n### \\(H\\otimes H\\) propagation\n\nWriting \\(K=\\sqrt2H\\), the split enforces consecutively\n\n\\(f_{t+1}=Kf_t\\)\non one work qubit and\n\n\\(f_{t+2}=K^{-1}f_{t+1}\n=\\frac{H}{\\sqrt2}f_{t+1}\\)\non the other. Their product is exactly \\(H\\otimes H\\).\n\nThe two orthonormal forbidden states for each step are precisely the four three-term vectors \\(u_0,u_1,d_0,d_1\\). All remaining clock conditions are fixed computational-basis guards. Unacted-on qubits carry identities and are handled by outside padding; they do not require enumerating basis guards.\n\nHence the four atom classes listed in the certificate note are exhaustive. The packet records the atom list and the source-pinned closures at lines 159–188 and 368–383. 〔PRO_RESTRICTED_THEOREM_PACKET_2… +1〕\n\nThe maximal support is six:\n\n  - three unary-clock bits;\n\n  - changing target when present;\n\n  - at most two controls.\n\nThe Hadamard atoms use at most four because the other work qubit is outside the local operator, not basis-conditioned.\n\n# 2. Common degree, inclusion, and initial denominator\n\nLet the complete logical register contain \\(n\\) bowties. Its top degree is\n\n\\(d=2n-1.\\)\nAn atom acting on \\(m\\le6\\) logical qubits has active target degree \\(2m-1\\). Joining with the remaining \\(n-m\\) bowties pads it to\n\n\\((2m-1)+(2(n-m)-1)+1=2n-1=d.\\)\nThe all-bidegree outside-harmonic theorem ensures that this padding is spectral as well as topological; it is not restricted to two local bidegrees.\n\nAll initial gadgets and final rejection gadgets use the same register, the same \\(\\lambda\\), and disjoint private vertices. No clique contains private vertices from distinct gadgets. Therefore adding only rejection gadgets gives an actual inclusion\n\n\\(X_{\\rm in}\\subseteq X_{\\rm out}.\\)\nIf a common vertex set is desired, future private vertices may be isolated in \\(X_{\\rm in}\\).\n\nFor the initial logical Hamiltonian, the clock penalties first restrict every zero vector to the legal unary-clock sector. The propagation terms then force a single underlying input vector \\(v\\) at every time, with the prescribed weighted history amplitudes \\(s_\\tau\\). The input anchors force \\(v\\) into the \\(D\\)-dimensional mixed-input/clean-work sector. Conversely, every such \\(v\\) gives a zero-energy history. Hence\n\n\\(\\ker H_{\\rm in}=\\operatorname{ran}\\mathcal V,\n\\qquad\n\\dim\\ker H_{\\rm in}=D.\\)\nThe map \\(\\mathcal V\\) is an isometry because\n\n\\(\\mathcal V^\\dagger\\mathcal V=I_D.\\)\nThis is the required no-extra-kernel statement, not merely construction of \\(D\\) candidate zeros. The packet states this characterization and the initial gap at lines 131–145. 〔PRO_RESTRICTED_THEOREM_PACKET_2…〕\n\n# 3. Output kernel and logical gap\n\nLet \\(R\\) be the final rejection projector. Since both summands are positive semidefinite,\n\n\\(\\ker(H_{\\rm in}+R)\n=\n\\ker H_{\\rm in}\\cap\\ker R.\\)\nOn the history space,\n\n\\(\\mathcal V^\\dagger R\\mathcal V\n=\n\\frac{I-M}{Z},\n\\qquad\nL\\le Z\\le2L.\\)\nFor \\(v\\in S\\), \\(Mv=v\\), equivalently \\(R\\mathcal Vv=0\\). Conversely, if \\(R\\mathcal Vv=0\\), then\n\n\\(\\langle v,(I-M)v\\rangle=0,\\)\nand positivity of \\(I-M\\) implies \\(v\\in S\\). Thus\n\n\\(\\boxed{\\ker H_{\\rm out}=\\mathcal VS.}\\)\nOn \\(S^\\perp\\),\n\n\\(I-M\\succeq\\frac23I,\\)\nso the compressed output penalty is at least\n\n\\(\\alpha\\ge\\frac{2/3}{2L}=\\frac1{3L}.\\)\nUsing\n\n\\(g_{\\rm in}\\ge\\frac1{8L^2}\\)\nand the accepted two-positive-operator bound,\n\n\\(g_{\\rm out}\n\\ge\n\\frac{\\alpha g_{\\rm in}}{1+g_{\\rm in}}\n=\n\\frac1{3L(8L^2+1)}\n\\ge\n\\frac1{27L^3}.\\)\nNothing in this argument assumes \\(S\\neq0\\). If \\(S=0\\), this is a lower bound on the minimum eigenvalue of \\(H_{\\rm out}\\).\n\n# 4. Exact homology and persistent rank\n\nFor any term set \\(A\\), put\n\n\\(H_A=\\sum_{j\\in A}\\Pi_j,\n\\qquad\nW_A=\\sum_{j\\in A}\\operatorname{ran}\\Pi_j.\\)\nBecause the \\(\\Pi_j\\) are positive projectors,\n\n\\(\\ker H_A=W_A^\\perp.\\)\nExact local filling and independent private chain coordinates give\n\n\\(B_d(X_A)\\cap V=W_A.\\)\nTherefore inclusion of register cycles induces an injection\n\n\\(V/W_A\\hookrightarrow H_d(X_A),\\)\nproviding exactly\n\n\\(\\dim(V/W_A)=\\dim\\ker H_A\\)\ncandidate homology classes.\n\nThe all-chain concentration inequality is applied to the full geometric chain space:\n\n\\(\\|(I-P_{K_A})x\\|^2\n\\le\nC\\left[\nt\\lambda^2+\n\\frac{\\langle x,\\Delta_Ax\\rangle}\n{g_A\\lambda^{26}}\n\\right].\\)\nWith the prescribed parameters, projection onto \\(K_A\\) is injective on the entire geometric spectral subspace below \\(E\\). Hence that subspace has dimension at most \\(\\dim K_A\\). Since the quotient injection already supplies \\(\\dim K_A\\) exact zero modes,\n\n\\(\\boxed{H_d(X_A)\\cong V/W_A}\\)\nand\n\n\\(\\boxed{\n\\dim\\ker\\Delta_A=\\dim\\ker H_A,\\qquad\n\\operatorname{spec}(\\Delta_A)\\cap(0,E)=\\varnothing.\n}\\)\nThis proves whole homology, not a count of approximate zero modes.\n\nFor \\(A\\subseteq B\\), the two canonical isomorphisms commute with the common register inclusion, so the induced homology map is exactly\n\n\\(V/W_A\\twoheadrightarrow V/W_B.\\)\nIts rank is\n\n\\(\\dim V/W_B=\\dim\\ker H_B.\\)\nTaking \\(A\\) as the initial history terms and \\(B\\) as initial plus rejection proves the claimed numerator and denominator. The argument remains valid when \\(V/W_B=0\\). The packet gives this concentration-to-quotient step at lines 190–230. 〔PRO_RESTRICTED_THEOREM_PACKET_2…〕\n\n# 5. Gap arithmetic\n\nUse one common upper bound \\(t\\) on the number of rank-one terms at both levels and\n\n\\(g=\\min\\{g_{\\rm in},g_{\\rm out}\\}.\\)\nFor a sufficiently small dyadic choice\n\n\\(\\lambda=\\Theta(\\eta/t),\\)\nthe concentration theorem permits\n\n\\(E=\\Theta(\\eta^2g\\lambda^{26}),\\)\nhence\n\n\\(\\boxed{\nE=\\Omega\\!\\left(\\frac{\\eta^{28}g}{t^{26}}\\right).\n}\\)\nUnder common-copy unweighting,\n\n\\(F=\\lambda^{-2},\\)\nand the symmetric spectrum scales by \\(F\\), while the asymmetric sector starts at at least \\(1\\). Therefore\n\n\\(\\widehat E\\ge\\min\\{FE,1\\},\\)\nwith\n\n\\(\\boxed{\nFE=\\Omega\\!\\left(\\frac{\\eta^{26}g}{t^{24}}\\right).\n}\\)\nThese are floors, not equalities.\n\nFor the unweighted construction to remain polynomial size, \\(\\eta^{-1}\\) must be polynomially bounded, or \\(\\eta\\) may simply be fixed. The same labeled copy blocks must be used at both levels.\n\n# 6. Spectator and fraction separation\n\nFor a circuit containing individual \\(H\\) gates, add one maximally mixed, unmeasured spectator \\(a\\) and replace each \\(H_j\\) by \\(H_j\\otimes H_a\\). If \\(h\\) is the number of Hadamards,\n\n\\(U'=U\\otimes H_a^h,\n\\qquad\nJ'=J\\otimes I_a,\n\\qquad\nP_{\\rm acc}'=P_{\\rm acc}\\otimes I_a.\\)\nTherefore, for every parity of \\(h\\),\n\n\\(\\boxed{\nM'=J'^\\dagger U'^\\dagger P_{\\rm acc}'U'J'\n=M\\otimes I_a.\n}\\)\nThus\n\n\\(D'=2D,\\qquad\nS'=S\\otimes\\mathbb C^2,\n\\qquad\n\\dim S'=2\\dim S,\\)\nand the normalized fraction is unchanged. The off-perfect bound is also unchanged on\n\n\\((S')^\\perp=S^\\perp\\otimes\\mathbb C^2.\\)\nFinally, writing\n\n\\(f=\\frac{\\dim S}{D},\n\\qquad\np=\\frac{\\operatorname{Tr}M}{D},\\)\nthe spectrum of \\(M\\) gives exactly\n\n\\(f\\le p\\le r+(1-r)f.\\)\nFor \\(r\\le1/3\\),\n\n\\(p\\ge\\frac23\\Longrightarrow f\\ge\\frac12,\\)\nwhile positivity gives\n\n\\(p\\le\\frac13\\Longrightarrow f\\le p\\le\\frac13.\\)\nAn additive error below \\(1/12\\), such as \\(1/24\\), distinguishes the cases at threshold \\(5/12\\). This transfers only the explicitly defined circuit promise. 〔PRO_RESTRICTED_THEOREM_PACKET_2…〕\n\n# Smallest remaining theorem-level obstacle\n\nThe smallest remaining obstacle to a substantial TCS claim is now **source complexity**, not palette closure.\n\nThe reduction currently starts from a bespoke exact promise requiring simultaneously:\n\n\\(M|_{S^\\perp}\\preceq\\frac13I,\n\\qquad\np\\ge\\frac23\\ \\text{or}\\ p\\le\\frac13,\\)\nover the exact real gate set, while preserving the eigenvalue-\\(1\\) multiplicity. To obtain a compelling complexity theorem, one needs a gate-exact reduction from a recognized source problem to this promise—preferably with nontrivial growing \\(D\\), rather than the normalization-degenerate \\(D=1\\) specialization.\n\nUntil that is proved, the surviving result is a rigorous and nontrivial **representation/transfer theorem for an explicit circuit promise**, not a standard-class hardness theorem. Novelty relative to prior parsimonious homology and normalized-persistence work remains a separate priority question.",
+  "math": [
+    {
+      "display": false,
+      "source": "J"
+    },
+    {
+      "display": false,
+      "source": "P_{\\rm acc}"
+    },
+    {
+      "display": false,
+      "source": "J=I_{\\text{mixed}}\\otimes |0\\cdots0\\rangle_{\\text{clean}}"
+    },
+    {
+      "display": false,
+      "source": "P_{\\rm acc}"
+    },
+    {
+      "display": false,
+      "source": "|1\\rangle\\langle1|"
+    },
+    {
+      "display": false,
+      "source": "\\dim\\ker\\Delta_d(X_{\\rm out})=\\dim S,"
+    },
+    {
+      "display": false,
+      "source": "X_{\\rm in}\\subseteq X_{\\rm out}"
+    },
+    {
+      "display": false,
+      "source": "\\beta_d(X_{\\rm in})=D"
+    },
+    {
+      "display": false,
+      "source": "=\\mathcal VS"
+    },
+    {
+      "display": false,
+      "source": "S=0"
+    },
+    {
+      "display": false,
+      "source": "=\\dim S"
+    },
+    {
+      "display": false,
+      "source": "\\dim S=0"
+    },
+    {
+      "display": false,
+      "source": "\\mathbb R"
+    },
+    {
+      "display": false,
+      "source": "U"
+    },
+    {
+      "display": false,
+      "source": "G_2=\\{X,\\mathrm{CX},\\mathrm{CCX},H\\otimes H\\}."
+    },
+    {
+      "display": false,
+      "source": "k"
+    },
+    {
+      "display": false,
+      "source": "D=2^k>0"
+    },
+    {
+      "display": false,
+      "source": "J"
+    },
+    {
+      "display": false,
+      "source": "M=J^\\dagger U^\\dagger P_{\\rm acc}UJ,\\qquad\nS=\\ker(I-M),"
+    },
+    {
+      "display": false,
+      "source": "M|_{S^\\perp}\\preceq rI,\\qquad r\\le\\frac13;"
+    },
+    {
+      "display": false,
+      "source": "\\eta>0"
+    },
+    {
+      "display": false,
+      "source": "X_{\\rm in}\\subseteq X_{\\rm out}"
+    },
+    {
+      "display": false,
+      "source": "d"
+    },
+    {
+      "display": false,
+      "source": "\\{1,\\lambda\\}"
+    },
+    {
+      "display": false,
+      "source": "\\boxed{\\beta_d(X_{\\rm in})=D,}"
+    },
+    {
+      "display": false,
+      "source": "\\boxed{\\beta_d(X_{\\rm out})=\\dim S,}"
+    },
+    {
+      "display": false,
+      "source": "\\boxed{\n\\operatorname{rank}\\!\\left[\nH_d(X_{\\rm in})\\longrightarrow H_d(X_{\\rm out})\n\\right]=\\dim S.\n}"
+    },
+    {
+      "display": false,
+      "source": "\\boxed{\n\\frac{\\beta_d(X_{\\rm in}\\to X_{\\rm out})}\n{\\beta_d(X_{\\rm in})}\n=\n\\frac{\\dim\\ker(I-M)}{D}.\n}"
+    },
+    {
+      "display": false,
+      "source": "d"
+    },
+    {
+      "display": false,
+      "source": "S=0"
+    },
+    {
+      "display": false,
+      "source": "H_d(X_{\\rm out})=0"
+    },
+    {
+      "display": false,
+      "source": "X,\\mathrm{CX},\\mathrm{CCX}"
+    },
+    {
+      "display": false,
+      "source": "G"
+    },
+    {
+      "display": false,
+      "source": "\\frac{\n\\bigl(|0\\rangle_c|z\\rangle-|1\\rangle_c|Gz\\rangle\\bigr)\n\\bigl(\\langle0|_c\\langle z|-\\langle1|_c\\langle Gz|\\bigr)\n}{2},"
+    },
+    {
+      "display": false,
+      "source": "z"
+    },
+    {
+      "display": false,
+      "source": "Gz=z"
+    },
+    {
+      "display": false,
+      "source": "(|0\\rangle-|1\\rangle)_c\\otimes|z\\rangle,"
+    },
+    {
+      "display": false,
+      "source": "|0\\rangle-|1\\rangle"
+    },
+    {
+      "display": false,
+      "source": "|00\\rangle-|11\\rangle,\n\\qquad\n|01\\rangle-|10\\rangle."
+    },
+    {
+      "display": false,
+      "source": "H\\otimes H"
+    },
+    {
+      "display": false,
+      "source": "K=\\sqrt2H"
+    },
+    {
+      "display": false,
+      "source": "f_{t+1}=Kf_t"
+    },
+    {
+      "display": false,
+      "source": "f_{t+2}=K^{-1}f_{t+1}\n=\\frac{H}{\\sqrt2}f_{t+1}"
+    },
+    {
+      "display": false,
+      "source": "H\\otimes H"
+    },
+    {
+      "display": false,
+      "source": "u_0,u_1,d_0,d_1"
+    },
+    {
+      "display": false,
+      "source": "n"
+    },
+    {
+      "display": false,
+      "source": "d=2n-1."
+    },
+    {
+      "display": false,
+      "source": "m\\le6"
+    },
+    {
+      "display": false,
+      "source": "2m-1"
+    },
+    {
+      "display": false,
+      "source": "n-m"
+    },
+    {
+      "display": false,
+      "source": "(2m-1)+(2(n-m)-1)+1=2n-1=d."
+    },
+    {
+      "display": false,
+      "source": "\\lambda"
+    },
+    {
+      "display": false,
+      "source": "X_{\\rm in}\\subseteq X_{\\rm out}."
+    },
+    {
+      "display": false,
+      "source": "X_{\\rm in}"
+    },
+    {
+      "display": false,
+      "source": "v"
+    },
+    {
+      "display": false,
+      "source": "s_\\tau"
+    },
+    {
+      "display": false,
+      "source": "v"
+    },
+    {
+      "display": false,
+      "source": "D"
+    },
+    {
+      "display": false,
+      "source": "v"
+    },
+    {
+      "display": false,
+      "source": "\\ker H_{\\rm in}=\\operatorname{ran}\\mathcal V,\n\\qquad\n\\dim\\ker H_{\\rm in}=D."
+    },
+    {
+      "display": false,
+      "source": "\\mathcal V"
+    },
+    {
+      "display": false,
+      "source": "\\mathcal V^\\dagger\\mathcal V=I_D."
+    },
+    {
+      "display": false,
+      "source": "D"
+    },
+    {
+      "display": false,
+      "source": "R"
+    },
+    {
+      "display": false,
+      "source": "\\ker(H_{\\rm in}+R)\n=\n\\ker H_{\\rm in}\\cap\\ker R."
+    },
+    {
+      "display": false,
+      "source": "\\mathcal V^\\dagger R\\mathcal V\n=\n\\frac{I-M}{Z},\n\\qquad\nL\\le Z\\le2L."
+    },
+    {
+      "display": false,
+      "source": "v\\in S"
+    },
+    {
+      "display": false,
+      "source": "Mv=v"
+    },
+    {
+      "display": false,
+      "source": "R\\mathcal Vv=0"
+    },
+    {
+      "display": false,
+      "source": "R\\mathcal Vv=0"
+    },
+    {
+      "display": false,
+      "source": "\\langle v,(I-M)v\\rangle=0,"
+    },
+    {
+      "display": false,
+      "source": "I-M"
+    },
+    {
+      "display": false,
+      "source": "v\\in S"
+    },
+    {
+      "display": false,
+      "source": "\\boxed{\\ker H_{\\rm out}=\\mathcal VS.}"
+    },
+    {
+      "display": false,
+      "source": "S^\\perp"
+    },
+    {
+      "display": false,
+      "source": "I-M\\succeq\\frac23I,"
+    },
+    {
+      "display": false,
+      "source": "\\alpha\\ge\\frac{2/3}{2L}=\\frac1{3L}."
+    },
+    {
+      "display": false,
+      "source": "g_{\\rm in}\\ge\\frac1{8L^2}"
+    },
+    {
+      "display": false,
+      "source": "g_{\\rm out}\n\\ge\n\\frac{\\alpha g_{\\rm in}}{1+g_{\\rm in}}\n=\n\\frac1{3L(8L^2+1)}\n\\ge\n\\frac1{27L^3}."
+    },
+    {
+      "display": false,
+      "source": "S\\neq0"
+    },
+    {
+      "display": false,
+      "source": "S=0"
+    },
+    {
+      "display": false,
+      "source": "H_{\\rm out}"
+    },
+    {
+      "display": false,
+      "source": "A"
+    },
+    {
+      "display": false,
+      "source": "H_A=\\sum_{j\\in A}\\Pi_j,\n\\qquad\nW_A=\\sum_{j\\in A}\\operatorname{ran}\\Pi_j."
+    },
+    {
+      "display": false,
+      "source": "\\Pi_j"
+    },
+    {
+      "display": false,
+      "source": "\\ker H_A=W_A^\\perp."
+    },
+    {
+      "display": false,
+      "source": "B_d(X_A)\\cap V=W_A."
+    },
+    {
+      "display": false,
+      "source": "V/W_A\\hookrightarrow H_d(X_A),"
+    },
+    {
+      "display": false,
+      "source": "\\dim(V/W_A)=\\dim\\ker H_A"
+    },
+    {
+      "display": false,
+      "source": "\\|(I-P_{K_A})x\\|^2\n\\le\nC\\left[\nt\\lambda^2+\n\\frac{\\langle x,\\Delta_Ax\\rangle}\n{g_A\\lambda^{26}}\n\\right]."
+    },
+    {
+      "display": false,
+      "source": "K_A"
+    },
+    {
+      "display": false,
+      "source": "E"
+    },
+    {
+      "display": false,
+      "source": "\\dim K_A"
+    },
+    {
+      "display": false,
+      "source": "\\dim K_A"
+    },
+    {
+      "display": false,
+      "source": "\\boxed{H_d(X_A)\\cong V/W_A}"
+    },
+    {
+      "display": false,
+      "source": "\\boxed{\n\\dim\\ker\\Delta_A=\\dim\\ker H_A,\\qquad\n\\operatorname{spec}(\\Delta_A)\\cap(0,E)=\\varnothing.\n}"
+    },
+    {
+      "display": false,
+      "source": "A\\subseteq B"
+    },
+    {
+      "display": false,
+      "source": "V/W_A\\twoheadrightarrow V/W_B."
+    },
+    {
+      "display": false,
+      "source": "\\dim V/W_B=\\dim\\ker H_B."
+    },
+    {
+      "display": false,
+      "source": "A"
+    },
+    {
+      "display": false,
+      "source": "B"
+    },
+    {
+      "display": false,
+      "source": "V/W_B=0"
+    },
+    {
+      "display": false,
+      "source": "t"
+    },
+    {
+      "display": false,
+      "source": "g=\\min\\{g_{\\rm in},g_{\\rm out}\\}."
+    },
+    {
+      "display": false,
+      "source": "\\lambda=\\Theta(\\eta/t),"
+    },
+    {
+      "display": false,
+      "source": "E=\\Theta(\\eta^2g\\lambda^{26}),"
+    },
+    {
+      "display": false,
+      "source": "\\boxed{\nE=\\Omega\\!\\left(\\frac{\\eta^{28}g}{t^{26}}\\right).\n}"
+    },
+    {
+      "display": false,
+      "source": "F=\\lambda^{-2},"
+    },
+    {
+      "display": false,
+      "source": "F"
+    },
+    {
+      "display": false,
+      "source": "1"
+    },
+    {
+      "display": false,
+      "source": "\\widehat E\\ge\\min\\{FE,1\\},"
+    },
+    {
+      "display": false,
+      "source": "\\boxed{\nFE=\\Omega\\!\\left(\\frac{\\eta^{26}g}{t^{24}}\\right).\n}"
+    },
+    {
+      "display": false,
+      "source": "\\eta^{-1}"
+    },
+    {
+      "display": false,
+      "source": "\\eta"
+    },
+    {
+      "display": false,
+      "source": "H"
+    },
+    {
+      "display": false,
+      "source": "a"
+    },
+    {
+      "display": false,
+      "source": "H_j"
+    },
+    {
+      "display": false,
+      "source": "H_j\\otimes H_a"
+    },
+    {
+      "display": false,
+      "source": "h"
+    },
+    {
+      "display": false,
+      "source": "U'=U\\otimes H_a^h,\n\\qquad\nJ'=J\\otimes I_a,\n\\qquad\nP_{\\rm acc}'=P_{\\rm acc}\\otimes I_a."
+    },
+    {
+      "display": false,
+      "source": "h"
+    },
+    {
+      "display": false,
+      "source": "\\boxed{\nM'=J'^\\dagger U'^\\dagger P_{\\rm acc}'U'J'\n=M\\otimes I_a.\n}"
+    },
+    {
+      "display": false,
+      "source": "D'=2D,\\qquad\nS'=S\\otimes\\mathbb C^2,\n\\qquad\n\\dim S'=2\\dim S,"
+    },
+    {
+      "display": false,
+      "source": "(S')^\\perp=S^\\perp\\otimes\\mathbb C^2."
+    },
+    {
+      "display": false,
+      "source": "f=\\frac{\\dim S}{D},\n\\qquad\np=\\frac{\\operatorname{Tr}M}{D},"
+    },
+    {
+      "display": false,
+      "source": "M"
+    },
+    {
+      "display": false,
+      "source": "f\\le p\\le r+(1-r)f."
+    },
+    {
+      "display": false,
+      "source": "r\\le1/3"
+    },
+    {
+      "display": false,
+      "source": "p\\ge\\frac23\\Longrightarrow f\\ge\\frac12,"
+    },
+    {
+      "display": false,
+      "source": "p\\le\\frac13\\Longrightarrow f\\le p\\le\\frac13."
+    },
+    {
+      "display": false,
+      "source": "1/12"
+    },
+    {
+      "display": false,
+      "source": "1/24"
+    },
+    {
+      "display": false,
+      "source": "5/12"
+    },
+    {
+      "display": false,
+      "source": "M|_{S^\\perp}\\preceq\\frac13I,\n\\qquad\np\\ge\\frac23\\ \\text{or}\\ p\\le\\frac13,"
+    },
+    {
+      "display": false,
+      "source": "1"
+    },
+    {
+      "display": false,
+      "source": "D"
+    },
+    {
+      "display": false,
+      "source": "D=1"
+    }
+  ],
+  "visible_text": "Verdict\n\nThe end-to-end integration is mathematically valid after one source-model correction. I find no missing local atom and no failure in the history, concentration, quotient, or gap arguments once the reported finite certificates and the previously reviewed concentration/guard lemmas are taken as hypotheses.\n\nThe first issue is an under-specified hypothesis, not a failed derivation: the source statement currently permits an abstract isometry J and an unspecified final projector P\nacc\n\t​\n\n. \n\nPRO_RESTRICTED_THEOREM_PACKET_2…\n\n The certified palette only covers the standard circuit model in which:\n\nJ=I\nmixed\n\t​\n\n⊗∣0⋯0⟩\nclean\n\t​\n\n\nup to fixed computational-basis ancillas, and P\nacc\n\t​\n\n is a fixed-local computational-basis output measurement, normally ∣1⟩⟨1∣ on a designated output qubit. An arbitrary real entangled input-code isometry or arbitrary global acceptance projector need not belong to the finite palette.\n\nWith that restriction made explicit, the claimed transformation and exact normalized-persistence identities survive. The theorem should also replace the phrase “kernel dimensions in (3)–(4)” by the explicit statement\n\ndimkerΔ\nd\n\t​\n\n(X\nout\n\t​\n\n)=dimS,\n\nsince equation (4) itself states a persistent rank, not an endpoint nullity.\n\nClaim status\nIntegration point\tVerdict\nFour-item atom list\tComplete, for standard clean-input and computational-basis output circuits\nOne global target degree\tValid\nX\nin\n\t​\n\n⊆X\nout\n\t​\n\n by adding rejection gadgets\tValid\nβ\nd\n\t​\n\n(X\nin\n\t​\n\n)=D\tValid\nFinal logical kernel =VS\tValid\nFinal logical gap, including S=0\tValid\nExact whole homology, not merely low-energy counting\tValid\nPersistent rank =dimS\tValid, including dimS=0\nWeighted and common-copy gap exponents\tAlgebraically correct\nMixed-spectator extension\tExactly correct\nFraction separation\tExactly correct at the stated strength\nStandard-class hardness\tOpen and not implied\nFinite certificate computations\tAssumed as instructed, not independently certified here\nCorrected restricted reduction theorem\n\nWork over R, or equivalently its complexification. Let U be an exact polynomial-size qubit circuit over\n\nG\n2\n\t​\n\n={X,CX,CCX,H⊗H}.\n\nAssume:\n\nk input qubits are maximally mixed, so D=2\nk\n>0;\n\nevery remaining input qubit is initialized to a fixed computational-basis clean state;\n\nJ is the corresponding standard inclusion;\n\nacceptance is a fixed-local computational-basis projective measurement;\n\nwith\n\nM=J\n†\nU\n†\nP\nacc\n\t​\n\nUJ,S=ker(I−M),\n\none has\n\nM∣\nS\n⊥\n\t​\n\n⪯rI,r≤\n3\n1\n\t​\n\n;\n\nthe supplied finite atom certificates, selected-cycle guard theorem, outside-harmonic padding, independent-interior hypotheses, and all-chain concentration theorem hold uniformly for the stated palette.\n\nThen, for constant or inverse-polynomially bounded η>0, there is a polynomial transformation to nested weighted clique complexes\n\nX\nin\n\t​\n\n⊆X\nout\n\t​\n\n\nwith a common degree d and weights in {1,λ}, such that\n\nβ\nd\n\t​\n\n(X\nin\n\t​\n\n)=D,\n\t​\n\nβ\nd\n\t​\n\n(X\nout\n\t​\n\n)=dimS,\n\t​\n\n\nand\n\nrank[H\nd\n\t​\n\n(X\nin\n\t​\n\n)⟶H\nd\n\t​\n\n(X\nout\n\t​\n\n)]=dimS.\n\t​\n\n\nConsequently,\n\nβ\nd\n\t​\n\n(X\nin\n\t​\n\n)\nβ\nd\n\t​\n\n(X\nin\n\t​\n\n→X\nout\n\t​\n\n)\n\t​\n\n=\nD\ndimker(I−M)\n\t​\n\n.\n\t​\n\n\nBoth endpoint degree-d Laplacians have an inverse-polynomial floor above their entire kernels. The output statement remains valid when S=0, in which case\n\nH\nd\n\t​\n\n(X\nout\n\t​\n\n)=0\n\nand the full output Laplacian spectrum is bounded below by the stated positive floor.\n\nThe packet’s intended theorem and explicit exclusion of standard-class hardness are stated at lines 81–127 and 258–267. \n\nPRO_RESTRICTED_THEOREM_PACKET_2… +1\n\n1. Atom exhaustion\n\nAfter the gain/loss split, every local positive term belongs to the stated four families.\n\nClock, input, and output terms\n\nIllegal-clock penalties, clean-input anchors, neighboring-clock guards, and final rejection penalties are computational-basis projectors. They are covered by the basis cone and fixed selected-cycle guards.\n\nThis requires the corrected source assumption that clean ancillas and the measured rejection state are computational-basis states.\n\nX,CX,CCX propagation\n\nFor a reversible classical gate G, the propagation projector decomposes into orthogonal rank-one terms\n\n2\n(∣0⟩\nc\n\t​\n\n∣z⟩−∣1⟩\nc\n\t​\n\n∣Gz⟩)(⟨0∣\nc\n\t​\n\n⟨z∣−⟨1∣\nc\n\t​\n\n⟨Gz∣)\n\t​\n\n,\n\none for each computational-basis z on the gate support.\n\nIf Gz=z, the forbidden vector factors as\n\n(∣0⟩−∣1⟩)\nc\n\t​\n\n⊗∣z⟩,\n\nso the active atom is ∣0⟩−∣1⟩, with fixed-basis guards.\n\nIf the target flips, the active clock-target component is one of\n\n∣00⟩−∣11⟩,∣01⟩−∣10⟩.\n\nThe control values and unchanged acted-on bits are fixed-basis guards. Thus controlled flips and Toffoli introduce no additional active state.\n\nH⊗H propagation\n\nWriting K=\n2\n\t​\n\nH, the split enforces consecutively\n\nf\nt+1\n\t​\n\n=Kf\nt\n\t​\n\n\non one work qubit and\n\nf\nt+2\n\t​\n\n=K\n−1\nf\nt+1\n\t​\n\n=\n2\n\t​\n\nH\n\t​\n\nf\nt+1\n\t​\n\n\non the other. Their product is exactly H⊗H.\n\nThe two orthonormal forbidden states for each step are precisely the four three-term vectors u\n0\n\t​\n\n,u\n1\n\t​\n\n,d\n0\n\t​\n\n,d\n1\n\t​\n\n. All remaining clock conditions are fixed computational-basis guards. Unacted-on qubits carry identities and are handled by outside padding; they do not require enumerating basis guards.\n\nHence the four atom classes listed in the certificate note are exhaustive. The packet records the atom list and the source-pinned closures at lines 159–188 and 368–383. \n\nPRO_RESTRICTED_THEOREM_PACKET_2… +1\n\nThe maximal support is six:\n\nthree unary-clock bits;\n\nchanging target when present;\n\nat most two controls.\n\nThe Hadamard atoms use at most four because the other work qubit is outside the local operator, not basis-conditioned.\n\n2. Common degree, inclusion, and initial denominator\n\nLet the complete logical register contain n bowties. Its top degree is\n\nd=2n−1.\n\nAn atom acting on m≤6 logical qubits has active target degree 2m−1. Joining with the remaining n−m bowties pads it to\n\n(2m−1)+(2(n−m)−1)+1=2n−1=d.\n\nThe all-bidegree outside-harmonic theorem ensures that this padding is spectral as well as topological; it is not restricted to two local bidegrees.\n\nAll initial gadgets and final rejection gadgets use the same register, the same λ, and disjoint private vertices. No clique contains private vertices from distinct gadgets. Therefore adding only rejection gadgets gives an actual inclusion\n\nX\nin\n\t​\n\n⊆X\nout\n\t​\n\n.\n\nIf a common vertex set is desired, future private vertices may be isolated in X\nin\n\t​\n\n.\n\nFor the initial logical Hamiltonian, the clock penalties first restrict every zero vector to the legal unary-clock sector. The propagation terms then force a single underlying input vector v at every time, with the prescribed weighted history amplitudes s\nτ\n\t​\n\n. The input anchors force v into the D-dimensional mixed-input/clean-work sector. Conversely, every such v gives a zero-energy history. Hence\n\nkerH\nin\n\t​\n\n=ranV,dimkerH\nin\n\t​\n\n=D.\n\nThe map V is an isometry because\n\nV\n†\nV=I\nD\n\t​\n\n.\n\nThis is the required no-extra-kernel statement, not merely construction of D candidate zeros. The packet states this characterization and the initial gap at lines 131–145. \n\nPRO_RESTRICTED_THEOREM_PACKET_2…\n\n3. Output kernel and logical gap\n\nLet R be the final rejection projector. Since both summands are positive semidefinite,\n\nker(H\nin\n\t​\n\n+R)=kerH\nin\n\t​\n\n∩kerR.\n\nOn the history space,\n\nV\n†\nRV=\nZ\nI−M\n\t​\n\n,L≤Z≤2L.\n\nFor v∈S, Mv=v, equivalently RVv=0. Conversely, if RVv=0, then\n\n⟨v,(I−M)v⟩=0,\n\nand positivity of I−M implies v∈S. Thus\n\nkerH\nout\n\t​\n\n=VS.\n\t​\n\n\nOn S\n⊥\n,\n\nI−M⪰\n3\n2\n\t​\n\nI,\n\nso the compressed output penalty is at least\n\nα≥\n2L\n2/3\n\t​\n\n=\n3L\n1\n\t​\n\n.\n\nUsing\n\ng\nin\n\t​\n\n≥\n8L\n2\n1\n\t​\n\n\nand the accepted two-positive-operator bound,\n\ng\nout\n\t​\n\n≥\n1+g\nin\n\t​\n\nαg\nin\n\t​\n\n\t​\n\n=\n3L(8L\n2\n+1)\n1\n\t​\n\n≥\n27L\n3\n1\n\t​\n\n.\n\nNothing in this argument assumes S\n\n=0. If S=0, this is a lower bound on the minimum eigenvalue of H\nout\n\t​\n\n.\n\n4. Exact homology and persistent rank\n\nFor any term set A, put\n\nH\nA\n\t​\n\n=\nj∈A\n∑\n\t​\n\nΠ\nj\n\t​\n\n,W\nA\n\t​\n\n=\nj∈A\n∑\n\t​\n\nranΠ\nj\n\t​\n\n.\n\nBecause the Π\nj\n\t​\n\n are positive projectors,\n\nkerH\nA\n\t​\n\n=W\nA\n⊥\n\t​\n\n.\n\nExact local filling and independent private chain coordinates give\n\nB\nd\n\t​\n\n(X\nA\n\t​\n\n)∩V=W\nA\n\t​\n\n.\n\nTherefore inclusion of register cycles induces an injection\n\nV/W\nA\n\t​\n\n↪H\nd\n\t​\n\n(X\nA\n\t​\n\n),\n\nproviding exactly\n\ndim(V/W\nA\n\t​\n\n)=dimkerH\nA\n\t​\n\n\ncandidate homology classes.\n\nThe all-chain concentration inequality is applied to the full geometric chain space:\n\n∥(I−P\nK\nA\n\t​\n\n\t​\n\n)x∥\n2\n≤C[tλ\n2\n+\ng\nA\n\t​\n\nλ\n26\n⟨x,Δ\nA\n\t​\n\nx⟩\n\t​\n\n].\n\nWith the prescribed parameters, projection onto K\nA\n\t​\n\n is injective on the entire geometric spectral subspace below E. Hence that subspace has dimension at most dimK\nA\n\t​\n\n. Since the quotient injection already supplies dimK\nA\n\t​\n\n exact zero modes,\n\nH\nd\n\t​\n\n(X\nA\n\t​\n\n)≅V/W\nA\n\t​\n\n\t​\n\n\nand\n\ndimkerΔ\nA\n\t​\n\n=dimkerH\nA\n\t​\n\n,spec(Δ\nA\n\t​\n\n)∩(0,E)=∅.\n\t​\n\n\nThis proves whole homology, not a count of approximate zero modes.\n\nFor A⊆B, the two canonical isomorphisms commute with the common register inclusion, so the induced homology map is exactly\n\nV/W\nA\n\t​\n\n↠V/W\nB\n\t​\n\n.\n\nIts rank is\n\ndimV/W\nB\n\t​\n\n=dimkerH\nB\n\t​\n\n.\n\nTaking A as the initial history terms and B as initial plus rejection proves the claimed numerator and denominator. The argument remains valid when V/W\nB\n\t​\n\n=0. The packet gives this concentration-to-quotient step at lines 190–230. \n\nPRO_RESTRICTED_THEOREM_PACKET_2…\n\n5. Gap arithmetic\n\nUse one common upper bound t on the number of rank-one terms at both levels and\n\ng=min{g\nin\n\t​\n\n,g\nout\n\t​\n\n}.\n\nFor a sufficiently small dyadic choice\n\nλ=Θ(η/t),\n\nthe concentration theorem permits\n\nE=Θ(η\n2\ngλ\n26\n),\n\nhence\n\nE=Ω(\nt\n26\nη\n28\ng\n\t​\n\n).\n\t​\n\n\nUnder common-copy unweighting,\n\nF=λ\n−2\n,\n\nand the symmetric spectrum scales by F, while the asymmetric sector starts at at least 1. Therefore\n\nE\n≥min{FE,1},\n\nwith\n\nFE=Ω(\nt\n24\nη\n26\ng\n\t​\n\n).\n\t​\n\n\nThese are floors, not equalities.\n\nFor the unweighted construction to remain polynomial size, η\n−1\n must be polynomially bounded, or η may simply be fixed. The same labeled copy blocks must be used at both levels.\n\n6. Spectator and fraction separation\n\nFor a circuit containing individual H gates, add one maximally mixed, unmeasured spectator a and replace each H\nj\n\t​\n\n by H\nj\n\t​\n\n⊗H\na\n\t​\n\n. If h is the number of Hadamards,\n\nU\n′\n=U⊗H\na\nh\n\t​\n\n,J\n′\n=J⊗I\na\n\t​\n\n,P\nacc\n′\n\t​\n\n=P\nacc\n\t​\n\n⊗I\na\n\t​\n\n.\n\nTherefore, for every parity of h,\n\nM\n′\n=J\n′†\nU\n′†\nP\nacc\n′\n\t​\n\nU\n′\nJ\n′\n=M⊗I\na\n\t​\n\n.\n\t​\n\n\nThus\n\nD\n′\n=2D,S\n′\n=S⊗C\n2\n,dimS\n′\n=2dimS,\n\nand the normalized fraction is unchanged. The off-perfect bound is also unchanged on\n\n(S\n′\n)\n⊥\n=S\n⊥\n⊗C\n2\n.\n\nFinally, writing\n\nf=\nD\ndimS\n\t​\n\n,p=\nD\nTrM\n\t​\n\n,\n\nthe spectrum of M gives exactly\n\nf≤p≤r+(1−r)f.\n\nFor r≤1/3,\n\np≥\n3\n2\n\t​\n\n⟹f≥\n2\n1\n\t​\n\n,\n\nwhile positivity gives\n\np≤\n3\n1\n\t​\n\n⟹f≤p≤\n3\n1\n\t​\n\n.\n\nAn additive error below 1/12, such as 1/24, distinguishes the cases at threshold 5/12. This transfers only the explicitly defined circuit promise. \n\nPRO_RESTRICTED_THEOREM_PACKET_2…\n\nSmallest remaining theorem-level obstacle\n\nThe smallest remaining obstacle to a substantial TCS claim is now source complexity, not palette closure.\n\nThe reduction currently starts from a bespoke exact promise requiring simultaneously:\n\nM∣\nS\n⊥\n\t​\n\n⪯\n3\n1\n\t​\n\nI,p≥\n3\n2\n\t​\n\n or p≤\n3\n1\n\t​\n\n,\n\nover the exact real gate set, while preserving the eigenvalue-1 multiplicity. To obtain a compelling complexity theorem, one needs a gate-exact reduction from a recognized source problem to this promise—preferably with nontrivial growing D, rather than the normalization-degenerate D=1 specialization.\n\nUntil that is proved, the surviving result is a rigorous and nontrivial representation/transfer theorem for an explicit circuit promise, not a standard-class hardness theorem. Novelty relative to prior parsimonious homology and normalized-persistence work remains a separate priority question.",
+  "html_length": 247230
+}

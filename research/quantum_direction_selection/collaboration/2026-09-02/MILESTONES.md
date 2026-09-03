@@ -67,12 +67,16 @@ Consolidation started September 2, 2026 PDT; new dispatch and follow-up setup co
 | M61 | Restricted-theorem integration audit | **SENT AND RUNNING**, user message 6, observed 2026-09-03T17:36:16.680Z | 20589-byte packet; audits palette exhaustiveness, natural filtration, exact denominator, gaps, spectator and fraction strength |
 | M62 | Guard response and complete-palette source checkpoint | **PUSHED AND REMOTE-VERIFIED**, 23f83cf0db8fd62eed1dd2c7b90b806bb9e3a6e7 | Full guard response/disposition, remaining atom source certificates, offline receipt and clean theorem; GitHub packet bytes/SHA matched |
 | M63 | Restricted-theorem continuation | **ACTIVE**, existing tda-pro-github retargeted | Tracks request 6 without duplicating the conversation or automation; next issue is source complexity or novelty only after integration disposition |
+| M64 | Restricted-theorem integration review | **COMPLETED AND COLLECTED**, user message 6; UI Worked for 10m 40s | Full response, 137 equation sources and browser capture archived; no literature or source-complexity checking was performed by that response |
+| M65 | Integration disposition and theorem repair | **ACCEPTED AFTER ONE SOURCE-INTERFACE CORRECTION** | Restricts \(J\) to mixed-input/computational-basis-clean inclusion and \(P_{\rm acc}\) to fixed-local computational-basis measurement; separately states \(\beta_d(X_{\rm out})=\dim S\) |
+| M66 | SDQC1 source-complexity check | **TARGETED PRIMARY SOURCE + ALGEBRA CHECK** | Standard \((2/3,1/3,1/3)\) constants give a \(1/6\) fraction gap; arbitrary trace gaps do not determine perfect-space fraction, and subspace-preserving amplification alone does not repair this |
+| M67 | Exact source-complexity successor | **PREPARED, NOT YET SENT** | One bounded packet asks for the strongest separated real-gate consequence, exact gate/threshold obligations, and the relation to Conjectures 1--2 |
 
 ## Current unresolved research gates
 
-1. Independently audit the clean restricted reduction synthesis. The concentration and guard implications have passed bounded reviews; every listed local atom now has an exact source-pinned or transported certificate.
+1. Establish the strongest meaningful consequence for the separated exact real-gate source without promoting arbitrary-threshold \(\mathsf{SDQC}_1\) or using approximate gate compilation.
 2. Determine whether the global whole-kernel theorem and its filtered normalized consequence are new, already implicit, or already explicit.
-3. Establish the strongest meaningful consequence for the exact restricted circuit source without unrestricted SDQC1 equivalence or approximate compilation.
+3. Decide whether an exact threshold-preserving reduction to the supported gate set exists; otherwise record a hard stop at the explicit separated promise.
 4. Evaluate whether the persistent-Laplacian theorem supplies sufficient additional substance; its elementary domination proof alone does not establish impact.
 5. For the net and evaluated-Hom alternatives, prove a new parameter or structural result that survives the strongest relevant classical baseline.
 
