@@ -38,6 +38,7 @@
 - [分母影响力关卡](DENOMINATOR_IMPACT_GATE_2026-09-03.md)：主定理可删除所有 dummy padding，并加强表述为固定 \(\beta_d(X_{\rm in})=8\)、persistent rank 六对一的 hardness；增长分母只作为诚实标注的 tensor-replication closure。
 - [论文定位与可重启提纲](MANUSCRIPT_POSITIONING_AND_OUTLINE_2026-09-03.md)：把 correctness/source boundary 作为 hard gate，但不再等待 HIGH novelty；第九条审查 disposition 后立即启动 focused theory manuscript v0。
 - [论文 v0](manuscript_v0/README.md)：已形成 19 页可编译草稿，正文覆盖 transfer theorem、whole-kernel closure、quotient naturality、fixed-eight \(\mathsf{BQP}_1^{G_2}\) hardness、common-copy unweighting、相关工作与限制；[PDF](manuscript_v0/main.pdf)与模块化 LaTeX 源一并归档。
+- [GitHub 同步回执](MANUSCRIPT_V0_SYNC_RECEIPT_2026-09-03.md)：内容 commit **4820ada** 已推送并以远端 branch head 和两份不可变 raw artifact 哈希复核。
 - [四个 Hadamard 活跃态的精确重标号证明](ACTIVE_HADAMARD_ORBIT.md)：同一个证书覆盖四个无 guard 三项约束，四条整数填充式全部核验。
 - [离线复现结果](OFFLINE_REPRESENTATIVE_CHECKS.json)：无需 gh 或网络重算归档图的全部证书条件。
 - [上一轮 TDA Pro 完整答复](PRO_PREVIOUS_TDA_RESPONSE.md)：已收集的模型建议，未经采纳不算已证明。

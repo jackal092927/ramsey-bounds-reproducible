@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-03T20:54:19Z",
+  "updated_at": "2026-09-03T21:01:17Z",
   "objective": "Review and advance true normalized persistence toward a substantial TCS theorem; archive every useful positive/negative milestone and Pro result.",
   "repository": {
     "url": "https://github.com/jackal092927/ramsey-bounds-reproducible",
@@ -339,11 +339,12 @@
     "manuscript_v0": "Integrated modular draft created and compiled to 19 pages. Covers transfer, quotient, fixed-eight gate-dependent hardness, unweighting, related-work collisions and limitations. Typesetting validation is not a fresh proof audit."
   },
   "github": {
-    "status": "novelty_review_and_manuscript_v0_prepared_for_commit",
+    "status": "novelty_review_and_manuscript_v0_pushed_remote_verified",
     "review_source_commit": "6e70274a78872cd891cedd4319145d68195d02fc",
-    "verification": "Novelty source checkpoint 6e70274a78872cd891cedd4319145d68195d02fc matched local HEAD and git ls-remote after push. The seven-file successor packet is 72511 bytes with SHA-256 220304109773ce44ed91f8cf8846a91d9cecaeab82565df13a0a4c06e8c0c3e1.",
-    "receipt_note": "Message 9 is completed, archived and dispositioned. Manuscript v0 compiles to 19 pages. Commit and remote verification pending.",
-    "dispatch_commit": "pending"
+    "verification": "Content commit 4820ada3ea6f17895f4f709ab5c94a2951f7eeec matched local HEAD and git ls-remote after push. Immutable raw downloads of PRO_NOVELTY_REVIEW_2026-09-03.md and manuscript_v0/main.pdf matched local SHA-256 hashes.",
+    "receipt_note": "Message 9 response, capture, disposition, updated ledgers, modular manuscript source and 19-page PDF are synchronized. Generated LaTeX auxiliaries are ignored.",
+    "dispatch_commit": "4820ada3ea6f17895f4f709ab5c94a2951f7eeec",
+    "sync_receipt": "MANUSCRIPT_V0_SYNC_RECEIPT_2026-09-03.md"
   },
   "follow_up": {
     "status": "active_no_running_pro_request",
@@ -392,6 +393,7 @@
     "policy": "Correctness and source interfaces are hard gates; novelty rating controls positioning and venue, not whether v0 is maintained.",
     "next": "Final SIAM King-Kohler detailed-proof comparison and line-by-line manuscript audit against local certificates. No new Pro message without user confirmation.",
     "pdf_bytes": 391021,
-    "pdf_sha256": "37fb1594b852d09cc673e7fa0efe367d8f691b3872f6e9071e125bc236da0b6a"
+    "pdf_sha256": "37fb1594b852d09cc673e7fa0efe367d8f691b3872f6e9071e125bc236da0b6a",
+    "content_commit": "4820ada3ea6f17895f4f709ab5c94a2951f7eeec"
   }
 }
