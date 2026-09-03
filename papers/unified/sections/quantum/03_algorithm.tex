@@ -79,5 +79,7 @@ $\binom K2$ induced edges and accept only an exactly homogeneous witness.
 
 Every search uses a predetermined density bound proved in the next section.
 If an earlier random estimate was bad and a later set violates that density
-promise, the fixed cap still terminates and the algorithm returns $\bot$.
+promise, the fixed cap still terminates.  The algorithm returns $\bot$ if
+a search or batch fails to supply its required verified samples; it need
+not detect a density violation itself.
 There is no repeat-until-success loop that can hang on an empty set.

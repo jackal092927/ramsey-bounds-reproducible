@@ -1,34 +1,37 @@
 \section{Evidence boundary, open problems, and conclusion}
 \label{sec:scope}
 
-The audit in \cref{app:reproducibility} checks the recurrence, error schedule,
-split-tree bound, exponent translation, and small sampler instances.  These
-are falsification checks, not speedup evidence; the theorem is the analytic
-argument in \cref{sec:model,sec:algorithm,sec:correctness,sec:complexity}.
+The quantum query bound follows from the analytic argument in
+\cref{sec:model,sec:algorithm,sec:correctness,sec:complexity}; it does not
+depend on computational verification.
 
 \paragraph{Small proof-of-concept experiments.}
-Appendix~\ref{app:reproducibility} reports 5,000 seeded runs at $K=3,N=16$,
-an explicit 16-state Grover sampler check, and exact small split-tree programs.
-They check sampler symmetry and end-to-end combinatorial logic, but are not a
-full coherent simulation or evidence of wall-clock or hardware speedup.
+Appendix~\ref{app:experiments} reports 5,000 ideal-sampler trials at
+$K=3,N=16$, a separate 16-state Grover experiment, and exact finite
+split-tree comparisons.  It describes the experimental settings and outcomes
+directly.  These illustrate the recursion and sampler symmetry rather than
+establishing a wall-clock or hardware speedup.
 
-\paragraph{AI-assisted research process.}
-OpenAI Codex assisted brainstorming, proof and query-analysis checks,
-literature comparison, executable checks, and editing; ChatGPT Pro assisted
-brainstorming and adversarial review.  Outputs were treated as untrusted:
-the claims rest on the proofs, primary sources, and reproducible checks, and
-the human authors retain full responsibility.
+\paragraph{Use of AI tools.}
+GPT-based tools (ChatGPT and Codex) supported brainstorming and constructive
+discussion of the theoretical arguments and numerical experiments, as well
+as manuscript polishing and review.
 
-Three open problems delimit the contribution.  First, clarify whether an
-alternative normalization or derivation resolves the apparent parameter
-mismatch in the Jain--Li--Robere--Xun quantum lower-bound remark.  Second,
-determine
-whether a randomized classical algorithm can match the
+Two algorithmic questions remain.  First, determine whether a randomized
+classical algorithm can match the
 $\widetilde O(\sqrt M)$ upper bound; \cref{prop:classical-lower} leaves a
-large exponent gap.  Third, determine whether the implicit-set method can be
+large exponent gap.  Second, determine whether the implicit-set method can be
 adapted to off-diagonal or hypergraph Ramsey total search, and whether the
 multicolour bound in \cref{cor:multicolour} can be sharpened by a scale-aware
 estimator.
+
+For the hypergraph question, quantum walks already give sublinear-query
+algorithms for fixed sub-hypergraph containment
+\cite{LeGallNishimuraTani2016}.  As a separate, speculative pointer,
+higher-order symmetry representations have been useful in a different
+hypergraph learning setting \cite{ZhangXinDey2024}.  Whether such structure can
+be exposed with sublinear coherent queries in a Ramsey total-search problem is
+open.
 
 In summary, the constructive Ramsey recursion can be implemented without
 materializing its exponentially shrinking candidate sets.  Capped uniform

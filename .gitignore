@@ -21,6 +21,7 @@ papers/**/main.out
 papers/**/main.run.xml
 papers/**/main.synctex.gz
 papers/**/main.toc
+papers/**/main.vtc
 
 # SAT proof objects are release assets, not ordinary Git objects.
 routes/finite/*.drat

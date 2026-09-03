@@ -30,20 +30,28 @@ problem for circuit-encoded homogeneous sets \cite{Krajicek2005}.  Pasarkar,
 Papadimitriou, and Yannakakis
 place Ramsey search in their polynomial long-choice class PLC, which captures
 iterated pigeonhole arguments \cite{PasarkarPapadimitriouYannakakis2023}.
+\paragraph{Comparison at the formal default parameters.}
 The closest exact-model source is the FOCS 2024 proceedings paper of
 Jain--Li--Robere--Xun \cite{JainLiRobereXun2024}.  Definition II.6 of its
-proceedings version uses $N=2^n$ vertices, and the convention after
-Definition II.7 sets the default target to $K=n/2$.  The unnumbered ``Query
-complexity of RAMSEY'' paragraph in Section III states an $N^{1-o(1)}$
+proceedings version (p.~413) uses $N=2^n$ vertices, and the convention after
+Definition II.7 sets the default target to $K=n/2$.  We use these formal
+definitions throughout this comparison.  The unnumbered ``Query
+complexity of RAMSEY'' paragraph in Section III (p.~415) states an $N^{1-o(1)}$
 quantum lower bound via Lemma III.1 and the Liu--Zhandry multicollision theorem
-\cite{LiuZhandry2019}.  The reduction's hard instances are symmetric valid
-graphs, while \cref{cor:unpromised} also aligns our upper bound with the
+\cite{LiuZhandry2019}.  The graph-hash product in Lemma III.1 can be written
+off the diagonal as
+$A_h(u,v)=\mathbf1[h(u)=h(v)]\lor A_0(h(u),h(v))$, with
+$A_h(u,u)=0$.  It is a valid symmetric graph and has an $O(1)$-query coherent
+implementation from the value oracle for $h$, using computation and
+uncomputation of its two values.  Thus the promise of a valid graph does not
+exclude this reduction.  Corollary~\ref{cor:unpromised} also aligns our upper bound with the
 locally verifiable arbitrary-circuit relation.  Moreover,
 \cref{cor:succinct} returns $\lfloor n/2\rfloor+1$ vertices, so discarding one
 if necessary solves their default target up to the suppressed rounding
 convention.  Thus malformed encodings and the target convention do not remove
 the apparent conflict.
 
+\paragraph{Direct parameter substitution.}
 Write $H$ for the multicollision range size and $G$ for the number of
 vertices in the Ramsey instance.  For fixed multiplicity $t$, the sufficient
 parameter condition in Jain et al.'s Theorem I.3 is
@@ -55,13 +63,19 @@ $\alpha_t=(2^{t-1}-1)/(2^t-1)$.  The inherited exponent is therefore
  =\frac{2^{t-1}-1}{4t(2^t-1)}\le\frac1{24},
  \qquad t\ge2,
 \]
-with equality at $t=2$.  Thus these two ingredients do not yield
-$G^{1-o(1)}$.
+with equality at $t=2$.  Indeed, $t=2$ gives $1/24$, while for $t\ge3$
+the strict inequality $\alpha_t<1/2$ gives
+$\alpha_t/(4t)<1/(8t)\le1/24$.  Increasing $G$ relative to $H$ cannot
+improve this transferred exponent.  The cited Liu--Zhandry result is for
+fixed $t$ and does not by itself permit substitution of a growing
+multiplicity.  This calculation concerns what follows from these stated
+ingredients; it is not an upper bound on the true quantum query complexity.
 
 Consequently, the stated near-linear consequence is not obtained by directly
 composing the two cited statements.  If that consequence is intended for the
 same bounded-error quantum-query relation, it is incompatible with our upper
-bound.  Our proof does not use this consequence.  This observation concerns
+bound.  Our proof does not use this consequence or the Liu--Zhandry lower
+bound.  This observation concerns
 only the parameter substitution in the unnumbered query-complexity discussion
 and does not concern the principal black-box nonreducibility or TFNP separation
 theorems of Jain et al.  An additional ingredient or a different intended

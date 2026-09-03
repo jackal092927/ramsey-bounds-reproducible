@@ -1,0 +1,183 @@
+{
+  "checked_at_utc": "2026-09-03T07:19:37.744270+00:00",
+  "python": "3.11.15",
+  "numpy": "2.4.4",
+  "scipy": "1.17.1",
+  "scope": "Current synchronization checks; no full historical DRAT campaign, LaTeX rebuild, or live conference-server verification.",
+  "commands": [
+    {
+      "argv": [
+        ".venv/bin/python",
+        "experiments/quantum_ramsey/implicit_majority_audit.py",
+        "--self-check",
+        "--check-only"
+      ],
+      "exit_code": 0,
+      "stdout": "QUANTUM_RAMSEY_AUDIT_PASS\n",
+      "stderr": "",
+      "script_sha256": "022a52ad53406c2427679b3e9d1660c2fc11267be20bb3991587f06000bbfac9"
+    },
+    {
+      "argv": [
+        ".venv/bin/python",
+        "scripts/verify_repository.py"
+      ],
+      "exit_code": 0,
+      "stdout": "REPOSITORY_INTEGRITY_VERIFIED (13 frozen files)\n",
+      "stderr": "",
+      "script_sha256": "e5ab69c61c7de3e210ca3d48dbaca96ea520637d95b3ccf95d2322a1ecf9431c"
+    },
+    {
+      "argv": [
+        ".venv/bin/python",
+        "scripts/test_materialize_unified_paper.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_cross_scope_reference_uses_supplied_mapping (__main__.EquationReferenceMaterializationTests.test_cross_scope_reference_uses_supplied_mapping) ... ok\ntest_prose_reference_changes_but_function_value_does_not (__main__.EquationReferenceMaterializationTests.test_prose_reference_changes_but_function_value_does_not) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n",
+      "script_sha256": "7e2a785486843e357bc9668644f886d9f7213316e0175898d9c2b3bc18df30b0"
+    },
+    {
+      "argv": [
+        "python",
+        "research/quantum_direction_selection/hyperbolic_probe/probe.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"seed_policy\": \"fixed seeds; deterministic finite checks\",\n  \"landmark_checks\": [\n    {\n      \"d\": 2,\n      \"n\": 18,\n      \"rank\": 3,\n      \"query_count\": 3,\n      \"basis\": [\n        5,\n        8,\n        10\n      ],\n      \"maximum_score_error\": 1.3322676295501878e-15,\n      \"maximum_absolute_coefficient\": 1.0,\n      \"maximum_coefficient_l1\": 1.5358476204636102,\n      \"adversarial_noise_bound_ratio\": 0.5119492059909211\n    },\n    {\n      \"d\": 3,\n      \"n\": 16,\n      \"rank\": 4,\n      \"query_count\": 4,\n      \"basis\": [\n        0,\n        7,\n        11,\n        13\n      ],\n      \"maximum_score_error\": 1.7763568394002505e-15,\n      \"maximum_absolute_coefficient\": 1.0,\n      \"maximum_coefficient_l1\": 1.9217409551909674,\n      \"adversarial_noise_bound_ratio\": 0.48043523825924694\n    },\n    {\n      \"d\": 5,\n      \"n\": 20,\n      \"rank\": 2,\n      \"query_count\": 2,\n      \"basis\": [\n        4,\n        19\n      ],\n      \"maximum_score_error\": 8.881784197001252e-16,\n      \"maximum_absolute_coefficient\": 1.0,\n      \"maximum_coefficient_l1\": 1.0,\n      \"adversarial_noise_bound_ratio\": 0.5000000014021566\n    }\n  ],\n  \"shell_checks\": [\n    {\n      \"d\": 2,\n      \"radius\": 8.0,\n      \"delta\": 1.0,\n      \"cap_probability\": 0.007065903698468308,\n      \"angle_over_asymptotic\": 0.9991087436954607,\n      \"optimal_proxy_delta_classical\": 1.99,\n      \"optimal_proxy_delta_quantum\": 3.87,\n      \"limit_delta_classical\": 2.0,\n      \"limit_delta_quantum\": 4.0\n    },\n    {\n      \"d\": 2,\n      \"radius\": 12.0,\n      \"delta\": 1.0,\n      \"cap_probability\": 0.0009571034918706201,\n      \"angle_over_asymptotic\": 0.9999836750400363,\n      \"optimal_proxy_delta_classical\": 2.0,\n      \"optimal_proxy_delta_quantum\": 4.0,\n      \"limit_delta_classical\": 2.0,\n      \"limit_delta_quantum\": 4.0\n    },\n    {\n      \"d\": 2,\n      \"radius\": 20.0,\n      \"delta\": 1.0,\n      \"cap_probability\": 1.753024802084446e-05,\n      \"angle_over_asymptotic\": 0.9999999945235795,\n      \"optimal_proxy_delta_classical\": 2.0,\n      \"optimal_proxy_delta_quantum\": 4.0,\n      \"limit_delta_classical\": 2.0,\n      \"limit_delta_quantum\": 4.0\n    },\n    {\n      \"d\": 3,\n      \"radius\": 8.0,\n      \"delta\": 1.0,\n      \"cap_probability\": 0.0001231848640812962,\n      \"angle_over_asymptotic\": 0.9991087436954607,\n      \"optimal_proxy_delta_classical\": 1.0,\n      \"optimal_proxy_delta_quantum\": 1.99,\n      \"limit_delta_classical\": 1.0,\n      \"limit_delta_quantum\": 2.0\n    },\n    {\n      \"d\": 3,\n      \"radius\": 12.0,\n      \"delta\": 1.0,\n      \"cap_probability\": 2.260253905091336e-06,\n      \"angle_over_asymptotic\": 0.9999836750400363,\n      \"optimal_proxy_delta_classical\": 1.0,\n      \"optimal_proxy_delta_quantum\": 2.0,\n      \"limit_delta_classical\": 1.0,\n      \"limit_delta_quantum\": 2.0\n    },\n    {\n      \"d\": 3,\n      \"radius\": 20.0,\n      \"delta\": 1.0,\n      \"cap_probability\": 7.582560342944821e-10,\n      \"angle_over_asymptotic\": 0.9999999945235795,\n      \"optimal_proxy_delta_classical\": 1.0,\n      \"optimal_proxy_delta_quantum\": 2.0,\n      \"limit_delta_classical\": 1.0,\n      \"limit_delta_quantum\": 2.0\n    }\n  ]\n}\n",
+      "stderr": "",
+      "script_sha256": "4b42048df260ce807fe54c54f69fccef47b3a2b49315bb0b0dfc7c06c8e81fb6"
+    }
+  ],
+  "previous_probe_hashes": [
+    {
+      "script": "research/quantum_direction_selection/tda_probe/check_mobius_zigzag.py",
+      "recorded_sha256": "a95866276a3365952af7bb5e7e8dd0e9155f3e6e06d3d06d062f4610464c2419",
+      "current_sha256": "a95866276a3365952af7bb5e7e8dd0e9155f3e6e06d3d06d062f4610464c2419",
+      "unchanged": true
+    },
+    {
+      "script": "research/quantum_direction_selection/tda_probe/check_common_blowup.py",
+      "recorded_sha256": "7ca31eebc49431471ecb38437dd7a3af5d86c066b6065ce2000d9afc391cbedb",
+      "current_sha256": "7ca31eebc49431471ecb38437dd7a3af5d86c066b6065ce2000d9afc391cbedb",
+      "unchanged": true
+    },
+    {
+      "script": "research/quantum_direction_selection/hyperbolic_probe/probe.py",
+      "recorded_sha256": "5312a5bfbd0c39e586d577b5bfe00757c410f70760256acf18c331e358918a8c",
+      "current_sha256": "4b42048df260ce807fe54c54f69fccef47b3a2b49315bb0b0dfc7c06c8e81fb6",
+      "unchanged": false
+    },
+    {
+      "script": "research/quantum_direction_selection/round2/check_kernel_filtration.py",
+      "recorded_sha256": "10f5406f8f1344cb464dada2df8bb0c2f918becade4f57e91ff64b708c7e3e8c",
+      "current_sha256": "10f5406f8f1344cb464dada2df8bb0c2f918becade4f57e91ff64b708c7e3e8c",
+      "unchanged": true
+    },
+    {
+      "script": "research/quantum_direction_selection/round2/check_weighted_history.py",
+      "recorded_sha256": "13c44926b8a1da80c6420a80dfbfbfe8b7fa877f1f2361ef66ab0bdbd9ad2fb1",
+      "current_sha256": "13c44926b8a1da80c6420a80dfbfbfe8b7fa877f1f2361ef66ab0bdbd9ad2fb1",
+      "unchanged": true
+    },
+    {
+      "script": "research/quantum_direction_selection/round2/check_padded_bulk.py",
+      "recorded_sha256": "cee03944501e0313afd2aad1d32ee02b1f65988c82b8a9eaf07b3e79484b6fbe",
+      "current_sha256": "cee03944501e0313afd2aad1d32ee02b1f65988c82b8a9eaf07b3e79484b6fbe",
+      "unchanged": true
+    },
+    {
+      "script": "research/quantum_direction_selection/round2/check_barcode_outlier.py",
+      "recorded_sha256": "57cb6e1d638264a4ba7b31f2d2e9505946ada719915e1d1b62af9c27dadddbb2",
+      "current_sha256": "57cb6e1d638264a4ba7b31f2d2e9505946ada719915e1d1b62af9c27dadddbb2",
+      "unchanged": true
+    }
+  ],
+  "materialization_checks": [
+    {
+      "source": "papers/quantum/sections/01_introduction.tex",
+      "source_sha256": "83efb12ebded6b64c7e5f46aa2ce6ba310d4e21024de5787facf56f0e8b8842b",
+      "materialized": "papers/unified/sections/quantum/01_introduction.tex",
+      "materialized_sha256": "38a662d23c6c99157b4dd5eceeef95898c2fef665329d415c29220977ac0ac9d",
+      "matches_regeneration": true
+    },
+    {
+      "source": "papers/quantum/sections/02_model_and_search.tex",
+      "source_sha256": "da73b9680aac62a3f2bd6086807bcf7c68046e71ae139a80aa524c8bd8e590c2",
+      "materialized": "papers/unified/sections/quantum/02_model_and_search.tex",
+      "materialized_sha256": "55f9b136a153721121f0682a600ad0ba95760f74090a1e5b75755858a3839b50",
+      "matches_regeneration": true
+    },
+    {
+      "source": "papers/quantum/sections/03_algorithm.tex",
+      "source_sha256": "cd80e80202b6b8ec52fc6057de466c14bbd889f7bf657d257e4cd821f9f5ed14",
+      "materialized": "papers/unified/sections/quantum/03_algorithm.tex",
+      "materialized_sha256": "23da1a1dfd24ba540e3dea9f0ded6bfad3182fd6d0f4fc2adf52d7d7221198da",
+      "matches_regeneration": true
+    },
+    {
+      "source": "papers/quantum/sections/04_correctness.tex",
+      "source_sha256": "0fc5070eb48ae9cb907ab419ce1698da834217fb99eddac2784288f53052321d",
+      "materialized": "papers/unified/sections/quantum/04_correctness.tex",
+      "materialized_sha256": "fb0818a5f481280936d5001fc2e4e38c659892906aec2bcc7eff9a368f050002",
+      "matches_regeneration": true
+    },
+    {
+      "source": "papers/quantum/sections/05_complexity_and_lower.tex",
+      "source_sha256": "5e2a045109c4ef38fab1db7ea78e982e34984195faff05ca8f5e7d70aadbd9ef",
+      "materialized": "papers/unified/sections/quantum/05_complexity_and_lower.tex",
+      "materialized_sha256": "b3dc9517a2ef3932ce5035e548594592c9be0d17e605adc1318ce1dad7a6fc32",
+      "matches_regeneration": true
+    },
+    {
+      "source": "papers/quantum/sections/06_prior_art_and_conflict.tex",
+      "source_sha256": "5becddb015292b21e5250c64a8497bc79accaf0f4682b41f0c65d41cfeb2d056",
+      "materialized": "papers/unified/sections/quantum/06_prior_art_and_conflict.tex",
+      "materialized_sha256": "6c8182a8f2daba4bacf106df724a512b504d33c4d636243198af92e43a0165e8",
+      "matches_regeneration": true
+    },
+    {
+      "source": "papers/quantum/sections/07_reproducibility_and_scope.tex",
+      "source_sha256": "324f50633c3ffebdd32b1af0a335b8c80a01cd0f9b973a1e9b3defd473fdee60",
+      "materialized": "papers/unified/sections/quantum/07_reproducibility_and_scope.tex",
+      "materialized_sha256": "271d5e71e74a3a6d46dac6437d9716f731ddd46bef8d4b4f070714b6636c430d",
+      "matches_regeneration": true
+    },
+    {
+      "source": "papers/quantum/appendices/A_capped_search.tex",
+      "source_sha256": "30a2faaaad7b096b4ceef90d0eb308b4bbba000ee788d0b2f3f752abaace44d1",
+      "materialized": "papers/unified/appendices/quantum/A_capped_search.tex",
+      "materialized_sha256": "a3ec4bfa80aafdd1838e42aead15395babc2169dad93ced53262362d59626c8c",
+      "matches_regeneration": true
+    },
+    {
+      "source": "papers/quantum/appendices/B_classical_lower.tex",
+      "source_sha256": "f5c0b5b41bbbe7bf03bc886ca13beb69671c5109469add80cfaa742422f0439c",
+      "materialized": "papers/unified/appendices/quantum/B_classical_lower.tex",
+      "materialized_sha256": "e80a51ca039f609b920fa7c3385c5a3fa67362dbfb7c81c1d8590237ec076519",
+      "matches_regeneration": true
+    },
+    {
+      "source": "papers/quantum/appendices/C_extensions_and_reproducibility.tex",
+      "source_sha256": "3591a2b33d1fafca688c650b76aff00bc33b9172b6d4e7a15b314eeb4a8dedf4",
+      "materialized": "papers/unified/appendices/quantum/C_extensions_and_reproducibility.tex",
+      "materialized_sha256": "f98dc5990c284f93c082cc5607322bfcfe8f54e7d0d09f460a248e86b2ee03eb",
+      "matches_regeneration": true
+    }
+  ],
+  "materialization_convention": "Canonical source and unified copy are intentionally not byte-identical: generated banners, namespaced labels and scoped introductory wording differ. Compare actual unified files with deterministic regeneration in a temporary directory.",
+  "artifact_sha256": {
+    "papers/quantum/main.pdf": "e47b80073b1333668c2203c970548df55c1db51bdd005c268de4667077563cd7",
+    "papers/unified/main.pdf": "8fcb9c04133bf558391f452894a94c1bb7cfb917aa1b7d1036ebbc755dfcb3b6",
+    "papers/quantum/submitted/itcs2027-paper193-2026-09-02.pdf": "bd11783756a99ac1ab865548ab08078dbb969d3034b44ef8df2e134640696a2f",
+    "papers/quantum/submitted/itcs2027-paper193-2026-09-02-v2.pdf": "e47b80073b1333668c2203c970548df55c1db51bdd005c268de4667077563cd7",
+    "research/pro_collaboration_2026-09-02/check_persistent_unweighting.py": "9277f4a597f90ef5ba2efa118ea80b698716d7387a4cd338886c4b90ccf07d69",
+    "research/pro_collaboration_2026-09-02/verification/persistent_unweighting.json": "d0b3a5576458478e0a2215abc4baa12fe32314cc7f0baab6f19a1c7318b550cb"
+  },
+  "pdf_checks": {
+    "papers/quantum/main.pdf": true,
+    "papers/unified/main.pdf": true,
+    "papers/quantum/submitted/itcs2027-paper193-2026-09-02.pdf": true,
+    "papers/quantum/submitted/itcs2027-paper193-2026-09-02-v2.pdf": true
+  },
+  "status": "PASS"
+}

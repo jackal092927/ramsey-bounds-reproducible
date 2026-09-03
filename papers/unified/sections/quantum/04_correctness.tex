@@ -49,8 +49,8 @@ We now prove the sharper scale-aware algorithm.
 We first isolate the adaptive concentration event.
 
 \begin{lemma}[Conditional near-majorities]\label{qua:lem:concentration}
-Except with probability at most $\eta/2$, every level reached after an
-accurate prefix satisfies
+Except with probability at most $\eta/2$, every completed sampling batch
+reached after successful searches and an accurate prefix satisfies
 \[
  |\widehat p_i-p_i|\le\varepsilon_i,
 \]
@@ -60,18 +60,21 @@ $S_i\setminus\{v_i\}$.
 
 \begin{proof}
 Condition on the complete classical history $\mathcal H_i$ before level
-$i$'s samples.  The graph, $S_i$, and $v_i$ are then fixed.  Conditional on
-verified batch success, \cref{qua:lem:capped-search} gives independent uniform
-samples from the fixed set.  Hoeffding's inequality and
+$i$'s samples.  The graph, $S_i$, and $v_i$ are then fixed.  Let
+$\mathcal B_i$ denote verified batch success.  Conditional on $\mathcal B_i$,
+\cref{qua:lem:capped-search} gives independent uniform samples from the fixed
+set.  Hoeffding's inequality and
 \cref{qua:eq:sample-count} give
 \[
  \Pr\!\left(
- |\widehat p_i-p_i|>\varepsilon_i\mid\mathcal H_i
+ |\widehat p_i-p_i|>\varepsilon_i\mid\mathcal H_i,\mathcal B_i
  \right)
  \le2e^{-2m_i\varepsilon_i^2}
  \le\frac{\eta}{2r}.
 \]
-Apply this inequality to the first inaccurate level following an accurate
+Multiplying by $\Pr(\mathcal B_i\mid\mathcal H_i)\le1$ gives the same
+bound for a completed but inaccurate batch conditional on $\mathcal H_i$.
+Apply it to the first inaccurate completed level following an accurate
 prefix.  The tower property removes the conditioning, and a union bound over
 the $r$ possible levels proves the claim.  No independence between levels is
 used.

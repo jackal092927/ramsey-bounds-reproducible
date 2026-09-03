@@ -3,9 +3,10 @@
 
 The elementary Erd\H{o}s--Szekeres proof of the diagonal Ramsey theorem is
 constructive \cite{ErdosSzekeres1935}: choose
-a pivot, retain its larger colour neighbourhood, and iterate.  On a graph
-with $M$ vertices this uses $O(M)$ edge queries, because every retained set is
-represented explicitly.  This part shows that the same proof architecture
+a pivot, retain a colour neighbourhood, and iterate.  At the sufficient
+threshold $M=4^{K-1}$, truncating each retained neighbourhood to half the
+current size gives an $O(M)$-query implementation with explicit candidate
+sets.  This part shows that the same proof architecture
 has a substantially cheaper quantum implementation when the nested candidate
 sets are instead represented by their membership predicates.
 We use the elementary $4^{K-1}$ sufficient threshold because it supports this
@@ -61,7 +62,7 @@ number of edge colours; we record the multicolour form as
 \cref{qua:cor:multicolour}.
 
 \paragraph{Contributions.}
-This part makes four precise contributions.
+The algorithmic contributions are as follows.
 \begin{itemize}
 \item It gives a worst-case
 $O(2^K K\log(K/\eta))$ quantum-query algorithm for constructive diagonal
@@ -73,9 +74,6 @@ level.
 \item It extends the size-biased mechanism to a fixed number of colours and
 places the result against a randomized classical lower bound of
 $\Omega(N^{1-1/\sqrt2})$ in the same parameterization.
-\item It gives an explicit parameter audit of the closest published
-quantum-query lower-bound claim and isolates an apparent mismatch in the
-cited parameter substitution that any comparison in this model must resolve.
 \end{itemize}
 
 The result is algorithmic rather than extremal.  It does not change any
@@ -84,19 +82,15 @@ square-root query improvement, up to polylogarithmic factors, over the
 standard $O(N)$ constructive recursion, but no matching lower bound against
 every randomized classical algorithm is presently known.
 
-There is also a nontrivial literature issue.  Jain, Li, Robere, and Xun state
-an $N^{1-o(1)}$ quantum-query lower bound for the $N=2^n$, $K=n/2$
-default Ramsey problem in the unnumbered ``Query complexity of RAMSEY''
-paragraph of Section III \cite{JainLiRobereXun2024}.  Their hard instances are valid
-graph-hash products, while \cref{qua:thm:main} gives an
-$O(\sqrt N\operatorname{polylog}N)$ upper bound on promised valid graphs.
-As detailed in \cref{qua:sec:prior-art}, direct substitution into the cited
-reduction and the fixed-multiplicity Liu--Zhandry theorem yields at most an
-$N^{1/24}$ lower bound through that route \cite{LiuZhandry2019}.  We do not
-use the reported near-linear consequence.  Our observation concerns this
-parameter substitution, not the principal TFNP separation theorems of
-Jain et al., and we leave open whether another intended normalization
-resolves the discrepancy.
+For completeness, we address a discrepancy with the closest exact-model
+source.  The FOCS 2024 paper of Jain, Li, Robere, and Xun reports an
+$N^{1-o(1)}$ quantum-query lower bound for its default Ramsey relation
+\cite[Section III, p.~415]{JainLiRobereXun2024}.  Under its formal
+$N=2^n$, $K=n/2$ convention, this conflicts with \cref{qua:cor:succinct}.
+Section~\ref{qua:sec:prior-art} checks the model alignment and shows that direct
+substitution into the two cited results does not give the reported exponent.
+Our algorithm and its proof are independent of that consequence; the
+comparison does not challenge the paper's principal TFNP separation results.
 
 The rest of the paper defines the oracle model and capped sampler, proves the
 recurrence and query bound, derives a randomized classical lower bound from

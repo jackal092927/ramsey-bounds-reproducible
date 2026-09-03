@@ -1,0 +1,241 @@
+{
+  "created_at_utc": "2026-09-03T07:21:52.701961+00:00",
+  "scope": "Frozen source/evidence snapshot for this supplement; excludes mutable session state and future receipts. Refer to the commit history for later work.",
+  "files": [
+    {
+      "path": "experiments/quantum_ramsey/implicit_majority_audit.py",
+      "bytes": 21671,
+      "sha256": "022a52ad53406c2427679b3e9d1660c2fc11267be20bb3991587f06000bbfac9"
+    },
+    {
+      "path": "papers/quantum/appendices/A_capped_search.tex",
+      "bytes": 1828,
+      "sha256": "30a2faaaad7b096b4ceef90d0eb308b4bbba000ee788d0b2f3f752abaace44d1"
+    },
+    {
+      "path": "papers/quantum/appendices/B_classical_lower.tex",
+      "bytes": 1969,
+      "sha256": "f5c0b5b41bbbe7bf03bc886ca13beb69671c5109469add80cfaa742422f0439c"
+    },
+    {
+      "path": "papers/quantum/appendices/C_extensions_and_reproducibility.tex",
+      "bytes": 4102,
+      "sha256": "3591a2b33d1fafca688c650b76aff00bc33b9172b6d4e7a15b314eeb4a8dedf4"
+    },
+    {
+      "path": "papers/quantum/main.pdf",
+      "bytes": 357973,
+      "sha256": "e47b80073b1333668c2203c970548df55c1db51bdd005c268de4667077563cd7"
+    },
+    {
+      "path": "papers/quantum/main.tex",
+      "bytes": 3601,
+      "sha256": "a20fc33080714f221a799c227ffeee9a26e4766739eebbd65f5d94d11be935a2"
+    },
+    {
+      "path": "papers/quantum/sections/01_introduction.tex",
+      "bytes": 4910,
+      "sha256": "83efb12ebded6b64c7e5f46aa2ce6ba310d4e21024de5787facf56f0e8b8842b"
+    },
+    {
+      "path": "papers/quantum/sections/02_model_and_search.tex",
+      "bytes": 3479,
+      "sha256": "da73b9680aac62a3f2bd6086807bcf7c68046e71ae139a80aa524c8bd8e590c2"
+    },
+    {
+      "path": "papers/quantum/sections/03_algorithm.tex",
+      "bytes": 3391,
+      "sha256": "cd80e80202b6b8ec52fc6057de466c14bbd889f7bf657d257e4cd821f9f5ed14"
+    },
+    {
+      "path": "papers/quantum/sections/04_correctness.tex",
+      "bytes": 5617,
+      "sha256": "0fc5070eb48ae9cb907ab419ce1698da834217fb99eddac2784288f53052321d"
+    },
+    {
+      "path": "papers/quantum/sections/05_complexity_and_lower.tex",
+      "bytes": 4071,
+      "sha256": "5e2a045109c4ef38fab1db7ea78e982e34984195faff05ca8f5e7d70aadbd9ef"
+    },
+    {
+      "path": "papers/quantum/sections/06_prior_art_and_conflict.tex",
+      "bytes": 4920,
+      "sha256": "5becddb015292b21e5250c64a8497bc79accaf0f4682b41f0c65d41cfeb2d056"
+    },
+    {
+      "path": "papers/quantum/sections/07_reproducibility_and_scope.tex",
+      "bytes": 2087,
+      "sha256": "324f50633c3ffebdd32b1af0a335b8c80a01cd0f9b973a1e9b3defd473fdee60"
+    },
+    {
+      "path": "papers/quantum/submitted/itcs2027-paper193-2026-09-02-v2.pdf",
+      "bytes": 357973,
+      "sha256": "e47b80073b1333668c2203c970548df55c1db51bdd005c268de4667077563cd7"
+    },
+    {
+      "path": "papers/quantum/submitted/itcs2027-paper193-2026-09-02.pdf",
+      "bytes": 357982,
+      "sha256": "bd11783756a99ac1ab865548ab08078dbb969d3034b44ef8df2e134640696a2f"
+    },
+    {
+      "path": "papers/unified/main.pdf",
+      "bytes": 985891,
+      "sha256": "8fcb9c04133bf558391f452894a94c1bb7cfb917aa1b7d1036ebbc755dfcb3b6"
+    },
+    {
+      "path": "research/pro_collaboration_2026-09-02/PERSISTENT_SPECTRAL_TRANSFER.md",
+      "bytes": 7612,
+      "sha256": "c3bd3587d47045e437dcaba0aa6eb1edefd3a27863841c32fb1af63ab6a3a0ef"
+    },
+    {
+      "path": "research/pro_collaboration_2026-09-02/check_persistent_unweighting.py",
+      "bytes": 8642,
+      "sha256": "9277f4a597f90ef5ba2efa118ea80b698716d7387a4cd338886c4b90ccf07d69"
+    },
+    {
+      "path": "research/pro_collaboration_2026-09-02/responses/EXACT_SEVEN_INITIAL.md",
+      "bytes": 48873,
+      "sha256": "48223849e8a9fb12825eb997d2dec156bef37c81cebcb7cc051b60e562b83b63"
+    },
+    {
+      "path": "research/pro_collaboration_2026-09-02/responses/GENERALIZED_RANK_INITIAL.md",
+      "bytes": 41682,
+      "sha256": "a77c072bd9db74d624c7d02e9c7320d3745ab9220c328529f1d876da79ed7898"
+    },
+    {
+      "path": "research/pro_collaboration_2026-09-02/responses/HYPERBOLIC_INITIAL.md",
+      "bytes": 23793,
+      "sha256": "7c7b1df35e746fdbfb418637b1f1ee0e8f4aa76a1ea08b2da5149abf0663db96"
+    },
+    {
+      "path": "research/pro_collaboration_2026-09-02/responses/TDA_INITIAL.md",
+      "bytes": 27568,
+      "sha256": "edeecf5f3a34e47d71aaa4cb76ada9c5f65698f9a7324f3ffc77a9fb33c39d25"
+    },
+    {
+      "path": "research/pro_collaboration_2026-09-02/verification/existing_probes.json",
+      "bytes": 13725,
+      "sha256": "d1e974612bd3c8b4e3e9564a95e64ee28ee2f9b4e54d520ef7c4409bd2d064c8"
+    },
+    {
+      "path": "research/pro_collaboration_2026-09-02/verification/persistent_unweighting.json",
+      "bytes": 16291,
+      "sha256": "d0b3a5576458478e0a2215abc4baa12fe32314cc7f0baab6f19a1c7318b550cb"
+    },
+    {
+      "path": "research/pro_collaboration_2026-09-02/verification/repository_sync_checks.json",
+      "bytes": 12747,
+      "sha256": "40cae78c2c43f509d4d7a07cf9893613cea891c75dae11ea31ba86acb67162e7"
+    },
+    {
+      "path": "research/quantum_direction_selection/hyperbolic_probe/PROOF_PACKAGE.md",
+      "bytes": 18237,
+      "sha256": "e9582c2a182e836def7bd63f15d95b2a5c140dbcf695281fcf7527686ebf4f7f"
+    },
+    {
+      "path": "research/quantum_direction_selection/hyperbolic_probe/probe.py",
+      "bytes": 4952,
+      "sha256": "4b42048df260ce807fe54c54f69fccef47b3a2b49315bb0b0dfc7c06c8e81fb6"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/CLAUDE_NARROW_REVIEW.md",
+      "bytes": 6864,
+      "sha256": "ff16dad5549a7cda845c3c0c5c3c1e44988d592bdc630b2f9bdc816efd12733b"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/CLAUDE_REVIEW_STATUS.md",
+      "bytes": 1980,
+      "sha256": "391a5fd055e9e2f80f1e696db092a4f67feba3fc956eddc874d94a4c8f40c51d"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/FIXTURE_AND_SOURCE_GATES.md",
+      "bytes": 7270,
+      "sha256": "a7e1834af918d9c10d8378e94bfdc15a9451ac8a3545016c303cebc7b9abd296"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/IDEA_GENERATION_54.md",
+      "bytes": 17901,
+      "sha256": "295be91e6e16545240263bb28f36089cf565d9da13ad058cbb5c0b41bec3a5da"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/IDEA_REPORT.md",
+      "bytes": 13784,
+      "sha256": "9f27db3bbc638ade55c642a1a5ee555778d15bd0550a48828903380199093758"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/NORMALIZED_PERSISTENCE_PROBE.md",
+      "bytes": 31612,
+      "sha256": "e24c51194e75c8810408a7ce823bec391a51d5c3fba10a12d8d00693787b8446"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/QUANTUM_NET_PROOF.md",
+      "bytes": 12502,
+      "sha256": "88155ebe6443186c57e53dc55dd334fc7d3b686a72b75f0356c713ada45d7b0a"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/REVIEW_RESOLUTION.md",
+      "bytes": 4907,
+      "sha256": "f58f10568414b44386341eb2e05f3ae25b8733a5e53c8308f24e8e2534770efe"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/UNARY_PALETTE_ADDENDUM.md",
+      "bytes": 14654,
+      "sha256": "3583f697747ec81793d15130803c7e50fe9586a23c8bec7c9dc4b30ec28947e1"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/UNWEIGHTING_AUDIT.md",
+      "bytes": 26505,
+      "sha256": "021b0851b938bda1a099aae5520d7d277eb1f4fb17ceee423e1cd6035ceb42a4"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/check_barcode_outlier.py",
+      "bytes": 1885,
+      "sha256": "57cb6e1d638264a4ba7b31f2d2e9505946ada719915e1d1b62af9c27dadddbb2"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/check_kernel_filtration.py",
+      "bytes": 4063,
+      "sha256": "10f5406f8f1344cb464dada2df8bb0c2f918becade4f57e91ff64b708c7e3e8c"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/check_padded_bulk.py",
+      "bytes": 1919,
+      "sha256": "cee03944501e0313afd2aad1d32ee02b1f65988c82b8a9eaf07b3e79484b6fbe"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/check_weighted_history.py",
+      "bytes": 4862,
+      "sha256": "13c44926b8a1da80c6420a80dfbfbfe8b7fa877f1f2361ef66ab0bdbd9ad2fb1"
+    },
+    {
+      "path": "research/quantum_direction_selection/tda_probe/PROBE_REPORT.md",
+      "bytes": 15468,
+      "sha256": "1f1e62991f8a51e96aec4b02145d2a93739b8114aa4e44d8b829c2806eca8b63"
+    },
+    {
+      "path": "research/quantum_direction_selection/tda_probe/UNWEIGHTING_FIRST_LEMMA.md",
+      "bytes": 10131,
+      "sha256": "97f18e733426da0079477bde2022f2d55f71b24a807395fc5a232c567f2b44cd"
+    },
+    {
+      "path": "research/quantum_direction_selection/tda_probe/check_common_blowup.py",
+      "bytes": 4172,
+      "sha256": "7ca31eebc49431471ecb38437dd7a3af5d86c066b6065ce2000d9afc391cbedb"
+    },
+    {
+      "path": "research/quantum_direction_selection/tda_probe/check_mobius_zigzag.py",
+      "bytes": 6778,
+      "sha256": "a95866276a3365952af7bb5e7e8dd0e9155f3e6e06d3d06d062f4610464c2419"
+    },
+    {
+      "path": "scripts/materialize_unified_paper.py",
+      "bytes": 9658,
+      "sha256": "cf659e303b0e1ca345873ac75761d44db1fd5f284b62f7ad723376cb2de07e6b"
+    },
+    {
+      "path": "scripts/verify_repository.py",
+      "bytes": 4351,
+      "sha256": "e5ab69c61c7de3e210ca3d48dbaca96ea520637d95b3ccf95d2322a1ecf9431c"
+    }
+  ]
+}

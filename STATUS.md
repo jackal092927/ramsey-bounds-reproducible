@@ -1,6 +1,6 @@
 # Authoritative status
 
-Date: 2026-08-31
+Date: 2026-09-03
 
 This file is the publication-facing status layer. Frozen records under
 `routes/` preserve the state at which searches, proofs, and reviews were
@@ -11,10 +11,12 @@ created; historical labels in those files do not override this status.
 ```text
 PUBLIC SOURCE REPOSITORY CREATED
 ONE ARCHIVAL UNIFIED MANUSCRIPT
-ONE STANDALONE ANONYMOUS ITCS QUANTUM DRAFT
+ONE STANDALONE ANONYMOUS ITCS QUANTUM SUBMISSION
 RELEASE CANDIDATE NOT YET TAGGED OR PUBLISHED
 CHATGPT PRO REVIEW COMPLETED; RECOVERABLE OBJECTIONS DISPOSITIONED
-QUANTUM PART PROVED LOCALLY; QUANTUM-SPECIFIC PRO REVIEW RUNNING
+QUANTUM SUBMITTED AND RESUBMITTED SEPTEMBER 2; RECEIPT RECORDS READY FOR REVIEW
+ADDITIONAL PRO DIFFERENTIAL REVIEW INCOMPLETE DUE TO NETWORK ERROR
+TDA RESEARCH PACKET SYNCED; NEW PRO REVIEW AND THEOREM DEVELOPMENT RUNNING
 FINAL-TAG CLEAN-CLONE AND RELEASE-ASSET VERIFICATION PENDING
 ```
 
@@ -157,18 +159,76 @@ records this as an apparent mismatch in a side consequence, says explicitly
 that it does not affect their principal TFNP separation theorems, and does not
 use the disputed lower bound. Author clarification remains desirable.
 
-The standalone ITCS draft contains only this quantum result.  It has 16 pages
-total; the central claims, proofs, significance, and literature comparison
-appear within the first ten pages, while the scope conclusion and Appendix A
-share page 11.  It then gives three technical/reproducibility appendices.  Its
-11pt single-column anonymous build,
+The standalone ITCS draft contains only this quantum result. It has 16 pages
+total; the main quantum upper-bound proof finishes on page 8, while the detailed
+literature comparison and scope conclusion finish on page 11. The
+introduction contains the merits and concise literature comparison within
+the recommended first ten pages. Three appendices begin on page 12. Its
+official LIPIcs v2021.1.3 single-column A4 build uses `anonymous` and a
+review-only 11pt text adapter. Its
 cross-references, citations, embedded fonts, and metadata pass.  It contains
-no author block, affiliation, personal email, or public repository URL; one
+only anonymous author placeholders, no real affiliation, personal email,
+ORCID link, or public repository URL; one
 relevant prior paper by the submitting author is cited in ordinary
 third-person form.  The current PDF SHA-256 is
-`8ac5f6f08123f339b1ae80e51357ba4b251b71c5a71123c96dae9846c2874bf9`.
-This is a prepared draft, not an uploaded or accepted submission; the JLRX
-clarification remains the scientific submission gate.
+`e47b80073b1333668c2203c970548df55c1db51bdd005c268de4667077563cd7`.
+The mathematical polish pass fixed the explicit classical truncation, conditional
+concentration notation, per-call oracle cost wording, and abort semantics;
+the main query theorem and its proof architecture are unchanged. The quantum
+self-check and PDF build pass; the final standalone LIPIcs build has no
+LaTeX/BibTeX warnings. The template migration changed no theorem, proof,
+experiment, or citation entry. The official class and its provenance are
+bundled with the standalone source; see `papers/quantum/TEMPLATE.md`.
+The subsequent editorial pass rewrites Appendix C.2 as self-contained
+small-instance numerical experiments, preserving the reported outcomes and
+adding explicit experimental settings while removing source paths and run
+commands. The anonymous paper does not depend on a code artifact; project
+documentation retains reproduction instructions. The existing repository and
+quantum code on the research branch are publicly viewable, but the repository
+license reserves all rights. No visibility or licensing change was made.
+The earlier PDF was uploaded and saved to ITCS submission #193 on September 2
+at 16:31:33 PDT; its SHA-256 is
+`bd11783756a99ac1ab865548ab08078dbb969d3034b44ef8df2e134640696a2f`,
+matching the server checksum prefix `bd117837`. It is preserved at
+`papers/quantum/submitted/itcs2027-paper193-2026-09-02.pdf`.
+After the author confirmed no PC conflicts, final submission was completed on
+September 2 at approximately 16:37 PDT. HotCRP returned `Updated submission`
+and explicitly confirmed **ready for review**, with no further action needed.
+This is a submitted paper, not an acceptance decision.
+The user reports sending the JLRX clarification email. A reply is desirable
+but not a prerequisite: the proof is independent and the discrepancy is
+explicitly scoped. PC conflicts remain `None`, as confirmed by the author.
+The already-uploaded PDF, title, abstract, topics, and AI disclosures were
+retained. HotCRP explicitly allows updates until September 4, 2026, 16:59:59 PDT,
+and now offers `Save and resubmit`. See `papers/quantum/SUBMISSION_CHECKLIST.md`
+for the submitted artifact and live confirmation record.
+The subsequent local revision shortens the AI disclosure and its body
+description without changing the mathematical content or numerical outcomes.
+It uses `GPT-based tools`, identifies ChatGPT and Codex once, and summarizes
+the roles as brainstorming, constructive discussion, polishing, and review,
+with theoretical arguments and numerical experiments identified in the body.
+It omits section numbers and model/tier labels. At the author's request, this
+revision was uploaded and resubmitted on September 2 at 17:04:26 PDT. HotCRP
+returned `Updated submission (changed Submission)`, displayed checksum prefix
+`e47b8007`, and confirmed **ready for review** with the corresponding checkbox
+still checked. Other submission fields were not changed. The revised submitted
+PDF is preserved at
+`papers/quantum/submitted/itcs2027-paper193-2026-09-02-v2.pdf`.
+
+## Current research collaboration
+
+The September 3 [project dossier](research/pro_collaboration_2026-09-02/README.md)
+consolidates the Ramsey results, TDA candidates, useful obstructions and four
+historical Pro replies. The [canonical TDA collaboration](research/quantum_direction_selection/collaboration/2026-09-02/README.md)
+owns the newly sent packet and its continuing review/development round.
+The main candidate transfers exact kernel multiplicity to true normalized
+persistence, with explicit fixed-gadget imports and a specified exact circuit
+promise. Unrestricted SDQC1 hardness and paper readiness are not established.
+The supplement records the corrected mixed-spectator extension, a conditional
+persistent spectral-transfer corollary, the already-known domination
+inequality, and 39 finite diagnostic checks. The prior seven probes, quantum
+self-check and current source/hash consistency checks passed; their precise
+scope is in [VERIFICATION.md](research/pro_collaboration_2026-09-02/VERIFICATION.md).
 
 ## Review state
 
@@ -209,11 +269,21 @@ clarification remains the scientific submission gate.
   it found no fatal correctness error, endorsed the scoped query theorem as
   apparently novel, and left significance/priority and the JLRX clarification
   as publication risks rather than mathematical defects.
-- Final narrow quantum ChatGPT Pro differential review: **submitted to the
-  existing personal-account conversation on 2026-09-01 and running**; no result
-  from this additional review is counted in the evidence ledger yet.
-- Exact-seven ChatGPT Pro collaboration packet: **drafted but not submitted**;
-  fresh action-time confirmation is still required before external transmission.
+- Final narrow quantum ChatGPT Pro differential review: **incomplete**;
+  the existing conversation shows interim analysis followed by a network
+  error. No final verdict from it is counted. No new prompt was sent.
+- Quantum submission-readiness recheck: **submission candidate after scoped
+  corrections**; no fatal main-query-theorem defect found. JLRX source
+  parameters were rechecked. Author silence and the additional AI review's
+  failure are not mathematical submission prerequisites.
+- Exact-seven ChatGPT Pro response: **completed historical response recovered**
+  in the original registered conversation. It received text only and predates
+  the checked singleton results. Its useful suggestions and superseded claims
+  are recorded in the supplemental collaboration disposition.
+- Current TDA Pro collaboration: **new consolidated packet sent and running**
+  at fixed GitHub snapshot a46f4087693edc088663e0cbf4f6aa9961494325. A single
+  hourly follow-up collects, checks and archives resulting milestones; a new
+  response is not counted until it is actually retrieved.
 
 Review files:
 
@@ -231,19 +301,21 @@ Review files:
 - [`reviews/QUANTUM_RAMSEY_MATHEMATICAL_AUDIT_2026-08-31.md`](reviews/QUANTUM_RAMSEY_MATHEMATICAL_AUDIT_2026-08-31.md)
 - [`reviews/CHATGPT_PRO_QUANTUM_REVIEW_DISPOSITION_2026-08-31.md`](reviews/CHATGPT_PRO_QUANTUM_REVIEW_DISPOSITION_2026-08-31.md)
 - [`reviews/JLRX_PARAMETER_AUDIT_2026-09-01.md`](reviews/JLRX_PARAMETER_AUDIT_2026-09-01.md)
+- [`reviews/QUANTUM_SUBMISSION_READINESS_2026-09-01.md`](reviews/QUANTUM_SUBMISSION_READINESS_2026-09-01.md)
 - [`reviews/CHATGPT_PRO_QUANTUM_FINAL_DELTA_PROMPT_2026-09-01.md`](reviews/CHATGPT_PRO_QUANTUM_FINAL_DELTA_PROMPT_2026-09-01.md)
 - [`reviews/CHATGPT_PRO_REVIEW.md`](reviews/CHATGPT_PRO_REVIEW.md)
 - [`reviews/REVIEW_DISPOSITION.md`](reviews/REVIEW_DISPOSITION.md)
 
 The current quantum-integrated unified PDF has 115 pages and
 SHA-256
-`a2bf661530592cd3833b526304cc502e3780d55e91a506e782914701befc64ae`.
-Two clean Part-IV-integrated builds under the pinned toolchain were
-byte-identical, and the visual audit passes. This is not a published-Release
+`8fcb9c04133bf558391f452894a94c1bb7cfb917aa1b7d1036ebbc755dfcb3b6`.
+For an earlier Part-IV-integrated candidate, two clean builds under the pinned
+toolchain were byte-identical. The current build and visual audit pass. This is not a published-Release
 digest until the separate immutable-release procedure succeeds.
 Its final log has no overfull box, undefined or multiply defined reference,
-LaTeX warning, error, or fatal diagnostic; representative pages were also
-inspected visually.
+LaTeX warning, error, or fatal diagnostic, but does retain nonfatal underfull
+hbox/vbox spacing diagnostics in the archival layout. The standalone submission
+build has no such diagnostics, and its revised pages were inspected visually.
 
 ## Repository and release state
 
@@ -267,10 +339,13 @@ peer-reviewed publication.
 
 ## Gate to change this status
 
-The local mathematical, current quick-replay, compilation, and visual gates
-are complete. Completion and disposition of the final-delta ChatGPT Pro
-review, expert priority review, and clarification of the JLRX parameter
-conflict remain submission gates.
+The earlier local mathematical, quick-replay, compilation, and visual gates
+are recorded above. The quantum paper has already been submitted according
+to its September 2 receipt. Completion of the failed differential AI review
+and receipt of author clarification are not outstanding prerequisites for
+that recorded submission. Priority and significance remain scientific review
+questions. This September 3 consolidation checked the local files and GitHub;
+it did not refresh the conference server or change submission fields.
 The package can move to public-release status only after:
 
 1. the final tag and exact 26-asset immutable Release are published; and

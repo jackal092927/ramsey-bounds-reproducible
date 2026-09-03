@@ -1,24 +1,46 @@
 # ITCS 2027 submission checklist
 
-Snapshot date: 2026-09-01
+Snapshot date: 2026-09-02
 
-## Current artifact
+## Current submitted artifact
 
 - Title: **Quantum Query Algorithms for the Constructive Diagonal Ramsey Theorem**
 - Source: `papers/quantum/main.tex`
 - Anonymous PDF: `papers/quantum/main.pdf`
-- PDF SHA-256: `8ac5f6f08123f339b1ae80e51357ba4b251b71c5a71123c96dae9846c2874bf9`
+- PDF SHA-256: `e47b80073b1333668c2203c970548df55c1db51bdd005c268de4667077563cd7`
+- Submitted revision: shortened the AI disclosure and body description, removed
+  numbered-section attribution and product-tier names, and used `GPT-based
+  tools` with one parenthetical identification of ChatGPT and Codex. The four
+  general roles are brainstorming, constructive discussion, manuscript polishing,
+  and review. The body identifies the theoretical arguments and numerical
+  experiments as the subject of the discussion. Mathematical results and
+  experimental outcomes are unchanged. This revision was uploaded and
+  resubmitted on 2026-09-02 at 17:04:26 PDT.
 - Length: 16 pages total
-- Main presentation: central claims, proofs, and literature comparison are
-  within the first ten pages; the scope conclusion and Appendix A share page 11
-- Format: 11pt, single column, US letter
-- Identity scan: no author block, affiliation, personal email, or public
-  repository URL in the PDF; metadata author is `Anonymous Authors`.  One
+- Main presentation: the main quantum upper-bound proof finishes on page 8; Section 6's
+  detailed comparison continues onto page 11. Merits and a concise literature
+  comparison appear in the introduction. Section 7 ends on page 11;
+  appendices begin on page 12.
+- Format: official LIPIcs v2021.1.3, A4, single column, with its `anonymous`
+  option and default line numbers. A separate review-only adapter raises body,
+  abstract, keyword/classification, and bibliography text to 11pt to satisfy
+  ITCS; the bundled official class is unchanged. See `TEMPLATE.md`.
+- Identity scan: the author block and running heads contain only anonymous
+  placeholders; no real author affiliation, personal email, ORCID link, or
+  public repository URL is present. Metadata author is `Anonymous Authors`. One
   relevant prior paper by the submitting author is cited in the bibliography
   in ordinary third-person form.
 - Fonts: all embedded
-- LaTeX diagnostics: no undefined references, undefined citations, warnings,
-  errors, or overfull boxes
+- LaTeX diagnostics: no warnings, undefined references, undefined citations,
+  errors, or overfull/underfull boxes in the final standalone build
+- The template migration preserved mathematical content and all 24 cited
+  bibliography entries. The subsequent editorial pass rewrites Appendix C.2
+  as self-contained small-instance numerical experiments: methods and reported
+  outcomes are retained, while source-file paths and run commands are removed.
+  The theoretical results do not depend on executing an artifact. These prose
+  changes are mirrored in the unified manuscript. The references use
+  `plainurl`; the end-of-paper AI disclosure is retained. Appendices start on
+  a fresh page.
 
 The official call at <https://itcs-conf.org/> requires at least 11pt,
 single-column text and lightweight double blindness, but imposes no hard
@@ -26,6 +48,21 @@ length limit.  It recommends that the merits, innovations, literature
 position, and central claims appear within the first ten pages.  The abstract
 deadline is 2026-09-02 16:59 PDT and the full-paper deadline is 2026-09-04
 16:59 PDT.
+
+## Code and experimental presentation
+
+The current official call does not require code submission, an anonymous
+repository, or an open-source release. Its encouragement of public posting
+concerns full papers with proofs. The PDF therefore describes the experiments
+without requiring repository access or attaching an anonymous code artifact.
+Methods and numerical outcomes remain in Appendix C.2; implementation and
+reproduction instructions remain in the project documentation.
+
+The existing GitHub repository is publicly viewable, including quantum
+experiment code on `codex/fill-ramsey-gaps`, but `LICENSE.md` reserves all
+rights rather than granting an open-source reuse license. This is not an
+anonymous repository. No repository visibility or licensing change was made,
+and the anonymous PDF does not link to it.
 
 ## Generative-AI policy
 
@@ -36,8 +73,11 @@ the tools and identify the parts materially affected; use that materially
 affects the methodology, analysis, experiments, or implementation must also
 be described in the body.  Minor copy-editing alone would not require
 disclosure, but the use in this project is substantive.  The current source
-therefore includes both a research-process paragraph in Section 7 and a
-specific end-of-paper disclosure.
+therefore includes one brief body sentence identifying the tools and their
+role in brainstorming/discussion of arguments and experiments, polishing, and
+review, plus a concise
+end-of-paper disclosure and author-responsibility statement. A numbered list
+of affected sections is not explicitly required by the call.
 
 ## Verification completed
 
@@ -47,49 +87,81 @@ specific end-of-paper disclosure.
 - PDF anonymity, metadata, font embedding, marker, and cross-reference scans:
   PASS
 
-## HotCRP state
+## Last verified HotCRP state (revised PDF resubmitted)
+
+Final submission completed on 2026-09-02 after the author explicitly confirmed
+no PC conflicts and authorized submission. The server returned `Updated
+submission` and `The submission is ready for review`, with no further action
+required. This success state was observed at approximately 16:37 PDT.
+The author-approved AI-disclosure revision was subsequently uploaded and
+resubmitted at 17:04:26 PDT. HotCRP returned `Updated submission (changed
+Submission)` and again confirmed that the submission is ready for review.
 
 - Submission `#193` is registered under the confirmed Fresno author record.
 - The title, abstract, seven topics, AI-assisted-review preference, and
   AI-preparation survey were saved and re-opened from the submission summary.
-- The Fresno HotCRP profile contains the verified ORCID identifier; its value
-  is intentionally omitted from this anonymous repository record.
-- Lifecycle state: **REGISTERED DRAFT / NO PDF UPLOADED / NOT READY FOR REVIEW**.
+- The previously verified Fresno HotCRP profile contains the ORCID identifier;
+  the profile was not reopened in this upload pass.
+- Uploaded file: `main.pdf`, 357,973 bytes (displayed as 358 kB), 16 pages.
+- Server upload time: 2026-09-02 17:04:26 PDT (20:04:26 EDT).
+- Uploaded PDF SHA-256:
+  `e47b80073b1333668c2203c970548df55c1db51bdd005c268de4667077563cd7`.
+- Local copy of the submitted PDF:
+  `papers/quantum/submitted/itcs2027-paper193-2026-09-02-v2.pdf`.
+- Server-displayed SHA-256 prefix: `e47b8007`, matching the submitted copy
+  and current local `main.pdf`.
+- The first submitted version remains preserved, without modification, at
+  `papers/quantum/submitted/itcs2027-paper193-2026-09-02.pdf`.
+- PC conflicts remain `None`, as explicitly confirmed by the author.
+- The server explicitly allows updates until 2026-09-04 16:59:59 PDT.
+- The edit page now offers `Save and resubmit` for subsequent updates.
+- Lifecycle state: **SUBMITTED / READY FOR REVIEW** (not an acceptance decision).
+- Submission record: <https://itcs2027.hotcrp.com/u/0/paper/193/main>.
 
-## Scientific submission gate
+## Scientific readiness
 
 The completed ChatGPT Pro hostile review found no fatal mathematical defect,
 and its proof-specific objections have been dispositioned in the manuscript.
 A narrower final-delta review packet covering the experiment paragraph,
-references, and JLRX wording was submitted to the existing personal-account
-Pro conversation on 2026-09-01 and is running; no result from that additional
-review is counted here yet.
-The main remaining blocker is not formatting or code.  The standalone paper's
+references, and JLRX wording was submitted on 2026-09-01. Its latest visible
+state is a network error after interim analysis, not a completed verdict.
+No result from that additional review is counted here.
+The standalone paper's
 upper bound conflicts with the printed `N^(1-o(1))` quantum lower-bound
 sentence of Jain--Li--Robere--Xun at their formal default parameters.  The
 paper gives the direct calculation showing that the cited route transfers at
 most exponent `1/24`, calls this an apparent parameter mismatch, does not rely
 on the disputed consequence, and explicitly excludes their principal TFNP
-separation theorems from the audit.  Author clarification remains desirable
-before upload.
+separation theorems from the audit. The user reports that the clarification
+email has been sent. Author clarification is desirable, but is not a
+prerequisite for submission with this independently supported and explicitly
+scoped comparison.
 
-This gate does not retract the locally checked theorem.  It prevents an
-overconfident novelty/model comparison while the closest-source discrepancy
-is unresolved.
+The local mathematical recheck found no fatal upper-bound defect and fixed
+the classical-baseline truncation, conditional-probability notation, oracle
+cost wording, and abort semantics. The author approved this candidate for
+submission; final human responsibility remains with the author. Novelty and
+ITCS significance remain risks, not established acceptance claims. See
+`reviews/QUANTUM_SUBMISSION_READINESS_2026-09-01.md`.
 
 ## Human-owned submission actions
 
 - [x] Incorporate the completed ChatGPT Pro mathematical review.
 - [x] Accurately retain and scope the closest-source JLRX discrepancy.
-- [ ] Seek clarification from the JLRX authors before final upload if time
-  permits.
+- [x] Seek clarification from the JLRX authors (user reports email sent).
 - [x] Confirm the final human author list and ordering.
-- [ ] Confirm that every listed human author accepts responsibility for the
-  final claims, references, code, and AI disclosure.
+- [x] Obtain the sole listed author's approval to submit the current manuscript,
+  including its disclosed AI use and author-responsibility statement.
 - [x] Register the title and abstract on the ITCS submission server.
-- [ ] Upload the anonymous PDF and complete the COI declaration.
-- [ ] Retain the AI disclosure in the submitted manuscript.
-- [ ] Record the actual uploaded PDF hash; submission ID `#193` is recorded.
+- [x] Upload and save the anonymous PDF to submission `#193`.
+- [x] Confirm and complete the PC conflict declaration (author confirms none).
+- [x] Retain the AI disclosure in the uploaded manuscript.
+- [x] Record the uploaded local PDF hash and matching server checksum prefix.
+- [x] Mark the submission ready for review and verify the final server state.
 
-The abstract is registered externally.  No PDF has been uploaded, and the
-draft is not ready for review.
+The last verified external state is **submitted and ready for review**. The server
+states that no further action is needed, while allowing revisions through
+2026-09-04 16:59:59 PDT. The 17:04:26 PDT update replaced only the PDF with the
+author-approved AI-disclosure revision. The title, abstract, topics, conflict
+declarations, AI preferences and survey, repository visibility, and license
+were not changed. The ready-for-review checkbox remains checked.

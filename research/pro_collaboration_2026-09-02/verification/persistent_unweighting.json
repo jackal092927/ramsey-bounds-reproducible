@@ -1,0 +1,632 @@
+{
+  "status": "PASS",
+  "tolerance": 2e-08,
+  "family_count": 6,
+  "pair_degree_checks": 39,
+  "max_intertwining_residual": 1.6458982417795104e-15,
+  "wrong_row_deletion_residual": 2.0,
+  "scope": "Finite matrix diagnostics; nonflag case is outside the formal conditional theorem.",
+  "families": [
+    {
+      "name": "path_to_triangle",
+      "within_stated_clique_scope": true,
+      "results": [
+        {
+          "pair": [
+            0,
+            0
+          ],
+          "degree": 0,
+          "base_dim": 3,
+          "expanded_dim": 7,
+          "intertwining_residual": 3.1401849173675503e-16,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 3.0000000000000004,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 1
+        },
+        {
+          "pair": [
+            0,
+            0
+          ],
+          "degree": 1,
+          "base_dim": 2,
+          "expanded_dim": 13,
+          "intertwining_residual": 6.280369834735101e-16,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 3.0,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 0
+        },
+        {
+          "pair": [
+            0,
+            1
+          ],
+          "degree": 0,
+          "base_dim": 3,
+          "expanded_dim": 7,
+          "intertwining_residual": 8.648019286328667e-16,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 6.9999999999999964,
+          "asymmetric_bound": 1,
+          "domination_min": -5.566775137089012e-16,
+          "nullity": 1
+        },
+        {
+          "pair": [
+            0,
+            1
+          ],
+          "degree": 1,
+          "base_dim": 2,
+          "expanded_dim": 13,
+          "intertwining_residual": 1.3776768636285842e-15,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 3.0000000000000004,
+          "asymmetric_bound": 1,
+          "domination_min": -7.680316695665419e-16,
+          "nullity": 0
+        },
+        {
+          "pair": [
+            1,
+            1
+          ],
+          "degree": 0,
+          "base_dim": 3,
+          "expanded_dim": 7,
+          "intertwining_residual": 8.648019286328667e-16,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 6.9999999999999964,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 1
+        },
+        {
+          "pair": [
+            1,
+            1
+          ],
+          "degree": 1,
+          "base_dim": 3,
+          "expanded_dim": 21,
+          "intertwining_residual": 0.0,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 6.999999999999995,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 0
+        },
+        {
+          "pair": [
+            1,
+            1
+          ],
+          "degree": 2,
+          "base_dim": 1,
+          "expanded_dim": 35,
+          "intertwining_residual": 0.0,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 6.999999999999993,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 0
+        }
+      ]
+    },
+    {
+      "name": "square_to_disk_with_diagonal_cancellation",
+      "within_stated_clique_scope": true,
+      "results": [
+        {
+          "pair": [
+            0,
+            0
+          ],
+          "degree": 0,
+          "base_dim": 4,
+          "expanded_dim": 6,
+          "intertwining_residual": 1.10364656748616e-15,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 4.0,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 1
+        },
+        {
+          "pair": [
+            0,
+            0
+          ],
+          "degree": 1,
+          "base_dim": 4,
+          "expanded_dim": 10,
+          "intertwining_residual": 3.1401849173675503e-16,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 2.0,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 1
+        },
+        {
+          "pair": [
+            0,
+            1
+          ],
+          "degree": 0,
+          "base_dim": 4,
+          "expanded_dim": 6,
+          "intertwining_residual": 1.1036465674861601e-15,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 6.000000000000001,
+          "asymmetric_bound": 1,
+          "domination_min": -1.4252731853550138e-16,
+          "nullity": 1
+        },
+        {
+          "pair": [
+            0,
+            1
+          ],
+          "degree": 1,
+          "base_dim": 4,
+          "expanded_dim": 10,
+          "intertwining_residual": 9.919822409582414e-16,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 3.999999999999999,
+          "asymmetric_bound": 1,
+          "domination_min": -6.668500615339274e-16,
+          "nullity": 0
+        },
+        {
+          "pair": [
+            1,
+            1
+          ],
+          "degree": 0,
+          "base_dim": 4,
+          "expanded_dim": 6,
+          "intertwining_residual": 1.1036465674861601e-15,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 6.000000000000001,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 1
+        },
+        {
+          "pair": [
+            1,
+            1
+          ],
+          "degree": 1,
+          "base_dim": 5,
+          "expanded_dim": 14,
+          "intertwining_residual": 1.2560739669470201e-15,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 4.0,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 0
+        },
+        {
+          "pair": [
+            1,
+            1
+          ],
+          "degree": 2,
+          "base_dim": 2,
+          "expanded_dim": 16,
+          "intertwining_residual": 8.881784197001252e-16,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 4.0,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 0
+        }
+      ]
+    },
+    {
+      "name": "vertices_path_triangle",
+      "within_stated_clique_scope": true,
+      "results": [
+        {
+          "pair": [
+            0,
+            0
+          ],
+          "degree": 0,
+          "base_dim": 3,
+          "expanded_dim": 5,
+          "intertwining_residual": 0.0,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 2.0,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 3
+        },
+        {
+          "pair": [
+            0,
+            1
+          ],
+          "degree": 0,
+          "base_dim": 3,
+          "expanded_dim": 5,
+          "intertwining_residual": 9.93013661298909e-16,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 3.0000000000000004,
+          "asymmetric_bound": 1,
+          "domination_min": -1.093981219731414e-16,
+          "nullity": 1
+        },
+        {
+          "pair": [
+            0,
+            2
+          ],
+          "degree": 0,
+          "base_dim": 3,
+          "expanded_dim": 5,
+          "intertwining_residual": 1.0037295718065466e-15,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 5.0,
+          "asymmetric_bound": 1,
+          "domination_min": -4.440892098500629e-16,
+          "nullity": 1
+        },
+        {
+          "pair": [
+            1,
+            1
+          ],
+          "degree": 0,
+          "base_dim": 3,
+          "expanded_dim": 5,
+          "intertwining_residual": 9.93013661298909e-16,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 3.0000000000000004,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 1
+        },
+        {
+          "pair": [
+            1,
+            1
+          ],
+          "degree": 1,
+          "base_dim": 2,
+          "expanded_dim": 6,
+          "intertwining_residual": 3.1401849173675503e-16,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 2.9999999999999996,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 0
+        },
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "degree": 0,
+          "base_dim": 3,
+          "expanded_dim": 5,
+          "intertwining_residual": 1.0037295718065466e-15,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 5.0,
+          "asymmetric_bound": 1,
+          "domination_min": -1.4252731853550138e-16,
+          "nullity": 1
+        },
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "degree": 1,
+          "base_dim": 2,
+          "expanded_dim": 6,
+          "intertwining_residual": 1.6458982417795104e-15,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 3.0000000000000004,
+          "asymmetric_bound": 1,
+          "domination_min": -3.4815055040048925e-16,
+          "nullity": 0
+        },
+        {
+          "pair": [
+            2,
+            2
+          ],
+          "degree": 0,
+          "base_dim": 3,
+          "expanded_dim": 5,
+          "intertwining_residual": 1.0037295718065466e-15,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 5.0,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 1
+        },
+        {
+          "pair": [
+            2,
+            2
+          ],
+          "degree": 1,
+          "base_dim": 3,
+          "expanded_dim": 10,
+          "intertwining_residual": 1.2560739669470201e-15,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 5.0,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 0
+        },
+        {
+          "pair": [
+            2,
+            2
+          ],
+          "degree": 2,
+          "base_dim": 1,
+          "expanded_dim": 10,
+          "intertwining_residual": 8.881784197001252e-16,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 5.0,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 0
+        }
+      ]
+    },
+    {
+      "name": "new_vertex_cone_over_square",
+      "within_stated_clique_scope": true,
+      "results": [
+        {
+          "pair": [
+            0,
+            0
+          ],
+          "degree": 0,
+          "base_dim": 4,
+          "expanded_dim": 6,
+          "intertwining_residual": 1.1036465674861603e-15,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 4.0,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 1
+        },
+        {
+          "pair": [
+            0,
+            0
+          ],
+          "degree": 1,
+          "base_dim": 4,
+          "expanded_dim": 10,
+          "intertwining_residual": 3.1401849173675503e-16,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 2.0,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 1
+        },
+        {
+          "pair": [
+            0,
+            1
+          ],
+          "degree": 0,
+          "base_dim": 4,
+          "expanded_dim": 6,
+          "intertwining_residual": 1.3535723176024462e-15,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 5.0,
+          "asymmetric_bound": 1,
+          "domination_min": 5.551115123125758e-17,
+          "nullity": 1
+        },
+        {
+          "pair": [
+            0,
+            1
+          ],
+          "degree": 1,
+          "base_dim": 4,
+          "expanded_dim": 10,
+          "intertwining_residual": 1.1195226674787731e-15,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 3.0,
+          "asymmetric_bound": 1,
+          "domination_min": -5.019564512330663e-16,
+          "nullity": 0
+        },
+        {
+          "pair": [
+            1,
+            1
+          ],
+          "degree": 0,
+          "base_dim": 5,
+          "expanded_dim": 7,
+          "intertwining_residual": 1.1210311785357424e-15,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 5.0,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 1
+        },
+        {
+          "pair": [
+            1,
+            1
+          ],
+          "degree": 1,
+          "base_dim": 8,
+          "expanded_dim": 16,
+          "intertwining_residual": 8.881784197001252e-16,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 3.0,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 0
+        },
+        {
+          "pair": [
+            1,
+            1
+          ],
+          "degree": 2,
+          "base_dim": 4,
+          "expanded_dim": 14,
+          "intertwining_residual": 3.1401849173675503e-16,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 2.9999999999999987,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 0
+        }
+      ]
+    },
+    {
+      "name": "nonflag_tetrahedron_boundary_diagnostic",
+      "within_stated_clique_scope": false,
+      "results": [
+        {
+          "pair": [
+            0,
+            0
+          ],
+          "degree": 0,
+          "base_dim": 4,
+          "expanded_dim": 6,
+          "intertwining_residual": 1.1036465674861601e-15,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 6.000000000000001,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 1
+        },
+        {
+          "pair": [
+            0,
+            0
+          ],
+          "degree": 1,
+          "base_dim": 6,
+          "expanded_dim": 15,
+          "intertwining_residual": 1.1036465674861601e-15,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 1.9999999999999991,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 3
+        },
+        {
+          "pair": [
+            0,
+            1
+          ],
+          "degree": 0,
+          "base_dim": 4,
+          "expanded_dim": 6,
+          "intertwining_residual": 1.1036465674861601e-15,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 6.000000000000001,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 1
+        },
+        {
+          "pair": [
+            0,
+            1
+          ],
+          "degree": 1,
+          "base_dim": 6,
+          "expanded_dim": 15,
+          "intertwining_residual": 8.881784197001252e-16,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 5.999999999999997,
+          "asymmetric_bound": 1,
+          "domination_min": -8.92220826453406e-16,
+          "nullity": 0
+        },
+        {
+          "pair": [
+            1,
+            1
+          ],
+          "degree": 0,
+          "base_dim": 4,
+          "expanded_dim": 6,
+          "intertwining_residual": 1.1036465674861601e-15,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 6.000000000000001,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 1
+        },
+        {
+          "pair": [
+            1,
+            1
+          ],
+          "degree": 1,
+          "base_dim": 6,
+          "expanded_dim": 15,
+          "intertwining_residual": 8.881784197001252e-16,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 5.999999999999997,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 0
+        },
+        {
+          "pair": [
+            1,
+            1
+          ],
+          "degree": 2,
+          "base_dim": 4,
+          "expanded_dim": 20,
+          "intertwining_residual": 1.10364656748616e-15,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 1.9999999999999991,
+          "asymmetric_bound": 1,
+          "domination_min": 0.0,
+          "nullity": 1
+        }
+      ]
+    },
+    {
+      "name": "sharp_asymmetric_threshold",
+      "within_stated_clique_scope": true,
+      "results": [
+        {
+          "pair": [
+            0,
+            0
+          ],
+          "degree": 0,
+          "base_dim": 1,
+          "expanded_dim": 3,
+          "intertwining_residual": 0.0,
+          "naturality_residual": 0.0,
+          "asymmetric_min": 3.0,
+          "asymmetric_bound": 3,
+          "domination_min": 0.0,
+          "nullity": 1
+        }
+      ]
+    }
+  ]
+}

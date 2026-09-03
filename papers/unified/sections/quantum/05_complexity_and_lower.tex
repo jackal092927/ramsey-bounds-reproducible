@@ -61,15 +61,14 @@ $4^{\lceil h/6\rceil}\le4\cdot2^{h/3}$, the last display is bounded by
 The high-confidence pivot searches, final search, and $K^2$ verification
 fit the same bound.  Since $r=2K-3$, this proves \cref{qua:thm:main}.
 
-The gate complexity is
-\[
- 2^K\operatorname{poly}\!\left(
- K,\log N,\log\frac1\eta
- \right)
-\]
-plus the gate cost of one supplied edge-oracle evaluation.  No QRAM is
-assumed.  The $O(K)$ measured pivot labels and colours are classical controls
-for reversible comparisons, conjunctions, and uncomputation.
+The result counts queries, not total gates or data-loading time.  Every
+search starts from the uniform state on the fixed power-of-two universe
+$[M]$, not from a pre-prepared state on the unknown $S_i$.  The $O(K)$
+measured pivot labels and colours specify the reversible membership tests.
+No QRAM data structure is assumed, but coherent edge access is: if one
+edge-oracle evaluation costs $C_G$ gates, its contribution is incurred for
+each oracle call, not once for the whole algorithm.  Constructing such an
+oracle from an explicit adjacency matrix is outside our query bound.
 
 The known classical lower bound remains below the quantum upper bound.  The
 following direct consequence of the random-Painter analysis of

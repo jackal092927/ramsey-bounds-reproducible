@@ -15,6 +15,15 @@ claim-to-evidence framework. The older directories
 directory is both the shared source component and a separate submission
 target; it intentionally excludes the other three results.
 
+The current research consolidation is the
+[project results and collaboration dossier](research/pro_collaboration_2026-09-02/README.md).
+The [canonical TDA collaboration record](research/quantum_direction_selection/collaboration/2026-09-02/README.md)
+contains the latest proof packet, Pro dispatch and continuation state. It
+prioritizes true normalized persistence with explicit source and gate-set
+dependencies, while preserving the useful negative results and alternative
+directions. These are research candidates, separate from the submitted
+quantum Ramsey theorem.
+
 ## Results and exact scope
 
 | part | scoped result | evidence boundary |
@@ -60,12 +69,13 @@ The repository-wide publication protocol audit is
 [`reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md`](reviews/FINAL_RELEASE_PREFLIGHT_2026-08-30.md).
 The ChatGPT Pro second-opinion report and claim-by-claim disposition are
 [`reviews/CHATGPT_PRO_REVIEW.md`](reviews/CHATGPT_PRO_REVIEW.md).
-The newer exact-seven collaboration packet is a draft only and has not been
-sent externally:
+The historical exact-seven collaboration packet is retained at
 [`reviews/CHATGPT_PRO_EXACT7_COLLABORATION_PACKET.md`](reviews/CHATGPT_PRO_EXACT7_COLLABORATION_PACKET.md).
-A separate public-only quantum collaboration packet has been sent to ChatGPT
-Pro; its review was still running when this snapshot was prepared, so no
-verdict from it is counted.
+A completed text-only Pro reply has now been recovered and preserved with
+[its disposition](research/pro_collaboration_2026-09-02/REVIEW_DISPOSITION.md).
+That reply predates the checked singleton progress and does not supersede it.
+The separate quantum Ramsey review was completed and dispositioned; a later
+narrow differential review ended in a network error without a final verdict.
 The publication-facing state is [`STATUS.md`](STATUS.md). Local or AI-assisted
 adversarial review does not substitute for independent external human peer
 review.
@@ -114,17 +124,38 @@ On 2026-08-31 the following gates passed after the quantum integration:
   complete common-relaxation model audit;
 - deterministic materialization of the unified manuscript;
 - compilation and anonymity/font/reference checks for the standalone
-  16-page ITCS quantum draft, whose central claims and literature comparison
-  appear within the first ten pages;
+  16-page ITCS quantum draft, whose central claims and concise literature
+  comparison appear within the first ten pages;
 - compilation of a 115-page PDF with no overfull box, unresolved or multiply
   defined reference, LaTeX warning, error, or fatal diagnostic; and
 - representative-page visual inspection.
 
 The current 115-page unified PDF SHA-256 is
-`a2bf661530592cd3833b526304cc502e3780d55e91a506e782914701befc64ae`.
+`8fcb9c04133bf558391f452894a94c1bb7cfb917aa1b7d1036ebbc755dfcb3b6`.
 The current 16-page anonymous quantum PDF SHA-256 is
-`8ac5f6f08123f339b1ae80e51357ba4b251b71c5a71123c96dae9846c2874bf9`.
-With `SOURCE_DATE_EPOCH` fixed, two clean quantum-integrated builds under the
+`e47b80073b1333668c2203c970548df55c1db51bdd005c268de4667077563cd7`.
+This version shortens the AI disclosure. The
+[submission receipt](papers/quantum/SUBMISSION_CHECKLIST.md) records its
+resubmission to ITCS #193 on September 2 at 17:04:26 PDT and the server's
+ready-for-review confirmation. The September 3 consolidation rechecked the
+local PDF hash; it did not operate or refresh HotCRP.
+The current submitted PDF is preserved at
+`papers/quantum/submitted/itcs2027-paper193-2026-09-02-v2.pdf`.
+The first September 2 submitted PDF is preserved separately at
+`papers/quantum/submitted/itcs2027-paper193-2026-09-02.pdf`; its SHA-256 is
+`bd11783756a99ac1ab865548ab08078dbb969d3034b44ef8df2e134640696a2f`.
+The September 1 submission candidate now uses the official LIPIcs class in
+anonymous mode with a separate ITCS 11pt review adapter. The main quantum
+upper-bound proof finishes on page 8, the detailed comparison and conclusion
+finish on page 11, and the appendices begin on page 12. The final standalone
+build has no LaTeX/BibTeX warnings. The layout-only migration preserves all
+mathematical content and references; see
+[`papers/quantum/TEMPLATE.md`](papers/quantum/TEMPLATE.md).
+The subsequent editorial pass makes Appendix C.2 a self-contained account of
+the numerical experiments, retaining methods and outcomes but removing source
+paths and run commands. Reproduction instructions remain in the repository;
+the anonymous paper does not depend on access to a code artifact.
+For the earlier candidate, with `SOURCE_DATE_EPOCH` fixed, two clean builds under the
 recorded pdfTeX 1.40.24 (TeX Live 2022) and Latexmk 4.77 toolchain were
 byte-identical.
 Byte identity across different TeX distributions, font packages, or engines is
@@ -135,8 +166,12 @@ dispositioned in the archived report. The quantum-specific Pro review
 completed and was dispositioned on 2026-08-31. A narrower final-delta packet
 covering the experiment paragraph, references, and JLRX wording was prepared
 and submitted to the same personal-account Pro conversation on 2026-09-01;
-its status is running and no result from it is counted yet. Neither completed
-review is external human peer review.
+its latest visible state is a network error after interim analysis, not a
+completed verdict. Neither completed review is external human peer review.
+The latest local mathematical pass and JLRX source comparison are recorded in
+[`reviews/QUANTUM_SUBMISSION_READINESS_2026-09-01.md`](reviews/QUANTUM_SUBMISSION_READINESS_2026-09-01.md).
+The user reports sending the author inquiry; receiving a reply is desirable
+but not required before submission with the current scoped comparison.
 
 ## Reproduction
 

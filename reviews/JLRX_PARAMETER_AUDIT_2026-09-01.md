@@ -81,7 +81,15 @@ false.  State explicitly that our proof does not rely on the disputed
 consequence and that their principal TFNP separation results are outside the
 scope of the audit.
 
-## Proposed author-clarification message
+## Author clarification lifecycle
+
+The user reports sending the revised clarification email on 2026-09-01.
+No author acknowledgment is incorporated into the manuscript. The historical
+draft below was superseded in Gmail and is **not the final sent wording**;
+in particular, its manuscript-preparation language was removed at the user's
+request. Do not reuse it as a current draft.
+
+## Historical proposed message (superseded)
 
 Subject: Clarification request about the quantum query lower bound for RAMSEY
 
