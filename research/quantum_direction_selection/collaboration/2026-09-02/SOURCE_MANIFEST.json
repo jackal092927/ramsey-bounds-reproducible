@@ -1,0 +1,206 @@
+{
+  "created_at": "2026-09-03T00:00:15.780578-07:00",
+  "kind": "frozen research source/evidence snapshot before the new Pro submission; evolving state and milestone files are excluded",
+  "files": [
+    {
+      "path": "research/quantum_direction_selection/AIDA_UPDATE_TRIAGE.md",
+      "bytes": 9148,
+      "sha256": "057ee7fbebe6efacae3c8c83f860ec2e4407faf23294f6a1a83a40b4b6f75520"
+    },
+    {
+      "path": "research/quantum_direction_selection/DECISION_2026-09-02.md",
+      "bytes": 14057,
+      "sha256": "5f9bb629347e75c3b393205bfd321ce62caabe4aabc2469e4d496e21063a03ea"
+    },
+    {
+      "path": "research/quantum_direction_selection/PRO_DISPATCH_2026-09-02.md",
+      "bytes": 1610,
+      "sha256": "34d8cec7a483c056416d34ac2f15c7f490d8e1ac7085b193e14e80d1476b0543"
+    },
+    {
+      "path": "research/quantum_direction_selection/PRO_REVIEW_HYPERBOLIC_PREPARED.md",
+      "bytes": 7430,
+      "sha256": "2dc58c807ec57c1f8bce85a5b39a97bb1da0c903711eeb0e00ee0c876e3cdb5d"
+    },
+    {
+      "path": "research/quantum_direction_selection/PRO_REVIEW_TDA_PREPARED.md",
+      "bytes": 11542,
+      "sha256": "5548b52a13c28e113944565d27eb60cb41bff968d2f2c9ff4864f7d4e61d63cc"
+    },
+    {
+      "path": "research/quantum_direction_selection/README.md",
+      "bytes": 5752,
+      "sha256": "e4ede904e2b4bd8970360c779614550c2ee10f19ca488e58a31c33999e4c2215"
+    },
+    {
+      "path": "research/quantum_direction_selection/collaboration/2026-09-02/AUDIT_CORRECTIONS.md",
+      "bytes": 4719,
+      "sha256": "a129006d6eaa94830187c051c9340a6965963023defb2fc6abb02149c5c1c4a8"
+    },
+    {
+      "path": "research/quantum_direction_selection/collaboration/2026-09-02/PERSISTENT_LAPLACIAN_EXTENSION.md",
+      "bytes": 5888,
+      "sha256": "7c291ffe5303d40f5141b022bca4c75dd146f1fb9fdedba4d9505efd5dada94e"
+    },
+    {
+      "path": "research/quantum_direction_selection/collaboration/2026-09-02/PRO_CONTEXT_PACKET.md",
+      "bytes": 126132,
+      "sha256": "91d330f28ac61ad0be3de4169d0ad5b26a899ff723ea9c3f31a22cb81fc77a10"
+    },
+    {
+      "path": "research/quantum_direction_selection/collaboration/2026-09-02/PRO_PREVIOUS_HYPERBOLIC_RESPONSE.md",
+      "bytes": 24141,
+      "sha256": "e6d76f1f6f28b79c11b0b4ea291aac956cd7bf57c52c372b1266ec3289d7a6f6"
+    },
+    {
+      "path": "research/quantum_direction_selection/collaboration/2026-09-02/PRO_PREVIOUS_TDA_RESPONSE.md",
+      "bytes": 27570,
+      "sha256": "1d3cccecaa313d91a3b8d8185a68569e7bfb18f0f0d51dd5a0b9dc360a14d9d9"
+    },
+    {
+      "path": "research/quantum_direction_selection/collaboration/2026-09-02/PRO_REQUEST.md",
+      "bytes": 4626,
+      "sha256": "21b7a0086ac499158ad5d688dfe25242a01d5bd775e1573539ae6779f3ef7025"
+    },
+    {
+      "path": "research/quantum_direction_selection/collaboration/2026-09-02/README.md",
+      "bytes": 1721,
+      "sha256": "a84d8999623d7f292a2941325fe271b231d0578f5c691523b8cd77f0b34a5b58"
+    },
+    {
+      "path": "research/quantum_direction_selection/collaboration/2026-09-02/REPRODUCTION_RESULTS.json",
+      "bytes": 18324,
+      "sha256": "facaf48b9f8fc90fe67e05f4f93780995e1a8aa3eeaec083bc66015b1d5c4950"
+    },
+    {
+      "path": "research/quantum_direction_selection/collaboration/2026-09-02/RESEARCH_DOSSIER.md",
+      "bytes": 17143,
+      "sha256": "6b837473990561de759e5d6517db142dfc70937c7e27993d393e598382e8d949"
+    },
+    {
+      "path": "research/quantum_direction_selection/collaboration/2026-09-02/SOURCE_LEDGER.md",
+      "bytes": 5832,
+      "sha256": "a7bc7cd0a5edf6368d6728225836aabe62d2c066cf2b11e67a4f203dcae2b44b"
+    },
+    {
+      "path": "research/quantum_direction_selection/collaboration/2026-09-02/check_persistent_laplacian.py",
+      "bytes": 5182,
+      "sha256": "d4dfd65ea886c79af35c36f5f3d3c6e6fa6f62cd2e8e73884a41ded336f8c854"
+    },
+    {
+      "path": "research/quantum_direction_selection/hyperbolic_probe/PROOF_PACKAGE.md",
+      "bytes": 18237,
+      "sha256": "e9582c2a182e836def7bd63f15d95b2a5c140dbcf695281fcf7527686ebf4f7f"
+    },
+    {
+      "path": "research/quantum_direction_selection/hyperbolic_probe/probe.py",
+      "bytes": 4952,
+      "sha256": "4b42048df260ce807fe54c54f69fccef47b3a2b49315bb0b0dfc7c06c8e81fb6"
+    },
+    {
+      "path": "research/quantum_direction_selection/lsh_probe/2026-09-02-quantum-hyperbolic-lsh-triage.md",
+      "bytes": 9246,
+      "sha256": "0740f0c0a6220238ec4b9034b7538e619f53bf14d9e1c7befc64b5774be37416"
+    },
+    {
+      "path": "research/quantum_direction_selection/lsh_probe/COROLLARY_AUDIT.md",
+      "bytes": 5897,
+      "sha256": "a621b37af6bef9328aa023889241329cf3893b1502ec230b0162c42485e6551c"
+    },
+    {
+      "path": "research/quantum_direction_selection/requirements.txt",
+      "bytes": 27,
+      "sha256": "86e921c6127d8f07900d23c9e24ef4ad0ce7f68aec2ab814c6df2a3953d3b28b"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/CLAUDE_NARROW_REVIEW.md",
+      "bytes": 6864,
+      "sha256": "ff16dad5549a7cda845c3c0c5c3c1e44988d592bdc630b2f9bdc816efd12733b"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/CLAUDE_REVIEW_STATUS.md",
+      "bytes": 1980,
+      "sha256": "391a5fd055e9e2f80f1e696db092a4f67feba3fc956eddc874d94a4c8f40c51d"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/FIXTURE_AND_SOURCE_GATES.md",
+      "bytes": 7270,
+      "sha256": "a7e1834af918d9c10d8378e94bfdc15a9451ac8a3545016c303cebc7b9abd296"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/IDEA_GENERATION_54.md",
+      "bytes": 17901,
+      "sha256": "295be91e6e16545240263bb28f36089cf565d9da13ad058cbb5c0b41bec3a5da"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/IDEA_REPORT.md",
+      "bytes": 13784,
+      "sha256": "9f27db3bbc638ade55c642a1a5ee555778d15bd0550a48828903380199093758"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/NORMALIZED_PERSISTENCE_PROBE.md",
+      "bytes": 31612,
+      "sha256": "e24c51194e75c8810408a7ce823bec391a51d5c3fba10a12d8d00693787b8446"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/QUANTUM_NET_PROOF.md",
+      "bytes": 12502,
+      "sha256": "88155ebe6443186c57e53dc55dd334fc7d3b686a72b75f0356c713ada45d7b0a"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/REVIEW_RESOLUTION.md",
+      "bytes": 4907,
+      "sha256": "f58f10568414b44386341eb2e05f3ae25b8733a5e53c8308f24e8e2534770efe"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/UNARY_PALETTE_ADDENDUM.md",
+      "bytes": 14654,
+      "sha256": "3583f697747ec81793d15130803c7e50fe9586a23c8bec7c9dc4b30ec28947e1"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/UNWEIGHTING_AUDIT.md",
+      "bytes": 26505,
+      "sha256": "021b0851b938bda1a099aae5520d7d277eb1f4fb17ceee423e1cd6035ceb42a4"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/check_barcode_outlier.py",
+      "bytes": 1885,
+      "sha256": "57cb6e1d638264a4ba7b31f2d2e9505946ada719915e1d1b62af9c27dadddbb2"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/check_kernel_filtration.py",
+      "bytes": 4063,
+      "sha256": "10f5406f8f1344cb464dada2df8bb0c2f918becade4f57e91ff64b708c7e3e8c"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/check_padded_bulk.py",
+      "bytes": 1919,
+      "sha256": "cee03944501e0313afd2aad1d32ee02b1f65988c82b8a9eaf07b3e79484b6fbe"
+    },
+    {
+      "path": "research/quantum_direction_selection/round2/check_weighted_history.py",
+      "bytes": 4862,
+      "sha256": "13c44926b8a1da80c6420a80dfbfbfe8b7fa877f1f2361ef66ab0bdbd9ad2fb1"
+    },
+    {
+      "path": "research/quantum_direction_selection/tda_probe/PROBE_REPORT.md",
+      "bytes": 15468,
+      "sha256": "1f1e62991f8a51e96aec4b02145d2a93739b8114aa4e44d8b829c2806eca8b63"
+    },
+    {
+      "path": "research/quantum_direction_selection/tda_probe/UNWEIGHTING_FIRST_LEMMA.md",
+      "bytes": 10131,
+      "sha256": "97f18e733426da0079477bde2022f2d55f71b24a807395fc5a232c567f2b44cd"
+    },
+    {
+      "path": "research/quantum_direction_selection/tda_probe/check_common_blowup.py",
+      "bytes": 4172,
+      "sha256": "7ca31eebc49431471ecb38437dd7a3af5d86c066b6065ce2000d9afc391cbedb"
+    },
+    {
+      "path": "research/quantum_direction_selection/tda_probe/check_mobius_zigzag.py",
+      "bytes": 6778,
+      "sha256": "a95866276a3365952af7bb5e7e8dd0e9155f3e6e06d3d06d062f4610464c2419"
+    }
+  ]
+}

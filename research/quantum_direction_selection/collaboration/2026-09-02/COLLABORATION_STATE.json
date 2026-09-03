@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-02T23:58:21.877353-07:00",
+  "objective": "Review and advance true normalized persistence toward a substantial TCS theorem; archive every useful positive/negative milestone and Pro result.",
+  "repository": {
+    "url": "https://github.com/jackal092927/ramsey-bounds-reproducible",
+    "branch": "codex/fill-ramsey-gaps",
+    "scope": "research/quantum_direction_selection"
+  },
+  "authorization": {
+    "user_requested_github_sync": true,
+    "user_requested_pro_review_and_advancement": true,
+    "user_requested_all_result_archival": true
+  },
+  "primary_channel": {
+    "topic": "Quantum TDA functorial unweighting and theorem mechanisms",
+    "url": "https://chatgpt.com/c/6a98c05a-ecf4-83e8-b356-4e20dc3fde3f",
+    "account": "visible identity matched local personal Pro channel registry",
+    "previous_response": "collected",
+    "new_request": "prepared"
+  },
+  "backup_channel": {
+    "topic": "Quantum hyperbolic navigation beyond generic search",
+    "url": "https://chatgpt.com/c/6a98c210-7ff0-83e8-a292-71cd7b079bae",
+    "previous_response": "collected",
+    "new_request": "not_requested"
+  },
+  "local_validation": {
+    "existing_probes_passed": 7,
+    "new_persistent_domain_probe": "passed",
+    "source_ledger": "prior-local-checks-reported; complete primary-source reread not performed in consolidation",
+    "full_reduction": "not_certified",
+    "novelty": "open"
+  },
+  "github": {
+    "status": "prepared_not_yet_pushed",
+    "latest_verified_remote_commit": null
+  },
+  "follow_up": {
+    "status": "to_be_configured_after_submission",
+    "policy": "Collect exact-channel final responses; archive raw material, validate before adopting, and sync each useful milestone. Do not interrupt a running Pro response or duplicate a submission."
+  }
+}

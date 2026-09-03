@@ -1,0 +1,23 @@
+# Pro collaboration request: first review, then advance the mathematics
+
+Please continue this same TDA collaboration. Our work has progressed substantially beyond the earlier functorial-unweighting packet you reviewed. The attached dossier and appendices supersede that packet on current status. Your earlier response has been preserved verbatim in substance, including your persistent-Laplacian proposal; it is not treated as a correctness certificate.
+
+Our objective is to push the strongest genuine result as far as possible toward a high-quality, impactful theoretical computer science paper. Please do substantive research and proof development, not only recommend future work.
+
+1. **First conduct an adversarial mathematical and novelty review.** Read the exact hypotheses and written derivations. Distinguish actual mathematical failures from source-integration obligations and novelty risk. Check the six primary source claims where they matter and report precisely what you read, versions/sections, and what could not be checked. Do not infer that a theorem is absent merely from its title or abstract.
+
+2. **Then advance the surviving result within this response.** Develop the strongest defensible theorem statement, prove additional useful lemmas or give explicit counterexamples, and investigate a meaningful complexity consequence for the exact supported circuit source. Explore alternatives if the current source is too weak. Treat the target of a strong TCS paper as an ambition, never as an assumed achievement.
+
+3. **Prioritize the load-bearing global concentration theorem.** It concerns arbitrary low-energy geometric chains and proximity to a separate logical kernel. The quotient injection and standard dimension argument then give all zero-mode multiplicities and gaps; no extra global relative-acyclicity assumption is required once those hypotheses hold. Review the actual padding/interface proof and local finite-palette dependencies. Do not certify unseen gadget estimates.
+
+4. **Respect the corrected definitions.** The mixed spectator gives \(U'=U\otimes H^h\) but \(M'=M\otimes I\) for odd and even \(h\). An \(HH\) pair does not change parity. Interface inputs are orthogonal blocks, outputs may be shared. The initial denominator \(D>0\) is fixed by the complete anchored-history construction. Error \(1/24\), not \(1/6\), distinguishes fraction thresholds \(1/2\) and \(1/3\). The NO bound follows from \(f\le p\). Exact logical isometries must not be confused with a demand for exactly compatible geometric harmonic representatives.
+
+5. **Seek stronger consequences without inflating the source class.** The baseline transfers an explicit real-gate, clean-work/mixed-input, off-perfect-eigenvalue-separated promise. Unrestricted SDQC1 equivalence, BQP-hardness from threshold constants, and complex-phase extension are unproved. Investigate an exact reduction or a rigorous boundary. Do not use approximate gate synthesis to preserve exact kernels.
+
+6. **Re-evaluate your persistent-Laplacian proposal and alternatives.** We independently derived the clique-only conditional restricted-domain/direct-sum statement. Assess whether this is new and useful beyond a short corollary, and push it if promising. Consider parameter-sensitive quantum net/barcode theorems or natural bounded evaluated-Hom-width classes only if they offer more substance. Preserve the native Möbius, AIDA update-rank, normalization, and oracle-model obstructions.
+
+Please return (a) a precise status/claim table; (b) a dependency and novelty collision table with primary links; (c) self-contained proofs or counterexamples for real progress achieved; (d) the strongest clean theorem and exact computational model; (e) ranked next steps with finite stopping criteria; and (f) all useful intermediate milestones, including failed approaches and corrected claims. Separate conjectures, conditional theorems, established imported results, and derivations completed here.
+
+No “first quantum persistence”, new-gadget credit for Rudolph's construction, practical/near-term claim, or paper-readiness certification is requested. The geometric gap polynomial is poor. If the best result is only a corollary or an uninformative promise reduction, say that plainly and explain whether a stronger mechanism can actually be proved.
+
+The repository snapshot and file paths are supplied in the dispatch header. Use the attached context if repository access is unavailable; do not claim to have read files you could not access. We will independently evaluate and archive your complete response and useful intermediate conclusions.
