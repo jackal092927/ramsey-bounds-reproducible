@@ -1,0 +1,724 @@
+{
+  "captured_at": "2026-09-03T19:56:12.693Z",
+  "conversation_url": "https://chatgpt.com/c/6a98c05a-ecf4-83e8-b356-4e20dc3fde3f",
+  "user_message_number": 8,
+  "source_commit": "f11cb4ed83bdbc7d738b6b159e7267850f49ad92",
+  "dispatch_archive_commit": "f6b4681e7e85d4a57afe5c50a41afb1c4417e66a",
+  "visible_duration": "Worked for 5m 56s",
+  "visible_account": {
+    "name": "registered personal identity",
+    "plan": "Pro",
+    "matched_registered_personal_identity": true,
+    "email_omitted_from_public_archive": true,
+    "verification_note": "Reused the authenticated browser session verified earlier in this collaboration."
+  },
+  "message_id": "384910b2-6487-46cc-b905-343eef1b51a6",
+  "turn_id": "request-6a98c05a-ecf4-83e8-b356-4e20dc3fde3f-4",
+  "model_slug": "gpt-5-6-pro",
+  "links": [],
+  "attachment_citation_controls": 4,
+  "markdown": "# Verdict\n\nThe eight-label source construction is **mathematically valid under the supplied hypotheses**. The compressed acceptance operator is exactly\n\n\\[\nM_x=\n\\operatorname{diag}(1,p_x,p_x,p_x,p_x,p_x,0,0)\n\\otimes I_{\\mathrm{dummy}},\n\\]\n\nnot merely trace-equivalent to that matrix. Coherent label inputs, verifier-output entanglement, and reversible scratch do not create off-diagonal label blocks.\n\nConsequently, assuming the corrected geometric transfer theorem, additive approximation of true normalized persistence for nested **weighted** clique complexes with inverse-polynomial gaps above both complete endpoint kernels is\n\n\\[\n\\boxed{\\mathsf{BQP}_1^{G_2}\\text{-hard}},\n\\qquad\nG_2=\\{X,\\mathrm{CX},\\mathrm{CCX},H\\otimes H\\}.\n\\]\n\nThe target ratio is exactly \\(3/4\\) in YES and \\(1/8\\) in NO. Error \\(1/24\\) is safe.\n\nI did **not** independently source-check Rudolph’s Definition 2.2, Theorems 2.3 or 3.4. As instructed, I treat the packet’s descriptions of those statements as hypotheses. I likewise treat the geometric transfer theorem and its finite palette as supplied. The bounded task and its source assumptions are stated explicitly in the packet. 〔PRO_BQP1_SOURCE_PACKET_2026-09-…〕\n\nThere is no invalid inference in the proposed composition. One essential scope condition is that \\(Q_x\\) has a fixed clean input, so its compressed acceptance operator is the scalar \\(p_x\\). With a mixed witness or unresolved input space, the five conditional blocks would contain an operator, not the scalar \\(p_x\\).\n\n# 1. Exact operator calculation\n\nLet \\(Z\\cong(\\mathbb C^2)^{\\otimes3}\\) be the label register and \\(D_{\\rm dum}\\) the ignored mixed dummy register. Let \\(\\mathcal H_Q\\) contain all verifier qubits, initialized to a fixed clean state \\(\\lvert 0_Q\\rangle\\). Write\n\n\\[\n\\Pi_q=\\lvert1\\rangle\\!\\langle1\\rvert_q\\otimes I_{\\mathrm{rest}}\n\\]\n\nfor the verifier’s output projector, so\n\n\\[\np_x=\n\\langle0_Q|Q_x^\\dagger\\Pi_qQ_x|0_Q\\rangle.\n\\]\n\nLet \\(C\\) be the reversible classical circuit that, using clean scratch and a fresh clean decision bit \\(a\\), computes\n\n\\[\nA(z,q)\n=\n[z=000]\\lor\n\\bigl(q\\land[z\\in T]\\bigr),\n\\qquad\nT=\\{001,010,011,100,101\\},\n\\]\n\ninto \\(a\\), and then uncomputes its scratch. It preserves \\(z\\) and \\(q\\). Therefore it is block diagonal in the label basis:\n\n\\[\nC=\\sum_z |z\\rangle\\!\\langle z|\\otimes C_z.\n\\]\n\nConjugating the final decision projector\n\n\\[\n\\Pi_a=|1\\rangle\\!\\langle1|_a\n\\]\n\ngives, after restriction to the clean decision/scratch input,\n\n\\[\nC^\\dagger\\Pi_aC\n=\n\\sum_z |z\\rangle\\!\\langle z|\\otimes E_z,\n\\]\n\nwhere\n\n\\[\nE_z=\n\\begin{cases}\nI_{\\mathcal H_Q},&z=000,\\\\[2mm]\n\\Pi_q,&z\\in T,\\\\[2mm]\n0,&z\\in\\{110,111\\}.\n\\end{cases}\n\\]\n\nNow let the total unitary be\n\n\\[\nU_x=C(I_Z\\otimes Q_x),\n\\]\n\nwith identities on the dummy register suppressed, and let \\(J\\) append all clean verifier, decision, and scratch qubits. The compressed acceptance operator on \\(Z\\otimes D_{\\rm dum}\\) is\n\n\\[\n\\begin{aligned}\nM_x\n&=\nJ^\\dagger U_x^\\dagger\\Pi_aU_xJ\\\\\n&=\n\\sum_z |z\\rangle\\!\\langle z|\\,\n\\langle0_Q|Q_x^\\dagger E_zQ_x|0_Q\\rangle\n\\otimes I_{\\rm dummy}\\\\\n&=\n\\operatorname{diag}\n(1,p_x,p_x,p_x,p_x,p_x,0,0)\n\\otimes I_{\\rm dummy}.\n\\end{aligned}\n\\]\n\nThis proves the claimed operator identity from the packet. 〔PRO_BQP1_SOURCE_PACKET_2026-09-…〕\n\n### Why the possible objections fail\n\n**Coherent labels.** Off-diagonal terms \\(|z\\rangle\\langle z'|\\) cannot arise because both the reversible predicate and its conjugated measurement preserve the label and are block diagonal in \\(z\\).\n\n**Entanglement of \\(q\\) with verifier workspace.** In a conditional block, compression produces\n\n\\[\n\\langle0_Q|Q_x^\\dagger\\Pi_qQ_x|0_Q\\rangle=p_x.\n\\]\n\nNo product-state assumption about the final output bit is used.\n\n**Scratch.** Computing the predicate into a fresh decision bit and reversing the scratch yields the displayed clean compression exactly. The decision bit must be fresh; the construction should not be described as irreversibly overwriting \\(q\\).\n\n**Dummy bits.** They are untouched by every unitary and measurement, so the operator tensors with their identity.\n\n# 2. Exact gate compatibility\n\nThe construction remains exactly inside \\(G_2\\).\n\n- \\(Q_x\\) is run unconditionally, so no controlled-\\(Q_x\\), controlled \\(H\\otimes H\\), or controlled internal gate is needed.\n- The fixed Boolean predicate can be implemented using \\(X\\), CX and CCX with clean ancillas.\n- Negative controls are implemented by conjugating the corresponding wire with \\(X\\).\n- Any constant-size multi-controlled classical operation can be decomposed exactly into CCX gates with clean scratch.\n- The output is one fresh qubit measured in the computational basis.\n\nThus the source circuit uses only\n\n\\[\nX,\\quad \\mathrm{CX},\\quad \\mathrm{CCX},\\quad H\\otimes H.\n\\]\n\nNo single \\(H\\), mixed-spectator conversion, approximate synthesis, or complex phase is introduced by this lemma.\n\n# 3. Complete spectrum\n\nLet \\(m\\) be the number of ignored mixed dummy bits. Every displayed label eigenvalue then has multiplicity \\(2^m\\), and\n\n\\[\nD=8\\cdot2^m=2^{m+3}.\n\\]\n\n## YES case\n\nPerfect completeness gives \\(p_x=1\\). Hence\n\n\\[\nM_x=\n\\operatorname{diag}(1,1,1,1,1,1,0,0)\n\\otimes I_{\\rm dummy}.\n\\]\n\nTherefore\n\n\\[\n\\frac{\\operatorname{Tr}M_x}{D}=\\frac68=\\frac34,\n\\]\n\nand\n\n\\[\n\\frac{\\dim\\ker(I-M_x)}{D}=\\frac68=\\frac34.\n\\]\n\nOn the orthogonal complement of the perfect eigenspace, \\(M_x\\) is exactly zero:\n\n\\[\nM_x|_{\\ker(I-M_x)^\\perp}=0.\n\\]\n\n## NO case\n\nHere \\(0\\le p_x\\le1/3\\). The only eigenvalue-one block is \\(z=000\\). Thus\n\n\\[\n\\frac{\\dim\\ker(I-M_x)}{D}=\\frac18.\n\\]\n\nThe normalized trace is\n\n\\[\n\\frac{\\operatorname{Tr}M_x}{D}\n=\n\\frac{1+5p_x}{8}\n\\le\n\\frac{1+5/3}{8}\n=\n\\frac13.\n\\]\n\nEvery nonperfect eigenvalue is either \\(p_x\\) or \\(0\\), so\n\n\\[\nM_x|_{\\ker(I-M_x)^\\perp}\\preceq\\frac13I.\n\\]\n\nThis includes both edge cases \\(p_x=0\\) and \\(p_x=1/3\\).\n\n# 4. Growing denominator\n\nAdding \\(m=\\operatorname{poly}(|x|)\\) ignored mixed bits gives\n\n\\[\nD=2^{m+3},\n\\]\n\nwhile the perfect multiplicities are\n\n\\[\n\\begin{cases}\n6\\cdot2^m,&x\\in L,\\\\\n1\\cdot2^m,&x\\notin L.\n\\end{cases}\n\\]\n\nThus the normalized fractions remain\n\n\\[\n\\frac34\n\\quad\\text{and}\\quad\n\\frac18.\n\\]\n\nThere is no mathematical degeneracy: a target algorithm approximating the ratio still decides the original language. The denominator can be exponentially large relative to the succinct graph description while the number of added qubits and graph vertices remains polynomial.\n\nThis is nevertheless **padding-generated normalization**. It should not be advertised as evidence that the computational difficulty originates from nontrivial operations on the mixed dummy subsystem.\n\n# 5. Conditional hardness theorem\n\n## Theorem\n\nAssume:\n\n1. the packet’s supplied characterization of uniform exact \\(\\mathsf{BQP}_1^{G_2}\\) verifiers with clean all-zero inputs, one computational-basis output measurement, perfect completeness, and soundness at most \\(1/3\\);\n2. the corrected geometric transfer theorem, including its finite gadget certificates and all-chain concentration conclusion.\n\nThen there is a polynomial mapping from an input \\(x\\) to nested weighted clique complexes\n\n\\[\nX_{\\rm in}(x)\\subseteq X_{\\rm out}(x)\n\\]\n\nand a common degree \\(d\\), such that\n\n\\[\n\\beta_d(X_{\\rm in})=D,\n\\]\n\n\\[\n\\beta_d(X_{\\rm out})\n=\n\\operatorname{rank}\n\\left[\nH_d(X_{\\rm in})\\to H_d(X_{\\rm out})\n\\right]\n=\n\\dim\\ker(I-M_x),\n\\]\n\nand hence\n\n\\[\nq_x:=\n\\frac{\\beta_d(X_{\\rm in}\\to X_{\\rm out})}\n{\\beta_d(X_{\\rm in})}\n=\n\\begin{cases}\n3/4,&x\\in L,\\\\[1mm]\n1/8,&x\\notin L.\n\\end{cases}\n\\]\n\nBoth endpoint degree-\\(d\\) Laplacians have inverse-polynomial gaps above their complete kernels. Under the theorem’s conservative locality-six parameters, the weighted gap floor remains\n\n\\[\nE=\\Omega\\!\\left(\\frac{\\eta^{28}g}{t^{26}}\\right),\n\\]\n\nwith the history-Hamiltonian \\(g\\) inverse polynomial. The exact geometric conclusions being invoked are those stated in the supplied restricted theorem. 〔PRO_BQP1_SOURCE_PACKET_2026-09-…〕\n\nThe midpoint of the two target values is\n\n\\[\n\\theta=\\frac{3/4+1/8}{2}=\\frac7{16}.\n\\]\n\nAny additive error\n\n\\[\n\\varepsilon<\\frac{3/4-1/8}{2}=\\frac5{16}\n\\]\n\nsuffices. In particular, error \\(1/24\\) is safely sufficient. Thus the promise-decision version obtained by thresholding at \\(7/16\\), and the corresponding additive-approximation problem, are conditionally\n\n\\[\n\\boxed{\\mathsf{BQP}_1^{G_2}\\text{-hard}.}\n\\]\n\n# 6. Covered cyclotomic gate families\n\nI did not check the cited Rudolph results. Under the supplied statements:\n\n- Theorem 3.4 gives, for every fixed finite gate set \\(\\mathcal G\\) over the covered power-of-two cyclotomic fields,\n   \n   \\[\n   \\mathsf{BQP}_1^{\\mathcal G}\n   \\subseteq\n   \\mathsf{BQP}_1^{G_2}.\n   \\]\n- Theorem 2.3 supplies exact soundness reduction to the required constant while preserving perfect completeness for gate sets containing \\(G_2\\).\n\nTherefore, for each such fixed \\(\\mathcal G\\), compose:\n\n\\[\n\\mathsf{BQP}_1^{\\mathcal G}\n\\longrightarrow\n\\mathsf{BQP}_1^{G_2}\n\\longrightarrow\n\\text{eight-label source}\n\\longrightarrow\n\\text{weighted true normalized persistence}.\n\\]\n\nSubject to those source statements being uniform and polynomial-overhead as supplied, the target is also\n\n\\[\n\\boxed{\\mathsf{BQP}_1^{\\mathcal G}\\text{-hard}}\n\\]\n\nfor every covered fixed gate family separately.\n\nThis is not a gate-independent \\(\\mathsf{BQP}_1\\) theorem covering arbitrary exact gates.\n\n# 7. Why the earlier obstruction is avoided\n\nThe same-fraction obstruction concerned trace distinctions carried entirely by eigenvalues strictly below one. This construction starts from perfect completeness:\n\n\\[\np_x=1\n\\quad\\text{versus}\\quad\np_x\\le\\frac13.\n\\]\n\nThe five conditional label blocks become exact eigenvalue-one blocks precisely when \\(p_x=1\\). In the NO case they remain strictly below one. The construction therefore deliberately converts perfect completeness into a perfect-space multiplicity difference.\n\nIt does **not** repair arbitrary-threshold \\(\\mathsf{SDQC}_1\\). If both promise cases had \\(p_x<1\\), all five conditional blocks would be nonperfect in both cases, and both perfect fractions would equal \\(1/8\\), regardless of the trace gap.\n\n# Status table\n\n| Claim | Status |\n| --- | --- |\n| Eight-label compressed operator identity | **Proved** |\n| Robustness to coherent labels and verifier garbage | **Proved** |\n| Exact \\(G_2\\) gate compatibility | **Proved** |\n| Fractions \\(3/4\\) versus \\(1/8\\) | **Proved** |\n| Growing denominator via idle mixed bits | **Valid**, though padding-generated |\n| Weighted true-normalized-persistence hardness for \\(\\mathsf{BQP}_1^{G_2}\\) | **Valid conditional on the supplied geometric theorem** |\n| Hardness for each covered cyclotomic \\(\\mathsf{BQP}_1^{\\mathcal G}\\) | **Conditional on supplied Rudolph Theorems 2.3 and 3.4** |\n| Rudolph source statements | **Not independently checked here** |\n| Unweighted conclusion | **Not concluded in this gate** |\n| Ordinary BQP or unrestricted SDQC1 hardness | **Not implied** |\n| Novelty or paper readiness | **Not assessed** |\n\nThe packet itself applies the same firewall between the limited gate-dependent result and the withheld stronger claims. 〔PRO_BQP1_SOURCE_PACKET_2026-09-…〕\n\n# Next finite gate\n\nIndependently verify Rudolph’s Definition 2.2 and Theorems 2.3 and 3.4 at the exact interface needed here: uniformity, polynomial overhead, clean all-zero initialization, one computational-basis output bit, preservation of perfect completeness, final soundness at most \\(1/3\\), and exact use of \\(G_2\\) without hidden controlled gates or approximate compilation.\n",
+  "markdown_bytes": 11511,
+  "markdown_sha256": "a242d9b22d35eecdca8a29c1833600c31d11c54a76e4e9337b5ea8548aae0af6",
+  "math": [
+    {
+      "index": 0,
+      "display": true,
+      "source": "M_x=\n\\operatorname{diag}(1,p_x,p_x,p_x,p_x,p_x,0,0)\n\\otimes I_{\\mathrm{dummy}},",
+      "visible_text": "M\nx\n\t​\n\n=diag(1,p\nx\n\t​\n\n,p\nx\n\t​\n\n,p\nx\n\t​\n\n,p\nx\n\t​\n\n,p\nx\n\t​\n\n,0,0)⊗I\ndummy\n\t​\n\n,",
+      "tag": "SPAN"
+    },
+    {
+      "index": 1,
+      "display": true,
+      "source": "\\boxed{\\mathsf{BQP}_1^{G_2}\\text{-hard}},\n\\qquad\nG_2=\\{X,\\mathrm{CX},\\mathrm{CCX},H\\otimes H\\}.",
+      "visible_text": "BQP\n1\nG\n2\n\t​\n\n\t​\n\n-hard\n\t​\n\n,G\n2\n\t​\n\n={X,CX,CCX,H⊗H}.",
+      "tag": "SPAN"
+    },
+    {
+      "index": 2,
+      "display": false,
+      "source": "3/4",
+      "visible_text": "3/4",
+      "tag": "SPAN"
+    },
+    {
+      "index": 3,
+      "display": false,
+      "source": "1/8",
+      "visible_text": "1/8",
+      "tag": "SPAN"
+    },
+    {
+      "index": 4,
+      "display": false,
+      "source": "1/24",
+      "visible_text": "1/24",
+      "tag": "SPAN"
+    },
+    {
+      "index": 5,
+      "display": false,
+      "source": "Q_x",
+      "visible_text": "Q\nx\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 6,
+      "display": false,
+      "source": "p_x",
+      "visible_text": "p\nx\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 7,
+      "display": false,
+      "source": "p_x",
+      "visible_text": "p\nx\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 8,
+      "display": false,
+      "source": "Z\\cong(\\mathbb C^2)^{\\otimes3}",
+      "visible_text": "Z≅(C\n2\n)\n⊗3",
+      "tag": "SPAN"
+    },
+    {
+      "index": 9,
+      "display": false,
+      "source": "D_{\\rm dum}",
+      "visible_text": "D\ndum\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 10,
+      "display": false,
+      "source": "\\mathcal H_Q",
+      "visible_text": "H\nQ\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 11,
+      "display": false,
+      "source": "\\lvert 0_Q\\rangle",
+      "visible_text": "∣0\nQ\n\t​\n\n⟩",
+      "tag": "SPAN"
+    },
+    {
+      "index": 12,
+      "display": true,
+      "source": "\\Pi_q=\\lvert1\\rangle\\!\\langle1\\rvert_q\\otimes I_{\\mathrm{rest}}",
+      "visible_text": "Π\nq\n\t​\n\n=∣1⟩⟨1∣\nq\n\t​\n\n⊗I\nrest\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 13,
+      "display": true,
+      "source": "p_x=\n\\langle0_Q|Q_x^\\dagger\\Pi_qQ_x|0_Q\\rangle.",
+      "visible_text": "p\nx\n\t​\n\n=⟨0\nQ\n\t​\n\n∣Q\nx\n†\n\t​\n\nΠ\nq\n\t​\n\nQ\nx\n\t​\n\n∣0\nQ\n\t​\n\n⟩.",
+      "tag": "SPAN"
+    },
+    {
+      "index": 14,
+      "display": false,
+      "source": "C",
+      "visible_text": "C",
+      "tag": "SPAN"
+    },
+    {
+      "index": 15,
+      "display": false,
+      "source": "a",
+      "visible_text": "a",
+      "tag": "SPAN"
+    },
+    {
+      "index": 16,
+      "display": true,
+      "source": "A(z,q)\n=\n[z=000]\\lor\n\\bigl(q\\land[z\\in T]\\bigr),\n\\qquad\nT=\\{001,010,011,100,101\\},",
+      "visible_text": "A(z,q)=[z=000]∨(q∧[z∈T]),T={001,010,011,100,101},",
+      "tag": "SPAN"
+    },
+    {
+      "index": 17,
+      "display": false,
+      "source": "a",
+      "visible_text": "a",
+      "tag": "SPAN"
+    },
+    {
+      "index": 18,
+      "display": false,
+      "source": "z",
+      "visible_text": "z",
+      "tag": "SPAN"
+    },
+    {
+      "index": 19,
+      "display": false,
+      "source": "q",
+      "visible_text": "q",
+      "tag": "SPAN"
+    },
+    {
+      "index": 20,
+      "display": true,
+      "source": "C=\\sum_z |z\\rangle\\!\\langle z|\\otimes C_z.",
+      "visible_text": "C=\nz\n∑\n\t​\n\n∣z⟩⟨z∣⊗C\nz\n\t​\n\n.",
+      "tag": "SPAN"
+    },
+    {
+      "index": 21,
+      "display": true,
+      "source": "\\Pi_a=|1\\rangle\\!\\langle1|_a",
+      "visible_text": "Π\na\n\t​\n\n=∣1⟩⟨1∣\na\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 22,
+      "display": true,
+      "source": "C^\\dagger\\Pi_aC\n=\n\\sum_z |z\\rangle\\!\\langle z|\\otimes E_z,",
+      "visible_text": "C\n†\nΠ\na\n\t​\n\nC=\nz\n∑\n\t​\n\n∣z⟩⟨z∣⊗E\nz\n\t​\n\n,",
+      "tag": "SPAN"
+    },
+    {
+      "index": 23,
+      "display": true,
+      "source": "E_z=\n\\begin{cases}\nI_{\\mathcal H_Q},&z=000,\\\\[2mm]\n\\Pi_q,&z\\in T,\\\\[2mm]\n0,&z\\in\\{110,111\\}.\n\\end{cases}",
+      "visible_text": "E\nz\n\t​\n\n=\n⎩\n⎨\n⎧\n\t​\n\nI\nH\nQ\n\t​\n\n\t​\n\n,\nΠ\nq\n\t​\n\n,\n0,\n\t​\n\nz=000,\nz∈T,\nz∈{110,111}.\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 24,
+      "display": true,
+      "source": "U_x=C(I_Z\\otimes Q_x),",
+      "visible_text": "U\nx\n\t​\n\n=C(I\nZ\n\t​\n\n⊗Q\nx\n\t​\n\n),",
+      "tag": "SPAN"
+    },
+    {
+      "index": 25,
+      "display": false,
+      "source": "J",
+      "visible_text": "J",
+      "tag": "SPAN"
+    },
+    {
+      "index": 26,
+      "display": false,
+      "source": "Z\\otimes D_{\\rm dum}",
+      "visible_text": "Z⊗D\ndum\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 27,
+      "display": true,
+      "source": "\\begin{aligned}\nM_x\n&=\nJ^\\dagger U_x^\\dagger\\Pi_aU_xJ\\\\\n&=\n\\sum_z |z\\rangle\\!\\langle z|\\,\n\\langle0_Q|Q_x^\\dagger E_zQ_x|0_Q\\rangle\n\\otimes I_{\\rm dummy}\\\\\n&=\n\\operatorname{diag}\n(1,p_x,p_x,p_x,p_x,p_x,0,0)\n\\otimes I_{\\rm dummy}.\n\\end{aligned}",
+      "visible_text": "M\nx\n\t​\n\n\t​\n\n=J\n†\nU\nx\n†\n\t​\n\nΠ\na\n\t​\n\nU\nx\n\t​\n\nJ\n=\nz\n∑\n\t​\n\n∣z⟩⟨z∣⟨0\nQ\n\t​\n\n∣Q\nx\n†\n\t​\n\nE\nz\n\t​\n\nQ\nx\n\t​\n\n∣0\nQ\n\t​\n\n⟩⊗I\ndummy\n\t​\n\n=diag(1,p\nx\n\t​\n\n,p\nx\n\t​\n\n,p\nx\n\t​\n\n,p\nx\n\t​\n\n,p\nx\n\t​\n\n,0,0)⊗I\ndummy\n\t​\n\n.\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 28,
+      "display": false,
+      "source": "|z\\rangle\\langle z'|",
+      "visible_text": "∣z⟩⟨z\n′\n∣",
+      "tag": "SPAN"
+    },
+    {
+      "index": 29,
+      "display": false,
+      "source": "z",
+      "visible_text": "z",
+      "tag": "SPAN"
+    },
+    {
+      "index": 30,
+      "display": false,
+      "source": "q",
+      "visible_text": "q",
+      "tag": "SPAN"
+    },
+    {
+      "index": 31,
+      "display": true,
+      "source": "\\langle0_Q|Q_x^\\dagger\\Pi_qQ_x|0_Q\\rangle=p_x.",
+      "visible_text": "⟨0\nQ\n\t​\n\n∣Q\nx\n†\n\t​\n\nΠ\nq\n\t​\n\nQ\nx\n\t​\n\n∣0\nQ\n\t​\n\n⟩=p\nx\n\t​\n\n.",
+      "tag": "SPAN"
+    },
+    {
+      "index": 32,
+      "display": false,
+      "source": "q",
+      "visible_text": "q",
+      "tag": "SPAN"
+    },
+    {
+      "index": 33,
+      "display": false,
+      "source": "G_2",
+      "visible_text": "G\n2\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 34,
+      "display": false,
+      "source": "Q_x",
+      "visible_text": "Q\nx\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 35,
+      "display": false,
+      "source": "Q_x",
+      "visible_text": "Q\nx\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 36,
+      "display": false,
+      "source": "H\\otimes H",
+      "visible_text": "H⊗H",
+      "tag": "SPAN"
+    },
+    {
+      "index": 37,
+      "display": false,
+      "source": "X",
+      "visible_text": "X",
+      "tag": "SPAN"
+    },
+    {
+      "index": 38,
+      "display": false,
+      "source": "X",
+      "visible_text": "X",
+      "tag": "SPAN"
+    },
+    {
+      "index": 39,
+      "display": true,
+      "source": "X,\\quad \\mathrm{CX},\\quad \\mathrm{CCX},\\quad H\\otimes H.",
+      "visible_text": "X,CX,CCX,H⊗H.",
+      "tag": "SPAN"
+    },
+    {
+      "index": 40,
+      "display": false,
+      "source": "H",
+      "visible_text": "H",
+      "tag": "SPAN"
+    },
+    {
+      "index": 41,
+      "display": false,
+      "source": "m",
+      "visible_text": "m",
+      "tag": "SPAN"
+    },
+    {
+      "index": 42,
+      "display": false,
+      "source": "2^m",
+      "visible_text": "2\nm",
+      "tag": "SPAN"
+    },
+    {
+      "index": 43,
+      "display": true,
+      "source": "D=8\\cdot2^m=2^{m+3}.",
+      "visible_text": "D=8⋅2\nm\n=2\nm+3\n.",
+      "tag": "SPAN"
+    },
+    {
+      "index": 44,
+      "display": false,
+      "source": "p_x=1",
+      "visible_text": "p\nx\n\t​\n\n=1",
+      "tag": "SPAN"
+    },
+    {
+      "index": 45,
+      "display": true,
+      "source": "M_x=\n\\operatorname{diag}(1,1,1,1,1,1,0,0)\n\\otimes I_{\\rm dummy}.",
+      "visible_text": "M\nx\n\t​\n\n=diag(1,1,1,1,1,1,0,0)⊗I\ndummy\n\t​\n\n.",
+      "tag": "SPAN"
+    },
+    {
+      "index": 46,
+      "display": true,
+      "source": "\\frac{\\operatorname{Tr}M_x}{D}=\\frac68=\\frac34,",
+      "visible_text": "D\nTrM\nx\n\t​\n\n\t​\n\n=\n8\n6\n\t​\n\n=\n4\n3\n\t​\n\n,",
+      "tag": "SPAN"
+    },
+    {
+      "index": 47,
+      "display": true,
+      "source": "\\frac{\\dim\\ker(I-M_x)}{D}=\\frac68=\\frac34.",
+      "visible_text": "D\ndimker(I−M\nx\n\t​\n\n)\n\t​\n\n=\n8\n6\n\t​\n\n=\n4\n3\n\t​\n\n.",
+      "tag": "SPAN"
+    },
+    {
+      "index": 48,
+      "display": false,
+      "source": "M_x",
+      "visible_text": "M\nx\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 49,
+      "display": true,
+      "source": "M_x|_{\\ker(I-M_x)^\\perp}=0.",
+      "visible_text": "M\nx\n\t​\n\n∣\nker(I−M\nx\n\t​\n\n)\n⊥\n\t​\n\n=0.",
+      "tag": "SPAN"
+    },
+    {
+      "index": 50,
+      "display": false,
+      "source": "0\\le p_x\\le1/3",
+      "visible_text": "0≤p\nx\n\t​\n\n≤1/3",
+      "tag": "SPAN"
+    },
+    {
+      "index": 51,
+      "display": false,
+      "source": "z=000",
+      "visible_text": "z=000",
+      "tag": "SPAN"
+    },
+    {
+      "index": 52,
+      "display": true,
+      "source": "\\frac{\\dim\\ker(I-M_x)}{D}=\\frac18.",
+      "visible_text": "D\ndimker(I−M\nx\n\t​\n\n)\n\t​\n\n=\n8\n1\n\t​\n\n.",
+      "tag": "SPAN"
+    },
+    {
+      "index": 53,
+      "display": true,
+      "source": "\\frac{\\operatorname{Tr}M_x}{D}\n=\n\\frac{1+5p_x}{8}\n\\le\n\\frac{1+5/3}{8}\n=\n\\frac13.",
+      "visible_text": "D\nTrM\nx\n\t​\n\n\t​\n\n=\n8\n1+5p\nx\n\t​\n\n\t​\n\n≤\n8\n1+5/3\n\t​\n\n=\n3\n1\n\t​\n\n.",
+      "tag": "SPAN"
+    },
+    {
+      "index": 54,
+      "display": false,
+      "source": "p_x",
+      "visible_text": "p\nx\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 55,
+      "display": false,
+      "source": "0",
+      "visible_text": "0",
+      "tag": "SPAN"
+    },
+    {
+      "index": 56,
+      "display": true,
+      "source": "M_x|_{\\ker(I-M_x)^\\perp}\\preceq\\frac13I.",
+      "visible_text": "M\nx\n\t​\n\n∣\nker(I−M\nx\n\t​\n\n)\n⊥\n\t​\n\n⪯\n3\n1\n\t​\n\nI.",
+      "tag": "SPAN"
+    },
+    {
+      "index": 57,
+      "display": false,
+      "source": "p_x=0",
+      "visible_text": "p\nx\n\t​\n\n=0",
+      "tag": "SPAN"
+    },
+    {
+      "index": 58,
+      "display": false,
+      "source": "p_x=1/3",
+      "visible_text": "p\nx\n\t​\n\n=1/3",
+      "tag": "SPAN"
+    },
+    {
+      "index": 59,
+      "display": false,
+      "source": "m=\\operatorname{poly}(|x|)",
+      "visible_text": "m=poly(∣x∣)",
+      "tag": "SPAN"
+    },
+    {
+      "index": 60,
+      "display": true,
+      "source": "D=2^{m+3},",
+      "visible_text": "D=2\nm+3\n,",
+      "tag": "SPAN"
+    },
+    {
+      "index": 61,
+      "display": true,
+      "source": "\\begin{cases}\n6\\cdot2^m,&x\\in L,\\\\\n1\\cdot2^m,&x\\notin L.\n\\end{cases}",
+      "visible_text": "{\n6⋅2\nm\n,\n1⋅2\nm\n,\n\t​\n\nx∈L,\nx∈\n/\nL.\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 62,
+      "display": true,
+      "source": "\\frac34\n\\quad\\text{and}\\quad\n\\frac18.",
+      "visible_text": "4\n3\n\t​\n\nand\n8\n1\n\t​\n\n.",
+      "tag": "SPAN"
+    },
+    {
+      "index": 63,
+      "display": false,
+      "source": "\\mathsf{BQP}_1^{G_2}",
+      "visible_text": "BQP\n1\nG\n2\n\t​\n\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 64,
+      "display": false,
+      "source": "1/3",
+      "visible_text": "1/3",
+      "tag": "SPAN"
+    },
+    {
+      "index": 65,
+      "display": false,
+      "source": "x",
+      "visible_text": "x",
+      "tag": "SPAN"
+    },
+    {
+      "index": 66,
+      "display": true,
+      "source": "X_{\\rm in}(x)\\subseteq X_{\\rm out}(x)",
+      "visible_text": "X\nin\n\t​\n\n(x)⊆X\nout\n\t​\n\n(x)",
+      "tag": "SPAN"
+    },
+    {
+      "index": 67,
+      "display": false,
+      "source": "d",
+      "visible_text": "d",
+      "tag": "SPAN"
+    },
+    {
+      "index": 68,
+      "display": true,
+      "source": "\\beta_d(X_{\\rm in})=D,",
+      "visible_text": "β\nd\n\t​\n\n(X\nin\n\t​\n\n)=D,",
+      "tag": "SPAN"
+    },
+    {
+      "index": 69,
+      "display": true,
+      "source": "\\beta_d(X_{\\rm out})\n=\n\\operatorname{rank}\n\\left[\nH_d(X_{\\rm in})\\to H_d(X_{\\rm out})\n\\right]\n=\n\\dim\\ker(I-M_x),",
+      "visible_text": "β\nd\n\t​\n\n(X\nout\n\t​\n\n)=rank[H\nd\n\t​\n\n(X\nin\n\t​\n\n)→H\nd\n\t​\n\n(X\nout\n\t​\n\n)]=dimker(I−M\nx\n\t​\n\n),",
+      "tag": "SPAN"
+    },
+    {
+      "index": 70,
+      "display": true,
+      "source": "q_x:=\n\\frac{\\beta_d(X_{\\rm in}\\to X_{\\rm out})}\n{\\beta_d(X_{\\rm in})}\n=\n\\begin{cases}\n3/4,&x\\in L,\\\\[1mm]\n1/8,&x\\notin L.\n\\end{cases}",
+      "visible_text": "q\nx\n\t​\n\n:=\nβ\nd\n\t​\n\n(X\nin\n\t​\n\n)\nβ\nd\n\t​\n\n(X\nin\n\t​\n\n→X\nout\n\t​\n\n)\n\t​\n\n={\n3/4,\n1/8,\n\t​\n\nx∈L,\nx∈\n/\nL.\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 71,
+      "display": false,
+      "source": "d",
+      "visible_text": "d",
+      "tag": "SPAN"
+    },
+    {
+      "index": 72,
+      "display": true,
+      "source": "E=\\Omega\\!\\left(\\frac{\\eta^{28}g}{t^{26}}\\right),",
+      "visible_text": "E=Ω(\nt\n26\nη\n28\ng\n\t​\n\n),",
+      "tag": "SPAN"
+    },
+    {
+      "index": 73,
+      "display": false,
+      "source": "g",
+      "visible_text": "g",
+      "tag": "SPAN"
+    },
+    {
+      "index": 74,
+      "display": true,
+      "source": "\\theta=\\frac{3/4+1/8}{2}=\\frac7{16}.",
+      "visible_text": "θ=\n2\n3/4+1/8\n\t​\n\n=\n16\n7\n\t​\n\n.",
+      "tag": "SPAN"
+    },
+    {
+      "index": 75,
+      "display": true,
+      "source": "\\varepsilon<\\frac{3/4-1/8}{2}=\\frac5{16}",
+      "visible_text": "ε<\n2\n3/4−1/8\n\t​\n\n=\n16\n5\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 76,
+      "display": false,
+      "source": "1/24",
+      "visible_text": "1/24",
+      "tag": "SPAN"
+    },
+    {
+      "index": 77,
+      "display": false,
+      "source": "7/16",
+      "visible_text": "7/16",
+      "tag": "SPAN"
+    },
+    {
+      "index": 78,
+      "display": true,
+      "source": "\\boxed{\\mathsf{BQP}_1^{G_2}\\text{-hard}.}",
+      "visible_text": "BQP\n1\nG\n2\n\t​\n\n\t​\n\n-hard.\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 79,
+      "display": false,
+      "source": "\\mathcal G",
+      "visible_text": "G",
+      "tag": "SPAN"
+    },
+    {
+      "index": 80,
+      "display": true,
+      "source": "\\mathsf{BQP}_1^{\\mathcal G}\n\\subseteq\n\\mathsf{BQP}_1^{G_2}.",
+      "visible_text": "BQP\n1\nG\n\t​\n\n⊆BQP\n1\nG\n2\n\t​\n\n\t​\n\n.",
+      "tag": "SPAN"
+    },
+    {
+      "index": 81,
+      "display": false,
+      "source": "G_2",
+      "visible_text": "G\n2\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 82,
+      "display": false,
+      "source": "\\mathcal G",
+      "visible_text": "G",
+      "tag": "SPAN"
+    },
+    {
+      "index": 83,
+      "display": true,
+      "source": "\\mathsf{BQP}_1^{\\mathcal G}\n\\longrightarrow\n\\mathsf{BQP}_1^{G_2}\n\\longrightarrow\n\\text{eight-label source}\n\\longrightarrow\n\\text{weighted true normalized persistence}.",
+      "visible_text": "BQP\n1\nG\n\t​\n\n⟶BQP\n1\nG\n2\n\t​\n\n\t​\n\n⟶eight-label source⟶weighted true normalized persistence.",
+      "tag": "SPAN"
+    },
+    {
+      "index": 84,
+      "display": true,
+      "source": "\\boxed{\\mathsf{BQP}_1^{\\mathcal G}\\text{-hard}}",
+      "visible_text": "BQP\n1\nG\n\t​\n\n-hard\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 85,
+      "display": false,
+      "source": "\\mathsf{BQP}_1",
+      "visible_text": "BQP\n1\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 86,
+      "display": true,
+      "source": "p_x=1\n\\quad\\text{versus}\\quad\np_x\\le\\frac13.",
+      "visible_text": "p\nx\n\t​\n\n=1versusp\nx\n\t​\n\n≤\n3\n1\n\t​\n\n.",
+      "tag": "SPAN"
+    },
+    {
+      "index": 87,
+      "display": false,
+      "source": "p_x=1",
+      "visible_text": "p\nx\n\t​\n\n=1",
+      "tag": "SPAN"
+    },
+    {
+      "index": 88,
+      "display": false,
+      "source": "\\mathsf{SDQC}_1",
+      "visible_text": "SDQC\n1\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 89,
+      "display": false,
+      "source": "p_x<1",
+      "visible_text": "p\nx\n\t​\n\n<1",
+      "tag": "SPAN"
+    },
+    {
+      "index": 90,
+      "display": false,
+      "source": "1/8",
+      "visible_text": "1/8",
+      "tag": "SPAN"
+    },
+    {
+      "index": 91,
+      "display": false,
+      "source": "G_2",
+      "visible_text": "G\n2\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 92,
+      "display": false,
+      "source": "3/4",
+      "visible_text": "3/4",
+      "tag": "SPAN"
+    },
+    {
+      "index": 93,
+      "display": false,
+      "source": "1/8",
+      "visible_text": "1/8",
+      "tag": "SPAN"
+    },
+    {
+      "index": 94,
+      "display": false,
+      "source": "\\mathsf{BQP}_1^{G_2}",
+      "visible_text": "BQP\n1\nG\n2\n\t​\n\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 95,
+      "display": false,
+      "source": "\\mathsf{BQP}_1^{\\mathcal G}",
+      "visible_text": "BQP\n1\nG\n\t​\n",
+      "tag": "SPAN"
+    },
+    {
+      "index": 96,
+      "display": false,
+      "source": "1/3",
+      "visible_text": "1/3",
+      "tag": "SPAN"
+    },
+    {
+      "index": 97,
+      "display": false,
+      "source": "G_2",
+      "visible_text": "G\n2\n\t​\n",
+      "tag": "SPAN"
+    }
+  ],
+  "visible_text": "Verdict\n\nThe eight-label source construction is mathematically valid under the supplied hypotheses. The compressed acceptance operator is exactly\n\nM\nx\n\t​\n\n=diag(1,p\nx\n\t​\n\n,p\nx\n\t​\n\n,p\nx\n\t​\n\n,p\nx\n\t​\n\n,p\nx\n\t​\n\n,0,0)⊗I\ndummy\n\t​\n\n,\n\nnot merely trace-equivalent to that matrix. Coherent label inputs, verifier-output entanglement, and reversible scratch do not create off-diagonal label blocks.\n\nConsequently, assuming the corrected geometric transfer theorem, additive approximation of true normalized persistence for nested weighted clique complexes with inverse-polynomial gaps above both complete endpoint kernels is\n\nBQP\n1\nG\n2\n\t​\n\n\t​\n\n-hard\n\t​\n\n,G\n2\n\t​\n\n={X,CX,CCX,H⊗H}.\n\nThe target ratio is exactly 3/4 in YES and 1/8 in NO. Error 1/24 is safe.\n\nI did not independently source-check Rudolph’s Definition 2.2, Theorems 2.3 or 3.4. As instructed, I treat the packet’s descriptions of those statements as hypotheses. I likewise treat the geometric transfer theorem and its finite palette as supplied. The bounded task and its source assumptions are stated explicitly in the packet. \n\nPRO_BQP1_SOURCE_PACKET_2026-09-…\n\nThere is no invalid inference in the proposed composition. One essential scope condition is that Q\nx\n\t​\n\n has a fixed clean input, so its compressed acceptance operator is the scalar p\nx\n\t​\n\n. With a mixed witness or unresolved input space, the five conditional blocks would contain an operator, not the scalar p\nx\n\t​\n\n.\n\n1. Exact operator calculation\n\nLet Z≅(C\n2\n)\n⊗3\n be the label register and D\ndum\n\t​\n\n the ignored mixed dummy register. Let H\nQ\n\t​\n\n contain all verifier qubits, initialized to a fixed clean state ∣0\nQ\n\t​\n\n⟩. Write\n\nΠ\nq\n\t​\n\n=∣1⟩⟨1∣\nq\n\t​\n\n⊗I\nrest\n\t​\n\n\nfor the verifier’s output projector, so\n\np\nx\n\t​\n\n=⟨0\nQ\n\t​\n\n∣Q\nx\n†\n\t​\n\nΠ\nq\n\t​\n\nQ\nx\n\t​\n\n∣0\nQ\n\t​\n\n⟩.\n\nLet C be the reversible classical circuit that, using clean scratch and a fresh clean decision bit a, computes\n\nA(z,q)=[z=000]∨(q∧[z∈T]),T={001,010,011,100,101},\n\ninto a, and then uncomputes its scratch. It preserves z and q. Therefore it is block diagonal in the label basis:\n\nC=\nz\n∑\n\t​\n\n∣z⟩⟨z∣⊗C\nz\n\t​\n\n.\n\nConjugating the final decision projector\n\nΠ\na\n\t​\n\n=∣1⟩⟨1∣\na\n\t​\n\n\ngives, after restriction to the clean decision/scratch input,\n\nC\n†\nΠ\na\n\t​\n\nC=\nz\n∑\n\t​\n\n∣z⟩⟨z∣⊗E\nz\n\t​\n\n,\n\nwhere\n\nE\nz\n\t​\n\n=\n⎩\n⎨\n⎧\n\t​\n\nI\nH\nQ\n\t​\n\n\t​\n\n,\nΠ\nq\n\t​\n\n,\n0,\n\t​\n\nz=000,\nz∈T,\nz∈{110,111}.\n\t​\n\n\nNow let the total unitary be\n\nU\nx\n\t​\n\n=C(I\nZ\n\t​\n\n⊗Q\nx\n\t​\n\n),\n\nwith identities on the dummy register suppressed, and let J append all clean verifier, decision, and scratch qubits. The compressed acceptance operator on Z⊗D\ndum\n\t​\n\n is\n\nM\nx\n\t​\n\n\t​\n\n=J\n†\nU\nx\n†\n\t​\n\nΠ\na\n\t​\n\nU\nx\n\t​\n\nJ\n=\nz\n∑\n\t​\n\n∣z⟩⟨z∣⟨0\nQ\n\t​\n\n∣Q\nx\n†\n\t​\n\nE\nz\n\t​\n\nQ\nx\n\t​\n\n∣0\nQ\n\t​\n\n⟩⊗I\ndummy\n\t​\n\n=diag(1,p\nx\n\t​\n\n,p\nx\n\t​\n\n,p\nx\n\t​\n\n,p\nx\n\t​\n\n,p\nx\n\t​\n\n,0,0)⊗I\ndummy\n\t​\n\n.\n\t​\n\n\nThis proves the claimed operator identity from the packet. \n\nPRO_BQP1_SOURCE_PACKET_2026-09-…\n\nWhy the possible objections fail\n\nCoherent labels. Off-diagonal terms ∣z⟩⟨z\n′\n∣ cannot arise because both the reversible predicate and its conjugated measurement preserve the label and are block diagonal in z.\n\nEntanglement of q with verifier workspace. In a conditional block, compression produces\n\n⟨0\nQ\n\t​\n\n∣Q\nx\n†\n\t​\n\nΠ\nq\n\t​\n\nQ\nx\n\t​\n\n∣0\nQ\n\t​\n\n⟩=p\nx\n\t​\n\n.\n\nNo product-state assumption about the final output bit is used.\n\nScratch. Computing the predicate into a fresh decision bit and reversing the scratch yields the displayed clean compression exactly. The decision bit must be fresh; the construction should not be described as irreversibly overwriting q.\n\nDummy bits. They are untouched by every unitary and measurement, so the operator tensors with their identity.\n\n2. Exact gate compatibility\n\nThe construction remains exactly inside G\n2\n\t​\n\n.\n\nQ\nx\n\t​\n\n is run unconditionally, so no controlled-Q\nx\n\t​\n\n, controlled H⊗H, or controlled internal gate is needed.\n\nThe fixed Boolean predicate can be implemented using X, CX and CCX with clean ancillas.\n\nNegative controls are implemented by conjugating the corresponding wire with X.\n\nAny constant-size multi-controlled classical operation can be decomposed exactly into CCX gates with clean scratch.\n\nThe output is one fresh qubit measured in the computational basis.\n\nThus the source circuit uses only\n\nX,CX,CCX,H⊗H.\n\nNo single H, mixed-spectator conversion, approximate synthesis, or complex phase is introduced by this lemma.\n\n3. Complete spectrum\n\nLet m be the number of ignored mixed dummy bits. Every displayed label eigenvalue then has multiplicity 2\nm\n, and\n\nD=8⋅2\nm\n=2\nm+3\n.\nYES case\n\nPerfect completeness gives p\nx\n\t​\n\n=1. Hence\n\nM\nx\n\t​\n\n=diag(1,1,1,1,1,1,0,0)⊗I\ndummy\n\t​\n\n.\n\nTherefore\n\nD\nTrM\nx\n\t​\n\n\t​\n\n=\n8\n6\n\t​\n\n=\n4\n3\n\t​\n\n,\n\nand\n\nD\ndimker(I−M\nx\n\t​\n\n)\n\t​\n\n=\n8\n6\n\t​\n\n=\n4\n3\n\t​\n\n.\n\nOn the orthogonal complement of the perfect eigenspace, M\nx\n\t​\n\n is exactly zero:\n\nM\nx\n\t​\n\n∣\nker(I−M\nx\n\t​\n\n)\n⊥\n\t​\n\n=0.\nNO case\n\nHere 0≤p\nx\n\t​\n\n≤1/3. The only eigenvalue-one block is z=000. Thus\n\nD\ndimker(I−M\nx\n\t​\n\n)\n\t​\n\n=\n8\n1\n\t​\n\n.\n\nThe normalized trace is\n\nD\nTrM\nx\n\t​\n\n\t​\n\n=\n8\n1+5p\nx\n\t​\n\n\t​\n\n≤\n8\n1+5/3\n\t​\n\n=\n3\n1\n\t​\n\n.\n\nEvery nonperfect eigenvalue is either p\nx\n\t​\n\n or 0, so\n\nM\nx\n\t​\n\n∣\nker(I−M\nx\n\t​\n\n)\n⊥\n\t​\n\n⪯\n3\n1\n\t​\n\nI.\n\nThis includes both edge cases p\nx\n\t​\n\n=0 and p\nx\n\t​\n\n=1/3.\n\n4. Growing denominator\n\nAdding m=poly(∣x∣) ignored mixed bits gives\n\nD=2\nm+3\n,\n\nwhile the perfect multiplicities are\n\n{\n6⋅2\nm\n,\n1⋅2\nm\n,\n\t​\n\nx∈L,\nx∈\n/\nL.\n\t​\n\n\nThus the normalized fractions remain\n\n4\n3\n\t​\n\nand\n8\n1\n\t​\n\n.\n\nThere is no mathematical degeneracy: a target algorithm approximating the ratio still decides the original language. The denominator can be exponentially large relative to the succinct graph description while the number of added qubits and graph vertices remains polynomial.\n\nThis is nevertheless padding-generated normalization. It should not be advertised as evidence that the computational difficulty originates from nontrivial operations on the mixed dummy subsystem.\n\n5. Conditional hardness theorem\nTheorem\n\nAssume:\n\nthe packet’s supplied characterization of uniform exact BQP\n1\nG\n2\n\t​\n\n\t​\n\n verifiers with clean all-zero inputs, one computational-basis output measurement, perfect completeness, and soundness at most 1/3;\n\nthe corrected geometric transfer theorem, including its finite gadget certificates and all-chain concentration conclusion.\n\nThen there is a polynomial mapping from an input x to nested weighted clique complexes\n\nX\nin\n\t​\n\n(x)⊆X\nout\n\t​\n\n(x)\n\nand a common degree d, such that\n\nβ\nd\n\t​\n\n(X\nin\n\t​\n\n)=D,\nβ\nd\n\t​\n\n(X\nout\n\t​\n\n)=rank[H\nd\n\t​\n\n(X\nin\n\t​\n\n)→H\nd\n\t​\n\n(X\nout\n\t​\n\n)]=dimker(I−M\nx\n\t​\n\n),\n\nand hence\n\nq\nx\n\t​\n\n:=\nβ\nd\n\t​\n\n(X\nin\n\t​\n\n)\nβ\nd\n\t​\n\n(X\nin\n\t​\n\n→X\nout\n\t​\n\n)\n\t​\n\n={\n3/4,\n1/8,\n\t​\n\nx∈L,\nx∈\n/\nL.\n\t​\n\n\nBoth endpoint degree-d Laplacians have inverse-polynomial gaps above their complete kernels. Under the theorem’s conservative locality-six parameters, the weighted gap floor remains\n\nE=Ω(\nt\n26\nη\n28\ng\n\t​\n\n),\n\nwith the history-Hamiltonian g inverse polynomial. The exact geometric conclusions being invoked are those stated in the supplied restricted theorem. \n\nPRO_BQP1_SOURCE_PACKET_2026-09-…\n\nThe midpoint of the two target values is\n\nθ=\n2\n3/4+1/8\n\t​\n\n=\n16\n7\n\t​\n\n.\n\nAny additive error\n\nε<\n2\n3/4−1/8\n\t​\n\n=\n16\n5\n\t​\n\n\nsuffices. In particular, error 1/24 is safely sufficient. Thus the promise-decision version obtained by thresholding at 7/16, and the corresponding additive-approximation problem, are conditionally\n\nBQP\n1\nG\n2\n\t​\n\n\t​\n\n-hard.\n\t​\n\n6. Covered cyclotomic gate families\n\nI did not check the cited Rudolph results. Under the supplied statements:\n\nTheorem 3.4 gives, for every fixed finite gate set G over the covered power-of-two cyclotomic fields,\n\nBQP\n1\nG\n\t​\n\n⊆BQP\n1\nG\n2\n\t​\n\n\t​\n\n.\n\nTheorem 2.3 supplies exact soundness reduction to the required constant while preserving perfect completeness for gate sets containing G\n2\n\t​\n\n.\n\nTherefore, for each such fixed G, compose:\n\nBQP\n1\nG\n\t​\n\n⟶BQP\n1\nG\n2\n\t​\n\n\t​\n\n⟶eight-label source⟶weighted true normalized persistence.\n\nSubject to those source statements being uniform and polynomial-overhead as supplied, the target is also\n\nBQP\n1\nG\n\t​\n\n-hard\n\t​\n\n\nfor every covered fixed gate family separately.\n\nThis is not a gate-independent BQP\n1\n\t​\n\n theorem covering arbitrary exact gates.\n\n7. Why the earlier obstruction is avoided\n\nThe same-fraction obstruction concerned trace distinctions carried entirely by eigenvalues strictly below one. This construction starts from perfect completeness:\n\np\nx\n\t​\n\n=1versusp\nx\n\t​\n\n≤\n3\n1\n\t​\n\n.\n\nThe five conditional label blocks become exact eigenvalue-one blocks precisely when p\nx\n\t​\n\n=1. In the NO case they remain strictly below one. The construction therefore deliberately converts perfect completeness into a perfect-space multiplicity difference.\n\nIt does not repair arbitrary-threshold SDQC\n1\n\t​\n\n. If both promise cases had p\nx\n\t​\n\n<1, all five conditional blocks would be nonperfect in both cases, and both perfect fractions would equal 1/8, regardless of the trace gap.\n\nStatus table\nClaim\tStatus\nEight-label compressed operator identity\tProved\nRobustness to coherent labels and verifier garbage\tProved\nExact G\n2\n\t​\n\n gate compatibility\tProved\nFractions 3/4 versus 1/8\tProved\nGrowing denominator via idle mixed bits\tValid, though padding-generated\nWeighted true-normalized-persistence hardness for BQP\n1\nG\n2\n\t​\n\n\t​\n\n\tValid conditional on the supplied geometric theorem\nHardness for each covered cyclotomic BQP\n1\nG\n\t​\n\n\tConditional on supplied Rudolph Theorems 2.3 and 3.4\nRudolph source statements\tNot independently checked here\nUnweighted conclusion\tNot concluded in this gate\nOrdinary BQP or unrestricted SDQC1 hardness\tNot implied\nNovelty or paper readiness\tNot assessed\n\nThe packet itself applies the same firewall between the limited gate-dependent result and the withheld stronger claims. \n\nPRO_BQP1_SOURCE_PACKET_2026-09-…\n\nNext finite gate\n\nIndependently verify Rudolph’s Definition 2.2 and Theorems 2.3 and 3.4 at the exact interface needed here: uniformity, polynomial overhead, clean all-zero initialization, one computational-basis output bit, preservation of perfect completeness, final soundness at most 1/3, and exact use of G\n2\n\t​\n\n without hidden controlled gates or approximate compilation.",
+  "visible_text_bytes": 10712,
+  "visible_text_sha256": "92c090ce3124a3a4b621b67da3188b74f3f72f4912d1e576a7c0dabd191d0770",
+  "html_length": 200011,
+  "html_sha256": "d4f3ccc1fcdf7b5dc677f1bf330f4c501ae7c66224c2afb3572ab9daa4030e0b",
+  "clipboard_crosscheck": {
+    "accepted": false,
+    "browser_clipboard_bytes": 0,
+    "os_clipboard_bytes": 13222,
+    "os_clipboard_sha256": "fb279f228c62e01e1f4e1f688607d43788206d5b696c9834b048227714d829c2",
+    "note": "Copy response did not replace the clipboard. The operating-system clipboard still contained the previously archived message-7 Markdown and was rejected as stale."
+  },
+  "source_checking": "No primary-source or literature checking by this Pro response; Rudolph and geometric statements were treated as supplied hypotheses."
+}

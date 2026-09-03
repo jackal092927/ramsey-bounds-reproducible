@@ -247,7 +247,7 @@ have the same perfect-space fraction and can satisfy opposite trace promises. Ex
 
 Under (1)-(2), YES instances satisfy \(f\ge1/2\) and NO instances satisfy \(f\le1/3\), so \(\delta_f=1/6\). Estimating (5) to additive error strictly below \(1/12\), for example \(1/24\), distinguishes these promises. This consequence does not prove BQP, DQC1, or unrestricted \(\mathsf{SDQC}_1\) hardness. Defining a restricted gate-dependent class around this promise is formally possible but adds no standard-class equivalence.
 
-A separate [eight-label source lemma](NORMALIZED_BQP1_SOURCE_GATE.md), derived after the source-complexity review, locally reduces exact \(\mathsf{BQP}_1^{G_2}\) verification to this standard-constant promise while forcing perfect fractions \(3/4\) and \(1/8\). Its [independent local algebra/interface review](NORMALIZED_BQP1_SOURCE_GATE_INDEPENDENT_REVIEW.md) passed. Therefore (3)--(7) give weighted true-normalized-persistence hardness for that recognized gate-dependent class under the theorem's recorded geometric hypotheses. This limited upgrade does not affect the rejection of arbitrary-threshold \(\mathsf{SDQC}_1\), and it is still pending external Pro review and a novelty audit.
+A separate [eight-label source lemma](NORMALIZED_BQP1_SOURCE_GATE.md), derived after the source-complexity review, reduces exact \(\mathsf{BQP}_1^{G_2}\) verification to this standard-constant promise while forcing perfect fractions \(3/4\) and \(1/8\). Its independent local algebra/interface review and the subsequent bounded Pro audit passed; the [independent disposition](PRO_BQP1_SOURCE_DISPOSITION_2026-09-03.md) accepts the composition under this theorem's displayed hypotheses. Therefore (3)--(7) give weighted true-normalized-persistence hardness for that recognized gate-dependent class. This limited upgrade does not affect the rejection of arbitrary-threshold \(\mathsf{SDQC}_1\). Novelty remains open.
 
 ## 7. Remaining claims gate
 
@@ -255,8 +255,8 @@ The mathematical package now has a complete fixed local palette, a clean conditi
 
 1. audit every dependency in this synthesis against its owning proof/certificate;
 2. establish novelty of the degenerate-kernel whole-gap plus normalized filtered-rank package;
-3. obtain an external bounded review of the eight-label \(\mathsf{BQP}_1^{G_2}\) source and retain its exact gate-dependent scope;
-4. perform a primary-source collision audit against nearby harmonic-persistence hardness and exact-kernel/clique-homology reductions;
+3. perform a primary-source collision audit against nearby harmonic-persistence hardness and exact-kernel/clique-homology reductions;
+4. decide whether the padding-generated denominator weakens the normalized claim's conceptual value;
 5. decide whether the poor gap exponent is acceptable for a theory result despite its lack of practical value.
 
 The strongest locally defensible claim is the explicit transformation (3)--(7), the separated-promise corollary (19)--(21), and the weighted \(\mathsf{BQP}_1^{G_2}\)-hard composition above. Ordinary \(\mathsf{BQP}\), unrestricted \(\mathsf{SDQC}_1\), gate-independent \(\mathsf{BQP}_1\), unconditional unweighted hardness and paper readiness remain withheld.

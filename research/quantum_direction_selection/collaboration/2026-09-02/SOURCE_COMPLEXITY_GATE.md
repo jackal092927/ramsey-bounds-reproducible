@@ -127,4 +127,4 @@ This changes the decision as follows:
 - **STILL STOPPED:** unrestricted \(\mathsf{SDQC}_1\), ordinary \(\mathsf{BQP}\), and gate-independent arbitrary \(\mathsf{BQP}_1\) hardness;
 - **CONDITIONAL:** the unweighted conclusion still depends on a separate common-copy unweighting theorem.
 
-The next gate is no longer source existence. It is primary-source novelty/positioning against nearby harmonic-persistence hardness and an external Pro audit of this exact interface.
+The bounded Pro audit and independent disposition have now accepted this exact interface under the displayed hypotheses. The next gate is no longer source existence; it is primary-source novelty and positioning against nearby harmonic-persistence hardness.

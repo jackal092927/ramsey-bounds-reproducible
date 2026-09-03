@@ -1,6 +1,6 @@
 # A nondegenerate BQP1 source for true normalized persistence
 
-September 3, 2026. **LOCAL DERIVATION; RUDOLPH PRIMARY SOURCE CHECKED; INDEPENDENT LOCAL ALGEBRA/INTERFACE REVIEW PASSED; PRO REVIEW PENDING; NOVELTY OPEN.**
+September 3, 2026. **LOCAL DERIVATION; RUDOLPH PRIMARY SOURCE CHECKED; INDEPENDENT LOCAL ALGEBRA/INTERFACE REVIEW PASSED; BOUNDED PRO REVIEW COMPLETED AND DISPOSITIONED; NOVELTY OPEN.**
 
 This note strengthens the explicit separated-source corollary without reviving the invalid arbitrary-threshold \(\mathsf{SDQC}_1\) inference. The direct output is a hardness result relative to an exact gate set. It is not ordinary gate-independent \(\mathsf{BQP}\)-hardness.
 
@@ -92,7 +92,7 @@ The lemma itself starts from the standard \(1\)-versus-\(1/3\) \(\mathsf{BQP}_1^
 
 The checked Definition 2.2 initializes the BQP verifier's circuit qubits in a computational-basis all-zero state and measures one computational-basis output qubit. Thus \(Q_x\) contributes no unknown input register to the compressed operator; its acceptance block is the scalar \(p_x\). The only mixed logical coordinates introduced above are the preserved label and ignored dummy bits. Because the final predicate is diagonal in the label and output computational bases, compression through the clean ancillas gives (3), with no off-diagonal label blocks. The construction is uniform, adds constant active logic plus polynomially many ignored qubits, and stays exactly inside \(G_2\).
 
-This local check found no algebraic or interface counterexample. A separate [independent local review](NORMALIZED_BQP1_SOURCE_GATE_INDEPENDENT_REVIEW.md) rederived the block compression and checked coherent labels, clean/mixed registers, reversible scratch, denominator growth, uniformity and exact gate support. Neither check replaces the requested bounded Pro audit or establishes novelty of the resulting persistence theorem.
+This local check found no algebraic or interface counterexample. A separate [independent local review](NORMALIZED_BQP1_SOURCE_GATE_INDEPENDENT_REVIEW.md) rederived the block compression and checked coherent labels, clean/mixed registers, reversible scratch, denominator growth, uniformity and exact gate support. The subsequent [bounded Pro audit](PRO_BQP1_SOURCE_REVIEW_2026-09-03.md) independently accepted the operator and composition; its [disposition](PRO_BQP1_SOURCE_DISPOSITION_2026-09-03.md) records the local recheck and evidence boundary. None of these checks establishes novelty of the resulting persistence theorem.
 
 ## Optional exact power-amplification note
 

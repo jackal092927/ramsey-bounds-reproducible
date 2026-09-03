@@ -80,13 +80,15 @@ Consolidation started September 2, 2026 PDT; new dispatch and follow-up setup co
 | M74 | Rudolph BQP1 gate-source check | **TARGETED PRIMARY SOURCE CHECK** | arXiv v2 Definition 2.2 and Theorems 2.3/3.4 support clean input/output, exact \(G_2\) error reduction, and cyclotomic-gate inclusion; optional QSAT and Marriott--Watrous routes not needed or checked |
 | M75 | Eight-label BQP1 bounded review packet | **PREPARED AND SOURCE-FROZEN** | Five-file 36077-byte packet includes the source lemma and independent local audit, freezing the exact operator/interface question |
 | M76 | BQP1 source-review checkpoint | **PUSHED AND REMOTE-VERIFIED**, f11cb4ed83bdbc7d738b6b159e7267850f49ad92 | Source lemma, Rudolph source check, independent local audit and bounded packet were synchronized before external submission |
-| M77 | Eight-label BQP1 source/interface audit | **SENT AND RUNNING**, user message 8; UI 2026-09-03 12:48 PM PDT | Exact prompt and packet lineage recorded in PRO_BQP1_SOURCE_DISPATCH_RECEIPT_2026-09-03.md; fresh DOM showed one new message and active Pro run |
+| M77 | Eight-label BQP1 source/interface audit | **COMPLETED BY M79**, user message 8; UI 2026-09-03 12:48 PM PDT | Exact prompt and packet lineage recorded in PRO_BQP1_SOURCE_DISPATCH_RECEIPT_2026-09-03.md; submitted once |
 | M78 | Message-8 dispatch archive | **PUSHED AND REMOTE-VERIFIED**, f6b4681e7e85d4a57afe5c50a41afb1c4417e66a | Running-state receipt, lifecycle ledger and workflow are synchronized; the existing hourly heartbeat now tracks collection and independent disposition of message 8 |
+| M79 | BQP1 source/interface Pro review | **COMPLETED AND COLLECTED**, user message 8; UI Worked for 5m 56s | Full response, 98 equation sources and DOM digest archived; Pro explicitly performed no primary-source checking |
+| M80 | BQP1 source disposition | **CONDITIONAL COMPOSITION ACCEPTED** | Operator identity, coherent-label interface, exact \(G_2\) gates, \(3/4\)-versus-\(1/8\) fraction and weighted hardness composition pass; padding-generated denominator retained as an impact risk |
 
 ## Current unresolved research gates
 
-1. Collect and independently disposition the running bounded Pro interface/composition review of the eight-label \(\mathsf{BQP}_1^{G_2}\) source before promoting the named gate-dependent hardness claim beyond the locally checked theorem package.
-2. Determine whether the arbitrary-geometric-chain concentration theorem over degenerate logical kernels, its whole-kernel gap, natural filtered rank, and the eight-label non-all-or-none source combination are new, already implicit, or already explicit.
+1. Determine whether the arbitrary-geometric-chain concentration theorem over degenerate logical kernels, its whole-kernel gap, natural filtered rank, and the eight-label non-all-or-none source combination are new, already implicit, or already explicit.
+2. Decide whether padding-generated denominator growth leaves enough conceptual substance for a high-impact normalized-persistence claim.
 3. Keep unrestricted \(\mathsf{SDQC}_1\) stopped; the eight-label construction uses perfect completeness and does not repair arbitrary trace thresholds.
 4. Evaluate whether the persistent-Laplacian theorem supplies sufficient additional substance and whether the poor polynomial gap exponent is acceptable for a structural TCS result.
 5. Prove or reject the separate common-copy unweighting theorem before any unconditional unweighted claim.

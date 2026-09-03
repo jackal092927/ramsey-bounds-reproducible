@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-03T19:53:34Z",
+  "updated_at": "2026-09-03T20:03:52Z",
   "objective": "Review and advance true normalized persistence toward a substantial TCS theorem; archive every useful positive/negative milestone and Pro result.",
   "repository": {
     "url": "https://github.com/jackal092927/ramsey-bounds-reproducible",
@@ -16,8 +16,8 @@
     "topic": "Quantum TDA functorial unweighting and theorem mechanisms",
     "url": "https://chatgpt.com/c/6a98c05a-ecf4-83e8-b356-4e20dc3fde3f",
     "account": "visible identity matched local personal Pro channel registry",
-    "previous_response": "message_7_collected_and_checked",
-    "new_request": "sent_running",
+    "previous_response": "message_8_collected_and_checked",
+    "new_request": "completed_collected_checked",
     "current_request": {
       "source_commit": "f11cb4ed83bdbc7d738b6b159e7267850f49ad92",
       "message_file": "PRO_BQP1_SOURCE_SUBMISSION_2026-09-03.md",
@@ -36,14 +36,18 @@
       "failed_assistant_attempts_before_this_request": 1,
       "sent_ui_local_time": "2026-09-03 12:48 PM America/Los_Angeles",
       "sent_running_observed_at": "2026-09-03T19:50:02Z",
-      "last_observed_at": "2026-09-03T19:50:02Z",
-      "last_observation": "Exactly eight user messages; final turn contains the packet and frozen prompt; composer empty; Stop answering visible; activity read Composed the hardness argument.",
+      "last_observed_at": "2026-09-03T19:56:12.693Z",
+      "last_observation": "Completed eighth-request answer: Worked for 5m 56s, no Stop answering. Full response and 98 equation sources archived; authenticated personal Pro identity remained the verified browser session.",
       "receipt": "PRO_BQP1_SOURCE_DISPATCH_RECEIPT_2026-09-03.md",
       "scope": "Bounded <=2000-word exact eight-label acceptance-operator/interface and gate-dependent BQP1 source-composition audit; no browsing, gadget review, novelty, unweighted unconditionality, ordinary BQP or unrestricted SDQC1 promotion.",
       "prompt_verification": "1079-character browser text matched the 1080-byte prepared file after whitespace normalization; exactly one completed attachment, enabled Send and no active run before submission; fresh DOM after submission showed one new user turn and no duplicate.",
       "source_basis": "Targeted local check of Rudolph arXiv:2411.02681v2 Definition 2.2 and Theorems 2.3/3.4 plus independent local algebra/interface audit; complete paper and priority audit not performed.",
-      "terminal_status": "running; no mathematical conclusion collected yet",
-      "source_checking": "The request instructs Pro to distinguish source checking not performed; no response conclusion exists yet."
+      "terminal_status": "completed, collected and independently checked; exact source composition accepted under displayed hypotheses",
+      "source_checking": "No primary-source or literature checking by this Pro response. Targeted Rudolph checking was performed locally before dispatch; full paper and novelty audits remain open.",
+      "completed_collected_at": "2026-09-03T19:56:12.693Z",
+      "response_file": "PRO_BQP1_SOURCE_REVIEW_2026-09-03.md",
+      "capture_file": "PRO_BQP1_SOURCE_REVIEW_CAPTURE_2026-09-03.json",
+      "disposition_file": "PRO_BQP1_SOURCE_DISPOSITION_2026-09-03.md"
     },
     "request_history": [
       {
@@ -197,7 +201,7 @@
       "attachment_sha256": "4f68ce7c35596f5ae0c1aaa80891de9cc27880b0d9d673818b2dc05cfeb38934",
       "intended_user_message_number": 8,
       "scope": "Bounded <=2000-word exact operator/interface and gate-dependent BQP1 source-composition audit; no browsing, gadget review, novelty or unrestricted-class promotion.",
-      "status": "submitted_running",
+      "status": "completed_collected_checked",
       "source_commit": "f11cb4ed83bdbc7d738b6b159e7267850f49ad92",
       "submission_file": "PRO_BQP1_SOURCE_SUBMISSION_2026-09-03.md",
       "submission_bytes": 1080,
@@ -240,13 +244,15 @@
     "source_complexity_pro_review": "Completed and collected with 113 exact equation sources; algebraic conclusions independently dispositioned. Pro performed no primary-source checking.",
     "bqp1_eight_label_source": "Local derivation and independent local algebra/interface review pass: exact G2 perfect-completeness verifier maps to diag(1,p,p,p,p,p,0,0) on a mixed 3-bit label, with fractions 3/4 versus 1/8 and off-perfect ceiling <=1/3. Bounded external Pro review pending.",
     "bqp1_primary_source_check": "Rudolph arXiv:2411.02681v2 Definition 2.2 and Theorems 2.3/3.4 checked for clean BQP1 interface, exact G2 soundness reduction, and cyclotomic gate-set inclusion. Optional TQC and Marriott-Watrous routes are not needed for the core lemma.",
-    "bqp1_independent_review": "NORMALIZED_BQP1_SOURCE_GATE_INDEPENDENT_REVIEW.md; block compression, coherent labels, clean/mixed register split, reversible scratch, dummy denominator, exact gate support and uniformity passed. Novelty and downstream geometry were outside scope."
+    "bqp1_independent_review": "NORMALIZED_BQP1_SOURCE_GATE_INDEPENDENT_REVIEW.md; block compression, coherent labels, clean/mixed register split, reversible scratch, dummy denominator, exact gate support and uniformity passed. Novelty and downstream geometry were outside scope.",
+    "bqp1_pro_review": "Completed and collected with 98 exact equation sources; operator/interface and conditional weighted composition accepted after independent disposition. Pro performed no source checking.",
+    "bqp1_source_gate": "CLOSED at weighted BQP1^G2 hardness under the recorded geometric theorem; values 3/4 versus 1/8, threshold 7/16, additive error 1/24 safe. Denominator growth is padding-generated."
   },
   "github": {
-    "status": "bqp1_message8_dispatch_archive_pushed_remote_verified",
+    "status": "bqp1_review_integration_prepared_for_commit",
     "review_source_commit": "f11cb4ed83bdbc7d738b6b159e7267850f49ad92",
     "verification": "Source checkpoint f11cb4e and dispatch archive f6b4681 were each matched by local HEAD/commit and git ls-remote after push; the frozen packet remains 36077 bytes with SHA-256 4f68ce7c35596f5ae0c1aaa80891de9cc27880b0d9d673818b2dc05cfeb38934.",
-    "receipt_note": "The source checkpoint f11cb4e is remote-verified. Message 8 was submitted once with the frozen 36077-byte packet and is running; dispatch evidence is in PRO_BQP1_SOURCE_DISPATCH_RECEIPT_2026-09-03.md.",
+    "receipt_note": "Message 8 completed and its full response, exact formula capture and independent disposition are prepared for synchronization. Existing dispatch commit 896b027 is remote-verified.",
     "dispatch_commit": "f6b4681e7e85d4a57afe5c50a41afb1c4417e66a"
   },
   "follow_up": {
@@ -258,11 +264,11 @@
     "workflow": "FOLLOW_UP_WORKFLOW.md",
     "stop": "Pause when a substantial scoped result or documented stopping conclusion is reached, or user intervention is necessary.",
     "pending_for_next_completed_response": [
-      "Archive the complete message-8 answer, including formulas and explicit statements about source checking not performed.",
-      "Independently disposition every operator, interface, gate-set and complexity-composition claim before adoption.",
-      "If the source composition survives, freeze the strongest weighted BQP1^G2 theorem and then open a primary-source novelty collision audit; keep unweighted and unrestricted SDQC1 claims conditional or stopped."
+      "Run a primary-source collision audit focused on arbitrary-chain concentration over degenerate logical kernels, whole-kernel positive gap, and natural filtered rank.",
+      "Separate exact multiplicity, normalization definitions, quotient/min-max steps and credited gadget ingredients from any genuine delta.",
+      "Assess whether the padding-generated denominator and poor polynomial gap leave a credible high-quality TCS contribution; preserve negative findings and stop if the combined theorem is already explicit."
     ],
-    "phase": "Message 8 sent once and running from source commit f11cb4e. Its bounded task audits the eight-label BQP1 exact operator/interface and the gate-dependent weighted-hardness composition. Novelty remains the next gate after collection and disposition.",
+    "phase": "Message 8 completed, collected and independently dispositioned. The weighted BQP1^G2 composition is accepted under the geometric hypotheses; the next active gate is primary-source novelty collision and impact assessment, including the padding-generated denominator.",
     "automation_prompt_updated_for_current_request": true,
     "automation_updated_at": "2026-09-03T19:53:34Z"
   },
