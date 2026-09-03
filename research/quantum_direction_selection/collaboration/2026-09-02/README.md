@@ -29,6 +29,8 @@
 - [八标签 BQP1 source lemma](NORMALIZED_BQP1_SOURCE_GATE.md)与[独立接口审查](NORMALIZED_BQP1_SOURCE_GATE_INDEPENDENT_REVIEW.md)：在第七条答复之后得到的本地构造，把 exact \(G_2\) 的 perfect-completeness verifier 变为 perfect fraction \(3/4\) 对 \(1/8\)；代数、clean/mixed interface、dummy denominator、exact gates 与 Rudolph 原始定义均已本地核查。外部 Pro 复核与 novelty gate 尚未完成。
 - [八标签 BQP1 有界审查包](PRO_BQP1_SOURCE_PACKET_2026-09-03.md)与[发送回执](PRO_BQP1_SOURCE_DISPATCH_RECEIPT_2026-09-03.md)：第八条请求已在原 Pro 5/5 会话运行；仅核对 acceptance operator、clean/mixed interface、\(G_2\) 精确实现、denominator 与 gate-dependent hardness composition，不做 gadget 或 novelty 审查。
 - [八标签 BQP1 完整审查](PRO_BQP1_SOURCE_REVIEW_2026-09-03.md)与[独立处理意见](PRO_BQP1_SOURCE_DISPOSITION_2026-09-03.md)：第八条答复已完成并收集，98 个公式完整归档；exact operator 与受限加权 hardness composition 通过，padding-generated denominator 被保留为影响力风险。
+- [严格新颖性碰撞审计](NOVELTY_COLLISION_AUDIT_2026-09-03.md)：对六项核心来源做了定点复查；当前价值评为 **MEDIUM, conditional**。King--Kohler 已含大部分任意链估计，Gyurik 等已陈述特例 whole-kernel gap；可主张的增量必须落在可复用的退化核 transfer theorem 与受限 normalized-rank 应用上。
+- [第九条 Pro 新颖性任务书](PRO_NOVELTY_REQUEST_2026-09-03.md)：要求直接核查原始来源、区分数学错误与优先权风险，并给出一个可证明的一般 transfer lemma 或明确的 corollary/no-go 结论。
 - [四个 Hadamard 活跃态的精确重标号证明](ACTIVE_HADAMARD_ORBIT.md)：同一个证书覆盖四个无 guard 三项约束，四条整数填充式全部核验。
 - [离线复现结果](OFFLINE_REPRESENTATIVE_CHECKS.json)：无需 gh 或网络重算归档图的全部证书条件。
 - [上一轮 TDA Pro 完整答复](PRO_PREVIOUS_TDA_RESPONSE.md)：已收集的模型建议，未经采纳不算已证明。
@@ -41,6 +43,6 @@
 - [此前 hyperbolic 备选讨论](PRO_PREVIOUS_HYPERBOLIC_RESPONSE.md)：保留完整建议及停止理由。
 - [项目级补充档案](../../../pro_collaboration_2026-09-02/README.md)：47 份来源快照、四份历史 Pro 回复、39 个 persistent-domain 检查及 Ramsey 成果总览；补充任务书未发送，当前请求仍以本目录的固定附件为准。
 
-目前最实质的候选是由有限零权重证书推出任意低能几何链的全局 concentration，得到对逻辑 gap 的线性依赖；后面的维数与商空间推理属于标准推论。固定实门 palette 及端到端受限 transfer theorem 已通过分阶段证书和有界审查。任意 threshold 的 unrestricted SDQC1 推论已经否定；随后出现的八标签构造已把 source gate 推到一个受限的正结果：在已记录的几何 theorem 假设下，加权 whole-kernel-gapped true normalized persistence 有 \(\mathsf{BQP}_1^{G_2}\)-hard route。当前首要关卡是外部独立复核和全链、退化逻辑核、whole-kernel gap、自然 filtered rank 与该 recognized source 组合的严格新颖性/定位核查。Unweighted 版本仍是条件性的。
+目前最实质的候选是由有限零权重证书推出任意低能几何链的全局 concentration，得到对逻辑 gap 的线性依赖；后面的维数与商空间推理属于标准推论。固定实门 palette 及端到端受限 transfer theorem 已通过分阶段证书和有界审查。任意 threshold 的 unrestricted SDQC1 推论已经否定；八标签构造则给出受限的正结果：在已记录的几何 theorem 假设下，加权 whole-kernel-gapped true normalized persistence 有 \(\mathsf{BQP}_1^{G_2}\)-hard route。定点来源审计把优先级评为 **MEDIUM, conditional**：King--Kohler 的证明已经包含大部分任意链 machinery，Gyurik 等也已陈述一个特例 whole-kernel gap。当前关卡是让 Pro 直接做原始来源逐行碰撞，并判断我们的 finite-certificate 退化核 transfer theorem 是否超过“改写最后一步”的程度。Unweighted 的 common-copy 函子性没有发现本地障碍，但仍保留对 Hayakawa 单层谱分解的来源依赖。
 
 研究快照 a46f408 的 Pro 请求已完成并完整收集，界面记录处理用时 155 分 30 秒。后续快照 **789f87f** 的请求以“Thinking failed”终止，没有最终答复。快照 **f4ec1b7** 的全链审查、**9f2e088** 的 guard 审查、**23f83cf** 的受限定理整合审查、source commit **b78da7a** 的源复杂度审查，以及 source commit **f11cb4e** 的八标签接口审查均已完成、收集并独立处理。第七条 hard stop 仍适用于 arbitrary-threshold SDQC1；第八条只建立 perfect-completeness BQP1 的受限加权 route。下一关是严格的新颖性碰撞核查。本目录不是投稿、发表或 unrestricted 标准复杂性硬度认证。

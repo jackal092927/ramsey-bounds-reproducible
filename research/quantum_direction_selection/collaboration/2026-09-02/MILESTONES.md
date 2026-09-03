@@ -84,14 +84,17 @@ Consolidation started September 2, 2026 PDT; new dispatch and follow-up setup co
 | M78 | Message-8 dispatch archive | **PUSHED AND REMOTE-VERIFIED**, f6b4681e7e85d4a57afe5c50a41afb1c4417e66a | Running-state receipt, lifecycle ledger and workflow are synchronized; the existing hourly heartbeat now tracks collection and independent disposition of message 8 |
 | M79 | BQP1 source/interface Pro review | **COMPLETED AND COLLECTED**, user message 8; UI Worked for 5m 56s | Full response, 98 equation sources and DOM digest archived; Pro explicitly performed no primary-source checking |
 | M80 | BQP1 source disposition | **CONDITIONAL COMPOSITION ACCEPTED** | Operator identity, coherent-label interface, exact \(G_2\) gates, \(3/4\)-versus-\(1/8\) fraction and weighted hardness composition pass; padding-generated denominator retained as an impact risk |
+| M81 | Primary-source novelty collision pass | **TARGETED SIX-SOURCE CHECK COMPLETED**, NOVELTY_COLLISION_AUDIT_2026-09-03.md | Exact multiplicity and the normalized target are prior; King--Kohler contains most arbitrary-chain machinery; Gyurik et al. already claims a particular whole-kernel gap; absence of a broader collision is not certified |
+| M82 | Local priority disposition | **MEDIUM, CONDITIONAL** | Strongest possible delta is a reusable degenerate-kernel transfer theorem plus its restricted normalized-rank application; quotient/min--max, eight-label logic and common-copy functoriality are supporting corollaries |
+| M83 | Common-copy unweighting recheck | **NO FUNCTORIALITY COUNTEREXAMPLE; SOURCE DEPENDENCY RETAINED** | Same labeled blocks give a commuting inclusion square; dyadic \(F=\lambda^{-2}\) has polynomial size; isolated future gadget vertices handle a common vertex set for \(d\ge1\). Main mechanism is likely a direct Hayakawa corollary |
 
 ## Current unresolved research gates
 
-1. Determine whether the arbitrary-geometric-chain concentration theorem over degenerate logical kernels, its whole-kernel gap, natural filtered rank, and the eight-label non-all-or-none source combination are new, already implicit, or already explicit.
-2. Decide whether padding-generated denominator growth leaves enough conceptual substance for a high-impact normalized-persistence claim.
+1. Perform a line-by-line external comparison deciding whether King--Kohler's existing arbitrary-chain estimates already imply the same degenerate-kernel theorem, and whether Gyurik et al.'s whole-kernel argument contains the missing all-chain step.
+2. Decide whether the quotient route is a meaningful restricted resolution of Lowe et al.'s normalized-persistence conjecture or only a specially engineered corollary; padding-generated denominator growth remains the central impact risk.
 3. Keep unrestricted \(\mathsf{SDQC}_1\) stopped; the eight-label construction uses perfect completeness and does not repair arbitrary trace thresholds.
 4. Evaluate whether the persistent-Laplacian theorem supplies sufficient additional substance and whether the poor polynomial gap exponent is acceptable for a structural TCS result.
-5. Prove or reject the separate common-copy unweighting theorem before any unconditional unweighted claim.
+5. Finish the exact convention/source audit for common-copy unweighting before promoting the unweighted corollary; no local inclusion or polynomial-size obstruction remains.
 6. For the net and evaluated-Hom alternatives, prove a new parameter or structural result that survives the strongest relevant classical baseline.
 
 ## Archival rules
