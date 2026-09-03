@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-03T21:01:17Z",
+  "updated_at": "2026-09-03T21:02:44Z",
   "objective": "Review and advance true normalized persistence toward a substantial TCS theorem; archive every useful positive/negative milestone and Pro result.",
   "repository": {
     "url": "https://github.com/jackal092927/ramsey-bounds-reproducible",
@@ -344,7 +344,8 @@
     "verification": "Content commit 4820ada3ea6f17895f4f709ab5c94a2951f7eeec matched local HEAD and git ls-remote after push. Immutable raw downloads of PRO_NOVELTY_REVIEW_2026-09-03.md and manuscript_v0/main.pdf matched local SHA-256 hashes.",
     "receipt_note": "Message 9 response, capture, disposition, updated ledgers, modular manuscript source and 19-page PDF are synchronized. Generated LaTeX auxiliaries are ignored.",
     "dispatch_commit": "4820ada3ea6f17895f4f709ab5c94a2951f7eeec",
-    "sync_receipt": "MANUSCRIPT_V0_SYNC_RECEIPT_2026-09-03.md"
+    "sync_receipt": "MANUSCRIPT_V0_SYNC_RECEIPT_2026-09-03.md",
+    "receipt_commit": "d9fc3af37bb203c92a5eeb2f47dc9aa2d1bdedca"
   },
   "follow_up": {
     "status": "active_no_running_pro_request",
@@ -360,8 +361,8 @@
       "Revise positioning and venue only after those checks; keep current claim firewalls."
     ],
     "phase": "Message 9 completed and dispositioned. Manuscript v0 drafted and compiled. No Pro request is running; next work is final-SIAM comparison and local manuscript proof audit.",
-    "automation_prompt_updated_for_current_request": false,
-    "automation_updated_at": "2026-09-03T20:19:11Z",
+    "automation_prompt_updated_for_current_request": true,
+    "automation_updated_at": "2026-09-03T21:02:44Z",
     "writing_policy": "Correctness and source interfaces remain hard gates. Novelty controls positioning and venue, not whether the scoped manuscript is written. No new Pro message without explicit action-time confirmation."
   },
   "coordination": {

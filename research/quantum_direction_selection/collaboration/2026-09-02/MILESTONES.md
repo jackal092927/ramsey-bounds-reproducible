@@ -98,6 +98,7 @@ Consolidation started September 2, 2026 PDT; new dispatch and follow-up setup co
 | M92 | Novelty disposition and writing decision | **INDEPENDENTLY DISPOSITIONED; NO COUNTEREXAMPLE FOUND UNDER EXPLICIT HYPOTHESES** | Kernel/min--max closure is routine; finite-certificate all-chain leakage is the surviving proof contribution; unweighting is a sourced corollary. Final SIAM detailed text remains a priority gate, not a writing gate |
 | M93 | Integrated manuscript v0 | **DRAFTED AND COMPILED**, 19 pages, zero LaTeX warnings after final build | Modular source and PDF cover the transfer theorem, quotient naturality, fixed-eight \(\mathsf{BQP}_1^{G_2}\) application, unweighting, source collisions, and limitations |
 | M94 | Novelty review and manuscript-v0 GitHub checkpoint | **PUSHED AND REMOTE-VERIFIED**, 4820ada3ea6f17895f4f709ab5c94a2951f7eeec | Branch head matched by `git ls-remote`; immutable raw downloads of the Pro review and PDF matched their local SHA-256 hashes |
+| M95 | Hourly continuation after manuscript v0 | **ACTIVE AND RETARGETED**, existing `tda-pro-github` heartbeat | No normalized-persistence Pro request is running; next checks are final-SIAM detailed proof and local manuscript/certificate consistency. Any new Pro message requires specific action-time confirmation |
 
 ## Current unresolved research gates
 
