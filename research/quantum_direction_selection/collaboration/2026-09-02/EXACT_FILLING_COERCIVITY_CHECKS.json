@@ -1,0 +1,239 @@
+{
+  "status": "PASS",
+  "scope": "15 small clique fixtures and two hypothesis guards; not a palette certificate",
+  "clique_cases": [
+    {
+      "targets": [
+        0
+      ],
+      "lambda": 0.5,
+      "betti_1": 1,
+      "delta_for_psd_check": 0.12500000000000355,
+      "psd_residual_min_eigenvalue": -2.1285571599652228e-16,
+      "up_additivity_error": 0.0,
+      "max_filling_residual": 4.996003610813204e-16,
+      "logical_harmonic_annihilation_error": 2.5665250147124267e-17,
+      "measured_global_positive_gap": 0.2500000000000071
+    },
+    {
+      "targets": [
+        0
+      ],
+      "lambda": 0.25,
+      "betti_1": 1,
+      "delta_for_psd_check": 0.03124999999999988,
+      "psd_residual_min_eigenvalue": -1.7033351816705613e-16,
+      "up_additivity_error": 0.0,
+      "max_filling_residual": 9.305364597889227e-16,
+      "logical_harmonic_annihilation_error": 3.093865573534597e-15,
+      "measured_global_positive_gap": 0.06249999999999976
+    },
+    {
+      "targets": [
+        0
+      ],
+      "lambda": 0.125,
+      "betti_1": 1,
+      "delta_for_psd_check": 0.007812500000000052,
+      "psd_residual_min_eigenvalue": -5.324180211559354e-16,
+      "up_additivity_error": 0.0,
+      "max_filling_residual": 3.815356980893987e-15,
+      "logical_harmonic_annihilation_error": 1.3808471421581236e-14,
+      "measured_global_positive_gap": 0.015625000000000104
+    },
+    {
+      "targets": [
+        0,
+        0
+      ],
+      "lambda": 0.5,
+      "betti_1": 1,
+      "delta_for_psd_check": 0.12500000000000355,
+      "psd_residual_min_eigenvalue": -4.79541336344695e-16,
+      "up_additivity_error": 0.0,
+      "max_filling_residual": 4.996003610813204e-16,
+      "logical_harmonic_annihilation_error": 3.291700010507061e-16,
+      "measured_global_positive_gap": 0.5000000000000018
+    },
+    {
+      "targets": [
+        0,
+        0
+      ],
+      "lambda": 0.25,
+      "betti_1": 1,
+      "delta_for_psd_check": 0.03124999999999988,
+      "psd_residual_min_eigenvalue": -6.374606790339715e-16,
+      "up_additivity_error": 0.0,
+      "max_filling_residual": 9.305364597889227e-16,
+      "logical_harmonic_annihilation_error": 1.8963016662001747e-15,
+      "measured_global_positive_gap": 0.12499999999999992
+    },
+    {
+      "targets": [
+        0,
+        0
+      ],
+      "lambda": 0.125,
+      "betti_1": 1,
+      "delta_for_psd_check": 0.007812500000000052,
+      "psd_residual_min_eigenvalue": -4.706724112713649e-16,
+      "up_additivity_error": 0.0,
+      "max_filling_residual": 3.815356980893987e-15,
+      "logical_harmonic_annihilation_error": 1.0035805818872322e-14,
+      "measured_global_positive_gap": 0.031250000000000194
+    },
+    {
+      "targets": [
+        0,
+        1
+      ],
+      "lambda": 0.5,
+      "betti_1": 0,
+      "delta_for_psd_check": 0.125,
+      "psd_residual_min_eigenvalue": -4.591574956167691e-16,
+      "up_additivity_error": 0.0,
+      "max_filling_residual": 1.5992607561452414e-15,
+      "logical_harmonic_annihilation_error": 0.0,
+      "measured_global_positive_gap": 0.2499999999999991
+    },
+    {
+      "targets": [
+        0,
+        1
+      ],
+      "lambda": 0.25,
+      "betti_1": 0,
+      "delta_for_psd_check": 0.03124999999999988,
+      "psd_residual_min_eigenvalue": -9.395857022925899e-16,
+      "up_additivity_error": 0.0,
+      "max_filling_residual": 9.305364597889227e-16,
+      "logical_harmonic_annihilation_error": 0.0,
+      "measured_global_positive_gap": 0.06249999999999965
+    },
+    {
+      "targets": [
+        0,
+        1
+      ],
+      "lambda": 0.125,
+      "betti_1": 0,
+      "delta_for_psd_check": 0.007812500000000052,
+      "psd_residual_min_eigenvalue": -7.916573391638043e-16,
+      "up_additivity_error": 0.0,
+      "max_filling_residual": 4.1351150429277824e-15,
+      "logical_harmonic_annihilation_error": 0.0,
+      "measured_global_positive_gap": 0.015624999999999624
+    },
+    {
+      "targets": [
+        0,
+        0,
+        1
+      ],
+      "lambda": 0.5,
+      "betti_1": 0,
+      "delta_for_psd_check": 0.125,
+      "psd_residual_min_eigenvalue": -7.979265198776758e-16,
+      "up_additivity_error": 0.0,
+      "max_filling_residual": 1.5992607561452414e-15,
+      "logical_harmonic_annihilation_error": 0.0,
+      "measured_global_positive_gap": 0.25000000000000033
+    },
+    {
+      "targets": [
+        0,
+        0,
+        1
+      ],
+      "lambda": 0.25,
+      "betti_1": 0,
+      "delta_for_psd_check": 0.03124999999999988,
+      "psd_residual_min_eigenvalue": -5.439034642452937e-16,
+      "up_additivity_error": 0.0,
+      "max_filling_residual": 9.305364597889227e-16,
+      "logical_harmonic_annihilation_error": 0.0,
+      "measured_global_positive_gap": 0.06249999999999954
+    },
+    {
+      "targets": [
+        0,
+        0,
+        1
+      ],
+      "lambda": 0.125,
+      "betti_1": 0,
+      "delta_for_psd_check": 0.007812500000000052,
+      "psd_residual_min_eigenvalue": -6.288305569720212e-16,
+      "up_additivity_error": 0.0,
+      "max_filling_residual": 4.1351150429277824e-15,
+      "logical_harmonic_annihilation_error": 0.0,
+      "measured_global_positive_gap": 0.015624999999999997
+    },
+    {
+      "targets": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "lambda": 0.5,
+      "betti_1": 0,
+      "delta_for_psd_check": 0.125,
+      "psd_residual_min_eigenvalue": -8.050282853404459e-16,
+      "up_additivity_error": 0.0,
+      "max_filling_residual": 1.5992607561452414e-15,
+      "logical_harmonic_annihilation_error": 0.0,
+      "measured_global_positive_gap": 0.5
+    },
+    {
+      "targets": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "lambda": 0.25,
+      "betti_1": 0,
+      "delta_for_psd_check": 0.03124999999999988,
+      "psd_residual_min_eigenvalue": -7.146506160063181e-16,
+      "up_additivity_error": 0.0,
+      "max_filling_residual": 9.305364597889227e-16,
+      "logical_harmonic_annihilation_error": 0.0,
+      "measured_global_positive_gap": 0.12499999999999888
+    },
+    {
+      "targets": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "lambda": 0.125,
+      "betti_1": 0,
+      "delta_for_psd_check": 0.007812500000000052,
+      "psd_residual_min_eigenvalue": -1.003549794647004e-15,
+      "up_additivity_error": 0.0,
+      "max_filling_residual": 4.1351150429277824e-15,
+      "logical_harmonic_annihilation_error": 0.0,
+      "measured_global_positive_gap": 0.03125000000000032
+    }
+  ],
+  "hypothesis_guards": {
+    "missing_exact_filling": {
+      "minimum_eigenvalue": -1.0,
+      "meaning": "Direct logical domination fails without boundary containment."
+    },
+    "negative_angle_bound_cannot_be_squared": {
+      "eta_bound": 0.8,
+      "actual_projector_errors": [
+        0.7071067811865477,
+        0.699928582359657
+      ],
+      "signed_singular_value_lower_bound": -0.28000000000000025,
+      "invalid_squared_lower_bound": 0.07840000000000014,
+      "actual_overlap_with_rank_one_map": 0.00010201999591920016,
+      "repair": "Require a nonnegative angle bound, or use its positive part."
+    }
+  }
+}

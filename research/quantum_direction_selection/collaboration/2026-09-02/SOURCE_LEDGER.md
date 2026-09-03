@@ -16,9 +16,11 @@ The six-item ledger below was supplied by the user as checked locally. Existing 
 | Obligation | Owner / evidence | Current state |
 | --- | --- | --- |
 | Independent interior-chain decomposition | ../../round2/NORMALIZED_PERSISTENCE_PROBE.md, abstract proof | Local derivation under exact intersections |
-| Exact filling for each palette member | Same file, final weight-gauge/nullity argument; Rudolph and Hayakawa input gadgets | Conditional on exact local nullity and kernel convergence |
-| All-chain concentration with term-count-uniform constants | Same file, padding appendix; ../../round2/UNWEIGHTING_AUDIT.md | Written local repair; full independent integration review pending |
-| Correct central relative-bulk singular bound and lifted-cycle sector | King–Kohler fixed-size package with explicit palette | Imported dependencies to check line by line |
+| Exact filling for each palette member | Old weight-gauge/nullity argument; new REPRESENTATIVE_GADGET_CERTIFICATE.md | One source graph has an explicit integer filling and certified quotient; full guarded family remains open |
+| All-chain concentration with term-count-uniform constants | FINITE_CERTIFICATE_CONCENTRATION.md and EXACT_FILLING_COERCIVITY.md | Two stronger local conditional proofs; independent review pending |
+| Central bulk and zero-weight local data | certify_representative_bulk.py and exact JSON certificate | One actual atom certified; other atoms/guard closure open |
+| Local whole-positive-gap floor | FINITE_CERTIFICATE_CONCENTRATION.md, diagonal scaling plus Hodge decomposition | Elementary conditional finite-family lower bound; optimal valuation and leading coefficient not needed |
+| Older lifted-cycle spectral-sector route | King–Kohler fixed-size package with explicit palette | Retained imported route; full spectral-sequence proof not independently reconstructed |
 | Rational projector palette and tensor guards | ../../round2/UNARY_PALETTE_ADDENDUM.md | Explicit local source matching and derivation; imported gadget facts remain |
 | Weighted history and both logical gaps | Same addendum, Section 3 | Complete written elementary proof; finite fixtures rerun |
 | Mixed-spectator exact single-H extension | RESEARCH_DOSSIER.md, Section 5 | Direct algebra from the supplied definitions |
@@ -32,3 +34,11 @@ Additional sources already identified in the local portfolio include Dey–Xin g
 The completed first Pro response additionally cites [Mémoli–Wan–Wang, persistent Laplacians](https://arxiv.org/abs/2012.02808) and [SIAM DOI](https://doi.org/10.1137/21M1435471). Its claim that the proposed filtered spectral theorem was not found in the literature remains an advisory search report, not established priority.
 
 **Post-dispatch targeted primary check, September 3 PDT:** this task independently reopened arXiv:2012.02808v1, Section 2.2 and the proof of Theorem 5.1 in Section 5.2. The domain decomposition already yields ordinary-to-persistent Laplacian domination. That inequality is prior art; the old Pro answer's novelty emphasis is incorrect. See [POST_DISPATCH_SOURCE_UPDATE.md](POST_DISPATCH_SOURCE_UPDATE.md). This narrow check does not certify the six main sources or priority of the combined filtered corollary.
+
+## Additional primary checks after collecting the new response
+
+September 3, 2026: independently opened King–Kohler arXiv v2's Lemma 9.1 and Claim 10.4, Hayakawa arXiv v1 Section 5/Lemma 5.4, and Rudolph arXiv v2 Appendix D.1. Checked the stated local spectrum and exact up sum, finite-family quotient/joins, displayed active vectors, and algebraic-versus-numerical verification boundary. This is a targeted check, not a full paper or final-SIAM-version reread.
+
+Rudolph's bibliography points to [the public supplementary code](https://github.com/DorianRudolph/QMA1-gateset-paper). We read its README/license and the relevant graph-building functions at immutable commit [30ac70e5dacdecce97c38d801c128ec3ed93a96a](https://github.com/DorianRudolph/QMA1-gateset-paper/tree/30ac70e5dacdecce97c38d801c128ec3ed93a96a). The exact source hash, replay boundary and finite certificate are in [REPRESENTATIVE_GADGET_CERTIFICATE.md](REPRESENTATIVE_GADGET_CERTIFICATE.md). We did not run Sage or the source's higher-locality numerical checks.
+
+The Pro answer's source-panel evidence did not expose its claimed independent primary-paper reading: only the packet, a pasted document, and the same GitHub packet were visible. Its broad source/absence claims remain advisory. The independent checks above are the evidence actually added by this continuation. Priority of either stronger concentration proof remains open.

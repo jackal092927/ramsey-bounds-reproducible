@@ -25,15 +25,24 @@ Consolidation started September 2, 2026 PDT; new dispatch and follow-up setup co
 | M19 | Existing reproduction suite | **7/7 PASS** in this consolidation; raw outputs archived | Reproducibility evidence for finite probes only |
 | M20 | Consolidated dossier, source table, request and research index | **WRITTEN** | Concrete reviewable handoff, with positive/negative results and outstanding dependencies |
 | M21 | GitHub research checkpoint | **PUSHED AND REMOTE-VERIFIED** at a46f4087693edc088663e0cbf4f6aa9961494325 | 43 research files synchronized before the new Pro submission |
-| M22 | New Pro review-and-advance request | **SENT AND RUNNING** in the existing TDA conversation, Chat / Pro 5/5 | New message and attachment observed; Stop answering and web-search activity confirmed; new final answer not yet collected |
+| M22 | Pro review-and-advance request for a46f408 | **COMPLETED AND COLLECTED** at 2026-09-03T10:08:55Z; UI “Worked for 155m 30s” | Full response archived in PRO_REVIEW_2026-09-03.md; separate claim disposition follows |
 | M23 | Pro follow-up collection and archival | **ACTIVE** hourly thread follow-up, tda-pro-github | Collect and independently disposition new results, advance concrete proof gates, then commit and push |
 | M24 | Persistent domination source correction | **PRIMARY SOURCE CHECKED**, Mémoli–Wan–Wang Theorem 5.1 proof | Existing operator decomposition gives the inequality; correct the old Pro novelty emphasis in the next round without interrupting the current one |
 | M25 | Parallel consolidation coordination | **SCOPE COORDINATED** with research/pro_collaboration_2026-09-02 | One canonical TDA Pro conversation and hourly continuation; supplemental portfolio/history is owned separately |
 | M26 | Supplemental portfolio incorporated into continuation | **ARCHIVE INTEGRITY VERIFIED**: branch and remote matched receipt 029b12da60606d040ca1df660432ae8cc87481f4; all 47 source sizes/hashes matched commit 92f0a7cac99c26e145a0d7ec625e805fa714a7f5 | Companion archive adds four historical responses and a 39-case check record; its unsent task brief is superseded. Existing Pro packet and follow-up remain unchanged; numerical checks were not rerun during this ingestion |
+| M27 | September 3 Pro disposition | **WRITTEN AND INDEPENDENTLY CHECKED** where stated | Corrected aggregate-step credit, signed-angle squaring, preparation budget and source-evidence claims; retained conditional conclusions |
+| M28 | Sharper output-penalty gap | **LOCAL PROOF CHECKED**, two-projector canonical blocks | g2>=1/(27L^3) replaces the conservative 1/(120L^3) floor |
+| M29 | Exact-filling coercivity and retained-private-mass absorption | **NEW CONDITIONAL DERIVATION**, EXACT_FILLING_COERCIVITY.md | Linear logical-gap dependence; weight can be chosen independently of g |
+| M30 | Mechanism fixtures and hypothesis guards | **15 CLIQUE FIXTURES + 2 GUARDS PASS** | Checks exact up additivity, PSD domination and kernel counts; guards reject missing filling and squaring a negative angle bound; not the source palette |
+| M31 | Zero-weight finite-certificate route | **NEW CONDITIONAL DERIVATION**, FINITE_CERTIFICATE_CONCENTRATION.md | Replaces perturbative spectral-sector inputs; reaches distance squared <=C[t lambda^2+e/(g lambda^kappa)] |
+| M32 | Actual Rudolph representative topology and bulk | **EXACT INTEGER/MODULAR CERTIFICATE PASS**, source commit 30ac70e | 41 vertices, target Betti 3, 382-term integer filling, central 176-dimensional Gram determinant nonzero modulo 1000003 |
+| M33 | Actual representative zero-weight data | **EXACT CERTIFICATE PASS** | Rank D0=902, kernel dimension 180=4+176, projected pair annihilates V; supplies finite assumptions for one atom |
+| M34 | Higher-simplex padding correction | **MATHEMATICAL ERROR CORRECTED** | Actual source graph has degree-5 simplices at target degree 3; use every bidegree and the outside gap. Frozen old packet preserved |
+| M35 | Further targeted primary checks | **LIMITED PRIMARY SOURCE/CODE CHECK PERFORMED** | KK local statement/up sum; Hayakawa quotient statement; Rudolph states/joins/code. Full papers and complete priority still unverified |
 
 ## Current unresolved research gates
 
-1. Map every fixed-palette topological and spectral assumption to a proved primary-source statement; fully check the all-chain padding repair.
+1. Independently review the two stronger concentration proofs; prove guarded-palette closure under the finite zero-weight criterion or certify every remaining required active graph.
 2. Determine whether the global whole-kernel theorem and its filtered normalized consequence are new, already implicit, or already explicit.
 3. Establish the strongest meaningful consequence for the exact restricted circuit source without unrestricted SDQC1 equivalence or approximate compilation.
 4. Evaluate whether the persistent-Laplacian theorem supplies sufficient additional substance; its elementary domination proof alone does not establish impact.

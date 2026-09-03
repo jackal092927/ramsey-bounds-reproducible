@@ -1,6 +1,6 @@
 # True normalized persistence: research dossier and forward program
 
-Prepared September 2, 2026 PDT. This dossier consolidates the current conversation, the written round-2 derivations, the source ledger, prior failed approaches, and the completed first TDA Pro response. It is the current handoff context, not a submitted manuscript or a certificate of the full reduction.
+Prepared September 2, updated September 3, 2026 PDT. This dossier consolidates the conversation, round-2 derivations, source ledger, failed approaches, and the collected Pro responses. The September 3 continuation below supersedes the older parameter choice retained in Section 2. This is handoff context, not a submitted manuscript or a certificate of the full reduction.
 
 ## 1. Objective and evidence standard
 
@@ -17,12 +17,31 @@ Evidence labels used throughout:
 - **LOCAL DERIVATION:** a written mathematical argument; its explicit hypotheses remain part of the statement.
 - **IMPORTED:** a cited local gadget or literature theorem; not re-proved by this session.
 - **FIXTURE:** a finite exact or numerical implementation check, never an asymptotic proof.
+- **FINITE CERTIFICATE:** exact integer/modular evidence proving specified properties of a recorded finite source graph; its complete-palette extension is a separate obligation.
 - **ADVISORY:** an external model's proposal or review, requiring independent evaluation.
 - **OPEN / RETRACTED:** an unmet obligation or a conclusion explicitly withdrawn.
 
 The primary source ledger was supplied as previously checked locally. This consolidation has read the local reports; it has not independently reread all six primary sources. A completed Pro answer is also not independent source verification by this agent.
 
-## 2. Core finite-palette transfer theorem
+### September 3: strongest current conditional theorem
+
+The new Pro response is [collected in full](PRO_REVIEW_2026-09-03.md) and has a [separate disposition](PRO_REVIEW_DISPOSITION_2026-09-03.md). Independent continuation gives two proofs of the stronger bound
+\[
+\|(I-P_{K_A})x\|^2\le C\left[t\lambda^2+
+\frac{\langle x,\Delta_Ax\rangle}{g\lambda^{4m+2}}\right].
+\]
+The [first proof](EXACT_FILLING_COERCIVITY.md) uses the older local spectral package. The [simpler finite-certificate proof](FINITE_CERTIFICATE_CONCENTRATION.md) instead uses exact filling, a zero-weight kernel identity, and an injective projected central-bulk pair. A diagonal boundary-scaling argument supplies a sufficient positive-gap floor without computing its optimal spectral valuation.
+
+Choose \(\lambda\le c\min(t^{-1},\eta/\sqrt t)\), independently of \(g\), and \(E\le c'\eta^2g\lambda^{4m+2}\). The same injection/min-max and natural quotient conclusions follow. For \(m\le6\), a conservative dyadic \(\lambda=\Theta(\eta/t)\) yields the attainable lower-bound scales
+\[
+E=\Omega(\eta^{28}g/t^{26}),\qquad
+FE=\Omega(\eta^{26}g/t^{24}),\quad F=\lambda^{-2},
+\]
+the second under the separate common-copy unweighting theorem. Neither expression is an assertion that the actual gap equals the floor.
+
+One [actual Rudolph representative](REPRESENTATIVE_GADGET_CERTIFICATE.md) now has an exact source-pinned certificate: target Betti number 3; an integer filling of the intended three-term cycle; zero-weight kernel dimension \(180=4+176\); and an injective central bulk pair. Every required guarded palette member has not yet been certified. The graph also exposed and repaired a false two-bidegree enumeration in the old padding note. The candidate theorem still needs independent review, complete finite-family integration, and priority assessment.
+
+## 2. Core finite-palette transfer theorem (original conservative parameters)
 
 Work over \(\mathbb C\), or over \(\mathbb R\) for the real construction. Let \(R\) be a top-dimensional register complex with \(\dim R=d\ge1\), and let
 \[
@@ -90,7 +109,7 @@ L_{\rm tot}L_{\rm tot}^{\dagger}=\sum_jL_jL_j^\dagger
 \]
 For the fixed palette \(N_j=O(1)\), giving \(\|L_{\rm tot}\|=O(\lambda\sqrt t)\). Output orthogonality is unnecessary. The \(t\lambda\) concentration term instead comes from summing local kernel-projector errors.
 
-The local package still includes exact nullity, local kernel convergence, lifted-sector spectral bounds, and a central-relative-bulk singular-value bound. These local assumptions must be source-mapped or proved. They are distinct from adding a global relative-acyclicity hypothesis after the transfer argument. Basiswise closeness in exponentially growing dimension cannot replace an operator-norm estimate; use the fixed local dimension before tensoring.
+The original local package includes exact nullity, local kernel convergence, lifted-sector spectral bounds, and a central-relative-bulk singular-value bound. These assumptions belong to the original proof route. The September 3 finite-certificate route replaces the perturbative spectral-sector inputs, as stated above. Neither route adds a global relative-acyclicity hypothesis. Basiswise closeness in exponentially growing dimension cannot replace an operator-norm estimate. At the target degree only the outside-harmonic bidegree is fixed; all other actual bidegrees are handled by the outside gap, with no upper-dimension truncation of the active graph.
 
 ## 4. Exact verifier implementation and denominator
 
@@ -109,13 +128,15 @@ g_1\ge\frac1{8L^2},\qquad g_2\ge\frac1{120L^3}
 \]
 under the stated \(r=1/3\) off-perfect-acceptance promise. The final-kernel-zero case is included.
 
+The independently checked sharper two-projection bound now improves the second certified floor to \(g_2\ge1/[3L(8L^2+1)]\ge1/(27L^3)\); see the September 3 disposition. The original \(1/(120L^3)\) remains a valid conservative bound.
+
 For an arbitrary positive coefficient family, replacing \(\sum_ja_jP_j\) by \(\sum_jP_j\) preserves the kernel and lowers the positive gap by at most \(a_{\max}\). This supports exact rank transfer without a small output coefficient, provided the coefficient bound is polynomial.
 
-With \(m=6\), the geometric exponent is \(4m+2=26\). At the stated parameter scale,
+With \(m=6\), the geometric exponent is \(4m+2=26\). At the original Section 2 parameter scale,
 \[
 E=\Theta\!\left(\eta^{54}g^{27}/t^{27}\right)
 \]
-up to the fixed choice of constants. This is a very poor inverse polynomial. Substituting \(g=\Theta(L^{-3})\) still leaves the \(t^{-27}\) factor; no favorable \(L^{-81}\)-only bound is claimed. There is no near-term performance claim.
+up to the fixed choice of constants. This historical floor is superseded by the stronger conditional bound near the beginning of the dossier. Both have poor polynomial exponents; there is no near-term performance claim.
 
 ## 5. Exact single-Hadamard extension
 
@@ -168,7 +189,7 @@ The previous Pro response proposed extending this to the persistent Laplacian it
 
 | Priority | Direction | What exists | What would justify further investment |
 | --- | --- | --- | --- |
-| Main | True normalized persistence through global concentration | Full abstract quotient argument, written padding repair, supported exact palette, history-gap derivation | Complete the finite-palette dependency audit; isolate a theorem absent from sources; establish a meaningful explicit source reduction |
+| Main | True normalized persistence through global concentration | Two stronger conditional proofs, one exact finite source-gadget certificate, natural quotient argument, and history-gap derivation | Complete guarded-palette integration; isolate a theorem absent from sources; establish a meaningful explicit source reduction |
 | Secondary structural | Simultaneous persistent-Laplacian spectral unweighting | Pro proposal and independent conditional derivation | Source-check the restricted-domain/adjoint step and novelty; seek an additional nontrivial consequence |
 | Secondary algorithmic | Quantum epsilon-net and additive barcode approximation | Expected \(\widetilde O(\sqrt{nK})\) point-query upper bound; fixed-scale 1D lower bound | A new parameter tradeoff or matching multi-parameter lower bound beyond known sampling plus stability |
 | Direct continuation | Bounded evaluated-Hom width for decomposition | Exact update-rank formula and arbitrary-rank obstruction | A natural non-interval class with provably small evaluated rank and an improved fully charged classical comparison |

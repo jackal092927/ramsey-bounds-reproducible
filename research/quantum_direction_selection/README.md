@@ -8,6 +8,8 @@ This is an ongoing mathematical exploration, not a submitted paper or a correctn
 
 Current entry point: [research dossier and Pro collaboration](collaboration/2026-09-02/README.md), with [milestones](collaboration/2026-09-02/MILESTONES.md), [audit corrections](collaboration/2026-09-02/AUDIT_CORRECTIONS.md), and [execution state](collaboration/2026-09-02/COLLABORATION_STATE.json). The [round-2 report](round2/IDEA_REPORT.md), [first-round decision](DECISION_2026-09-02.md), original prompts, and [first dispatch receipt](PRO_DISPATCH_2026-09-02.md) are retained as dated historical records; their old 'not sent/collected/pushed' statements describe their original preparation time. Current lifecycle claims come from the new execution receipt. Older 'verified source' labels report those prior reading passes, not a complete new literature audit by this consolidator.
 
+September 3 continuation: the new Pro response is [collected and independently dispositioned](collaboration/2026-09-02/PRO_REVIEW_DISPOSITION_2026-09-03.md). The strongest current candidate is [all-chain concentration from finite zero-weight certificates](collaboration/2026-09-02/FINITE_CERTIFICATE_CONCENTRATION.md), with linear dependence on the logical gap. An [actual three-term source gadget](collaboration/2026-09-02/REPRESENTATIVE_GADGET_CERTIFICATE.md) has passed exact integer topology, zero-weight and bulk checks. Complete guarded-palette integration and novelty remain open.
+
 Supporting material:
 
 - [TDA literature map, native simplicial obstruction and candidate lemmas](tda_probe/PROBE_REPORT.md)

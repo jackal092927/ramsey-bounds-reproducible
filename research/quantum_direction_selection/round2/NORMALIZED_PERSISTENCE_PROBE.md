@@ -199,7 +199,9 @@ $$\Delta_{Y_i}=\Delta_{\rm loc}\otimes I+I\otimes\Delta_{\rm out}.$$
 
 The fixed register factor has augmented harmonic space only in degree one, and has a positive spectral gap $\delta_R>0$ on its orthogonal complement. Tensor-sum positivity shows that the $r_i$-fold register join has harmonics only in degree $q_i$, with the same lower bound $\delta_R$ on every nonharmonic mode, independent of $r_i$. For $r_i=0$, use the augmented join unit in degree $-1$.
 
-In degree $p$, the only possible bidegrees are $(2m_i-1,q_i)$ and $(2m_i,q_i-1)$. Thus every outside-nonharmonic mode belongs to a constant-gap single-gadget sector $A_i$, regardless of its local energy. This assertion concerns $\Delta_{Y_i}$ only. The full many-gadget Laplacian need not commute with gadget $i$'s outside harmonic projector.
+At total degree $p$, the only **outside-harmonic** bidegree is $(2m_i-1,q_i)$. All other actual bidegrees have outside degree different from $q_i$ and therefore a positive outside gap; outside-nonharmonic modes in degree $q_i$ also have that gap. Thus every outside-nonharmonic mode belongs to a constant-gap single-gadget sector $A_i$, regardless of its local energy. This assertion concerns $\Delta_{Y_i}$ only. The full many-gadget Laplacian need not commute with gadget $i$'s outside harmonic projector.
+
+**September 3 correction:** the former claim that only two bidegrees can occur was false. The actual two-qubit representative has target degree 3 and also degree-5 simplices. The all-bidegree argument above repairs the enumeration; see [the exact representative certificate](../collaboration/2026-09-02/REPRESENTATIVE_GADGET_CERTIFICATE.md) and [the stronger finite-certificate concentration route](../collaboration/2026-09-02/FINITE_CERTIFICATE_CONCENTRATION.md). The previously sent context packet remains a frozen historical snapshot.
 
 ### B. Exact interface bound controls every other gadget
 

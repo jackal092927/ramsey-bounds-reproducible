@@ -10,6 +10,9 @@
 - [来源与依赖表](SOURCE_LEDGER.md)：区分此前报告的来源检查与本次实际核查。
 - [阶段进展](MILESTONES.md)：保留正结果、负结果、未完成项和实际同步状态。
 - [Pro 任务书](PRO_REQUEST.md)：先审查，再直接推进证明与理论结果。
+- [9 月 3 日 Pro 完整答复](PRO_REVIEW_2026-09-03.md)与[独立处理意见](PRO_REVIEW_DISPOSITION_2026-09-03.md)：保留采纳、纠正与尚未核验的结论。
+- [当前最强条件性证明](FINITE_CERTIFICATE_CONCENTRATION.md)：有限零权重证书推出全几何链 concentration，逻辑 gap 依赖降为线性；[先得到的谱分区证明](EXACT_FILLING_COERCIVITY.md)作为中间里程碑保留。
+- [实际三项 gadget 的精确证书](REPRESENTATIVE_GADGET_CERTIFICATE.md)：包含原始图、整数填充链、模素数秩证明及[可复现检查器](certify_representative_bulk.py)；完整 guard 家族仍待覆盖。
 - [上一轮 TDA Pro 完整答复](PRO_PREVIOUS_TDA_RESPONSE.md)：已收集的模型建议，未经采纳不算已证明。
 - [persistent Laplacian 条件性扩展](PERSISTENT_LAPLACIAN_EXTENSION.md)：对 Pro 提案的独立推导与边界。
 - [复现实验原始输出](REPRODUCTION_RESULTS.json)：7 个已有小型检查的本次重跑结果。
@@ -20,6 +23,6 @@
 - [此前 hyperbolic 备选讨论](PRO_PREVIOUS_HYPERBOLIC_RESPONSE.md)：保留完整建议及停止理由。
 - [项目级补充档案](../../../pro_collaboration_2026-09-02/README.md)：47 份来源快照、四份历史 Pro 回复、39 个 persistent-domain 检查及 Ramsey 成果总览；补充任务书未发送，当前请求仍以本目录的固定附件为准。
 
-目前最实质的候选是任意低能几何链的全局 concentration 论证；后面的维数与商空间推理属于标准推论。固定 gadget 的来源整合、精确电路源问题的复杂性价值和新颖性仍待独立 review。备选方向包括 persistent Laplacian 低谱的共同复制转换、量子几何采样及自然的 evaluated-Hom-width 受限类。
+目前最实质的候选是由有限零权重证书推出任意低能几何链的全局 concentration，得到对逻辑 gap 的线性依赖；后面的维数与商空间推理属于标准推论。一个实际 gadget 已完成整数证书核验，完整固定家族、精确电路源问题的复杂性价值和新颖性仍待独立 review。备选方向包括 persistent Laplacian 低谱的共同复制转换、量子几何采样及自然的 evaluated-Hom-width 受限类。
 
-研究快照 a46f408 已推送并经远端核验；新请求已发送到原 TDA 会话，Chat / Pro 5/5，目前正在处理。已启用本任务每小时回收与继续推进。本次工作跨过午夜，发送回执日期为 9 月 3 日，目录名保留起始日期。本目录不是已完成论文，也不是投稿或整套 reduction 正确性的认证。
+研究快照 a46f408 的 Pro 请求已完成并完整收集，界面记录处理用时 155 分 30 秒。其后的独立推导和精确证书正整理为同一会话的聚焦后续请求；实际发送与 Git 同步状态以执行记录为准。每小时回收与继续推进仍有效。目录名保留起始日期。本目录不是已完成论文，也不是投稿或整套 reduction 正确性的认证。

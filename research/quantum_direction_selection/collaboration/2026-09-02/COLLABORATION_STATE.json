@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-03T09:09:17Z",
+  "updated_at": "2026-09-03T10:56:39.097947+00:00",
   "objective": "Review and advance true normalized persistence toward a substantial TCS theorem; archive every useful positive/negative milestone and Pro result.",
   "repository": {
     "url": "https://github.com/jackal092927/ramsey-bounds-reproducible",
@@ -17,7 +17,7 @@
     "url": "https://chatgpt.com/c/6a98c05a-ecf4-83e8-b356-4e20dc3fde3f",
     "account": "visible identity matched local personal Pro channel registry",
     "previous_response": "collected",
-    "new_request": "sent_running",
+    "new_request": "completed_collected",
     "current_request": {
       "source_commit": "a46f4087693edc088663e0cbf4f6aa9961494325",
       "message_file": "PRO_SUBMISSION_MESSAGE.md",
@@ -28,10 +28,12 @@
       "thinking": "Pro, 5 of 5",
       "user_message_number": 2,
       "completed_assistant_messages_before_this_request": 1,
-      "last_observation": "Still running: active Stop answering control, two user messages, and only one completed-response control for the previously collected answer. The activity list advanced through additional source checks, gap-exponent calculations, and packet review; its latest visible status was Assessed available evidence and proceeded cautiously. Settings/Account email and visible Pro plan matched the local channel registry. No new final response, interruption, or submission.",
-      "last_observed_at": "2026-09-03T09:09:17Z",
-      "interim_topics_not_adopted": "Visible working comments propose an aggregate lifted-sector gap improvement, a coherent-leakage sharpness example, and a restricted BQP1 source consequence. These are unfinished model claims, not independently checked or adopted results; collect the full answer before disposition.",
-      "receipt": "PRO_DISPATCH_RECEIPT.md"
+      "last_observation": "Completed: Worked for 155m 30s; two response-action controls, two user messages, no Stop answering control. Visible registered personal account and Pro plan verified.",
+      "last_observed_at": "2026-09-03T10:08:55Z",
+      "receipt": "PRO_DISPATCH_RECEIPT.md",
+      "completed_collected_at": "2026-09-03T10:08:55Z",
+      "response_file": "PRO_REVIEW_2026-09-03.md",
+      "disposition_file": "PRO_REVIEW_DISPOSITION_2026-09-03.md"
     }
   },
   "backup_channel": {
@@ -46,7 +48,16 @@
     "source_ledger": "prior-local-checks-reported; complete primary-source reread not performed in consolidation",
     "full_reduction": "not_certified",
     "novelty": "open",
-    "additional_primary_source_check": "Mémoli–Wan–Wang arXiv:2012.02808v1 Section 2.2 and Theorem 5.1 proof; the six main source dependencies remain incompletely independently checked."
+    "additional_primary_source_check": "Mémoli–Wan–Wang Theorem 5.1 proof; September 3 targeted King–Kohler Lemma 9.1/Claim 10.4, Hayakawa Lemma 5.4, Rudolph Appendix D.1 and pinned supplementary graph code. Full papers and priority not certified.",
+    "new_conditional_coercivity": "EXACT_FILLING_COERCIVITY.md; local proof checked, external review pending",
+    "coercivity_fixtures": "15 clique fixtures and two hypothesis guards passed; not the full palette",
+    "finite_certificate_theorem": "FINITE_CERTIFICATE_CONCENTRATION.md; independent derivation, external review and complete palette pending",
+    "actual_source_representative": "RUDOLPH_REPRESENTATIVE_BULK_CERTIFICATE.json; PASS exact integer topology, filling, zero-weight kernel and central-bulk checks for one pinned graph",
+    "strongest_gap_floor": "Conditional weighted Omega(eta^28 g/t^26); under common-copy unweighting Omega(eta^26 g/t^24), m<=6, conservative dyadic lambda=Theta(eta/t).",
+    "mathematical_corrections": [
+      "Do not square a negative angle lower bound; use positive part.",
+      "Old two-bidegree enumeration false for actual source graph; all-bidegree outside-gap proof repairs it."
+    ]
   },
   "github": {
     "status": "source_checkpoint_pushed_and_remote_verified",
@@ -62,9 +73,15 @@
     "policy": "Collect new final responses from the exact channel; preserve raw text and equations, independently disposition before adopting, and sync each useful positive/negative milestone. Continue concrete in-scope proof questions when productive; never interrupt a running Pro response or duplicate a submission.",
     "workflow": "FOLLOW_UP_WORKFLOW.md",
     "stop": "Pause when a substantial scoped result or documented stopping conclusion is reached, or user intervention is necessary.",
-    "pending_for_next_completed_response": [
-      "POST_DISPATCH_SOURCE_UPDATE.md: independently checked Mémoli–Wan–Wang Theorem 5.1 proof already contains persistent domination; novelty correction only, no interruption sent."
-    ]
+    "pending_for_next_completed_response": [],
+    "phase": "Preparing focused proof/finite-palette review after independently checking the collected answer and certifying one actual source graph",
+    "prepared_request": {
+      "message_file": "PRO_FOLLOWUP_REQUEST_2026-09-03.md",
+      "attachment_file": "PRO_FOLLOWUP_PACKET_2026-09-03.md",
+      "status": "prepared_not_sent",
+      "attachment_bytes": 201169,
+      "attachment_sha256": "536e63ec5c4608762e4b94fa34193e7bd2e45925b35a584af7403e44e99ee0d5"
+    }
   },
   "coordination": {
     "canonical_scope": "research/quantum_direction_selection and existing TDA Pro channel",
@@ -80,7 +97,7 @@
       "verification": "Local branch and git ls-remote agreed at receipt commit; all 47 frozen source sizes and SHA-256 hashes independently matched blobs at source commit.",
       "contents": "Four historical Pro responses, project-wide Ramsey portfolio, review dispositions, and a 39-case persistent-domain check archive.",
       "check_scope": "This ingestion verified archive integrity; it did not rerun the supplemental numerical checks or certify the archived arguments.",
-      "submission_status": "Supplemental PRO_REQUEST was never sent and is superseded. The actual active request remains the frozen a46f408 packet in the existing TDA conversation."
+      "submission_status": "Supplemental PRO_REQUEST was never sent and is superseded. The actual a46f408 request is now completed/collected; new focused continuation remains in the same canonical TDA conversation."
     }
   }
 }
