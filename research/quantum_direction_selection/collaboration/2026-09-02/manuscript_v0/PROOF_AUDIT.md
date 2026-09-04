@@ -143,3 +143,12 @@ claimed; the anonymous supplement is unchanged).  Venue note: the ITCS 2027
 HotCRP site lists the registration deadline as September 2, 2026, 7:59:59 PM
 EDT and the submission deadline as September 4, 2026, 7:59:59 PM EDT; a new
 submission can be uploaded only if it was registered before the first date.
+
+## External review of the tagged version 1, dispositioned 2026-09-04
+
+The external reviewer re-derived the full chain and found no error in any
+theorem.  Four formal defects were reported and are now repaired in the
+source (see CHECK_REPORT.md): input-penalty wording, undefined "largest
+dyadic rational", uncovered empty term set, and missing inverse-polynomial
+promises in the problem definition.  The repairs add hypotheses that the
+reduction already satisfies or restate what the proofs already use.

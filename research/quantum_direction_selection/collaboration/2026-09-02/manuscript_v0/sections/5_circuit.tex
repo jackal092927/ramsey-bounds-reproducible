@@ -143,9 +143,10 @@ hard-coded positive rational lower bounds for the constants in
 \cref{thm:transfer}.  Fix \(\eta_0=1/10\); from the polynomially bounded
 \(t_{\max}\), choose the first integer \(b\) for which
 \(\lambda=2^{-b}\) satisfies both inequalities in
-\cref{eq:lambda-E-choice}.  For each endpoint output the largest dyadic
-rational \(E_i\) no greater than one half of
-\(c_2\eta_0^2g_i\lambda^{26}\).  Thus \(b=O(\log t_{\max})\), and the binary
+\cref{eq:lambda-E-choice}.  For each endpoint let \(s_i\) be the least
+integer with \(2^{-s_i}\le\frac12c_2\eta_0^2g_i\lambda^{26}\), and output
+\(E_i=2^{-s_i}\), which satisfies \cref{eq:lambda-E-choice}.  Thus
+\(b=O(\log t_{\max})\) and \(s_i=O(\log t_{\max}+\log L)\), so the binary
 encodings of \(\lambda\) and \(E_i\) have polynomial length.  If the history
 uses \(n\) register qubits (clock and work bits), the register has \(7n\)
 vertices and \(O(n^2)\) edges, and each gadget adds a constant number of

@@ -76,6 +76,16 @@ of \cref{lem:scaling-padding}.
 
 \subsection{Global decomposition and interface energy}
 
+If \(A=\varnothing\), then \(X_A=R\) and \(K_A=V\), and
+\cref{eq:transfer-bound} holds with any \(C\ge\gamma_R^{-1}\): in its top
+degree the register Laplacian \(\Delta_R=\partial_R^*\partial_R\) is the
+tensor sum of the bowtie edge Laplacians, as in \cref{app:local-padding}, so
+it has kernel \(V\) and a constant positive floor \(\gamma_R\) on
+\(V^\perp\), whence
+\(\|(I-P_V)x\|^2\le\gamma_R^{-1}\langle x,\Delta_Rx\rangle
+\le\gamma_R^{-1}\langle x,\Delta_Rx\rangle/(g_A\lambda^\kappa)\)
+because \(g_A\le1\) and \(\lambda\le1\).  Assume henceforth \(t_A\ge1\).
+
 Write the target chain space as the orthogonal coordinate sum
 \[
 C_d(X_A)=C_d(R)\oplus\bigoplus_{j\in A}C_{d,j}^{\rm priv}.

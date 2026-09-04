@@ -39,8 +39,22 @@ E(\xi)=\sum_{t=1}^{L-1}c_t\|\xi_t-\xi_{t-1}\|^2
 +\langle\xi_0,A_{\rm in}\xi_0\rangle,
 \]
 where \(w_t=s_t^2\in[1,2]\), \(c_t\in\{1/2,2/3\}\), and
-\(A_{\rm in}\) is the projector onto \(C^\perp\). Split every \(\xi_t\) into
-the clean subspace \(C=\ker A_{\rm in}\) and its orthogonal complement.
+\(A_{\rm in}\) is the clean-input penalty at time zero, a sum of commuting
+computational-basis projectors, one per clean qubit.  It is not in general a
+projector: a basis string violating \(k\) clean bits has energy \(k\).  All
+that is used below is
+\[
+\ker A_{\rm in}=C,\qquad A_{\rm in}\succeq P_{C^\perp}.
+\]
+Split every \(\xi_t\) into the clean subspace \(C\) and its orthogonal
+complement, and split the energy accordingly as \(E(\xi)=E_C+E_B\) with
+\[
+E_C=\sum_{t=1}^{L-1}c_t\|\xi_t^C-\xi_{t-1}^C\|^2,\qquad
+E_B=\sum_{t=1}^{L-1}c_t\|\xi_t^{C^\perp}-\xi_{t-1}^{C^\perp}\|^2
++\langle\xi_0,A_{\rm in}\xi_0\rangle ;
+\]
+the two difference terms are orthogonal because \(C\) is invariant under
+the splitting.
 
 For a state orthogonal to all valid histories, the clean component has weighted mean zero:
 \[
@@ -53,18 +67,19 @@ The weighted variance identity and path Cauchy--Schwarz inequality give
 \sum_{i,j}w_iw_j\|\xi_i^C-\xi_j^C\|^2
 \le2L^2E_C.
 \]
-For the dirty component, set \(a=\|\xi_0^{C^\perp}\|^2\) and
+For the dirty component, set
+\(a=\|\xi_0^{C^\perp}\|^2\le\langle\xi_0,A_{\rm in}\xi_0\rangle\le E_B\) and
 \(
-D_B=\sum_t\|\xi_t^{C^\perp}-\xi_{t-1}^{C^\perp}\|^2
-\).
+D_B=\sum_t\|\xi_t^{C^\perp}-\xi_{t-1}^{C^\perp}\|^2\le2E_B
+\), using \(c_t\ge1/2\).
 The bound
 \[
 \|\xi_t^{C^\perp}\|^2\le2a+2(L-1)D_B
 \]
-implies
+and \(\sum_tw_t\le2L\) imply
 \[
 \sum_tw_t\|\xi_t^{C^\perp}\|^2
-\le8L^2E_B.
+\le2L\bigl(2E_B+4(L-1)E_B\bigr)\le8L^2E_B.
 \]
 Adding both sectors proves \(N(\xi)\le8L^2E(\xi)\) on the orthogonal complement of the complete initial kernel, establishing the first bound in~\cref{eq:history-gaps}.
 

@@ -42,7 +42,7 @@ did not modify the mathematical artifacts.
 - PDF: 28 A4 pages, anonymous metadata (title updated), all fonts embedded.
 - AI disclosure: included at the end of the paper; names ChatGPT and Claude.
 - Pages 1, 3, and 9 were rendered and visually inspected after the rewrite.
-- SHA-256: `999ef4797601102526bfd6929a78a9ee912cf4c27ce5751384bc6fa27a7ea780`.
+- SHA-256 after the September 4 afternoon repairs: `f6eb6d96277a12f973a1c60e3bdf3f194d20dd4c4edca2ac345a17e2f6f9a1e5`.
 
 ## Anonymous supplement
 
@@ -67,3 +67,13 @@ repository.  The cited primary-source ledger was only partially refreshed.
 The final SIAM King--Kohler paper was identified, but its full equation-level
 proof was not available for comparison.  No unrestricted SDQC1/BQP
 class-equivalence or full literature novelty certification is recorded here.
+
+## September 4 afternoon repairs (external review)
+
+Four formal repairs, none changing a theorem: the clean-input penalty
+`A_in` is described as a sum of basis projectors with `ker A_in = C` and
+`A_in >= P_{C^perp}` (Appendix B.2); the endpoint gap bounds are chosen as
+explicit powers of two `E_i = 2^{-s_i}` (proof of Theorem 5.3); the empty
+term set is handled by the register floor (Appendix A.2); Definition 2.1
+requires `gamma_1, gamma_2, epsilon >= 1/poly(|V|)`.  Forced rebuild: 28
+pages, 0 warnings, 0 overfull, 0 underfull, no unresolved references.
