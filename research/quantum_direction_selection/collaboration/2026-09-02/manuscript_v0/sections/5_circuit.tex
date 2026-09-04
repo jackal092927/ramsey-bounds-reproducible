@@ -16,6 +16,26 @@ stays in any gate set containing \(G_2\); we apply it first so that soundness
 is at most \(1/3\).  The superscript is essential: no approximate compilation
 or gate-independent identification is used below.
 
+\begin{theorem}[Fixed-eight hardness]
+\label{thm:weighted-hardness}
+There is a deterministic polynomial-time many-one reduction from
+\(\BQPone^{G_2}\) to the decision version of weighted gapped true normalized
+persistence.  Every output satisfies
+\[
+\beta_d(\Xin)=8,\qquad
+\beta_d(\Xin\to\Xout)=
+\begin{cases}6,&x\in L,\\1,&x\notin L,\end{cases}
+\]
+and both endpoint degree-\(d\) Laplacians have inverse-polynomial gaps above
+their complete kernels.  Hence the normalized values are \(3/4\) and \(1/8\).
+Additive error \(1/24\), with decision threshold \(7/16\), distinguishes the
+two cases with success probability at least \(2/3\).
+\end{theorem}
+
+The remainder of this section proves the theorem by combining a rational
+history construction, a certified finite clique palette, and an exact
+three-bit source combiner.
+
 \subsection{Rational histories and the certified palette}
 
 Write \(K=\sqrt2H\).  Replace each \(H\otimes H\) transition by a gain edge
@@ -95,7 +115,7 @@ clique complexes \(\Xin\subseteq\Xout\) with
 \end{equation}
 and inverse-polynomial gaps above both complete kernels.
 
-\subsection{A fixed-eight source}
+\subsection{A fixed-eight source and proof of \cref{thm:weighted-hardness}}
 
 Given a \(\BQPone^{G_2}\) verifier \(Q_x\) with acceptance probability \(p_x\),
 add a maximally mixed label \(z\in\{0,1\}^3\), run \(Q_x\) unconditionally,
@@ -115,24 +135,7 @@ Thus the perfect eigenspace has dimension six when \(p_x=1\) and dimension
 one when \(p_x\le1/3\); every off-perfect eigenvalue in the latter case is at
 most \(1/3\).
 
-\begin{theorem}[Fixed-eight hardness]
-\label{thm:weighted-hardness}
-There is a deterministic polynomial-time many-one reduction from
-\(\BQPone^{G_2}\) to the decision version of weighted gapped true normalized
-persistence.  Every output
-satisfies
-\[
-\beta_d(\Xin)=8,\qquad
-\beta_d(\Xin\to\Xout)=
-\begin{cases}6,&x\in L,\\1,&x\notin L,\end{cases}
-\]
-and both endpoint degree-\(d\) Laplacians have inverse-polynomial gaps above
-their complete kernels.  Hence the normalized values are \(3/4\) and \(1/8\).
-Additive error \(1/24\), with decision threshold \(7/16\), distinguishes the
-two cases with success probability at least \(2/3\).
-\end{theorem}
-
-\begin{proof}
+\begin{proof}[Proof of \cref{thm:weighted-hardness}]
 Apply \cref{eq:generic-circuit-transfer} to \cref{eq:eight-label}.  The two
 ratios differ by \(5/8\), and \(1/24<5/16\).  The logical gaps in
 \cref{eq:history-gaps} are explicit rationals.  The finite certificate data
