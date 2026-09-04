@@ -12,6 +12,14 @@ B_d(X)=\ran\partial_{X,d+1}.
 \]
 Finite-dimensional Hodge theory identifies
 \(H_d(X)=Z_d(X)/B_d(X)\) with \(\ker\Delta_{X,d}\).
+For a positive semidefinite operator \(A\), write
+\(\gamma_+(A)=\min(\spec(A)\setminus\{0\})\), with the convention that a
+claimed lower bound on \(\gamma_+(A)\) concerns the positive spectrum only.
+All certified boundary matrices and fillings below are rational.  Rank, kernel
+dimension, image intersection, and filling validity are unchanged under scalar
+extension \(\mathbb Q\subset\mathbb R\subset\mathbb C\), and the real
+positive-semidefinite inequalities complexify verbatim.  We state homology over
+\(\mathbb C\) while certifying the finite palette over \(\mathbb Q\).
 
 For \(X_1\subseteq X_2\), define
 \begin{equation}
@@ -21,10 +29,25 @@ For \(X_1\subseteq X_2\), define
 q_d(X_1,X_2)
 =\frac{\beta_d(X_1\to X_2)}{\beta_d(X_1)}.
 \end{equation}
-The promise problem receives polynomial-size weighted graph descriptions,
-a degree \(d\), a positive inverse-polynomial lower bound \(E\) for both
-endpoint degree-\(d\) Laplacians, and the promise
-\(\beta_d(X_1)>0\).  It asks for an additive approximation to \(q_d\).
+\begin{definition}[Gapped true normalized persistence]
+An instance of the weighted problem consists of explicit simple graphs
+\(G_1\subseteq G_2\) on one labeled vertex set, one common positive dyadic
+weight function \(w:V\to\mathbb Q_{>0}\), a degree \(d\ge1\), positive rational
+lower bounds \(\gamma_1,\gamma_2\), and a positive rational accuracy
+\(\varepsilon\), all encoded in binary.  Put \(X_i=\Cl(G_i)\), using the
+weighted-boundary convention above.  The promises are
+\[
+\beta_d(X_1)>0,
+\qquad
+\spec(\Delta_{X_i,d})\subseteq\{0\}\cup[\gamma_i,\infty)
+\quad(i=1,2).
+\]
+The task is to output \(\widetilde q\) such that
+\(\Pr[|\widetilde q-q_d(X_1,X_2)|\le\varepsilon]\ge2/3\).  Input size is the
+total bit length of the graph encodings, weights, \(d\), the two gap bounds,
+and \(\varepsilon\).  The unweighted problem is the restriction \(w\equiv1\).
+Its fixed decision version distinguishes \(q_d\ge3/4\) from \(q_d\le1/8\).
+\end{definition}
 The denominator is the initial Betti number, not the number of simplices, and
 the statistic counts exact zero modes rather than eigenvalues below a cutoff.
 

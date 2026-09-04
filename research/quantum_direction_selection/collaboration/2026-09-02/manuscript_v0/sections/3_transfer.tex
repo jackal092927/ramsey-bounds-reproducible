@@ -21,8 +21,9 @@ The value at \(\lambda=0\) is a matrix limit, not a singular change of basis.
 
 \begin{assumption}[Finite local certificate]
 \label{ass:local-certificate}
-For every member \(a\) of a fixed finite palette there are a private-coordinate
-subspace \(Q_a\), an output projector \(R_a^{\rm out}\), and a rank-one
+For every member \(a\) of a fixed finite palette there are an orthogonal
+subspace \(Q_a\) contained in the span of private simplex coordinates, an
+output projector \(R_a^{\rm out}\), and a rank-one
 projector \(\pi_a\) on \(V_a\) such that:
 \begin{enumerate}[(i)]
 \item \(B_{d_a}(Y_a)\cap V_a=\ran\pi_a\) for every \(\lambda>0\);
@@ -39,8 +40,10 @@ all matrix norms are uniform over the palette.
 \end{assumption}
 
 All data in \cref{ass:local-certificate} are finite integer or rational linear
-algebra.  Exact fillings certify (i), modular rank bounds with matching
-rational kernels certify (ii), and a nonzero Gram determinant certifies (iii).
+algebra.  Exact fillings prove one inclusion in (i); matching boundary ranks
+and surviving register cosets, or the guard connecting-map argument, prove the
+reverse inclusion.  Modular rank bounds with matching rational kernels certify
+(ii), and a nonzero Gram determinant certifies (iii).
 The explicit palette used later is recorded in \cref{app:palette}.
 
 \begin{lemma}[Weight scaling and harmonic padding]
@@ -94,7 +97,7 @@ LL^*=\sum_jL_jL_j^*\preceq N_*t_A\lambda^2I.
 Fix a palette satisfying \cref{ass:local-certificate,lem:scaling-padding} and
 \cref{eq:interface}.  Use outside-harmonic padding in every bidegree and
 independent private interiors.  Let \(\mathcal A\) be a finite nested family
-of term sets, let \(t_{\max}=\max_{A\in\mathcal A}|A|\ge1\), and suppose
+of term sets, let \(t_{\max}=\max\{1,\max_{A\in\mathcal A}|A|\}\), and suppose
 \[
 H_A=\sum_{j\in A}\Pi_j\succeq
 g_A(P_V-P_{K_A}),\qquad K_A=\ker H_A,\qquad 0<g_A\le1

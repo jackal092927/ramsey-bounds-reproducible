@@ -36,8 +36,14 @@ up-exact sectors and gives
 A finite palette and \(d_a=2m_a-1\), \(m_a\le m\), give the common bound
 \cref{eq:local-gap}.
 
-For padding, use reduced chain complexes, including degree \(-1\), in every
-join bidegree.  The join Laplacian is the tensor sum
+For padding, use augmented reduced chain complexes, including degree \(-1\),
+in every join bidegree:
+\[
+\widetilde C_d(Y_a*R_{\rm out})
+=\bigoplus_{r+s=d-1}
+\widetilde C_r(Y_a)\otimes\widetilde C_s(R_{\rm out}).
+\]
+On each summand the join Laplacian is the tensor sum
 \[
 \Delta_{Y_a*R_{\rm out}}
 =\Delta_{Y_a}\otimes I+I\otimes\Delta_{R_{\rm out}}.

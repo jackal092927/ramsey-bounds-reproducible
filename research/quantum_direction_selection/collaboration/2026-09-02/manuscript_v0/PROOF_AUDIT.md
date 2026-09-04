@@ -14,6 +14,15 @@ are standard dimension/min--max consequences once concentration and exact
 filling are both available.  The quotient description is elementary linear
 algebra once independent filling is established.
 
+A submission-focused ChatGPT Pro review of source commit `586811c` was received
+as a preserved artifact and dispositioned against this later candidate. Its
+verdict was submission-candidate after formalization and integration fixes; no
+counterexample to the core chain was found. The target definition, finite
+palette proposition and anonymous supplement, exact gate-dependent source,
+encoded reduction outputs, clock sectors, field bridge, size bounds, source
+scope, bibliography, and disclosure have since been repaired. See the dated
+review and disposition records one directory above.
+
 ## Assumptions that must remain visible
 
 1. The clique-gadget palette is fixed and finite.
@@ -75,3 +84,5 @@ algebra once independent filling is established.
 - General integer-state or complex-phase gadget extensions are outside scope.
 - The archived exact certificate scripts support the fixed palette; this audit
   does not independently reconstruct every simplicial incidence table by hand.
+- The anonymous supplement was replayed cleanly on 2026-09-03; it is locally
+  prepared but has not yet been uploaded to a submission system.

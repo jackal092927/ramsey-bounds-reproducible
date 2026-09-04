@@ -21,9 +21,15 @@ second to the other gives \(H\otimes H\).
 
 \subsection{Weighted path estimate}
 
-The unary-clock Hilbert space is the orthogonal sum of legal and illegal
-clock sectors.  Every propagation term preserves this decomposition, while
-the diagonal clock term is at least \(1\) on the illegal sector.  It therefore
+With the unary encoding \(\ket t=\ket{1^t0^{T-t}}\), the legal clock span and
+its orthogonal complement are invariant under the neighboring-clock-guarded
+propagation, input, and output projectors.  The diagonal clock term
+\[
+H_{\rm clock}=\sum_{j=1}^{T-1}\ket{01}\!\bra{01}_{j,j+1}
+\]
+has energy at least one on every illegal computational-basis clock string.
+By Hermiticity, the whole unary-clock Hilbert space is the orthogonal sum of
+the invariant legal and illegal sectors.  It therefore
 suffices to prove the smaller inverse-polynomial bound on the legal sector.
 For a legal-clock state, write \(f_t=s_tV_t\xi_t\), with the notation of~\cref{eq:history-isometry}. Its norm and initial-history energy are
 \[

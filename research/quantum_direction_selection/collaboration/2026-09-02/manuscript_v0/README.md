@@ -7,8 +7,8 @@ kernel multiplicity, the whole positive gap, quotient naturality, and
 common-copy unweighting are downstream consequences with their assumptions
 spelled out.
 
-Current build: 21 pages in the 11-point LIPIcs review format; the main narrative
-ends on page 12, references occupy page 13, and the remaining pages are proof
+Current build: 23 pages in the 11-point LIPIcs review format; the main narrative
+ends on page 13, references occupy page 14, and the remaining pages are proof
 appendices and the AI disclosure.  The build resolves every citation and
 cross-reference.  See `PROOF_AUDIT.md` for the dependency audit and
 `CHECK_REPORT.md` for executable and rendering checks.
@@ -25,6 +25,11 @@ SIAM version of King--Kohler has not been performed, so the exact
 published-version priority comparison remains open.  The draft does not claim
 ordinary BQP, unrestricted SDQC1, gate-independent BQP1, complex-phase coverage,
 intrinsic denominator growth, or practical gap size.
+
+The anonymous `supplement/` directory contains the submission-safe certificate
+data, nine checker scripts, offline receipts, requirements, exact commands, and
+upstream provenance. It excludes collaboration transcripts and Git history.
+The upload-ready archive is `normalized-persistence-anonymous-supplement.zip`.
 
 The source tree is modular:
 

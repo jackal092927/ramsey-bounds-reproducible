@@ -5,11 +5,16 @@ Let
 \[
 G_2=\{X,\CX,\CCX,H\otimes H\}.
 \]
-We write \(\BQPone^{G_2}\) for the languages decided by a uniform family of
-exact \(G_2\) circuits on a fixed computational-basis input, with one
-computational-basis output bit, perfect completeness, and soundness at most
-\(1/3\).  The superscript is essential: no gate-independent identification is
-used below.
+Following Rudolph's gate-dependent definition
+\cite[Definition~2.2]{rudolph2026universal}, \(\BQPone^{G_2}\) consists of
+promise problems decided by a polynomial-time uniform family of exact
+\(G_2\) circuits on an all-zero input, with one computational-basis output
+bit, perfect completeness, and inverse-polynomial rejection probability in
+the no case.  Rudolph's exact error reduction
+\cite[Theorem~2.3]{rudolph2026universal} preserves perfect completeness and
+stays in any gate set containing \(G_2\); we apply it first so that soundness
+is at most \(1/3\).  The superscript is essential: no approximate compilation
+or gate-independent identification is used below.
 
 \subsection{Rational histories and the certified palette}
 
@@ -55,6 +60,8 @@ scalars, then
 \cV v=Z^{-1/2}\sum_{t=0}^{L-1}s_t\ket tV_tv,\qquad
 Z=\sum_ts_t^2,\qquad L\le Z\le2L.
 \end{equation}
+Every gain edge is immediately followed by its matching loss edge, with no
+gate between them, so \(s_0=s_{L-1}=1\).
 
 \begin{proposition}[History kernels and gaps]
 \label{prop:history}
@@ -110,8 +117,9 @@ most \(1/3\).
 
 \begin{theorem}[Fixed-eight hardness]
 \label{thm:weighted-hardness}
-There is a polynomial reduction from \(\BQPone^{G_2}\) to gapped true
-normalized persistence on nested weighted clique complexes.  Every output
+There is a deterministic polynomial-time many-one reduction from
+\(\BQPone^{G_2}\) to the decision version of weighted gapped true normalized
+persistence.  Every output
 satisfies
 \[
 \beta_d(\Xin)=8,\qquad
@@ -121,16 +129,32 @@ satisfies
 and both endpoint degree-\(d\) Laplacians have inverse-polynomial gaps above
 their complete kernels.  Hence the normalized values are \(3/4\) and \(1/8\).
 Additive error \(1/24\), with decision threshold \(7/16\), distinguishes the
-two cases.
+two cases with success probability at least \(2/3\).
 \end{theorem}
 
 \begin{proof}
 Apply \cref{eq:generic-circuit-transfer} to \cref{eq:eight-label}.  The two
 ratios differ by \(5/8\), and \(1/24<5/16\).  The logical gaps in
-\cref{eq:history-gaps}, the polynomial number of history terms, and
-\cref{eq:weighted-gap} give an explicitly computable inverse-polynomial
-geometric gap.
+\cref{eq:history-gaps} are explicit rationals.  The fixed palette supplies
+hard-coded positive rational lower bounds for the constants in
+\cref{thm:transfer}.  Fix \(\eta_0=1/10\); from the polynomially bounded
+\(t_{\max}\), choose the first integer \(b\) for which
+\(\lambda=2^{-b}\) satisfies both inequalities in
+\cref{eq:lambda-E-choice}.  For each endpoint output the largest dyadic
+rational \(E_i\) no greater than one half of
+\(c_2\eta_0^2g_i\lambda^{26}\).  Thus \(b=O(\log t_{\max})\), and the binary
+encodings of \(\lambda\) and \(E_i\) have polynomial length.  The weighted
+graph has \(O(n+t_{\max})\) vertices and at most
+\(O(n^2+t_{\max}n)\) explicitly generated edges, because the register and
+every local interior are explicit and locality is constant.  Hence the map
+outputs the two graphs, their common weight function, \(d,E_1,E_2\), and the
+fixed decision threshold in deterministic polynomial time.
 \end{proof}
+
+For every fixed finite gate family covered by Rudolph's
+Theorem~3.4~\cite{rudolph2026universal}, the exact simulation into \(G_2\) may
+be composed with this reduction.  This is a separate gate-family-relative
+statement, not gate-independent \(\BQPone\)-hardness.
 
 The exact trace-versus-perfect-space obstruction and the mixed-spectator
 extension to individual real Hadamards are recorded in
