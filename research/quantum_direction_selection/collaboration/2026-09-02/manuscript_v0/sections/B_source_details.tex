@@ -39,8 +39,10 @@ E(\xi)=\sum_{t=1}^{L-1}c_t\|\xi_t-\xi_{t-1}\|^2
 +\langle\xi_0,A_{\rm in}\xi_0\rangle,
 \]
 where \(w_t=s_t^2\in[1,2]\), \(c_t\in\{1/2,2/3\}\), and
-\(A_{\rm in}\) is the projector onto \(C^\perp\). Split every \(\xi_t\) into
-the clean subspace \(C=\ker A_{\rm in}\) and its orthogonal complement.
+\(A_{\rm in}\) is the sum of the clean-input penalty projectors.  It vanishes
+on \(C\) and satisfies \(A_{\rm in}|_{C^\perp}\succeq I\), where
+\(C=\ker A_{\rm in}\) is the valid clean-input space.  Split every \(\xi_t\)
+into \(C\) and its orthogonal complement.
 
 For a state orthogonal to all valid histories, the clean component has weighted mean zero:
 \[
