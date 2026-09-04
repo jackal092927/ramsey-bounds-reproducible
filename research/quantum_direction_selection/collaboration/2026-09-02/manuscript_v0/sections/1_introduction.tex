@@ -26,11 +26,13 @@ We address this obstruction through a finite-certificate all-chain theorem. The 
 \frac{\langle x,\Delta_Ax\rangle}{g_A\lambda^\kappa}\right],
 \qquad \kappa\le 26,
 \end{equation}
-where \(K_A\) is the embedded kernel of the logical projector sum \(H_A\), \(g_A\) is its smallest positive eigenvalue, and \(\Delta_A\) is the full geometric Laplacian. The estimate concerns arbitrary geometric vectors; it is not a statement about distance to the geometric Laplacian's own kernel.
+where \(K_A\) is the embedded kernel of the logical projector sum \(H_A\),
+\(g_A\) is a certified coercivity constant above that kernel, and
+\(\Delta_A\) is the full geometric Laplacian. The estimate concerns arbitrary geometric vectors; it is not a statement about distance to the geometric Laplacian's own kernel.
 
-The form of~\cref{eq:intro-concentration} matters quantitatively. A direct use of the earlier many-gadget master inequality would choose \(\lambda\) proportional to \(g_A\), producing a high power of the logical gap in the final estimate. Here the structural error is \(t_A\lambda^2\), while the energy term is divided by \(g_A\lambda^\kappa\). We may choose \(\lambda\) from the palette size and target angle, independently of \(g_A\). For locality at most six, a conservative choice gives
+The form of~\cref{eq:intro-concentration} matters quantitatively. A direct use of the earlier many-gadget master inequality would choose \(\lambda\) proportional to \(g_A\), producing a high power of the logical gap in the final estimate. Here the structural error is \(t_A\lambda^2\), while the energy term is divided by \(g_A\lambda^\kappa\). We may choose \(\lambda\) from the palette size and target angle, independently of \(g_A\). For locality at most six, a conservative common choice gives
 \[
-E_A=\Omega\!\left(\frac{\eta^{28}g_A}{t_A^{26}}\right).
+E_A=\Omega\!\left(\frac{\eta^{28}g_A}{t_{\max}^{26}}\right).
 \]
 The exponent is poor, but the scale is inverse polynomial and linear in the logical gap.
 
