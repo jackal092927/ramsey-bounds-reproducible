@@ -1,24 +1,47 @@
-\section{Limitations and conclusion}
+\section{Limitations and open problems}
 \label{sec:limitations}
 
-The construction has three substantive limits.  Its exact palette is finite
-and real; arbitrary integer states and complex phases are outside the theorem.
-Its hardness source is the gate-dependent class \(\BQPone^{G_2}\), rather
-than ordinary \(\BQP\), unrestricted \(\SDQCone\), or a gate-independent
-perfect-completeness class.  Finally, the clean source has
-\(\beta_d(\Xin)=8\).  Ignored mixed qubits can replicate this denominator
-exactly, but an intrinsically growing family of distinct initial classes would
-require another exact source.
+The construction has four substantive limits.  Its exact palette is finite
+and real: arbitrary integer states and complex phases are outside the
+theorem, so the hardness source is the gate-dependent class
+\(\BQPone^{G_2}\) rather than ordinary \(\BQP\), unrestricted \(\SDQCone\),
+or a gate-independent perfect-completeness class.  The clean source has
+\(\beta_d(\Xin)=8\); ignored mixed qubits replicate this denominator
+exactly, but an intrinsically growing family of distinct initial classes
+would require another exact source.  The gap is a complexity promise rather
+than a practical estimate: at locality six it scales conservatively as
+\(\Omega(\eta^{28}g/t^{26})\) with \(g=\Omega(L^{-3})\), and the common-copy
+blow-up multiplies the vertex count by \(F=\lambda^{-2}\).  Finally, the
+hardness is for the promise problem with endpoint gaps; whether our instances
+also satisfy the access assumptions under which Lowe et al.\ place the
+problem in \(\BQP\) is not established.
 
-The gap is also a complexity promise rather than a practical estimate.  At
-locality six it scales conservatively as
-\(\Omega(\eta^{28}g/t^{26})\), with \(g=\Omega(L^{-3})\) for the history
-construction.  The common-copy blow-up is polynomial but may be large.
+Each limit suggests a question.
+\begin{enumerate}
+\item Is normalized harmonic persistence \(\SDQCone\)-hard, as conjectured
+in~\cite{lowe2026normalized}?  The missing steps are a source whose
+perfect-space fraction is separated by the \(\SDQCone\) trace promise, and a
+certified palette for the corresponding gate set.
+\item Can the initial homology be made intrinsically large, say
+\(\beta_d(\Xin)=2^{\Theta(n)}\) with an inverse-polynomial fraction
+surviving, while keeping both endpoint gaps?
+\item Do the constructed filtrations satisfy an inverse-polynomial lower
+bound on the nonzero principal angles between \(\cH_d(\Xin)\) and
+\(\cH_d(\Xout)\)?  A positive answer, together with a preparation circuit
+for the initial harmonic mixture, would place the instances in \(\BQP\)
+by~\cite[Lemma~7]{lowe2026normalized}.
+\item Lowe et al.\ ask for a general kernel-preserving universality theorem
+for weighted clique Laplacians.  \Cref{thm:transfer} is such a theorem for
+palettes with finite certificates.  Extending the certificate model to
+integer-state gadgets~\cite{king2026gapped} or to complex phases would answer
+their question for a much wider class of Hamiltonians.
+\item The exponent \(26\) comes from the crude scaling
+\(\sigma_{\min}(W_k)\ge\lambda^{k+1}\); a sharper local analysis should
+improve it substantially.
+\end{enumerate}
 
-Within these limits, finite local certificates control every geometric chain;
-exact fillings supply the intended zero modes; the all-chain estimate excludes
-extra zero and low-energy modes; and natural quotients compute the induced
-homology rank.  The reusable result is the transfer criterion itself: a new
-clique reduction can obtain gapped exact persistence by certifying local
-zero-weight kernels, private coercivity, harmonic padding, filling, and
-interfaces, without a growing-dimensional perturbation argument.
+Within its limits, the paper establishes a reusable criterion: a new clique
+reduction obtains exact kernel multiplicity, an inverse-polynomial gap above
+the whole kernel, and natural persistent ranks by certifying, for a finite
+palette, local zero-weight kernels, private coercivity, exact filling, and
+interfaces, with no growing-dimensional perturbation argument.

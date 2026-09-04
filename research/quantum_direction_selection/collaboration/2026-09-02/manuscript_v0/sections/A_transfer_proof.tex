@@ -56,6 +56,17 @@ and puts every other bidegree above a uniform floor.  Tensor the private
 output projector with \(P_{\cH_{\rm out}}\); both outside differentials vanish
 after this projection, preserving the private-pair bounds.
 
+The same tensor-sum structure gives the padded form of
+\cref{eq:local-gap}: the positive eigenvalues of the padded Laplacian in
+degree \(d\) are sums \(\mu_1+\mu_2\) of factor eigenvalues.  In every
+bidegree other than \((d_a,s_{\rm top})\) the outside eigenvalue \(\mu_2\) is
+at least the constant gap of \(R_{\rm out}\), and in the bidegree
+\((d_a,s_{\rm top})\) a positive sum has \(\mu_2=0\) and
+\(\mu_1\ge\gamma_+(\Delta_{Y_a,d_a}(\lambda))\ge c\lambda^\kappa\).  Hence
+\(\gamma_+\) of the padded degree-\(d\) Laplacian is at least
+\(\min\{c\lambda^\kappa,\gamma_+(\Delta_{R_{\rm out}})\}\ge c'\lambda^\kappa\)
+for \(0<\lambda\le1\).
+
 Finally, the relative join formula identifies the padded connecting map with
 the active connecting map tensored with
 \(\cH_{\rm out}\).  Since all register weights are one, the positive-weight
@@ -112,7 +123,7 @@ All nonregister down-boundary coordinates and all up-boundary coordinates are pr
 
 \subsection{Zero-weight and private-sector coercivity}
 
-Let \(A_{j,0}=I-P_V-Q_j\) in the padded local chain space. The positive singular-value floor of \(D_{j,0}\) on \(\ran A_{j,0}\), together with
+Let \(Q_j\) also denote the orthogonal projector onto the padded zero-weight private subspace \(Q_j\otimes\cH_{\rm out}\) of gadget \(j\), and let \(A_{j,0}=I-P_V-Q_j\) in the padded local chain space; by \cref{lem:scaling-padding} this is the projector onto the orthogonal complement of \(\ker D_{j,0}\). The positive singular-value floor of \(D_{j,0}\) on \(\ran A_{j,0}\), together with
 \(
 D_j(\lambda)=D_{j,0}+\lambda D_{j,1}
 \), gives
@@ -157,7 +168,7 @@ Choosing \(\lambda\le c_0/t_{\max}\) absorbs the last term and proves~\cref{eq:g
 
 \subsection{Logical coercivity}
 
-For each gadget, exact filling gives \(\ran\Pi_j\subseteq B_d(Y_j)\). The up-Laplacian has kernel \(B_d(Y_j)^\perp\), and~\cref{eq:local-gap} lower-bounds its positive spectrum. Therefore, after the common embedding into \(X_A\),
+For each padded gadget \(Y_j\), exact filling gives \(\ran\Pi_j\subseteq B_d(Y_j)\). The up-Laplacian \(\partial_{d+1}\partial_{d+1}^*\) of \(Y_j\) has kernel \(B_d(Y_j)^\perp\), and its positive eigenvalues are positive eigenvalues of the padded degree-\(d\) Laplacian, which the padded form of~\cref{eq:local-gap} bounds below by \(c\lambda^\kappa\). Therefore, after the common embedding into \(X_A\),
 \[
 \Delta_j^\uparrow\succeq c\lambda^\kappa\Pi_j.
 \]

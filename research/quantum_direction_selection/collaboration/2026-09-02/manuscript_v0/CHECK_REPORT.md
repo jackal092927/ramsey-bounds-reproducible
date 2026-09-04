@@ -1,6 +1,6 @@
 # Candidate check report
 
-Date: 2026-09-03
+Date: 2026-09-04 (supersedes the 2026-09-03 report)
 
 ## Exact and finite checks
 
@@ -28,16 +28,21 @@ did not modify the mathematical artifacts.
 
 ## Manuscript checks
 
-- `latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex`: PASS.
-- Citations and cross-references: resolved.
-- Typesetting diagnostics: no overfull boxes or LaTeX warnings.
+- All nine supplement checkers were replayed again on 2026-09-04 from
+  `supplement/` with `PYTHONDONTWRITEBYTECODE=1`: all PASS.
+- `latexmk -pdf -g -interaction=nonstopmode -halt-on-error main.tex`
+  (forced full rebuild): PASS.
+- Citations and cross-references: resolved; no `??` in the rendered text.
+- Typesetting diagnostics: 0 LaTeX warnings, 0 BibTeX warnings, 0 overfull
+  boxes, 0 underfull boxes (`\paragraph` headings made unnumbered via
+  `secnumdepth`).
 - Format: anonymous LIPIcs review copy with the local ITCS 11-point adapter.
-- Main flow: pages 1--13; references: page 14; proof appendices and disclosure
-  follow.
-- PDF: 23 A4 pages, anonymous metadata, all fonts embedded.
-- AI disclosure: included at the end of the paper.
-- Representative pages 1, 12, 14, and 23 were rendered and visually inspected.
-- SHA-256: `034bc4111d5f4830932e940efbb7d8012f85ace671a86ad952e41255824a8ab2`.
+- Main flow: introduction with Theorems 1.1--1.3 on pages 1--5; body through
+  page 17; references pages 18--19; proof appendices and disclosure follow.
+- PDF: 28 A4 pages, anonymous metadata (title updated), all fonts embedded.
+- AI disclosure: included at the end of the paper; names ChatGPT and Claude.
+- Pages 1, 3, and 9 were rendered and visually inspected after the rewrite.
+- SHA-256: `999ef4797601102526bfd6929a78a9ee912cf4c27ce5751384bc6fa27a7ea780`.
 
 ## Anonymous supplement
 

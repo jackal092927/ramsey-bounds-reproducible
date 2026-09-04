@@ -215,6 +215,27 @@ still checked. Other submission fields were not changed. The revised submitted
 PDF is preserved at
 `papers/quantum/submitted/itcs2027-paper193-2026-09-02-v2.pdf`.
 
+## Normalized persistence candidate
+
+Current scoped statement:
+
+```text
+LOCAL SUBMISSION CANDIDATE; INDEPENDENTLY REVIEWED 2026-09-04
+BQP1^{G_2}-HARDNESS OF NORMALIZED (HARMONIC) PERSISTENCE, PROBLEM 9 OF LOWE ET AL.
+WEIGHTED AND UNWEIGHTED CLIQUE COMPLEXES; ENDPOINT GAP PROMISES
+NO SDQC1, BQP, GATE-INDEPENDENT, OR CONTAINMENT CLAIM
+```
+
+The manuscript at
+[`research/quantum_direction_selection/collaboration/2026-09-02/manuscript_v0/`](research/quantum_direction_selection/collaboration/2026-09-02/manuscript_v0/)
+was independently re-derived on September 4 with no mathematical error found;
+seven rigor gaps were closed and the presentation was rewritten for ITCS (see
+`PROOF_AUDIT.md` and `CHECK_REPORT.md` there).  The build is 28 clean pages.
+HotCRP lists the ITCS 2027 registration deadline as September 2, 2026,
+7:59:59 PM EDT and the submission deadline as September 4, 2026, 7:59:59 PM
+EDT; a new upload is possible only for a submission registered before the
+first date.
+
 ## Current research collaboration
 
 The September 3 [project dossier](research/pro_collaboration_2026-09-02/README.md)

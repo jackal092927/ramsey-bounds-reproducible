@@ -1,42 +1,91 @@
 \section{Relation to prior work}
 \label{sec:related}
 
-Crichigno and Kohler give a parsimonious reduction in which quantum
-satisfying states correspond to clique-homology classes
-one-for-one~\cite{crichigno2024clique}; exact multiplicity alone is therefore
-prior.  King and Kohler develop the weighted clique gadgets and many-gadget
-spectral analysis behind gapped clique homology~\cite{king2026gapped}.  Once a
-uniform arbitrary-chain estimate is available, substituting a gap above a
-degenerate logical kernel and applying the dimension argument of
-\cref{thm:transfer} are short consequences.
+\paragraph{Normalized persistence.}
+Lowe et al.~\cite{lowe2026normalized} define normalized harmonic persistence
+(their Problem~9, our \cref{def:problem}), prove that a low-energy relaxation
+of it is \(\mathsf{DQC}_1\)-hard and in \(\BQP\), prove \(\SDQCone\)-hardness
+of the local-Hamiltonian analogue, and conjecture \(\SDQCone\)-hardness of
+Problem~9 (their Conjecture~1).  Their Conjecture~2 asks for a polynomial-time
+map from history Hamiltonians \(H_1\) and \(H_2=H_1+\lambda H_{\rm out}\) to
+weighted clique complexes \(X_1\subseteq X_2\) with two properties:
+kernel fidelity and gap, \(\beta_d(X_i)=\dim\ker H_i\) together with
+computable inverse-polynomial gap bounds; and functoriality,
+\(\beta_d(X_1\to X_2)=\dim\ran(P_{\ker H_2}|_{\ker H_1})\).  Their Lemma~11
+shows that Conjecture~2 implies Conjecture~1.  \Cref{thm:transfer,thm:quotient}
+establish both properties for the exact \(G_2\) history Hamiltonians of
+\cref{sec:circuit}, with \(H_{\rm out}\) at unit coefficient rather than at a
+small coefficient \(\lambda\), and with the induced map computed through the
+quotient model rather than through compatible harmonic isometries as
+formulated there.  Two differences prevent us from concluding Conjecture~1
+itself.  First, our source is \(\BQPone^{G_2}\) with three mixed label
+qubits rather than an \(\SDQCone\) verifier with a maximally mixed register.
+The \(\SDQCone\) promise constrains the acceptance probability of the
+maximally mixed state, and a trace promise does not in general determine the
+dimension of the perfectly accepted subspace, which is what \(q_d\) measures
+(\cref{app:source-boundaries}).  Second, the certified palette is real and
+exact, so verifiers over an arbitrary gate set are not covered.  Their
+containment result (Lemma~7) needs additional access assumptions, namely a
+preparation circuit for the uniform mixture over \(\ker\Delta_{1,d}\) and an
+inverse-polynomial lower bound on the nonzero principal angles between the
+two harmonic spaces.  We do not establish these for our instances, and
+containment of the promise problem of \cref{def:problem} in \(\BQP\) remains
+open.
 
-Our independent estimate changes the padded step.  The coordinate-bulk
-argument in arXiv version 2~\cite{king2023gappedv2} can retain a term obtained
-by deleting a weight-one outside vertex, so its coefficient need not be
-\(O(\lambda)\).  We project the fixed private pair onto outside harmonics in
-every bidegree and give all nonharmonic outside modes a separate positive
-floor.  Direct finite matrices also avoid turning basiswise perturbation into
-a dimension-dependent projector bound.  This comparison is only to the
-cited arXiv version; the theorem here is proved independently and makes no
-claim about the presentation in the published SIAM article.
+\paragraph{Clique homology gadgets.}
+Crichigno and Kohler~\cite{crichigno2024clique} give a parsimonious reduction
+in which satisfying states correspond one-to-one to holes, so exact
+multiplicity by itself is not new; their instances carry no gap promise.
+King and Kohler~\cite{king2026gapped} introduce the weighted gadgets and the
+many-gadget spectral analysis behind gapped clique homology, proving a gap
+when the logical Hamiltonian is positive definite, with a gadget weight
+proportional to the logical gap; Hayakawa~\cite{hayakawa2026unweighted}
+removes the weights under the same positive-definite promise.  Our transfer
+theorem is formulated from finite zero-weight certificates, applies to
+arbitrary geometric chains and to degenerate kernels, and decouples
+\(\lambda\) from \(g\).  Its padding step differs from the coordinate-bulk
+formulation displayed in the arXiv version of King and
+Kohler~\cite[Claim~10.2]{king2023gappedv2}: there the bulk consists of all
+coordinates containing a private vertex, which in the padded complex also
+contains boundary terms obtained by deleting a weight-one outside vertex,
+whereas we keep local private coordinates tensored with outside harmonics
+in every bidegree (\cref{lem:scaling-padding}).  We also work with the fixed
+local matrices before tensoring with the outside identity, so that no
+operator bound on a projector of growing rank has to be inferred from
+basiswise perturbation estimates.  These are differences of proof technique,
+and we make no claim about the presentation in the published
+version~\cite{king2026gapped}.
 
-Gyurik et al.\ prove gate-dependent hardness for survival of one specified
-harmonic guide and state a complete-final-kernel gap in their
-construction~\cite{gyurik2026provable}.  Our statistic instead asks for the
-fraction of the full initial homology that survives, and our all-chain estimate
-is used at both endpoints.  Lowe et al.\ define this initial-Betti-normalized
-quantity and formulate the exact-kernel, gap, and compatibility requirements
-for clique filtrations~\cite{lowe2026normalized}.  The quotient maps
-\(V/W_A\) meet the required rank interface for our restricted family without
-choosing compatible harmonic representatives.  Persistent Laplacians provide
-the general spectral formulation of induced homology ranks
-\cite{memoli2022persistent}; we use ordinary endpoint Laplacians for the gap
-promise and the quotient model for the map.
+\paragraph{Persistence hardness.}
+Gyurik et al.~\cite{gyurik2026provable} prove \(\BQPone\)-hardness, over the
+gate set \(\{\mathrm{CNOT},U_{\rm Pyth}\}\), of deciding whether a
+\emph{given} harmonic representative of \(X_1\) survives in \(X_2\), with a
+gap promise on the final Laplacian.  Normalized persistence asks instead for
+the fraction of the full initial homology that survives, with no
+representative given, so a hardness proof must control the complete kernels
+at both endpoints.  Persistent Laplacians~\cite{memoli2022persistent} give a
+spectral formulation of persistent Betti numbers; we use ordinary endpoint
+Laplacians for the promise and the quotient model for the map.
 
-Rudolph supplies the exact gain/loss vectors, real-gate simulations, and base
-clique constructions used in the certified palette
-\cite{rudolph2026universal}.  Hayakawa's symmetric/asymmetric decomposition
-supplies the unweighting mechanism~\cite{hayakawa2026unweighted}.  Our
-filtration-level addition is the common-label commuting identity
-\cref{eq:unweight-natural}; it is a direct corollary, not a separate
-unweighting theorem.
+\paragraph{Sources and gate sets.}
+Rudolph~\cite{rudolph2026universal} defines the gate-dependent classes,
+proves exact error reduction inside gate sets containing \(G_2\), shows
+\(\BQPone^{G}\subseteq\BQPone^{G_2}\) for every finite \(G\) with entries in
+some \(\mathbb Q(\zeta_{2^k})\), and supplies the gain/loss split of
+\(H\otimes H\) with rational three-term constraint vectors and the base
+clique gadgets used in our palette.  Cade and
+Crichigno~\cite{cade2024complexity} relate cohomology problems to
+\(\QMAone\) and \(\mathsf{DQC}_1\), and Gyurik, Cade, and
+Dunjko~\cite{gyurik2022towards} connected quantum topological data analysis
+to \(\mathsf{DQC}_1\)~\cite{knill1998power}.  The history-state construction
+with a unary clock and neighbor guards is
+Kitaev's~\cite{kitaev2002classical,kempe2006complexity}, with the rational
+amplitude bookkeeping of \cref{sec:circuit}.
+
+\paragraph{Unweighting.}
+Hayakawa's symmetric/asymmetric decomposition of the common-copy
+blow-up~\cite[Lemma~4.2 and Theorem~4.3]{hayakawa2026unweighted} is used as a
+black box.  Our only addition is the observation that identical labeled copy
+blocks at both filtration levels make the symmetric isometries commute with
+inclusion, \cref{eq:unweight-natural}.  We do not count this as a separate
+contribution.

@@ -7,11 +7,15 @@ kernel multiplicity, the whole positive gap, quotient naturality, and
 common-copy unweighting are downstream consequences with their assumptions
 spelled out.
 
-Current build: 23 pages in the 11-point LIPIcs review format; the main narrative
-ends on page 13, references occupy page 14, and the remaining pages are proof
-appendices and the AI disclosure.  The build resolves every citation and
-cross-reference.  See `PROOF_AUDIT.md` for the dependency audit and
-`CHECK_REPORT.md` for executable and rendering checks.
+Current title: *Exact Kernel Transfer to Clique Complexes and the Hardness of
+Normalized Persistence*.  Current build: 28 pages in the 11-point LIPIcs review
+format; the introduction with the three main theorem statements ends on page 5,
+the main narrative ends on page 17, references occupy pages 18--19, and the
+remaining pages are proof appendices and the AI disclosure.  The build resolves
+every citation and cross-reference with no LaTeX, BibTeX, overfull, or underfull
+diagnostics.  See `PROOF_AUDIT.md` for the dependency audit (including the
+September 4 independent review) and `CHECK_REPORT.md` for executable and
+rendering checks.
 
 Build from this directory with:
 
@@ -37,6 +41,7 @@ The source tree is modular:
 - `sections/4_quotient.tex` derives exact persistence maps.
 - `sections/5_circuit.tex` gives the fixed-eight gate-dependent source.
 - `sections/6_unweighting.tex` states the Hayakawa-based unweighted corollary.
-- `sections/7_related_work.tex` records collisions and the exact priority boundary.
+- `sections/7_related_work.tex` records the precise relation to Lowe et al.'s Problem 9 and Conjectures 1--2, and the exact priority boundary.
+- `sections/8_limitations_conclusion.tex` lists limitations and five open problems.
 - `sections/C_palette_certificates.tex` records the finite palette and certificate interface.
 - `PROOF_AUDIT.md` separates mathematical closure from remaining source-priority risk.

@@ -1,76 +1,68 @@
 \section{Introduction}
+\label{sec:intro}
 
-Persistent homology asks which topological features survive as a simplicial complex grows~\cite{zomorodian2005computing}. For a two-step filtration \(X_1\subseteq X_2\), the basic numerical invariant is the rank of the induced map \(H_d(X_1)\to H_d(X_2)\). Dividing this rank by \(\beta_d(X_1)\) gives an interpretable fraction: among the degree-\(d\) classes present initially, what proportion survives? We call this the \emph{true normalized persistence ratio}, following the formulation of Lowe, Kim, Bondesan, and Hayakawa~\cite{lowe2026normalized}.
+Persistent homology records which topological features of a growing simplicial complex survive as the complex grows~\cite{edelsbrunner2002topological,zomorodian2005computing,carlsson2009topology}. For a two-step filtration \(X_1\subseteq X_2\) and a degree \(d\), the basic invariant is the persistent Betti number, the rank of the induced map \(H_d(X_1)\to H_d(X_2)\). Dividing it by \(\beta_d(X_1)\) gives a scale-free and directly interpretable statistic,
+\begin{equation}
+\label{eq:intro-ratio}
+q_d(X_1,X_2)=\frac{\rank[H_d(X_1)\to H_d(X_2)]}{\beta_d(X_1)}\in[0,1],
+\end{equation}
+the fraction of the degree-\(d\) holes of \(X_1\) that are still present in \(X_2\). Lowe, Kim, Bondesan, and Hayakawa~\cite{lowe2026normalized} recently introduced this quantity under the name \emph{normalized harmonic persistence} and asked for its complexity on clique complexes of weighted graphs, the input model of quantum topological data analysis~\cite{lloyd2016quantum,hayakawa2022quantum,gyurik2022towards,berry2024analyzing,mcardle2026streamlined}. Their motivation is that the known quantum algorithms for Betti and persistent Betti numbers return quantities normalized by the number of simplices~\cite{lloyd2016quantum,hayakawa2022quantum,schmidhuber2023limitations,apers2023simple}, whereas a fraction of holes is the statistic one would actually ask for. Under inverse-polynomial spectral-gap promises on the two endpoint Laplacians they proved that a low-energy relaxation of \(q_d\) is \(\mathsf{DQC}_1\)-hard and in \(\BQP\), conjectured that \(q_d\) itself is hard for a perfect-completeness variant \(\SDQCone\) of \(\mathsf{DQC}_1\) (their Conjecture~1), and reduced this conjecture to a \emph{coefficient-sensitive kernel realization} of history Hamiltonians by clique complexes (their Conjecture~2). They describe the missing ingredient, a kernel-preserving simulation of frustration-free Hamiltonians by combinatorial Laplacians, as an important open question.
 
-Quantum algorithms estimate Betti and persistent Betti numbers under access,
-state-preparation, density, and gap assumptions~\cite{lloyd2016quantum,hayakawa2022quantum};
-complexity analyses show why the input and normalization conventions
-matter~\cite{schmidhuber2023limitations}.  The ratio studied here sits between
-several nearby problems with different mathematical requirements. Exact clique
-homology can encode the multiplicity of a quantum satisfying space
-parsimoniously~\cite{crichigno2024clique}, yet the resulting Laplacian need not
-have an inverse-polynomial gap above all of its zero modes. Low-energy counting
-permits small positive eigenvalues and therefore does not determine an exact
-Betti number without a gap promise. Normalization by the number of simplices
-measures a different density. Finally, following one specified harmonic guide
-through a filtration~\cite{gyurik2026provable} does not reveal the fraction of
-the complete initial homology that survives.
+\paragraph{Why exact kernels are hard to realize.}
+The exact-kernel primitive available in the literature is the clique-gadget construction of Crichigno and Kohler~\cite{crichigno2024clique} and King and Kohler~\cite{king2026gapped}: a graph whose clique complex has one hole per computational basis state, together with one weighted gadget per local projector of a frustration-free Hamiltonian \(H\). The gadgets produce the desired zero modes, and the many-gadget spectral analysis of King and Kohler proves a gap when the simulated \(H\) is positive definite. A persistence reduction needs more. It needs two Hamiltonians \(H_{\rm in}\) and \(H_{\rm out}=H_{\rm in}+H_{\rm rej}\) with known but generally large kernels, the exact multiplicity \(\dim\ker\Delta=\dim\ker H\) at both endpoints, an inverse-polynomial gap above the \emph{complete} kernel at both endpoints, and control of the inclusion-induced map. One must rule out every additional geometric zero mode and every small positive eigenvalue, including for chains supported almost entirely on private gadget vertices, with constants that do not depend on the exponentially large padded register.
 
-The technical obstruction is degeneracy. Existing clique-gadget analyses establish a spectral gap when a simulated logical Hamiltonian is positive definite~\cite{king2026gapped}. A persistence reduction instead needs two logical Hamiltonians with known, generally nonzero kernels. It is insufficient to construct the desired zero modes. One must rule out every additional geometric zero mode and every positive eigenvalue below the promised threshold, including vectors supported largely outside the simulated register.
+\paragraph{Results.}
+We carry out this realization for the history Hamiltonians of exact circuits over the gate set \(G_2=\{X,\CX,\CCX,H\otimes H\}\), and obtain, to our knowledge, the first unconditional hardness theorem for the exact fraction~\eqref{eq:intro-ratio} on clique complexes. Following Rudolph~\cite{rudolph2026universal}, \(\BQPone^{G_2}\) is the class of promise problems decided with perfect completeness by uniform exact \(G_2\) circuits; by his exact simulation theorem it contains \(\BQPone^{G}\) for every finite gate set \(G\) with entries in a cyclotomic field \(\mathbb Q(\zeta_{2^k})\), for instance Clifford\(+T\).
 
-We address this obstruction through a finite-certificate all-chain theorem. The theorem assumes a fixed palette of clique gadgets. Each gadget supplies exact filling data, a zero-weight kernel decomposition, coercivity of a projected private differential, a local positive spectral floor, and a bounded interface with the common register. Unused register factors are padded by their harmonic spaces in every chain bidegree. These conditions are finite and can be checked exactly for a fixed palette. They imply, for every unit geometric chain \(x\),
+\begin{theorem}[Main theorem; \cref{thm:weighted-hardness,cor:unweighted-hardness}]
+\label{thm:intro-main}
+There is a deterministic polynomial-time reduction that maps an instance \(x\) of any \(\BQPone^{G_2}\) promise problem \(L\) to nested unweighted clique complexes \(\Xin\subseteq\Xout\) on a common vertex set, a degree \(d\), and rationals \(\gamma_{\rm in},\gamma_{\rm out}\ge1/\poly(|x|)\) such that \(\Delta_{\Xin,d}\) and \(\Delta_{\Xout,d}\) have no eigenvalue in \((0,\gamma_{\rm in})\) and \((0,\gamma_{\rm out})\) respectively, \(\beta_d(\Xin)=8\), and
+\[
+q_d(\Xin,\Xout)=\begin{cases}3/4,&x\in L,\\[2pt] 1/8,&x\notin L.\end{cases}
+\]
+Consequently, estimating \(q_d\) to additive error \(1/24\) with success probability \(2/3\), for weighted or unweighted clique complexes with inverse-polynomial endpoint gaps promised (Problem~9 of~\cite{lowe2026normalized}), is \(\BQPone^{G_2}\)-hard.
+\end{theorem}
+
+The reduction has three layers, each of independent interest.
+
+\begin{theorem}[Kernel transfer; \cref{thm:transfer}, informal]
+\label{thm:intro-transfer}
+Fix a finite palette of weighted clique gadgets satisfying finitely many exactly checkable local conditions (\cref{ass:local-certificate}). Attach \(t\) gadgets with private vertex weight \(\lambda\) to the register, simulating \(H=\sum_j\Pi_j\) with \(H\succeq g(P_V-P_{K})\), \(K=\ker H\). Then every unit chain \(x\) of the full clique complex satisfies
 \begin{equation}
 \label{eq:intro-concentration}
-\dist(x,K_A)^2
-\le C\left[t_A\lambda^2+
-\frac{\langle x,\Delta_Ax\rangle}{g_A\lambda^\kappa}\right],
-\qquad \kappa\le 26,
+\dist(x,K)^2\le C\Bigl[t\lambda^2+\frac{\langle x,\Delta x\rangle}{g\lambda^{\kappa}}\Bigr],\qquad\kappa=4m+2,
 \end{equation}
-where \(K_A\) is the embedded kernel of the logical projector sum \(H_A\), \(g_A\) is its smallest positive eigenvalue, and \(\Delta_A\) is the full geometric Laplacian. The estimate concerns arbitrary geometric vectors; it is not a statement about distance to the geometric Laplacian's own kernel.
-
-The form of~\cref{eq:intro-concentration} matters quantitatively. A direct use of the earlier many-gadget master inequality would choose \(\lambda\) proportional to \(g_A\), producing a high power of the logical gap in the final estimate. Here the structural error is \(t_A\lambda^2\), while the energy term is divided by \(g_A\lambda^\kappa\). We may choose \(\lambda\) from the palette size and target angle, independently of \(g_A\). For locality at most six, a conservative choice gives
+where \(m\) bounds the number of active qubits of a gadget and \(C\) depends only on the palette. Hence, for \(\lambda\le c\min\{t^{-1},\eta/\sqrt t\}\) and \(E=c'\eta^2g\lambda^\kappa\),
 \[
-E_A=\Omega\!\left(\frac{\eta^{28}g_A}{t_A^{26}}\right).
+\dim\ker\Delta=\dim K,\qquad\spec(\Delta)\cap(0,E)=\varnothing,
 \]
-The exponent is poor, but the scale is inverse polynomial and linear in the logical gap.
+including the case \(K=0\).
+\end{theorem}
 
-Exact filling then turns the analytic estimate into an exact topological statement. Let \(V=Z_d(R)\) be the cycle space of the top-dimensional register and let \(W_A\) be the span of the logical projector ranges attached by the term set \(A\). Independent gadget interiors give
-\[
-B_d(X_A)\cap V=W_A.
-\]
-This supplies an injection \(V/W_A\hookrightarrow H_d(X_A)\). \Cref{eq:intro-concentration} bounds the whole low-energy spectral subspace in the reverse direction, yielding
-\[
-H_d(X_A)\cong V/W_A,
-\qquad
-\dim\ker\Delta_A=\dim\ker H_A,
-\qquad
-\spec(\Delta_A)\cap(0,E_A)=\varnothing.
-\]
-For \(A\subseteq B\), simplicial inclusion becomes the quotient epimorphism \(V/W_A\twoheadrightarrow V/W_B\). The persistent rank is therefore exactly \(\dim\ker H_B\). This quotient description avoids any need to choose harmonic representatives compatibly across the filtration.
+\Cref{eq:intro-concentration} concerns arbitrary geometric chains, not only vectors of the simulated register, and its constants depend only on the palette. Its shape matters. The structural error \(t\lambda^2\) does not involve \(g\), so the gadget scale \(\lambda\) is chosen from the number of gadgets alone, independently of the logical gap, and the resulting geometric gap \(E\) is linear in \(g\). A direct use of a many-gadget inequality in which \(\lambda\) is proportional to \(g\) would instead produce a high power of \(g\). For the palette used here \(m=6\), and a conservative choice gives \(E=\Omega(\eta^{28}g/t^{26})\); the exponent is poor, but the bound is inverse polynomial.
 
-Our complexity application uses an exact perfect-completeness circuit source. A three-bit mixed label transforms a \(G_2\)-verifier with acceptance probability \(p_x\) into the compressed operator
-\[
-M_x=\operatorname{diag}(1,p_x,p_x,p_x,p_x,p_x,0,0).
-\]
-In a YES instance \(p_x=1\), its perfect eigenspace has dimension six; in a NO instance \(p_x\le1/3\), that dimension is one. Combining the circuit history with the transfer theorem produces nested weighted clique complexes with
-\[
-\beta_d(\Xin)=8,
-\qquad
-\rank[H_d(\Xin)\to H_d(\Xout)]
-=\begin{cases}6,&x\in L,\\1,&x\notin L.\end{cases}
-\]
-The normalized values are \(3/4\) and \(1/8\). The hardness source is the exact gate-dependent class \(\BQPone^{G_2}\), with \(G_2=\{X,\CX,\CCX,H\otimes H\}\).
+\begin{theorem}[Quotient naturality; \cref{thm:quotient}]
+\label{thm:intro-quotient}
+Under the hypotheses of \cref{thm:intro-transfer}, \(H_d(X_A)\cong V/W_A\) with \(W_A=\sum_{j\in A}\ran\Pi_j=K_A^\perp\), and for \(A\subseteq B\) the inclusion \(X_A\subseteq X_B\) induces the natural quotient map \(V/W_A\twoheadrightarrow V/W_B\). In particular \(\rank[H_d(X_A)\to H_d(X_B)]=\dim K_B\).
+\end{theorem}
 
-Finally, we use Hayakawa's common-copy blow-up~\cite{hayakawa2026unweighted} with identical labeled copy blocks at every filtration level. The symmetric sector is an isometric copy of the weighted complex, up to a common Laplacian scale, and the asymmetric sector has a separate positive floor. The common labeling makes the isometries commute with inclusion. Consequently, endpoint Betti numbers, persistent rank, the normalized ratio, and whole-kernel gaps transfer to unweighted clique filtrations. This step is a sourced corollary rather than a new unweighting mechanism.
+\Cref{thm:intro-transfer,thm:intro-quotient} give exactly the two properties that Conjecture~2 of Lowe et al.\ requests, kernel fidelity with computable gaps and functoriality along the filtration, for the exact history Hamiltonians treated here; \cref{sec:related} states the precise comparison. Functoriality is obtained differently from the way it is formulated there. We never choose harmonic representatives compatibly across the filtration, which need not be possible since harmonic representatives rotate; instead, exact fillings identify each homology group with a quotient of the fixed register cycle space, and the induced map is then forced to be the natural quotient.
 
-Our contributions are:
-\begin{enumerate}
-\item a finite-certificate all-chain leakage theorem for degenerate logical kernels, with a gadget scale independent of the logical gap;
-\item exact kernel multiplicity and a whole-positive-spectrum gap obtained from the all-chain estimate and exact filling;
-\item a functorial quotient realization for nested projector term sets, which computes the induced homology rank without compatible harmonic representatives;
-\item a fixed-eight, gate-dependent \(\BQPone\)-hardness theorem for true normalized persistence, together with a common-copy unweighted corollary.
-\end{enumerate}
+The third layer is an exact source. A three-bit maximally mixed label turns a \(\BQPone^{G_2}\) verifier with acceptance probability \(p_x\) into a verifier whose compressed acceptance operator on the label is \(\operatorname{diag}(1,p_x,p_x,p_x,p_x,p_x,0,0)\). Its perfect eigenspace has dimension \(6\) if \(p_x=1\) and \(1\) if \(p_x\le1/3\), which fixes \(\beta_d(\Xin)=8\) and the values \(3/4\) and \(1/8\). Finally, Hayakawa's common-copy blow-up~\cite{hayakawa2026unweighted}, applied with the same labeled copy blocks at both levels, transfers Betti numbers, persistent rank, and gaps to unweighted graphs.
 
-The scope is intentionally narrow. Exact multiplicity, particular whole-kernel gaps, the normalized target, the individual few-term gadgets, and single-level unweighting all have close precedents. Our proof contribution is the corrected finite-certificate control of arbitrary geometric chains and its integration with a natural quotient filtration. We make no claim of ordinary \(\BQP\), unrestricted \(\SDQCone\), arbitrary-gate \(\BQPone\), or complex-phase hardness. We also do not claim that the inverse-polynomial gap is useful for near-term computation.
+\paragraph{Technical overview.}
+Four ideas carry the proof of \cref{thm:intro-transfer}.
 
-The rest of the paper defines the geometric and logical models, proves the transfer theorem, derives quotient naturality, instantiates the circuit and fixed palette, and transfers the construction to unweighted graphs. The appendices give the all-chain inequalities and the exact source calculations in expanded form.
+\emph{Finite certificates and the zero-weight limit.} In normalized coordinates the boundary pair of a gadget with private weight \(\lambda\) is affine in \(\lambda\), \(D(\lambda)=D_0+\lambda D_1\), and \(D_0\) is a fixed rational matrix. The certificate (\cref{ass:local-certificate}) asks for four exact facts about each palette member: the boundary intersection \(B_{d_a}(Y_a)\cap V_a\) equals the range of the intended rank-one projector (exact filling); \(\ker D_0=V_a\oplus Q_a\) for an explicit private subspace \(Q_a\); a projected private differential is coercive on \(Q_a\) at first order in \(\lambda\); and its retained outputs are private. All four are integer or modular linear algebra, and \cref{app:palette} records them for the palette of this paper.
+
+\emph{Harmonic padding.} A certificate speaks about a constant-size active register, while the actual gadget is joined with the unaffected register factors, so the padded complex is exponentially large. The join Laplacian is a tensor sum over bidegrees, and the unaffected factors have harmonics only in top degree. We keep the local private data tensored with these outside harmonics and place every nonharmonic outside mode in a sector with a constant gap (\cref{lem:scaling-padding}). This is the step where the constants become independent of the padded dimension. A bulk consisting of all coordinates that contain a private vertex would not do, because deleting a weight-one outside vertex stays in that bulk with coefficient one.
+
+\emph{Two energies.} The proof of \cref{eq:intro-concentration} separates leakage out of the register from logical energy. Leakage is controlled by the zero-weight floor, the private coercivity, and an interface bound \(\|[L_1\cdots L_t]\|^2=\|\sum_jL_jL_j^*\|\le Ct\lambda^2\) that needs no orthogonality between the register outputs of different gadgets. Logical energy is controlled by exact filling through \(\Delta^\uparrow\succeq c\lambda^\kappa H^{\rm emb}\). The two contributions carry different powers of \(\lambda\), which is what decouples \(\lambda\) from \(g\).
+
+\emph{From estimate to exact multiplicity.} Every vector of the spectral subspace of \(\Delta\) below \(E\) projects nontrivially onto \(K\), so that subspace has dimension at most \(\dim K\). Exact fillings inject \(V/W_A\) into \(H_d(X_A)\), providing \(\dim K\) zero modes. Equality forces both the exact multiplicity and the absence of eigenvalues in \((0,E)\); no relative-acyclicity assumption is needed.
+
+\paragraph{Scope.}
+The hardness is gate-dependent, as in the known perfect-completeness hardness results for topological data analysis~\cite{crichigno2024clique,king2026gapped,gyurik2026provable}. We do not obtain ordinary \(\BQP\)-hardness, unrestricted \(\SDQCone\)-hardness, or gate-independent \(\BQPone\)-hardness, and complex phases and general integer states are outside the certified palette. The initial Betti number of our instances is the constant \(8\), produced by three mixed label qubits. The gap is a complexity promise rather than a practical estimate, and the common-copy blow-up is polynomial but large. \Cref{sec:limitations} discusses these points and the open problems they suggest.
+
+\paragraph{Organization.}
+\Cref{sec:prelim} fixes conventions and the problem. \Cref{sec:transfer} states the certificate model and the transfer theorem, \cref{sec:quotient} derives quotient naturality, \cref{sec:circuit} instantiates the history construction with a certified palette and proves \cref{thm:weighted-hardness}, and \cref{sec:unweighting} transfers the result to unweighted graphs. \Cref{sec:related} compares with prior work and \cref{sec:limitations} concludes. The appendices contain the complete transfer proof, the history-gap and source calculations, and the finite palette certificates.

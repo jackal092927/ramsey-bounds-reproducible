@@ -6,7 +6,9 @@ Let
 G_2=\{X,\CX,\CCX,H\otimes H\}.
 \]
 Following Rudolph's gate-dependent definition
-\cite[Definition~2.2]{rudolph2026universal}, \(\BQPone^{G_2}\) consists of
+\cite[Definition~2.2]{rudolph2026universal},\footnote{Definition, theorem,
+and appendix numbers for~\cite{rudolph2026universal} refer to the full
+version, arXiv:2411.02681v2.} \(\BQPone^{G_2}\) consists of
 promise problems decided by a polynomial-time uniform family of exact
 \(G_2\) circuits on an all-zero input, with one computational-basis output
 bit, perfect completeness, and inverse-polynomial rejection probability in
@@ -23,7 +25,7 @@ Write \(K=\sqrt2H\).  Replace each \(H\otimes H\) transition by a gain edge
 other.  Their composite is exactly \(H\otimes H\), and each edge is enforced
 by two orthonormal rational three-term vectors.  The vectors and their direct
 calculation appear in \cref{app:rational-split}.  This construction is due to
-Rudolph~\cite{rudolph2026universal}.
+Rudolph~\cite[Appendix~D.1]{rudolph2026universal}.
 
 The propagation constraints for \(X,\CX,\CCX\) decompose, on their
 constant-size active support, into two-time vectors
@@ -86,7 +88,8 @@ inequality.  The output compression is exactly
 \end{equation}
 and a two-positive-operator estimate turns this angle penalty into the second
 gap in \cref{eq:history-gaps}.  Combining
-\cref{thm:transfer,thm:quotient,lem:palette,prop:history} yields weighted
+\cref{thm:transfer}, \cref{thm:quotient}, \cref{lem:palette}, and
+\cref{prop:history} yields weighted
 clique complexes \(\Xin\subseteq\Xout\) with
 \begin{equation}
 \label{eq:generic-circuit-transfer}
@@ -118,8 +121,8 @@ most \(1/3\).
 \begin{theorem}[Fixed-eight hardness]
 \label{thm:weighted-hardness}
 There is a deterministic polynomial-time many-one reduction from
-\(\BQPone^{G_2}\) to the decision version of weighted gapped true normalized
-persistence.  Every output
+\(\BQPone^{G_2}\) to the decision version of weighted gapped normalized
+persistence (\cref{def:problem}).  Every output
 satisfies
 \[
 \beta_d(\Xin)=8,\qquad
@@ -143,18 +146,36 @@ hard-coded positive rational lower bounds for the constants in
 \cref{eq:lambda-E-choice}.  For each endpoint output the largest dyadic
 rational \(E_i\) no greater than one half of
 \(c_2\eta_0^2g_i\lambda^{26}\).  Thus \(b=O(\log t_{\max})\), and the binary
-encodings of \(\lambda\) and \(E_i\) have polynomial length.  The weighted
-graph has \(O(n+t_{\max})\) vertices and at most
-\(O(n^2+t_{\max}n)\) explicitly generated edges, because the register and
-every local interior are explicit and locality is constant.  Hence the map
+encodings of \(\lambda\) and \(E_i\) have polynomial length.  If the history
+uses \(n\) register qubits (clock and work bits), the register has \(7n\)
+vertices and \(O(n^2)\) edges, and each gadget adds a constant number of
+private vertices together with \(O(n)\) edges to the unaffected register
+factors; so the weighted graph has \(O(n+t_{\max})\) vertices and
+\(O(n^2+t_{\max}n)\) explicitly generated edges.  Hence the map
 outputs the two graphs, their common weight function, \(d,E_1,E_2\), and the
 fixed decision threshold in deterministic polynomial time.
 \end{proof}
 
-For every fixed finite gate family covered by Rudolph's
-Theorem~3.4~\cite{rudolph2026universal}, the exact simulation into \(G_2\) may
-be composed with this reduction.  This is a separate gate-family-relative
-statement, not gate-independent \(\BQPone\)-hardness.
+\begin{remark}[Integer weights]
+\label{rem:integer-weights}
+Multiplying every vertex weight by \(2^{b}\) gives an equivalent instance
+with integer weights in \(\{1,2^{b}\}\): the normalized boundary
+\(W_{k-1}^{-1}\partial W_k\) scales by \(2^{b}\), so the Laplacian and both
+gap bounds scale by \(2^{2b}\), while homology is unchanged.  The weighted
+instances therefore also satisfy the polynomially bounded weight convention
+of~\cite{lowe2026normalized}.
+\end{remark}
+
+\begin{remark}[Other gate sets]
+\label{rem:gate-sets}
+By Rudolph's exact simulation theorem~\cite[Theorem~3.4]{rudolph2026universal},
+\(\BQPone^{G}\subseteq\BQPone^{G_2}\) for every finite gate set \(G\) whose
+entries lie in a cyclotomic field \(\mathbb Q(\zeta_{2^k})\), \(k\in\N\);
+Clifford\(+T\) is an example.  Composing that simulation with
+\cref{thm:weighted-hardness} gives \(\BQPone^{G}\)-hardness for each such
+\(G\) separately.  This is a gate-family-relative statement, not
+gate-independent \(\BQPone\)-hardness.
+\end{remark}
 
 The exact trace-versus-perfect-space obstruction and the mixed-spectator
 extension to individual real Hadamards are recorded in
