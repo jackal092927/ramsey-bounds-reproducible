@@ -1,0 +1,251 @@
+{
+  "status": "PASS",
+  "input_certificate_sha256": "916819fb8a9e371b322a1fab1161b1fc2686ad7fdaf9cf785f52fc2fcb0cae3a",
+  "source_graph_commit": "30ac70e5dacdecce97c38d801c128ec3ed93a96a",
+  "basis_order": [
+    "00",
+    "01",
+    "10",
+    "11"
+  ],
+  "all_four_split_hadamard_atoms_covered": true,
+  "records": [
+    {
+      "atom": "d0",
+      "normalized_logical_amplitudes": {
+        "numerators_in_order_00_01_10_11": [
+          1,
+          0,
+          -1,
+          -1
+        ],
+        "common_denominator": "sqrt(3)"
+      },
+      "applied_vertex_operations_in_order": [],
+      "changed_register_vertices": {},
+      "logical_action": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "image_of_d0_equals_phase_times_target": 1,
+      "all_cliques_transport_bijectively": true,
+      "register_graph_preserved": true,
+      "private_vertices_fixed": true,
+      "integer_filling_equation_verified": true,
+      "transported_filling_nonzeros": 382,
+      "graph_edges_sha256": "dd9603f17d09240a9e274053d3ea5df5b1bc93868711a1daacfe84f3bc882be8"
+    },
+    {
+      "atom": "d1",
+      "normalized_logical_amplitudes": {
+        "numerators_in_order_00_01_10_11": [
+          0,
+          1,
+          -1,
+          1
+        ],
+        "common_denominator": "sqrt(3)"
+      },
+      "applied_vertex_operations_in_order": [
+        "Xw",
+        "Zw",
+        "Zc"
+      ],
+      "changed_register_vertices": {
+        "0.b3": "0.b4",
+        "0.b4": "0.b3",
+        "1.a2": "1.b2",
+        "1.a3": "1.b4",
+        "1.a4": "1.b3",
+        "1.b2": "1.a2",
+        "1.b3": "1.a3",
+        "1.b4": "1.a4"
+      },
+      "logical_action": [
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "image_of_d0_equals_phase_times_target": -1,
+      "all_cliques_transport_bijectively": true,
+      "register_graph_preserved": true,
+      "private_vertices_fixed": true,
+      "integer_filling_equation_verified": true,
+      "transported_filling_nonzeros": 382,
+      "graph_edges_sha256": "cea462e34bc0a1ad3a1351b87537f3308d4defb6da7d62fe60a49aab58793784"
+    },
+    {
+      "atom": "u0",
+      "normalized_logical_amplitudes": {
+        "numerators_in_order_00_01_10_11": [
+          1,
+          1,
+          -1,
+          0
+        ],
+        "common_denominator": "sqrt(3)"
+      },
+      "applied_vertex_operations_in_order": [
+        "Xc"
+      ],
+      "changed_register_vertices": {
+        "0.a2": "0.b2",
+        "0.a3": "0.b3",
+        "0.a4": "0.b4",
+        "0.b2": "0.a2",
+        "0.b3": "0.a3",
+        "0.b4": "0.a4"
+      },
+      "logical_action": [
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "image_of_d0_equals_phase_times_target": -1,
+      "all_cliques_transport_bijectively": true,
+      "register_graph_preserved": true,
+      "private_vertices_fixed": true,
+      "integer_filling_equation_verified": true,
+      "transported_filling_nonzeros": 382,
+      "graph_edges_sha256": "8acd1f22ba0c43c9deba48bd0ba207ca119872e6782abe8cb8d905c7e55a8452"
+    },
+    {
+      "atom": "u1",
+      "normalized_logical_amplitudes": {
+        "numerators_in_order_00_01_10_11": [
+          1,
+          -1,
+          0,
+          -1
+        ],
+        "common_denominator": "sqrt(3)"
+      },
+      "applied_vertex_operations_in_order": [
+        "Xw",
+        "Zw",
+        "Zc",
+        "Xc"
+      ],
+      "changed_register_vertices": {
+        "0.a2": "0.b2",
+        "0.a3": "0.b3",
+        "0.a4": "0.b4",
+        "0.b2": "0.a2",
+        "0.b3": "0.a4",
+        "0.b4": "0.a3",
+        "1.a2": "1.b2",
+        "1.a3": "1.b4",
+        "1.a4": "1.b3",
+        "1.b2": "1.a2",
+        "1.b3": "1.a3",
+        "1.b4": "1.a4"
+      },
+      "logical_action": [
+        [
+          0,
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "image_of_d0_equals_phase_times_target": 1,
+      "all_cliques_transport_bijectively": true,
+      "register_graph_preserved": true,
+      "private_vertices_fixed": true,
+      "integer_filling_equation_verified": true,
+      "transported_filling_nonzeros": 382,
+      "graph_edges_sha256": "4135a0079d8d45cc781377b18c61dfb6b86274cd3bbfcbf45a4f5d31429ea5dc"
+    }
+  ],
+  "transported_properties": [
+    "Exact target boundary intersection and Betti multiplicity",
+    "Zero-weight kernel equal to V direct-sum Q",
+    "Projected central pair injectivity and annihilation on V",
+    "All positive-weight spectra and uniform constants"
+  ],
+  "proof_mechanism": "Weight-preserving vertex relabeling induces signed permutation chain isometries in every degree, preserving the private/central subspaces.",
+  "scope": "Only the unguarded active three-term atoms and their outside harmonic padding. Other atom types and guarded attaching-sphere products are not certified here.",
+  "new_source_replay": false
+}

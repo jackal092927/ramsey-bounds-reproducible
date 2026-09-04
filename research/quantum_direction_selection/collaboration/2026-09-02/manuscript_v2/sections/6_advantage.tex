@@ -1,0 +1,179 @@
+\section{The hard instances satisfy the containment conditions}
+\label{sec:advantage}
+
+Lowe et al.\ place normalized harmonic persistence in \(\BQP\) under two
+access conditions~\cite[Lemma~7]{lowe2026normalized}: a polynomial-size
+circuit preparing the uniform mixture over \(\cH_1=\ker\Delta_{1,d}\), and
+the \emph{large overlap condition}, which asks that every nonzero eigenvalue
+of \(P_{\cH_2}P_{\cH_1}P_{\cH_2}\) be at least \(a_{\min}\ge1/\poly\)
+(their Definition~3).  This section shows that both conditions hold on the
+instances produced by \cref{thm:general-hardness}, with \(a_{\min}\) close to
+one, so that on this family the problem is simultaneously hard and
+solvable in quantum polynomial time.  The mechanism is that the transfer
+estimate, applied at zero energy, forces every harmonic vector to lie close
+to the embedded logical kernel.
+
+\subsection{Harmonic spaces track the logical kernels}
+
+\begin{lemma}[Harmonic concentration]
+\label{lem:harmonic-concentration}
+Under the hypotheses and parameter choice \cref{eq:lambda-E-choice} of
+\cref{thm:transfer}, every unit \(x\in\cH_A=\ker\Delta_A\) satisfies
+\(\|(I-P_{K_A})x\|\le\eta_1\), where \(\eta_1=\sqrt C\,c_1\eta\le\eta/2\) after
+fixing \(c_1\) with \(Cc_1^2\le1/4\).
+\end{lemma}
+
+\begin{proof}
+\Cref{eq:transfer-bound} with \(\langle x,\Delta_Ax\rangle=0\) gives
+\(\|(I-P_{K_A})x\|^2\le Ct_A\lambda^2\le Cc_1^2\eta^2\).
+\end{proof}
+
+\begin{lemma}[Equal dimensions]
+\label{lem:equal-dimensions}
+Let \(\cH,K\) be subspaces with \(\dim\cH=\dim K<\infty\), and suppose
+\(\|(I-P_K)x\|\le s<1\) for every unit \(x\in\cH\).  Then every singular
+value of \(P_K|_{\cH}\) is at least \(\sqrt{1-s^2}\), and
+\(\|P_\cH-P_K\|\le s\).
+\end{lemma}
+
+\begin{proof}
+For unit \(x\in\cH\), \(\|P_Kx\|^2=1-\|(I-P_K)x\|^2\ge1-s^2\), so
+\(P_K|_\cH\) is injective and, by dimension count, maps \(\cH\) onto
+\(K\).  The principal angles \(\theta_i\) between \(\cH\) and \(K\)
+therefore satisfy \(\cos\theta_i\ge\sqrt{1-s^2}\), that is,
+\(\sin\theta_i\le s\), and \(\|P_\cH-P_K\|=\sin\theta_{\max}\) for
+subspaces of equal dimension.
+\end{proof}
+
+Since \(\dim\cH_A=\dim K_A\) by \cref{eq:kernel-gap-conclusion}, the two
+lemmas give
+\begin{equation}
+\label{eq:projector-closeness}
+\|P_{\cH_A}-P_{K_A}\|\le\eta_1\qquad(A\in\mathcal A).
+\end{equation}
+In words: the geometric harmonic space is an \(\eta_1\)-rotation of the
+embedded logical kernel.  This is the approximate form of the isometry
+requirement in Conjecture~2 of Lowe et al.; the exact rank statement is
+\cref{thm:quotient}.
+
+\subsection{Large overlap}
+
+\begin{theorem}[Large overlap]
+\label{thm:large-overlap}
+For \(A\subseteq B\) in \(\mathcal A\), the operator
+\(P_{\cH_B}P_{\cH_A}P_{\cH_B}\) has exactly \(\dim K_B\) nonzero eigenvalues,
+and each of them is at least \((1-2\eta_1)^2\).  Hence the pair
+\((P_{\cH_B},\cH_A)\) satisfies the large overlap condition with
+\(a_{\min}\ge(1-2\eta_1)^2\ge1-2\eta\).
+\end{theorem}
+
+\begin{proof}
+Because \(K_B\subseteq K_A\), \(P_{K_B}P_{K_A}=P_{K_B}\).  By
+\cref{eq:projector-closeness},
+\[
+\|P_{\cH_B}P_{\cH_A}-P_{K_B}\|
+\le\|P_{\cH_B}-P_{K_B}\|\,\|P_{\cH_A}\|+\|P_{K_B}\|\,\|P_{\cH_A}-P_{K_A}\|
+\le2\eta_1 .
+\]
+By Weyl's inequality for singular values, every singular value of
+\(P_{\cH_B}P_{\cH_A}\) is within \(2\eta_1\) of the corresponding singular
+value of \(P_{K_B}\), which is \(1\) with multiplicity \(\dim K_B\) and \(0\)
+otherwise.  The rank of \(P_{\cH_B}|_{\cH_A}\) is the rank of the induced
+map \(H_d(X_A)\to H_d(X_B)\) (\cref{sec:prelim}), which equals \(\dim K_B\)
+by \cref{thm:quotient}; so exactly \(\dim K_B\) singular values are nonzero,
+each at least \(1-2\eta_1\).  The nonzero eigenvalues of
+\(P_{\cH_B}P_{\cH_A}P_{\cH_B}\) are the squares of the nonzero singular values
+of \(P_{\cH_B}P_{\cH_A}\).
+\end{proof}
+
+With \(\eta_0=1/10\) as in \cref{thm:general-hardness}, \(a_{\min}\ge4/5\);
+choosing \(\eta=1/\poly\) instead gives \(a_{\min}\ge1-1/\poly\) at the price
+of a smaller, still inverse-polynomial, gap \cref{eq:weighted-gap}.
+
+\subsection{Preparing the initial harmonic mixture}
+
+Let \(\rho_{K_{\rm in}}\) and \(\rho_{\cH_{\rm in}}\) denote the uniform
+mixtures (normalized projectors) over \(K_{\rm in}=\cV C\subseteq C_d(\Xin)\)
+and over \(\cH_{\rm in}=\ker\Delta_{\rm in}\).
+
+\begin{theorem}[Preparation]
+\label{thm:preparation}
+The reduction of \cref{thm:general-hardness} can additionally output a
+polynomial-size quantum circuit that prepares \(\rho_{K_{\rm in}}\) on the
+simplex-label Hilbert space of \(\Xin\), up to \(1/\poly\) synthesis error.
+Projecting its output onto \(\cH_{\rm in}\) by phase estimation of
+\(\Delta_{\rm in}\) at resolution below \(E_{\rm in}\) succeeds with
+probability at least \(1-\eta_1^2\) and returns a state \(\widetilde\rho\)
+with
+\[
+\|\widetilde\rho-\rho_{\cH_{\rm in}}\|_1\le\frac{2\eta_1^2}{1-\eta_1^2}+\frac1{\poly}.
+\]
+\end{theorem}
+
+\begin{proof}
+The circuit has three stages.  First, prepare the fixed clean string, the
+maximally mixed state on the \(r\) unconstrained qubits, and the clock state
+\(Z^{-1/2}\sum_ts_t\ket t\) in the unary encoding; the amplitudes take the
+two values \(Z^{-1/2}\) and \(\sqrt2Z^{-1/2}\), so this is a fixed real state
+on \(L-1\) qubits with a polynomial-size description.  Second, for
+\(t=1,\dots,L-1\) apply \(U_t\otimes\Pi^c_{\ge t}+I\otimes(I-\Pi^c_{\ge t})\),
+where \(U_t\) is the unitary of step \(t\) (a gain or loss edge applies the
+unitary \(H\); the scalars \(\sqrt2\) and \(1/\sqrt2\) are already in
+\(s_t\)) and \(\Pi^c_{\ge t}\) projects onto clock values at least \(t\).
+Exactly as in \cite[Lemma~8]{lowe2026normalized}, the clock branch \(\ket t\)
+accumulates \(V_t=U_t\cdots U_1\), and the output is
+\(\cV\rho_C\cV^*\) with \(\rho_C\) the uniform mixture over \(C\).  Third,
+apply to every register qubit (clock and work) the fixed isometry
+\(\C^2\to\C^{8}\) that sends the basis state \(\ket b\) to the normalized
+oriented petal cycle \(\gamma_b\) of its bowtie, written on the labels of the
+eight edges of that bowtie; the tensor product of these isometries is the
+computational-basis embedding \((\C^2)^{\otimes n}\cong V\subseteq C_d(R)\subseteq C_d(\Xin)\)
+of \cref{sec:prelim}, up to the orientation signs of join simplices, which
+are computed classically from the vertex order and applied as phases.  The
+result is \(\rho_{K_{\rm in}}\).
+
+For the projection, \(\mathrm{Tr}(P_{\cH_{\rm in}}\rho_{K_{\rm in}})
+=\frac1D\sum_{i=1}^D\cos^2\theta_i\ge1-\eta_1^2\) by
+\cref{lem:equal-dimensions}, where \(\theta_i\) are the principal angles
+between \(\cH_{\rm in}\) and \(K_{\rm in}\).  The post-measurement state is
+\(\sum_i\cos^2\theta_i\,\ket{h_i}\!\bra{h_i}/\sum_j\cos^2\theta_j\) in the
+orthonormal eigenbasis \((h_i)\) of \(P_{\cH}P_KP_{\cH}\) on \(\cH_{\rm in}\);
+its eigenvalues lie in \([(1-\eta_1^2)/D,\,1/((1-\eta_1^2)D)]\), so its trace
+distance to \(\rho_{\cH_{\rm in}}\) is at most \(2\eta_1^2/(1-\eta_1^2)\).
+The Laplacian \(\Delta_{\rm in}\) is an explicit sparse operator on the
+simplex labels with efficiently computable entries, and its phase estimation
+at inverse-polynomial resolution is the standard primitive of quantum
+topological data analysis~\cite{lloyd2016quantum,hayakawa2022quantum,mcardle2026streamlined};
+the \(1/\poly\) term collects these approximation errors.
+\end{proof}
+
+\subsection{Consequences}
+
+\begin{theorem}[Hard and in \(\BQP\)]
+\label{thm:advantage}
+Weighted gapped normalized persistence remains \(\SF^{G_2}\)-hard, and hence
+\(\BQPone^{G_2}\)-hard and \(\SDQCone^{G_2}[\mathrm{frac}]\)-hard, when
+restricted to instances satisfying
+\begin{enumerate}[(a)]
+\item the large overlap condition for \((P_{\cH_2},\cH_1)\) with
+\(a_{\min}\ge1-1/\poly\), and
+\item the existence of a polynomial-size circuit, computable in polynomial
+time from the source instance, preparing a state within trace distance
+\(1/\poly\) of the uniform mixture over \(\cH_1\).
+\end{enumerate}
+On instances satisfying (a) and (b) the problem is in \(\BQP\)
+by \cite[Lemma~7]{lowe2026normalized}, whose proof is linear in the prepared
+state and therefore tolerates the preparation error in (b).
+\end{theorem}
+
+\begin{proof}
+\Cref{thm:general-hardness} with \(\eta=1/\poly\), \cref{thm:large-overlap},
+and \cref{thm:preparation}.
+\end{proof}
+
+This is the format in which Lowe et al.\ state their own hardness results
+(``hard even when the uniform mixture can be prepared and the large
+overlap condition holds'', their Theorems~5, 7 and~8), and it is the standard
+evidence for an exponential quantum advantage in this
+literature~\cite{gyurik2022towards,gyurik2026provable}.  The unweighted
+version is given in \cref{sec:unweighting}.

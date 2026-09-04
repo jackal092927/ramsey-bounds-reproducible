@@ -1,0 +1,299 @@
+\section{Exact histories, a fixed clique palette, and hardness theorems}
+\label{sec:circuit}
+
+Let
+\[
+G_2=\{X,\CX,\CCX,H\otimes H\}.
+\]
+Following Rudolph's gate-dependent definition
+\cite[Definition~2.2]{rudolph2026universal},\footnote{Definition, theorem,
+and appendix numbers for~\cite{rudolph2026universal} refer to the full
+version, arXiv:2411.02681v2.} \(\BQPone^{G_2}\) consists of
+promise problems decided by a polynomial-time uniform family of exact
+\(G_2\) circuits on an all-zero input, with one computational-basis output
+bit, perfect completeness, and inverse-polynomial rejection probability in
+the no case.  Rudolph's exact error reduction
+\cite[Theorem~2.3]{rudolph2026universal} preserves perfect completeness and
+stays in any gate set containing \(G_2\); we apply it first so that soundness
+is at most \(1/3\).  The superscript is essential: no approximate compilation
+or gate-independent identification is used below.
+
+\subsection{Rational histories and the certified palette}
+
+Write \(K=\sqrt2H\).  Replace each \(H\otimes H\) transition by a gain edge
+\(K\) on one work bit followed by a loss edge \(K^{-1}=H/\sqrt2\) on the
+other.  Their composite is exactly \(H\otimes H\), and each edge is enforced
+by two orthonormal rational three-term vectors.  The vectors and their direct
+calculation appear in \cref{app:rational-split}.  This construction is due to
+Rudolph~\cite[Appendix~D.1]{rudolph2026universal}.
+
+The propagation constraints for \(X,\CX,\CCX\) decompose, on their
+constant-size active support, into two-time vectors
+\[
+(\ket{0,z}-\ket{1,Uz})/\sqrt2.
+\]
+Clock, input, and output penalties are basis projectors.  Unaffected work
+qubits are identities and are implemented by the harmonic padding of
+\cref{lem:scaling-padding}; they are not expanded into exponentially many
+rank-one terms.
+
+\begin{lemma}[Certified fixed palette]
+\label{lem:palette}
+Every local constraint in the split \(G_2\) history is implemented by a
+member of one fixed family of weighted clique gadgets of total support
+locality at most six.  Every member satisfies
+\cref{ass:local-certificate,eq:interface}, with uniform constants, and the
+graph construction is polynomial in the circuit size.
+\end{lemma}
+
+\begin{proof}
+See \cref{app:palette}.  It records the finite integer certificates, exact
+relabelings, selected-cycle guard closure, and polynomial-size bookkeeping.
+\end{proof}
+
+\subsection{Complete history kernels}
+
+Let \(L\) be the number of legal clock positions after splitting the
+Hadamard transitions.  Put \(s_t=\sqrt2\) immediately after a gain edge and
+\(s_t=1\) otherwise.  If \(V_t\) is the unitary prefix after removing these
+scalars, then
+\begin{equation}
+\label{eq:history-isometry}
+\cV v=Z^{-1/2}\sum_{t=0}^{L-1}s_t\ket tV_tv,\qquad
+Z=\sum_ts_t^2,\qquad L\le Z\le2L.
+\end{equation}
+Every gain edge is immediately followed by its matching loss edge, with no
+gate between them, so \(s_0=s_{L-1}=1\).
+
+\begin{proposition}[History kernels and gaps]
+\label{prop:history}
+Let \(C\) be the valid clean-input space, \(D=\dim C>0\), and let
+\(M=J^*U^*P_{\rm acc}UJ\) be the compressed acceptance operator.  Put
+\(S=\ker(I-M)\).  The initial history Hamiltonian has complete kernel
+\(\cV C\), while adding the final rejection projector gives complete kernel
+\(\cV S\).  If \(M|_{S^\perp}\preceq I/3\), then
+\begin{equation}
+\label{eq:history-gaps}
+g_{\rm in}\ge\frac1{8L^2},\qquad
+g_{\rm out}\ge\frac1{3L(8L^2+1)}\ge\frac1{27L^3}.
+\end{equation}
+The second statement includes \(S=0\).
+\end{proposition}
+
+The proof in \cref{app:source-details} uses a weighted path Poincar\'e
+inequality.  The output compression is exactly
+\begin{equation}
+\label{eq:output-compression}
+\cV^*H_{\rm rej}\cV=(I-M)/Z,
+\end{equation}
+and a two-positive-operator estimate turns this angle penalty into the second
+gap in \cref{eq:history-gaps}.  Combining
+\cref{thm:transfer}, \cref{thm:quotient}, \cref{lem:palette}, and
+\cref{prop:history} yields weighted
+clique complexes \(\Xin\subseteq\Xout\) with
+\begin{equation}
+\label{eq:generic-circuit-transfer}
+\beta_d(\Xin)=D,\qquad
+\beta_d(\Xout)=\beta_d(\Xin\to\Xout)=\dim S,
+\end{equation}
+and inverse-polynomial gaps above both complete kernels.
+
+\subsection{A general source: perfect-subspace fractions}
+\label{sec:sf}
+
+\Cref{prop:history} places no restriction on the clean-input space \(C\)
+beyond \(D>0\), and \cref{eq:generic-circuit-transfer} turns any exact
+circuit with a perfectly accepted subspace and a soundness bound on its
+complement into a normalized-persistence instance.  We make this source
+explicit.
+
+\begin{definition}[Perfect-subspace fraction problems]
+\label{def:sf}
+Let \(G\) be a finite gate set and let \(a,b:\N\to[0,1]\) satisfy
+\(a-b\ge1/\poly\).  A promise problem \(L\) is in \(\SF^{G}(a,b)\) if there
+are polynomials \(c,r\) and a polynomial-time uniform family of exact
+\(G\)-circuits \(U_x\) acting on \(c(|x|)\) clean qubits, initialized to a
+fixed computational-basis string, and \(r(|x|)\) \emph{unconstrained}
+qubits, with a computational-basis acceptance projector \(P_{\rm acc}\) on
+one output qubit, such that the compressed acceptance operator
+\(M_x=J^*U_x^*P_{\rm acc}U_xJ\) on the unconstrained register and its perfect
+subspace \(S_x=\ker(I-M_x)\) satisfy
+\begin{enumerate}[(i)]
+\item \(M_x|_{S_x^\perp}\preceq\tfrac13 I\), that is, every state orthogonal
+to the perfectly accepted subspace is accepted with probability at most
+\(1/3\);
+\item \(\dim S_x/2^{r}\ge a(|x|)\) if \(x\in L_{\rm yes}\), and
+\(\dim S_x/2^{r}\le b(|x|)\) if \(x\in L_{\rm no}\).
+\end{enumerate}
+\end{definition}
+
+Three sources of this type matter here.
+
+\begin{itemize}
+\item \emph{Perfect-completeness circuits.}  \(\BQPone^{G_2}\subseteq\SF^{G_2}(3/4,1/8)\)
+with \(r=3\): given a \(\BQPone^{G_2}\) verifier \(Q_x\) with acceptance
+probability \(p_x\), add a three-bit unconstrained label \(z\), run \(Q_x\)
+unconditionally, and accept according to
+\[
+[z=000]\ \lor\
+\bigl(q\land[z\in\{001,010,011,100,101\}]\bigr),
+\]
+where \(q\) is the output of \(Q_x\).  The reversible predicate uses only
+\(X,\CX,\CCX\), preserves \(z\), and uncomputes its scratch.  Its compressed
+acceptance operator on the label is exactly
+\begin{equation}
+\label{eq:eight-label}
+M_x=\operatorname{diag}(1,p_x,p_x,p_x,p_x,p_x,0,0),
+\end{equation}
+so the perfect subspace has dimension six when \(p_x=1\) and dimension one
+when \(p_x\le1/3\), and every off-perfect eigenvalue in the latter case is at
+most \(1/3\) (\cref{app:source-boundaries}).
+\item \emph{One clean qubit.}  Lowe et al.\ define
+\(\SDQCone^{G}\)~\cite[Definition~2]{lowe2026normalized} by a uniform
+\(G\)-circuit on one clean and \(q-1\) maximally mixed qubits, a subspace
+\(S_x\) of the mixed register accepted with probability exactly one, soundness
+\(1/3\) on \(S_x^\perp\), and a decision condition on the acceptance
+probability of the maximally mixed input.  Conditions (i)--(ii) of their
+definition give \(S_x=\ker(I-M_x)\) and \(M_x|_{S_x^\perp}\preceq I/3\)
+(\cref{app:source-boundaries}).  If the decision condition is imposed on the
+fraction \(\dim S_x/2^{q-1}\), which is the quantity that their Section~3.1
+identifies as the power of the class and from which the instance is decided
+in the proofs of their Theorems~5 and~7, the resulting class, which we write
+\(\SDQCone^{G}[\mathrm{frac}]\), is contained in \(\SF^{G}(a,b)\) with \(c=1\).
+With the decision condition on the acceptance probability \(p_x\) of the
+maximally mixed state, the identity
+\(f\le p_x\le(1+2f)/3\) for \(f=\dim S_x/2^{q-1}\)
+(\cref{app:source-boundaries}) gives
+\(\SDQCone^{G}(a,b)\subseteq\SF^{G}\bigl(\tfrac{3a-1}{2},b\bigr)\) whenever
+\(b<(3a-1)/2\).
+\item \emph{Classical counting.}  A Boolean formula \(\varphi\) on \(r\)
+variables, evaluated by a reversible \(\{X,\CX,\CCX\}\) circuit on the
+unconstrained register with clean scratch, has \(M_\varphi\) diagonal with
+entries \(\varphi(z)\in\{0,1\}\); so \(S_\varphi\) is spanned by the satisfying
+assignments, \(\dim S_\varphi=\#\varphi\), and (i) holds with
+\(M_\varphi|_{S^\perp}=0\).
+\end{itemize}
+
+\begin{theorem}[General hardness]
+\label{thm:general-hardness}
+For every \(a-b\ge1/\poly\) there is a deterministic polynomial-time many-one
+reduction from \(\SF^{G_2}(a,b)\) to weighted gapped normalized persistence
+(\cref{def:problem}) with additive error \(\varepsilon<(a-b)/2\).  On input
+\(x\) it outputs \(\Xin\subseteq\Xout\) with
+\[
+\beta_d(\Xin)=2^{r},\quad
+\beta_d(\Xin\to\Xout)=\beta_d(\Xout)=\dim S_x,\quad
+q_d(\Xin,\Xout)=\frac{\dim S_x}{2^{r}},
+\]
+and explicit rational bounds \(E_{\rm in},E_{\rm out}\ge1/\poly\) below the
+positive spectra of both endpoint Laplacians.
+\end{theorem}
+
+\begin{proof}
+Take \(C\) to be the fixed clean string tensored with the full unconstrained
+register, so \(D=2^{r}\), and let \(S=S_x\).  Condition (i) is the hypothesis
+\(M|_{S^\perp}\preceq I/3\) of \cref{prop:history}, so both history kernels
+and gaps of \cref{eq:history-gaps} are available.  Apply
+\cref{eq:generic-circuit-transfer}.  The YES and NO values of \(q_d\) are
+separated by \(a-b\), so additive error below \((a-b)/2\) decides.  Parameter
+and size bookkeeping: the logical gaps in \cref{eq:history-gaps} are explicit
+rationals, and the fixed palette supplies hard-coded positive rational lower
+bounds for the constants in \cref{thm:transfer}.  Fix \(\eta_0=1/10\); from
+the polynomially bounded \(t_{\max}\), choose the first integer \(b'\) for
+which \(\lambda=2^{-b'}\) satisfies both inequalities in
+\cref{eq:lambda-E-choice}, and for each endpoint output the largest dyadic
+rational \(E_i\) no greater than one half of \(c_2\eta_0^2g_i\lambda^{2p}\).
+Thus \(b'=O(\log t_{\max})\) and the binary encodings of \(\lambda\) and
+\(E_i\) have polynomial length.  If the history uses \(n\) register qubits
+(clock and work bits), the register has \(7n\) vertices and \(O(n^2)\)
+edges, and each gadget adds a constant number of private vertices together
+with \(O(n)\) edges to the unaffected register factors; so the weighted
+graph has \(O(n+t_{\max})\) vertices and \(O(n^2+t_{\max}n)\) explicitly
+generated edges.  Hence the map outputs the two graphs, their common weight
+function, \(d\), \(E_{\rm in},E_{\rm out}\), and the threshold
+\((a+b)/2\) in deterministic polynomial time.
+\end{proof}
+
+\begin{corollary}[One-clean-qubit sources]
+\label{cor:sdqc}
+Weighted gapped normalized persistence is \(\SDQCone^{G_2}[\mathrm{frac}]\)-hard
+for all thresholds \(a-b\ge1/\poly\), and \(\SDQCone^{G_2}\)-hard, in the
+sense of \cite[Definition~2]{lowe2026normalized}, for all thresholds with
+\(b<(3a-1)/2\); for \((a,b)=(2/3,1/3)\) the target error \(1/24\) suffices.
+In these instances \(\beta_d(\Xin)=2^{q-1}\) is the full dimension of the
+mixed register.
+\end{corollary}
+
+Conjecture~1 of Lowe et al.\ asserts \(\SDQCone\)-hardness of this problem
+for a fixed universal gate set.  \Cref{cor:sdqc} proves it for \(G_2\) in the
+fraction form used in their own hardness proofs, and in the trace form for
+every threshold pair with \(b<(3a-1)/2\).  Arbitrary trace thresholds
+cannot be handled by any reduction whose target sees only the fraction
+\(\dim S_x/2^{q-1}\) (\cref{app:source-boundaries}).
+
+\begin{theorem}[Fixed-eight hardness]
+\label{thm:weighted-hardness}
+There is a deterministic polynomial-time many-one reduction from
+\(\BQPone^{G_2}\) to the decision version of weighted gapped normalized
+persistence (\cref{def:problem}).  Every output
+satisfies
+\[
+\beta_d(\Xin)=8,\qquad
+\beta_d(\Xin\to\Xout)=
+\begin{cases}6,&x\in L,\\1,&x\notin L,\end{cases}
+\]
+and both endpoint degree-\(d\) Laplacians have inverse-polynomial gaps above
+their complete kernels.  Hence the normalized values are \(3/4\) and \(1/8\).
+Additive error \(1/24\), with decision threshold \(7/16\), distinguishes the
+two cases with success probability at least \(2/3\).
+\end{theorem}
+
+\begin{proof}
+Apply \cref{thm:general-hardness} to the eight-label source
+\cref{eq:eight-label}, with \(r=3\).  The two ratios differ by \(5/8\), and
+\(1/24<5/16\).
+\end{proof}
+
+\begin{theorem}[Gapped Betti numbers]
+\label{thm:gapped-betti}
+Consider the problem \textnormal{\textsc{GappedBetti}}: given a graph \(G\) with dyadic
+vertex weights, a degree \(d\), and a rational \(\gamma\ge1/\poly\), with
+the promise \(\spec(\Delta_{\Cl(G),d})\subseteq\{0\}\cup[\gamma,\infty)\),
+compute \(\beta_d(\Cl(G))\).  \textnormal{\textsc{GappedBetti}} is \(\#\mathsf P\)-hard under
+polynomial-time parsimonious reductions, and it is in
+\(\#\BQP\)~\cite{brown2011computational}, hence \(\#\mathsf P\)-complete under
+weakly parsimonious reductions.  The same statements hold for the persistent
+Betti number \(\beta_d(X_1\to X_2)\) of a filtration with gapped endpoints,
+and with exact \(G_2\) verifiers satisfying condition (i) of \cref{def:sf} in
+place of Boolean formulas, which gives hardness, again parsimoniously, for
+the perfect-completeness counting class \(\#\BQPone\) of Cade and
+Crichigno~\cite{cade2024complexity} restricted to \(G_2\).
+\end{theorem}
+
+\begin{proof}
+Hardness: given \(\varphi\), the classical-counting source above satisfies
+(i), and \cref{thm:general-hardness}, which uses only the two-term atoms and
+basis cones of the palette for \(X,\CX,\CCX\) circuits, outputs \(\Xout\)
+with \(\beta_d(\Xout)=\beta_d(\Xin\to\Xout)=\#\varphi\), an inverse-polynomial
+gap above the kernel, and \(\beta_d(\Xin)=2^r\).  Containment: with the
+promised gap, phase estimation of the explicit sparse operator
+\(\Delta_{\Cl(G),d}\) at resolution below \(\gamma\) is a \(\BQP\) verifier
+that accepts kernel vectors with probability exponentially close to one and
+every vector of the orthogonal complement with probability exponentially
+close to zero, so \(\beta_d\) is the dimension of its accepting subspace, a
+\(\#\BQP\) function~\cite{brown2011computational,cade2024complexity}; and
+\(\#\BQP=\#\mathsf P\) under weakly parsimonious
+reductions~\cite{brown2011computational}.
+\end{proof}
+
+Crichigno and Kohler prove \(\#\mathsf P\)-hardness of Betti numbers of clique
+complexes without a gap promise~\cite{crichigno2024clique}, and Cade and
+Crichigno prove the gapped statement for general chain complexes with
+\(6\)-local coboundaries~\cite{cade2024complexity}; \cref{thm:gapped-betti}
+combines the two features for clique complexes, and, through
+\cref{cor:unweighted-hardness} below, for unweighted clique complexes.
+
+The exact trace-versus-perfect-space obstruction and the mixed-spectator
+extension to individual real Hadamards are recorded in
+\cref{app:source-boundaries}.  Neither is needed for
+\cref{thm:weighted-hardness}.

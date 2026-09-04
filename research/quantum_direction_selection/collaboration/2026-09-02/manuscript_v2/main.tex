@@ -1,0 +1,68 @@
+\documentclass[a4paper,UKenglish,cleveref,numberwithinsect,anonymous]{lipics-v2021}
+
+% Anonymous ITCS review copy. ITCS requires single-column text of at least
+% 11pt; the local adapter changes only the review-copy text sizes.
+\usepackage{itcs-submission}
+\usepackage{amscd,mathtools}
+\usepackage{booktabs,tabularx,array}
+\usepackage{xurl}
+
+\input{math_commands}
+
+\newtheorem{assumption}[theorem]{Assumption}
+\setcounter{secnumdepth}{3}
+
+\hideLIPIcs
+\title{Exact Kernel Transfer to Clique Complexes: Hardness of Normalized
+Persistence and Gapped Betti Numbers}
+\titlerunning{Kernel Transfer, Normalized Persistence, and Gapped Betti Numbers}
+\author{Anonymous Authors}{Anonymous affiliation}{}{}{}
+\authorrunning{Anonymous Authors}
+\Copyright{Anonymous Authors}
+\ccsdesc[500]{Theory of computation~Quantum complexity theory}
+\ccsdesc[300]{Mathematics of computing~Algebraic topology}
+\keywords{clique homology, persistent homology, normalized persistence,
+Betti numbers, spectral gap, perfect completeness, counting complexity, quantum complexity}
+
+\AtBeginDocument{\hypersetup{
+  pdftitle={Exact Kernel Transfer to Clique Complexes: Hardness of Normalized Persistence and Gapped Betti Numbers},
+  pdfauthor={Anonymous Authors},
+  pdfsubject={Anonymous ITCS submission on exact normalized persistence in clique filtrations},
+  pdfkeywords={clique homology, normalized persistence, spectral gap, quantum complexity}}}
+
+\begin{document}
+\raggedbottom
+\maketitle
+
+\begin{abstract}
+\input{sections/0_abstract}
+\end{abstract}
+
+\input{sections/1_introduction}
+\input{sections/2_preliminaries}
+\input{sections/3_transfer}
+\input{sections/4_quotient}
+\input{sections/5_circuit}
+\input{sections/6_advantage}
+\input{sections/7_unweighting}
+\input{sections/8_related_work}
+\input{sections/9_limitations_conclusion}
+
+\clearpage
+\bibliographystyle{plainurl}
+\bibliography{references}
+
+\clearpage
+\appendix
+\input{sections/A_transfer_proof}
+\input{sections/B_source_details}
+\input{sections/C_palette_certificates}
+
+\section*{AI Disclosure}
+We used ChatGPT and Claude as auxiliary tools for literature search,
+brainstorming, proof checking, and drafting and editing of the exposition.
+The authors evaluated and revised all AI-assisted material and take full
+responsibility for the correctness and originality of the submission,
+including every proof and reference.
+
+\end{document}

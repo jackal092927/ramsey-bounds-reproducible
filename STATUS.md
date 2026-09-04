@@ -236,6 +236,14 @@ HotCRP lists the ITCS 2027 registration deadline as September 2, 2026,
 EDT; a new upload is possible only for a submission registered before the
 first date.
 
+A version-2 draft with four new results (exponent 10 from filling depth,
+general perfect-subspace-fraction source with SDQC1 fraction-form hardness
+and 2^r initial holes, hard-and-in-BQP instances via large overlap and
+state preparation, #P-completeness of gapped clique Betti numbers) is in
+`manuscript_v2/` next to the frozen version 1, with proofs in
+`V2_ENHANCEMENT_PLAN_2026-09-04.md`; it builds cleanly (34 pages) and awaits
+external review.
+
 ## Current research collaboration
 
 The September 3 [project dossier](research/pro_collaboration_2026-09-02/README.md)

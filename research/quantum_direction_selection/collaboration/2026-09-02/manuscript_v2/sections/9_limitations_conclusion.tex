@@ -1,0 +1,48 @@
+\section{Limitations and open problems}
+\label{sec:limitations}
+
+The construction has three substantive limits.  Its exact palette is finite
+and real: arbitrary integer states and complex phases are outside the
+theorem, so every hardness statement is relative to the gate set \(G_2\)
+(extended to cyclotomic gate sets only for \(\BQPone\), through Rudolph's
+simulation).  Trace-form \(\SDQCone\)-hardness is proved only for threshold
+pairs with \(b<(3a-1)/2\), and \cref{app:source-boundaries} shows that this
+is the limit of any reduction whose target sees only the perfectly accepted
+subspace.  Finally, the gap is a complexity promise rather than a practical
+estimate: at depth five it scales conservatively as
+\(\Omega(\eta^{12}g/t^{10})\) with \(g=\Omega(L^{-3})\), and the common-copy
+blow-up multiplies the vertex count by \(F=\lambda^{-2}\).
+
+Each limit suggests a question.
+\begin{enumerate}
+\item Does \(\SF^{G}\)-hardness extend to every finite gate set
+\(G\subseteq\mathbb Q(\zeta_{2^k})\)?  Rudolph's simulation accepts when its
+postselection fails; on an \(\SF\) verifier this keeps \(S_x\) perfectly
+accepted and, if the failure probability is input-independent and
+exponentially small, keeps the soundness on \(S_x^\perp\) at
+\(1/3+2^{-\poly}\).  Verifying these two properties would remove most of the
+gate dependence.
+\item Is there an exact transformation of an \(\SDQCone\) verifier whose
+perfect fraction encodes the acceptance probability of the maximally mixed
+state?  If not, the fraction form is the right definition of the class, and
+Conjecture~1 of Lowe et al.\ should be read in that form.
+\item Can the depth be reduced?  A palette whose fillings use at most two
+private vertices per simplex would give \(\kappa=4\) and
+\(E=\Omega(\eta^6g/t^4)\).
+\item Lowe et al.\ ask for a general kernel-preserving universality theorem
+for weighted clique Laplacians.  \Cref{thm:transfer} is such a theorem for
+palettes with finite certificates.  Extending the certificate model to
+integer-state gadgets~\cite{king2026gapped} or to complex phases would answer
+their question for a much wider class of Hamiltonians.
+\item Do the hard instances also have inverse-polynomial gaps of the
+persistent Laplacian~\cite{memoli2022persistent}?  This is not needed for
+\cref{thm:advantage}, but it would connect the instances to the persistent
+Betti number algorithms of~\cite{hayakawa2022quantum,mcardle2026streamlined}.
+\end{enumerate}
+
+Within its limits, the paper establishes a reusable criterion: a new clique
+reduction obtains exact kernel multiplicity, an inverse-polynomial gap above
+the whole kernel, harmonic spaces that track the logical kernels, and natural
+persistent ranks by certifying, for a finite palette, local zero-weight
+kernels, private coercivity, exact filling, and interfaces, with no
+growing-dimensional perturbation argument.

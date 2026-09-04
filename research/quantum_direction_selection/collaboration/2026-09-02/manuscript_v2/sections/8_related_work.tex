@@ -1,0 +1,117 @@
+\section{Relation to prior work}
+\label{sec:related}
+
+\paragraph{Normalized persistence.}
+Lowe et al.~\cite{lowe2026normalized} define normalized harmonic persistence
+(their Problem~9, our \cref{def:problem}), prove that a low-energy relaxation
+of it is \(\mathsf{DQC}_1\)-hard and in \(\BQP\), prove \(\SDQCone\)-hardness
+of the local-Hamiltonian analogue, and conjecture \(\SDQCone\)-hardness of
+Problem~9 (their Conjecture~1).  Their Conjecture~2 asks for a polynomial-time
+map from history Hamiltonians \(H_1\) and \(H_2=H_1+\lambda H_{\rm out}\) to
+weighted clique complexes \(X_1\subseteq X_2\) with two properties:
+kernel fidelity and gap, \(\beta_d(X_i)=\dim\ker H_i\) together with
+computable inverse-polynomial gap bounds; and functoriality,
+\(\beta_d(X_1\to X_2)=\dim\ran(P_{\ker H_2}|_{\ker H_1})\).  Their Lemma~11
+shows that Conjecture~2 implies Conjecture~1.  \Cref{thm:transfer,thm:quotient}
+establish both properties for the exact \(G_2\) history Hamiltonians of
+\cref{sec:circuit}, with \(H_{\rm out}\) at unit coefficient rather than at a
+small coefficient \(\lambda\), with the induced map computed through the
+quotient model, and with the harmonic encodings shown a posteriori to be
+\(\eta/2\)-approximate isometries compatible with the inclusion
+(\cref{eq:projector-closeness}).  \Cref{cor:sdqc} then proves Conjecture~1
+over \(G_2\) in the fraction form.  The distinction between the two forms is
+this: Definition~2 of Lowe et al.\ imposes the decision condition on the
+acceptance probability \(p_x\) of the maximally mixed state, whereas the
+quantity estimated by the oracle in the proofs of their Theorems~5 and~7 is
+the fraction \(f_x=\dim S_x/2^{q-1}\), and after the Marriott--Watrous
+amplification used there the acceptance probability of the amplified circuit
+is within \(1/\poly\) of \(f_x\) (their equation~(9)) but no longer within
+\(1/\poly\) of \(p_x\).  Since \(f_x\le p_x\le(1+2f_x)/3\)
+(\cref{app:source-boundaries}), the trace promise implies the fraction
+promise exactly when \(b<(3a-1)/2\), and \cref{cor:sdqc} covers those
+thresholds in the trace form as well; for other thresholds no reduction whose
+target depends only on \(S_x\) can exist.  Their containment result
+(Lemma~7) needs a preparation circuit for the uniform mixture over
+\(\ker\Delta_{1,d}\) and an inverse-polynomial lower bound on the nonzero
+eigenvalues of \(P_{\cH_2}P_{\cH_1}P_{\cH_2}\); \cref{sec:advantage} proves
+both on our instances, which is why \cref{thm:advantage} can be stated in
+the same form as their Theorems~5, 7 and~8.
+
+\paragraph{Clique homology gadgets.}
+Crichigno and Kohler~\cite{crichigno2024clique} give a parsimonious reduction
+in which satisfying states correspond one-to-one to holes, so exact
+multiplicity by itself is not new; their instances carry no gap promise.
+King and Kohler~\cite{king2026gapped} introduce the weighted gadgets and the
+many-gadget spectral analysis behind gapped clique homology, proving a gap
+when the logical Hamiltonian is positive definite, with a gadget weight
+proportional to the logical gap; Hayakawa~\cite{hayakawa2026unweighted}
+removes the weights under the same positive-definite promise.  Our transfer
+theorem is formulated from finite zero-weight certificates, applies to
+arbitrary geometric chains and to degenerate kernels, decouples
+\(\lambda\) from \(g\), and takes its exponent from the fillings rather than
+from the locality.  Its padding step differs from the coordinate-bulk
+formulation displayed in the arXiv version of King and
+Kohler~\cite[Claim~10.2]{king2023gappedv2}: there the bulk consists of all
+coordinates containing a private vertex, which in the padded complex also
+contains boundary terms obtained by deleting a weight-one outside vertex,
+whereas we keep local private coordinates tensored with outside harmonics
+in every bidegree (\cref{lem:scaling-padding}).  We also work with the fixed
+local matrices before tensoring with the outside identity, so that no
+operator bound on a projector of growing rank has to be inferred from
+basiswise perturbation estimates.  These are differences of proof technique,
+and we make no claim about the presentation in the published
+version~\cite{king2026gapped}.
+
+\paragraph{Counting Betti numbers.}
+Crichigno and Kohler prove that computing Betti numbers of clique complexes
+is \(\sharpP\)-hard~\cite[Theorem~4]{crichigno2024clique}, through the
+\(\sharpP\)-hardness of counting quantum \(4\)-SAT solutions; their instances
+have no gap promise.  Schmidhuber and Lloyd prove \(\sharpP\)-hardness of
+exact Betti numbers and \(\mathsf{NP}\)-hardness of multiplicative
+approximation for clique complexes, even in the clique-dense regime where
+the quantum algorithms perform best~\cite{schmidhuber2023limitations}; the
+restriction is a density condition, not a spectral one.  Cade and Crichigno
+prove \(\sharpP\)-completeness with an inverse-polynomial gap for general chain
+complexes with \(6\)-local coboundaries~\cite[Theorem~5]{cade2024complexity},
+using the counting class \(\#\BQP\) of Brown, Flammia, and
+Schuch~\cite{brown2011computational}, whose definition includes a gap promise
+on the acceptance operator and which equals \(\sharpP\) under weakly
+parsimonious reductions.  \Cref{thm:gapped-betti} is the clique-complex
+statement with the gap, for weighted and unweighted graphs; it is a direct
+corollary of the degenerate-kernel transfer, since the classical source has
+\(M_\varphi|_{S^\perp}=0\).
+
+\paragraph{Persistence hardness.}
+Gyurik et al.~\cite{gyurik2026provable} prove \(\BQPone\)-hardness, over the
+gate set \(\{\mathrm{CNOT},U_{\rm Pyth}\}\), of deciding whether a
+\emph{given} harmonic representative of \(X_1\) survives in \(X_2\), with a
+gap promise on the final Laplacian.  Normalized persistence asks instead for
+the fraction of the full initial homology that survives, with no
+representative given, so a hardness proof must control the complete kernels
+at both endpoints.  Persistent Laplacians~\cite{memoli2022persistent} give a
+spectral formulation of persistent Betti numbers; we use ordinary endpoint
+Laplacians for the promise and the quotient model for the map.
+
+\paragraph{Sources and gate sets.}
+Rudolph~\cite{rudolph2026universal} defines the gate-dependent classes,
+proves exact error reduction inside gate sets containing \(G_2\), shows
+\(\BQPone^{G}\subseteq\BQPone^{G_2}\) for every finite \(G\) with entries in
+some \(\mathbb Q(\zeta_{2^k})\), and supplies the gain/loss split of
+\(H\otimes H\) with rational three-term constraint vectors and the base
+clique gadgets used in our palette.  Cade and
+Crichigno~\cite{cade2024complexity} relate cohomology problems to
+\(\QMAone\) and \(\mathsf{DQC}_1\), and Gyurik, Cade, and
+Dunjko~\cite{gyurik2022towards} connected quantum topological data analysis
+to \(\mathsf{DQC}_1\)~\cite{knill1998power}.  The history-state construction
+with a unary clock and neighbor guards is
+Kitaev's~\cite{kitaev2002classical,kempe2006complexity}, with the rational
+amplitude bookkeeping of \cref{sec:circuit}; the amplification used by Lowe
+et al.\ is that of Marriott and Watrous~\cite{marriott2005quantum}.
+
+\paragraph{Unweighting.}
+Hayakawa's symmetric/asymmetric decomposition of the common-copy
+blow-up~\cite[Lemma~4.2 and Theorem~4.3]{hayakawa2026unweighted} is used as a
+black box.  Our only addition is the observation that identical labeled copy
+blocks at both filtration levels make the symmetric isometries commute with
+inclusion, \cref{eq:unweight-natural}, which also transfers the containment
+conditions.  We do not count this as a separate contribution.
