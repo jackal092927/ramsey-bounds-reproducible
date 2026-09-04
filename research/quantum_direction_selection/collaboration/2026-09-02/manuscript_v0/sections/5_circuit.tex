@@ -135,16 +135,27 @@ two cases with success probability at least \(2/3\).
 \begin{proof}
 Apply \cref{eq:generic-circuit-transfer} to \cref{eq:eight-label}.  The two
 ratios differ by \(5/8\), and \(1/24<5/16\).  The logical gaps in
-\cref{eq:history-gaps} are explicit rationals.  The fixed palette supplies
-hard-coded positive rational lower bounds for the constants in
-\cref{thm:transfer}.  Fix \(\eta_0=1/10\); from the polynomially bounded
-\(t_{\max}\), choose the first integer \(b\) for which
-\(\lambda=2^{-b}\) satisfies both inequalities in
-\cref{eq:lambda-E-choice}.  For each endpoint output the largest dyadic
-rational \(E_i\) no greater than one half of
-\(c_2\eta_0^2g_i\lambda^{26}\).  Thus \(b=O(\log t_{\max})\), and the binary
-encodings of \(\lambda\) and \(E_i\) have polynomial length.  The weighted
-graph has \(O(n+t_{\max})\) vertices and at most
+\cref{eq:history-gaps} are explicit rationals.  The finite certificate data
+supply explicit positive rational constants \(\bar c_1,\bar c_2\) small enough
+that \cref{eq:lambda-E-choice} remains valid with \(c_1,c_2\) replaced by
+\(\bar c_1,\bar c_2\).  Fix \(\eta_0=1/10\).  From the polynomially bounded
+\(t_{\max}\), choose the least integer \(b\ge0\) for which
+\(\lambda=2^{-b}\) satisfies the first inequality in
+\cref{eq:lambda-E-choice} with \(\bar c_1\).
+
+For endpoint \(i\), put
+\[
+r_i=\frac{\bar c_2}{2}\eta_0^2g_i\lambda^{26}
+\]
+and choose the least integer \(s_i\ge0\) such that \(2^{-s_i}\le r_i\).
+Output the dyadic promise bound \(E_i=2^{-s_i}\).  Then
+\(0<E_i\le r_i<c_2\eta_0^2g_i\lambda^{26}\).  Exact integer comparison of a
+power of two with the rational \(r_i\) computes \(s_i\); since \(g_i^{-1}\)
+and \(t_{\max}\) are polynomially bounded, \(b,s_i\) and the binary encodings
+of \(\lambda,E_i\) have polynomial length.
+
+Let \(n\) be the number of logical register factors in the split history.
+The weighted graph has \(O(n+t_{\max})\) vertices and at most
 \(O(n^2+t_{\max}n)\) explicitly generated edges, because the register and
 every local interior are explicit and locality is constant.  Hence the map
 outputs the two graphs, their common weight function, \(d,E_1,E_2\), and the
