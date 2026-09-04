@@ -97,7 +97,8 @@ LL^*=\sum_jL_jL_j^*\preceq N_*t_A\lambda^2I.
 Fix a palette satisfying \cref{ass:local-certificate,lem:scaling-padding} and
 \cref{eq:interface}.  Use outside-harmonic padding in every bidegree and
 independent private interiors.  Let \(\mathcal A\) be a finite nested family
-of term sets, let \(t_{\max}=\max\{1,\max_{A\in\mathcal A}|A|\}\), and suppose
+of nonempty term sets, let
+\(t_{\max}=\max_{A\in\mathcal A}|A|\), and suppose
 \[
 H_A=\sum_{j\in A}\Pi_j\succeq
 g_A(P_V-P_{K_A}),\qquad K_A=\ker H_A,\qquad 0<g_A\le1
@@ -129,6 +130,12 @@ Then
 \end{equation}
 This includes \(K_A=0\).
 \end{theorem}
+
+The bare-register level \(A=\varnothing\), if included in a filtration, is
+handled separately: \(X_A=R\), \(K_A=V\), and the tensor-join bowtie register
+has a constant positive degree-\(d\) gap on \(V^\perp\).  Thus it may be
+adjoined without invoking the many-gadget estimate, whose proof assumes
+\(t_A\ge1\).
 
 \paragraph{Proof architecture.}
 The full calculation is in \cref{app:transfer-proof}.  The shared-output
