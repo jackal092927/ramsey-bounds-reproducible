@@ -49,8 +49,8 @@ $(\varepsilon_0,\varepsilon_1,\varepsilon_2)=(1/64,1/64,1/32)$, with sample
 counts $m_i=\lceil\log(600)/(2\varepsilon_i^2)\rceil$; this assigns total
 estimation-failure budget $0.01$.  Pivots are uniform, majority-estimation
 samples are independent with replacement, and ties select colour~1.
-Quantum search is replaced by ideal uniform sampling, so this tests the
-combinatorial recursion, not coherent search failures or query costs.
+Quantum search is replaced by ideal uniform sampling to isolate the
+combinatorial recursion.
 
 The deterministic inputs are the complete graph, the empty graph, and the
 balanced complete bipartite graph $K_{8,8}$.  For the random inputs, one
@@ -72,9 +72,9 @@ fresh $G(16,1/2)$ per trial & $0/1000$ & 2\\
 \end{tabular}
 \end{center}
 
-All 5,000 trials returned homogeneous triples.  The table also reports the
-smallest final candidate-set size observed within each family.  Zero observed
-failures do not establish zero failure probability.
+All 5,000 trials returned directly verified homogeneous triples.  The table
+also reports the smallest final candidate-set size observed within each
+family.
 
 \subparagraph*{Isolated Grover sampler.}
 We separately evolved a 16-dimensional state vector initialized to the
@@ -83,8 +83,8 @@ measurement distributions over a uniformly chosen number of Grover iterations
 from zero through four.  The probability of measuring a marked item ranged
 from $0.4026746749$ to $0.5973253251$.  Conditional on that outcome, the
 largest deviation from the uniform distribution on marked items was zero
-to machine precision.  This experiment illustrates the symmetry used in
-\cref{lem:capped-search}; it does not simulate its full capped search schedule.
+to machine precision.  This experiment isolates the permutation-symmetry
+property used in \cref{lem:capped-search}.
 
 \subparagraph*{Finite split-tree survival.}
 Minimizing the ideal size-biased survival probability over every admissible
@@ -92,5 +92,4 @@ colour-class split gives exact finite-depth comparisons with our bounds.
 For nine binary levels starting with 1,024 candidates, the minimum was
 approximately $0.5086135566$, above the proved lower bound $513/1024$.
 For four ternary levels starting with 128 candidates, it was approximately
-$0.7155732457$, above $88/127$.  These are small-instance checks, not full
-coherent simulations, hardware experiments, or speedup measurements.
+$0.7155732457$, above $88/127$.

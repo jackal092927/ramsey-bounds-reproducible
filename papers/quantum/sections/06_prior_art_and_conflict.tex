@@ -1,60 +1,54 @@
-\section{Prior art and comparison with a reported lower bound}
+\section{Prior work and comparison with a reported lower bound}
 \label{sec:prior-art}
 
-Previous quantum papers under the phrase ``Ramsey algorithm'' solve different
-problems.  Gaitan and Clark encode the existence of avoidance colourings in
-an adiabatic Hamiltonian \cite{GaitanClark2012}, and Bian et al.\ implement
-small instances experimentally \cite{BianEtAl2013}; Wang searches the space of
-$2^{\binom V2}$ labelled graphs when testing a Ramsey threshold
-\cite{Wang2016}; Qu et al.\ use quantum counting for hypergraph Ramsey numbers
-\cite{QuLiWangBaoCao2013}; and generalized/ordinary bound discovery has been
-studied through adiabatic optimization and QUBO reduction
-\cite{RanjbarMacreadyClarkGaitan2016,PionMniszewski2025}.  Their square roots
-refer to the number of graph colourings, not the number of vertices of one
-given graph.  D{\"o}rn's clique and independent-set query algorithms are
-closer in oracle model but do not exploit the Ramsey totality promise or the
-majority recursion \cite{Doern2005}.  Quantum subset-finding algorithms already
-give nontrivial clique-query bounds \cite{ChildsEisenberg2005}, while
-learning-graph algorithms for fixed subgraph containment
-\cite{LeeMagniezSantha2012,Zhu2012} and quantum backtracking
-\cite{Montanaro2018}
-provide powerful generic primitives.  None by itself supplies the
-implicit-set survival invariant used here.  To our knowledge, no earlier work uses
-implicit-set quantum sampling to implement the constructive
-Erdős--Szekeres proof; this priority statement is limited to the exact oracle
-model and sources compared here.
+Previous quantum work under the phrase ``Ramsey algorithm'' has studied the
+existence of avoidance colourings through adiabatic Hamiltonians and
+small-instance experiments \cite{GaitanClark2012,BianEtAl2013}, exhaustive
+search over the $2^{\binom V2}$ labelled graphs defining a Ramsey threshold
+\cite{Wang2016}, quantum counting for hypergraph Ramsey numbers
+\cite{QuLiWangBaoCao2013}, and bound discovery through adiabatic optimization
+or QUBO reductions \cite{RanjbarMacreadyClarkGaitan2016,PionMniszewski2025}.
+Their square-root improvements concern spaces of graph colourings rather than
+the vertex set of one input graph.  Closer oracle-model results include
+clique and independent-set query algorithms \cite{Doern2005}, quantum
+subset-finding \cite{ChildsEisenberg2005}, learning-graph algorithms for fixed
+subgraph containment \cite{LeeMagniezSantha2012,Zhu2012}, and quantum
+backtracking \cite{Montanaro2018}.  Our approach instead uses the Ramsey
+totality promise together with an implicit-set survival invariant.  To our
+knowledge, no earlier work uses implicit-set quantum sampling to implement the
+constructive Erd\H{o}s--Szekeres proof; this priority statement concerns the
+exact oracle model and sources compared here.
 
-Kraj{\'\i}\v{c}ek connected Ramsey and weak-pigeonhole proof complexity
-\cite{Krajicek2001} and later formulated the structured-pigeonhole search
-problem for circuit-encoded homogeneous sets \cite{Krajicek2005}.  Pasarkar,
-Papadimitriou, and Yannakakis
-place Ramsey search in their polynomial long-choice class PLC, which captures
-iterated pigeonhole arguments \cite{PasarkarPapadimitriouYannakakis2023}.
+Ramsey search has also been connected to weak-pigeonhole proof complexity and
+to structured-pigeonhole search for circuit-encoded homogeneous sets
+\cite{Krajicek2001,Krajicek2005}.  It lies in the polynomial long-choice class
+PLC, which captures iterated pigeonhole arguments
+\cite{PasarkarPapadimitriouYannakakis2023}.
+
 \paragraph{Comparison at the formal default parameters.}
-The closest exact-model source is the FOCS 2024 proceedings paper of
-Jain--Li--Robere--Xun \cite{JainLiRobereXun2024}.  Definition II.6 of its
-proceedings version (p.~413) uses $N=2^n$ vertices, and the convention after
-Definition II.7 sets the default target to $K=n/2$.  We use these formal
-definitions throughout this comparison.  The unnumbered ``Query
-complexity of RAMSEY'' paragraph in Section III (p.~415) states an $N^{1-o(1)}$
-quantum lower bound via Lemma III.1 and the Liu--Zhandry multicollision theorem
+The closest exact-model treatment \cite{JainLiRobereXun2024} uses
+$N=2^n$ vertices in Definition II.6 and sets the default target to $K=n/2$
+after Definition II.7.  We use these formal definitions throughout this
+comparison.  The unnumbered ``Query complexity of RAMSEY'' paragraph in
+Section III (p.~415) reports an $N^{1-o(1)}$ quantum lower bound via
+Lemma III.1 and the Liu--Zhandry multicollision theorem
 \cite{LiuZhandry2019}.  The graph-hash product in Lemma III.1 can be written
 off the diagonal as
 $A_h(u,v)=\mathbf1[h(u)=h(v)]\lor A_0(h(u),h(v))$, with
 $A_h(u,u)=0$.  It is a valid symmetric graph and has an $O(1)$-query coherent
 implementation from the value oracle for $h$, using computation and
-uncomputation of its two values.  Thus the promise of a valid graph does not
-exclude this reduction.  Corollary~\ref{cor:unpromised} also aligns our upper bound with the
+uncomputation of its two values.  Thus the valid-graph promise admits this
+reduction.  Corollary~\ref{cor:unpromised} also aligns our upper bound with the
 locally verifiable arbitrary-circuit relation.  Moreover,
 \cref{cor:succinct} returns $\lfloor n/2\rfloor+1$ vertices, so discarding one
-if necessary solves their default target up to the suppressed rounding
-convention.  Thus malformed encodings and the target convention do not remove
-the apparent conflict.
+if necessary solves the default target up to the suppressed rounding
+convention.  The oracle model and target convention therefore yield the same
+parameter regime for the two statements.
 
 \paragraph{Direct parameter substitution.}
 Write $H$ for the multicollision range size and $G$ for the number of
 vertices in the Ramsey instance.  For fixed multiplicity $t$, the sufficient
-parameter condition in Jain et al.'s Theorem I.3 is
+parameter condition in \cite[Theorem I.3]{JainLiRobereXun2024} is
 $G\ge H^{4t}/4^t$.  At the boundary
 $G=\Theta_t(H^{4t})$, Liu--Zhandry's exponent in $H$ is
 $\alpha_t=(2^{t-1}-1)/(2^t-1)$.  The inherited exponent is therefore
@@ -66,17 +60,14 @@ $\alpha_t=(2^{t-1}-1)/(2^t-1)$.  The inherited exponent is therefore
 with equality at $t=2$.  Indeed, $t=2$ gives $1/24$, while for $t\ge3$
 the strict inequality $\alpha_t<1/2$ gives
 $\alpha_t/(4t)<1/(8t)\le1/24$.  Increasing $G$ relative to $H$ cannot
-improve this transferred exponent.  The cited Liu--Zhandry result is for
-fixed $t$ and does not by itself permit substitution of a growing
-multiplicity.  This calculation concerns what follows from these stated
-ingredients; it is not an upper bound on the true quantum query complexity.
+improve this transferred exponent.  This substitution remains within the fixed-multiplicity regime of the
+cited Liu--Zhandry result.  This
+calculation isolates the exponent obtained from the two cited statements
+under the formal default parameters.
 
-Consequently, the stated near-linear consequence is not obtained by directly
-composing the two cited statements.  If that consequence is intended for the
-same bounded-error quantum-query relation, it is incompatible with our upper
-bound.  Our proof does not use this consequence or the Liu--Zhandry lower
-bound.  This observation concerns
-only the parameter substitution in the unnumbered query-complexity discussion
-and does not concern the principal black-box nonreducibility or TFNP separation
-theorems of Jain et al.  An additional ingredient or a different intended
-normalization may resolve the discrepancy.
+The two stated ingredients therefore transfer an exponent no larger than
+$1/24$.  Obtaining the reported $N^{1-o(1)}$ exponent in the same
+bounded-error quantum-query relation requires an additional ingredient or a
+different normalization.  This comparison is confined to the unnumbered
+query-complexity discussion in Section III of
+\cite{JainLiRobereXun2024}.

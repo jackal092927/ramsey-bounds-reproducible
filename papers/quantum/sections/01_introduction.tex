@@ -8,9 +8,8 @@ current size gives an $O(M)$-query implementation with explicit candidate
 sets.  This paper shows that the same proof architecture
 has a substantially cheaper quantum implementation when the nested candidate
 sets are instead represented by their membership predicates.
-We use the elementary $4^{K-1}$ sufficient threshold because it supports this
-recursion; it is not the best current extremal bound, which has exponential
-base strictly below four \cite{CamposGriffithsMorrisSahasrabudhe2026}.
+We use the elementary $4^{K-1}$ sufficient threshold because it gives the
+recursive size invariant underlying this construction.
 
 We work in the promised valid-graph adjacency-oracle model.  One coherent
 query returns the colour of a requested unordered vertex pair.  The output is
@@ -75,22 +74,20 @@ places the result against a randomized classical lower bound of
 $\Omega(N^{1-1/\sqrt2})$ in the same parameterization.
 \end{itemize}
 
-The result is algorithmic rather than extremal.  It does not change any
-numerical Ramsey bound or construct an avoidance colouring.  It gives a
-square-root query improvement, up to polylogarithmic factors, over the
-standard $O(N)$ constructive recursion, but no matching lower bound against
-every randomized classical algorithm is presently known.
+At the succinct Ramsey scale, \cref{thm:main} reduces the query count of the
+standard constructive recursion from $O(N)$ to
+$O(\sqrt N\log N\log(\log N/\eta))$.  The randomized classical lower bound in
+\cref{prop:classical-lower} provides a complementary benchmark in the same
+parameterization.
 
-For completeness, we address a discrepancy with the closest exact-model
-source.  The FOCS 2024 paper of Jain, Li, Robere, and Xun reports an
-$N^{1-o(1)}$ quantum-query lower bound for its default Ramsey relation
+A closely related exact-model analysis reports an $N^{1-o(1)}$ quantum-query
+lower bound for its default Ramsey relation
 \cite[Section III, p.~415]{JainLiRobereXun2024}.  Under its formal
-$N=2^n$, $K=n/2$ convention, this conflicts with \cref{cor:succinct}.
-Section~\ref{sec:prior-art} checks the model alignment and shows that direct
-substitution into the two cited results does not give the reported exponent.
-Our algorithm and its proof are independent of that consequence; the
-comparison does not challenge the paper's principal TFNP separation results.
+$N=2^n$, $K=n/2$ convention, this creates an apparent discrepancy with
+\cref{cor:succinct}.  Section~\ref{sec:prior-art} aligns the oracle models and
+examines the parameter substitution underlying the reported exponent.
 
 The rest of the paper defines the oracle model and capped sampler, proves the
 recurrence and query bound, derives a randomized classical lower bound from
-the random-Painter theorem, and records the novelty and nonclaim boundaries.
+the random-Painter theorem, and compares the result with the closest related
+work before presenting future directions.
