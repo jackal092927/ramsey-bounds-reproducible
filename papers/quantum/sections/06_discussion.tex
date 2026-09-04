@@ -1,0 +1,32 @@
+\section{Discussion and open questions}
+\label{sec:scope}
+
+The query improvement rests on storing each candidate set as the
+conjunction of the adjacency constraints created by earlier pivots, and on
+allocating estimation error according to the cost of each level.
+\Cref{tab:bounds} leaves two central questions.
+
+\paragraph{A worst-case quantum advantage.}
+Can the quantum and randomized query complexities be separated in the worst
+case?  The randomized complexity on $N=2^n$ vertices lies between
+$\Omega(N^{1-1/\sqrt2})$ and $O(N)$, while the quantum upper bound is
+$\widetilde O(\sqrt N)$.  A randomized lower bound of
+$N^{1/2+\Omega(1)}$ would establish such a separation.  The implicit-set
+recursion explains the difference between the available upper bounds:
+classical rejection sampling at depth $i$ needs $2^i$ membership tests,
+whereas quantum search needs $2^{i/2}$.
+
+\paragraph{The optimal quantum exponent.}
+Is $\sqrt N$ optimal in the worst case?  The current quantum bounds are
+$\Omega(N^{1/12})$ and $O(\sqrt N\log N\log\log N)$.  The final levels of
+the recursion search sets of constant size inside a universe of size
+$\Theta(N)$, but these sets are defined by $O(\log N)$ adjacency
+constraints, so the optimality of Grover search does not establish a lower
+bound for this relation.
+
+\paragraph{Scope.}
+The distributional separation on $G(N,1/2)$ in \cref{cor:separation} and
+the multicolour bound in \cref{cor:multicolour} hold under their stated
+contracts.  \Cref{app:experiments} reports small sanity-check experiments;
+the query bounds rest on the proofs in the appendices.  The paper claims
+query bounds only, not gate complexity or hardware performance.

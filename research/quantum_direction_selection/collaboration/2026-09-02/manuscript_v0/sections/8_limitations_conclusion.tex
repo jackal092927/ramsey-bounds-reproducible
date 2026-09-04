@@ -16,28 +16,17 @@ hardness is for the promise problem with endpoint gaps; whether our instances
 also satisfy the access assumptions under which Lowe et al.\ place the
 problem in \(\BQP\) is not established.
 
-Each limit suggests a question.
+Two questions would strengthen the complexity classification.
 \begin{enumerate}
 \item Is normalized harmonic persistence \(\SDQCone\)-hard, as conjectured
 in~\cite{lowe2026normalized}?  The missing steps are a source whose
 perfect-space fraction is separated by the \(\SDQCone\) trace promise, and a
 certified palette for the corresponding gate set.
-\item Can the initial homology be made intrinsically large, say
-\(\beta_d(\Xin)=2^{\Theta(n)}\) with an inverse-polynomial fraction
-surviving, while keeping both endpoint gaps?
 \item Do the constructed filtrations satisfy an inverse-polynomial lower
 bound on the nonzero principal angles between \(\cH_d(\Xin)\) and
-\(\cH_d(\Xout)\)?  A positive answer, together with a preparation circuit
-for the initial harmonic mixture, would place the instances in \(\BQP\)
+\(\cH_d(\Xout)\), and admit efficient preparation of the initial harmonic
+mixture?  Establishing both would place the instances in \(\BQP\)
 by~\cite[Lemma~7]{lowe2026normalized}.
-\item Lowe et al.\ ask for a general kernel-preserving universality theorem
-for weighted clique Laplacians.  \Cref{thm:transfer} is such a theorem for
-palettes with finite certificates.  Extending the certificate model to
-integer-state gadgets~\cite{king2026gapped} or to complex phases would answer
-their question for a much wider class of Hamiltonians.
-\item The exponent \(26\) comes from the crude scaling
-\(\sigma_{\min}(W_k)\ge\lambda^{k+1}\); a sharper local analysis should
-improve it substantially.
 \end{enumerate}
 
 Within its limits, the paper establishes a reusable criterion: a new clique

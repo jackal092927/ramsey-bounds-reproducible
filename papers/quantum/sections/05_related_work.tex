@@ -1,0 +1,67 @@
+\section{Related work and the reported lower bound}
+\label{sec:prior-art}
+
+\paragraph{Quantum algorithms for Ramsey problems.}
+Quantum approaches based on adiabatic computation, annealing, or quantum
+counting search for colourings that establish or test Ramsey-number bounds
+\cite{GaitanClark2012,BianEtAl2013,Wang2016,QuLiWangBaoCao2013,
+RanjbarMacreadyClarkGaitan2016,PionMniszewski2025}; our input is one fixed
+graph given by an oracle.  Generic quantum algorithms
+for clique, independent set, and fixed-subgraph containment
+\cite{Doern2005,ChildsEisenberg2005,LeeMagniezSantha2012,Zhu2012} and
+quantum backtracking \cite{Montanaro2018} operate in a closer oracle model;
+quantum walks also give sublinear-query algorithms for fixed
+sub-hypergraph containment \cite{LeGallNishimuraTani2016}.  We are not aware
+of an earlier implementation of the Erd\H{o}s--Szekeres
+recursion over implicit sets in the adjacency-query model.
+
+\paragraph{Constructive Ramsey search.}
+Ramsey search is connected to weak and structured pigeonhole principles
+\cite{Krajicek2001,Krajicek2005}, its white-box hardness follows from
+collision-resistant hashing \cite{KomargodskiNaorYogev2019}, and it belongs
+to the polynomial long-choice class PLC
+\cite{PasarkarPapadimitriouYannakakis2023}.  The closest matching query
+relation is studied in \cite{JainLiRobereXun2024}, which shows that it is
+not black-box reducible to PIGEON and raises the question of its query
+complexity in the deterministic, randomized, and quantum models.  The
+online Ramsey game (see \cite{ConlonFoxGrinshpunHe2019}), in which Builder
+queries edges and Painter answers adversarially, is the deterministic
+version of this question with an unbounded vertex set; its best known lower
+bound is the random-Painter bound used in \cref{prop:classical-lower}.
+
+\paragraph{Comparison with a reported quantum lower bound.}
+\label{sec:jlrx}
+\emph{Model and parameter alignment.}
+Definition~II.6 of \cite{JainLiRobereXun2024} uses $N=2^n$ vertices, and the
+convention following Definition~II.7 sets the default target to $K=n/2$.
+The unnumbered ``Query complexity of RAMSEY'' paragraph in Section~III
+(p.~415) reports an $N^{1-o(1)}$ quantum lower bound, based on its
+Lemma~III.1 and the multicollision lower bound of \cite{LiuZhandry2019}.
+Lemma~III.1 produces the product graph \cref{eq:product-graph}, a simple
+graph whose coherent queries cost $O(1)$ queries to $h$, so the reduction
+lies within our promise; \cref{cor:unpromised} covers arbitrary circuits,
+and \cref{cor:succinct} meets the default target after discarding one
+vertex.  The two formulations therefore align.
+
+\emph{Exponent obtained by direct substitution.}
+Let $H$ denote the multicollision range size and $G$ the number of vertices
+in the resulting Ramsey instance.  For fixed multiplicity $t$, the
+sufficient condition in Theorem~I.3 of \cite{JainLiRobereXun2024} is
+$G\ge H^{4t}/4^t$.  At the boundary $G=\Theta_t(H^{4t})$, the exponent
+$\alpha_t=(2^{t-1}-1)/(2^t-1)$ of \cite{LiuZhandry2019} transfers to $G$ as
+$\alpha_t/(4t)=(2^{t-1}-1)/(4t(2^t-1))\le1/24$ for $t\ge2$, with equality
+at $t=2$; for $t\ge3$, $\alpha_t<1/2$ gives $\alpha_t/(4t)<1/(8t)\le1/24$.  Increasing $G$ relative to $H$ only reduces
+the transferred exponent, and the multicollision theorem is stated for
+fixed $t$, so the cited result does not support a growing-multiplicity
+limit either.  The printed condition is not tight: the proof of
+Lemma~III.1 only uses that a homogeneous set of the product graph maps to
+at most $K_0-1$ values of $h$, where $K_0=2\log_2H$ is the forbidden order
+in $A_0$, so a homogeneous set of order $(t-1)(K_0-1)+1$ already forces a
+$t$-collision, the reduction only needs $G=\Theta_t(H^{4(t-1)})$, and the
+transferred exponent improves to $\alpha_t/(4(t-1))$, which is $1/12$ at
+$t=2$ and below $1/(8(t-1))\le1/16$ for $t\ge3$.  Direct composition of
+the cited ingredients therefore yields an exponent at most $1/12$, rather
+than $1-o(1)$; \cref{prop:quantum-lower} is exactly this $t=2$ bound, and
+\cref{thm:main} rules out an $N^{1-o(1)}$ lower bound at these parameters.
+The remark is not used elsewhere in \cite{JainLiRobereXun2024}, and the
+black-box separation theorems of that paper are unaffected.

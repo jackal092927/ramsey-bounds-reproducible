@@ -1,0 +1,115 @@
+\section{Lower bounds and a quantum speedup on random graphs}\label{sec:lower}
+
+\subsection{A randomized classical lower bound}
+\label{sec:classical-lower}
+
+The following bound is the random-Painter estimate of Conlon, Fox,
+Grinshpun, and He \cite[proof of Theorem~1]{ConlonFoxGrinshpunHe2019} for
+online Ramsey numbers, transported to the query model.  Because that
+estimate concerns uniformly random colourings, the bound holds on the
+uniform distribution $G(N,1/2)$ and not only in the worst case.
+
+\begin{proposition}[Randomized classical lower bound]
+\label{prop:classical-lower}
+Let $K\ge8$ and let $T=\lfloor2^{(2-\sqrt2)K-2}\rfloor$.  For every
+$N\ge K$, every randomized algorithm that makes at most $T$ edge queries
+outputs a homogeneous $K$-set of $G\sim G(N,1/2)$ with probability at most
+$5/8$.  Consequently, for $M=4^{K-1}$, every randomized edge-query
+algorithm that finds a homogeneous $K$-set with worst-case probability at
+least $2/3$ uses
+$\Omega(2^{(2-\sqrt2)K})=\Omega(M^{1-1/\sqrt2})$ queries.
+\end{proposition}
+
+The self-contained proof (\cref{app:classical-lower}) tracks, through the
+matching number of the queried graph, the conditional probability that a
+vertex set becomes a monochromatic clique: a $T$-query algorithm fully
+exposes a monochromatic $K$-set with probability at most
+$2\cdot2^{-\binom K2+c(c-1)}(2T)^{K-c}$ for every integer $c\le K/2$, which
+is at most $1/4$ at $c=\lfloor(1-1/\sqrt2)K\rfloor$, and otherwise some pair
+of the output is an unexposed fair coin, so the success probability is at
+most $\frac14+\frac34\cdot\frac12=\frac58$.  The exponent
+$1-1/\sqrt2\approx0.2929$ improves the $M^{1/4}$ black-box bound of
+\cite{ImpagliazzoNaor1988,KomargodskiNaorYogev2019}; no worst-case
+separation from \cref{thm:main} is claimed.
+
+\subsection{A quantum speedup on random graphs}
+\label{sec:random-graphs}
+
+\begin{proposition}[Quantum greedy search on random graphs]
+\label{prop:random-graph}
+Let $K\ge2$, $M=4^{K-1}$, and $0<\eta<1/2$, and let $G\sim G(M,1/2)$.
+There is a quantum algorithm which makes $O(K2^{K/2}\log(K/\eta))$ edge
+queries on every input, never outputs a set that is not a $K$-clique, and
+outputs a $K$-clique with probability at least $1-\eta-\pi_K$ over $G$ and
+its internal randomness, where $\pi_K=2M^{K-1}e^{-2^{K-2}/12}$ satisfies
+$\pi_K<e^{-100}$ for all $K\ge14$.
+\end{proposition}
+
+With probability at least $1-\pi_K$, every $j$-set with $j<K$ has at least
+$M2^{-j-1}$ common neighbours, and the algorithm then grows a clique one
+vertex at a time by the capped search of \cref{lem:capped-search} with
+density parameter $2^{-j-1}$ at level $j$ (\cref{app:random-graph}): no
+majority estimation is needed and the depth is $K$ rather than $2K-3$.
+
+\begin{corollary}[Separation on random graphs at the Ramsey scale]
+\label{cor:separation}
+Let $n\ge26$, $N=2^n$, $K=\lfloor n/2\rfloor+1$, $0<\eta<1/2$, and
+$G\sim G(N,1/2)$.
+\begin{enumerate}
+\item A quantum algorithm making
+$O(N^{1/4}\log N\log(\log N/\eta))$ edge queries outputs a homogeneous
+$K$-set of $G$ with probability at least $1-\eta-\pi_K$.
+\item Every randomized algorithm making at most
+$\lfloor2^{(2-\sqrt2)K-2}\rfloor=\Omega(N^{1-1/\sqrt2})$ edge queries
+outputs a homogeneous $K$-set of $G$ with probability at most $5/8$.
+\end{enumerate}
+Since $1/4<1-1/\sqrt2$, the bounded-error quantum query complexity of the
+Ramsey relation on $G(N,1/2)$ is polynomially smaller than its bounded-error
+randomized query complexity.
+\end{corollary}
+
+The corollary applies \cref{prop:random-graph} to the first $4^{K-1}\le N$
+vertices and \cref{prop:classical-lower} to $G(N,1/2)$
+(\cref{app:random-graph}).
+
+\begin{remark}[Classical greedy search]\label{rem:classical-greedy}
+On the same expanding graphs, classical rejection sampling finds $v_{j+1}$
+with $\lceil2^{j+1}\ln(K/\eta)\rceil$ trials of at most $j$ queries each,
+except with probability $\eta/K$; so for $G\sim G(M,1/2)$ a classical
+greedy search outputs a verified $K$-clique with probability at least
+$1-\eta-\pi_K$ using $O(K2^K\log(K/\eta))=\widetilde O(N^{1/2})$ queries,
+the classical entry of \cref{tab:bounds}.
+\end{remark}
+
+\subsection{A quantum lower bound from collision finding}
+\label{sec:quantum-lower}
+
+The reduction of Jain et al.\ \cite[Lemma~III.1]{JainLiRobereXun2024},
+generalizing Komargodski, Naor, and Yogev
+\cite{KomargodskiNaorYogev2019}, maps a function $h\colon[N]\to[H]$ and a
+fixed graph $A_0$ on $[H]$ to the graph
+\begin{equation}\label{eq:product-graph}
+ A_h(u,v)=\mathbf 1[h(u)=h(v)]\lor A_0(h(u),h(v)),
+ \qquad A_h(u,u)=0,
+\end{equation}
+on $[N]$.  Composed with the quantum collision lower bound, it gives the
+best quantum lower bound we know; \cref{sec:jlrx} compares it with the
+bound reported in \cite{JainLiRobereXun2024}.  A lower bound for target
+order $\lfloor n/2\rfloor$ applies a fortiori to every larger target.
+
+\begin{proposition}[Quantum lower bound from collision finding]
+\label{prop:quantum-lower}
+Let $N=2^n$ with $n\ge8$.  Every quantum algorithm that, given coherent
+edge-oracle access to a simple graph on $N$ vertices, outputs a clique or
+independent set of order $\lfloor n/2\rfloor$ with probability at least
+$2/3$ on every input makes $\Omega(N^{1/12})$ edge queries.
+\end{proposition}
+
+In the proof (\cref{app:quantum-lower}), $H=2^{\lfloor n/4\rfloor}$ and
+$A_0$ is an Erd\H{o}s graph on $[H]$ with no homogeneous set of order
+$2\log_2H$.  Independent sets of $A_h$ have distinct $h$-values and map to
+independent sets of $A_0$, cliques map to cliques, so every homogeneous set
+of order at least $2\log_2H$ contains two vertices with the same
+$h$-value; a $q$-query Ramsey algorithm therefore finds a collision of a
+random $h$ with $O(q+n)$ queries, which requires
+$\Omega(H^{1/3})=\Omega(N^{1/12})$ \cite{Zhandry2015}.

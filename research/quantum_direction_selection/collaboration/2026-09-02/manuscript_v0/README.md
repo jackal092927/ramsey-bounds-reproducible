@@ -42,6 +42,11 @@ The source tree is modular:
 - `sections/5_circuit.tex` gives the fixed-eight gate-dependent source.
 - `sections/6_unweighting.tex` states the Hayakawa-based unweighted corollary.
 - `sections/7_related_work.tex` records the precise relation to Lowe et al.'s Problem 9 and Conjectures 1--2, and the exact priority boundary.
-- `sections/8_limitations_conclusion.tex` lists limitations and five open problems.
+- `sections/8_limitations_conclusion.tex` lists limitations and two open problems.
 - `sections/C_palette_certificates.tex` records the finite palette and certificate interface.
 - `PROOF_AUDIT.md` separates mathematical closure from remaining source-priority risk.
+
+The September 4 final disclosure names Sections 1, 3--8 and Appendices A--C.
+The discussion retains two substantial questions. The rebuilt PDF is still
+28 pages with seventeen pages of main text; a ten-page reorganization is not
+part of this disclosure edit.
