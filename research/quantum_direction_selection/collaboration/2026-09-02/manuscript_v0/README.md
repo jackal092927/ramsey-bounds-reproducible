@@ -1,8 +1,17 @@
-# Manuscript v0
+# Normalized Persistence manuscript
 
-This is the first integrated paper draft produced after the September 3 theorem-delta and source-collision audit. It is deliberately venue-neutral and uses the standard `article` class. The mathematical center is the finite-certificate all-chain transfer theorem; the kernel/min--max step and common-copy unweighting are presented as corollaries.
+This directory contains the anonymous LIPIcs/ITCS submission candidate produced
+after the September 3 theorem-delta and source-collision audit.  The mathematical
+center is the finite-certificate all-chain concentration theorem.  Exact
+kernel multiplicity, the whole positive gap, quotient naturality, and
+common-copy unweighting are downstream consequences with their assumptions
+spelled out.
 
-Current build: 19 pages. `latexmk` resolves every citation and cross-reference and reports no LaTeX warnings. This is a typesetting/integration check, not a fresh certification of every proof dependency.
+Current build: 21 pages in the 11-point LIPIcs review format; the main narrative
+ends on page 12, references occupy page 13, and the remaining pages are proof
+appendices and the AI disclosure.  The build resolves every citation and
+cross-reference.  See `PROOF_AUDIT.md` for the dependency audit and
+`CHECK_REPORT.md` for executable and rendering checks.
 
 Build from this directory with:
 
@@ -10,7 +19,12 @@ Build from this directory with:
 latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
 ```
 
-Evidence boundary: the draft incorporates the locally checked fixed-palette certificates and proof synthesis. The final SIAM version of King--Kohler was not available during the bounded Pro comparison, so the exact published-version priority comparison remains open. The draft does not claim ordinary BQP, unrestricted SDQC1, gate-independent BQP1, complex-phase coverage, intrinsic denominator growth, or practical gap size.
+Evidence boundary: the draft incorporates locally checked fixed-palette
+certificates and proof synthesis.  Equation-level comparison against the final
+SIAM version of King--Kohler has not been performed, so the exact
+published-version priority comparison remains open.  The draft does not claim
+ordinary BQP, unrestricted SDQC1, gate-independent BQP1, complex-phase coverage,
+intrinsic denominator growth, or practical gap size.
 
 The source tree is modular:
 
@@ -19,3 +33,5 @@ The source tree is modular:
 - `sections/5_circuit.tex` gives the fixed-eight gate-dependent source.
 - `sections/6_unweighting.tex` states the Hayakawa-based unweighted corollary.
 - `sections/7_related_work.tex` records collisions and the exact priority boundary.
+- `sections/C_palette_certificates.tex` records the finite palette and certificate interface.
+- `PROOF_AUDIT.md` separates mathematical closure from remaining source-priority risk.

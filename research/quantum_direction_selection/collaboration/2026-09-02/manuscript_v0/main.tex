@@ -1,28 +1,33 @@
-\documentclass[11pt]{article}
+\documentclass[a4paper,UKenglish,cleveref,numberwithinsect,anonymous]{lipics-v2021}
 
-\usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amssymb,amsthm,amscd,mathtools}
+% Anonymous ITCS review copy. ITCS requires single-column text of at least
+% 11pt; the local adapter changes only the review-copy text sizes.
+\usepackage{itcs-submission}
+\usepackage{amscd,mathtools}
 \usepackage{booktabs,tabularx,array}
-\usepackage{enumitem}
-\usepackage{microtype}
-\usepackage[numbers,sort&compress]{natbib}
-\usepackage[colorlinks=true,allcolors=blue]{hyperref}
-\usepackage[nameinlink,noabbrev]{cleveref}
+\usepackage{xurl}
 
 \input{math_commands}
 
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{definition}[theorem]{Definition}
 \newtheorem{assumption}[theorem]{Assumption}
-\newtheorem{remark}[theorem]{Remark}
 
-\title{Gapped Kernel Realization in Clique Filtrations:\\
+\hideLIPIcs
+\title{Finite-Certificate Kernel Transfer in Clique Filtrations:
 Exact Multiplicity and True Normalized Persistence}
-\author{Anonymous Authors}
-\date{}
+\titlerunning{Kernel Transfer in Clique Filtrations}
+\author{Anonymous Authors}{Anonymous affiliation}{}{}{}
+\authorrunning{Anonymous Authors}
+\Copyright{Anonymous Authors}
+\ccsdesc[500]{Theory of computation~Quantum complexity theory}
+\ccsdesc[300]{Mathematics of computing~Algebraic topology}
+\keywords{clique homology, persistent homology, normalized persistence,
+spectral gap, perfect completeness, quantum complexity}
+
+\AtBeginDocument{\hypersetup{
+  pdftitle={Finite-Certificate Kernel Transfer in Clique Filtrations: Exact Multiplicity and True Normalized Persistence},
+  pdfauthor={Anonymous Authors},
+  pdfsubject={Anonymous ITCS submission on exact normalized persistence in clique filtrations},
+  pdfkeywords={clique homology, normalized persistence, spectral gap, quantum complexity}}}
 
 \begin{document}
 \maketitle
@@ -40,19 +45,23 @@ Exact Multiplicity and True Normalized Persistence}
 \input{sections/7_related_work}
 \input{sections/8_limitations_conclusion}
 
-\section*{AI Disclosure}
-OpenAI ChatGPT (GPT-5.6 Pro), OpenAI Codex, and Anthropic Claude were used to
-assist with research brainstorming, proof stress-testing, targeted literature
-discovery, manuscript drafting, and language editing.  The authors independently
-checked the mathematical claims, proofs, source attributions, and final text and
-take full responsibility for the submission.  No generative-AI system is an
-author or co-author.
-
-\bibliographystyle{plainnat}
+\clearpage
+\bibliographystyle{plainurl}
 \bibliography{references}
 
+\clearpage
 \appendix
 \input{sections/A_transfer_proof}
 \input{sections/B_source_details}
+\input{sections/C_palette_certificates}
+
+\section*{AI Disclosure}
+OpenAI ChatGPT, OpenAI Codex, and Anthropic Claude assisted with research
+brainstorming, proof stress-testing, targeted literature discovery, finite
+certificate scripts, manuscript drafting, and language editing. These tools
+materially affected the proof presentation and source discussion throughout
+the paper, especially Sections~3--7 and Appendices~A--C. The human authors
+remain responsible for the correctness and originality of the submission,
+including every proof and reference.
 
 \end{document}

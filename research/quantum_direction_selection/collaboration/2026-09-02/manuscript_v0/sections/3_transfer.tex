@@ -1,154 +1,159 @@
 \section{Finite-certificate transfer to the complete geometric kernel}
 \label{sec:transfer}
 
-We state the local hypotheses in a form that can be certified once for a fixed gadget palette. The proof never appeals to convergence of a spectral projector in a chain space whose dimension grows with the simulated circuit.
+We isolate finite local conditions under which a clique-gadget construction
+controls every chain in the full geometric complex.  The statement does not
+use convergence of a spectral projector whose rank grows with the simulated
+circuit.
 
-\subsection{Local certificates}
+\subsection{The certificate model}
 
-Consider one active gadget before padding. Let \(R_a\) be its weight-one active register, let \(V_a=Z_{d_a}(R_a)\), and give each new vertex weight \(\lambda\). In normalized chain coordinates define the degree-\(d_a\) differential pair
+Consider one active gadget before padding.  Its weight-one register is \(R_a\),
+its target cycle space is \(V_a=Z_{d_a}(R_a)\), and every private vertex has
+weight \(\lambda\).  In normalized chain coordinates put
 \[
 D_a(\lambda)=
-\begin{bmatrix}
-\partial_{d_a}(\lambda)\\
-\partial_{d_a+1}(\lambda)^*
-\end{bmatrix}
+\begin{bmatrix}\partial_{d_a}(\lambda)\\
+\partial_{d_a+1}(\lambda)^*\end{bmatrix}
 =D_{a,0}+\lambda D_{a,1}.
 \]
-The value at \(\lambda=0\) is a matrix limit; no singular change of basis at zero is used.
+The value at \(\lambda=0\) is a matrix limit, not a singular change of basis.
 
 \begin{assumption}[Finite local certificate]
 \label{ass:local-certificate}
-For every member \(a\) of a fixed finite palette, there is a private-coordinate subspace \(Q_a\), an output projector \(R_a^{\rm out}\), and a rank-one projector \(\Pi_a\) on \(V_a\) such that:
-\begin{enumerate}[label=(\roman*),leftmargin=2.4em]
-\item \(B_{d_a}(Y_a)\cap V_a=\ran\Pi_a\) for every positive \(\lambda\);
+For every member \(a\) of a fixed finite palette there are a private-coordinate
+subspace \(Q_a\), an output projector \(R_a^{\rm out}\), and a rank-one
+projector \(\pi_a\) on \(V_a\) such that:
+\begin{enumerate}[(i)]
+\item \(B_{d_a}(Y_a)\cap V_a=\ran\pi_a\) for every \(\lambda>0\);
 \item \(\ker D_{a,0}=V_a\oplus Q_a\), orthogonally;
-\item with \(T_a(\lambda)=R_a^{\rm out}D_a(\lambda)\),
+\item for \(T_a(\lambda)=R_a^{\rm out}D_a(\lambda)\),
 \[
-T_a(\lambda)=\lambda T_{a,1},
-\qquad T_{a,1}V_a=0,
-\qquad \|T_{a,1}q\|\ge b\|q\|
-\quad(q\in Q_a);
+T_a(\lambda)=\lambda T_{a,1},\qquad T_{a,1}V_a=0,\qquad
+\|T_{a,1}q\|\ge b\|q\|\quad(q\in Q_a);
 \]
-\item all retained output coordinates in \(R_a^{\rm out}\) contain a private vertex of the gadget.
+\item every retained output coordinate contains a private vertex.
 \end{enumerate}
-The constant \(b>0\), all matrix norms, and the positive spectral floors at \(\lambda=1\) are uniform over the palette.
+The constant \(b>0\), the positive singular-value floor of \(D_{a,0}\), and
+all matrix norms are uniform over the palette.
 \end{assumption}
 
-These conditions are finite linear algebra. Exact filling chains certify (i). Kernel vectors and modular rank certificates certify (ii). A Gram determinant or rational singular-value lower bound certifies (iii). The private support in (iv) prevents cancellation between different gadgets.
+All data in \cref{ass:local-certificate} are finite integer or rational linear
+algebra.  Exact fillings certify (i), modular rank bounds with matching
+rational kernels certify (ii), and a nonzero Gram determinant certifies (iii).
+The explicit palette used later is recorded in \cref{app:palette}.
 
-The elementary diagonal weight scaling gives a coarse local gap. If all active degrees satisfy \(d_a=2m_a-1\) with \(m_a\le m\), then
+\begin{lemma}[Weight scaling and harmonic padding]
+\label{lem:scaling-padding}
+Suppose \(d_a=2m_a-1\) and \(m_a\le m\).  There is a palette constant \(c>0\)
+such that
 \begin{equation}
 \label{eq:local-gap}
-\gamma_+\bigl(\Delta_{Y_a,d_a}(\lambda)\bigr)
-\ge c\lambda^{4m+2}
-=c\lambda^\kappa,
-\qquad \kappa:=4m+2.
+\gamma_+\!\left(\Delta_{Y_a,d_a}(\lambda)\right)
+\ge c\lambda^\kappa,\qquad \kappa:=4m+2.
 \end{equation}
-Indeed, writing \(W_k\) for the diagonal matrix of simplex weights gives
-\(
-\partial_{w,k}=W_{k-1}^{-1}\partial_{1,k}W_k
-\).
-Since \(\sigma_{\min}(W_k)\ge\lambda^{k+1}\), every nonzero singular value is bounded below by a fixed unweighted singular value times \(\lambda^{k+1}\). The finite palette turns the remaining constants into a common \(c>0\).
-
-\subsection{Padding and interfaces}
-
-An active gadget is joined with the unused register factors. We use reduced chain complexes, including degree \(-1\), and decompose the target chain degree over all join bidegrees. The unused register has reduced homology only in its top degree and a constant positive gap elsewhere. The join identity
+If \(Y_a\) is joined with unaffected register factors whose reduced homology
+is concentrated in top degree, then in the global target degree the
+zero-weight kernel is
 \[
-\Delta_{Y_a*R_{\rm out}}
-=\Delta_{Y_a}\otimes I+I\otimes\Delta_{R_{\rm out}}
+V\oplus\bigl(Q_a\otimes\cH_{\rm out}\bigr),
 \]
-then shows that the padded zero-weight kernel is precisely
-\[
-V\oplus(Q_a\otimes\cH_{\rm out}).
-\]
-The private output projector is tensored with the outside harmonic projector. Outside differentials vanish on this subspace, so the fixed active estimate survives padding with constants independent of the outside dimension.
+its orthogonal complement has a uniform positive floor, and the padded exact
+boundary intersection is the range of
+\(\Pi_a=\pi_a\otimes I_{\cH_{\rm out}}\) on \(V\).
+\end{lemma}
 
-This harmonic restriction is necessary. If one instead defines the padded bulk as every coordinate containing a local central vertex, deleting a weight-one outside vertex remains in that coordinate bulk with coefficient one. The corresponding norm is not \(O(\lambda)\). Thus the proof controls local bulk tensored with outside harmonics and sends every nonharmonic outside factor to the high-energy sector.
+\begin{proof}
+See \cref{app:local-padding}.
+\end{proof}
 
-Attach \(t_A\) padded gadgets to the common register \(R\). Distinct gadgets have disjoint private chain blocks. Let \(L_j\) map the private input coordinates of gadget \(j\) to the shared register output. We assume the fixed-interface estimate
+The harmonic restriction in this lemma is essential.  If the padded bulk
+contained every coordinate with a local private vertex, deleting a weight-one
+outside vertex could remain in that bulk with coefficient one.  We instead
+keep local private coordinates tensored with outside harmonics and place every
+nonharmonic outside factor in the separately gapped sector.
+
+\subsection{Global theorem}
+
+Attach \(t_A\) padded gadgets to the common top-dimensional register \(R\).
+Their private interiors are disjoint.  Let \(L_j\) map the private input block
+of gadget \(j\) to the shared register output and assume the finite interface
+bound
 \begin{equation}
 \label{eq:interface}
-L_jL_j^*\preceq N_j\lambda^2 I,
-\qquad N_j\le N_*.
+L_jL_j^*\preceq N_j\lambda^2I,\qquad N_j\le N_*.
 \end{equation}
-The inputs of the \(L_j\) are orthogonal, although their outputs lie in the same register. Hence for the horizontal concatenation \(L=[L_1\ \cdots\ L_{t_A}]\),
+The input blocks are orthogonal, while the outputs may overlap.  Hence, for
+\(L=[L_1\ \cdots\ L_{t_A}]\),
 \[
-LL^*=\sum_jL_jL_j^*
-\preceq N_*t_A\lambda^2I.
+LL^*=\sum_jL_jL_j^*\preceq N_*t_A\lambda^2I.
 \]
-No output-orthogonality assumption is present here. Orthogonality is used later only for the retained private maps \(T_j\).
-
-\subsection{All-chain theorem}
 
 \begin{theorem}[Finite-certificate degenerate-kernel transfer]
 \label{thm:transfer}
-Fix a palette satisfying~\cref{ass:local-certificate,eq:local-gap,eq:interface}, use outside-harmonic padding in every bidegree, and attach gadgets with independent private interiors. Let \(\mathcal A\) be any finite nested family of term sets, \(t_{\max}=\max_{A\in\mathcal A}|A|\), and suppose~\cref{eq:logical-gap} holds for every \(A\in\mathcal A\).
-
-There are palette constants \(c_0,C>0\) such that, whenever
+Fix a palette satisfying \cref{ass:local-certificate,lem:scaling-padding} and
+\cref{eq:interface}.  Use outside-harmonic padding in every bidegree and
+independent private interiors.  Let \(\mathcal A\) be a finite nested family
+of term sets, let \(t_{\max}=\max_{A\in\mathcal A}|A|\ge1\), and suppose
 \[
-0<\lambda\le c_0/t_{\max},
+H_A=\sum_{j\in A}\Pi_j\succeq
+g_A(P_V-P_{K_A}),\qquad K_A=\ker H_A,\qquad 0<g_A\le1
 \]
-every unit chain \(x\in C_d(X_A)\) satisfies
+for every \(A\in\mathcal A\).
+There are palette constants \(c_0,C>0\) such that, whenever
+\(0<\lambda\le c_0/t_{\max}\), every unit \(x\in C_d(X_A)\) satisfies
 \begin{equation}
 \label{eq:transfer-bound}
-\boxed{
+\boxed{\;
 \|(I-P_{K_A})x\|^2
 \le C\left[t_A\lambda^2+
-\frac{\langle x,\Delta_Ax\rangle}
-{g_A\lambda^\kappa}\right].}
+\frac{\langle x,\Delta_Ax\rangle}{g_A\lambda^\kappa}\right].\;}
 \end{equation}
-Here \(P_{K_A}\) denotes the projector onto the embedded logical kernel, extended by zero on all other chains.
+Here \(P_{K_A}\) is the projector onto the embedded logical kernel, extended
+by zero outside the register.
 
-For every \(0<\eta<1\), choose additionally
+For \(0<\eta<1\), choose additionally
 \begin{equation}
 \label{eq:lambda-E-choice}
 \lambda\le c_1\min\{t_{\max}^{-1},\eta/\sqrt{t_{\max}}\},
-\qquad
-E_A\le c_2\eta^2g_A\lambda^\kappa.
+\qquad E_A\le c_2\eta^2g_A\lambda^\kappa.
 \end{equation}
 Then
 \begin{equation}
 \label{eq:kernel-gap-conclusion}
-\dim\ker\Delta_A=\dim K_A,
-\qquad
-\spec(\Delta_A)\cap(0,E_A)=\varnothing.
+\dim\ker\Delta_A=\dim K_A,\qquad
+\spec(\Delta_A)\cap(0,E_A)=\varnothing .
 \end{equation}
-The conclusion includes \(K_A=0\).
+This includes \(K_A=0\).
 \end{theorem}
 
-The proof has two independent parts. First, zero-weight coercivity, the private projected pair, and interface absorption give the purely geometric leakage estimate
+\paragraph{Proof architecture.}
+The full calculation is in \cref{app:transfer-proof}.  The shared-output
+identity above and the private projected pairs first give the geometric
+leakage estimate
 \begin{equation}
 \label{eq:geometric-leakage}
 \|(I-P_V)x\|^2
 \le C\left[t_A\lambda^2+
 (t_A+\lambda^{-2})\langle x,\Delta_Ax\rangle\right].
 \end{equation}
-Second, exact filling and the local positive floor imply
+Exact filling and \cref{lem:scaling-padding} separately give
 \begin{equation}
 \label{eq:logical-domination}
-\Delta_A^\uparrow\succeq
-c\lambda^\kappa H_A^{\rm emb}.
+\Delta_A^\uparrow\succeq c\lambda^\kappa H_A^{\rm emb}.
 \end{equation}
-To justify~\cref{eq:logical-domination}, note explicitly that \(\ran\Pi_j\subseteq B_d(Y_j)\), boundary chains are orthogonal to the local harmonic kernel, and the up-Laplacian has gap at least~\cref{eq:local-gap} on its range. Since \(R\) is top-dimensional and private interiors are independent, all degree-\((d+1)\) columns partition by gadget. Summing the local inequalities gives~\cref{eq:logical-domination}.
+Combining these inequalities with the logical gap proves
+\cref{eq:transfer-bound}.  The bound applies to every vector in a low-energy
+spectral subspace.  Projection onto \(K_A\) is therefore injective on that
+subspace, so its dimension is at most \(\dim K_A\).  Independent exact
+fillings supply \(\dim K_A\) zero modes through \(V/W_A\); equality and the
+whole-positive-spectrum gap follow.  No relative-acyclicity assumption is
+used.
 
-Combining~\cref{eq:logical-gap,eq:geometric-leakage,eq:logical-domination} proves~\cref{eq:transfer-bound}. The full calculation appears in \cref{app:transfer-proof}. The estimate is uniform over every geometric chain, so it applies to every vector in a low-energy spectral subspace, including arbitrary linear combinations of eigenvectors.
-
-\begin{remark}[Relation to the positive-definite argument]
-Suppose one already had an arbitrary-chain inequality
-\[
-1-\langle x,P_Vx\rangle+\langle x,H_A^{\rm emb}x\rangle\le R(e),
-\qquad e=\langle x,\Delta_Ax\rangle.
-\]
-Then~\cref{eq:logical-gap} immediately gives
-\[
-\|(I-P_{K_A})x\|^2\le R(e)/g_A.
-\]
-Thus the substitution of a degenerate logical gap and the later min--max closure are elementary once a correct uniform all-chain estimate exists. The contribution of \cref{thm:transfer} is the finite-certificate proof of that estimate, including the padded-sector repair and the independence of \(\lambda\) from \(g_A\).
-\end{remark}
-
-For \(m\le6\) in the explicit history palette, \(\kappa=26\). Taking \(\lambda=\Theta(\eta/t_{\max})\) in~\cref{eq:lambda-E-choice} yields the conservative scale
+For the explicit history palette \(m\le6\), so \(\kappa=26\).  Taking a
+dyadic \(\lambda=\Theta(\eta/t_{\max})\) gives the conservative scale
 \begin{equation}
 \label{eq:weighted-gap}
 E_A=\Omega\!\left(\frac{\eta^{28}g_A}{t_{\max}^{26}}\right).
 \end{equation}
-The theorem uses only a polynomial lower bound; no claim of an optimal exponent is intended.
+The exponent is not claimed to be optimal.

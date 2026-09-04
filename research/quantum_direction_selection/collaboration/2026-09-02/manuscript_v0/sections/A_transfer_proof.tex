@@ -3,6 +3,60 @@
 
 This appendix proves \cref{thm:transfer} from the finite local hypotheses. All constants below depend only on the fixed palette.
 
+\subsection{Local scaling and harmonic padding}
+\label{app:local-padding}
+
+Let \(W_k\) be the diagonal matrix of simplex weights.  In normalized
+coordinates,
+\[
+\partial_{w,k}=W_{k-1}^{-1}\partial_{1,k}W_k.
+\]
+For \(0<\lambda\le1\), invertible left and right scaling at the fixed rank of
+\(\partial_{1,k}\) gives
+\[
+\sigma_{\min}^+(\partial_{w,k})
+\ge\lambda^{k+1}\sigma_{\min}^+(\partial_{1,k}).
+\]
+Indeed, put \(K=\ker\partial_{1,k}\).  For every unit
+\(x\perp W_k^{-1}K\),
+\[
+\dist(W_kx,K)\ge\sigma_{\min}(W_k).
+\]
+Apply the least nonzero singular value of the unweighted boundary.  The other
+diagonal factor satisfies
+\[
+\sigma_{\min}(W_{k-1}^{-1})\ge1.
+\]
+The Hodge decomposition applies these estimates separately to the down- and
+up-exact sectors and gives
+\[
+\gamma_+(\Delta_{Y_a,d_a}(\lambda))
+\ge c_a\lambda^{2d_a+4}.
+\]
+A finite palette and \(d_a=2m_a-1\), \(m_a\le m\), give the common bound
+\cref{eq:local-gap}.
+
+For padding, use reduced chain complexes, including degree \(-1\), in every
+join bidegree.  The join Laplacian is the tensor sum
+\[
+\Delta_{Y_a*R_{\rm out}}
+=\Delta_{Y_a}\otimes I+I\otimes\Delta_{R_{\rm out}}.
+\]
+The outside register has reduced homology only in its top degree and a
+constant positive gap on every other mode.  At the global target degree,
+therefore, the only outside-harmonic bidegree is the active target degree
+tensored with \(\cH_{\rm out}\).  This proves the stated zero-weight kernel
+and puts every other bidegree above a uniform floor.  Tensor the private
+output projector with \(P_{\cH_{\rm out}}\); both outside differentials vanish
+after this projection, preserving the private-pair bounds.
+
+Finally, the relative join formula identifies the padded connecting map with
+the active connecting map tensored with
+\(\cH_{\rm out}\).  Since all register weights are one, the positive-weight
+diagonal gauge fixes the register coordinates.  Thus the padded boundary
+intersection is \(\ran(\pi_a\otimes I_{\cH_{\rm out}})\), completing the proof
+of \cref{lem:scaling-padding}.
+
 \subsection{Global decomposition and interface energy}
 
 Write the target chain space as the orthogonal coordinate sum
@@ -132,3 +186,22 @@ Let \(\mathcal L_A(E_A)\) be the span of all eigenvectors of \(\Delta_A\) with e
 Every \(v\in V\) remains a cycle after attaching the gadgets. By \cref{lem:independent-filling}, the map \(V/W_A\to H_d(X_A)\) is injective. Its domain has dimension \(\dim K_A\), so Hodge theory supplies at least \(\dim K_A\) zero eigenvectors of \(\Delta_A\). These zero vectors belong to \(\mathcal L_A(E_A)\). Combining this lower bound with~\cref{eq:low-dimension} forces equality throughout: the geometric kernel has dimension \(\dim K_A\), and no positive eigenvalue lies below \(E_A\).
 
 If \(K_A=0\), any unit vector in \(\mathcal L_A(E_A)\) would have distance one from \(K_A\), contradicting the strict \(\eta<1\) bound. Thus the same argument proves \(\Delta_A\succeq E_AI\) in the zero-kernel case. No additional global relative-acyclicity assumption is required.
+
+\subsection{Proof of quotient naturality}
+\label{app:quotient-proof}
+
+\Cref{eq:boundary-intersection} makes \(q_A\) well-defined and injective.
+Its domain has dimension
+\[
+\dim(V/W_A)=\dim K_A.
+\]
+Hodge theory and
+\cref{eq:kernel-gap-conclusion} give
+\[
+\dim H_d(X_A)=\dim\ker\Delta_A=\dim K_A,
+\]
+so \(q_A\) is also surjective.  If \(A\subseteq B\), both paths in the
+diagram of \cref{thm:quotient} send \(v+W_A\) to the class of the same
+register cycle \(v\) in \(X_B\).  Thus the diagram commutes.  The quotient
+map is onto because \(W_A\subseteq W_B\), and its rank is
+\(\dim(V/W_B)=\dim K_B\).

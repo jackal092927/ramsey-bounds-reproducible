@@ -1,149 +1,138 @@
 \section{Exact histories, a fixed clique palette, and hardness}
 \label{sec:circuit}
 
-We now instantiate the logical projector sums used in \cref{thm:transfer}. The source is an exact real-gate perfect-completeness computation rather than an arbitrary trace-threshold computation.
-
-\subsection{A rational history for \texorpdfstring{\(G_2\)}{G2}}
-
 Let
 \[
 G_2=\{X,\CX,\CCX,H\otimes H\}.
 \]
-For each \(H\otimes H\) transition, write \(K=\sqrt2H\). On a unary clock bit \(c\) and one work bit define the normalized forbidden vectors
-\[
-\begin{aligned}
-u_0&=(\ket{00}+\ket{01}-\ket{10})/\sqrt3,&
-u_1&=(\ket{00}-\ket{01}-\ket{11})/\sqrt3,\\
-d_0&=(\ket{00}-\ket{10}-\ket{11})/\sqrt3,&
-d_1&=(\ket{01}-\ket{10}+\ket{11})/\sqrt3.
-\end{aligned}
-\]
-The two vectors in each pair are orthonormal. The corresponding projector sums enforce respectively
-\[
-f_{t+1}=\sqrt2Hf_t,
-\qquad
-f_{t+2}=Hf_{t+1}/\sqrt2.
-\]
-Apply the gain edge to the first work bit and the consecutive loss edge to the second. Their composite action is exactly \(H\otimes H\), and every rank-one projector has rational matrix entries. This gain/loss construction and its underlying three-term states are credited to Rudolph~\cite{rudolph2026universal}.
+We write \(\BQPone^{G_2}\) for the languages decided by a uniform family of
+exact \(G_2\) circuits on a fixed computational-basis input, with one
+computational-basis output bit, perfect completeness, and soundness at most
+\(1/3\).  The superscript is essential: no gate-independent identification is
+used below.
 
-Transitions for \(X,\CX\), and \(\CCX\) use the usual two-time vectors
+\subsection{Rational histories and the certified palette}
+
+Write \(K=\sqrt2H\).  Replace each \(H\otimes H\) transition by a gain edge
+\(K\) on one work bit followed by a loss edge \(K^{-1}=H/\sqrt2\) on the
+other.  Their composite is exactly \(H\otimes H\), and each edge is enforced
+by two orthonormal rational three-term vectors.  The vectors and their direct
+calculation appear in \cref{app:rational-split}.  This construction is due to
+Rudolph~\cite{rudolph2026universal}.
+
+The propagation constraints for \(X,\CX,\CCX\) decompose, on their
+constant-size active support, into two-time vectors
 \[
 (\ket{0,z}-\ket{1,Uz})/\sqrt2.
 \]
-For a fixed computational-basis string \(z\), such a vector factors into basis guards and either a one-qubit difference or a two-qubit difference state. Clock, input, and output penalties are basis projectors. Consequently every local term belongs to a fixed finite collection of rank-one real projectors with total support locality at most six.
+Clock, input, and output penalties are basis projectors.  Unaffected work
+qubits are identities and are implemented by the harmonic padding of
+\cref{lem:scaling-padding}; they are not expanded into exponentially many
+rank-one terms.
 
-The clique implementation uses only explicit members of this collection. The base palette consists of a basis cone, one one-qubit difference gadget, the two two-qubit difference states related by a register relabeling, and four Hadamard three-term states related by exact petal relabelings. Computational-basis tensor factors are imposed by a selected-cycle guard. For each resulting gadget, exact integer filling, the zero-weight kernel, and the projected private differential admit finite certificates of the form in \cref{ass:local-certificate}. This avoids any appeal to a general construction for arbitrary integer states.
+\begin{lemma}[Certified fixed palette]
+\label{lem:palette}
+Every local constraint in the split \(G_2\) history is implemented by a
+member of one fixed family of weighted clique gadgets of total support
+locality at most six.  Every member satisfies
+\cref{ass:local-certificate,eq:interface}, with uniform constants, and the
+graph construction is polynomial in the circuit size.
+\end{lemma}
 
-\subsection{The two history kernels and their gaps}
+\begin{proof}
+See \cref{app:palette}.  It records the finite integer certificates, exact
+relabelings, selected-cycle guard closure, and polynomial-size bookkeeping.
+\end{proof}
 
-Let \(L\) be the number of legal clock positions after splitting each Hadamard-pair transition. Put \(s_t=\sqrt2\) immediately after a gain edge and \(s_t=1\) at every other legal position, and let \(V_t\) be the unitary prefix after removing these scalar factors. Then
+\subsection{Complete history kernels}
+
+Let \(L\) be the number of legal clock positions after splitting the
+Hadamard transitions.  Put \(s_t=\sqrt2\) immediately after a gain edge and
+\(s_t=1\) otherwise.  If \(V_t\) is the unitary prefix after removing these
+scalars, then
 \begin{equation}
 \label{eq:history-isometry}
-\cV v=Z^{-1/2}\sum_{t=0}^{L-1}s_t\ket tV_tv,
-\qquad
-Z=\sum_ts_t^2,
-\qquad L\le Z\le2L.
+\cV v=Z^{-1/2}\sum_{t=0}^{L-1}s_t\ket tV_tv,\qquad
+Z=\sum_ts_t^2,\qquad L\le Z\le2L.
 \end{equation}
-For the valid clean-input space \(C\), \(\cV:C\to\cK_{\rm in}\) is an isometry onto the complete zero space of the initial clock, propagation, and input Hamiltonian. Every zero-energy legal state is constant in prefix-rotated coordinates, and the input anchor forces that constant vector into \(C\); illegal clocks receive a positive clock penalty. Hence
-\begin{equation}
-\label{eq:initial-kernel-gap}
-\dim\cK_{\rm in}=D:=\dim C,
-\qquad
-g_{\rm in}\ge\frac1{8L^2}.
-\end{equation}
-The gap follows from a weighted path Poincar\'e inequality with vertex weights \(s_t^2\in[1,2]\), applied separately to the clean mean-zero sector and the dirty anchored sector.
 
-Let \(M\) be the compressed acceptance operator from~\cref{eq:acceptance-operator}, and let \(S=\ker(I-M)\). Add the final rejection projector. Its compression to the initial history space is
+\begin{proposition}[History kernels and gaps]
+\label{prop:history}
+Let \(C\) be the valid clean-input space, \(D=\dim C>0\), and let
+\(M=J^*U^*P_{\rm acc}UJ\) be the compressed acceptance operator.  Put
+\(S=\ker(I-M)\).  The initial history Hamiltonian has complete kernel
+\(\cV C\), while adding the final rejection projector gives complete kernel
+\(\cV S\).  If \(M|_{S^\perp}\preceq I/3\), then
+\begin{equation}
+\label{eq:history-gaps}
+g_{\rm in}\ge\frac1{8L^2},\qquad
+g_{\rm out}\ge\frac1{3L(8L^2+1)}\ge\frac1{27L^3}.
+\end{equation}
+The second statement includes \(S=0\).
+\end{proposition}
+
+The proof in \cref{app:source-details} uses a weighted path Poincar\'e
+inequality.  The output compression is exactly
 \begin{equation}
 \label{eq:output-compression}
-\cV^*H_{\rm rej}\cV=(I-M)/Z.
+\cV^*H_{\rm rej}\cV=(I-M)/Z,
 \end{equation}
-Therefore positivity gives
-\[
-\ker H_{\rm out}=\cV S.
-\]
-Assume the off-perfect promise \(M|_{S^\perp}\preceq I/3\). \Cref{eq:output-compression} gives an angle penalty at least \(1/(3L)\) on \(\cK_{\rm in}\ominus\cV S\). The sharp two-positive-operator bound then yields
-\begin{equation}
-\label{eq:output-gap}
-g_{\rm out}
-\ge\frac1{3L(8L^2+1)}
-\ge\frac1{27L^3}.
-\end{equation}
-This argument also covers \(S=0\), in which case~\cref{eq:output-gap} is a lower bound on the entire spectrum.
-
-Combining~\cref{thm:transfer,thm:quotient,eq:initial-kernel-gap,eq:output-gap} gives weighted clique complexes \(\Xin\subseteq\Xout\) with
+and a two-positive-operator estimate turns this angle penalty into the second
+gap in \cref{eq:history-gaps}.  Combining
+\cref{thm:transfer,thm:quotient,lem:palette,prop:history} yields weighted
+clique complexes \(\Xin\subseteq\Xout\) with
 \begin{equation}
 \label{eq:generic-circuit-transfer}
-\beta_d(\Xin)=D,
-\qquad
-\beta_d(\Xout)
-=\beta_d(\Xin\to\Xout)
-=\dim S,
+\beta_d(\Xin)=D,\qquad
+\beta_d(\Xout)=\beta_d(\Xin\to\Xout)=\dim S,
 \end{equation}
-and inverse-polynomial gaps above both complete geometric kernels.
+and inverse-polynomial gaps above both complete kernels.
 
-\subsection{An eight-label perfect-space source}
+\subsection{A fixed-eight source}
 
-Let \(Q_x\) be a uniform exact \(G_2\) circuit on a fixed all-zero input, with one computational-basis output bit and
-\begin{equation}
-\label{eq:bqp1-promise}
-x\in L\Longrightarrow p_x=1,
-\qquad
-x\notin L\Longrightarrow p_x\le\frac13.
-\end{equation}
-Add a maximally mixed label \(z\in\{0,1\}^3\), run \(Q_x\) unconditionally, and accept according to the reversible Boolean predicate
+Given a \(\BQPone^{G_2}\) verifier \(Q_x\) with acceptance probability \(p_x\),
+add a maximally mixed label \(z\in\{0,1\}^3\), run \(Q_x\) unconditionally,
+and accept according to
 \[
-A(z,q)=[z=000]\ \lor\
-\bigl(q\land[z\in\{001,010,011,100,101\}]\bigr).
+[z=000]\ \lor\
+\bigl(q\land[z\in\{001,010,011,100,101\}]\bigr),
 \]
-The predicate uses only \(X,\CX,\CCX\), with scratch uncomputed before the final measurement. It does not control \(Q_x\), so it introduces no controlled Hadamard. Because the label is preserved, the acceptance operator on the mixed label space is exactly
+where \(q\) is the output of \(Q_x\).  The reversible predicate uses only
+\(X,\CX,\CCX\), preserves \(z\), and uncomputes its scratch.  Its compressed
+acceptance operator on the label is exactly
 \begin{equation}
 \label{eq:eight-label}
 M_x=\operatorname{diag}(1,p_x,p_x,p_x,p_x,p_x,0,0).
 \end{equation}
-In a YES instance, six diagonal entries equal one. In a NO instance, only the unconditional block equals one and every other eigenvalue is at most \(1/3\). Thus
-\begin{equation}
-\label{eq:eight-fractions}
-\frac{\dim\ker(I-M_x)}8
-=\begin{cases}
-3/4,&x\in L,\\
-1/8,&x\notin L.
-\end{cases}
-\end{equation}
+Thus the perfect eigenspace has dimension six when \(p_x=1\) and dimension
+one when \(p_x\le1/3\); every off-perfect eigenvalue in the latter case is at
+most \(1/3\).
 
-\begin{theorem}[Fixed-eight weighted hardness]
+\begin{theorem}[Fixed-eight hardness]
 \label{thm:weighted-hardness}
-There is a polynomial reduction from exact \(\BQPone^{G_2}\) verification to gapped true normalized persistence on nested weighted clique complexes. Every output satisfies
+There is a polynomial reduction from \(\BQPone^{G_2}\) to gapped true
+normalized persistence on nested weighted clique complexes.  Every output
+satisfies
 \[
-\beta_d(\Xin)=8,
+\beta_d(\Xin)=8,\qquad
+\beta_d(\Xin\to\Xout)=
+\begin{cases}6,&x\in L,\\1,&x\notin L,\end{cases}
 \]
-and the persistent rank is six in YES instances and one in NO instances. Both endpoint degree-\(d\) Laplacians have inverse-polynomial gaps above their complete kernels. Hence additive approximation of~\cref{eq:true-ratio} with error less than \(5/16\) is \(\BQPone^{G_2}\)-hard; in particular, error \(1/24\) and threshold \(7/16\) suffice.
+and both endpoint degree-\(d\) Laplacians have inverse-polynomial gaps above
+their complete kernels.  Hence the normalized values are \(3/4\) and \(1/8\).
+Additive error \(1/24\), with decision threshold \(7/16\), distinguishes the
+two cases.
 \end{theorem}
 
 \begin{proof}
-Apply~\cref{eq:generic-circuit-transfer} to~\cref{eq:eight-label}. The denominator is eight and~\cref{eq:eight-fractions} gives the two target values. Their distance is \(5/8\), so any additive error below half that distance separates them. The logical gaps~\cref{eq:initial-kernel-gap,eq:output-gap} and the polynomial number of history terms make~\cref{eq:weighted-gap} inverse polynomial in the circuit size.
+Apply \cref{eq:generic-circuit-transfer} to \cref{eq:eight-label}.  The two
+ratios differ by \(5/8\), and \(1/24<5/16\).  The logical gaps in
+\cref{eq:history-gaps}, the polynomial number of history terms, and
+\cref{eq:weighted-gap} give an explicitly computable inverse-polynomial
+geometric gap.
 \end{proof}
 
-Rudolph proves exact simulation into \(G_2\) for each fixed finite gate family over the covered power-of-two cyclotomic fields~\cite{rudolph2026universal}. Composing that simulation with \cref{thm:weighted-hardness} gives hardness for each such gate family separately. Approximate universal compilation is insufficient because it need not preserve an eigenvalue-one space exactly.
-
-The denominator in \cref{thm:weighted-hardness} is intentionally constant. Adding \(m\) ignored mixed bits tensors~\cref{eq:eight-label} with \(I_{2^m}\), multiplying both multiplicities by \(2^m\) and leaving the ratio unchanged. That closure is exact but padding-generated. We do not use it to suggest that the computation acts intrinsically on exponentially many distinct initial classes.
-
-For comparison, an arbitrary normalized trace gap does not force a perfect-space fraction gap. If \(M|_{S^\perp}\preceq rI\), \(f=\dim S/D\), and \(p=\operatorname{Tr}(M)/D\), then
-\[
-f\le p\le r+(1-r)f.
-\]
-The operators \(I_{qD}\oplus0\) and \(I_{qD}\oplus\alpha I\) can have the same \(f=q\) while satisfying opposite trace promises. Consequently \cref{thm:weighted-hardness} uses perfect completeness explicitly and does not imply unrestricted \(\SDQCone\) hardness.
-
-Finally, a circuit containing individual Hadamards can be represented using \(G_2\) by adding one maximally mixed, unmeasured spectator \(a\) and replacing each \(H_j\) by \(H_j\otimes H_a\). If the original circuit contains \(h\) Hadamards, then
-\[
-U'=U\otimes H_a^h,
-\qquad
-J'=J\otimes I_a,
-\qquad
-P_{\rm acc}'=P_{\rm acc}\otimes I_a,
-\]
-and, for either parity of \(h\),
-\[
-M'=(J')^*(U')^*P_{\rm acc}'U'J'=M\otimes I_a.
-\]
-This exact spectator identity preserves all fractions and off-perfect gaps. It establishes no complex-phase extension.
+The exact trace-versus-perfect-space obstruction and the mixed-spectator
+extension to individual real Hadamards are recorded in
+\cref{app:source-boundaries}.  Neither is needed for
+\cref{thm:weighted-hardness}.

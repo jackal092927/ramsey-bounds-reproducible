@@ -1,10 +1,22 @@
 \section{Introduction}
 
-Persistent homology asks which topological features survive as a simplicial complex grows. For a two-step filtration \(X_1\subseteq X_2\), the basic numerical invariant is the rank of the induced map \(H_d(X_1)\to H_d(X_2)\). Dividing this rank by \(\beta_d(X_1)\) gives an interpretable fraction: among the degree-\(d\) classes present initially, what proportion survives? We call this the \emph{true normalized persistence ratio}, following the formulation of Lowe, Kim, Bondesan, and Hayakawa~\cite{lowe2026normalized}.
+Persistent homology asks which topological features survive as a simplicial complex grows~\cite{zomorodian2005computing}. For a two-step filtration \(X_1\subseteq X_2\), the basic numerical invariant is the rank of the induced map \(H_d(X_1)\to H_d(X_2)\). Dividing this rank by \(\beta_d(X_1)\) gives an interpretable fraction: among the degree-\(d\) classes present initially, what proportion survives? We call this the \emph{true normalized persistence ratio}, following the formulation of Lowe, Kim, Bondesan, and Hayakawa~\cite{lowe2026normalized}.
 
-This ratio sits between several nearby problems that have different mathematical requirements. Exact clique homology can encode the multiplicity of a quantum satisfying space parsimoniously~\cite{crichigno2024clique}, yet the resulting Laplacian need not have an inverse-polynomial gap above all of its zero modes. Low-energy counting permits small positive eigenvalues and therefore does not determine an exact Betti number without a gap promise. Normalization by the number of simplices measures a different density. Finally, following one specified harmonic guide through a filtration~\cite{gyurik2026provable} does not reveal the fraction of an entire initial homology group that survives. A reduction for true normalized persistence must close all of these gaps at once.
+Quantum algorithms estimate Betti and persistent Betti numbers under access,
+state-preparation, density, and gap assumptions~\cite{lloyd2016quantum,hayakawa2022quantum};
+complexity analyses show why the input and normalization conventions
+matter~\cite{schmidhuber2023limitations}.  The ratio studied here sits between
+several nearby problems with different mathematical requirements. Exact clique
+homology can encode the multiplicity of a quantum satisfying space
+parsimoniously~\cite{crichigno2024clique}, yet the resulting Laplacian need not
+have an inverse-polynomial gap above all of its zero modes. Low-energy counting
+permits small positive eigenvalues and therefore does not determine an exact
+Betti number without a gap promise. Normalization by the number of simplices
+measures a different density. Finally, following one specified harmonic guide
+through a filtration~\cite{gyurik2026provable} does not reveal the fraction of
+the complete initial homology that survives.
 
-The technical obstruction is degeneracy. Existing clique-gadget analyses establish a spectral gap when a simulated logical Hamiltonian is positive definite~\cite{king2024gapped}. A persistence reduction instead needs two logical Hamiltonians with known, generally nonzero kernels. It is insufficient to construct the desired zero modes. One must rule out every additional geometric zero mode and every positive eigenvalue below the promised threshold, including vectors supported largely outside the simulated register.
+The technical obstruction is degeneracy. Existing clique-gadget analyses establish a spectral gap when a simulated logical Hamiltonian is positive definite~\cite{king2026gapped}. A persistence reduction instead needs two logical Hamiltonians with known, generally nonzero kernels. It is insufficient to construct the desired zero modes. One must rule out every additional geometric zero mode and every positive eigenvalue below the promised threshold, including vectors supported largely outside the simulated register.
 
 We address this obstruction through a finite-certificate all-chain theorem. The theorem assumes a fixed palette of clique gadgets. Each gadget supplies exact filling data, a zero-weight kernel decomposition, coercivity of a projected private differential, a local positive spectral floor, and a bounded interface with the common register. Unused register factors are padded by their harmonic spaces in every chain bidegree. These conditions are finite and can be checked exactly for a fixed palette. They imply, for every unit geometric chain \(x\),
 \begin{equation}
@@ -47,12 +59,12 @@ In a YES instance \(p_x=1\), its perfect eigenspace has dimension six; in a NO i
 \rank[H_d(\Xin)\to H_d(\Xout)]
 =\begin{cases}6,&x\in L,\\1,&x\notin L.\end{cases}
 \]
-The normalized values are \(3/4\) and \(1/8\). The hardness source is the exact gate-dependent class \(\BQPone^{G_2}\), with \(G_2=\{X,\CX,\CCX,H\otimes H\}\). Rudolph's exact simulation results extend the statement separately to the fixed cyclotomic gate families covered there~\cite{rudolph2026universal}; they do not yield a gate-independent theorem.
+The normalized values are \(3/4\) and \(1/8\). The hardness source is the exact gate-dependent class \(\BQPone^{G_2}\), with \(G_2=\{X,\CX,\CCX,H\otimes H\}\).
 
 Finally, we use Hayakawa's common-copy blow-up~\cite{hayakawa2026unweighted} with identical labeled copy blocks at every filtration level. The symmetric sector is an isometric copy of the weighted complex, up to a common Laplacian scale, and the asymmetric sector has a separate positive floor. The common labeling makes the isometries commute with inclusion. Consequently, endpoint Betti numbers, persistent rank, the normalized ratio, and whole-kernel gaps transfer to unweighted clique filtrations. This step is a sourced corollary rather than a new unweighting mechanism.
 
 Our contributions are:
-\begin{enumerate}[leftmargin=2em]
+\begin{enumerate}
 \item a finite-certificate all-chain leakage theorem for degenerate logical kernels, with a gadget scale independent of the logical gap;
 \item exact kernel multiplicity and a whole-positive-spectrum gap obtained from the all-chain estimate and exact filling;
 \item a functorial quotient realization for nested projector term sets, which computes the induced homology rank without compatible harmonic representatives;
