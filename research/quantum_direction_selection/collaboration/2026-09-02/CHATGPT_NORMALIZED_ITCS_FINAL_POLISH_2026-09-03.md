@@ -117,10 +117,52 @@ broken glyphs, blank pages, or identifying PDF metadata was found. The
 temporary CI workflow was removed after this verification and is not part of
 the merge-ready branch contents.
 
+## Clean-room supplement replay
+
+A second temporary verification branch, based exactly on the merge-ready polish
+head, installed its dependencies from scratch, replayed the isolated anonymous
+supplement, and rebuilt the paper. This verifies the submitted supplement rather
+than merely trusting earlier `PASS` receipts.
+
+- Verification branch: `chatgpt/normalized-itcs-verification-2026-09-04`
+- Verification commit: `0ae3b05727afe865529953db1b1d9022f758f436`
+- Workflow run: `33846037977`
+- Job: `100938026879`
+- Result: **success**
+- Commands replayed successfully:
+  - `certify_representative_bulk.py --offline`
+  - `certify_remaining_active_atoms.py --offline`
+  - `check_active_hadamard_orbit.py`
+  - `check_selected_cycle_guard.py`
+  - `check_exact_filling_coercivity.py`
+  - `check_weighted_history.py`
+  - `check_kernel_filtration.py`
+  - `check_common_blowup.py`
+  - `check_padded_bulk.py`
+- Representative finite certificate: **PASS**
+- Remaining active atoms: **PASS**
+- Four Hadamard relabeling/orbit certificates: **PASS**
+- Selected-cycle guard, including 46,998 exact all-degree identities: **PASS**
+- Weighted-history and zero-final-kernel fixtures: **PASS**
+- Quotient-filtration fixture: **PASS**
+- Common-copy and padded-bulk checks: **PASS**
+- Fresh PDF SHA-256:
+  `39c5867b9a29bc9a46ff2a27b81ed3e2f76b7e2e0e61ef9f799e0c3b683335b9`
+- Fresh log SHA-256:
+  `3104b44efb65a2d731d960ff9bbf5de71f66ef80f213e8dcb914b70d89085e33`
+- Verification artifact ID: `9926598467`
+- Verification artifact digest:
+  `sha256:a4fd21d596cae861e6fdba19495233d839507b7dffef1989bd2905037245bacb`
+
+The two PDF hashes differ because PDF creation timestamps are embedded; both
+builds compiled the same manuscript source. The verification workflow itself is
+kept off the merge-ready polish branch.
+
 The repository-wide `canonical-paper` job also ran, but it targets the separate
 canonical quantum manuscript and failed its own unresolved-reference check. Per
 the task boundary, that unrelated subtree and workflow were not modified. The
-isolated normalized-persistence build above is the relevant verification.
+isolated normalized-persistence build and clean-room replay above are the
+relevant verification results.
 
 ## Remaining human submission actions
 
