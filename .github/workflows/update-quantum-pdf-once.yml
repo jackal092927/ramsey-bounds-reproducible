@@ -1,0 +1,36 @@
+name: update-quantum-pdf-once
+
+on:
+  push:
+    branches:
+      - codex/fill-ramsey-gaps
+
+permissions:
+  contents: write
+
+jobs:
+  update-pdf:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: codex/fill-ramsey-gaps
+      - name: Install LaTeX build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y latexmk texlive-latex-extra texlive-fonts-recommended texlive-bibtex-extra
+      - name: Compile the quantum manuscript reproducibly
+        env:
+          SOURCE_DATE_EPOCH: '1788073200'
+          FORCE_SOURCE_DATE: '1'
+        run: |
+          latexmk -pdf -interaction=nonstopmode -halt-on-error -cd papers/quantum/main.tex
+      - name: Commit the compiled PDF and remove this one-shot workflow
+        run: |
+          rm .github/workflows/update-quantum-pdf-once.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add papers/quantum/main.pdf .github/workflows/update-quantum-pdf-once.yml
+          git commit -m "Update compiled quantum manuscript [skip ci]"
+          git push origin HEAD:codex/fill-ramsey-gaps
