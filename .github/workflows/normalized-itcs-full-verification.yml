@@ -1,0 +1,57 @@
+name: normalized-itcs-full-verification
+
+on:
+  push:
+    branches:
+      - chatgpt/normalized-itcs-verification-2026-09-04
+  workflow_dispatch:
+
+jobs:
+  verify-normalized-itcs:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v5
+        with:
+          python-version: '3.12'
+      - name: Install Python and LaTeX dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r research/quantum_direction_selection/collaboration/2026-09-02/manuscript_v0/supplement/requirements.txt
+          sudo apt-get update
+          sudo apt-get install -y latexmk texlive-latex-extra texlive-fonts-recommended texlive-bibtex-extra poppler-utils
+      - name: Replay anonymous supplement
+        working-directory: research/quantum_direction_selection/collaboration/2026-09-02/manuscript_v0/supplement
+        run: |
+          set -euxo pipefail
+          python3 certify_representative_bulk.py --offline
+          python3 certify_remaining_active_atoms.py --offline
+          python3 check_active_hadamard_orbit.py
+          python3 check_selected_cycle_guard.py
+          python3 check_exact_filling_coercivity.py
+          python3 check_weighted_history.py
+          python3 check_kernel_filtration.py
+          python3 check_common_blowup.py
+          python3 check_padded_bulk.py
+      - name: Compile anonymous ITCS paper
+        working-directory: research/quantum_direction_selection/collaboration/2026-09-02/manuscript_v0
+        run: latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+      - name: Reject unresolved references and layout warnings
+        working-directory: research/quantum_direction_selection/collaboration/2026-09-02/manuscript_v0
+        run: |
+          ! grep -E "LaTeX Warning: (Citation|Reference).*undefined|There were undefined references|There were undefined citations|Overfull \\hbox|Overfull \\vbox" main.log
+          pdfinfo main.pdf
+          pdffonts main.pdf
+          sha256sum main.pdf main.log
+      - name: Upload verification outputs
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: normalized-itcs-full-${{ github.sha }}
+          path: |
+            research/quantum_direction_selection/collaboration/2026-09-02/manuscript_v0/main.pdf
+            research/quantum_direction_selection/collaboration/2026-09-02/manuscript_v0/main.log
+            research/quantum_direction_selection/collaboration/2026-09-02/manuscript_v0/supplement/OFFLINE_REPRESENTATIVE_CHECKS.json
+            research/quantum_direction_selection/collaboration/2026-09-02/manuscript_v0/supplement/OFFLINE_REMAINING_ACTIVE_ATOM_CHECKS.json
+          if-no-files-found: error
+          retention-days: 14
