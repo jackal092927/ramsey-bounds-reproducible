@@ -5,16 +5,20 @@ simplicial complex has positive vertex weights and product simplex weights.
 In normalized simplex coordinates the boundary is a diagonal rescaling of
 ordinary incidence.  We use
 \[
-\Delta_{X,d}=\partial_{X,d}^*\partial_{X,d}
-+\partial_{X,d+1}\partial_{X,d+1}^*,\quad
-Z_d(X)=\ker\partial_{X,d},\quad
+\Delta^{\downarrow}_{X,d}=\partial_{X,d}^*\partial_{X,d},\qquad
+\Delta^{\uparrow}_{X,d}=\partial_{X,d+1}\partial_{X,d+1}^*,\qquad
+\Delta_{X,d}=\Delta^{\downarrow}_{X,d}+\Delta^{\uparrow}_{X,d},
+\]
+and
+\[
+Z_d(X)=\ker\partial_{X,d},\qquad
 B_d(X)=\ran\partial_{X,d+1}.
 \]
 Finite-dimensional Hodge theory identifies
 \(H_d(X)=Z_d(X)/B_d(X)\) with \(\ker\Delta_{X,d}\).
 For a positive semidefinite operator \(A\), write
-\(\gamma_+(A)=\min(\spec(A)\setminus\{0\})\), with the convention that a
-claimed lower bound on \(\gamma_+(A)\) concerns the positive spectrum only.
+\(\gamma_+(A)=\min(\spec(A)\cap(0,\infty))\), with
+\(\gamma_+(A)=+\infty\) when the positive spectrum is empty.
 All certified boundary matrices and fillings below are rational.  Rank, kernel
 dimension, image intersection, and filling validity are unchanged under scalar
 extension \(\mathbb Q\subset\mathbb R\subset\mathbb C\), and the real
