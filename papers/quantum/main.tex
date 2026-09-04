@@ -40,19 +40,27 @@ $K$-set using
   O\!\left(2^K K\log\frac K\eta\right)
 \]
 edge queries with failure probability at most $\eta$.  At the Ramsey scale
-$N=2^n$, this yields a homogeneous set of order
-$\lfloor n/2\rfloor+1$ using
-$O(\sqrt N\log N\log(\log N/\eta))$ queries, improving on the $O(N)$
-query complexity of the standard explicit Erd\H{o}s--Szekeres recursion.
+$N=2^n$, this yields a homogeneous set of order $\lfloor n/2\rfloor+1$
+using $O(\sqrt N\log N\log(\log N/\eta))$ queries, improving on the $O(N)$
+queries of the explicit Erd\H{o}s--Szekeres recursion and giving, to our
+knowledge, the first sublinear worst-case algorithm for the Ramsey
+relation, whose query complexity was raised as a question by Jain, Li,
+Robere, and Xun (FOCS~2024).  The bound also shows that the $N^{1-o(1)}$ quantum lower bound
+reported there cannot hold at its stated parameters; we show that the cited
+ingredients compose to an $\Omega(N^{1/24})$ lower bound instead.
 
 The algorithm runs the constructive recursion over implicit candidate sets.
 Each set is represented by a short conjunction of adjacency constraints and
-sampled using capped unknown-solution quantum search.  A scale-aware
+sampled using capped unknown-solution quantum search, and a scale-aware
 concentration schedule balances estimation accuracy against the increasing
-cost of sampling deeper sets.  We also give an estimation-free size-biased
-recursion, extend it to every fixed number of edge colours, and prove an
-$\Omega(M^{1-1/\sqrt2})$ randomized classical lower bound in the regime
-$M=4^{K-1}$.
+cost of sampling deeper sets.  We complement the upper bound with an
+$\Omega(N^{1-1/\sqrt2})$ randomized lower bound, transported from the
+random-Painter analysis of online Ramsey numbers, which holds on the uniform
+distribution $G(N,1/2)$.  On that distribution a greedy quantum search uses
+only $\widetilde O(N^{1/4})$ queries, giving a provable polynomial quantum
+speedup for Ramsey search on random graphs.  We also give an
+estimation-free size-biased recursion and extend it to every fixed number
+of edge colours.
 \end{abstract}
 
 \input{sections/01_introduction}

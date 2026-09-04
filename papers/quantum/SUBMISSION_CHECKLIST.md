@@ -1,8 +1,52 @@
 # ITCS 2027 submission checklist
 
-Snapshot date: 2026-09-02
+## Revision candidate of 2026-09-04 (NOT YET UPLOADED)
 
-## Current submitted artifact
+- Source revised on 2026-09-04 (early morning PDT); `main.pdf` rebuilt.
+- Candidate PDF SHA-256:
+  `9d65dc816d1f0e065a2b6ab8bfcf2d728faaec28dbfd4431fdfcdc194df715be`
+  (440,439 bytes, 25 pages; main text ends on page 15, references
+  pages 16--18, appendices pages 19--25). No LaTeX errors, undefined
+  references, undefined citations, or overfull boxes; fonts embedded;
+  identity scan clean; `QUANTUM_RAMSEY_AUDIT_PASS` reproduced.
+- Changes in this revision:
+  1. Appendix B now contains a self-contained proof of the random-Painter
+     weight bound (Lemma B.1, Corollary B.2) using the matching number of
+     the queried graph as the potential. The earlier text cited
+     "[CFGH, Theorem 1]" for the bound; the bound is the expectation
+     estimate inside the proof of that theorem (Lemma 17 in arXiv v2).
+  2. Proposition 5.2 is restated in distributional form (success at most
+     5/8 on G(N,1/2) with T = floor(2^{(2-sqrt2)K-2}) queries, any N >= K),
+     from which the worst-case statement follows.
+  3. New Proposition 5.3 (quantum greedy search on G(M,1/2),
+     O(K 2^{K/2} log(K/eta)) queries) and Corollary 5.4 (separation on
+     G(N,1/2) at the Ramsey scale: quantum O~(N^{1/4}) versus randomized
+     Omega(N^{1-1/sqrt2})). Proof in Appendix B.3.
+  4. Section 6.3 adds the valid t=2 consequence of the JLRX reduction:
+     an Omega(N^{1/24}) quantum lower bound (Erdos 1947 + Zhandry 2015),
+     so the quantum complexity is bracketed between N^{1/24} and
+     O~(sqrt N). New bibliography entries Zhandry2015 and Erdos1947;
+     CFGH year corrected to 2019 with the chapter DOI.
+  5. Introduction rewritten around the JLRX query question, with a
+     bounds table (Table 1) and result paragraphs; Section 7 rewritten as
+     explicit open questions and a scope statement; abstract updated.
+  6. AI Disclosure (Appendix C.3) now names Claude Code in addition to
+     ChatGPT and Codex and points to the affected new material; a body
+     sentence in Appendix C.2 discloses AI assistance with the scripts.
+- Human-owned actions before uploading:
+  - [ ] Read and independently verify the new material: Lemma B.1,
+        Corollary B.2, the restated Proposition 5.2, Proposition 5.3,
+        Corollary 5.4, and the t=2 lower-bound paragraph in Section 6.3.
+        The AI Disclosure asserts that the authors checked every argument.
+  - [ ] Approve the revised AI Disclosure wording.
+  - [ ] Replace the HotCRP abstract of submission #193 with the new
+        abstract (plain-text version in `SUBMISSION_METADATA.md`).
+  - [ ] Upload the new `main.pdf`, click `Save and resubmit`, verify the
+        server hash prefix `9d65dc81`, and copy the uploaded file to
+        `submitted/` with the upload timestamp.
+  - Deadline: 2026-09-04 16:59:59 PDT.
+
+## Previously submitted artifact (2026-09-02, still the live version on HotCRP)
 
 - Title: **Quantum Query Algorithms for the Constructive Diagonal Ramsey Theorem**
 - Source: `papers/quantum/main.tex`

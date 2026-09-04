@@ -1,4 +1,4 @@
-\section{Query complexity and a classical lower bound}\label{sec:complexity}
+\section{Query complexity, a classical lower bound, and random graphs}\label{sec:complexity}
 
 \subsection{The estimation-free recursion}
 
@@ -76,10 +76,13 @@ $4^{\lceil h/6\rceil}\le4\cdot2^{h/3}$, the last display is at most
  \right)
  =O(r2^{r/2}).
 \]
-The amplified pivot searches and final search cost
-$O(\log(r/\eta)\sum_i b_i)=O(r2^{r/2}\log(r/\eta))$, and the $K^2$ output
-verification is smaller.  Substituting $r=2K-3$ into
-\cref{eq:query-sum} gives
+The amplified pivot searches and the final search cost
+\[
+ O\!\left(\log\frac r\eta\sum_{i=0}^{r}b_i\right)
+ =O\!\left(r2^{r/2}\log\frac r\eta\right),
+\]
+and the $O(K^2)$ output verification is smaller.  Substituting $r=2K-3$
+into \cref{eq:query-sum} gives
 \[
  O\!\left(2^K K\log\frac K\eta\right),
 \]
@@ -91,15 +94,25 @@ $[M]$.  The recorded pivot labels and colours define the reversible membership
 predicate for $S_i$, so the algorithm requires no materialized representation
 of any candidate set.
 
-We complement the upper bound with a randomized classical lower bound.  The
-following proposition follows from the random-Painter analysis in
-\cite[Theorem~1]{ConlonFoxGrinshpunHe2019}; its full derivation appears in
-\cref{app:classical-lower}.
+\subsection{A randomized classical lower bound}
+\label{sec:classical-lower}
+
+We complement the upper bound with a randomized classical lower bound.  It
+is the random-Painter estimate of Conlon, Fox, Grinshpun, and He
+\cite[Theorem~1]{ConlonFoxGrinshpunHe2019} for online Ramsey numbers,
+transported to the query model.  Because that estimate is a statement about
+uniformly random colourings, the bound holds on the uniform distribution
+$G(N,1/2)$ and not only in the worst case.  \Cref{app:classical-lower}
+gives a self-contained proof.
 
 \begin{proposition}[Randomized classical lower bound]
 \label{prop:classical-lower}
-For $K\ge8$ and $M=4^{K-1}$, every randomized edge-query algorithm that finds
-a homogeneous $K$-set with worst-case probability at least $2/3$ uses
+Let $K\ge8$ and let $T=\lfloor2^{(2-\sqrt2)K-2}\rfloor$.  For every
+$N\ge K$, every randomized algorithm that makes at most $T$ edge queries
+outputs a homogeneous $K$-set of $G\sim G(N,1/2)$ with probability at most
+$5/8$.
+Consequently, for $M=4^{K-1}$, every randomized edge-query algorithm that
+finds a homogeneous $K$-set with worst-case probability at least $2/3$ uses
 \[
  \Omega\!\left(2^{(2-\sqrt2)K}\right)
  =\Omega\!\left(M^{1-1/\sqrt2}\right)
@@ -107,8 +120,71 @@ a homogeneous $K$-set with worst-case probability at least $2/3$ uses
 queries.
 \end{proposition}
 
-The exponent $1-1/\sqrt2\approx0.292893$ improves the earlier $M^{1/4}$
-black-box lower bound \cite{ImpagliazzoNaor1988,KomargodskiNaorYogev2019}.
+The exponent $1-1/\sqrt2\approx0.2929$ improves the $M^{1/4}$ black-box
+lower bound of \cite{ImpagliazzoNaor1988,KomargodskiNaorYogev2019}.  Jain
+et al.\ \cite[Section~III]{JainLiRobereXun2024} already point to
+\cite{ConlonFoxGrinshpunHe2019} for the best known deterministic lower
+bound; \cref{prop:classical-lower} records the randomized and
+distributional form that the same analysis yields.  It leaves the
+randomized worst-case complexity between $\Omega(M^{1-1/\sqrt2})$ and the
+$O(M)$ of the explicit recursion, and it does not separate
+\cref{thm:main} from every classical algorithm in the worst case.
+
+\subsection{A quantum speedup on random graphs}
+\label{sec:random-graphs}
+
+On the distribution $G(M,1/2)$ of \cref{prop:classical-lower}, a greedy
+quantum neighbourhood search is much cheaper than the worst-case algorithm
+of \cref{thm:main}: the common neighbourhood of every small clique in a
+random graph has essentially its expected size, so no majority has to be
+estimated and the recursion has depth $K$ rather than $2K-3$.
+
+\begin{proposition}[Quantum greedy search on random graphs]
+\label{prop:random-graph}
+Let $K\ge2$, $M=4^{K-1}$, and $0<\eta<1/2$, and let $G\sim G(M,1/2)$.
+There is a quantum algorithm which makes
+\[
+ O\!\left(K2^{K/2}\log\frac K\eta\right)
+\]
+edge queries on every input, never outputs a set that is not a $K$-clique,
+and outputs a $K$-clique with probability at least $1-\eta-\pi_K$ over $G$
+and its internal randomness, where $\pi_K=2M^{K-1}e^{-2^{K-2}/12}$
+satisfies $\pi_K<e^{-100}$ for all $K\ge14$.
+\end{proposition}
+
+The proof, given in \cref{app:random-graph}, shows that with probability
+at least $1-\pi_K$ every $j$-set with $j<K$ has at least $M2^{-j-1}$ common
+neighbours, and then runs the capped search of \cref{lem:capped-search}
+with density parameter $2^{-j-1}$ at level $j$.  Combined with the
+distributional form of \cref{prop:classical-lower}, this gives a provable
+quantum speedup for Ramsey search on random graphs.
+
+\begin{corollary}[Separation on random graphs at the Ramsey scale]
+\label{cor:separation}
+Let $n\ge14$, $N=2^n$, $K=\lfloor n/2\rfloor+1$, $0<\eta<1/2$, and
+$G\sim G(N,1/2)$.
+\begin{enumerate}
+\item A quantum algorithm making
+$O(N^{1/4}\log N\log(\log N/\eta))$ edge queries outputs a homogeneous
+$K$-set of $G$ with probability at least $1-\eta-\pi_K$.
+\item Every randomized algorithm making at most
+$\lfloor2^{(2-\sqrt2)K-2}\rfloor=\Omega(N^{1-1/\sqrt2})$ edge queries
+outputs a homogeneous $K$-set of $G$ with probability at most $5/8$.
+\end{enumerate}
+Since $1/4<1-1/\sqrt2$, the bounded-error quantum query complexity of the
+Ramsey relation on $G(N,1/2)$ is polynomially smaller than its bounded-error
+randomized query complexity.
+\end{corollary}
+
+\begin{proof}
+The subgraph induced on the first $M=4^{K-1}\le N$ vertices is distributed
+as $G(M,1/2)$, so the first part follows from \cref{prop:random-graph},
+using $2^{K/2}\le2^{n/4+1/2}$ and $K=O(\log N)$.  The second part is the
+distributional statement of \cref{prop:classical-lower}, which applies
+because $K\ge8$.  For the final sentence, take $\eta=1/4$ and $K\ge14$, so
+that the quantum algorithm succeeds with probability greater than $2/3$
+while $5/8<2/3$.
+\end{proof}
 
 The size-biased recursion also extends to every fixed number of edge colours.
 The statement and proof appear in \cref{app:multicolour}.

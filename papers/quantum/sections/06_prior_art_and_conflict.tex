@@ -27,11 +27,23 @@ Erd\H{o}s--Szekeres recursion by this mechanism in the adjacency-query model.
 
 Ramsey search also appears in proof complexity and TFNP.  It is connected to
 weak and structured pigeonhole principles
-\cite{Krajicek2001,Krajicek2005}, and belongs to the polynomial long-choice
-class PLC \cite{PasarkarPapadimitriouYannakakis2023}.  The closest matching
-query relation is studied in \cite{JainLiRobereXun2024}.
+\cite{Krajicek2001,Krajicek2005}, its white-box hardness follows from
+collision-resistant hashing \cite{KomargodskiNaorYogev2019}, and it belongs
+to the polynomial long-choice class PLC
+\cite{PasarkarPapadimitriouYannakakis2023}.  The closest matching query
+relation is studied in \cite{JainLiRobereXun2024}, which shows that it is
+not black-box reducible to PIGEON and, in the paragraph ``Query complexity
+of RAMSEY'' of its Section~III, raises the question of its query
+complexity in the deterministic, randomized, and quantum models.  On the
+classical side, the online Ramsey game (see \cite{ConlonFoxGrinshpunHe2019}
+and the references therein), in which Builder queries edges and Painter
+answers adversarially, is exactly the deterministic version of this
+question with an unbounded vertex set; the best known lower bound for it is
+the random-Painter bound of \cite{ConlonFoxGrinshpunHe2019} used in
+\cref{prop:classical-lower}.
 
-\subsection{Comparison with a reported lower bound}
+\subsection{Comparison with a reported quantum lower bound}
+\label{sec:jlrx}
 
 \paragraph{Model and parameter alignment.}
 Definition~II.6 of \cite{JainLiRobereXun2024} uses $N=2^n$ vertices, and the
@@ -40,7 +52,8 @@ The unnumbered ``Query complexity of RAMSEY'' paragraph in Section~III
 (p.~415) reports an $N^{1-o(1)}$ quantum lower bound, based on its
 Lemma~III.1 and the multicollision lower bound of \cite{LiuZhandry2019}.
 
-Away from the diagonal, the graph produced by Lemma~III.1 is
+Away from the diagonal, the graph produced by Lemma~III.1 from a function
+$h$ and a fixed graph $A_0$ is
 \[
  A_h(u,v)=\mathbf 1[h(u)=h(v)]\lor A_0(h(u),h(v)),
  \qquad A_h(u,u)=0.
@@ -77,6 +90,27 @@ the transferred exponent.  The multicollision theorem is stated for fixed
 $t$, so the cited result also does not support a growing-multiplicity limit.
 
 Direct composition of the two cited statements therefore yields an exponent
-at most $1/24$, rather than $1-o(1)$.  An additional ingredient or a different
-normalization would be needed to obtain the reported near-linear consequence
-in the aligned query model.
+at most $1/24$, rather than $1-o(1)$.  \Cref{thm:main} rules out an
+$N^{1-o(1)}$ lower bound at these parameters: the default relation has
+quantum query complexity $O(\sqrt N\log N\log\log N)$.  The remark is not
+used elsewhere in \cite{JainLiRobereXun2024}, and the black-box separation
+theorems of that paper are unaffected.
+
+\paragraph{The lower bound that the reduction does give.}
+The case $t=2$ of the composition is valid and yields, to our knowledge,
+the best known quantum lower bound.  Let $A_0$ be a graph on $H$ vertices
+with no homogeneous set of order $2\log_2H$, which exists by Erd\H{o}s's
+bound $R(k,k)>2^{k/2}$ \cite{Erdos1947}.  For $G=H^8/16$, Lemma~III.1 of
+\cite{JainLiRobereXun2024} with $t=2$ maps a function $h\colon[G]\to[H]$ to
+the graph $A_h$ above on $G$ vertices, and every homogeneous set of order
+$\tfrac12\log_2G=4\log_2H-2$ in $A_h$ contains two vertices with the same
+$h$-value: an independent set of $A_h$ has distinct $h$-values and maps to
+an independent set of $A_0$, so it has fewer than $2\log_2H$ vertices,
+while a clique of $A_h$ maps to a clique of $A_0$ and therefore takes fewer
+than $2\log_2H$ values on $4\log_2H-2$ vertices.  Finding a collision in a
+random function $[G]\to[H]$ requires $\Omega(H^{1/3})$ quantum queries
+\cite{Zhandry2015,LiuZhandry2019}, and a query to $A_h$ costs $O(1)$
+queries to $h$.  Hence the default Ramsey relation on $N$ vertices has
+quantum query complexity $\Omega(N^{1/24})$.  Together with
+\cref{cor:succinct}, its quantum query complexity lies between
+$\Omega(N^{1/24})$ and $O(\sqrt N\log N\log\log N)$.

@@ -6,7 +6,36 @@ Prepared: 2026-08-31
 
 Quantum Query Algorithms for the Constructive Diagonal Ramsey Theorem
 
-## Abstract for HotCRP
+## Abstract for HotCRP (revised 2026-09-04; paste this version when resubmitting)
+
+The constructive diagonal Ramsey problem asks, given adjacency-oracle access
+to an N-vertex graph, for a clique or independent set of the order
+guaranteed by Ramsey's theorem. We give a bounded-error quantum algorithm
+that, for every K >= 2 and N >= 4^(K-1), finds and verifies a homogeneous
+K-set using O(2^K K log(K/eta)) edge queries with failure probability at
+most eta. At the Ramsey scale N = 2^n, this yields a homogeneous set of
+order floor(n/2)+1 using O(sqrt(N) log(N) log(log(N)/eta)) queries,
+improving on the O(N) queries of the explicit Erdos--Szekeres recursion and
+giving, to our knowledge, the first sublinear worst-case algorithm for the
+Ramsey relation, whose query complexity was raised as a question by Jain,
+Li, Robere, and Xun (FOCS 2024). The bound also shows that the N^(1-o(1))
+quantum lower bound reported there cannot hold at its stated parameters; we
+show that the cited ingredients compose to an Omega(N^(1/24)) lower bound
+instead.
+
+The algorithm runs the constructive recursion over implicit candidate sets.
+Each set is represented by a short conjunction of adjacency constraints and
+sampled using capped unknown-solution quantum search, and a scale-aware
+concentration schedule balances estimation accuracy against the increasing
+cost of sampling deeper sets. We complement the upper bound with an
+Omega(N^(1-1/sqrt(2))) randomized lower bound, transported from the
+random-Painter analysis of online Ramsey numbers, which holds on the uniform
+distribution G(N,1/2). On that distribution a greedy quantum search uses
+only O~(N^(1/4)) queries, giving a provable polynomial quantum speedup for
+Ramsey search on random graphs. We also give an estimation-free size-biased
+recursion and extend it to every fixed number of edge colours.
+
+## Abstract for HotCRP (as registered on 2026-08-31; superseded)
 
 The constructive diagonal Ramsey problem asks for a clique or an independent
 set of the size guaranteed by Ramsey's theorem, using adjacency queries to the

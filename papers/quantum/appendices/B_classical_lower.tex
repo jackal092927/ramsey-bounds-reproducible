@@ -1,25 +1,172 @@
-\section{Proof of the randomized classical lower bound}
+\section{Proofs for the classical lower bound and the random-graph speedup}
 \label{app:classical-lower}
 
-\begin{proof}[Proof of \cref{prop:classical-lower}]
-We apply the random-Painter weight bound in
-\cite[Theorem~1]{ConlonFoxGrinshpunHe2019}.  Let
+\subsection{A weight bound for adaptive queries to a random graph}
+\label{app:weight-bound}
+
+We record the random-Painter estimate of Conlon, Fox, Grinshpun, and He
+\cite[proof of Theorem~1]{ConlonFoxGrinshpunHe2019} in the form used in
+this paper.  We follow their weight argument, taking the matching number
+of the queried graph as the potential; removing the critical edge from a
+maximum matching then leaves a matching of the smaller set, which keeps the
+recursion closed.
+
+Throughout this subsection $V\ge2$, and $G\sim G(V,1/2)$ assigns
+independent uniform colours in $\{0,1\}$ to the pairs of $[V]$.  A
+deterministic algorithm queries $T$ distinct pairs adaptively.  Let
+$e_1,\ldots,e_T$ be the queried pairs, let $Q_t$ be the graph formed by
+$e_1,\ldots,e_t$, and let $\mathcal F_t$ be the $\sigma$-algebra generated
+by the first $t$ answers.  Because the algorithm is deterministic, $e_{t+1}$
+is $\mathcal F_t$-measurable.
+
+For $U\subseteq[V]$ and $0\le t\le T$, let $e_t(U)$ be the number of pairs
+inside $U$ among $e_1,\ldots,e_t$, and call $U$ \emph{consistent at time
+$t$} if all of these pairs have colour~$1$.  Define
 \[
- \beta=2-\sqrt2,
- \qquad
- \alpha=1-\frac1{\sqrt2},
+ w(U,t)=
+ \begin{cases}
+ 2^{-\binom{|U|}2+e_t(U)}, & U\text{ is consistent at time }t,\\
+ 0,&\text{otherwise},
+ \end{cases}
 \]
-so that $\beta=2\alpha$.  Set
+the conditional probability, given $\mathcal F_t$, that $U$ becomes a
+colour-$1$ clique when its remaining pairs are revealed.  Let $\nu(U,t)$ be
+the matching number of $Q_t[U]$; it is nondecreasing in $t$ and increases by
+at most one when a pair is added.  For integers $k\ge2c\ge0$ set
 \[
- T=\left\lfloor2^{\beta K-2}\right\rfloor,
+ w_{k,c}(t)=\sum_{|U|=k,\ \nu(U,t)\ge c}w(U,t).
+\]
+
+\begin{lemma}[Weight bound]\label{lem:weight-bound}
+For all integers $k\ge2c\ge0$,
+\[
+ \mathbb E\,w_{k,c}(T)\le 2^{-\binom k2+c(c-1)}\,V^{k-2c}\,T^{c}.
+\]
+\end{lemma}
+
+\begin{proof}
+\emph{Martingale property.}  Fix $U$.  If $e_{t+1}\not\subseteq U$, then
+$w(U,t+1)=w(U,t)$.  If $e_{t+1}\subseteq U$, then with probability $1/2$
+the new pair has colour~$1$ and $w(U,t+1)=2w(U,t)$, and otherwise
+$w(U,t+1)=0$.  Hence $\mathbb E[w(U,t+1)\mid\mathcal F_t]=w(U,t)$, and in
+particular $\mathbb E\,w(U,T)=w(U,0)=2^{-\binom{|U|}2}$.  Summing over all
+$k$-sets gives the case $c=0$:
+\[
+ \mathbb E\,w_{k,0}(T)=\binom Vk2^{-\binom k2}\le V^k2^{-\binom k2}.
+\]
+
+\emph{Monotonicity.}  Since $\nu(U,\cdot)$ is nondecreasing,
+$w_{k,c}(t+1)\ge\sum_{\nu(U,t)\ge c}w(U,t+1)$, and each event
+$\{\nu(U,t)\ge c\}$ is $\mathcal F_t$-measurable.  Taking conditional
+expectations gives $\mathbb E\,w_{k,c}(t)\le\mathbb E\,w_{k,c}(t+1)$.
+
+\emph{Critical times.}  Let $c\ge1$.  For each $U$ let
+$\tau(U)=\min\{t:\nu(U,t)\ge c\}$, a stopping time with $\tau(U)\ge1$.
+Since $\{\tau(U)=t\}\in\mathcal F_t$ and $w(U,\cdot)$ is a martingale,
+\[
+ \mathbb E\,w_{k,c}(T)
+ =\sum_{|U|=k}\sum_{t=1}^T\mathbb E\bigl[w(U,T)\,\mathbf 1[\tau(U)=t]\bigr]
+ =\sum_{t=1}^T\mathbb E\,w^*_{k,c}(t),
+\]
+where
+\[
+ w^*_{k,c}(t)=\sum_{|U|=k,\ \tau(U)=t}w(U,t).
+\]
+
+\emph{Charging.}  Fix $t$ and write $e_t=\{x,y\}$.  Suppose $|U|=k$ and
+$\tau(U)=t$.  Then $\nu(U,t-1)=c-1$, $\nu(U,t)=c$, and $e_t\subseteq U$.
+Moreover, every maximum matching of $Q_t[U]$ contains $e_t$, since a
+maximum matching avoiding $e_t$ would be a matching of size $c$ in
+$Q_{t-1}[U]$.  Fix such a matching $M$, let $M'=M\setminus\{e_t\}$, let $A$
+be the set of $2(c-1)$ vertices covered by $M'$, and let
+$U'=U\setminus\{x,y\}$.  Then $M'$ is a matching of $Q_{t-1}[U']$, so
+$\nu(U',t-1)\ge c-1$.  We claim that at most $2(c-1)$ of the pairs between
+$\{x,y\}$ and $U'$ belong to $Q_{t-1}$.  Indeed, if $xa\in Q_{t-1}$ with
+$a\in U'\setminus A$, then $M'\cup\{xa\}$ is a matching of size $c$ in
+$Q_{t-1}[U]$, a contradiction; the same holds for $y$.  For each
+$ab\in M'$, the pairs $xa$ and $yb$ cannot both lie in $Q_{t-1}$, since
+$(M'\setminus\{ab\})\cup\{xa,yb\}$ would again be a matching of size $c$ in
+$Q_{t-1}[U]$; likewise $xb$ and $ya$ cannot both lie in $Q_{t-1}$.  Hence
+at most two of $xa,xb,ya,yb$ lie in $Q_{t-1}$, and the claim follows by
+summing over the $c-1$ edges of $M'$.
+
+Consequently $e_t(U)\le e_{t-1}(U')+1+2(c-1)$, and $U$ is consistent at
+time $t$ only if $U'$ is consistent at time $t-1$ and $e_t$ has colour~$1$.
+Using $\binom k2-\binom{k-2}2=2k-3$, we obtain
+\[
+ w(U,t)\le 2^{-(2k-2c-2)}\,w(U',t-1)
+ \quad\text{if }e_t\text{ has colour }1,
+\]
+and $w(U,t)=0$ otherwise.  The map $U\mapsto U'$ is injective because
+$U=U'\cup e_t$.  Therefore
+\[
+ w^*_{k,c}(t)\le
+ \mathbf 1[e_t\text{ has colour }1]\;2^{-(2k-2c-2)}\,w_{k-2,c-1}(t-1).
+\]
+The indicator is independent of $\mathcal F_{t-1}$ with mean $1/2$, while
+$w_{k-2,c-1}(t-1)$ is $\mathcal F_{t-1}$-measurable.  Taking expectations
+and using monotonicity,
+\[
+ \mathbb E\,w^*_{k,c}(t)\le 2^{-(2k-2c-1)}\,\mathbb E\,w_{k-2,c-1}(T),
+\]
+and summing over $t\le T$ gives
+\[
+ \mathbb E\,w_{k,c}(T)\le T\,2^{-(2k-2c-1)}\,\mathbb E\,w_{k-2,c-1}(T).
+\]
+
+\emph{Iteration.}  Applying the last inequality $c$ times, the exponents
+$2(k-2i)-2(c-i)-1$ for $i=0,\ldots,c-1$ sum to $2kc-3c^2$, and the case
+$c=0$ gives
+\[
+ \mathbb E\,w_{k,c}(T)
+ \le T^c\,2^{-(2kc-3c^2)}\,V^{k-2c}\,2^{-\binom{k-2c}2}
+ =2^{-\binom k2+c(c-1)}\,V^{k-2c}\,T^c,
+\]
+because $2kc-3c^2+\binom{k-2c}2=\binom k2-c(c-1)$.
+\end{proof}
+
+\begin{corollary}[Fully exposed monochromatic sets]\label{cor:exposed}
+Let $K\ge2$, let $V\ge K$, and let a deterministic algorithm make $T\ge1$
+adaptive edge queries to $G\sim G(V,1/2)$.  For every integer
+$0\le c\le K/2$, the expected number of $K$-sets all of whose $\binom K2$
+pairs have been queried and carry the same colour is at most
+\[
+ 2\cdot2^{-\binom K2+c(c-1)}(2T)^{K-c}.
+\]
+\end{corollary}
+
+\begin{proof}
+Renaming vertices in order of first appearance in a query does not change
+the joint distribution of the queried graph and its colours, because the
+colours of distinct pairs are independent and uniform; the renamed
+algorithm queries pairs inside $[V']$ with $V'=\min\{V,2T\}$, and the
+number of fully exposed monochromatic $K$-sets is unchanged.  A fully
+exposed colour-$1$ $K$-set $U$ satisfies $\nu(U,T)=\lfloor K/2\rfloor\ge c$
+and $w(U,T)=1$, so the number of such sets is at most $w_{K,c}(T)$.
+\Cref{lem:weight-bound} with $V'\le2T$ bounds its expectation by
+$2^{-\binom K2+c(c-1)}(2T)^{K-2c}T^c\le2^{-\binom K2+c(c-1)}(2T)^{K-c}$.
+The same bound holds for colour~$0$ by symmetry.
+\end{proof}
+
+\subsection{Proof of the randomized lower bound}
+\label{app:classical-lower-proof}
+
+\begin{proof}[Proof of \cref{prop:classical-lower}]
+Let $\beta=2-\sqrt2$ and $\alpha=1-1/\sqrt2$, so that $\beta=2\alpha$ and
+$\alpha^2-2\alpha+1/2=0$.  Set
+\[
+ T=\bigl\lfloor2^{\beta K-2}\bigr\rfloor,
  \qquad
  c=\lfloor\alpha K\rfloor=\alpha K+\epsilon,
  \qquad -1<\epsilon\le0.
 \]
+Since $\alpha<1/2$, we have $0\le c\le K/2$, and $K\ge8$ gives $T\ge1$.
 
-Expose $G(M,1/2)$ adaptively to a deterministic algorithm making $T$ edge
-queries.  The cited estimate bounds the probability that the queried edges
-contain a fully exposed monochromatic $K$-set by
+Consider first a deterministic algorithm making at most $T$ queries to
+$G\sim G(N,1/2)$; padding with unused queries, we may assume that it makes
+exactly $T$.  By \cref{cor:exposed} and Markov's inequality, the
+probability that the queried pairs contain a fully exposed monochromatic
+$K$-set is at most
 \begin{equation}\label{eq:random-painter-bound}
  2\cdot
  2^{-\binom K2+c(c-1)}(2T)^{K-c}.
@@ -28,31 +175,86 @@ Since $2T\le2^{\beta K-1}$, the base-$2$ logarithm of
 \cref{eq:random-painter-bound} is at most
 \[
  1-\binom K2+c(c-1)+(K-c)(\beta K-1)
- =1-\frac K2+\epsilon^2.
+ =1-\frac K2+\epsilon^2,
 \]
-For $K\ge8$, this quantity is at most $-2$, so the event has probability at
-most $1/4$.
+where the identity follows by substituting $c=\alpha K+\epsilon$ and
+$\beta=2\alpha$ and using $\alpha^2-2\alpha+1/2=0$.  For $K\ge8$ this
+quantity is at most $-2$, so the event has probability at most $1/4$.
 
-Now condition on the query transcript and suppose that the algorithm outputs
-a $K$-set whose internal edges have not already been fully exposed in one
-colour.  If the exposed internal edges contain both colours, the output is not
-homogeneous.  If they contain exactly one colour, at least one unexposed fair
-edge must match that colour, which occurs with conditional probability at
-most $1/2$.  If no internal edge has been exposed, the success probability is
-$2^{1-\binom K2}\le1/2$ for $K\ge3$.  Thus the conditional success
-probability is at most $1/2$ outside the fully exposed event, and the total
-success probability under $G(M,1/2)$ is at most
+Now condition on the query transcript and suppose that the algorithm
+outputs a $K$-set whose internal pairs have not all been exposed in one
+colour.  If the exposed internal pairs contain both colours, the output is
+not homogeneous.  If they contain exactly one colour, at least one
+unexposed pair must match that colour, which has conditional probability at
+most $1/2$, because unexposed pairs are independent fair coins given the
+transcript.  If no internal pair has been exposed, the success probability
+is $2^{1-\binom K2}\le1/2$ for $K\ge3$.  Thus the conditional success
+probability is at most $1/2$ outside the fully exposed event, and the
+success probability under $G(N,1/2)$ is at most
 \[
- \frac14+\frac34\cdot\frac12=\frac58<\frac23.
+ \frac14+\frac34\cdot\frac12=\frac58.
 \]
 
-Yao's minimax principle \cite{Yao1977} implies that a randomized algorithm
-with worst-case success probability at least $2/3$ must make more than $T$
-queries.  Finally, $M=4^{K-1}$ gives
+A randomized algorithm making at most $T$ queries is a distribution over
+such deterministic algorithms, so its success probability on
+$G\sim G(N,1/2)$ is also at most $5/8$.  Finally, an algorithm whose
+worst-case success probability on graphs with $M$ vertices is at least
+$2/3>5/8$ must make more than $T$ queries, and $M=4^{K-1}$ gives
 \[
  2^{\beta K}
  =\Theta\!\left(M^{\beta/2}\right)
  =\Theta\!\left(M^{1-1/\sqrt2}\right),
 \]
 which proves the proposition.
+\end{proof}
+
+\subsection{Proof of the random-graph speedup}
+\label{app:random-graph}
+
+\begin{proof}[Proof of \cref{prop:random-graph}]
+Let $M=4^{K-1}$.  For $W\subseteq[M]$ let
+\[
+ C(W)=\{u\in[M]\setminus W:\ G(w,u)=1\text{ for every }w\in W\}
+\]
+be the common neighbourhood of $W$.  Call $G$ \emph{expanding} if
+$|C(W)|\ge M2^{-j-1}$ for every $j\in\{1,\ldots,K-1\}$ and every $j$-set
+$W$; for $W=\emptyset$ the bound $|C(\emptyset)|=M$ holds trivially.
+
+\emph{Random graphs are expanding.}  Fix $1\le j\le K-1$ and a $j$-set
+$W$.  Then $|C(W)|\sim\operatorname{Bin}(M-j,2^{-j})$ with mean
+$\mu=(M-j)2^{-j}$.  Since $M=4^{K-1}\ge4(K-1)\ge4j$, we have
+$\mu\ge\frac34M2^{-j}$, hence $M2^{-j-1}\le\frac23\mu$ and
+$\mu\ge\frac34M2^{-(K-1)}=\frac32\cdot2^{K-2}$.  The Chernoff bound
+$\Pr[X\le(1-\gamma)\mu]\le e^{-\gamma^2\mu/2}$ \cite{Chernoff1952} with
+$\gamma=1/3$ gives
+\[
+ \Pr\bigl[|C(W)|<M2^{-j-1}\bigr]\le e^{-\mu/18}\le e^{-2^{K-2}/12}.
+\]
+A union bound over the at most $\sum_{j=1}^{K-1}M^j\le2M^{K-1}$ sets $W$
+shows that $G$ fails to be expanding with probability at most
+$\pi_K=2M^{K-1}e^{-2^{K-2}/12}$.
+
+\emph{The algorithm.}  Set $W_0=\emptyset$.  For $j=0,\ldots,K-1$, given
+the clique $W_j=\{v_1,\ldots,v_j\}$, run the capped search of
+\cref{lem:capped-search} on $[M]$ for the predicate ``$u\notin W_j$ and
+$G(v_i,u)=1$ for all $i\le j$'', with density parameter
+$\lambda_j=2^{-j-1}$, repeating the block $O(\log(K/\eta))$ times so that
+its failure probability is at most $\eta/K$ whenever the density promise
+holds.  The predicate costs $O(j+1)$ edge queries, including uncomputation.
+Let $v_{j+1}$ be the verified output and $W_{j+1}=W_j\cup\{v_{j+1}\}$.  If
+any search fails, output $\bot$; otherwise output $W_K$.
+
+\emph{Correctness and cost.}  Every accepted vertex was verified to be
+adjacent to all earlier vertices, so a non-$\bot$ output is a $K$-clique
+for every input graph.  If $G$ is expanding, then the search at level $j$
+has marked density at least $\lambda_j$, and a union bound over the $K$
+searches shows that the algorithm outputs $W_K$ with probability at least
+$1-\eta$.  Hence it succeeds with probability at least $1-\eta-\pi_K$ over
+$G$ and its internal randomness.  Each capped block at level $j$ uses
+$O(2^{j/2})$ predicate evaluations, so the total number of edge queries is
+\[
+ O\!\left(\log\frac K\eta\sum_{j=0}^{K-1}(j+1)2^{j/2}\right)
+ =O\!\left(K2^{K/2}\log\frac K\eta\right)
+\]
+on every input, because every block has a predetermined cap.
 \end{proof}
