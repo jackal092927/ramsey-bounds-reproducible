@@ -31,28 +31,28 @@ adjacency oracle, implicit sets, total search}
 \maketitle
 
 \begin{abstract}
-The constructive diagonal Ramsey problem asks for a clique or an independent
-set of the size guaranteed by Ramsey's theorem, using adjacency queries to the
-input graph.  Given coherent adjacency-oracle access to an $N$-vertex simple
-graph, we give a bounded-error quantum algorithm that, for every $K\ge2$ and
-$N\ge4^{K-1}$, finds and verifies a homogeneous $K$-set using
+The constructive diagonal Ramsey problem asks, given adjacency-oracle access
+to an $N$-vertex graph, for a clique or independent set of the order
+guaranteed by Ramsey's theorem.  We give a bounded-error quantum algorithm
+that, for every $K\ge2$ and $N\ge4^{K-1}$, finds and verifies a homogeneous
+$K$-set using
 \[
   O\!\left(2^K K\log\frac K\eta\right)
 \]
 edge queries with failure probability at most $\eta$.  At the Ramsey scale
-$N=2^n$, the algorithm finds a homogeneous set of order
+$N=2^n$, this yields a homogeneous set of order
 $\lfloor n/2\rfloor+1$ using
 $O(\sqrt N\log N\log(\log N/\eta))$ queries, improving on the $O(N)$
 query complexity of the standard explicit Erd\H{o}s--Szekeres recursion.
 
-The algorithm runs the constructive Ramsey recursion over implicit candidate
-sets.  Each set is represented by a short conjunction of adjacency
-constraints and sampled using capped unknown-solution quantum search.  A
-scale-aware concentration schedule then balances estimation accuracy against
-the increasing cost of sampling deeper sets.  We also give an estimation-free
-size-biased recursion, extend it to every fixed number of edge colours, and
-prove an $\Omega(M^{1-1/\sqrt2})$ randomized classical lower bound in the
-regime $M=4^{K-1}$.
+The algorithm runs the constructive recursion over implicit candidate sets.
+Each set is represented by a short conjunction of adjacency constraints and
+sampled using capped unknown-solution quantum search.  A scale-aware
+concentration schedule balances estimation accuracy against the increasing
+cost of sampling deeper sets.  We also give an estimation-free size-biased
+recursion, extend it to every fixed number of edge colours, and prove an
+$\Omega(M^{1-1/\sqrt2})$ randomized classical lower bound in the regime
+$M=4^{K-1}$.
 \end{abstract}
 
 \input{sections/01_introduction}
@@ -64,23 +64,13 @@ regime $M=4^{K-1}$.
 \input{sections/07_reproducibility_and_scope}
 
 \clearpage
+\bibliographystyle{plainurl}
+\bibliography{references,foundational_references}
+
+\clearpage
 \appendix
 \input{appendices/A_capped_search}
 \input{appendices/B_classical_lower}
 \input{appendices/C_extensions_and_reproducibility}
-
-\bibliographystyle{plainurl}
-\bibliography{references}
-
-\subparagraph*{AI Disclosure.}
-We used ChatGPT and Codex to assist with brainstorming candidate algorithms
-and proof strategies, reviewing numerical experiments, and editing the
-manuscript.  These tools materially influenced
-Sections~\ref{sec:introduction}--\ref{sec:scope} and Appendix~C; their role
-in the research workflow is described in
-Appendix~\ref{app:ai-workflow}.  The authors independently verified the
-correctness and originality of all content, including every theorem, proof,
-calculation, experimental result, and reference, and take full responsibility
-for the paper.
 
 \end{document}

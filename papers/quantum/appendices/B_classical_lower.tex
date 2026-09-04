@@ -1,8 +1,9 @@
-\section{Derivation of the randomized classical lower bound}
+\section{Proof of the randomized classical lower bound}
 \label{app:classical-lower}
 
-We derive \cref{prop:classical-lower} from the random-Painter weight bound in
-\cite{ConlonFoxGrinshpunHe2019}.  Let
+\begin{proof}[Proof of \cref{prop:classical-lower}]
+We apply the random-Painter weight bound in
+\cite[Theorem~1]{ConlonFoxGrinshpunHe2019}.  Let
 \[
  \beta=2-\sqrt2,
  \qquad
@@ -17,8 +18,8 @@ so that $\beta=2\alpha$.  Set
 \]
 
 Expose $G(M,1/2)$ adaptively to a deterministic algorithm making $T$ edge
-queries.  The cited random-Painter estimate bounds the probability that the
-queried edges contain a fully exposed monochromatic $K$-set by
+queries.  The cited estimate bounds the probability that the queried edges
+contain a fully exposed monochromatic $K$-set by
 \begin{equation}\label{eq:random-painter-bound}
  2\cdot
  2^{-\binom K2+c(c-1)}(2T)^{K-c}.
@@ -45,12 +46,13 @@ success probability under $G(M,1/2)$ is at most
  \frac14+\frac34\cdot\frac12=\frac58<\frac23.
 \]
 
-Yao's minimax principle implies that a randomized algorithm with worst-case
-success probability at least $2/3$ must make more than $T$ queries.  Finally,
-$M=4^{K-1}$ gives
+Yao's minimax principle \cite{Yao1977} implies that a randomized algorithm
+with worst-case success probability at least $2/3$ must make more than $T$
+queries.  Finally, $M=4^{K-1}$ gives
 \[
  2^{\beta K}
  =\Theta\!\left(M^{\beta/2}\right)
  =\Theta\!\left(M^{1-1/\sqrt2}\right),
 \]
-which proves \cref{prop:classical-lower}.
+which proves the proposition.
+\end{proof}

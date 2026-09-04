@@ -1,15 +1,6 @@
 \section{Query complexity and a classical lower bound}\label{sec:complexity}
 
-For the size-biased recursion, a capped sample from a nonempty subset of the
-$M$-element universe costs $O(\sqrt M)$ membership tests.  Repeating the block
-$O(\log(2r))$ times gives failure probability $O(1/r)$.  Since the membership
-predicate at level $i$ costs $O(i+1)$ edge queries, one fixed-cap run uses
-\[
- O\!\left(\sqrt M\log(2r)\sum_{i=0}^{r-1}(i+1)\right)
- =O(K^2 2^K\log K)
-\]
-edge queries.  The amplification in \cref{sec:correctness} gives the following
-worst-case bound.
+\subsection{The estimation-free recursion}
 
 \begin{proposition}[Size-biased quantum recursion]
 \label{prop:size-biased-algorithm}
@@ -18,18 +9,47 @@ a verified homogeneous $K$-set with probability at least $1-\eta$ using
 \[
  O\!\left(K^2 2^K\log K\log\frac1\eta\right)
 \]
-edge queries.
+edge queries in the worst case.
 \end{proposition}
 
-We now analyze the sharper scale-aware recursion.  By
-\cref{lem:survival}, a capped search block at level $i$ uses
-$O(2^{i/2})$ membership tests.  Computing and uncomputing membership and
-querying the sampled edge costs $O(i+1)$ edge queries.  Define
+\begin{proof}
+A capped sample from a nonempty subset of the $M$-element universe costs
+$O(\sqrt M)$ membership tests.  Repeating the block $O(\log(2r))$ times
+reduces its failure probability to $O(1/r)$.  Since the membership predicate
+at level $i$ costs $O(i+1)$ edge queries, one fixed-cap run uses
+\[
+ O\!\left(\sqrt M\log(2r)\sum_{i=0}^{r-1}(i+1)\right)
+ =O(K^2 2^K\log K)
+\]
+edge queries.  The survival analysis following
+\cref{lem:size-biased-survival} gives a constant success probability for each
+run, including capped-search failures and final verification.  Repeating
+independent runs $O(\log(1/\eta))$ times proves the stated worst-case bound.
+\end{proof}
+
+\subsection{The scale-aware recursion}
+
+\begin{proof}[Proof of \cref{thm:main}]
+Set $M=4^{K-1}$ and run the algorithm of \cref{sec:algorithm} on any fixed
+set of $M$ input vertices.  The failure allocation in \cref{sec:correctness},
+together with \cref{lem:concentration}, implies that all required searches
+succeed and all completed estimates are accurate with probability at least
+$1-\eta$.  On this event, \cref{lem:survival} guarantees every density
+promise used by the sampler and ensures that $S_r$ is nonempty.  The final
+output is homogeneous by \cref{lem:output}.  Because the algorithm verifies
+the returned set directly, every non-$\bot$ output is valid even outside the
+good event.
+
+It remains to bound the number of queries.  By \cref{lem:survival}, a capped
+search block at level $i$ uses $O(2^{i/2})$ membership tests.  Computing and
+uncomputing membership and querying the sampled edge costs $O(i+1)$ edge
+queries.  Define
 \[
  b_i=(i+1)2^{i/2}.
 \]
-The batch cap uses $O(m_i+\log(r/\eta))=O(m_i)$ blocks, so the total sampling
-cost is
+The batch cap in \cref{lem:capped-search} uses
+$O(m_i+\log(r/\eta))=O(m_i)$ blocks.  By \cref{eq:sample-count}, the total
+cost of the sampling batches is therefore
 \begin{equation}\label{eq:query-sum}
  O\!\left(
  \log\frac r\eta
@@ -56,9 +76,15 @@ $4^{\lceil h/6\rceil}\le4\cdot2^{h/3}$, the last display is at most
  \right)
  =O(r2^{r/2}).
 \]
-The high-confidence pivot searches, the final search, and the $K^2$ output
-verification satisfy the same bound.  Substituting $r=2K-3$ into
-\cref{eq:query-sum} proves \cref{thm:main}.
+The amplified pivot searches and final search cost
+$O(\log(r/\eta)\sum_i b_i)=O(r2^{r/2}\log(r/\eta))$, and the $K^2$ output
+verification is smaller.  Substituting $r=2K-3$ into
+\cref{eq:query-sum} gives
+\[
+ O\!\left(2^K K\log\frac K\eta\right),
+\]
+as claimed.
+\end{proof}
 
 Each search begins in the uniform state on the fixed power-of-two universe
 $[M]$.  The recorded pivot labels and colours define the reversible membership
@@ -67,8 +93,8 @@ of any candidate set.
 
 We complement the upper bound with a randomized classical lower bound.  The
 following proposition follows from the random-Painter analysis in
-\cite{ConlonFoxGrinshpunHe2019}; \cref{app:classical-lower} gives the
-derivation.
+\cite[Theorem~1]{ConlonFoxGrinshpunHe2019}; its full derivation appears in
+\cref{app:classical-lower}.
 
 \begin{proposition}[Randomized classical lower bound]
 \label{prop:classical-lower}
@@ -85,4 +111,4 @@ The exponent $1-1/\sqrt2\approx0.292893$ improves the earlier $M^{1/4}$
 black-box lower bound \cite{ImpagliazzoNaor1988,KomargodskiNaorYogev2019}.
 
 The size-biased recursion also extends to every fixed number of edge colours.
-The statement and recurrence appear in \cref{app:multicolour}.
+The statement and proof appear in \cref{app:multicolour}.

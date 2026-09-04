@@ -1,15 +1,14 @@
-\section{Capped search and batch uniformity}\label{app:capped-search}
+\section{Proof of the capped-search lemma}\label{app:capped-search}
 
-We prove the properties of the search primitive used in
-\cref{lem:capped-search}.  Begin in the uniform superposition on $[M]$ and
-apply the randomized-iteration unknown-solution search of \cite{BBHT1998}.
-When the marked density is at least $\lambda$, truncate the geometric
-iteration schedule once its maximum iteration count reaches a sufficiently
-large constant multiple of $1/\sqrt\lambda$.  The standard analysis gives a
-success probability $p_0>0$, independent of $M$ and $\lambda$, using
-$O(1/\sqrt\lambda)$ calls to the membership predicate.  Because the cap is
-fixed before any oracle outcome is observed, the block terminates for every
-predicate.
+\begin{proof}[Proof of \cref{lem:capped-search}]
+Begin in the uniform superposition on $[M]$ and apply the randomized-iteration
+unknown-solution search of \cite{BBHT1998}.  When the marked density is at
+least $\lambda$, truncate the geometric iteration schedule once its maximum
+iteration count reaches a sufficiently large constant multiple of
+$1/\sqrt\lambda$.  The cited analysis gives a success probability $p_0>0$,
+independent of $M$ and $\lambda$, using $O(1/\sqrt\lambda)$ calls to the
+membership predicate.  Because the cap is fixed before any oracle outcome is
+observed, the block terminates for every predicate.
 
 For each fixed number of Grover iterations, all marked basis states have the
 same amplitude.  Randomizing the iteration count preserves this permutation
@@ -25,8 +24,9 @@ To collect a batch, run
 \]
 independent capped blocks, where the absolute constant $C$ is chosen from
 $p_0$.  The number of accepted blocks stochastically dominates
-$\operatorname{Bin}(B,p_0)$.  A Chernoff lower-tail bound makes the
-probability of fewer than $m$ acceptances at most $\delta$.  Conditional on
-any success pattern with at least $m$ acceptances, the first $m$ accepted
-outputs are independent and uniform on $T$.  This proves
-\cref{lem:capped-search}.
+$\operatorname{Bin}(B,p_0)$.  A Chernoff lower-tail bound
+\cite{Chernoff1952} makes the probability of fewer than $m$ acceptances at
+most $\delta$.  Conditional on any success pattern with at least $m$
+acceptances, the first $m$ accepted outputs are independent and uniform on
+$T$.
+\end{proof}

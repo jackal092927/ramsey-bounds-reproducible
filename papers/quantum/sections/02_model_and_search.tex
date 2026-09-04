@@ -1,4 +1,4 @@
-\section{Oracle model and capped uniform search}\label{sec:model}
+\section{Oracle model and capped quantum sampling}\label{sec:model}
 
 Let $G\colon\binom{[N]}2\to\{0,1\}$ be a promised simple undirected graph,
 extended symmetrically to ordered pairs with $G(u,u)=0$.  Its coherent edge
@@ -12,8 +12,17 @@ labels are free, as usual in the query model, and coherent access to $O_G$ is
 part of the input specification.
 
 The same asymptotic bound applies to the standard locally verifiable TFNP
-relation with arbitrary Boolean-circuit encodings.  Given a circuit $C(u,v)$,
-define the canonical simple graph
+relation with arbitrary Boolean-circuit encodings.
+
+\begin{corollary}[Locally verifiable arbitrary encoding]
+\label{cor:unpromised}
+The standard Ramsey TFNP relation that accepts either a local invalidity
+certificate or a locally verified homogeneous set has the same
+$O(2^K K\log(K/\eta))$ quantum-query upper bound as \cref{thm:main}.
+\end{corollary}
+
+\begin{proof}
+Given a circuit $C(u,v)$, define the canonical simple graph
 \[
  A(u,v)=
  \begin{cases}
@@ -23,19 +32,15 @@ define the canonical simple graph
 \]
 One query to $A$ uses $O(1)$ queries to $C$, including uncomputation.  Run
 \cref{thm:main} on $A$ and let $W$ be the returned homogeneous set.  Query the
-$O(K^2)$ diagonal and both ordered entries induced by $W$.  A self-loop or an
-asymmetric pair is a local invalidity certificate; otherwise $C$ agrees with
-$A$ on $W$, so $W$ is a valid clique or independent-set witness.
-
-\begin{corollary}[Locally verifiable arbitrary encoding]
-\label{cor:unpromised}
-The standard Ramsey TFNP relation that accepts either a local invalidity
-certificate or a locally verified homogeneous set has the same
-$O(2^K K\log(K/\eta))$ quantum-query upper bound.
-\end{corollary}
+diagonal and both ordered entries induced by $W$, using $O(K^2)$ additional
+queries.  A self-loop or an asymmetric pair is a local invalidity certificate.
+Otherwise $C$ agrees with $A$ on $W$, so $W$ is a valid clique or
+independent-set witness.  The verification cost is absorbed by the bound in
+\cref{thm:main}.
+\end{proof}
 
 Our algorithms use the following consequence of unknown-solution quantum
-search \cite{BBHT1998}.  We include a detailed formulation in
+search \cite{BBHT1998}.  We include its proof in
 \cref{app:capped-search} because the analysis needs both bounded termination
 and exact conditional uniformity.
 

@@ -1,32 +1,21 @@
-\section{Multicolour extension and numerical experiments}
+\section{Multicolour extension, numerical illustrations, and AI disclosure}
 
 \subsection{A multicolour extension of size-biased survival}
 \label{app:multicolour}
 
-The size-biased mechanism extends to any number of colours.  Suppose every
-edge has one of $q\ge2$ colours, and define
+Suppose every edge has one of $q\ge2$ colours, and define
 \[
  r=q(K-2)+1,
  \qquad
- B_d=1+q+\cdots+q^{d-1}=\frac{q^d-1}{q-1}.
+ B_0=0,
+ \qquad
+ B_d=1+q+\cdots+q^{d-1}=\frac{q^d-1}{q-1}\quad(d\ge1).
 \]
 Choose the power of two
 \[
  L_q=2^{\lceil\log_2(2B_r)\rceil},
 \]
-so $2B_r\le L_q<4B_r$.  If the $s-1$ non-pivot vertices split into classes of
-sizes $a_1,\ldots,a_q$, the induction in
-\cref{lem:size-biased-survival} becomes
-\[
- \sum_{j=1}^q (a_j-B_{d-1})_+
- \ge
- \left(s-1-qB_{d-1}\right)_+
- =(s-B_d)_+,
-\]
-because $B_d=1+qB_{d-1}$.  Thus, for $d\ge1$, the $d$-step survival
-probability is at least $(s-B_d)_+/(s-1)$ when $s\ge2$.  Starting from
-$L_q\ge2B_r$ gives survival probability greater than $1/2$.  Among the $r$
-recorded colours, at least one occurs $K-1$ times.
+so $2B_r\le L_q<4B_r$.
 
 \begin{corollary}[Multicolour size-biased Ramsey search]
 \label{cor:multicolour}
@@ -40,7 +29,51 @@ colour-oracle queries in the worst case, where $r$, $B_r$, and $L_q$ are as
 defined above.
 \end{corollary}
 
-\subsection{Small-instance numerical experiments}
+\begin{proof}
+Run the size-biased recursion of \cref{sec:algorithm} for $r$ rounds on the
+first $L_q$ vertices, now following the colour of a uniformly sampled edge
+among $q$ possibilities.  Let $P_d^{(q)}(s)$ be the minimum probability that
+the ideal recursion completes $d$ further rounds from a candidate set of size
+$s$ and a fixed pivot.  We claim that
+\[
+ P_d^{(q)}(s)\ge \frac{(s-B_d)_+}{s}
+\]
+for all $d\ge0$ and $s\ge1$.  The case $d=0$ is immediate.  For $d\ge1$ and
+$s\ge2$, let the $q$ colour classes among the $s-1$ non-pivot vertices have
+sizes $a_1,\ldots,a_q$.  The induction hypothesis gives
+\[
+ P_d^{(q)}(s)
+ \ge \frac{\sum_{j=1}^q a_jP_{d-1}^{(q)}(a_j)}{s-1}
+ \ge \frac{\sum_{j=1}^q(a_j-B_{d-1})_+}{s-1}.
+\]
+Since $\sum_j a_j=s-1$ and $B_d=1+qB_{d-1}$, the numerator is at least
+$(s-B_d)_+$.  This proves the claimed bound after weakening the denominator
+from $s-1$ to $s$.  The preceding display also gives the stronger bound
+$(s-B_d)_+/(s-1)$ whenever $d\ge1$ and $s\ge2$.  Consequently, starting from
+$L_q\ge2B_r$, the ideal recursion survives all $r$ rounds with probability
+strictly greater than $1/2$.
+
+A membership predicate at level $i$ contains $i$ colour constraints and costs
+$O(i+1)$ oracle queries.  Using the universal density bound $1/L_q$, one
+capped sample costs $O((i+1)\sqrt{L_q})$ colour queries.  Repeating the capped
+block $O(\log(2r))$ times makes each sampling failure probability
+$O(1/r)$, so one fixed-cap run costs
+\[
+ O\!\left(
+ \sqrt{L_q}\log(2r)\sum_{i=0}^{r-1}(i+1)
+ \right)
+ =O\!\left(r^2\sqrt{L_q}\log(2r)\right).
+\]
+The union bound preserves a positive constant success probability.  Since
+$r=q(K-2)+1$, one of the $q$ recorded colours occurs at least
+$\lceil r/q\rceil=K-1$ times.  The corresponding pivots and the final vertex
+form a monochromatic $K$-clique by the same nesting argument as in
+\cref{lem:output}.  Independent repetition and direct verification amplify
+the success probability to $1-\eta$ at an additional
+$O(\log(1/\eta))$ factor.
+\end{proof}
+
+\subsection{Small-instance numerical illustrations}
 \label{app:experiments}
 
 \subparagraph*{Ideal-sampler recursion.}
@@ -95,11 +128,13 @@ minimum was approximately $0.5086135566$, above the lower bound $513/1024$.
 For four ternary levels starting from $128$ candidates, the minimum was
 approximately $0.7155732457$, above $88/127$.
 
-\subsection{AI-assisted research workflow}
-\label{app:ai-workflow}
+\subsection{AI Disclosure}
+\label{app:ai-disclosure}
 
 ChatGPT and Codex were used to brainstorm candidate recurrences and proof
 strategies, critique proof drafts, assist with the numerical scripts, and edit
-the manuscript.  The authors reconstructed and checked every argument,
-implementation, numerical value, and reference.  The formal disclosure
-appears at the end of the paper.
+the manuscript.  These tools materially influenced the presentation of the
+algorithms, proofs, and numerical illustrations.  The authors independently
+reconstructed and checked every argument, implementation, numerical value,
+and reference, and take full responsibility for the correctness, originality,
+and integrity of the paper.

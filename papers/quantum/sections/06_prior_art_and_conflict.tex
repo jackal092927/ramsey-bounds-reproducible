@@ -1,5 +1,7 @@
-\section{Related work and a reported lower-bound discrepancy}
+\section{Related work and parameter comparison}
 \label{sec:prior-art}
+
+\subsection{Quantum algorithms for other Ramsey tasks}
 
 Several quantum approaches to Ramsey problems address a different input and
 output task from the one studied here.  Work based on adiabatic computation,
@@ -7,49 +9,52 @@ quantum annealing, or quantum counting searches for colourings that establish
 or test Ramsey-number bounds
 \cite{GaitanClark2012,BianEtAl2013,Wang2016,QuLiWangBaoCao2013,
 RanjbarMacreadyClarkGaitan2016,PionMniszewski2025}.  In those formulations,
-the search space consists of labelled graph colourings.  Our input is instead
-one fixed graph given by an adjacency oracle, and the goal is to find a
+the search space consists of labelled graph colourings.  Our input is one
+fixed graph given by an adjacency oracle, and the goal is to find a
 homogeneous set guaranteed to exist in that graph.
 
 Generic quantum algorithms for clique, independent set, and fixed-subgraph
 containment operate in a closer oracle model
 \cite{Doern2005,ChildsEisenberg2005,LeeMagniezSantha2012,Zhu2012}.  Quantum
 backtracking supplies another general search primitive \cite{Montanaro2018}.
-The present algorithm instead exploits the nested majority structure of the
-constructive Ramsey proof by representing each candidate set through the
-adjacency constraints accumulated along the recursion and sampling directly
-from the resulting implicit set.  We are not aware of an earlier
-implementation of the constructive Erd\H{o}s--Szekeres recursion by this
-mechanism in the adjacency-query model.
+Our algorithms additionally exploit the nested majority structure of the
+constructive Ramsey proof: each candidate set is represented by the
+constraints accumulated along the recursion and sampled as an implicit set.
+We are not aware of an earlier implementation of the constructive
+Erd\H{o}s--Szekeres recursion by this mechanism in the adjacency-query model.
+
+\subsection{Constructive Ramsey search}
 
 Ramsey search also appears in proof complexity and TFNP.  It is connected to
 weak and structured pigeonhole principles
 \cite{Krajicek2001,Krajicek2005}, and belongs to the polynomial long-choice
-class PLC \cite{PasarkarPapadimitriouYannakakis2023}.  The closest
-matching query relation is studied in \cite{JainLiRobereXun2024}.
+class PLC \cite{PasarkarPapadimitriouYannakakis2023}.  The closest matching
+query relation is studied in \cite{JainLiRobereXun2024}.
 
-\paragraph{Alignment of the formal parameters.}
+\subsection{Comparison with a reported lower bound}
+
+\paragraph{Model and parameter alignment.}
 Definition~II.6 of \cite{JainLiRobereXun2024} uses $N=2^n$ vertices, and the
 convention following Definition~II.7 sets the default target to $K=n/2$.
 The unnumbered ``Query complexity of RAMSEY'' paragraph in Section~III
 (p.~415) reports an $N^{1-o(1)}$ quantum lower bound, based on its
 Lemma~III.1 and the multicollision lower bound of \cite{LiuZhandry2019}.
 
-The graph produced by Lemma~III.1 can be written, away from the diagonal, as
+Away from the diagonal, the graph produced by Lemma~III.1 is
 \[
  A_h(u,v)=\mathbf 1[h(u)=h(v)]\lor A_0(h(u),h(v)),
  \qquad A_h(u,u)=0.
 \]
-This is a symmetric simple graph, and a coherent query to it uses $O(1)$
-queries to the value oracle for $h$, including uncomputation of the two hash
-values.  Thus the reduction lies within our valid-graph promise.
-\Cref{cor:unpromised} gives the same upper bound for the locally verifiable
-arbitrary-circuit relation.  Moreover, \cref{cor:succinct} returns
+It is a symmetric simple graph.  A coherent query uses $O(1)$ queries to the
+value oracle for $h$, including uncomputation of the two hash values.  Thus
+the reduction lies within our valid-graph promise.  Moreover,
+\cref{cor:unpromised} gives the same upper bound for the locally verifiable
+arbitrary-circuit relation, and \cref{cor:succinct} returns
 $\lfloor n/2\rfloor+1$ vertices, from which one may discard a vertex to meet
-the default target.  These observations align the graph promise, encoding,
-and output size in the two formulations.
+the default target.  The graph promise, encoding, and output size therefore
+align in the two formulations.
 
-\paragraph{Direct parameter substitution.}
+\paragraph{Exponent obtained by direct substitution.}
 Let $H$ denote the multicollision range size and $G$ the number of vertices in
 the resulting Ramsey instance.  For fixed multiplicity $t$, the sufficient
 condition in Theorem~I.3 of \cite{JainLiRobereXun2024} is
@@ -67,13 +72,11 @@ The exponent transferred to $G$ is therefore
 \]
 Equality holds at $t=2$.  For $t\ge3$, the inequality
 $\alpha_t<1/2$ gives
-$\alpha_t/(4t)<1/(8t)\le1/24$.  Increasing $G$ relative to $H$ can only
-reduce the transferred exponent.  The multicollision theorem is stated for
-fixed $t$, so this substitution also does not support a growing-multiplicity
-limit.
+$\alpha_t/(4t)<1/(8t)\le1/24$.  Increasing $G$ relative to $H$ only reduces
+the transferred exponent.  The multicollision theorem is stated for fixed
+$t$, so the cited result also does not support a growing-multiplicity limit.
 
-Thus direct composition of the two cited statements yields an exponent at
-most $1/24$, rather than $1-o(1)$.  If the reported near-linear consequence
-uses the same bounded-error query relation and parameter convention, it is
-incompatible with \cref{cor:succinct}.  An additional ingredient or a
-different normalization may account for the discrepancy.
+Direct composition of the two cited statements therefore yields an exponent
+at most $1/24$, rather than $1-o(1)$.  An additional ingredient or a different
+normalization would be needed to obtain the reported near-linear consequence
+in the aligned query model.

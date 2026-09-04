@@ -1,30 +1,32 @@
-\section{Discussion}
+\section{Discussion and open questions}
 \label{sec:scope}
 
-The query improvement comes from combining two ideas.  First, the algorithm
-stores each candidate set as a conjunction of the adjacency constraints
+The query improvement rests on two complementary ideas.  First, the algorithm
+stores each candidate set as the conjunction of the adjacency constraints
 created by earlier pivots.  This representation supports quantum sampling
 without enumerating the surviving vertices.  Second, the scale-aware analysis
 allocates estimation error according to the cost of the recursion level.  The
 resulting schedule keeps the cumulative loss in candidate-set size bounded
-while concentrating most of the sampling effort where it is cheapest.
+while concentrating most of the sampling effort at the less expensive early
+levels.
 
-A natural next step is to determine the randomized classical query
-complexity in the range between \cref{prop:classical-lower} and
-\cref{thm:main}.  The implicit-set method may also extend to off-diagonal or
-hypergraph Ramsey search.  Quantum walks already give sublinear-query
-algorithms for fixed sub-hypergraph containment
+A natural next step is to determine the randomized classical query complexity
+between the lower bound in \cref{prop:classical-lower} and the quantum upper
+bound in \cref{thm:main}.  The implicit-set method may also extend to
+off-diagonal or hypergraph Ramsey search.  Quantum walks already give
+sublinear-query algorithms for fixed sub-hypergraph containment
 \cite{LeGallNishimuraTani2016}; a Ramsey algorithm would additionally need to
 exploit the totality and recursive structure of the problem.  For multiple
 edge colours, \cref{cor:multicolour} gives a size-biased algorithm, while a
-scale-aware analogue could yield a sharper dependence on the recursion depth.
+scale-aware analogue may yield a sharper dependence on the recursion depth.
 
-Appendix~\ref{app:experiments} reports finite experiments that illustrate the
-survival recurrence and the conditional uniformity of the sampler.  The main
-query bound follows from the analytic argument in
+Appendix~\ref{app:experiments} reports finite experiments illustrating the
+survival recurrence and conditional uniformity of the sampler.  The main
+query bound follows from the analytic proof in
 \cref{sec:model,sec:algorithm,sec:correctness,sec:complexity}.
 
-The constructive diagonal Ramsey recursion admits a quantum implementation
-over implicit candidate sets.  Capped uniform search and a scale-aware
-concentration schedule give $O(2^K K\log(K/\eta))$ edge queries, or
+The constructive diagonal Ramsey recursion therefore admits a quantum
+implementation over implicit candidate sets.  Capped uniform search and a
+scale-aware concentration schedule give
+$O(2^K K\log(K/\eta))$ edge queries, or
 $\widetilde O(\sqrt N)$ queries at the succinct Ramsey scale.
