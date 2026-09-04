@@ -99,7 +99,8 @@ of any candidate set.
 
 We complement the upper bound with a randomized classical lower bound.  It
 is the random-Painter estimate of Conlon, Fox, Grinshpun, and He
-\cite[Theorem~1]{ConlonFoxGrinshpunHe2019} for online Ramsey numbers,
+\cite[proof of Theorem~1]{ConlonFoxGrinshpunHe2019} for online Ramsey
+numbers,
 transported to the query model.  Because that estimate is a statement about
 uniformly random colourings, the bound holds on the uniform distribution
 $G(N,1/2)$ and not only in the worst case.  \Cref{app:classical-lower}
@@ -161,7 +162,7 @@ quantum speedup for Ramsey search on random graphs.
 
 \begin{corollary}[Separation on random graphs at the Ramsey scale]
 \label{cor:separation}
-Let $n\ge14$, $N=2^n$, $K=\lfloor n/2\rfloor+1$, $0<\eta<1/2$, and
+Let $n\ge26$, $N=2^n$, $K=\lfloor n/2\rfloor+1$, $0<\eta<1/2$, and
 $G\sim G(N,1/2)$.
 \begin{enumerate}
 \item A quantum algorithm making
@@ -181,10 +182,24 @@ The subgraph induced on the first $M=4^{K-1}\le N$ vertices is distributed
 as $G(M,1/2)$, so the first part follows from \cref{prop:random-graph},
 using $2^{K/2}\le2^{n/4+1/2}$ and $K=O(\log N)$.  The second part is the
 distributional statement of \cref{prop:classical-lower}, which applies
-because $K\ge8$.  For the final sentence, take $\eta=1/4$ and $K\ge14$, so
-that the quantum algorithm succeeds with probability greater than $2/3$
-while $5/8<2/3$.
+because $K\ge8$.  For the final sentence, note that $n\ge26$ gives
+$K\ge14$, so $\pi_K<e^{-100}$; with $\eta=1/4$ the quantum algorithm
+succeeds with probability greater than $2/3$, while $5/8<2/3$.
 \end{proof}
+
+\begin{remark}[Classical greedy search]\label{rem:classical-greedy}
+On an expanding graph in the sense of \cref{app:random-graph}, the same
+recursion runs classically by rejection sampling: at level $j$, draw a
+uniform $u\in[M]$ and test its adjacency to the $j$ current clique vertices
+with at most $j$ queries.  Each trial succeeds with probability at least
+$2^{-j-1}$, so $\lceil2^{j+1}\ln(K/\eta)\rceil$ trials find $v_{j+1}$ except
+with probability $\eta/K$.  Hence, for $G\sim G(M,1/2)$, the recursion
+outputs a verified $K$-clique with probability at least $1-\eta-\pi_K$
+using $O(K2^K\log(K/\eta))$ queries, which is $\widetilde O(N^{1/2})$ at
+the Ramsey scale.  This is the classical entry of \cref{tab:bounds}; quantum
+search lowers the cost of level $j$ from $2^{j}$ to $2^{j/2}$ predicate
+evaluations.
+\end{remark}
 
 The size-biased recursion also extends to every fixed number of edge colours.
 The statement and proof appear in \cref{app:multicolour}.

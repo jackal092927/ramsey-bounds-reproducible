@@ -4,9 +4,9 @@
 
 - Source revised on 2026-09-04 (early morning PDT); `main.pdf` rebuilt.
 - Candidate PDF SHA-256:
-  `86776bc492ee87e1f509edcb06109be6ecfc73c5449ff3f80397387090fb98a6`
-  (439,555 bytes, 25 pages; main text ends on page 15, references
-  pages 16--18, appendices pages 19--25). No LaTeX errors, undefined
+  `726a9c8f63434b33f837631a1d648fc022930c28ce9e139a990bcb7bc66dd65d`
+  (447,345 bytes, 26 pages; main text ends on page 16, references
+  pages 17--19, appendices pages 20--26). No LaTeX errors, undefined
   references, undefined citations, or overfull boxes; fonts embedded;
   identity scan clean; `QUANTUM_RAMSEY_AUDIT_PASS` reproduced.
 - Changes in this revision:
@@ -23,9 +23,10 @@
      G(N,1/2) at the Ramsey scale: quantum O~(N^{1/4}) versus randomized
      Omega(N^{1-1/sqrt2})). Proof in Appendix B.3.
   4. Section 6.3 adds the valid t=2 consequence of the JLRX reduction:
-     an Omega(N^{1/24}) quantum lower bound (Erdos 1947 + Zhandry 2015),
-     so the quantum complexity is bracketed between N^{1/24} and
-     O~(sqrt N). New bibliography entries Zhandry2015 and Erdos1947;
+     an Omega(N^{1/12}) quantum lower bound (Erdos 1947 + Zhandry 2015;
+     the printed JLRX parameter condition gives only 1/24, the tight
+     pigeonhole in their Lemma III.1 gives 1/12), so the quantum
+     complexity is bracketed between N^{1/12} and O~(sqrt N). New bibliography entries Zhandry2015 and Erdos1947;
      CFGH year corrected to 2019 with the chapter DOI.
   5. Introduction rewritten around the JLRX query question, with a
      bounds table (Table 1) and result paragraphs; Section 7 rewritten as
@@ -33,6 +34,18 @@
   6. AI Disclosure (Appendix C.3) rewritten as a short, general statement
      naming ChatGPT and Claude, in the author's own wording; it is the only
      AI statement in the paper.
+  7. External review of 2026-09-04 addressed: Corollary 5.4 now assumes
+     n >= 26 (so K >= 14); the Omega(N^{1/12}) quantum lower bound is a
+     formal Proposition 6.1 covering every N = 2^n (n >= 8) with the
+     O(log N) collision-decoding queries (the independent adversarial
+     pass found that homogeneous sets of order 2m, not 4m-2, already
+     force a collision, which doubles the exponent from 1/24); Corollary B.2 is stated for at
+     most T queries (no exact-T padding); Lemma B.1 sets tau(U) = infinity
+     when no critical time exists and notes the fresh-bit property;
+     Proposition 5.3's proof verifies pi_K < e^{-100} for K >= 14;
+     Remark 5.5 proves the classical greedy O~(N^{1/2}) table entry; the
+     CFGH pointer reads "proof of Theorem 1"; Table 1 cites Propositions
+     5.2 and 6.1 and Remark 5.5.
 - Human-owned actions before uploading:
   - [ ] Read and independently verify the new material: Lemma B.1,
         Corollary B.2, the restated Proposition 5.2, Proposition 5.3,
@@ -42,7 +55,7 @@
   - [ ] Replace the HotCRP abstract of submission #193 with the new
         abstract (plain-text version in `SUBMISSION_METADATA.md`).
   - [ ] Upload the new `main.pdf`, click `Save and resubmit`, verify the
-        server hash prefix `86776bc4`, and copy the uploaded file to
+        server hash prefix `726a9c8f`, and copy the uploaded file to
         `submitted/` with the upload timestamp.
   - Deadline: 2026-09-04 16:59:59 PDT.
 
@@ -174,8 +187,9 @@ The standalone paper's
 upper bound conflicts with the printed `N^(1-o(1))` quantum lower-bound
 sentence of Jain--Li--Robere--Xun at their formal default parameters.  The
 paper gives the direct calculation showing that the cited route transfers at
-most exponent `1/24`, calls this an apparent parameter mismatch, does not rely
-on the disputed consequence, and explicitly excludes their principal TFNP
+most exponent `1/24` under the printed parameter condition and `1/12` with the
+tight pigeonhole (proved as Proposition 6.1 in the September 4 revision), calls
+this an apparent parameter mismatch, does not rely on the disputed consequence, and explicitly excludes their principal TFNP
 separation theorems from the audit. The user reports that the clarification
 email has been sent. Author clarification is desirable, but is not a
 prerequisite for submission with this independently supported and explicitly

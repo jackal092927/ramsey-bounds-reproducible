@@ -41,11 +41,11 @@ randomized & worst case
  & $\Omega(N^{1-1/\sqrt2})$ \ [\cref{prop:classical-lower}]
  & $O(N)$ \ \cite{ErdosSzekeres1935}\\
 randomized & $G(N,1/2)$
- & $\Omega(N^{1-1/\sqrt2})$ \ \cite{ConlonFoxGrinshpunHe2019}
- & $\widetilde O(N^{1/2})$ \ (greedy)\\
+ & $\Omega(N^{1-1/\sqrt2})$ \ [\cref{prop:classical-lower}]
+ & $\widetilde O(N^{1/2})$ \ [\cref{rem:classical-greedy}]\\
 quantum & worst case
- & $\Omega(N^{1/24})$ \ [\cref{sec:jlrx}]
- & $\widetilde O(N^{1/2})$ \ [\cref{thm:main}]\\
+ & $\Omega(N^{1/12})$ \ [\cref{prop:quantum-lower}]
+ & $\widetilde O(N^{1/2})$ \ [\cref{cor:succinct}]\\
 quantum & $G(N,1/2)$
  & open
  & $\widetilde O(N^{1/4})$ \ [\cref{cor:separation}]\\
@@ -58,8 +58,9 @@ $1-1/\sqrt2\approx0.2929$.  The randomized lower bound is the
 random-Painter estimate of \cite{ConlonFoxGrinshpunHe2019} for online
 Ramsey numbers, previously cited only for deterministic algorithms; the
 quantum lower bound is what the collision reduction of
-\cite{JainLiRobereXun2024} yields at multiplicity two.  The greedy
-classical bound on $G(N,1/2)$ is folklore.}
+\cite{JainLiRobereXun2024} yields at multiplicity two
+(\cref{prop:quantum-lower}, stated for order $\lfloor n/2\rfloor$ and hence
+valid here).}
 \label{tab:bounds}
 \end{table}
 
@@ -143,9 +144,11 @@ also reports an $N^{1-o(1)}$ quantum lower bound at the default parameters,
 obtained by composing its collision reduction with the multicollision lower
 bound of \cite{LiuZhandry2019}.  \Cref{thm:main} shows that no such bound
 can hold at these parameters.  \Cref{sec:jlrx} aligns the two formulations
-and shows by direct substitution that the cited ingredients compose to an
-exponent of at most $1/24$, with equality at multiplicity two; the resulting
-$\Omega(N^{1/24})$ is, to our knowledge, the best known quantum lower bound.
+and shows that the cited ingredients compose to an exponent of at most
+$1/12$, and at most $1/24$ under the parameter condition as printed, with
+equality at multiplicity two; the resulting
+$\Omega(N^{1/12})$ bound (\cref{prop:quantum-lower}) is, to our knowledge,
+the best known quantum lower bound.
 The main theorems of \cite{JainLiRobereXun2024} do not depend on the
 remark.
 
@@ -183,7 +186,7 @@ the common neighbourhood of a small vertex set in $G(N,1/2)$ has
 predictable size.  For the lower bound, a martingale weight argument in the
 style of \cite{ConlonFoxGrinshpunHe2019} shows that an adaptive algorithm
 with $T$ queries exposes a monochromatic $K$-set with probability at most
-$2^{-\binom K2+c(c-1)}(2T)^{K-c}$ for every $c\le K/2$; optimizing $c$ gives
+$2\cdot2^{-\binom K2+c(c-1)}(2T)^{K-c}$ for every $c\le K/2$; optimizing $c$ gives
 the exponent $2-\sqrt2$.  For the speedup, a union bound shows that every
 $j$-set has common neighbourhood of density about $2^{-j}$, so greedy
 quantum search costs only $O(2^{j/2})$ predicate evaluations at depth $j$

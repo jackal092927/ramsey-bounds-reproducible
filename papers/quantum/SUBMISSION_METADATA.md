@@ -20,7 +20,7 @@ giving, to our knowledge, the first sublinear worst-case algorithm for the
 Ramsey relation, whose query complexity was raised as a question by Jain,
 Li, Robere, and Xun (FOCS 2024). The bound also shows that the N^(1-o(1))
 quantum lower bound reported there cannot hold at its stated parameters; we
-show that the cited ingredients compose to an Omega(N^(1/24)) lower bound
+show that the cited ingredients compose to an Omega(N^(1/12)) lower bound
 instead.
 
 The algorithm runs the constructive recursion over implicit candidate sets.

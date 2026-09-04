@@ -153,11 +153,15 @@ separation from the best randomized classical algorithm.
 Jain--Li--Robere--Xun state an incompatible $N^{1-o(1)}$ quantum lower-bound
 remark. Their formal Definition II.6 uses $N=2^n$ and their default target is
 $K=n/2$; a different introductory shorthand is not used in our comparison.
-Direct parameter substitution into the cited reduction and fixed-multiplicity
-multi-collision theorem gives at most exponent $1/24$. The manuscript now
-records this as an apparent mismatch in a side consequence, says explicitly
-that it does not affect their principal TFNP separation theorems, and does not
-use the disputed lower bound. Author clarification remains desirable.
+Direct parameter substitution into the printed condition of the cited
+reduction and the fixed-multiplicity multi-collision theorem gives at most
+exponent $1/24$; the tight pigeonhole inside their Lemma III.1 gives $1/12$,
+and the manuscript proves the resulting $\Omega(N^{1/12})$ quantum lower
+bound as Proposition 6.1 (revision of September 4). The manuscript records
+the $N^{1-o(1)}$ remark as an apparent mismatch in a side consequence, says
+explicitly that it does not affect their principal TFNP separation theorems,
+and does not use the disputed lower bound. Author clarification remains
+desirable.
 
 The standalone ITCS draft contains only this quantum result. It has 16 pages
 total; the main quantum upper-bound proof finishes on page 8, while the detailed
@@ -222,11 +226,11 @@ Appendix B (the earlier citation pointed at the online-Ramsey theorem rather
 than the estimate inside its proof), restates the randomized lower bound in
 distributional form, adds a quantum greedy search on $G(N,1/2)$ with
 $\widetilde O(N^{1/4})$ queries and hence a polynomial quantum-versus-randomized
-separation on random graphs, records the $\Omega(N^{1/24})$ quantum lower
+separation on random graphs, records the $\Omega(N^{1/12})$ quantum lower
 bound that the JLRX reduction yields at multiplicity two, reframes the
 introduction around the JLRX query question with a bounds table, and names
 Claude in the AI disclosure. The candidate PDF has SHA-256 prefix
-`86776bc4` and 25 pages, builds with no diagnostics, and passes the identity
+`726a9c8f` and 26 pages, builds with no diagnostics, and passes the identity
 and self-check scans. Before uploading, the author must verify the new
 material, approve the disclosure wording, and replace the HotCRP abstract;
 the open items are listed at the top of
