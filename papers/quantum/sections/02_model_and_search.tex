@@ -1,19 +1,19 @@
 \section{Oracle model and capped uniform search}\label{sec:model}
 
 Let $G\colon\binom{[N]}2\to\{0,1\}$ be a promised simple undirected graph,
-extended symmetrically to ordered pairs with $G(u,u)=0$.
-The coherent edge oracle acts as
+extended symmetrically to ordered pairs with $G(u,u)=0$.  Its coherent edge
+oracle acts as
 \[
  O_G\lvert u,v,b\rangle
  =\lvert u,v,b\oplus G(u,v)\rangle.
 \]
-Only calls to $O_G$ are counted in the query bound.  Non-oracle computation,
-including reversible operations on vertex labels, is not charged in this
-model.  Coherent access to $O_G$ is supplied as part of the input model.
+Query complexity counts calls to $O_G$.  Reversible operations on vertex
+labels are free, as usual in the query model, and coherent access to $O_G$ is
+part of the input specification.
 
-The promised formulation is the clean graph-theoretic core, but the usual
-locally verifiable TFNP relation also follows at the same asymptotic cost.
-Given an arbitrary Boolean circuit $C(u,v)$, define the canonical simple graph
+The same asymptotic bound applies to the standard locally verifiable TFNP
+relation with arbitrary Boolean-circuit encodings.  Given a circuit $C(u,v)$,
+define the canonical simple graph
 \[
  A(u,v)=
  \begin{cases}
@@ -21,13 +21,11 @@ Given an arbitrary Boolean circuit $C(u,v)$, define the canonical simple graph
  0,&u=v.
  \end{cases}
 \]
-One $A$-query uses $O(1)$ $C$-queries, including uncomputation.
-Run \cref{thm:main} on $A$ and let $W$ be
-the returned homogeneous set.  Query the $O(K^2)$ diagonal and both ordered
-entries induced by $W$.  If a self-loop or asymmetry is found, return it as
-the invalid-encoding certificate.  Otherwise $C$ agrees with $A$ on $W$, so
-$W$ is a valid clique or independent-set witness.  This gives the following
-model-alignment corollary.
+One query to $A$ uses $O(1)$ queries to $C$, including uncomputation.  Run
+\cref{thm:main} on $A$ and let $W$ be the returned homogeneous set.  Query the
+$O(K^2)$ diagonal and both ordered entries induced by $W$.  A self-loop or an
+asymmetric pair is a local invalidity certificate; otherwise $C$ agrees with
+$A$ on $W$, so $W$ is a valid clique or independent-set witness.
 
 \begin{corollary}[Locally verifiable arbitrary encoding]
 \label{cor:unpromised}
@@ -36,10 +34,10 @@ certificate or a locally verified homogeneous set has the same
 $O(2^K K\log(K/\eta))$ quantum-query upper bound.
 \end{corollary}
 
-We use the following standard consequence of the unknown-solution search of
-Boyer, Brassard, H{o}yer, and Tapp \cite{BBHT1998}.  A detailed formulation
-is included in \cref{app:capped-search} because bounded termination and
-conditional uniformity are both needed here.
+Our algorithms use the following consequence of unknown-solution quantum
+search \cite{BBHT1998}.  We include a detailed formulation in
+\cref{app:capped-search} because the analysis needs both bounded termination
+and exact conditional uniformity.
 
 \begin{lemma}[Capped uniform marked-item search]\label{lem:capped-search}
 Let $T\subseteq[M]$ have density at least $\lambda>0$, and suppose its
@@ -54,18 +52,20 @@ probability $\delta$, using a predetermined
 $O(m+\log(1/\delta))$ blocks whenever the density promise holds.
 \end{lemma}
 
-The batch statement is what avoids paying a separate $\log(1/\delta)$ factor
-for each of the many samples.  Every block starts from the uniform state,
-uses fresh internal randomness, measures, and verifies exact membership.
-Conditioned on its success indicator, the returned identity is uniform;
-identities from distinct successful blocks are independent.
+The batch guarantee avoids a separate $\log(1/\delta)$ overhead for each
+sample.  Every block starts from the uniform state, uses fresh internal
+randomness, measures a candidate, and verifies membership.  Conditional on
+success, the returned vertex is uniform on $T$; successful outputs from
+distinct blocks are independent.
 
-For comparison, start the exact classical recursion with
-$M=4^{K-1}=2^{r+1}$ vertices, where $r=2K-3$.  At level $i$, query all
-edges from a pivot to the other $s_i=M/2^i$ candidates.  A majority colour
-contains at least $s_i/2$ of the $s_i-1$ non-pivot vertices; retain exactly
-$s_i/2$ of them.  This explicit truncation ensures
-$\sum_{i<r}(s_i-1)<2M$ queries and leaves two vertices after $r$ rounds.
-Without truncation, retaining the entire majority class need not give a
-geometric query sum.  The quantum algorithm below retains whole classes
-but accesses them implicitly.
+For comparison, consider the explicit classical recursion on
+$M=4^{K-1}=2^{r+1}$ vertices, where $r=2K-3$.  At level $i$, query all edges
+from a pivot to the other $s_i=M/2^i$ candidates.  A majority colour contains
+at least $s_i/2$ of the $s_i-1$ non-pivot vertices; retain exactly $s_i/2$ of
+them.  Then
+\[
+ \sum_{i<r}(s_i-1)<2M,
+\]
+and two vertices remain after $r$ rounds.  The quantum algorithms retain the
+entire selected colour class but access it only through its membership
+predicate.

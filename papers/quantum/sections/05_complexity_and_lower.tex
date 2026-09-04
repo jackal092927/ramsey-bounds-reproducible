@@ -1,15 +1,15 @@
-\section{Query complexity and the classical landscape}\label{sec:complexity}
+\section{Query complexity and a classical lower bound}\label{sec:complexity}
 
 For the size-biased recursion, a capped sample from a nonempty subset of the
-$M$-element universe costs $O(\sqrt M)$ membership tests and
-$O(\log(2r))$ repetitions give failure probability $O(1/r)$.  The predicate at
-level $i$ costs $O(i+1)$ edge queries, hence one fixed-cap run costs
+$M$-element universe costs $O(\sqrt M)$ membership tests.  Repeating the block
+$O(\log(2r))$ times gives failure probability $O(1/r)$.  Since the membership
+predicate at level $i$ costs $O(i+1)$ edge queries, one fixed-cap run uses
 \[
  O\!\left(\sqrt M\log(2r)\sum_{i=0}^{r-1}(i+1)\right)
- =O(K^2 2^K\log K).
+ =O(K^2 2^K\log K)
 \]
-The repetition in the preceding section proves the following preliminary
-bound in worst-case, rather than merely expected, query complexity.
+edge queries.  The amplification in \cref{sec:correctness} gives the following
+worst-case bound.
 
 \begin{proposition}[Size-biased quantum recursion]
 \label{prop:size-biased-algorithm}
@@ -21,16 +21,15 @@ a verified homogeneous $K$-set with probability at least $1-\eta$ using
 edge queries.
 \end{proposition}
 
-We next analyze the sharper scale-aware recursion.
-
-By \cref{lem:survival}, a capped search block at level $i$ uses
+We now analyze the sharper scale-aware recursion.  By
+\cref{lem:survival}, a capped search block at level $i$ uses
 $O(2^{i/2})$ membership tests.  Computing and uncomputing membership and
-checking the sampled edge costs $O(i+1)$ edge queries.  Put
+querying the sampled edge costs $O(i+1)$ edge queries.  Define
 \[
  b_i=(i+1)2^{i/2}.
 \]
-The batch cap uses $O(m_i+\log(r/\eta))=O(m_i)$ blocks.  Hence its total
-sampling cost is
+The batch cap uses $O(m_i+\log(r/\eta))=O(m_i)$ blocks, so the total sampling
+cost is
 \begin{equation}\label{eq:query-sum}
  O\!\left(
  \log\frac r\eta
@@ -38,7 +37,7 @@ sampling cost is
  \right).
 \end{equation}
 
-There are at most six indices at each value of $d_i$, so
+At most six indices share any value of $d_i$, and hence
 \[
  Z=\sum_i2^{-d_i}<6\sum_{d\ge0}2^{-d}=12.
 \]
@@ -50,26 +49,26 @@ Using \cref{eq:error-schedule},
  \right).
 \]
 Write $h=r-1-i$.  Since
-$4^{\lceil h/6\rceil}\le4\cdot2^{h/3}$, the last display is bounded by
+$4^{\lceil h/6\rceil}\le4\cdot2^{h/3}$, the last display is at most
 \[
  O\!\left(
  2^{r/2}\sum_{h=0}^{r-1}(r-h)2^{-h/6}
  \right)
  =O(r2^{r/2}).
 \]
-The high-confidence pivot searches, final search, and $K^2$ verification
-fit the same bound.  Since $r=2K-3$, this proves \cref{thm:main}.
+The high-confidence pivot searches, the final search, and the $K^2$ output
+verification satisfy the same bound.  Substituting $r=2K-3$ into
+\cref{eq:query-sum} proves \cref{thm:main}.
 
-Every search begins in the uniform state on the fixed power-of-two universe
-$[M]$.  The $O(K)$ measured pivot labels and colours directly specify the
-reversible membership tests for the unknown sets $S_i$, so the nested
-candidate sets require no QRAM representation.  Coherent access to $O_G$ is
-the sole oracle resource used in the query analysis.
+Each search begins in the uniform state on the fixed power-of-two universe
+$[M]$.  The recorded pivot labels and colours define the reversible membership
+predicate for $S_i$, so the algorithm requires no materialized representation
+of any candidate set.
 
-The random-Painter analysis of Conlon--Fox--Grinshpun--He
-\cite{ConlonFoxGrinshpunHe2019} yields the following randomized classical
-lower bound in the same parameterization; details appear in
-\cref{app:classical-lower}.
+We complement the upper bound with a randomized classical lower bound.  The
+following proposition follows from the random-Painter analysis in
+\cite{ConlonFoxGrinshpunHe2019}; \cref{app:classical-lower} gives the
+derivation.
 
 \begin{proposition}[Randomized classical lower bound]
 \label{prop:classical-lower}
@@ -82,10 +81,8 @@ a homogeneous $K$-set with worst-case probability at least $2/3$ uses
 queries.
 \end{proposition}
 
-The exponent $1-1/\sqrt2\approx0.292893$ strengthens the earlier $M^{1/4}$
-black-box lower bound of Impagliazzo--Naor, as recorded in this
-parameterization by Komargodski--Naor--Yogev
-\cite{ImpagliazzoNaor1988,KomargodskiNaorYogev2019}.
+The exponent $1-1/\sqrt2\approx0.292893$ improves the earlier $M^{1/4}$
+black-box lower bound \cite{ImpagliazzoNaor1988,KomargodskiNaorYogev2019}.
 
-The size-biased mechanism also extends to any fixed number of edge colours.
-The statement and its recurrence proof are given in \cref{app:multicolour}.
+The size-biased recursion also extends to every fixed number of edge colours.
+The statement and recurrence appear in \cref{app:multicolour}.

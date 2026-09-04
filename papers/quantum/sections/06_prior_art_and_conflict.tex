@@ -1,73 +1,79 @@
-\section{Prior work and comparison with a reported lower bound}
+\section{Related work and a reported lower-bound discrepancy}
 \label{sec:prior-art}
 
-Previous quantum work under the phrase ``Ramsey algorithm'' has studied the
-existence of avoidance colourings through adiabatic Hamiltonians and
-small-instance experiments \cite{GaitanClark2012,BianEtAl2013}, exhaustive
-search over the $2^{\binom V2}$ labelled graphs defining a Ramsey threshold
-\cite{Wang2016}, quantum counting for hypergraph Ramsey numbers
-\cite{QuLiWangBaoCao2013}, and bound discovery through adiabatic optimization
-or QUBO reductions \cite{RanjbarMacreadyClarkGaitan2016,PionMniszewski2025}.
-Their square-root improvements concern spaces of graph colourings rather than
-the vertex set of one input graph.  Closer oracle-model results include
-clique and independent-set query algorithms \cite{Doern2005}, quantum
-subset-finding \cite{ChildsEisenberg2005}, learning-graph algorithms for fixed
-subgraph containment \cite{LeeMagniezSantha2012,Zhu2012}, and quantum
-backtracking \cite{Montanaro2018}.  Our approach instead uses the Ramsey
-totality promise together with an implicit-set survival invariant.  To our
-knowledge, no earlier work uses implicit-set quantum sampling to implement the
-constructive Erd\H{o}s--Szekeres proof; this priority statement concerns the
-exact oracle model and sources compared here.
+Several quantum approaches to Ramsey problems address a different input and
+output task from the one studied here.  Work based on adiabatic computation,
+quantum annealing, or quantum counting searches for colourings that establish
+or test Ramsey-number bounds
+\cite{GaitanClark2012,BianEtAl2013,Wang2016,QuLiWangBaoCao2013,
+RanjbarMacreadyClarkGaitan2016,PionMniszewski2025}.  In those formulations,
+the search space consists of labelled graph colourings.  Our input is instead
+one fixed graph given by an adjacency oracle, and the goal is to find a
+homogeneous set guaranteed to exist in that graph.
 
-Ramsey search has also been connected to weak-pigeonhole proof complexity and
-to structured-pigeonhole search for circuit-encoded homogeneous sets
-\cite{Krajicek2001,Krajicek2005}.  It lies in the polynomial long-choice class
-PLC, which captures iterated pigeonhole arguments
-\cite{PasarkarPapadimitriouYannakakis2023}.
+Generic quantum algorithms for clique, independent set, and fixed-subgraph
+containment operate in a closer oracle model
+\cite{Doern2005,ChildsEisenberg2005,LeeMagniezSantha2012,Zhu2012}.  Quantum
+backtracking supplies another general search primitive \cite{Montanaro2018}.
+The present algorithm instead exploits the nested majority structure of the
+constructive Ramsey proof by representing each candidate set through the
+adjacency constraints accumulated along the recursion and sampling directly
+from the resulting implicit set.  We are not aware of an earlier
+implementation of the constructive Erd\H{o}s--Szekeres recursion by this
+mechanism in the adjacency-query model.
 
-\paragraph{Comparison at the formal default parameters.}
-The closest exact-model treatment \cite{JainLiRobereXun2024} uses
-$N=2^n$ vertices in Definition II.6 and sets the default target to $K=n/2$
-after Definition II.7.  We use these formal definitions throughout this
-comparison.  The unnumbered ``Query complexity of RAMSEY'' paragraph in
-Section III (p.~415) reports an $N^{1-o(1)}$ quantum lower bound via
-Lemma III.1 and the Liu--Zhandry multicollision theorem
-\cite{LiuZhandry2019}.  The graph-hash product in Lemma III.1 can be written
-off the diagonal as
-$A_h(u,v)=\mathbf1[h(u)=h(v)]\lor A_0(h(u),h(v))$, with
-$A_h(u,u)=0$.  It is a valid symmetric graph and has an $O(1)$-query coherent
-implementation from the value oracle for $h$, using computation and
-uncomputation of its two values.  Thus the valid-graph promise admits this
-reduction.  Corollary~\ref{cor:unpromised} also aligns our upper bound with the
-locally verifiable arbitrary-circuit relation.  Moreover,
-\cref{cor:succinct} returns $\lfloor n/2\rfloor+1$ vertices, so discarding one
-if necessary solves the default target up to the suppressed rounding
-convention.  The oracle model and target convention therefore yield the same
-parameter regime for the two statements.
+Ramsey search also appears in proof complexity and TFNP.  It is connected to
+weak and structured pigeonhole principles
+\cite{Krajicek2001,Krajicek2005}, and belongs to the polynomial long-choice
+class PLC \cite{PasarkarPapadimitriouYannakakis2023}.  The closest
+matching query relation is studied in \cite{JainLiRobereXun2024}.
+
+\paragraph{Alignment of the formal parameters.}
+Definition~II.6 of \cite{JainLiRobereXun2024} uses $N=2^n$ vertices, and the
+convention following Definition~II.7 sets the default target to $K=n/2$.
+The unnumbered ``Query complexity of RAMSEY'' paragraph in Section~III
+(p.~415) reports an $N^{1-o(1)}$ quantum lower bound, based on its
+Lemma~III.1 and the multicollision lower bound of \cite{LiuZhandry2019}.
+
+The graph produced by Lemma~III.1 can be written, away from the diagonal, as
+\[
+ A_h(u,v)=\mathbf 1[h(u)=h(v)]\lor A_0(h(u),h(v)),
+ \qquad A_h(u,u)=0.
+\]
+This is a symmetric simple graph, and a coherent query to it uses $O(1)$
+queries to the value oracle for $h$, including uncomputation of the two hash
+values.  Thus the reduction lies within our valid-graph promise.
+\Cref{cor:unpromised} gives the same upper bound for the locally verifiable
+arbitrary-circuit relation.  Moreover, \cref{cor:succinct} returns
+$\lfloor n/2\rfloor+1$ vertices, from which one may discard a vertex to meet
+the default target.  These observations align the graph promise, encoding,
+and output size in the two formulations.
 
 \paragraph{Direct parameter substitution.}
-Write $H$ for the multicollision range size and $G$ for the number of
-vertices in the Ramsey instance.  For fixed multiplicity $t$, the sufficient
-parameter condition in \cite[Theorem I.3]{JainLiRobereXun2024} is
-$G\ge H^{4t}/4^t$.  At the boundary
-$G=\Theta_t(H^{4t})$, Liu--Zhandry's exponent in $H$ is
-$\alpha_t=(2^{t-1}-1)/(2^t-1)$.  The inherited exponent is therefore
+Let $H$ denote the multicollision range size and $G$ the number of vertices in
+the resulting Ramsey instance.  For fixed multiplicity $t$, the sufficient
+condition in Theorem~I.3 of \cite{JainLiRobereXun2024} is
+$G\ge H^{4t}/4^t$.  At the boundary $G=\Theta_t(H^{4t})$, the exponent in
+\cite{LiuZhandry2019} is
+\[
+ \alpha_t=\frac{2^{t-1}-1}{2^t-1}.
+\]
+The exponent transferred to $G$ is therefore
 \[
  \frac{\alpha_t}{4t}
- =\frac{2^{t-1}-1}{4t(2^t-1)}\le\frac1{24},
- \qquad t\ge2,
+ =\frac{2^{t-1}-1}{4t(2^t-1)}
+ \le \frac1{24},
+ \qquad t\ge2.
 \]
-with equality at $t=2$.  Indeed, $t=2$ gives $1/24$, while for $t\ge3$
-the strict inequality $\alpha_t<1/2$ gives
-$\alpha_t/(4t)<1/(8t)\le1/24$.  Increasing $G$ relative to $H$ cannot
-improve this transferred exponent.  This substitution remains within the fixed-multiplicity regime of the
-cited Liu--Zhandry result.  This
-calculation isolates the exponent obtained from the two cited statements
-under the formal default parameters.
+Equality holds at $t=2$.  For $t\ge3$, the inequality
+$\alpha_t<1/2$ gives
+$\alpha_t/(4t)<1/(8t)\le1/24$.  Increasing $G$ relative to $H$ can only
+reduce the transferred exponent.  The multicollision theorem is stated for
+fixed $t$, so this substitution also does not support a growing-multiplicity
+limit.
 
-The two stated ingredients therefore transfer an exponent no larger than
-$1/24$.  Obtaining the reported $N^{1-o(1)}$ exponent in the same
-bounded-error quantum-query relation requires an additional ingredient or a
-different normalization.  This comparison is confined to the unnumbered
-query-complexity discussion in Section III of
-\cite{JainLiRobereXun2024}.
+Thus direct composition of the two cited statements yields an exponent at
+most $1/24$, rather than $1-o(1)$.  If the reported near-linear consequence
+uses the same bounded-error query relation and parameter convention, it is
+incompatible with \cref{cor:succinct}.  An additional ingredient or a
+different normalization may account for the discrepancy.

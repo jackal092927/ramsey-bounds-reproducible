@@ -40,20 +40,19 @@ $N\ge4^{K-1}$, finds and verifies a homogeneous $K$-set using
   O\!\left(2^K K\log\frac K\eta\right)
 \]
 edge queries with failure probability at most $\eta$.  At the Ramsey scale
-$N=2^n$, it finds a homogeneous set of order
+$N=2^n$, the algorithm finds a homogeneous set of order
 $\lfloor n/2\rfloor+1$ using
-$O(\sqrt N\log N\log(\log N/\eta))$ queries.  The standard explicit
-Erd\H{o}s--Szekeres recursion uses $O(N)$ queries.
+$O(\sqrt N\log N\log(\log N/\eta))$ queries, improving on the $O(N)$
+query complexity of the standard explicit Erd\H{o}s--Szekeres recursion.
 
-The algorithm implements the constructive Ramsey recursion without
-materializing its nested candidate sets.  It represents each candidate set by
-a short conjunction of adjacency constraints, samples from this implicit set
-using capped quantum search with an unknown number of marked items, and uses a
-scale-aware concentration schedule that assigns more accuracy to inexpensive
-early levels than to expensive late levels.  We also give an estimation-free
+The algorithm runs the constructive Ramsey recursion over implicit candidate
+sets.  Each set is represented by a short conjunction of adjacency
+constraints and sampled using capped unknown-solution quantum search.  A
+scale-aware concentration schedule then balances estimation accuracy against
+the increasing cost of sampling deeper sets.  We also give an estimation-free
 size-biased recursion, extend it to every fixed number of edge colours, and
-prove a randomized classical lower bound of
-$\Omega(N^{1-1/\sqrt2})$ in the same parameterization.
+prove an $\Omega(M^{1-1/\sqrt2})$ randomized classical lower bound in the
+regime $M=4^{K-1}$.
 \end{abstract}
 
 \input{sections/01_introduction}
@@ -74,11 +73,14 @@ $\Omega(N^{1-1/\sqrt2})$ in the same parameterization.
 \bibliography{references}
 
 \subparagraph*{AI Disclosure.}
-We used ChatGPT and Codex to assist with brainstorming and constructive
-discussion of the proof strategy in Sections~\ref{sec:algorithm}--\ref{sec:complexity}
-and the numerical experiments in Appendix~\ref{app:experiments}, as well as
-with manuscript editing and review.  These tools materially influenced the
-presentation of those arguments and experiments.  The authors take full responsibility for the correctness, originality,
-and integrity of all content, including references.
+We used ChatGPT and Codex to assist with brainstorming candidate algorithms
+and proof strategies, reviewing numerical experiments, and editing the
+manuscript.  These tools materially influenced
+Sections~\ref{sec:introduction}--\ref{sec:scope} and Appendix~C; their role
+in the research workflow is described in
+Appendix~\ref{app:ai-workflow}.  The authors independently verified the
+correctness and originality of all content, including every theorem, proof,
+calculation, experimental result, and reference, and take full responsibility
+for the paper.
 
 \end{document}

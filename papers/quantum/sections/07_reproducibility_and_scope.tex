@@ -1,32 +1,30 @@
-\section{Numerical illustrations, future directions, and conclusion}
+\section{Discussion}
 \label{sec:scope}
 
-Sections~\ref{sec:model}--\ref{sec:complexity} give a self-contained analytic
-proof of the quantum query bound.
+The query improvement comes from combining two ideas.  First, the algorithm
+stores each candidate set as a conjunction of the adjacency constraints
+created by earlier pivots.  This representation supports quantum sampling
+without enumerating the surviving vertices.  Second, the scale-aware analysis
+allocates estimation error according to the cost of the recursion level.  The
+resulting schedule keeps the cumulative loss in candidate-set size bounded
+while concentrating most of the sampling effort where it is cheapest.
 
-\paragraph{Small proof-of-concept experiments.}
-Appendix~\ref{app:experiments} reports 5,000 ideal-sampler trials at
-$K=3,N=16$, a separate 16-state Grover experiment, and exact finite
-split-tree comparisons.  These experiments illustrate the recursion, the
-sampler symmetry, and the finite-depth survival bounds used in the analysis.
-
-Two algorithmic directions arise from the present bounds.  First, determine
-the randomized classical query complexity between the lower bound in
-\cref{prop:classical-lower} and the $\widetilde O(\sqrt M)$ quantum upper
-bound.  Second, adapt the implicit-set method to off-diagonal or hypergraph
-Ramsey total search, and sharpen the multicolour bound in
-\cref{cor:multicolour} through a scale-aware estimator.
-
-For the hypergraph direction, quantum walks already give sublinear-query
+A natural next step is to determine the randomized classical query
+complexity in the range between \cref{prop:classical-lower} and
+\cref{thm:main}.  The implicit-set method may also extend to off-diagonal or
+hypergraph Ramsey search.  Quantum walks already give sublinear-query
 algorithms for fixed sub-hypergraph containment
-\cite{LeGallNishimuraTani2016}.  Higher-order symmetry representations have
-also proved useful in hypergraph learning \cite{ZhangXinDey2024}, suggesting
-a possible structural route for exposing higher-order constraints through
-coherent queries.
+\cite{LeGallNishimuraTani2016}; a Ramsey algorithm would additionally need to
+exploit the totality and recursive structure of the problem.  For multiple
+edge colours, \cref{cor:multicolour} gives a size-biased algorithm, while a
+scale-aware analogue could yield a sharper dependence on the recursion depth.
 
-In summary, the constructive Ramsey recursion can be implemented without
-materializing its exponentially shrinking candidate sets.  Capped uniform
-search and a scale-aware error schedule give a
-$\widetilde O(\sqrt N)$ query algorithm at the succinct Ramsey scale,
-complemented by an estimation-free recursion, a fixed-colour extension, and a
-randomized classical lower bound in the same parameterization.
+Appendix~\ref{app:experiments} reports finite experiments that illustrate the
+survival recurrence and the conditional uniformity of the sampler.  The main
+query bound follows from the analytic argument in
+\cref{sec:model,sec:algorithm,sec:correctness,sec:complexity}.
+
+The constructive diagonal Ramsey recursion admits a quantum implementation
+over implicit candidate sets.  Capped uniform search and a scale-aware
+concentration schedule give $O(2^K K\log(K/\eta))$ edge queries, or
+$\widetilde O(\sqrt N)$ queries at the succinct Ramsey scale.
