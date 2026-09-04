@@ -1,0 +1,22 @@
+== state_0m1: deg=1, #d-simplices=40, #(d+1)=24, filling depth p=3
+  lam= 0.50000  bound=1.190e-02  optimal=1.190e-02  min eig(up - bound*P)=-9.88e-16  bound/lam^(2p)=0.762  opt/lam^(2p)=0.762
+  lam= 0.25000  bound=2.289e-04  optimal=2.289e-04  min eig(up - bound*P)=-1.21e-15  bound/lam^(2p)=0.938  opt/lam^(2p)=0.938
+  lam= 0.12500  bound=3.755e-06  optimal=3.755e-06  min eig(up - bound*P)=-7.37e-16  bound/lam^(2p)=0.984  opt/lam^(2p)=0.984
+  lam= 0.06250  bound=5.937e-08  optimal=5.937e-08  min eig(up - bound*P)=-1.37e-15  bound/lam^(2p)=0.996  opt/lam^(2p)=0.996
+== state_00m11: deg=3, #d-simplices=712, #(d+1)=272, filling depth p=5
+  lam= 0.50000  bound=4.202e-04  optimal=4.202e-04  min eig(up - bound*P)=-3.30e-15  bound/lam^(2p)=0.430  opt/lam^(2p)=0.430
+  lam= 0.25000  bound=5.109e-07  optimal=5.109e-07  min eig(up - bound*P)=-3.04e-15  bound/lam^(2p)=0.536  opt/lam^(2p)=0.536
+  lam= 0.12500  bound=5.239e-10  optimal=5.239e-10  min eig(up - bound*P)=-3.04e-15  bound/lam^(2p)=0.563  opt/lam^(2p)=0.563
+  lam= 0.06250  bound=5.177e-13  optimal=1.251e+03  min eig(up - bound*P)=-3.28e-15  bound/lam^(2p)=0.569  opt/lam^(2p)=1375510177386384.250
+== rep: deg=3, #d-simplices=1082, #(d+1)=477, filling depth p=5
+  lam= 0.50000  bound=4.021e-04  optimal=4.090e-04  min eig(up - bound*P)=-3.60e-15  bound/lam^(2p)=0.412  opt/lam^(2p)=0.419
+  lam= 0.25000  bound=4.878e-07  optimal=4.895e-07  min eig(up - bound*P)=-3.38e-15  bound/lam^(2p)=0.511  opt/lam^(2p)=0.513
+  lam= 0.12500  bound=5.001e-10  optimal=5.005e-10  min eig(up - bound*P)=-4.53e-15  bound/lam^(2p)=0.537  opt/lam^(2p)=0.537
+  lam= 0.06250  bound=4.942e-13  optimal=1.072e+03  min eig(up - bound*P)=-4.05e-15  bound/lam^(2p)=0.543  opt/lam^(2p)=1178967340397620.750
+
+dim V = 2
+lam= 0.50000 dim H_out=1 gap=9.761e-03 singular values of P_Hout|V=[0.929587] ||(I-P_V)h||=3.686e-01 ratio dist/lam=0.737
+lam= 0.25000 dim H_out=1 gap=2.178e-04 singular values of P_Hout|V=[0.985385] ||(I-P_V)h||=1.703e-01 ratio dist/lam=0.681
+lam= 0.12500 dim H_out=1 gap=3.710e-06 singular values of P_Hout|V=[0.996637] ||(I-P_V)h||=8.194e-02 ratio dist/lam=0.656
+lam= 0.06250 dim H_out=1 gap=5.920e-08 singular values of P_Hout|V=[0.999179] ||(I-P_V)h||=4.050e-02 ratio dist/lam=0.648
+lam= 0.03125 dim H_out=1 gap=9.297e-10 singular values of P_Hout|V=[0.999796] ||(I-P_V)h||=2.019e-02 ratio dist/lam=0.646
