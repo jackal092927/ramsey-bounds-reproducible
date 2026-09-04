@@ -85,10 +85,7 @@ $m_i=\lceil\log(600)/(2\varepsilon_i^2)\rceil$, corresponding to a total
 estimation-failure budget of $0.01$.  Pivots were sampled uniformly,
 majority-estimation samples were independent with replacement, and ties
 selected colour~$1$.  We replaced quantum search by ideal uniform sampling to
-isolate the combinatorial recursion.  The scripts for all experiments in
-this subsection were drafted with the assistance of the generative-AI tools
-named in \cref{app:ai-disclosure} and were independently checked by the
-authors.
+isolate the combinatorial recursion.
 
 The deterministic inputs were the complete graph, the empty graph, and the
 balanced complete bipartite graph $K_{8,8}$.  For the random inputs, one
@@ -134,13 +131,9 @@ approximately $0.7155732457$, above $88/127$.
 \subsection{AI Disclosure}
 \label{app:ai-disclosure}
 
-ChatGPT, Codex, and Claude Code were used to brainstorm candidate
-recurrences and proof strategies, critique proof drafts, check primary
-sources, assist with the numerical scripts, and edit the manuscript.  These
-tools materially influenced the presentation of the algorithms, proofs, and
-numerical illustrations throughout the paper, including the self-contained
-weight bound in \cref{app:weight-bound} and the random-graph speedup in
-\cref{sec:random-graphs}.  The authors independently reconstructed and
-checked every argument, implementation, numerical value, and reference, and
-take full responsibility for the correctness, originality, and integrity of
-the paper.
+We used ChatGPT and Claude as auxiliary tools for literature search,
+brainstorming, proof checking, and building experiment scripts.  The authors
+determined the research direction and presentations, evaluated and revised
+all AI-assisted material, and take full responsibility for the correctness,
+originality, and final content of the paper, including every proof and
+reference.

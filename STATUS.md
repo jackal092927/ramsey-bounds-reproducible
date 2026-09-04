@@ -225,8 +225,8 @@ $\widetilde O(N^{1/4})$ queries and hence a polynomial quantum-versus-randomized
 separation on random graphs, records the $\Omega(N^{1/24})$ quantum lower
 bound that the JLRX reduction yields at multiplicity two, reframes the
 introduction around the JLRX query question with a bounds table, and names
-Claude Code in the AI disclosure. The candidate PDF has SHA-256 prefix
-`9d65dc81` and 25 pages, builds with no diagnostics, and passes the identity
+Claude in the AI disclosure. The candidate PDF has SHA-256 prefix
+`86776bc4` and 25 pages, builds with no diagnostics, and passes the identity
 and self-check scans. Before uploading, the author must verify the new
 material, approve the disclosure wording, and replace the HotCRP abstract;
 the open items are listed at the top of

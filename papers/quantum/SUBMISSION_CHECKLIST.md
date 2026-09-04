@@ -4,8 +4,8 @@
 
 - Source revised on 2026-09-04 (early morning PDT); `main.pdf` rebuilt.
 - Candidate PDF SHA-256:
-  `9d65dc816d1f0e065a2b6ab8bfcf2d728faaec28dbfd4431fdfcdc194df715be`
-  (440,439 bytes, 25 pages; main text ends on page 15, references
+  `86776bc492ee87e1f509edcb06109be6ecfc73c5449ff3f80397387090fb98a6`
+  (439,555 bytes, 25 pages; main text ends on page 15, references
   pages 16--18, appendices pages 19--25). No LaTeX errors, undefined
   references, undefined citations, or overfull boxes; fonts embedded;
   identity scan clean; `QUANTUM_RAMSEY_AUDIT_PASS` reproduced.
@@ -30,9 +30,9 @@
   5. Introduction rewritten around the JLRX query question, with a
      bounds table (Table 1) and result paragraphs; Section 7 rewritten as
      explicit open questions and a scope statement; abstract updated.
-  6. AI Disclosure (Appendix C.3) now names Claude Code in addition to
-     ChatGPT and Codex and points to the affected new material; a body
-     sentence in Appendix C.2 discloses AI assistance with the scripts.
+  6. AI Disclosure (Appendix C.3) rewritten as a short, general statement
+     naming ChatGPT and Claude, in the author's own wording; it is the only
+     AI statement in the paper.
 - Human-owned actions before uploading:
   - [ ] Read and independently verify the new material: Lemma B.1,
         Corollary B.2, the restated Proposition 5.2, Proposition 5.3,
@@ -42,7 +42,7 @@
   - [ ] Replace the HotCRP abstract of submission #193 with the new
         abstract (plain-text version in `SUBMISSION_METADATA.md`).
   - [ ] Upload the new `main.pdf`, click `Save and resubmit`, verify the
-        server hash prefix `9d65dc81`, and copy the uploaded file to
+        server hash prefix `86776bc4`, and copy the uploaded file to
         `submitted/` with the upload timestamp.
   - Deadline: 2026-09-04 16:59:59 PDT.
 
