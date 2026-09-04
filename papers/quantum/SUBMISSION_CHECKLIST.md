@@ -1,6 +1,33 @@
 # ITCS 2027 submission checklist
 
-## Revision candidate of 2026-09-04 (NOT YET UPLOADED)
+## Restructured candidate of 2026-09-04 afternoon (NOT YET UPLOADED)
+
+- Reorganized for the ITCS guidance (see `papers/ITCS_PAPER_ORGANIZATION_GUIDE.md`):
+  main text is 10 pages (front matter pages 1--3, technical Sections 2--4
+  pages 4--8, related work and discussion pages 9--10), references pages
+  11--12, appendices pages 13--23. All full proofs are in the appendices:
+  A (sampler lemma, encoding corollary), B (Section 3 upper bounds),
+  C (Section 4 lower bounds and random graphs), D (multicolour, experiments,
+  AI disclosure). The main text keeps statements with proof sketches.
+- Result numbering is now: Theorem 1.1, Corollary 1.2, Corollary 2.1,
+  Lemma 2.2, Lemma 3.1 (size-biased survival), Proposition 3.2, Lemma 3.3
+  (concentration), Lemma 3.4 (survival), Lemma 3.5 (output),
+  Proposition 4.1 (randomized lower bound), Proposition 4.2 (quantum greedy),
+  Corollary 4.3 (separation), Remark 4.4 (classical greedy),
+  Proposition 4.5 (quantum lower bound N^(1/12)), Lemma C.1, Corollary C.2,
+  Corollary D.1. Earlier notes below use the previous numbering.
+- The review-copy adapter now uses the standard LaTeX 11pt leading
+  (11/13.6) instead of 11/14.3; the font size is unchanged at 11pt.
+- No results or proofs were changed in this pass; text was moved and
+  condensed. Section files: sections/01--06, appendices/A--D.
+- Candidate PDF SHA-256: `281f3814cafdeb4ba750d3341be36119d3d4b42826c6a42c8dd5b3b569b13544` (446,027 bytes, 23 pages).
+  No LaTeX diagnostics, no undefined references or citations, fonts
+  embedded, identity scan clean.
+- Human-owned actions: read the main text once for flow, verify the
+  appendix proofs match the earlier version (they were moved verbatim),
+  then follow the upload steps in the next entry.
+
+## Revision candidate of 2026-09-04 morning (superseded by the entry above)
 
 - Source revised on 2026-09-04 (early morning PDT); `main.pdf` rebuilt.
 - Candidate PDF SHA-256:

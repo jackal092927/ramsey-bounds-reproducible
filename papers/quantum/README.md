@@ -34,7 +34,7 @@ records the claims-evidence matrix, exclusions, and submission gates.
 
 ## Experimental presentation in the submission
 
-Appendix C.2 reports the experimental methods, settings, outcomes, and scope
+Appendix D.2 reports the experimental methods, settings, outcomes, and scope
 without source-file paths, command lines, or a repository dependency. It does
 not ask reviewers to run code, and the mathematical proofs are self-contained.
 The commands above remain here for independent reproduction. No anonymous

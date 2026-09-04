@@ -3,16 +3,11 @@
 Let $G\colon\binom{[N]}2\to\{0,1\}$ be a promised simple undirected graph,
 extended symmetrically to ordered pairs with $G(u,u)=0$.  Its coherent edge
 oracle acts as
-\[
- O_G\lvert u,v,b\rangle
- =\lvert u,v,b\oplus G(u,v)\rangle.
-\]
-Query complexity counts calls to $O_G$.  Reversible operations on vertex
-labels are free, as usual in the query model, and coherent access to $O_G$ is
-part of the input specification.
-
-The same asymptotic bound applies to the standard locally verifiable TFNP
-relation with arbitrary Boolean-circuit encodings.
+$O_G\lvert u,v,b\rangle=\lvert u,v,b\oplus G(u,v)\rangle$.
+Query complexity counts calls to $O_G$; reversible operations on vertex
+labels are free, as usual in the query model.  The same asymptotic bound
+applies to the standard locally verifiable TFNP relation with arbitrary
+Boolean-circuit encodings.
 
 \begin{corollary}[Locally verifiable arbitrary encoding]
 \label{cor:unpromised}
@@ -21,28 +16,12 @@ certificate or a locally verified homogeneous set has the same
 $O(2^K K\log(K/\eta))$ quantum-query upper bound as \cref{thm:main}.
 \end{corollary}
 
-\begin{proof}
-Given a circuit $C(u,v)$, define the canonical simple graph
-\[
- A(u,v)=
- \begin{cases}
- C(\min\{u,v\},\max\{u,v\}),&u\ne v,\\
- 0,&u=v.
- \end{cases}
-\]
-One query to $A$ uses $O(1)$ queries to $C$, including uncomputation.  Run
-\cref{thm:main} on $A$ and let $W$ be the returned homogeneous set.  Query the
-diagonal and both ordered entries induced by $W$, using $O(K^2)$ additional
-queries.  A self-loop or an asymmetric pair is a local invalidity certificate.
-Otherwise $C$ agrees with $A$ on $W$, so $W$ is a valid clique or
-independent-set witness.  The verification cost is absorbed by the bound in
-\cref{thm:main}.
-\end{proof}
-
-Our algorithms use the following consequence of unknown-solution quantum
-search \cite{BBHT1998}.  We include its proof in
-\cref{app:capped-search} because the analysis needs both bounded termination
-and exact conditional uniformity.
+The proof (\cref{app:capped-search}) canonicalizes the circuit into a
+simple graph, runs \cref{thm:main}, and checks the $O(K^2)$ entries induced
+by the output for a self-loop or an asymmetric pair.  Our algorithms use
+the following consequence of unknown-solution quantum search
+\cite{BBHT1998}, proved in \cref{app:capped-search}; the analysis needs
+both bounded termination and exact conditional uniformity.
 
 \begin{lemma}[Capped uniform marked-item search]\label{lem:capped-search}
 Let $T\subseteq[M]$ have density at least $\lambda>0$, and suppose its
@@ -51,26 +30,13 @@ uses at most $O(q/\sqrt\lambda)$ edge queries, succeeds with probability at
 least an absolute constant $p_0>0$, and, conditional on verified success,
 returns an exactly uniform element of $T$.  The same predetermined cap makes
 the block terminate if the density promise is false or $T$ is empty.
-
 Moreover, $m$ independent uniform samples can be collected, except with
 probability $\delta$, using a predetermined
 $O(m+\log(1/\delta))$ blocks whenever the density promise holds.
 \end{lemma}
 
-The batch guarantee avoids a separate $\log(1/\delta)$ overhead for each
-sample.  Every block starts from the uniform state, uses fresh internal
-randomness, measures a candidate, and verifies membership.  Conditional on
-success, the returned vertex is uniform on $T$; successful outputs from
-distinct blocks are independent.
-
-For comparison, consider the explicit classical recursion on
-$M=4^{K-1}=2^{r+1}$ vertices, where $r=2K-3$.  At level $i$, query all edges
-from a pivot to the other $s_i=M/2^i$ candidates.  A majority colour contains
-at least $s_i/2$ of the $s_i-1$ non-pivot vertices; retain exactly $s_i/2$ of
-them.  Then
-\[
- \sum_{i<r}(s_i-1)<2M,
-\]
-and two vertices remain after $r$ rounds.  The quantum algorithms retain the
-entire selected colour class but access it only through its membership
-predicate.
+For comparison, the explicit classical recursion on $M=4^{K-1}=2^{r+1}$
+vertices, $r=2K-3$, queries at level $i$ all edges from a pivot to the other
+$s_i=M/2^i$ candidates and retains exactly $s_i/2$ vertices of a majority
+colour, for $\sum_{i<r}(s_i-1)<2M$ queries in total.  The quantum algorithms
+retain the entire selected colour class but access it only implicitly.
