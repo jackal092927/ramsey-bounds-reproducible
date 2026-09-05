@@ -1,0 +1,171 @@
+\section{Proofs for \texorpdfstring{\cref{sec:algorithm}}{Section 3}}
+\label{app:upper-proofs}
+
+\subsection{The size-biased recursion}
+
+\begin{proof}[Proof of \cref{lem:size-biased-survival}]
+The case $d=0$ is immediate.  Suppose $d\ge1$ and $s\ge2$, and let the two
+colour classes among the $s-1$ non-pivot vertices have sizes $a$ and $b$.
+A uniform sample selects these classes with probabilities $a/(s-1)$ and
+$b/(s-1)$.  The induction hypothesis therefore gives
+\[
+ P_d(s)\ge
+ \frac{aP_{d-1}(a)+bP_{d-1}(b)}{s-1}
+ \ge
+ \frac{(a-2^{d-1}+1)_+ +(b-2^{d-1}+1)_+}{s-1}.
+\]
+Because $(x)_++(y)_+\ge(x+y)_+$ and $a+b=s-1$, the numerator is at least
+$(s-2^d+1)_+$.  Replacing the denominator $s-1$ by $s$ weakens the bound and
+proves the claim; the definitions cover $s\le1$.  Finally, $M=2^{r+1}$, so
+the bound at $(d,s)=(r,M)$ is
+$(M-2^r+1)/M=1/2+1/M$.
+\end{proof}
+
+Exact conditional uniformity of each successful capped search couples an
+implemented run to the ideal recursion.  Assign each of the $r$ searches
+failure probability at most $1/(100r)$.  A union bound decreases the
+completion probability by at most $1/100$, so a single fixed-cap run succeeds
+with probability at least $0.49$.  Independent repetition, followed by exact
+verification, amplifies this probability to $1-\eta$ using
+$O(\log(1/\eta))$ runs.  On every completed run, nesting gives
+$G(v_i,v_j)=G(v_i,w)=c_i$ for $j>i$; the pigeonhole argument in
+\cref{lem:output} then gives a homogeneous output.
+
+\begin{proof}[Proof of \cref{prop:size-biased-algorithm}]
+A capped sample from a nonempty subset of the $M$-element universe costs
+$O(\sqrt M)$ membership tests.  Repeating the block $O(\log(2r))$ times
+reduces its failure probability to $O(1/r)$.  Since the membership predicate
+at level $i$ costs $O(i+1)$ edge queries, one fixed-cap run uses
+\[
+ O\!\left(\sqrt M\log(2r)\sum_{i=0}^{r-1}(i+1)\right)
+ =O(K^2 2^K\log K)
+\]
+edge queries.  The survival analysis above gives a constant success
+probability for each run, including capped-search failures and final
+verification.  Repeating independent runs $O(\log(1/\eta))$ times proves the
+stated worst-case bound.
+\end{proof}
+
+\subsection{The scale-aware recursion}
+
+\begin{proof}[Proof of \cref{lem:concentration}]
+Condition on the complete classical history $\mathcal H_i$ before the samples
+at level $i$.  The graph, $S_i$, and $v_i$ are then fixed.  Let
+$\mathcal B_i$ be the event that the verified batch succeeds.  Conditional on
+$\mathcal B_i$, \cref{lem:capped-search} gives independent uniform samples
+from the fixed set.  Hoeffding's inequality \cite{Hoeffding1963} and
+\cref{eq:sample-count} imply
+\[
+ \Pr\!\left(
+ |\widehat p_i-p_i|>\varepsilon_i\mid\mathcal H_i,\mathcal B_i
+ \right)
+ \le2e^{-2m_i\varepsilon_i^2}
+ \le\frac{\eta}{2r}.
+\]
+Multiplying by $\Pr(\mathcal B_i\mid\mathcal H_i)\le1$ gives the same upper
+bound for a completed but inaccurate batch conditional on $\mathcal H_i$.
+Apply this bound to the first inaccurate completed level after an accurate
+prefix.  The tower property removes the conditioning, and a union bound over
+the $r$ possible levels completes the proof.  The argument does not require
+independence across levels.
+\end{proof}
+
+There are $r$ pivot searches, $r$ sampling batches, and one final search.
+Give each operation failure probability at most $\eta/(4r+2)$ using the
+capped amplification in \cref{lem:capped-search}.  Applying these conditional
+bounds after good prefixes, as above, shows that their union has probability
+at most $\eta/2$.  Together with \cref{lem:concentration}, all searches and
+estimates used below are good with probability at least $1-\eta$.
+
+\begin{proof}[Proof of \cref{lem:survival}]
+An accurate empirical majority retains at least the fraction
+$a_i=1/2-\varepsilon_i$ of the non-pivot vertices.  Hence
+\begin{equation}\label{eq:variable-recurrence}
+ s_{i+1}\ge a_i(s_i-1).
+\end{equation}
+Since $\sum_i\varepsilon_i=1/16$ and
+$\prod_j(1-x_j)\ge1-\sum_jx_j$ for $x_j\in[0,1]$,
+\[
+ A_i
+ =2^{-i}\prod_{j<i}(1-2\varepsilon_j)
+ \ge2^{-i}\left(1-2\sum_{j<i}\varepsilon_j\right)
+ \ge\frac78\,2^{-i}.
+\]
+
+We prove $s_i>MA_i-1$ by induction.  The claim holds at $i=0$.  If it holds
+at level $i$, then \cref{eq:variable-recurrence} and $a_i<1/2$ give
+\[
+ s_{i+1}>a_i(MA_i-2)=MA_{i+1}-2a_i>MA_{i+1}-1.
+\]
+Because $M2^{-r}=2$, we obtain
+$s_r>(7/8)2-1=3/4$, and therefore the integer $s_r$ is positive.  For $i<r$,
+we have $M2^{-i}\ge4$ and
+\[
+ s_i-1>MA_i-2
+ \ge\frac78M2^{-i}-2
+ \ge\frac38M2^{-i}.
+\]
+Finally, $s_r\ge1$ and $1/M=2^{-(r+1)}$, which proves the last assertion.
+\end{proof}
+
+\begin{proof}[Proof of \cref{thm:main}]
+Set $M=4^{K-1}$ and run the algorithm of \cref{sec:algorithm} on any fixed
+set of $M$ input vertices.  The failure allocation above, together with
+\cref{lem:concentration}, implies that all required searches succeed and all
+completed estimates are accurate with probability at least $1-\eta$.  On
+this event, \cref{lem:survival} guarantees every density promise used by the
+sampler and ensures that $S_r$ is nonempty.  The final output is homogeneous
+by \cref{lem:output}.  Because the algorithm verifies the returned set
+directly, every non-$\bot$ output is valid even outside the good event.
+
+It remains to bound the number of queries.  By \cref{lem:survival}, a capped
+search block at level $i$ uses $O(2^{i/2})$ membership tests.  Computing and
+uncomputing membership and querying the sampled edge costs $O(i+1)$ edge
+queries.  Define
+\[
+ b_i=(i+1)2^{i/2}.
+\]
+The batch cap in \cref{lem:capped-search} uses
+$O(m_i+\log(r/\eta))=O(m_i)$ blocks.  By \cref{eq:sample-count}, the total
+cost of the sampling batches is therefore
+\begin{equation}\label{eq:query-sum}
+ O\!\left(
+ \log\frac r\eta
+ \sum_{i=0}^{r-1}b_i\varepsilon_i^{-2}
+ \right).
+\end{equation}
+
+At most six indices share any value of $d_i$, and hence
+\[
+ Z=\sum_i2^{-d_i}<6\sum_{d\ge0}2^{-d}=12.
+\]
+Using \cref{eq:error-schedule},
+\[
+ \sum_{i=0}^{r-1}b_i\varepsilon_i^{-2}
+ =O\!\left(
+ \sum_{i=0}^{r-1}(i+1)2^{i/2}4^{d_i}
+ \right).
+\]
+Write $h=r-1-i$.  Since
+$4^{\lceil h/6\rceil}\le4\cdot2^{h/3}$, the last display is at most
+\[
+ O\!\left(
+ 2^{r/2}\sum_{h=0}^{r-1}(r-h)2^{-h/6}
+ \right)
+ =O(r2^{r/2}).
+\]
+The amplified pivot searches and the final search cost
+\[
+ O\!\left(\log\frac r\eta\sum_{i=0}^{r}b_i\right)
+ =O\!\left(r2^{r/2}\log\frac r\eta\right),
+\]
+and the $O(K^2)$ output verification is smaller.  Substituting $r=2K-3$
+into \cref{eq:query-sum} gives
+\[
+ O\!\left(2^K K\log\frac K\eta\right),
+\]
+as claimed.  Each search begins in the uniform state on the fixed
+power-of-two universe $[M]$, and the recorded pivot labels and colours define
+the reversible membership predicate for $S_i$, so the algorithm requires no
+materialized representation of any candidate set.
+\end{proof}

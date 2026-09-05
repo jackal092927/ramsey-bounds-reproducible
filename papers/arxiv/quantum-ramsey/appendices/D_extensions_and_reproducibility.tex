@@ -1,0 +1,141 @@
+\section{Multicolour extension, numerical illustrations, and AI disclosure}
+\label{app:extensions}
+
+\subsection{A multicolour extension of size-biased survival}
+\label{app:multicolour}
+
+Suppose every edge has one of $q\ge2$ colours, and define
+\[
+ r=q(K-2)+1,
+ \qquad
+ B_0=0,
+ \qquad
+ B_d=1+q+\cdots+q^{d-1}=\frac{q^d-1}{q-1}\quad(d\ge1).
+\]
+Choose the power of two
+\[
+ L_q=2^{\lceil\log_2(2B_r)\rceil},
+\]
+so $2B_r\le L_q<4B_r$.
+
+\begin{corollary}[Multicolour size-biased Ramsey search]
+\label{cor:multicolour}
+For $q,K\ge2$, every $q$-edge-coloured complete graph on at least $L_q$
+vertices admits a bounded-error quantum algorithm that outputs a
+monochromatic $K$-clique using
+\[
+ O\!\left(r^2\sqrt{L_q}\log(2r)\log\frac1\eta\right)
+\]
+colour-oracle queries in the worst case, where $r$, $B_r$, and $L_q$ are as
+defined above.
+\end{corollary}
+
+\begin{proof}
+Run the size-biased recursion of \cref{sec:algorithm} for $r$ rounds on the
+first $L_q$ vertices, now following the colour of a uniformly sampled edge
+among $q$ possibilities.  Let $P_d^{(q)}(s)$ be the minimum probability that
+the ideal recursion completes $d$ further rounds from a candidate set of size
+$s$ and a fixed pivot.  We claim that
+\[
+ P_d^{(q)}(s)\ge \frac{(s-B_d)_+}{s}
+\]
+for all $d\ge0$ and $s\ge1$.  The case $d=0$ is immediate.  For $d\ge1$ and
+$s\ge2$, let the $q$ colour classes among the $s-1$ non-pivot vertices have
+sizes $a_1,\ldots,a_q$.  The induction hypothesis gives
+\[
+ P_d^{(q)}(s)
+ \ge \frac{\sum_{j=1}^q a_jP_{d-1}^{(q)}(a_j)}{s-1}
+ \ge \frac{\sum_{j=1}^q(a_j-B_{d-1})_+}{s-1}.
+\]
+Since $\sum_j a_j=s-1$ and $B_d=1+qB_{d-1}$, the numerator is at least
+$(s-B_d)_+$.  This proves the claimed bound after weakening the denominator
+from $s-1$ to $s$.  The preceding display also gives the stronger bound
+$(s-B_d)_+/(s-1)$ whenever $d\ge1$ and $s\ge2$.  Consequently, starting from
+$L_q\ge2B_r$, the ideal recursion survives all $r$ rounds with probability
+strictly greater than $1/2$.
+
+A membership predicate at level $i$ contains $i$ colour constraints and costs
+$O(i+1)$ oracle queries.  Using the universal density bound $1/L_q$, one
+capped sample costs $O((i+1)\sqrt{L_q})$ colour queries.  Repeating the capped
+block $O(\log(2r))$ times makes each sampling failure probability
+$O(1/r)$, so one fixed-cap run costs
+\[
+ O\!\left(
+ \sqrt{L_q}\log(2r)\sum_{i=0}^{r-1}(i+1)
+ \right)
+ =O\!\left(r^2\sqrt{L_q}\log(2r)\right).
+\]
+The union bound preserves a positive constant success probability.  Since
+$r=q(K-2)+1$, one of the $q$ recorded colours occurs at least
+$\lceil r/q\rceil=K-1$ times.  The corresponding pivots and the final vertex
+form a monochromatic $K$-clique by the same nesting argument as in
+\cref{lem:output}.  Independent repetition and direct verification amplify
+the success probability to $1-\eta$ at an additional
+$O(\log(1/\eta))$ factor.
+\end{proof}
+
+\subsection{Small-instance numerical illustrations}
+\label{app:experiments}
+
+\subparagraph*{Ideal-sampler recursion.}
+We ran the scale-aware recursion at $K=3$, $N=16$, and $r=3$ for $1{,}000$
+trials in each of five graph families.  The error schedule was
+$(\varepsilon_0,\varepsilon_1,\varepsilon_2)=(1/64,1/64,1/32)$, with
+sample counts
+$m_i=\lceil\log(600)/(2\varepsilon_i^2)\rceil$, corresponding to a total
+estimation-failure budget of $0.01$.  Pivots were sampled uniformly,
+majority-estimation samples were independent with replacement, and ties
+selected colour~$1$.  We replaced quantum search by ideal uniform sampling to
+isolate the combinatorial recursion.
+
+The deterministic inputs were the complete graph, the empty graph, and the
+balanced complete bipartite graph $K_{8,8}$.  For the random inputs, one
+$G(16,1/2)$ graph was held fixed across all $1{,}000$ trials, while the final
+family drew a fresh $G(16,1/2)$ graph in each trial.  Every returned triple was
+verified; exhaustion or a nonhomogeneous output counted as failure.
+
+\begin{center}
+\begin{tabular}{lrr}
+\hline
+Graph family on 16 vertices & failed/trials & minimum final $|S_3|$\\
+\hline
+complete & $0/1000$ & 13\\
+empty & $0/1000$ & 13\\
+balanced complete bipartite $K_{8,8}$ & $0/1000$ & 6\\
+one fixed $G(16,1/2)$ & $0/1000$ & 2\\
+fresh $G(16,1/2)$ per trial & $0/1000$ & 2\\
+\hline
+\end{tabular}
+\end{center}
+
+All $5{,}000$ trials returned homogeneous triples.  The final column records
+the smallest observed value of $|S_3|$ in each family.
+
+\subparagraph*{Isolated Grover sampler.}
+We evolved a $16$-dimensional state vector initialized in the uniform
+superposition, using marked-set sizes $1,2,3,4,8,15$.  The measurement
+distribution was averaged over a uniformly chosen number of Grover iterations
+from zero through four.  The probability of measuring a marked item ranged
+from $0.4026746749$ to $0.5973253251$.  Conditional on a marked outcome, the
+largest deviation from the uniform distribution on marked items was zero to
+machine precision.  This calculation isolates the permutation symmetry used
+in \cref{lem:capped-search}.
+
+\subparagraph*{Finite split-tree survival.}
+Minimizing the ideal size-biased survival probability over every admissible
+colour-class split gives exact finite-depth comparisons with the analytic
+bounds.  For nine binary levels starting from $1{,}024$ candidates, the
+minimum was approximately $0.5086135566$, above the lower bound $513/1024$.
+For four ternary levels starting from $128$ candidates, the minimum was
+approximately $0.7155732457$, above $88/127$.
+
+\subsection{AI Disclosure}
+\label{app:ai-disclosure}
+
+We used ChatGPT and Claude as auxiliary tools for literature search,
+brainstorming, proof checking, drafting and editing, and building experiment
+scripts (Sections~1, 3--6, and Appendices~A--D).  The authors
+determined the research direction and presentations, evaluated and revised
+all AI-assisted material, and take full responsibility for the correctness,
+originality, and final content of the paper, including every proof and
+reference.

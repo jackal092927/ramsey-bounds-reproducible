@@ -1,0 +1,136 @@
+\section{Preliminaries and problem statement}
+\label{sec:prelim}
+
+\paragraph{Weighted clique complexes.}
+All chain spaces are finite-dimensional over \(\C\).  A vertex-weighted
+simplicial complex has positive vertex weights \(w(v)\), and a simplex has
+weight \(w(\sigma)=\prod_{v\in\sigma}w(v)\).  We use the normalized
+coordinates of King and Kohler~\cite{king2026gapped}, in which the weighted
+boundary of an oriented simplex removes a vertex \(v\) with coefficient
+\(\pm w(v)\); in matrix form \(\partial_{w,k}=W_{k-1}^{-1}\partial_{1,k}W_k\),
+where \(W_k\) is the diagonal matrix of \(k\)-simplex weights.  The weighted
+complex is therefore conjugate to the unweighted one and has the same
+homology.  We use
+\[
+\Delta_{X,d}=\partial_{X,d}^*\partial_{X,d}
++\partial_{X,d+1}\partial_{X,d+1}^*,\quad
+Z_d(X)=\ker\partial_{X,d},\quad
+B_d(X)=\ran\partial_{X,d+1}.
+\]
+Finite-dimensional Hodge theory~\cite{eckmann1944harmonische,horak2013spectra}
+gives the orthogonal decomposition
+\(C_d(X)=\cH_d(X)\oplus B_d(X)\oplus\ran\partial_{X,d}^*\) with
+\(\cH_d(X)=\ker\Delta_{X,d}\) and \(Z_d(X)=\cH_d(X)\oplus B_d(X)\), and
+identifies \(H_d(X)=Z_d(X)/B_d(X)\) with the harmonic space \(\cH_d(X)\).
+For a positive semidefinite operator \(A\), write
+\(\gamma_+(A)=\min(\spec(A)\setminus\{0\})\) for its smallest positive
+eigenvalue, with \(\gamma_+(0)=+\infty\).
+All certified boundary matrices and fillings below are rational.  Rank, kernel
+dimension, image intersection, and filling validity are unchanged under scalar
+extension \(\mathbb Q\subset\mathbb R\subset\mathbb C\), and the real
+positive-semidefinite inequalities complexify verbatim.  We state homology
+over \(\mathbb C\) while certifying the finite palette over \(\mathbb Q\).
+
+\paragraph{Normalized persistence.}
+For \(X_1\subseteq X_2\), define
+\begin{equation}
+\label{eq:true-ratio}
+\beta_d(X_1\to X_2)
+=\rank[H_d(X_1)\to H_d(X_2)],\qquad
+q_d(X_1,X_2)
+=\frac{\beta_d(X_1\to X_2)}{\beta_d(X_1)}.
+\end{equation}
+Lowe et al.~\cite{lowe2026normalized} write the numerator through harmonic
+projectors, as the rank of \(P_{\cH_d(X_2)}\) restricted to \(\cH_d(X_1)\).
+The two formulations agree.  For a cycle \(z\in Z_d(X_2)\), the vector
+\(P_{\cH_d(X_2)}z\) is the harmonic representative of \([z]\), because
+\(z-P_{\cH_d(X_2)}z\in B_d(X_2)\); hence \(z\mapsto P_{\cH_d(X_2)}z\) induces
+the isomorphism \(H_d(X_2)\cong\cH_d(X_2)\).  Since
+\(\cH_d(X_1)\subseteq Z_d(X_1)\subseteq Z_d(X_2)\) and
+\(\cH_d(X_1)\cong H_d(X_1)\), the operator \(P_{\cH_d(X_2)}|_{\cH_d(X_1)}\) is
+the induced map \(H_d(X_1)\to H_d(X_2)\) up to these identifications, and its
+rank is \(\beta_d(X_1\to X_2)\).
+
+\begin{definition}[Gapped normalized persistence]
+\label{def:problem}
+An instance of the weighted problem consists of explicit simple graphs
+\(G_1\subseteq G_2\) on one labeled vertex set \(V\), one common positive
+dyadic weight function \(w:V\to\mathbb Q_{>0}\), a degree \(d\ge1\), positive
+rational lower bounds \(\gamma_1,\gamma_2\), and a positive rational accuracy
+\(\varepsilon\), all encoded in binary and all at least \(1/\poly(|V|)\).
+Put \(X_i=\Cl(G_i)\), using the
+weighted-boundary convention above.  The promises are
+\[
+\beta_d(X_1)>0,
+\qquad
+\spec(\Delta_{X_i,d})\subseteq\{0\}\cup[\gamma_i,\infty)
+\quad(i=1,2).
+\]
+The task is to output \(\widetilde q\) such that
+\(\Pr[|\widetilde q-q_d(X_1,X_2)|\le\varepsilon]\ge2/3\).  Input size is the
+total bit length of the graph encodings, weights, \(d\), the two gap bounds,
+and \(\varepsilon\).  The unweighted problem is the restriction \(w\equiv1\).
+Its fixed decision version distinguishes \(q_d\ge3/4\) from \(q_d\le1/8\).
+\end{definition}
+This is Problem~9 of Lowe et al.~\cite{lowe2026normalized}, with the same
+promises, including their inverse-polynomial lower bounds on the gap and
+accuracy parameters, and with the encoding conventions fixed.  The denominator is the
+initial Betti number, not the number of simplices, and the statistic counts
+exact zero modes rather than eigenvalues below a cutoff.
+
+\paragraph{Register, logical projectors, and gadgets.}
+The construction starts from a top-dimensional \emph{register} complex
+\(R\), so \(C_{d+1}(R)=0\), and sets \(V=Z_d(R)=\cH_d(R)\).  Concretely,
+\(R\) is the clique complex of the join of \(n\) \emph{bowtie} graphs, one
+per logical qubit.  A bowtie is the wedge of two \(4\)-cycles; its clique
+complex is one-dimensional and connected with \(\beta_1=2\), and the two
+normalized oriented petal cycles are the computational basis
+\(\ket0,\ket1\).  By the K\"unneth formula for joins, \(R\) has reduced
+homology only in degree \(d=2n-1\), and \(V\cong(\C^2)^{\otimes n}\)
+isometrically.  Each constraint \(j\) is a rank-one projector \(\pi_j\) on
+the cycle space of a constant-size \emph{active} sub-register; after
+tensoring with the identity of the unaffected factors it becomes an
+orthogonal projector \(\Pi_j\) on \(V\), generally of higher rank.  For a
+term set \(A\), put
+\begin{equation}
+\label{eq:logical-sum}
+H_A=\sum_{j\in A}\Pi_j,\qquad
+K_A=\ker H_A,\qquad
+W_A=\sum_{j\in A}\ran\Pi_j=K_A^\perp ,
+\end{equation}
+and use a certified logical gap
+\begin{equation}
+\label{eq:logical-gap}
+H_A\succeq g_A(P_V-P_{K_A}),\qquad 0<g_A\le1.
+\end{equation}
+
+Each constraint is realized by a weighted clique gadget: a graph containing
+the active register, whose additional \emph{private} vertices have weight
+\(\lambda\) and are joined to every vertex of the unaffected register
+factors, while all register vertices have weight one.  Attaching the gadgets
+of all \(j\in A\) to \(R\) gives the clique complex \(X_A\), and \(\Delta_A\)
+denotes its full Laplacian on all degree-\(d\) chains.  Thus \(H_A\) acts on
+\(V\), while \(\Delta_A\) acts on \(C_d(X_A)\supseteq V\).
+
+\begin{definition}[Independent private interiors]
+\label{def:independent}
+The gadgets of a term set \(A\) have \emph{independent private interiors}
+if private vertices of distinct gadgets are never adjacent.  Every simplex
+of \(X_A\) that contains a private vertex then contains private vertices of
+exactly one gadget, and
+\(C_d(X_A)=C_d(R)\oplus\bigoplus_{j\in A}C^{\rm priv}_{d,j}\) as coordinate
+spaces.
+\end{definition}
+All constructions in this paper satisfy \cref{def:independent}: distinct
+gadgets receive disjoint sets of new vertices, and no edge is added between
+private vertices of distinct gadgets.
+
+\paragraph{Circuit source.}
+For the circuit application, \(J\) inserts the fixed clean string around a
+maximally mixed logical input, \(U\) is an exact circuit, and
+\[
+M=J^*U^*P_{\rm acc}UJ,\qquad S=\ker(I-M).
+\]
+The initial history kernel will have the full input dimension, while the
+final history kernel will be isomorphic to the perfect accepting space
+\(S\).

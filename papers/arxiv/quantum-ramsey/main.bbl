@@ -1,0 +1,219 @@
+\begin{thebibliography}{10}
+
+\bibitem{BianEtAl2013}
+Zhengbing Bian, Fabian Chudak, William~G. Macready, Geordie Rose, and Frank
+  Gaitan.
+\newblock Experimental determination of {R}amsey numbers.
+\newblock {\em Physical Review Letters}, 111:130505, 2013.
+\newblock URL: \url{https://arxiv.org/abs/1201.1842}, \href
+  {http://arxiv.org/abs/1201.1842} {\path{arXiv:1201.1842}}, \href
+  {https://doi.org/10.1103/PhysRevLett.111.130505}
+  {\path{doi:10.1103/PhysRevLett.111.130505}}.
+
+\bibitem{BBHT1998}
+Michel Boyer, Gilles Brassard, Peter H{\o}yer, and Alain Tapp.
+\newblock Tight bounds on quantum searching.
+\newblock {\em Fortschritte der Physik}, 46(4--5):493--506, 1998.
+\newblock URL: \url{https://arxiv.org/abs/quant-ph/9605034}, \href
+  {http://arxiv.org/abs/quant-ph/9605034} {\path{arXiv:quant-ph/9605034}}.
+
+\bibitem{Chernoff1952}
+Herman Chernoff.
+\newblock A measure of asymptotic efficiency for tests of a hypothesis based on
+  the sum of observations.
+\newblock {\em The Annals of Mathematical Statistics}, 23(4):493--507, 1952.
+\newblock \href {https://doi.org/10.1214/aoms/1177729330}
+  {\path{doi:10.1214/aoms/1177729330}}.
+
+\bibitem{ChildsEisenberg2005}
+Andrew~M. Childs and Jason~M. Eisenberg.
+\newblock Quantum algorithms for subset finding.
+\newblock {\em Quantum Information and Computation}, 5(7):593--604, 2005.
+\newblock \href {http://arxiv.org/abs/quant-ph/0311038}
+  {\path{arXiv:quant-ph/0311038}}, \href {https://doi.org/10.26421/QIC5.7-7}
+  {\path{doi:10.26421/QIC5.7-7}}.
+
+\bibitem{ConlonFoxGrinshpunHe2019}
+David Conlon, Jacob Fox, Andrey Grinshpun, and Xiaoyu He.
+\newblock Online {R}amsey numbers and the subgraph query problem.
+\newblock In {\em Building Bridges II: Mathematics of L{\'a}szl{\'o}
+  Lov{\'a}sz}, volume~28 of {\em Bolyai Society Mathematical Studies}, pages
+  159--194. Springer, 2019.
+\newblock URL: \url{https://arxiv.org/abs/1806.09726}, \href
+  {http://arxiv.org/abs/1806.09726} {\path{arXiv:1806.09726}}, \href
+  {https://doi.org/10.1007/978-3-662-59204-5_4}
+  {\path{doi:10.1007/978-3-662-59204-5_4}}.
+
+\bibitem{Doern2005}
+Sebastian D{\"o}rn.
+\newblock Quantum complexity bounds for independent set problems.
+\newblock {\em arXiv preprint}, 2005.
+\newblock URL: \url{https://arxiv.org/abs/quant-ph/0510084}, \href
+  {http://arxiv.org/abs/quant-ph/0510084} {\path{arXiv:quant-ph/0510084}}.
+
+\bibitem{Erdos1947}
+Paul Erd\H{o}s.
+\newblock Some remarks on the theory of graphs.
+\newblock {\em Bulletin of the American Mathematical Society}, 53(4):292--294,
+  1947.
+\newblock \href {https://doi.org/10.1090/S0002-9904-1947-08785-1}
+  {\path{doi:10.1090/S0002-9904-1947-08785-1}}.
+
+\bibitem{ErdosSzekeres1935}
+Paul Erd\H{o}s and George Szekeres.
+\newblock A combinatorial problem in geometry.
+\newblock {\em Compositio Mathematica}, 2:463--470, 1935.
+\newblock URL: \url{https://eudml.org/doc/88611}.
+
+\bibitem{GaitanClark2012}
+Frank Gaitan and Lane Clark.
+\newblock {R}amsey numbers and adiabatic quantum computing.
+\newblock {\em Physical Review Letters}, 108:010501, 2012.
+\newblock URL: \url{https://arxiv.org/abs/1103.1345}, \href
+  {http://arxiv.org/abs/1103.1345} {\path{arXiv:1103.1345}}.
+
+\bibitem{LeGallNishimuraTani2016}
+Fran{\c c}ois~Le Gall, Harumichi Nishimura, and Seiichiro Tani.
+\newblock Quantum algorithms for finding constant-sized sub-hypergraphs.
+\newblock {\em Theoretical Computer Science}, 609:569--582, 2016.
+\newblock \href {http://arxiv.org/abs/1310.4127} {\path{arXiv:1310.4127}},
+  \href {https://doi.org/10.1016/j.tcs.2015.10.006}
+  {\path{doi:10.1016/j.tcs.2015.10.006}}.
+
+\bibitem{Hoeffding1963}
+Wassily Hoeffding.
+\newblock Probability inequalities for sums of bounded random variables.
+\newblock {\em Journal of the American Statistical Association},
+  58(301):13--30, 1963.
+\newblock \href {https://doi.org/10.1080/01621459.1963.10500830}
+  {\path{doi:10.1080/01621459.1963.10500830}}.
+
+\bibitem{ImpagliazzoNaor1988}
+Russell Impagliazzo and Moni Naor.
+\newblock Decision trees and downward closures.
+\newblock In {\em Proceedings of the Third Annual Structure in Complexity
+  Theory Conference}, pages 29--38. IEEE, 1988.
+\newblock \href {https://doi.org/10.1109/SCT.1988.5260}
+  {\path{doi:10.1109/SCT.1988.5260}}.
+
+\bibitem{JainLiRobereXun2024}
+Siddhartha Jain, Jiawei Li, Robert Robere, and Zhiyang Xun.
+\newblock On pigeonhole principles and {R}amsey in {TFNP}.
+\newblock In {\em 2024 IEEE 65th Annual Symposium on Foundations of Computer
+  Science (FOCS)}, pages 406--428. IEEE, 2024.
+\newblock \href {http://arxiv.org/abs/2401.12604} {\path{arXiv:2401.12604}},
+  \href {https://doi.org/10.1109/FOCS61266.2024.00033}
+  {\path{doi:10.1109/FOCS61266.2024.00033}}.
+
+\bibitem{KomargodskiNaorYogev2019}
+Ilan Komargodski, Moni Naor, and Eylon Yogev.
+\newblock White-box vs. black-box complexity of search problems: {R}amsey and
+  graph property testing.
+\newblock {\em Journal of the ACM}, 66(5):34:1--34:28, 2019.
+\newblock \href {https://doi.org/10.1145/3341106} {\path{doi:10.1145/3341106}}.
+
+\bibitem{Krajicek2001}
+Jan Kraj{\'\i}\v{c}ek.
+\newblock On the weak pigeonhole principle.
+\newblock {\em Fundamenta Mathematicae}, 170(1--2):123--140, 2001.
+\newblock \href {https://doi.org/10.4064/fm170-1-8}
+  {\path{doi:10.4064/fm170-1-8}}.
+
+\bibitem{Krajicek2005}
+Jan Kraj{\'\i}\v{c}ek.
+\newblock Structured pigeonhole principle, search problems and hard
+  tautologies.
+\newblock {\em The Journal of Symbolic Logic}, 70(2):619--630, 2005.
+\newblock \href {https://doi.org/10.2178/jsl/1120224731}
+  {\path{doi:10.2178/jsl/1120224731}}.
+
+\bibitem{LeeMagniezSantha2012}
+Troy Lee, Fr{\'e}d{\'e}ric Magniez, and Miklos Santha.
+\newblock A learning graph based quantum query algorithm for finding
+  constant-size subgraphs.
+\newblock {\em Chicago Journal of Theoretical Computer Science}, 2012(10),
+  2012.
+\newblock URL: \url{https://arxiv.org/abs/1109.5135}, \href
+  {http://arxiv.org/abs/1109.5135} {\path{arXiv:1109.5135}}.
+
+\bibitem{LiuZhandry2019}
+Qipeng Liu and Mark Zhandry.
+\newblock On finding quantum multi-collisions.
+\newblock In {\em Advances in Cryptology---EUROCRYPT 2019, Part III}, volume
+  11478 of {\em Lecture Notes in Computer Science}, pages 189--218. Springer,
+  2019.
+\newblock \href {http://arxiv.org/abs/1811.05385} {\path{arXiv:1811.05385}},
+  \href {https://doi.org/10.1007/978-3-030-17659-4_7}
+  {\path{doi:10.1007/978-3-030-17659-4_7}}.
+
+\bibitem{Montanaro2018}
+Ashley Montanaro.
+\newblock Quantum walk speedup of backtracking algorithms.
+\newblock {\em Theory of Computing}, 14(15):1--24, 2018.
+\newblock URL: \url{https://arxiv.org/abs/1509.02374}, \href
+  {http://arxiv.org/abs/1509.02374} {\path{arXiv:1509.02374}}, \href
+  {https://doi.org/10.4086/toc.2018.v014a015}
+  {\path{doi:10.4086/toc.2018.v014a015}}.
+
+\bibitem{PasarkarPapadimitriouYannakakis2023}
+Amol Pasarkar, Christos Papadimitriou, and Mihalis Yannakakis.
+\newblock Extremal combinatorics, iterated pigeonhole arguments and
+  generalizations of {PPP}.
+\newblock In {\em 14th Innovations in Theoretical Computer Science Conference
+  (ITCS 2023)}, volume 251 of {\em Leibniz International Proceedings in
+  Informatics (LIPIcs)}, pages 88:1--88:20. Schloss Dagstuhl--Leibniz-Zentrum
+  f{\"u}r Informatik, 2023.
+\newblock \href {https://doi.org/10.4230/LIPIcs.ITCS.2023.88}
+  {\path{doi:10.4230/LIPIcs.ITCS.2023.88}}.
+
+\bibitem{PionMniszewski2025}
+Joel~E. Pion and Susan~M. Mniszewski.
+\newblock Toward computing bounds for {R}amsey numbers using quantum annealing.
+\newblock {\em Quantum Information Processing}, 24(7):221, 2025.
+\newblock URL: \url{https://arxiv.org/abs/2311.04405}, \href
+  {http://arxiv.org/abs/2311.04405} {\path{arXiv:2311.04405}}, \href
+  {https://doi.org/10.1007/s11128-025-04839-x}
+  {\path{doi:10.1007/s11128-025-04839-x}}.
+
+\bibitem{QuLiWangBaoCao2013}
+Ri~Qu, Zong shang Li, Juan Wang, Yan ru~Bao, and Xiao chun Cao.
+\newblock Computing hypergraph {R}amsey numbers by using quantum circuit.
+\newblock {\em Quantum Information Processing}, 12(7):2487--2496, 2013.
+\newblock \href {http://arxiv.org/abs/1210.3419} {\path{arXiv:1210.3419}},
+  \href {https://doi.org/10.1007/s11128-013-0541-9}
+  {\path{doi:10.1007/s11128-013-0541-9}}.
+
+\bibitem{RanjbarMacreadyClarkGaitan2016}
+Mani Ranjbar, William~G. Macready, Lane Clark, and Frank Gaitan.
+\newblock Generalized {R}amsey numbers through adiabatic quantum optimization.
+\newblock {\em Quantum Information Processing}, 15(9):3519--3542, 2016.
+\newblock \href {http://arxiv.org/abs/1606.01078} {\path{arXiv:1606.01078}},
+  \href {https://doi.org/10.1007/s11128-016-1363-3}
+  {\path{doi:10.1007/s11128-016-1363-3}}.
+
+\bibitem{Wang2016}
+Hefeng Wang.
+\newblock Determining {R}amsey numbers on a quantum computer.
+\newblock {\em Physical Review A}, 93(3):032301, 2016.
+\newblock \href {http://arxiv.org/abs/1510.01884} {\path{arXiv:1510.01884}},
+  \href {https://doi.org/10.1103/PhysRevA.93.032301}
+  {\path{doi:10.1103/PhysRevA.93.032301}}.
+
+\bibitem{Zhandry2015}
+Mark Zhandry.
+\newblock A note on the quantum collision and set equality problems.
+\newblock {\em Quantum Information and Computation}, 15(7--8):557--567, 2015.
+\newblock \href {http://arxiv.org/abs/1312.1027} {\path{arXiv:1312.1027}},
+  \href {https://doi.org/10.26421/QIC15.7-8-2}
+  {\path{doi:10.26421/QIC15.7-8-2}}.
+
+\bibitem{Zhu2012}
+Yechao Zhu.
+\newblock Quantum query complexity of constant-sized subgraph containment.
+\newblock {\em International Journal of Quantum Information}, 10(3):1250019,
+  2012.
+\newblock \href {http://arxiv.org/abs/1109.4165} {\path{arXiv:1109.4165}},
+  \href {https://doi.org/10.1142/S0219749912500190}
+  {\path{doi:10.1142/S0219749912500190}}.
+
+\end{thebibliography}

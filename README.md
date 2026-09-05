@@ -1,5 +1,7 @@
 # Reproducible Ramsey analysis
 
+**arXiv preprints:** [PDFs, upload source archives, and preparation status](ARXIV.md).
+
 This repository is the working publication and reproduction package for two
 paper artifacts built from shared theorem sources:
 

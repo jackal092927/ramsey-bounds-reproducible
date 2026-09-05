@@ -1,0 +1,181 @@
+\section{History-gap and source calculations}
+\label{app:source-details}
+
+\subsection{Rational gain/loss split}
+\label{app:rational-split}
+
+On a clock bit \(c\) and work bit \(w\), define
+\[
+\begin{aligned}
+u_0&=(\ket{00}+\ket{01}-\ket{10})/\sqrt3,&
+u_1&=(\ket{00}-\ket{01}-\ket{11})/\sqrt3,\\
+d_0&=(\ket{00}-\ket{10}-\ket{11})/\sqrt3,&
+d_1&=(\ket{01}-\ket{10}+\ket{11})/\sqrt3.
+\end{aligned}
+\]
+The vectors in each pair are orthonormal.  If consecutive history amplitudes
+are \(f_t,f_{t+1}\), orthogonality to \(u_0,u_1\) is equivalent to
+\(f_{t+1}=\sqrt2Hf_t\); orthogonality to \(d_0,d_1\) is equivalent to
+\(f_{t+1}=Hf_t/\sqrt2\).  Applying the first relation to one work bit and the
+second to the other gives \(H\otimes H\).
+
+\subsection{Weighted path estimate}
+
+With the unary encoding \(\ket t=\ket{1^t0^{T-t}}\), the legal clock span and
+its orthogonal complement are invariant under the neighboring-clock-guarded
+propagation, input, and output projectors.  The diagonal clock term
+\[
+H_{\rm clock}=\sum_{j=1}^{T-1}\ket{01}\!\bra{01}_{j,j+1}
+\]
+has energy at least one on every illegal computational-basis clock string.
+By Hermiticity, the whole unary-clock Hilbert space is the orthogonal sum of
+the invariant legal and illegal sectors.  It therefore
+suffices to prove the smaller inverse-polynomial bound on the legal sector.
+For a legal-clock state, write \(f_t=s_tV_t\xi_t\), with the notation of~\cref{eq:history-isometry}. Its norm and initial-history energy are
+\[
+N(\xi)=\sum_tw_t\|\xi_t\|^2,
+\qquad
+E(\xi)=\sum_{t=1}^{L-1}c_t\|\xi_t-\xi_{t-1}\|^2
++\langle\xi_0,A_{\rm in}\xi_0\rangle,
+\]
+where \(w_t=s_t^2\in[1,2]\), \(c_t\in\{1/2,2/3\}\), and
+\(A_{\rm in}\) is the clean-input penalty at time zero, a sum of commuting
+computational-basis projectors, one per clean qubit.  It is not in general a
+projector: a basis string violating \(k\) clean bits has energy \(k\).  All
+that is used below is
+\[
+\ker A_{\rm in}=C,\qquad A_{\rm in}\succeq P_{C^\perp}.
+\]
+Split every \(\xi_t\) into the clean subspace \(C\) and its orthogonal
+complement, and split the energy accordingly as \(E(\xi)=E_C+E_B\) with
+\[
+E_C=\sum_{t=1}^{L-1}c_t\|\xi_t^C-\xi_{t-1}^C\|^2,\qquad
+E_B=\sum_{t=1}^{L-1}c_t\|\xi_t^{C^\perp}-\xi_{t-1}^{C^\perp}\|^2
++\langle\xi_0,A_{\rm in}\xi_0\rangle ;
+\]
+the two difference terms are orthogonal because \(C\) is invariant under
+the splitting.
+
+For a state orthogonal to all valid histories, the clean component has weighted mean zero:
+\[
+\sum_tw_t\xi_t^C=0.
+\]
+The weighted variance identity and path Cauchy--Schwarz inequality give
+\[
+\sum_tw_t\|\xi_t^C\|^2
+=\frac1{2\sum_tw_t}
+\sum_{i,j}w_iw_j\|\xi_i^C-\xi_j^C\|^2
+\le2L^2E_C.
+\]
+For the dirty component, set
+\(a=\|\xi_0^{C^\perp}\|^2\le\langle\xi_0,A_{\rm in}\xi_0\rangle\le E_B\) and
+\(
+D_B=\sum_t\|\xi_t^{C^\perp}-\xi_{t-1}^{C^\perp}\|^2\le2E_B
+\), using \(c_t\ge1/2\).
+The bound
+\[
+\|\xi_t^{C^\perp}\|^2\le2a+2(L-1)D_B
+\]
+and \(\sum_tw_t\le2L\) imply
+\[
+\sum_tw_t\|\xi_t^{C^\perp}\|^2
+\le2L\bigl(2E_B+4(L-1)E_B\bigr)\le8L^2E_B.
+\]
+Adding both sectors proves \(N(\xi)\le8L^2E(\xi)\) on the orthogonal complement of the complete initial kernel, establishing the first bound in~\cref{eq:history-gaps}.
+
+\subsection{Adding the output projector}
+
+We record the two-positive-operator estimate used for the second bound in~\cref{eq:history-gaps}. Let \(P\) project onto \(\ker A\), suppose
+\(A\succeq g(I-P)\), and let \(R\) be an orthogonal projector.  Put
+\(\mathcal S=\ker A\cap\ker R\), and suppose \(PRP\succeq\alpha P\) on
+\(\ker A\ominus\mathcal S\).  On every nontrivial canonical block for the
+pair \(P,R\), for some \(\rho\in[\alpha,1]\),
+\[
+ P=\begin{pmatrix}1&0\\0&0\end{pmatrix},\qquad
+ R=\begin{pmatrix}
+ \rho&\sqrt{\rho(1-\rho)}\\
+ \sqrt{\rho(1-\rho)}&1-\rho
+ \end{pmatrix}.
+\]
+Thus \(g(I-P)+R\) has trace \(g+1\), determinant \(g\rho\), and
+smallest eigenvalue
+\[
+ \frac{g+1-\sqrt{(g+1)^2-4g\rho}}2.
+\]
+This quantity increases with \(\rho\); the one-dimensional canonical blocks
+outside \(\mathcal S\) obey the same lower bound.  Since
+\(A+R\succeq g(I-P)+R\) and both operators have kernel \(\mathcal S\),
+\begin{equation}
+\label{eq:two-positive}
+\gamma_+(A+R)
+\ge
+\frac{g+1-\sqrt{(g+1)^2-4g\alpha}}2
+\ge\frac{g\alpha}{g+1}.
+\end{equation}
+For the history Hamiltonian, \(g=1/(8L^2)\) and \(\alpha=(1-r)/Z\ge1/(3L)\) when \(r\le1/3\). Substitution into~\cref{eq:two-positive} gives
+\[
+\gamma_+(H_{\rm out})
+\ge\frac1{3L(8L^2+1)}.
+\]
+The kernel identity follows directly from positivity:
+\[
+\ker(H_{\rm in}+H_{\rm rej})
+=\ker H_{\rm in}\cap\ker H_{\rm rej}
+=\cV\ker(I-M).
+\]
+
+\subsection{Exact eight-label compression}
+
+Let \(U_x\) denote the fixed-input verifier and \(q\) its output bit. The label \(z\) is never changed. After computing and uncomputing the constant-size acceptance predicate, compression through all clean work registers has no matrix element between distinct labels. On \(z=000\), acceptance is the identity. On five labels it is the scalar
+\(
+p_x=\|P_{\rm acc}U_x\ket{0\cdots0}\|^2
+\),
+and on two labels it is zero. This proves~\cref{eq:eight-label} even for a coherent vector across label values.
+
+The normalized trace is
+\[
+\frac{\operatorname{Tr}M_x}{8}
+=\frac{1+5p_x}{8}.
+\]
+If \(p_x=1\), this equals \(3/4\) and coincides with the perfect-space fraction. If \(p_x\le1/3\), it is at most \(1/3\), the perfect-space fraction is exactly \(1/8\), and every off-perfect eigenvalue is at most \(1/3\). Thus the construction simultaneously supplies the trace promise, the perfect-space separation, and the off-perfect ceiling needed by the output-gap proof.
+
+\subsection{Source-interface boundary}
+\label{app:source-boundaries}
+
+The exact source used by \cref{thm:weighted-hardness} begins with a
+fixed-input \(\BQPone^{G_2}\) verifier.  The three mixed label bits are added
+by the reduction and are the entire input space of
+\cref{eq:eight-label}; the verifier's input and all predicate scratch remain
+clean.  Consequently the initial history dimension is exactly eight.  No
+trace-to-rank inference, unrestricted \(\SDQCone\) identification, or
+approximate gate compilation enters the proof.
+
+The finite gadget evidence needed to compile these circuit terms is given in
+\cref{app:palette}.  The theorem uses those exact finite objects and does not
+infer their topology from floating-point spectra.
+
+For an arbitrary acceptance operator with
+\(M|_{S^\perp}\preceq rI\), put \(f=\dim S/D\) and
+\(p=\operatorname{Tr}(M)/D\).  Spectral decomposition gives
+\[
+f\le p\le r+(1-r)f.
+\]
+Thus trace promises \(p\ge a\) versus \(p\le b\) force a perfect-space
+fraction gap only when
+\(\max\{0,(a-r)/(1-r)\}>b\).  The eight-label source avoids this obstruction
+by fixing the perfect fractions directly.
+
+An exact circuit over \(\{X,\CX,\CCX,H\}\) admits the following real-gate
+extension.  Add one maximally mixed, unmeasured spectator \(a\) and replace
+each \(H_j\) by \(H_j\otimes H_a\).  If there are \(h\) Hadamards, then
+\[
+U'=U\otimes H_a^h,\qquad J'=J\otimes I_a,\qquad
+P'_{\rm acc}=P_{\rm acc}\otimes I_a.
+\]
+For either parity of \(h\),
+\[
+(J')^*(U')^*P'_{\rm acc}U'J'=M\otimes I_a.
+\]
+Both the input dimension and perfect eigenspace dimension double, while the
+fraction and off-perfect ceiling are unchanged.  This calculation does not
+cover complex phases.

@@ -1,0 +1,234 @@
+\section{Proof of the all-chain transfer theorem}
+\label{app:transfer-proof}
+
+This appendix proves \cref{thm:transfer} from the finite local hypotheses. All constants below depend only on the fixed palette.
+
+\subsection{Local scaling and harmonic padding}
+\label{app:local-padding}
+
+Let \(W_k\) be the diagonal matrix of simplex weights.  In normalized
+coordinates,
+\[
+\partial_{w,k}=W_{k-1}^{-1}\partial_{1,k}W_k.
+\]
+For \(0<\lambda\le1\), invertible left and right scaling at the fixed rank of
+\(\partial_{1,k}\) gives
+\[
+\sigma_{\min}^+(\partial_{w,k})
+\ge\lambda^{k+1}\sigma_{\min}^+(\partial_{1,k}).
+\]
+Indeed, put \(K=\ker\partial_{1,k}\).  For every unit
+\(x\perp W_k^{-1}K\),
+\[
+\dist(W_kx,K)\ge\sigma_{\min}(W_k).
+\]
+Apply the least nonzero singular value of the unweighted boundary.  The other
+diagonal factor satisfies
+\[
+\sigma_{\min}(W_{k-1}^{-1})\ge1.
+\]
+The Hodge decomposition applies these estimates separately to the down- and
+up-exact sectors and gives
+\[
+\gamma_+(\Delta_{Y_a,d_a}(\lambda))
+\ge c_a\lambda^{2d_a+4}.
+\]
+A finite palette and \(d_a=2m_a-1\), \(m_a\le m\), give the common bound
+\cref{eq:local-gap}.
+
+For padding, use augmented reduced chain complexes, including degree \(-1\),
+in every join bidegree:
+\[
+\widetilde C_d(Y_a*R_{\rm out})
+=\bigoplus_{r+s=d-1}
+\widetilde C_r(Y_a)\otimes\widetilde C_s(R_{\rm out}).
+\]
+On each summand the join Laplacian is the tensor sum
+\[
+\Delta_{Y_a*R_{\rm out}}
+=\Delta_{Y_a}\otimes I+I\otimes\Delta_{R_{\rm out}}.
+\]
+The outside register has reduced homology only in its top degree and a
+constant positive gap on every other mode.  At the global target degree,
+therefore, the only outside-harmonic bidegree is the active target degree
+tensored with \(\cH_{\rm out}\).  This proves the stated zero-weight kernel
+and puts every other bidegree above a uniform floor.  Tensor the private
+output projector with \(P_{\cH_{\rm out}}\); both outside differentials vanish
+after this projection, preserving the private-pair bounds.
+
+The same tensor-sum structure gives the padded form of
+\cref{eq:local-gap}: the positive eigenvalues of the padded Laplacian in
+degree \(d\) are sums \(\mu_1+\mu_2\) of factor eigenvalues.  In every
+bidegree other than \((d_a,s_{\rm top})\) the outside eigenvalue \(\mu_2\) is
+at least the constant gap of \(R_{\rm out}\), and in the bidegree
+\((d_a,s_{\rm top})\) a positive sum has \(\mu_2=0\) and
+\(\mu_1\ge\gamma_+(\Delta_{Y_a,d_a}(\lambda))\ge c\lambda^\kappa\).  Hence
+\(\gamma_+\) of the padded degree-\(d\) Laplacian is at least
+\(\min\{c\lambda^\kappa,\gamma_+(\Delta_{R_{\rm out}})\}\ge c'\lambda^\kappa\)
+for \(0<\lambda\le1\).
+
+Finally, the relative join formula identifies the padded connecting map with
+the active connecting map tensored with
+\(\cH_{\rm out}\).  Since all register weights are one, the positive-weight
+diagonal gauge fixes the register coordinates.  Thus the padded boundary
+intersection is \(\ran(\pi_a\otimes I_{\cH_{\rm out}})\), completing the proof
+of \cref{lem:scaling-padding}.
+
+\subsection{Global decomposition and interface energy}
+
+If \(A=\varnothing\), then \(X_A=R\) and \(K_A=V\), and
+\cref{eq:transfer-bound} holds with any \(C\ge\gamma_R^{-1}\): in its top
+degree the register Laplacian \(\Delta_R=\partial_R^*\partial_R\) is the
+tensor sum of the bowtie edge Laplacians, as in \cref{app:local-padding}, so
+it has kernel \(V\) and a constant positive floor \(\gamma_R\) on
+\(V^\perp\), whence
+\(\|(I-P_V)x\|^2\le\gamma_R^{-1}\langle x,\Delta_Rx\rangle
+\le\gamma_R^{-1}\langle x,\Delta_Rx\rangle/(g_A\lambda^\kappa)\)
+because \(g_A\le1\) and \(\lambda\le1\).  Assume henceforth \(t_A\ge1\).
+
+Write the target chain space as the orthogonal coordinate sum
+\[
+C_d(X_A)=C_d(R)\oplus\bigoplus_{j\in A}C_{d,j}^{\rm priv}.
+\]
+For a unit chain \(x\), write
+\[
+x=\omega_0+\sum_j\omega_j,
+\qquad
+x_j=\omega_0+\omega_j,
+\qquad
+U=\sum_j\|\omega_j\|^2,
+\qquad
+e=\langle x,\Delta_Ax\rangle.
+\]
+Let \(a=\partial_R\omega_0\), \(y_j=L_j\omega_j\), \(y=\sum_jy_j\), and \(r=a+y\). The vector \(r\) is the shared-register component of the global down-boundary. Since
+\(
+a+y_j=r-(y-y_j)
+\),
+\[
+\sum_j\|a+y_j\|^2
+\le2t_A\|r\|^2+2\sum_j\|y-y_j\|^2.
+\]
+The elementary identity
+\[
+\sum_j\|y-y_j\|^2
+=(t_A-2)\|y\|^2+\sum_j\|y_j\|^2
+\]
+also holds for \(t_A=1\). Put
+\[
+\rho=\lambda^{-2}\|[L_1\ \cdots\ L_{t_A}]\|^2
+\le N_*t_A,
+\qquad
+\chi=(t_A-2)_+\rho+N_*\le C t_A^2.
+\]
+Then~\cref{eq:interface} gives
+\[
+\sum_j\|y-y_j\|^2\le\chi\lambda^2U.
+\]
+All nonregister down-boundary coordinates and all up-boundary coordinates are private and partition by gadget. We obtain
+\begin{equation}
+\label{eq:appendix-local-energy}
+\sum_j\|D_j(\lambda)x_j\|^2
+\le2t_Ae+2\chi\lambda^2U.
+\end{equation}
+
+\subsection{Zero-weight and private-sector coercivity}
+
+Let \(Q_j\) also denote the orthogonal projector onto the padded zero-weight private subspace \(Q_j\otimes\cH_{\rm out}\) of gadget \(j\), and let \(A_{j,0}=I-P_V-Q_j\) in the padded local chain space; by \cref{lem:scaling-padding} this is the projector onto the orthogonal complement of \(\ker D_{j,0}\). The positive singular-value floor of \(D_{j,0}\) on \(\ran A_{j,0}\), together with
+\(
+D_j(\lambda)=D_{j,0}+\lambda D_{j,1}
+\), gives
+\begin{align}
+S_A:=\sum_j\|A_{j,0}x_j\|^2
+&\le C\sum_j\|D_{j,0}x_j\|^2\notag\\
+&\le C\left(
+t_Ae+\chi\lambda^2U+
+\lambda^2\sum_j\|x_j\|^2
+\right)\notag\\
+&\le C\left(t_Ae+\chi\lambda^2U+t_A\lambda^2\right).
+\label{eq:appendix-SA}
+\end{align}
+The final inequality uses
+\(
+\sum_j\|x_j\|^2
+=t_A\|\omega_0\|^2+U\le t_A
+\).
+
+Because \(T_jP_V=0\),
+\[
+T_jQ_jx_j=T_jx_j-T_jA_{j,0}x_j.
+\]
+The lower bound on \(T_j\) restricted to \(Q_j\), the estimate \(\|T_j\|\le C\lambda\), and orthogonality of the retained private output blocks imply
+\begin{equation}
+\label{eq:appendix-SQ}
+S_Q:=\sum_j\|Q_jx_j\|^2
+\le C\left(\frac{e}{\lambda^2}+S_A\right).
+\end{equation}
+The orthogonality here concerns the retained \(T_j\) outputs. The shared \(L_j\) outputs were handled by their horizontal operator norm and need not be orthogonal.
+
+Let \(N=\|(I-P_V)x\|^2\). Summing the orthogonal decompositions \(P_V\oplus Q_j\oplus\ran A_{j,0}\) gives
+\[
+N\le U+t_A\|(I-P_V)\omega_0\|^2=S_A+S_Q.
+\]
+Since \(U\le N\), substituting~\cref{eq:appendix-SA,eq:appendix-SQ} and using \(\chi\le Ct_A^2\) yields
+\[
+N\le C\left[t_A\lambda^2+(t_A+\lambda^{-2})e\right]
++Ct_A^2\lambda^2N.
+\]
+Choosing \(\lambda\le c_0/t_{\max}\) absorbs the last term and proves~\cref{eq:geometric-leakage}.
+
+\subsection{Logical coercivity}
+
+For each padded gadget \(Y_j\), exact filling gives \(\ran\Pi_j\subseteq B_d(Y_j)\). The up-Laplacian \(\partial_{d+1}\partial_{d+1}^*\) of \(Y_j\) has kernel \(B_d(Y_j)^\perp\), and its positive eigenvalues are positive eigenvalues of the padded degree-\(d\) Laplacian, which the padded form of~\cref{eq:local-gap} bounds below by \(c\lambda^\kappa\). Therefore, after the common embedding into \(X_A\),
+\[
+\Delta_j^\uparrow\succeq c\lambda^\kappa\Pi_j.
+\]
+The top-dimensional register has no up-columns, and every degree-\((d+1)\) simplex with a private vertex belongs to exactly one gadget. Hence the global up-Laplacian is the exact sum of the embedded local up-Laplacians, proving~\cref{eq:logical-domination}.
+
+Since \(K_A\subseteq V\), the squared distance decomposes as
+\[
+\|(I-P_{K_A})x\|^2
+=N+\langle x,(P_V-P_{K_A})x\rangle.
+\]
+\Cref{eq:logical-gap,eq:logical-domination} give
+\[
+\langle x,(P_V-P_{K_A})x\rangle
+\le\frac{e}{cg_A\lambda^\kappa}.
+\]
+Together with~\cref{eq:geometric-leakage},
+\[
+\|(I-P_{K_A})x\|^2
+\le C\left[t_A\lambda^2+(t_A+\lambda^{-2})e
++\frac{e}{g_A\lambda^\kappa}\right].
+\]
+For \(\lambda\le c_0/t_{\max}\), \(g_A\le1\), and \(\kappa\ge2\), the last energy term dominates the middle energy terms up to a palette constant. This proves~\cref{eq:transfer-bound}.
+
+\subsection{Exact multiplicity and the whole-positive-spectrum gap}
+
+Let \(\mathcal L_A(E_A)\) be the span of all eigenvectors of \(\Delta_A\) with eigenvalue below \(E_A\). Every unit \(x\in\mathcal L_A(E_A)\) obeys \(e<E_A\). Choosing the constants in~\cref{eq:lambda-E-choice} makes the right-hand side of~\cref{eq:transfer-bound} strictly less than \(\eta^2<1\). Therefore \(P_{K_A}x\neq0\) for every nonzero \(x\in\mathcal L_A(E_A)\), so \(P_{K_A}|_{\mathcal L_A(E_A)}\) is injective and
+\begin{equation}
+\label{eq:low-dimension}
+\dim\mathcal L_A(E_A)\le\dim K_A.
+\end{equation}
+
+Every \(v\in V\) remains a cycle after attaching the gadgets. By \cref{lem:independent-filling}, the map \(V/W_A\to H_d(X_A)\) is injective. Its domain has dimension \(\dim K_A\), so Hodge theory supplies at least \(\dim K_A\) zero eigenvectors of \(\Delta_A\). These zero vectors belong to \(\mathcal L_A(E_A)\). Combining this lower bound with~\cref{eq:low-dimension} forces equality throughout: the geometric kernel has dimension \(\dim K_A\), and no positive eigenvalue lies below \(E_A\).
+
+If \(K_A=0\), any unit vector in \(\mathcal L_A(E_A)\) would have distance one from \(K_A\), contradicting the strict \(\eta<1\) bound. Thus the same argument proves \(\Delta_A\succeq E_AI\) in the zero-kernel case. No additional global relative-acyclicity assumption is required.
+
+\subsection{Proof of quotient naturality}
+\label{app:quotient-proof}
+
+\Cref{eq:boundary-intersection} makes \(q_A\) well-defined and injective.
+Its domain has dimension
+\[
+\dim(V/W_A)=\dim K_A.
+\]
+Hodge theory and
+\cref{eq:kernel-gap-conclusion} give
+\[
+\dim H_d(X_A)=\dim\ker\Delta_A=\dim K_A,
+\]
+so \(q_A\) is also surjective.  If \(A\subseteq B\), both paths in the
+diagram of \cref{thm:quotient} send \(v+W_A\) to the class of the same
+register cycle \(v\) in \(X_B\).  Thus the diagram commutes.  The quotient
+map is onto because \(W_A\subseteq W_B\), and its rank is
+\(\dim(V/W_B)=\dim K_B\).

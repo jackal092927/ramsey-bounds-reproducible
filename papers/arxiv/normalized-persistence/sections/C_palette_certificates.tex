@@ -1,0 +1,126 @@
+\section{Finite palette and guard certificates}
+\label{app:palette}
+
+This appendix identifies the finite objects used in \cref{lem:palette}.  The
+underlying active graphs are four explicit constructors in the source artifact:
+\path{state_0m1}, \path{state_00m11}, \path{state_01m10}, and
+\path{state_00m10m11}.  They accompany Rudolph's gain/loss
+construction~\cite{rudolph2026universal}.
+The supplementary certificate archive records the complete graphs, oriented
+integer fillings, kernel bases, modular rank witnesses, and Gram determinants.
+No numerical eigenvalue threshold is used.
+
+\begin{table}[ht]
+\centering
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}Xrrrr>{\raggedright\arraybackslash}X@{}}
+\toprule
+Active vector & degree & vertices & \(\dim V\) & \(\dim Q\) & certificate mod \(p\) \\
+\midrule
+\(\ket0-\ket1\) & 1 & 16 & 2 & 8 &
+\(\det G=512\) \\
+\(\ket{00}-\ket{11}\) & 3 & 33 & 4 & 112 &
+\(\det G=655970\) \\
+\(\ket{01}-\ket{10}\) & 3 & 33 & 4 & 112 &
+signed relabeling \\
+\(\ket{00}-\ket{10}-\ket{11}\) & 3 & 41 & 4 & 176 &
+\(\det G=797443\) \\
+three remaining gain/loss vectors & 3 & 41 & 4 & 176 &
+signed relabelings \\
+\bottomrule
+\end{tabularx}
+\caption{Exact active-palette data.  Vertex counts include the \(7m_a\)
+register vertices of the active bowties.  In each determinant row,
+\(p=1000003\) and \(G=T_{a,1}^*T_{a,1}\) on \(Q_a\); a nonzero residue
+proves injectivity over \(\mathbb Q\).}
+\label{tab:palette-certificates}
+\end{table}
+
+For the one-qubit atom, exact boundary ranks are \(15,24\) and the Betti
+numbers are \((1,1,0)\); a denominator-one 24-term two-chain fills the target
+cycle.  At zero weight the target differential pair has rank \(30\), and the
+two register cycles plus eight private vectors give its complete
+ten-dimensional kernel.  For \(\ket{00}-\ket{11}\), the clique counts in
+degrees zero through four are
+\((33,241,646,712,272)\), the boundary ranks are
+\((32,209,437,272)\), and the Betti numbers are \((1,0,0,3,0)\).
+A denominator-one 248-term four-chain fills the target; rank \(596\) of the
+zero-weight pair matches the four register and 112 private kernel vectors.
+Swapping the second bowtie petals transports this certificate exactly to
+\(\ket{01}-\ket{10}\).
+
+For the three-term representative, the clique counts in degrees zero through
+five are
+\[
+(41,322,914,1082,477,30),
+\]
+and the boundary ranks are \((40,282,632,447,30)\).  Hence the target
+degree-three Betti number is three.  A denominator-one 382-term four-chain
+fills \(\ket{00}-\ket{10}-\ket{11}\), while three complementary register
+cycles remain independent modulo boundaries.  The zero-weight pair has rank
+\(902\), matching its kernel \(V\oplus Q\) of dimension \(4+176\).
+Signed permutations of bowtie petals transport the graph, filling, kernel,
+and private pair to the other three gain/loss vectors.
+
+\subsection{Selected-cycle guards}
+
+We record the guard closure because it is part of the theorem interface, not
+an appeal to a general integer-state gadget.  Let \(Y\) implement
+\(\pi_\phi\) on register \(R\), let \(B\) be a fresh bowtie with petals
+\(S_0,S_1\), and choose \(\beta\in\{0,1\}\).  Add all edges of \(B\), join
+every vertex of \(R\) to every vertex of \(B\), and join each private vertex
+of \(Y\) only to the selected petal \(S_\beta\).  The resulting flag complex
+is
+\begin{equation}
+\label{eq:guard-union}
+Z=(Y*S_\beta)\cup(R*B),\qquad
+(Y*S_\beta)\cap(R*B)=R*S_\beta .
+\end{equation}
+Its new register is \(R'=R*B\).  If \(\gamma_\beta\) is the normalized
+oriented cycle of the selected petal, then \(Z\) implements
+\[
+\pi_\phi\otimes\ket{\beta}\!\bra{\beta},\qquad
+Q'=Q\otimes\mathbb C\gamma_\beta .
+\]
+
+Indeed, reduced relative chains give
+\[
+\widetilde C_*(Z,R')
+\cong\widetilde C_*(Y,R)\widehat\otimes
+\widetilde C_*(S_\beta).
+\]
+The connecting map therefore tensors the old exact boundary intersection
+with \([\gamma_\beta]\), proving exact filling and no additional killed
+register class.  At zero private weight the private differential is the
+corresponding tensor-sum differential.  Since \(S_\beta\) has reduced
+homology only in degree one, the complete target kernel is
+\(V'\oplus Q'\); every other bidegree pays a fixed positive guard gap.
+Finally, project the old private output pair onto the selected harmonic line.
+Both outside differentials vanish under this projection, so
+\[
+T_Z(\lambda)=\lambda T_{Z,1},\qquad
+T_{Z,1}V'=0,\qquad
+\|T_{Z,1}(q\otimes\gamma_\beta)\|
+\ge b\|q\otimes\gamma_\beta\|.
+\]
+Removing the unique old private vertex also gives
+\(LL^*\preceq N_{\rm priv}\lambda^2I\).  Iterating this construction for the
+constant number of required basis guards preserves a fixed finite palette.
+
+The basis projector itself is the special case
+\(R\cup(v*S_\beta)\), where a private apex \(v\) cones the selected petal.
+Its private zero-weight kernel \(Q\) is zero, so the private-pair condition is
+vacuous.  Together with \cref{tab:palette-certificates}, this proves
+\cref{lem:palette}.
+
+\subsection{Reproducibility boundary}
+
+The supplementary archive contains the exact witnesses in
+\begin{itemize}
+\item \path{RUDOLPH_REPRESENTATIVE_BULK_CERTIFICATE.json},
+\item \path{REMAINING_ACTIVE_ATOM_CERTIFICATES.json},
+\item \path{ACTIVE_HADAMARD_ORBIT_CERTIFICATE.json}, and
+\item \path{SELECTED_CYCLE_GUARD_CHECKS.json}.
+\end{itemize}
+Their checkers recompute the stated ranks, fillings, relabelings, and guard
+identities.  These finite checks certify the displayed palette; the analytic
+implication from those certificates is the proof of \cref{thm:transfer}.

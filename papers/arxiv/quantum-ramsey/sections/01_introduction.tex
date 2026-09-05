@@ -1,0 +1,175 @@
+\section{Introduction}\label{sec:introduction}
+
+Ramsey's theorem guarantees that every graph on $N\ge4^{K-1}$ vertices
+contains a clique or an independent set of order $K$.  Its classical
+constructive proof \cite{ErdosSzekeres1935} repeatedly chooses a pivot and
+restricts the candidate set to one of the pivot's two colour
+neighbourhoods; truncating each retained neighbourhood to half its current
+size, it finds a homogeneous $K$-set with $O(N)$ adjacency queries.  The
+corresponding total search problem, \textsc{Ramsey}, has been studied in
+proof complexity and in TFNP
+\cite{Krajicek2001,Krajicek2005,KomargodskiNaorYogev2019,
+PasarkarPapadimitriouYannakakis2023,JainLiRobereXun2024}: the input graph on
+$N=2^n$ vertices is given by a circuit or an oracle, and the target order is
+$K=n/2$.  The query complexity of this relation in the deterministic,
+randomized, and quantum models is posed as an open question
+in \cite[Section~III]{JainLiRobereXun2024}.  This paper answers the
+quantum question up to a polynomial gap and clarifies the lower-bound
+record on both the quantum and the classical side.
+
+The central observation is that the candidate sets of the constructive proof
+need not be materialized.  After $i$ rounds, membership in the current set
+is determined by the $i$ adjacency constraints imposed by the previous
+pivots.  These short predicates allow quantum search to sample from the
+same recursion at substantially smaller query cost.  The threshold $4^{K-1}$
+is the natural scale for this recursive construction.
+
+\subsection{Our results}
+
+We work in the promised valid-graph adjacency-oracle model.  One coherent
+query returns the colour of a requested unordered vertex pair, and the output
+is a set of vertices inducing one colour.  Our main result is the following.
+
+\begin{table}[t]
+\centering
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llll}
+\hline
+model & input & lower bound & upper bound\\
+\hline
+randomized & worst case
+ & $\Omega(N^{1-1/\sqrt2})$ \ [\cref{prop:classical-lower}]
+ & $O(N)$ \ \cite{ErdosSzekeres1935}\\
+randomized & $G(N,1/2)$
+ & $\Omega(N^{1-1/\sqrt2})$ \ [\cref{prop:classical-lower}]
+ & $\widetilde O(N^{1/2})$ \ [\cref{rem:classical-greedy}]\\
+quantum & worst case
+ & $\Omega(N^{1/12})$ \ [\cref{prop:quantum-lower}]
+ & $\widetilde O(N^{1/2})$ \ [\cref{cor:succinct}]\\
+quantum & $G(N,1/2)$
+ & open
+ & $\widetilde O(N^{1/4})$ \ [\cref{cor:separation}]\\
+\hline
+\end{tabular}
+\caption{Bounded-error query complexity of finding a homogeneous set of
+order $\lfloor n/2\rfloor+1$ in a graph on $N=2^n$ vertices, in the worst
+case and on the uniform distribution $G(N,1/2)$; here
+$1-1/\sqrt2\approx0.2929$.  The lower bounds are the random-Painter
+estimate of \cite{ConlonFoxGrinshpunHe2019} and the collision reduction of
+\cite{JainLiRobereXun2024} at multiplicity two (\cref{prop:quantum-lower}
+is stated for order $\lfloor n/2\rfloor$ and hence valid here).}
+\label{tab:bounds}
+\end{table}
+
+\begin{theorem}[Implicit-majority quantum Ramsey search]
+\label{thm:main}
+Let $K\ge2$, $N\ge4^{K-1}$, and $0<\eta<1/2$.  Given coherent edge-oracle
+access to a simple undirected graph on $N$ vertices, there is a quantum
+algorithm which, with probability at least $1-\eta$, outputs a $K$-clique or
+a $K$-vertex independent set using
+\[
+ O\!\left(2^K K\log\frac K\eta\right)
+\]
+edge queries in the worst case.  The algorithm verifies every returned
+witness and may output $\bot$ on the exceptional event.
+\end{theorem}
+
+At the succinct Ramsey scale, the theorem gives the following form.
+
+\begin{corollary}\label{cor:succinct}
+Let $n\ge2$, $N=2^n$, and $0<\eta<1/2$.  Given coherent edge-oracle access
+to a simple graph on $N$ vertices, one can find a clique or independent set
+of order $\lfloor n/2\rfloor+1$ using
+\[
+ O\!\left(
+ \sqrt N\log N\log\frac{\log N}{\eta}
+ \right)
+\]
+edge queries in the worst case.
+\end{corollary}
+
+\begin{proof}
+Set $K=\lfloor n/2\rfloor+1$.  Then
+$4^{K-1}=2^{2\lfloor n/2\rfloor}\le 2^n=N$, so \cref{thm:main} applies, and
+$2^K\le2\sqrt N$, $K=O(\log N)$, and
+$\log(K/\eta)=O(\log(\log N/\eta))$.
+\end{proof}
+
+To our knowledge, this is the first sublinear worst-case query algorithm
+for the Ramsey relation in any model.  \Cref{tab:bounds} places it among
+the known bounds together with the further results of this paper.
+
+\paragraph{An estimation-free recursion.}
+Following the colour of a uniformly sampled edge selects a colour class with
+probability proportional to its size, and a one-dimensional survival
+recurrence shows that this recursion completes with probability greater
+than $1/2$ from $4^{K-1}$ vertices.  This gives an
+$O(2^KK^2\log K\log(1/\eta))$-query algorithm without any majority
+estimation (\cref{prop:size-biased-algorithm}), which extends to every
+fixed number of edge colours (\cref{cor:multicolour}).
+
+\paragraph{A randomized lower bound.}
+Every randomized algorithm needs $\Omega(M^{1-1/\sqrt2})$ queries to find a
+homogeneous $K$-set in a graph on $M=4^{K-1}$ vertices, even on the uniform
+distribution $G(M,1/2)$ (\cref{prop:classical-lower}); this improves the
+$M^{1/4}$ black-box bound of
+\cite{ImpagliazzoNaor1988,KomargodskiNaorYogev2019}.  The proof transports
+the random-Painter weight estimate of \cite{ConlonFoxGrinshpunHe2019} to
+the query model, with a self-contained version in \cref{app:classical-lower}.
+
+\paragraph{A quantum speedup on random graphs.}
+On $G(N,1/2)$, a greedy quantum neighbourhood search finds a $K$-clique
+with $\widetilde O(N^{1/4})$ queries (\cref{prop:random-graph}).  Together
+with the distributional form of the lower bound, this gives a polynomial
+separation between the quantum and randomized query complexities of the
+Ramsey relation on its natural hard distribution (\cref{cor:separation}).
+We are not aware of an earlier provable quantum speedup for this relation.
+In the worst case, no separation is claimed: the randomized complexity is
+only known to lie between $N^{1-1/\sqrt2}$ and $N$.
+
+\paragraph{The quantum lower-bound record.}
+The paragraph of \cite{JainLiRobereXun2024} that raises the query question
+also reports an $N^{1-o(1)}$ quantum lower bound at the default parameters,
+obtained by composing its collision reduction with the multicollision lower
+bound of \cite{LiuZhandry2019}.  \Cref{thm:main} shows that no such bound
+can hold at these parameters, and \cref{sec:jlrx} shows that the cited
+ingredients compose to an exponent of at most $1/12$ (at most $1/24$ under
+the parameter condition as printed), attained at multiplicity two.  The
+resulting $\Omega(N^{1/12})$ bound (\cref{prop:quantum-lower}) is, to our
+knowledge, the best known quantum lower bound; the main theorems of
+\cite{JainLiRobereXun2024} do not depend on the remark.
+
+\subsection{Techniques}
+
+Both algorithms represent the candidate set after round $i$ by the
+conjunction of the adjacency constraints generated by the first $i$ pivots,
+so a membership test costs $O(i)$ edge queries, and sample it with capped
+unknown-solution search (\cref{lem:capped-search}); conditional on success,
+permutation symmetry makes each sample exactly uniform.  The scale-aware
+recursion estimates a near-majority colour at every pivot.  Sampling a deep
+set is exponentially more expensive than sampling an early one, so we
+distribute a fixed error budget across the levels, doubling the allowed
+error every six levels; a product invariant then keeps every candidate set
+within a constant factor of its ideal size, and the query sum is dominated
+by the last levels.
+
+The lower bound and the random-graph speedup both rest on the predictable
+size of common neighbourhoods in $G(N,1/2)$.  A martingale weight argument
+in the style of \cite{ConlonFoxGrinshpunHe2019} shows that an adaptive
+algorithm with $T$ queries exposes a monochromatic $K$-set with probability
+at most $2\cdot2^{-\binom K2+c(c-1)}(2T)^{K-c}$ for every $c\le K/2$, and
+optimizing $c$ gives the exponent $2-\sqrt2$; a union bound shows that
+every $j$-set has common neighbourhood of density about $2^{-j}$, so greedy
+quantum search costs $O(2^{j/2})$ predicate evaluations at depth $j$.
+
+\paragraph{Organization.}
+\Cref{sec:model} fixes the query model and the sampler.
+\Cref{sec:algorithm} presents the two recursions, their analysis, and the
+proof sketch of \cref{thm:main}; \cref{sec:lower} states the lower bounds
+and the random-graph speedup.  \Cref{sec:prior-art} discusses related work
+and the reported lower bound, and \cref{sec:scope} lists open questions.
+All full proofs are in the appendices: the sampler and the encoding
+corollary in \cref{app:capped-search}, the upper bounds in
+\cref{app:upper-proofs}, the lower bounds and random-graph results in
+\cref{app:classical-lower}, and the multicolour extension, numerical
+illustrations, and AI disclosure in \cref{app:extensions}.

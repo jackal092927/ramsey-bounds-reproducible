@@ -1,0 +1,71 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{preprint}
+\usepackage{mathtools}
+\usepackage{xurl}
+
+\setcounter{secnumdepth}{3}
+\title{Quantum Query Algorithms for the Constructive Diagonal Ramsey Theorem}
+\author{Cheng Xin\\[0.4em]\small Department of Computer Science\\\small California State University, Fresno\\\small\texttt{cxin@mail.fresnostate.edu}}
+\date{}
+\AtBeginDocument{\hypersetup{
+  pdftitle={Quantum Query Algorithms for the Constructive Diagonal Ramsey Theorem},
+  pdfauthor={Cheng Xin},
+  pdfsubject={Preprint: quantum query algorithms for constructive Ramsey search},
+  pdfkeywords={diagonal Ramsey theorem, clique or independent set, quantum query complexity,
+  adjacency oracle, implicit sets, total search}}}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The constructive diagonal Ramsey problem asks, given adjacency-oracle access
+to an $N$-vertex graph, for a clique or independent set of the order
+guaranteed by Ramsey's theorem.  We give a bounded-error quantum algorithm
+that, for every $K\ge2$ and $N\ge4^{K-1}$, finds and verifies a homogeneous
+$K$-set using
+\[
+  O\!\left(2^K K\log\frac K\eta\right)
+\]
+edge queries with failure probability at most $\eta$.  At the Ramsey scale
+$N=2^n$, this yields a homogeneous set of order $\lfloor n/2\rfloor+1$
+using $O(\sqrt N\log N\log(\log N/\eta))$ queries, improving on the $O(N)$
+queries of the explicit classical recursion and giving, to our knowledge,
+the first sublinear worst-case algorithm for the Ramsey relation.
+We also derive an $\Omega(N^{1/12})$ quantum lower bound by a reduction
+from collision finding.
+
+The algorithm runs the constructive recursion over implicit candidate sets.
+Each set is represented by a short conjunction of adjacency constraints and
+sampled using capped unknown-solution quantum search, and a scale-aware
+concentration schedule balances estimation accuracy against the increasing
+cost of sampling deeper sets.  We complement the upper bound with an
+$\Omega(N^{1-1/\sqrt2})$ randomized lower bound, transported from the
+random-Painter analysis of online Ramsey numbers, which holds on the uniform
+distribution $G(N,1/2)$.  On that distribution a greedy quantum search uses
+only $\widetilde O(N^{1/4})$ queries, giving a provable polynomial quantum
+speedup for Ramsey search on random graphs.  We also give an
+estimation-free size-biased recursion and extend it to every fixed number
+of edge colours.
+\end{abstract}
+
+\input{sections/01_introduction}
+\input{sections/02_model_and_search}
+\input{sections/03_algorithm}
+\input{sections/04_lower_and_random}
+\input{sections/05_related_work}
+\input{sections/06_discussion}
+
+\clearpage
+\bibliographystyle{plainurl}
+\bibliography{references,foundational_references}
+
+\clearpage
+\appendix
+\input{appendices/A_capped_search}
+\input{appendices/B_upper_proofs}
+\input{appendices/C_lower_and_random}
+\input{appendices/D_extensions_and_reproducibility}
+
+\end{document}

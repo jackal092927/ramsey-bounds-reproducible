@@ -1,0 +1,188 @@
+\begin{thebibliography}{10}
+
+\bibitem{apers2023simple}
+Simon Apers, Sander Gribling, Sayantan Sen, and D{\'a}niel Szab{\'o}.
+\newblock A (simple) classical algorithm for estimating {B}etti numbers.
+\newblock {\em Quantum}, 7:1202, 2023.
+\newblock \href {https://doi.org/10.22331/q-2023-12-06-1202}
+  {\path{doi:10.22331/q-2023-12-06-1202}}.
+
+\bibitem{berry2024analyzing}
+Dominic~W. Berry, Yuan Su, Casper Gyurik, Robbie King, Joao Basso, Alexander
+  Del~Toro Barba, Abhishek Rajput, Nathan Wiebe, Vedran Dunjko, and Ryan
+  Babbush.
+\newblock Analyzing prospects for quantum advantage in topological data
+  analysis.
+\newblock {\em PRX Quantum}, 5:010319, 2024.
+\newblock \href {https://doi.org/10.1103/PRXQuantum.5.010319}
+  {\path{doi:10.1103/PRXQuantum.5.010319}}.
+
+\bibitem{cade2024complexity}
+Chris Cade and P.~Marcos Crichigno.
+\newblock Complexity of supersymmetric systems and the cohomology problem.
+\newblock {\em Quantum}, 8:1325, 2024.
+\newblock \href {https://doi.org/10.22331/q-2024-04-30-1325}
+  {\path{doi:10.22331/q-2024-04-30-1325}}.
+
+\bibitem{carlsson2009topology}
+Gunnar Carlsson.
+\newblock Topology and data.
+\newblock {\em Bulletin of the American Mathematical Society}, 46(2):255--308,
+  2009.
+\newblock \href {https://doi.org/10.1090/S0273-0979-09-01249-X}
+  {\path{doi:10.1090/S0273-0979-09-01249-X}}.
+
+\bibitem{crichigno2024clique}
+Marcos Crichigno and Tamara Kohler.
+\newblock Clique homology is {QMA}$_1$-hard.
+\newblock {\em Nature Communications}, 15:9846, 2024.
+\newblock URL: \url{https://www.nature.com/articles/s41467-024-54118-z}, \href
+  {https://doi.org/10.1038/s41467-024-54118-z}
+  {\path{doi:10.1038/s41467-024-54118-z}}.
+
+\bibitem{eckmann1944harmonische}
+Beno Eckmann.
+\newblock Harmonische {F}unktionen und {R}andwertaufgaben in einem {K}omplex.
+\newblock {\em Commentarii Mathematici Helvetici}, 17:240--255, 1944.
+\newblock \href {https://doi.org/10.1007/BF02566245}
+  {\path{doi:10.1007/BF02566245}}.
+
+\bibitem{edelsbrunner2002topological}
+Herbert Edelsbrunner, David Letscher, and Afra Zomorodian.
+\newblock Topological persistence and simplification.
+\newblock {\em Discrete \& Computational Geometry}, 28(4):511--533, 2002.
+\newblock \href {https://doi.org/10.1007/s00454-002-2885-2}
+  {\path{doi:10.1007/s00454-002-2885-2}}.
+
+\bibitem{gyurik2022towards}
+Casper Gyurik, Chris Cade, and Vedran Dunjko.
+\newblock Towards quantum advantage via topological data analysis.
+\newblock {\em Quantum}, 6:855, 2022.
+\newblock \href {https://doi.org/10.22331/q-2022-11-10-855}
+  {\path{doi:10.22331/q-2022-11-10-855}}.
+
+\bibitem{gyurik2026provable}
+Casper Gyurik, Alexander Schmidhuber, Robbie King, Vedran Dunjko, and Ryu
+  Hayakawa.
+\newblock Provable quantum speedups for computing persistence in topological
+  data analysis.
+\newblock {\em PRX Quantum}, 7:020361, 2026.
+\newblock URL: \url{https://arxiv.org/abs/2410.21258v2}, \href
+  {https://doi.org/10.1103/gvys-hl8h} {\path{doi:10.1103/gvys-hl8h}}.
+
+\bibitem{hayakawa2022quantum}
+Ryu Hayakawa.
+\newblock Quantum algorithm for persistent {B}etti numbers and topological data
+  analysis.
+\newblock {\em Quantum}, 6:873, 2022.
+\newblock \href {https://doi.org/10.22331/q-2022-12-07-873}
+  {\path{doi:10.22331/q-2022-12-07-873}}.
+
+\bibitem{hayakawa2026unweighted}
+Ryu Hayakawa.
+\newblock Unweighted gapped clique homology is {QMA}$_1$-complete, 2026.
+\newblock URL: \url{https://arxiv.org/abs/2608.02726v1}, \href
+  {http://arxiv.org/abs/2608.02726} {\path{arXiv:2608.02726}}.
+
+\bibitem{horak2013spectra}
+Danijela Horak and J{\"u}rgen Jost.
+\newblock Spectra of combinatorial {L}aplace operators on simplicial complexes.
+\newblock {\em Advances in Mathematics}, 244:303--336, 2013.
+\newblock \href {https://doi.org/10.1016/j.aim.2013.05.007}
+  {\path{doi:10.1016/j.aim.2013.05.007}}.
+
+\bibitem{kempe2006complexity}
+Julia Kempe, Alexei Kitaev, and Oded Regev.
+\newblock The complexity of the local {H}amiltonian problem.
+\newblock {\em SIAM Journal on Computing}, 35(5):1070--1097, 2006.
+\newblock \href {https://doi.org/10.1137/S0097539704445226}
+  {\path{doi:10.1137/S0097539704445226}}.
+
+\bibitem{king2023gappedv2}
+Robbie King and Tamara Kohler.
+\newblock Gapped clique homology on weighted graphs is {QMA}$_1$-hard and
+  contained in {QMA}, 2023.
+\newblock Version 2, equation-level proof comparison.
+\newblock URL: \url{https://arxiv.org/abs/2311.17234v2}, \href
+  {http://arxiv.org/abs/2311.17234} {\path{arXiv:2311.17234}}.
+
+\bibitem{king2026gapped}
+Robbie King and Tamara Kohler.
+\newblock Gapped clique homology on weighted graphs is {QMA}$_1$-hard and
+  contained in {QMA}.
+\newblock {\em SIAM Journal on Computing}, pages FOCS24--137--FOCS24--235,
+  2026.
+\newblock \href {https://doi.org/10.1137/24M1710243}
+  {\path{doi:10.1137/24M1710243}}.
+
+\bibitem{kitaev2002classical}
+Alexei~Yu. Kitaev, Alexander~H. Shen, and Mikhail~N. Vyalyi.
+\newblock {\em Classical and Quantum Computation}, volume~47 of {\em Graduate
+  Studies in Mathematics}.
+\newblock American Mathematical Society, 2002.
+
+\bibitem{knill1998power}
+Emanuel Knill and Raymond Laflamme.
+\newblock Power of one bit of quantum information.
+\newblock {\em Physical Review Letters}, 81(25):5672--5675, 1998.
+\newblock \href {https://doi.org/10.1103/PhysRevLett.81.5672}
+  {\path{doi:10.1103/PhysRevLett.81.5672}}.
+
+\bibitem{lloyd2016quantum}
+Seth Lloyd, Silvano Garnerone, and Paolo Zanardi.
+\newblock Quantum algorithms for topological and geometric analysis of data.
+\newblock {\em Nature Communications}, 7:10138, 2016.
+\newblock \href {https://doi.org/10.1038/ncomms10138}
+  {\path{doi:10.1038/ncomms10138}}.
+
+\bibitem{lowe2026normalized}
+Dominic Lowe, M.~S. Kim, Roberto Bondesan, and Ryu Hayakawa.
+\newblock Complexity of normalized persistence problems for topological data
+  analysis and local hamiltonians, 2026.
+\newblock URL: \url{https://arxiv.org/abs/2607.03278v1}, \href
+  {http://arxiv.org/abs/2607.03278} {\path{arXiv:2607.03278}}.
+
+\bibitem{mcardle2026streamlined}
+Sam McArdle, Andr{\'a}s Gily{\'e}n, and Mario Berta.
+\newblock A streamlined quantum algorithm for topological data analysis with
+  exponentially fewer qubits.
+\newblock {\em Quantum}, 10:2058, 2026.
+\newblock \href {https://doi.org/10.22331/q-2026-04-10-2058}
+  {\path{doi:10.22331/q-2026-04-10-2058}}.
+
+\bibitem{memoli2022persistent}
+Facundo M{\'e}moli, Zhengchao Wan, and Yusu Wang.
+\newblock Persistent laplacians: Properties, algorithms and implications.
+\newblock {\em SIAM Journal on Mathematics of Data Science}, 4(2):858--884,
+  2022.
+\newblock \href {https://doi.org/10.1137/21M1435471}
+  {\path{doi:10.1137/21M1435471}}.
+
+\bibitem{rudolph2026universal}
+Dorian Rudolph.
+\newblock Towards a universal gateset for {QMA}$_1$.
+\newblock In Michal Kouck{\'y} and Daniela Petri{\c{s}}an, editors, {\em 51st
+  International Symposium on Mathematical Foundations of Computer Science (MFCS
+  2026)}, volume 386 of {\em Leibniz International Proceedings in Informatics
+  (LIPIcs)}, pages 98:1--98:19. Schloss Dagstuhl -- Leibniz-Zentrum f{\"u}r
+  Informatik, 2026.
+\newblock Full version: arXiv:2411.02681v2.
+\newblock \href {https://doi.org/10.4230/LIPIcs.MFCS.2026.98}
+  {\path{doi:10.4230/LIPIcs.MFCS.2026.98}}.
+
+\bibitem{schmidhuber2023limitations}
+Alexander Schmidhuber and Seth Lloyd.
+\newblock Complexity-theoretic limitations on quantum algorithms for
+  topological data analysis.
+\newblock {\em PRX Quantum}, 4:040349, 2023.
+\newblock \href {https://doi.org/10.1103/PRXQuantum.4.040349}
+  {\path{doi:10.1103/PRXQuantum.4.040349}}.
+
+\bibitem{zomorodian2005computing}
+Afra Zomorodian and Gunnar Carlsson.
+\newblock Computing persistent homology.
+\newblock {\em Discrete \& Computational Geometry}, 33:249--274, 2005.
+\newblock \href {https://doi.org/10.1007/s00454-004-1146-y}
+  {\path{doi:10.1007/s00454-004-1146-y}}.
+
+\end{thebibliography}

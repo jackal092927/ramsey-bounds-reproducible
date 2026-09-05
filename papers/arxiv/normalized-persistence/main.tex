@@ -1,0 +1,57 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{preprint}
+\usepackage{amscd,mathtools}
+\usepackage{booktabs,tabularx,array}
+\usepackage{xurl}
+
+\input{math_commands}
+
+\newtheorem{assumption}[theorem]{Assumption}
+\setcounter{secnumdepth}{3}
+
+\title{Exact Kernel Transfer to Clique Complexes and the Hardness of
+Normalized Persistence}
+\author{Cheng Xin\\[0.4em]\small Department of Computer Science\\\small California State University, Fresno\\\small\texttt{cxin@mail.fresnostate.edu}}
+\date{}
+\AtBeginDocument{\hypersetup{
+  pdftitle={Exact Kernel Transfer to Clique Complexes and the Hardness of Normalized Persistence},
+  pdfauthor={Cheng Xin},
+  pdfsubject={Preprint on exact normalized persistence in clique filtrations},
+  pdfkeywords={clique homology, normalized persistence, spectral gap, quantum complexity}}}
+
+\begin{document}
+\raggedbottom
+\maketitle
+
+\begin{abstract}
+\input{sections/0_abstract}
+\end{abstract}
+
+\input{sections/1_introduction}
+\input{sections/2_preliminaries}
+\input{sections/3_transfer}
+\input{sections/4_quotient}
+\input{sections/5_circuit}
+\input{sections/6_unweighting}
+\input{sections/7_related_work}
+\input{sections/8_limitations_conclusion}
+
+\bibliographystyle{plainurl}
+\bibliography{references}
+
+\clearpage
+\appendix
+\input{sections/A_transfer_proof}
+\input{sections/B_source_details}
+\input{sections/C_palette_certificates}
+
+\section*{AI Disclosure}
+We used ChatGPT and Claude as auxiliary tools for literature search,
+brainstorming, proof checking, and drafting and editing of the exposition
+(Sections~1, 3--8, and Appendices~A--C).
+The authors evaluated and revised all AI-assisted material and take full
+responsibility for the correctness and originality of the submission,
+including every proof and reference.
+
+\end{document}

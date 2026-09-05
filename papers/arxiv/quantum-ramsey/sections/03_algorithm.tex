@@ -1,0 +1,155 @@
+\section{Implicit-set recursions and the main theorem}\label{sec:algorithm}
+
+\subsection{An estimation-free size-biased recursion}
+
+Set $M=4^{K-1}$ and $r=2K-3$, restrict the input to its first $M$ vertices,
+let $S_0=[M]$, and fix any $v_0\in S_0$.  At step
+$i=0,\ldots,r-1$, define $T_i=S_i\setminus\{v_i\}$.  Apply the repeated
+capped search from \cref{lem:capped-search}, with the universal density lower
+bound $1/M$, to sample an exactly uniform $x_i\in T_i$; abort if the fixed
+cap is exhausted.  Query $c_i=G(v_i,x_i)$ and set
+\[
+ S_{i+1}=\{x\in T_i:G(v_i,x)=c_i\},
+ \qquad v_{i+1}=x_i.
+\]
+After the final step, put $w=v_r$.  Among the $r$ labels $c_i$, choose a
+colour that appears at least $K-1$ times, and return the corresponding
+pivots together with $w$ after directly verifying the induced edges.  The
+algorithm never materializes $S_i$: its membership predicate is the
+conjunction of the edge constraints imposed by the earlier pivots, together
+with the exclusions of those pivots, and costs $O(i+1)$ edge queries.
+Repeating each capped block $O(\log(2r))$ times reduces its conditional
+failure probability on a nonempty set to $O(1/r)$.
+
+For integers $d,s\ge0$, let $P_d(s)$ be the infimum, over all graphs,
+candidate sets of size $s$, and distinguished pivots in those sets, of the
+probability that the ideal size-biased recursion completes $d$ additional
+steps; set $P_0(s)=1$ for $s\ge1$, $P_d(0)=0$, and $P_d(1)=0$ for $d\ge1$.
+
+\begin{lemma}[Size-biased survival]\label{lem:size-biased-survival}
+For every $d\ge0$ and $s\ge1$,
+$P_d(s)\ge(s-2^d+1)_+/s$, where $(y)_+=\max\{y,0\}$.
+In particular, for $M=4^{K-1}$ and $r=2K-3$, the ideal recursion completes
+with probability at least $1/2+1/M$.
+\end{lemma}
+
+The proof is an induction on $d$: the sample selects the two colour classes
+of sizes $a+b=s-1$ with probabilities $a/(s-1)$ and $b/(s-1)$, and
+$(x)_++(y)_+\ge(x+y)_+$ collapses the resulting sum to one positive part.
+Exact conditional uniformity couples an implemented run to the ideal
+recursion, so charging each search failure probability $1/(100r)$ leaves
+completion probability at least $0.49$; counting $O(\sqrt M)$ tests per
+block, $O(\log(2r))$ blocks per level, and $O(i+1)$ queries per test then
+gives the following bound (\cref{app:upper-proofs}).
+
+\begin{proposition}[Size-biased quantum recursion]
+\label{prop:size-biased-algorithm}
+Under the hypotheses of \cref{thm:main}, the estimation-free algorithm returns
+a verified homogeneous $K$-set with probability at least $1-\eta$ using
+$O(K^2 2^K\log K\log(1/\eta))$ edge queries in the worst case.
+\end{proposition}
+
+\subsection{Scale-aware approximate majorities}
+
+The sharper recursion estimates a near-majority colour at each pivot.  Fix
+$M=4^{K-1}$ input vertices, $r=2K-3$, and $E=1/16$.  For $0\le i<r$, define
+\[
+ d_i=\left\lceil\frac{r-1-i}{6}\right\rceil,
+ \qquad z_i=2^{-d_i},
+ \qquad Z=\sum_{j=0}^{r-1}z_j,
+\]
+and allocate
+\begin{equation}\label{eq:error-schedule}
+ \varepsilon_i=E\frac{z_i}{Z},
+ \qquad a_i=\frac12-\varepsilon_i,
+\end{equation}
+so that $\sum_i\varepsilon_i=E$.  The allowable error doubles once every six
+levels, matching the increasing cost of sampling the deeper candidate sets.
+Before round $i$, the recorded pivots $v_0,\ldots,v_{i-1}$ and colours
+$c_0,\ldots,c_{i-1}$ define the exact implicit set
+\begin{equation}\label{eq:implicit-set}
+ S_i=\left\{
+ u\in[M]\setminus\{v_0,\ldots,v_{i-1}\}:
+ G(v_j,u)=c_j\ \text{for every }j<i
+ \right\},
+\end{equation}
+whose reversible membership predicate uses $O(i)$ edge queries.
+
+At round $i$, use \cref{lem:capped-search} to obtain a verified pivot
+$v_i\in S_i$.  Then collect, with replacement,
+\begin{equation}\label{eq:sample-count}
+ m_i=\left\lceil
+ \frac{1}{2\varepsilon_i^2}\log\frac{4r}{\eta}
+ \right\rceil
+\end{equation}
+independent uniform samples from $S_i\setminus\{v_i\}$, query their edges to
+$v_i$, and let $\widehat p_i$ be the observed fraction of colour~$1$.  Set
+$c_i=1$ when $\widehat p_i\ge1/2$ and $c_i=0$ otherwise; appending this edge
+constraint to \cref{eq:implicit-set} defines $S_{i+1}$.  After $r$ rounds,
+one final capped search returns $w\in S_r$.  Select a colour that occurs at
+least $K-1$ times among $c_0,\ldots,c_{r-1}$, take any $K-1$ pivots
+carrying that colour, add $w$, query all $\binom K2$ induced edges, and
+return the set only if this check confirms homogeneity.  Every search and
+batch has a predetermined cap, so every execution terminates; a failed
+search or batch returns $\bot$.
+
+\subsection{Analysis}
+
+\begin{lemma}[Conditional near-majorities]\label{lem:concentration}
+Except with probability at most $\eta/2$, every completed sampling batch
+reached after successful searches and an accurate prefix satisfies
+$|\widehat p_i-p_i|\le\varepsilon_i$, where $p_i$ is the true colour-$1$
+fraction from $v_i$ to $S_i\setminus\{v_i\}$.
+\end{lemma}
+
+Conditional on the classical history before level $i$ and on batch
+success, the samples are independent and uniform on a fixed set, so
+Hoeffding's inequality and \cref{eq:sample-count} bound the inaccuracy
+probability by $\eta/(2r)$; a union bound over the first inaccurate level
+gives the lemma.  Giving each of the $2r+1$ searches and batches failure
+probability $\eta/(4r+2)$ adds at most $\eta/2$, so all searches and
+estimates are good with probability at least $1-\eta$.  Let $s_i=|S_i|$,
+$A_0=1$, and $A_i=\prod_{j<i}a_j$.
+
+\begin{lemma}[Variable recurrence and density]\label{lem:survival}
+On every prefix satisfying \cref{lem:concentration},
+$s_i>MA_i-1$ and $A_i\ge\frac78\,2^{-i}$.  Consequently $S_r$ is nonempty,
+$|S_i\setminus\{v_i\}|/M>\frac38\,2^{-i}$ for every sampling level $i<r$,
+and $|S_r|/M\ge2^{-(r+1)}\ge\frac38\,2^{-r}$.
+\end{lemma}
+
+An accurate majority retains at least a fraction $a_i$ of the non-pivot
+vertices, so $s_{i+1}\ge a_i(s_i-1)$; the bound on $A_i$ follows from
+$\sum_i\varepsilon_i=1/16$, the invariant propagates because $a_i<1/2$,
+and $M2^{-r}=2$ makes the integer $s_r$ exceed $3/4$
+(\cref{app:upper-proofs}).
+
+\begin{lemma}[Exact homogeneous output]\label{lem:output}
+Whenever the algorithm reaches its final verified output, that output is a
+$K$-clique or a $K$-vertex independent set.
+\end{lemma}
+
+\begin{proof}
+For $i<j$, the definition of $S_{i+1}$ gives $G(v_i,v_j)=c_i$ and
+$G(v_i,w)=c_i$; a colour occurring $\lceil r/2\rceil=K-1$ times among the
+$r=2K-3$ colours therefore yields, with $w$, a homogeneous $K$-set, and the
+final direct check is independent of earlier errors.
+\end{proof}
+
+\begin{proof}[Proof sketch of \cref{thm:main}]
+With probability at least $1-\eta$ all searches succeed and all estimates
+are accurate; then \cref{lem:survival} guarantees every density promise
+used by the sampler and the nonemptiness of $S_r$, and \cref{lem:output}
+gives a homogeneous output.  A capped block at level $i$ uses $O(2^{i/2})$
+membership tests of $O(i+1)$ queries each, a batch uses $O(m_i)$ blocks,
+and $Z<12$ gives $\varepsilon_i^{-2}=O(4^{d_i})$ in
+\cref{eq:error-schedule}.  With $h=r-1-i$ and
+$4^{\lceil h/6\rceil}\le4\cdot2^{h/3}$, the batches cost
+\[
+ O\!\left(\log\frac r\eta\sum_{i<r}(i+1)2^{i/2}4^{d_i}\right)
+ =O\!\left(2^{r/2}\log\frac r\eta\sum_{h<r}(r-h)2^{-h/6}\right)
+ =O\!\left(r2^{r/2}\log\frac r\eta\right),
+\]
+the amplified searches cost the same order, and $r=2K-3$ gives
+$O(2^KK\log(K/\eta))$.  The full computation is in \cref{app:upper-proofs}.
+\end{proof}

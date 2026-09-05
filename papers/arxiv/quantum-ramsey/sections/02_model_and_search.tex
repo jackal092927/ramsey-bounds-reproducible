@@ -1,0 +1,42 @@
+\section{Oracle model and capped quantum sampling}\label{sec:model}
+
+Let $G\colon\binom{[N]}2\to\{0,1\}$ be a promised simple undirected graph,
+extended symmetrically to ordered pairs with $G(u,u)=0$.  Its coherent edge
+oracle acts as
+$O_G\lvert u,v,b\rangle=\lvert u,v,b\oplus G(u,v)\rangle$.
+Query complexity counts calls to $O_G$; reversible operations on vertex
+labels are free, as usual in the query model.  The same asymptotic bound
+applies to the standard locally verifiable TFNP relation with arbitrary
+Boolean-circuit encodings.
+
+\begin{corollary}[Locally verifiable arbitrary encoding]
+\label{cor:unpromised}
+The standard Ramsey TFNP relation that accepts either a local invalidity
+certificate or a locally verified homogeneous set has the same
+$O(2^K K\log(K/\eta))$ quantum-query upper bound as \cref{thm:main}.
+\end{corollary}
+
+The proof (\cref{app:capped-search}) canonicalizes the circuit into a
+simple graph, runs \cref{thm:main}, and checks the $O(K^2)$ entries induced
+by the output for a self-loop or an asymmetric pair.  Our algorithms use
+the following consequence of unknown-solution quantum search
+\cite{BBHT1998}, proved in \cref{app:capped-search}; the analysis needs
+both bounded termination and exact conditional uniformity.
+
+\begin{lemma}[Capped uniform marked-item search]\label{lem:capped-search}
+Let $T\subseteq[M]$ have density at least $\lambda>0$, and suppose its
+membership predicate costs $q$ edge queries.  There is a quantum block which
+uses at most $O(q/\sqrt\lambda)$ edge queries, succeeds with probability at
+least an absolute constant $p_0>0$, and, conditional on verified success,
+returns an exactly uniform element of $T$.  The same predetermined cap makes
+the block terminate if the density promise is false or $T$ is empty.
+Moreover, $m$ independent uniform samples can be collected, except with
+probability $\delta$, using a predetermined
+$O(m+\log(1/\delta))$ blocks whenever the density promise holds.
+\end{lemma}
+
+For comparison, the explicit classical recursion on $M=4^{K-1}=2^{r+1}$
+vertices, $r=2K-3$, queries at level $i$ all edges from a pivot to the other
+$s_i=M/2^i$ candidates and retains exactly $s_i/2$ vertices of a majority
+colour, for $\sum_{i<r}(s_i-1)<2M$ queries in total.  The quantum algorithms
+retain the entire selected colour class but access it only implicitly.
