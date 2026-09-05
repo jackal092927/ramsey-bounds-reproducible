@@ -1,6 +1,6 @@
 # arXiv editions
 
-Prepared September 4, 2026. **Not submitted to arXiv.**
+Submitted September 4, 2026. **Awaiting arXiv processing/moderation and public announcement.**
 
 | Paper | PDF | Upload source | Details |
 | --- | --- | --- | --- |
@@ -18,3 +18,8 @@ The arXiv editions preserve their scientific content, proofs, and citations.
 
 The Graph Zigzag persistence-statistics paper is maintained in
 [QuantumTDA](https://github.com/jackal092927/QuantumTDA/blob/main/ARXIV.md).
+
+## Submission receipts
+
+- [`submit/8039266`](papers/arxiv/quantum-ramsey/SUBMISSION.md): `submitted` at final account check; `quant-ph` with `cs.DS` cross-list.
+- [`submit/8039293`](papers/arxiv/normalized-persistence/SUBMISSION.md): `processing` at final account check; `cs.CC` with `cs.CG` cross-list.

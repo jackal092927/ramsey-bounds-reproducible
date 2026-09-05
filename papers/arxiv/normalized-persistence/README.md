@@ -1,6 +1,8 @@
 # arXiv preprint edition
 
-Status: **prepared for author upload; not submitted to arXiv**.
+Status: **submitted to arXiv as `submit/8039293`; awaiting public announcement**.
+
+See [SUBMISSION.md](SUBMISSION.md) for the live receipt and verification limits.
 
 This standalone 11-point `article` edition is derived from `research/quantum_direction_selection/collaboration/2026-09-02/manuscript_v0/main.tex`.
 It uses public author information and ordinary page numbers, with no anonymous
