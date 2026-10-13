@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "submission_id": "known-cremer-r6s8-n134",
+  "claim": {
+    "r": 6,
+    "s": 8,
+    "n": 134,
+    "lower_bound": 135,
+    "kind": "known_baseline"
+  },
+  "certificate_sha256": "8ef378ad4d66478c33939e438d3a64572ec2cf7d1647ae29d3568817fedfc982",
+  "source_manifest_sha256": "24ea7668dec417a890824c993bda51fa116adc137c05aea8171b6eaab22c1007",
+  "seed_sha256": [
+    "8ef378ad4d66478c33939e438d3a64572ec2cf7d1647ae29d3568817fedfc982"
+  ],
+  "budget": {
+    "wall_seconds": 5,
+    "cpu_count": 1
+  },
+  "observed": {
+    "status": "COMPLETED",
+    "exit_code": 0,
+    "elapsed_seconds": 0.22308262495789677
+  }
+}

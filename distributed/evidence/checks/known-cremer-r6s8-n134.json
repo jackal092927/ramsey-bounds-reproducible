@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "r": 6,
+  "s": 8,
+  "vertices": 134,
+  "edges": 3913,
+  "source_sha256": "8ef378ad4d66478c33939e438d3a64572ec2cf7d1647ae29d3568817fedfc982",
+  "verifier_sha256": "fc8e89c972d50cfd3a4cf9efc71da6af6b780d1d6690eabac0aada905f4b9ccb",
+  "certified_lower_bound": 135,
+  "searches": {
+    "red_clique": {
+      "target": 6,
+      "status": "ABSENT",
+      "witness": null,
+      "nodes": 10272,
+      "elapsed_seconds": 0.023703624960035086
+    },
+    "blue_clique": {
+      "target": 8,
+      "status": "ABSENT",
+      "witness": null,
+      "nodes": 75171,
+      "elapsed_seconds": 0.19748991599772125
+    }
+  },
+  "budget_seconds": 5,
+  "elapsed_seconds": 0.22308262495789677
+}

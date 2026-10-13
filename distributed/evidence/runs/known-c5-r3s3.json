@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "submission_id": "known-c5-r3s3",
+  "claim": {
+    "r": 3,
+    "s": 3,
+    "n": 5,
+    "lower_bound": 6,
+    "kind": "known_baseline"
+  },
+  "certificate_sha256": "119eecdc8c0059f0fac8ab1706d33a32f094328472955be52ac186dccd2bb2dc",
+  "source_manifest_sha256": "24ea7668dec417a890824c993bda51fa116adc137c05aea8171b6eaab22c1007",
+  "seed_sha256": [
+    "119eecdc8c0059f0fac8ab1706d33a32f094328472955be52ac186dccd2bb2dc"
+  ],
+  "budget": {
+    "wall_seconds": 5,
+    "cpu_count": 1
+  },
+  "observed": {
+    "status": "COMPLETED",
+    "exit_code": 0,
+    "elapsed_seconds": 0.00016387493815273046
+  }
+}

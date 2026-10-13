@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-12T23:53:45.049973+00:00",
+  "code_tree_sha256": "7cc1f16709f9abaaa0a60fc0caf1c5fc28d5481e02c0eb2a55e36e8b52b3849b",
+  "python": "3.11.15 (main, Mar  3 2026, 00:52:57) [Clang 17.0.0 (clang-1700.6.3.2)]",
+  "tests": {
+    "command": "python3 -m unittest discover -s tests -v",
+    "exit_code": 0,
+    "test_methods": 14,
+    "test_runtime_seconds": 0.449,
+    "exhaustive_graph_target_checks": 10810
+  },
+  "intake": {
+    "denominator": 2,
+    "accepted": 2,
+    "unknown": 0,
+    "rejected": 0
+  },
+  "board": [
+    {
+      "r": 3,
+      "s": 3,
+      "best_verified_bound_in_corpus": 6,
+      "improvement_over_declared_baseline": 0
+    },
+    {
+      "r": 6,
+      "s": 8,
+      "best_verified_bound_in_corpus": 135,
+      "improvement_over_declared_baseline": 0
+    }
+  ],
+  "public_actions": "NONE",
+  "new_global_records": 0,
+  "github_actions_state": "prepared workflow; not executed on GitHub"
+}

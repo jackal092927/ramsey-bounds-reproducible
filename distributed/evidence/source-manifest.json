@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "path": "scripts/build_baselines.py",
+      "sha256": "8b5fe2540d3d01118881587a1695cfafee93eb29699a6facb30b478e6566ebdf"
+    },
+    {
+      "path": "scripts/verify_certificate.py",
+      "sha256": "fc8e89c972d50cfd3a4cf9efc71da6af6b780d1d6690eabac0aada905f4b9ccb"
+    },
+    {
+      "path": "upstream/cremer/SOURCE.json",
+      "sha256": "5f41ee728f6fb0dc350365ccf085e3a5f2f295b54ec84ad2b952d1503ab46ebb"
+    },
+    {
+      "path": "upstream/cremer/LICENSE",
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+    },
+    {
+      "path": "upstream/cremer/README.md",
+      "sha256": "a3030f9ef80626ab180008ed8db0588a154c87eb8f8380e90ae0db68763f2e92"
+    },
+    {
+      "path": "upstream/cremer/n134-gpt-6.1-sol.txt",
+      "sha256": "8ef378ad4d66478c33939e438d3a64572ec2cf7d1647ae29d3568817fedfc982"
+    }
+  ]
+}

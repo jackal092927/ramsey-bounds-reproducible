@@ -1,0 +1,35 @@
+name: Ramsey distributed certificate intake
+on:
+  pull_request:
+    paths: ['distributed/**', '.github/workflows/ramsey-distributed.yml']
+  push:
+    paths: ['distributed/**', '.github/workflows/ramsey-distributed.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  certificate-intake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    defaults:
+      run:
+        working-directory: distributed
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Positive and negative controls
+        run: python3 -m unittest discover -s tests -v
+      - name: Independently verify submitted certificates
+        run: python3 scripts/ingest.py --root . --output results/ingest.json --max-seconds 5 --strict
+      - name: Revalidate and generate per-pair board
+        run: python3 scripts/leaderboard.py --root . --output results/leaderboard.json --max-seconds 5
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ramsey-intake-results
+          path: distributed/results/
+          if-no-files-found: ignore

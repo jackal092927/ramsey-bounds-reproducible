@@ -1,5 +1,22 @@
 # Reproducible Ramsey analysis
 
+## Community research: finite lower bounds
+
+We are opening a public contribution lane for humans and AI-assisted researchers
+to search for, reproduce and independently verify explicit classical Ramsey
+lower-bound graphs. Start at [the community guide](distributed/COMMUNITY.md) and
+[contribution contract](distributed/CONTRIBUTING.md); choose a target or method
+from [the issue list](https://github.com/jackal092927/ramsey-bounds-reproducible/issues).
+
+The lane includes source/seed/run provenance, independent certificate intake,
+per-(r,s) corpus leaderboards and CI. Its initial accepted examples are known
+baselines: C5 for R(3,3)>=6 and Fritz Cremer's n134 graph for R(6,8)>=135.
+This launch introduces no new numerical record. Longer certificates need
+explicit verification budgets; a timeout remains UNKNOWN.
+
+The previous manuscript and evidence package below retain their separate
+claims, conditions, copyright and release status.
+
 This repository is the working publication and reproduction package for one
 canonical manuscript:
 
@@ -189,3 +206,4 @@ publication is implied.
 
 See [`PAPER_PLAN.md`](PAPER_PLAN.md) for the unified editorial plan and
 [`NARRATIVE_REPORT.md`](NARRATIVE_REPORT.md) for the claim narrative.
+

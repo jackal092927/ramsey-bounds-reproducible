@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "submission_id": "known-c5-r3s3",
+  "claim": {
+    "r": 3,
+    "s": 3,
+    "n": 5,
+    "lower_bound": 6,
+    "kind": "known_baseline"
+  },
+  "certificate": {
+    "path": "certificates/c5.txt",
+    "sha256": "119eecdc8c0059f0fac8ab1706d33a32f094328472955be52ac186dccd2bb2dc"
+  },
+  "provenance": {
+    "origin": {
+      "repository": null,
+      "revision": "local-cycle-construction-v1",
+      "attribution": "Known cycle C5; deterministic toy fixture, not a new Ramsey result",
+      "license_path": "LICENSE_CODE.md"
+    },
+    "source_manifest": {
+      "path": "evidence/source-manifest.json",
+      "sha256": "24ea7668dec417a890824c993bda51fa116adc137c05aea8171b6eaab22c1007"
+    },
+    "seeds": [
+      {
+        "path": "certificates/c5.txt",
+        "sha256": "119eecdc8c0059f0fac8ab1706d33a32f094328472955be52ac186dccd2bb2dc"
+      }
+    ],
+    "run_receipt": {
+      "path": "evidence/runs/known-c5-r3s3.json",
+      "sha256": "02d5db7801d3833bac5767ceff1029782c54fad93928aa18384ed571c407c4d0"
+    },
+    "budget": {
+      "wall_seconds": 5,
+      "cpu_count": 1
+    }
+  }
+}

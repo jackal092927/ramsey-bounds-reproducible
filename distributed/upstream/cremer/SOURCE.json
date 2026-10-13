@@ -1,0 +1,22 @@
+{
+  "repository": "https://github.com/fritzcremer/ramsey-lower-bounds",
+  "revision": "9382a5eb8e6ec634873cea0850b133764e0eecbf",
+  "paper": "https://arxiv.org/abs/2610.12122v1",
+  "primary_witness_url": "https://raw.githubusercontent.com/fritzcremer/ramsey-lower-bounds/9382a5eb8e6ec634873cea0850b133764e0eecbf/R6_8/n134-gpt-6.1-sol.txt",
+  "license": "CC BY 4.0",
+  "attribution": "Fritz Cremer",
+  "files": [
+    {
+      "path": "n134-gpt-6.1-sol.txt",
+      "sha256": "8ef378ad4d66478c33939e438d3a64572ec2cf7d1647ae29d3568817fedfc982"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a3030f9ef80626ab180008ed8db0588a154c87eb8f8380e90ae0db68763f2e92"
+    }
+  ]
+}

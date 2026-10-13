@@ -1,0 +1,156 @@
+{
+  "schema_version": 2,
+  "purpose": "community launch package; historical local validation receipt retained",
+  "original_code_tree_sha256": "7cc1f16709f9abaaa0a60fc0caf1c5fc28d5481e02c0eb2a55e36e8b52b3849b",
+  "content_tree_sha256": "e490c8e7d6cca533bbb24f8b69e0917bb2f6698e8c41d33fdf39e4f304e66f26",
+  "code_inventory_sha256": "afc39f897d0dac314506d9a0bfbd26829170e2cf7b025aea2e2614da6ec994b3",
+  "excluded": [
+    "SOURCE_MANIFEST.json",
+    "PATCH_PACKAGE.md",
+    "results/",
+    "__pycache__/",
+    "*.pyc"
+  ],
+  "files": [
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE/ramsey.md",
+      "sha256": "1a6f7df683e9c9082af68ef240c5cb48304dee8dd353f5d87f1d3e3ff31b81ec",
+      "bytes": 996
+    },
+    {
+      "path": ".github/workflows/ramsey-distributed.yml",
+      "sha256": "887bd9b50a5cd42c8e5770963aea56331dcfc162909d4f0abfce7c9ae2d52af4",
+      "bytes": 1196
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "6ffb90e0edd53df217a96074fc5ddb14a026848ae9c410cc053e449276b208f9",
+      "bytes": 28
+    },
+    {
+      "path": "COMMUNITY.md",
+      "sha256": "2952d6875d3e26c6bce049b3bdfa7cfe1ebeddb484d009629655b6e5e8dac871",
+      "bytes": 3438
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "dfc235bc4a4abb4f37bbbf25c29662edf1de5efb4a5b00b346b1a4640388f886",
+      "bytes": 4391
+    },
+    {
+      "path": "LICENSE_CODE.md",
+      "sha256": "4435e7885b3781ad569a0cbe4b44912ab8ee7973909fff3fe97dad4d7e0e6135",
+      "bytes": 366
+    },
+    {
+      "path": "README.md",
+      "sha256": "7f2822e7047ec9b369759cf2c44abac79c728884292a7d6e01840d0196882342",
+      "bytes": 3206
+    },
+    {
+      "path": "VALIDATION_RECEIPT.json",
+      "sha256": "ddb1e048309e7b862bd1f796e49adabaf944ddc1344786f56e213089a0257c9c",
+      "bytes": 954
+    },
+    {
+      "path": "certificates/c5.txt",
+      "sha256": "119eecdc8c0059f0fac8ab1706d33a32f094328472955be52ac186dccd2bb2dc",
+      "bytes": 30
+    },
+    {
+      "path": "certificates/cremer-r6s8-n134.txt",
+      "sha256": "8ef378ad4d66478c33939e438d3a64572ec2cf7d1647ae29d3568817fedfc982",
+      "bytes": 18090
+    },
+    {
+      "path": "evidence/checks/known-c5-r3s3.json",
+      "sha256": "91ad63bf80c16155aaca8ad602b15ca1dff959703c97d6ab7e5b471dfee2b2b1",
+      "bytes": 713
+    },
+    {
+      "path": "evidence/checks/known-cremer-r6s8-n134.json",
+      "sha256": "a31bb896b5715b9aff379f1d0e684f57c0efc9925187ca437635a953dd33553a",
+      "bytes": 721
+    },
+    {
+      "path": "evidence/runs/known-c5-r3s3.json",
+      "sha256": "02d5db7801d3833bac5767ceff1029782c54fad93928aa18384ed571c407c4d0",
+      "bytes": 625
+    },
+    {
+      "path": "evidence/runs/known-cremer-r6s8-n134.json",
+      "sha256": "da7696fcfdd641907d9346c354d731c6aae127ef027a6301139eb7f46cc34002",
+      "bytes": 635
+    },
+    {
+      "path": "evidence/source-manifest.json",
+      "sha256": "24ea7668dec417a890824c993bda51fa116adc137c05aea8171b6eaab22c1007",
+      "bytes": 893
+    },
+    {
+      "path": "schema/run-receipt-v1.json",
+      "sha256": "7072cc8fde91fdbdcaf40310a4d90bb3a4474642c489a9a92159fb755768d5b8",
+      "bytes": 2465
+    },
+    {
+      "path": "schema/submission-v1.json",
+      "sha256": "d1af401fd63a0aacb824f813b64bc76b557fe9d1a26141e2eb1376b6358f2e96",
+      "bytes": 4748
+    },
+    {
+      "path": "scripts/build_baselines.py",
+      "sha256": "8b5fe2540d3d01118881587a1695cfafee93eb29699a6facb30b478e6566ebdf",
+      "bytes": 3698
+    },
+    {
+      "path": "scripts/ingest.py",
+      "sha256": "677a5077c8df1de4872754e0cd06191739ff35236187d803d6e1a233c207b149",
+      "bytes": 9648
+    },
+    {
+      "path": "scripts/leaderboard.py",
+      "sha256": "20ad4392f418f9af5a20d332462960c1b38565832e097cdb0a3704a1dcb964d2",
+      "bytes": 2755
+    },
+    {
+      "path": "scripts/verify_certificate.py",
+      "sha256": "fc8e89c972d50cfd3a4cf9efc71da6af6b780d1d6690eabac0aada905f4b9ccb",
+      "bytes": 6176
+    },
+    {
+      "path": "submissions/known-c5-r3s3.json",
+      "sha256": "c6ea2bd37f717fa646e5b3d4d3b4dfe327b645d45f30f90e29a8a13b27ad9c21",
+      "bytes": 1112
+    },
+    {
+      "path": "submissions/known-cremer-r6s8-n134.json",
+      "sha256": "d80065eecfdc3df3aafd8362eb2403cd3f50bfa910056047e201d441156bbb92",
+      "bytes": 1238
+    },
+    {
+      "path": "tests/test_intake.py",
+      "sha256": "8f2fca6e6306f109db189b995bc2cb45eacb5c163fed101c7711b1964ba95e8c",
+      "bytes": 7134
+    },
+    {
+      "path": "upstream/cremer/LICENSE",
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+      "bytes": 18657
+    },
+    {
+      "path": "upstream/cremer/README.md",
+      "sha256": "a3030f9ef80626ab180008ed8db0588a154c87eb8f8380e90ae0db68763f2e92",
+      "bytes": 7109
+    },
+    {
+      "path": "upstream/cremer/SOURCE.json",
+      "sha256": "5f41ee728f6fb0dc350365ccf085e3a5f2f295b54ec84ad2b952d1503ab46ebb",
+      "bytes": 795
+    },
+    {
+      "path": "upstream/cremer/n134-gpt-6.1-sol.txt",
+      "sha256": "8ef378ad4d66478c33939e438d3a64572ec2cf7d1647ae29d3568817fedfc982",
+      "bytes": 18090
+    }
+  ]
+}
